@@ -1,0 +1,23 @@
+﻿#translate {width: 24px;height: 24px;background: transparent url("../control/001_50.png") no-repeat;}
+#reply {width: 24px;height: 24px;background: transparent url("../control/001_39.png") no-repeat;}
+#add_before {width: 24px;height: 24px;background: transparent url("../control/001_04.png") no-repeat;}
+#save {width: 24px;height: 24px;background: transparent url("../control/001_06.png") no-repeat;}
+
+#paste {width: 24px;height: 24px;background: transparent url("../control/001_44.png") no-repeat;}
+#delete {width: 24px;height: 24px;background: transparent url("../control/001_05.png") no-repeat;}
+#add_after {width: 24px;height: 24px;background: transparent url("../control/001_03.png") no-repeat;}
+#done {width: 24px;height: 24px;background: transparent url("../control/001_18.png") no-repeat;}
+#done2 {width: 24px;height: 24px;background: transparent url("../control/001_19.png") no-repeat;}
+
+#before {width: 24px;height: 24px;background: transparent url("../control/001_27.png") no-repeat;}
+#after {width: 24px;height: 24px;background: transparent url("../control/001_25.png") no-repeat;}
+
+#saved {width: 24px;height: 24px;background: transparent url("../control/001_06.png") no-repeat;}
+
+#subtitle_text {width: 100%;height: 54px;}
+#subtitle_start {}
+#subtitle_end {}
+
+#wrapper{margin:0px 0;padding:0px;}
+
+/*#langinfo {}*/
