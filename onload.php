@@ -1,0 +1,9 @@
+<?php
+	
+	UpdateOnlineUsers();
+	
+	AddOnlineGuest();
+	
+	GetOnlineUsers();
+	
+?>
