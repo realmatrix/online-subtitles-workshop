@@ -74,7 +74,7 @@
 			});
 			</script>
 			";
-			$content[] = array("{".$cwidget."}",$data);
+			$content[] = array("{".$cwidget."}", $data);
 			}
 		}
 		return $content;
@@ -204,7 +204,9 @@
 		 
 		 return $rows;
 		 }
-		 catch(PDOException $e) { $GLOBALS['ERROR'][] = $e->getMessage()." ". $e->getTraceAsString(); }
+		 catch(PDOException $e) {
+		 	 if($connDB->errorCode() != "00000"){$GLOBALS['ERROR'][] = $e->getMessage()." ". $connDB->errorCode();} 
+		 }
 		 //Close the connection
 		 $connDB = null;
 	}
