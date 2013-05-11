@@ -86,6 +86,7 @@
 		    $cwidget = trim($widget);
 			if($cwidget!=""){include_once "widgets/".$cwidget."/".$cwidget.".php";
 			$content = $cwidget();
+			$content = render(array(array("{content}",$content)),$cwidget);
 			}		
 		return $content;
 	}
@@ -134,40 +135,6 @@
 		}
 		return $page;
 	}
-////////////////////////////////////////////
-
-////////////////////////////////////////////
-	function db_query2($query){
-		// CONNECT TO THE DATABASE
-			$mysqli = new mysqli($GLOBALS['DB_HOST'], $GLOBALS['DB_USER'], $GLOBALS['DB_PASS'], $GLOBALS['DB_NAME']);
-			
-			if (mysqli_connect_errno()) {
-				printf("Connect failed: %s\n", mysqli_connect_error());
-				exit();
-			}
-			
-		
-		// A QUICK QUERY ON A FAKE USER TABLE
-			$result = $mysqli->query($query) or die($mysqli->error.__LINE__);
-			
-		// REPORT QUERY ERRORS		
-		if (!$result) {
-		    $GLOBALS['ERROR'] = "DATABASE QUERY ERROR: ".$mysqli->error;
-			return "error";
-		 }
-		
-		// GOING THROUGH THE DATA
-			$rows = array();
-			if($result->num_rows>0){
-				while($row = $result->fetch_assoc()) {
-					$rows[] = $row;	
-				}
-			}
-			return $rows;
-			
-		// CLOSE CONNECTION
-			mysqli_close($mysqli);
-	}	
 ////////////////////////////////////////////
 
 ////////////////////////////////////////////
