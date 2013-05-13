@@ -60,7 +60,7 @@
 		$widget = explode(",",$widgets);
 		for ($i = 0; $i <= count($widget)-1; $i++) {
 		    $cwidget = trim($widget[$i]);
-			if($cwidget!="" and checkWidgetOptions($cwidget)){
+			if($cwidget!=""){
 			//echo checkWidgetOptions($cwidget);
 			$data = "
 			<div id='SystemAjax_".$cwidget."'></div>
@@ -75,6 +75,7 @@
 			});
 			</script>
 			";
+			if(!checkWidgetOptions($cwidget)){$data="";}
 			$content[] = array("{".$cwidget."}", $data);
 			}
 		}
@@ -103,13 +104,11 @@
 		if($_GET['page']=="" and $_POST['page']==""){$page = "home";}
 		if($options['loggedin']=="yes" and IsLoggedin()){$loadwidget = TRUE;}
 		if($options['loggedin']=="no" and !IsLoggedin()){$loadwidget = TRUE;}
-		if(count($options['show'])>0 and array_search($page, $options['show'])!=null){$loadwidget = TRUE;}
+		if(count($options['show'])>0 and in_array($page, $options['show'])){$loadwidget = TRUE;}
 		if(count($options['show'])==0){$loadwidget=TRUE;}
 		if($options['loggedin']=="yes" and !IsLoggedin()){$loadwidget = FALSE;}
 		if($options['loggedin']=="no" and IsLoggedin()){$loadwidget = FALSE;}	
-		if(count($options['hide'])>0 and array_search($page, $options['hide'])!=null){$loadwidget = FALSE;}
-		//print_r($options['show']);
-		echo $page;
+		if(count($options['hide'])>0 and in_array($page, $options['hide'])){$loadwidget = FALSE;}
 		return $loadwidget;
 	}
 ////////////////////////////////////////////

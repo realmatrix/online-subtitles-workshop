@@ -1,5 +1,5 @@
 {widget_ImageGallery}
-<br>
+
 <script type="text/javascript">
 $(function(){
 $('#HomeHome').tabs();
