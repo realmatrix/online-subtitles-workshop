@@ -61,6 +61,9 @@
 		for ($i = 0; $i <= count($widget)-1; $i++) {
 		    $cwidget = trim($widget[$i]);
 			if($cwidget!=""){
+			include_once "widgets/".$cwidget."/".$cwidget.".php";
+			$options =  call_user_func($cwidget."_options");
+			print_r($options);
 			$data = "
 			<div id='SystemAjax_".$cwidget."'></div>
 			<script>
