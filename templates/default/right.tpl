@@ -6,16 +6,9 @@
 	<div id="right-col">
 
 
-<!-- login form -->
-		<div id="loginbox">
-			<ul>
-				<li><a href="#tabs-1">Login</a></li>
-			</ul>
-			<div id="tabs-1">
+<!-- login widget -->
 				{widget_login}
-			</div>
-		</div>
-<!-- end login form -->
+<!-- end login widget -->
 
 <br>
 
