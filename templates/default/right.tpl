@@ -13,14 +13,7 @@
 <br>
 
 <!-- shout box widget -->
-		<div id="ShoutBox">
-			<ul>
-				<li><a href="#tabs-1">Shout Box</a></li>
-			</ul>
-			<div id="tabs-1">
 				{widget_shoutbox}
-			</div>
-		</div>
 <!-- end shout box widget -->
 
 	
