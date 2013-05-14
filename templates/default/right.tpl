@@ -14,6 +14,10 @@
 	{widget_UserInfo}
 <!-- end user info widget-->
 
+<!-- News Letter Widget-->
+	{widget_NewsLetter}
+<!-- end of news letter widget -->
+
 <!-- shout box widget -->
 				{widget_shoutbox}
 <!-- end shout box widget -->
