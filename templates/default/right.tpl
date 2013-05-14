@@ -7,10 +7,12 @@
 
 
 <!-- login widget -->
-				{widget_login}
+	{widget_login}
 <!-- end login widget -->
 
-<br>
+<!-- user info widget -->
+	{widget_UserInfo}
+<!-- end user info widget-->
 
 <!-- shout box widget -->
 				{widget_shoutbox}

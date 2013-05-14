@@ -24,8 +24,6 @@
             <li><a href="">Requests</a></li>
             <li><a href="">search</a></li>
             <li><a href="downloads/Kerensky_Automatic_Subtitle_Synchronizer.rar">Automatic Subtitle Synchronizer</a></li>
-            <li><a class='nolink' href=''>register</a></li>
-            <li><a class='nolink' href=''>sign in</a></li>
 	</ul>
 	</div>
 

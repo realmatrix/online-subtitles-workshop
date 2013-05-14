@@ -7,19 +7,19 @@
 <meta charset="utf-8">
 <script type="text/javascript">
 $(function(){
-$('#loginbox').tabs();
+$('#UserInfo').tabs();
 });
 </script>
 	</head>
 	
 	<body>
 <!-- login form -->
-		<div id="loginbox">
+		<div id="UserInfo">
 			<ul>
-				<li><a href="#tabs-1">Login</a></li>
+				<li><a href="#tabs-1">User Info</a></li>
 			</ul>
 			<div id="tabs-1">
-				{content}
+				<div align="left">{content}</div>
 			</div>
 		</div>
 <!-- end login form -->		
