@@ -16,6 +16,7 @@
 				<tr><td><input type="text" name="email" value="{NewsLetterEmail}" style="width:100%;color:#888;" onfocus="inputFocus(this)" onblur="inputBlur(this)" /></td></tr>
 				<tr><td><input type="submit" value="{NewsLetterSubmit}" /></td></tr>
 			</table>
+			<input type="hidden" name="NewsSubscribe" value="yes"/>
 		</form>
 	</body>
 </html>
