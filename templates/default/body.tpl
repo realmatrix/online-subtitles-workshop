@@ -5,6 +5,6 @@
 	<!-- start middle col -->
 	<div id="middle-col">
 	{widget_ImageGallery}
-		{content}	
+	{content}	
     </div>
 	<!-- end middle col -->	
