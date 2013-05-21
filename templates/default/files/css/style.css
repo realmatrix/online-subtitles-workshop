@@ -129,6 +129,10 @@ color: #D8000C;
 background-color: #FFBABA;
 }
 
+ul.SystemMessage{
+	text-align: left;
+}
+
 #select_sidebar{ border-style: solid; width: 168px; } 
 #select_content{ border-style: solid; width: 220px; } 
 #wrapper{margin:0px 0;padding:0px;}

@@ -22,7 +22,7 @@
 ////////////////////////////////////////////
 	function SystemMessage($type,$message){
 		if(count($message)>0){
-		$content = "<ul>";
+		$content = "<ul class='SystemMessage'>";
 		for ($i = 0; $i <= count($message)-1; $i++) {
 		    $content.="<li>".$message[$i]."</li>";
 		}
@@ -139,6 +139,7 @@
 		include_once "controllers/".$controller."/".$section.".php";
 		$content = call_user_func('C'.$section.'::'.$section);
 		$res = RenderView($content, $controller, $section);
+		if(!array_key_exists($controller.'_'.$section.'_title', $GLOBALS['page'])){$GLOBALS['ERROR'][]= "GLOBALS['page']['".$controller.'_'.$section."_title'] not found inside language file.";}
 		$array = array(
 		array("{content}",$res),
 		array("{title}",$GLOBALS['page'][$controller.'_'.$section.'_title']),
@@ -213,10 +214,11 @@
 ////////////////////////////////////////////
 	function LoadSections($controller, $section){
 		require_once ("controllers/".$controller."/".$section.".php");
-		$array = call_user_func('C'.$section."::".$controller."_sections");
+		$array = call_user_func('C'.$section."::".$section."_sections");
 		$sections = LoadPage($array);
 		return $sections;
 	}
 ////////////////////////////////////////////
+
 
 ?>

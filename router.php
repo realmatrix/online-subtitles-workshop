@@ -30,7 +30,7 @@
 	if($_GET['page']=="logout"){$SystemPage = "logout";}
 	
 	switch ($SystemPage) {
-    case $SystemPage=="home" and $dataonly!="yes":
+    case ($SystemPage=="home" || $SystemPage=="video") and $dataonly!="yes":
 		//loading template
 		echo render($TemplateHeader, "header");
 		echo render($TemplateLeft, "left");

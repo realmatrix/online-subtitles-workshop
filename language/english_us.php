@@ -36,6 +36,7 @@
 	
 //titles
 	$GLOBALS['page']['home_test_title'] = "test title for controller home section home change from language file";
+	$GLOBALS['page']['video_AddVideo_title'] = "Add New Video";
 	
 //widget NewsLetter
 	$GLOBALS['lang']['widget_newsletter_name'] = "Your name or pseudo ...";
