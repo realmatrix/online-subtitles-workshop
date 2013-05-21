@@ -13,7 +13,12 @@
 	if(isset($_GET['page'])){$ControllerPage = $_GET['page']; $ControllerSection = $_GET['sec'];}
 	if(isset($_POST['page'])){$ControllerPage = $_POST['page']; $ControllerSection = $_POST['sec'];}
 
-	if($ControllerPage=="home"){$SystemContent = LoadController($ControllerPage,$ControllerSection);}
+	//if($ControllerPage=="home"){$SystemContent = LoadController($ControllerPage,$ControllerSection);}
+	if($ControllerPage=="home" and $ControllerSection=="home"){
+		$PageContent = array(
+			array("home", "home"),
+		$SystemContent = LoadPage($PageContent);
+	}
 	
 	
 	

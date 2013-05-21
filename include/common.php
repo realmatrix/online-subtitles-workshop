@@ -135,8 +135,8 @@
 ////////////////////////////////////////////
 
 ////////////////////////////////////////////
-	function LoadController($controller, $section){
-		include "controllers/".$controller."/".$section.".php";
+	function LoadSection($controller, $section){
+		include_once "controllers/".$controller."/".$section.".php";
 		$content = $section();
 		$res = RenderView($content, $controller, $section);
 		$array = array(
@@ -201,16 +201,12 @@
 ////////////////////////////////////////////
 
 ////////////////////////////////////////////
-	function LoadSection($controller, $section){
-		include_once ("controllers/".$controller.".php");
+	function LoadPage($array){
+		$page = "";
+		for ($i = 0; $i <= count($array)-1; $i++) {
+		    $page .= LoadSection($array[$i][0], $array[$i][1]);
+		}
+		return $page;
 	}
 ////////////////////////////////////////////
-
-////////////////////////////////////////////
-	function RenderSection($controller, $section, $content){
-		$template = file_get_contents("views/".$controller.".tpl");
-		
-	}
-////////////////////////////////////////////
-
 ?>
