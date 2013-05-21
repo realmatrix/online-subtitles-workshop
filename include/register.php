@@ -67,7 +67,7 @@
 				array(":birth", $Birth, "str"),
 				array(":group", "3", "str")
 			);
-		 	$result = db_query("INSERT INTO `users` (`username`, `password`, `email`, `BirthYear`, `group`) VALUES (:username, :password, :email, :birth, :group)", $params);
+		 	$result = db_query("INSERT INTO `Users` (`username`, `password`, `email`, `BirthYear`, `group`) VALUES (:username, :password, :email, :birth, :group)", $params);
 		 	if($result!="error")
  			{
  			 $GLOBALS['SUCCESS'][] = $GLOBALS['lang']['register_completed'].'<script type="text/javascript">$("#register").empty();setTimeout(function(){ window.location = "index.php"; }, 5000);</script>';

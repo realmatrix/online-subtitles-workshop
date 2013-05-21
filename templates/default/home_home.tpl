@@ -1,5 +1,3 @@
-{widget_ImageGallery}
-
 <script type="text/javascript">
 $(function(){
 $('#HomeHome').tabs();
