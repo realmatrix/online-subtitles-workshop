@@ -87,7 +87,7 @@
 	function GetWidget($widget){
 		    $cwidget = trim($widget);
 			if($cwidget!=""){include_once "widgets/".$cwidget."/".$cwidget.".php";
-			$content = $cwidget();
+			$content = call_user_func("W".$cwidget."::".$cwidget);
 			$content = render(array(array("{content}",$content)),$cwidget);
 			}		
 		return $content;
@@ -97,7 +97,7 @@
 ////////////////////////////////////////////
 	function checkWidgetOptions($widget){
 		include_once "widgets/".$widget."/".$widget.".php";
-		$options =  call_user_func($widget."_options");
+		$options =  call_user_func("W".$widget."::".$widget."_options");
 		$loadwidget = FALSE;
 		if($_GET['page']!=""){$page = $_GET['page'];}
 		if($_POST['page']!=""){$page = $_POST['page'];}
