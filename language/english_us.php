@@ -35,7 +35,7 @@
 	$GLOBALS['lang']['logout_logout'] = "logout";
 	
 //titles
-	$GLOBALS['page']['home_home_title'] = "test title for controller home section home change from language file";
+	$GLOBALS['page']['home_test_title'] = "test title for controller home section home change from language file";
 	
 //widget NewsLetter
 	$GLOBALS['lang']['widget_newsletter_name'] = "Your name or pseudo ...";

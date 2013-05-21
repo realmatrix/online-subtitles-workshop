@@ -137,7 +137,7 @@
 ////////////////////////////////////////////
 	function LoadSection($controller, $section){
 		include_once "controllers/".$controller."/".$section.".php";
-		$content = $section();
+		$content = call_user_func('C'.$section.'::'.$section);
 		$res = RenderView($content, $controller, $section);
 		$array = array(
 		array("{content}",$res),
@@ -209,4 +209,14 @@
 		return $page;
 	}
 ////////////////////////////////////////////
+
+////////////////////////////////////////////
+	function LoadSections($controller, $section){
+		require_once ("controllers/".$controller."/".$section.".php");
+		$array = call_user_func('C'.$section."::".$controller."_sections");
+		$sections = LoadPage($array);
+		return $sections;
+	}
+////////////////////////////////////////////
+
 ?>

@@ -1,19 +1,19 @@
 <?php
 
-	function home(){
-		return home_content();
-	}
-	
-	function home_content(){
-		$test = "this is controller test message";
+	class Chome{
 		
-			$content = array
-			  (
-			  array("{test}",$test),
-			 );
-		 
-		 return $content;
-	}	
-	
+		function home(){
+			return home_content();
+		}
+		
+		function home_sections(){
+			$array = array(
+				array("home", "test"),
+			);
+			return $array;
+		}	
+			
+	}
+
 	
 ?>

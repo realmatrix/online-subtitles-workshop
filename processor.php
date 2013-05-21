@@ -8,20 +8,15 @@
 		include "include/login.php";
 	}
 	
-	//loading controllers
+	
 	if(!isset($_GET['page']) and !isset($_POST['page'])){$ControllerPage="home"; $ControllerSection="home";}
 	if(isset($_GET['page'])){$ControllerPage = $_GET['page']; $ControllerSection = $_GET['sec'];}
 	if(isset($_POST['page'])){$ControllerPage = $_POST['page']; $ControllerSection = $_POST['sec'];}
 
-	if($ControllerPage=="home" and $ControllerSection=="home"){
-		$PageContent = array(
-			array("home", "home"),
-			);
-		$SystemContent = LoadPage($PageContent);
-	}
+	//loading controllers
+	if($ControllerPage!="" and $ControllerSection!=""){$SystemContent = LoadSections($ControllerPage, $ControllerSection);}
 	
-	
-	
+		
 	//loading widgets
 	$SystemWidgets = LoadWidgets();
 	
