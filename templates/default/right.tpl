@@ -1,6 +1,5 @@
-<!--
-{widget_shoutbox}
--->
+    </div>
+	<!-- end middle col -->	
 
 	<!-- start right col -->	
 	<div id="right-col">

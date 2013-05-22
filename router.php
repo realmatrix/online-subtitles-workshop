@@ -30,12 +30,19 @@
 	if($_GET['page']=="logout"){$SystemPage = "logout";}
 	
 	switch ($SystemPage) {
-    case ($SystemPage=="home" || $SystemPage=="video") and $dataonly!="yes":
+    case ($SystemPage=="home" || $SystemPage=="otherpage") and $dataonly!="yes":
 		//loading template
 		echo render($TemplateHeader, "header");
+		echo render($TemplateHead, "head");
 		echo render($TemplateLeft, "left");
 		echo render($TemplateBody, "body");
 		echo render($TemplateRight, "right");
+		echo render($TemplateFooter, "footer");
+        break;
+    case $SystemPage=="video" :
+		echo render($TemplateHeader, "header");
+		echo render($TemplateHead, "head");
+		echo render($TemplateBody, "body");
 		echo render($TemplateFooter, "footer");
         break;
     case $SystemPage!="" and $dataonly=="yes" and $getwidget!="":

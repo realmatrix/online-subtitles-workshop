@@ -32,6 +32,11 @@
 	  array("{test}",$test),
 	);
 	
+	$TemplateHead = array
+	  (
+	  array("{test}",$test),
+	);
+	
 	$TemplateRegister = array
 	  (
 	  array("{username}",$GLOBALS['lang']['register_username']),
@@ -93,6 +98,7 @@
 	$TemplatesCommon = array_merge($TemplatesCommon,$SystemWidgets);
 	
 $TemplateHeader = array_merge($TemplateHeader,$TemplatesCommon);
+$TemplateHead = array_merge($TemplateHead,$TemplatesCommon);
 $TemplateLeft = array_merge($TemplateLeft,$TemplatesCommon);
 $TemplateRight = array_merge($TemplateRight,$TemplatesCommon);
 $TemplateBody = array_merge($TemplateBody,$TemplatesCommon);

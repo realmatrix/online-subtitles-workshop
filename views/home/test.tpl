@@ -1,1 +1,1 @@
-this is test {content}
+{test}
