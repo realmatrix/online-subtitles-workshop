@@ -165,7 +165,8 @@
 		$DB_NAME=$GLOBALS['DB_NAME'];
 		$DB_USER=$GLOBALS['DB_USER'];
 		$DB_PASS=$GLOBALS['DB_PASS'];
-		 $connDB = new PDO("mysql:host=$DB_HOST;dbname=$DB_NAME", $DB_USER, $DB_PASS);
+		 $connDB = new PDO("mysql:host=$DB_HOST;dbname=$DB_NAME;charset=utf8", $DB_USER, $DB_PASS);
+		 
 		 $connDB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		 try {
 		 // Query
@@ -205,7 +206,19 @@
 	function LoadPage($array){
 		$page = "";
 		for ($i = 0; $i <= count($array)-1; $i++) {
-		    $page .= LoadSection($array[$i][0], $array[$i][1]);
+			$page .= "
+			<div id='SystemAjax_".$array[$i][0]."_".$array[$i][1]."'></div>
+			<script>
+			$.ajax({
+			    url: 'index.php?page=none&dataonly=yes&getcontroller=".$array[$i][0]."&getsection=".$array[$i][1]."',
+			    cache: false,
+			    dataType: 'html',
+			    success: function(data) {
+			        $('#SystemAjax_".$array[$i][0]."_".$array[$i][1]."').html(data);
+			    }
+			});
+			</script>
+			";
 		}
 		return $page;
 	}
@@ -220,5 +233,28 @@
 	}
 ////////////////////////////////////////////
 
+////////////////////////////////////////////
+	function GetVideoTypes(){
+		$params = array();
+	 	$result = db_query("SELECT * FROM VideoType", $params);
+		return $result;
+	}
+////////////////////////////////////////////
+
+////////////////////////////////////////////
+	function GetVideoCategories(){
+		$params = array();
+	 	$result = db_query("SELECT * FROM VideoCategory", $params);
+		return $result;
+	}
+////////////////////////////////////////////
+
+////////////////////////////////////////////
+	function GetLanguages(){
+		$params = array();
+	 	$result = db_query("SELECT * FROM Language", $params);
+		return $result;
+	}
+////////////////////////////////////////////
 
 ?>

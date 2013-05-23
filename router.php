@@ -27,8 +27,13 @@
 	if(isset($_POST['dataonly']) and $_POST['dataonly']=='yes'){$dataonly="yes";}	
 	if(isset($_GET['getwidget']) and $_GET['getwidget']!=''){$getwidget=$_GET['getwidget'];}
 	if(isset($_POST['getwidget']) and $_POST['getwidget']!=''){$getwidget=$_POST['getwidget'];}	
+	if(isset($_GET['getcontroller']) and $_GET['getcontroller']!=""){$getcontroller=$_GET['getcontroller'];}
+	if(isset($_POST['getcontroller']) and $_POST['getcontroller']!=""){$getcontroller=$_POST['getcontroller'];}
+	if(isset($_GET['getsection']) and $_GET['getsection']!=""){$getsection=$_GET['getsection'];}
+	if(isset($_POST['getsection']) and $_POST['getsection']!=""){$getsection=$_POST['getsection'];}
 	if($_GET['page']=="logout"){$SystemPage = "logout";}
-	
+	if($_GET['page']=="none" or $_POST=="none"){$SystemPage = "none";}
+
 	switch ($SystemPage) {
     case ($SystemPage=="home" || $SystemPage=="otherpage") and $dataonly!="yes":
 		//loading template
@@ -47,6 +52,9 @@
         break;
     case $SystemPage!="" and $dataonly=="yes" and $getwidget!="":
 		echo GetWidget($getwidget);
+        break;
+    case $SystemPage!="" and $dataonly=="yes" and $getcontroller!="" and $getsection!="":
+		echo LoadSection($getcontroller, $getsection);
         break;
     case $SystemPage=="register":
 		echo render($TemplateRegister, "register");

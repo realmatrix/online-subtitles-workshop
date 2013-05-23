@@ -42,4 +42,10 @@
 	$GLOBALS['lang']['widget_newsletter_name'] = "Your name or pseudo ...";
 	$GLOBALS['lang']['widget_newsletter_email'] = "Enter your email address ...";
 	$GLOBALS['lang']['widget_newsletter_submit'] = "submit";
+	
+//add video
+	$GLOBALS['lang']['video_AddVideo_VideoType'] = "ADD A NEW";
+	$GLOBALS['lang']['video_AddVideo_VideoCategory'] = "Category";
+	$GLOBALS['lang']['video_AddVideo_VideoLanguage'] = "Language";
+	
 ?>
