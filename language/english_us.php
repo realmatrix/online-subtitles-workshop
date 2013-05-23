@@ -42,6 +42,10 @@
 	$GLOBALS['lang']['widget_newsletter_name'] = "Your name or pseudo ...";
 	$GLOBALS['lang']['widget_newsletter_email'] = "Enter your email address ...";
 	$GLOBALS['lang']['widget_newsletter_submit'] = "submit";
+
+//widget Quick Links
+	$GLOBALS['lang']['widget_quicklinks_addvideo'] = "Add new video";
+	$GLOBALS['lang']['widget_quicklinks_logout'] = "Logout";
 	
 //add video
 	$GLOBALS['lang']['video_AddVideo_VideoType'] = "ADD A NEW";

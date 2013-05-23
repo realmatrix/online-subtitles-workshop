@@ -257,4 +257,13 @@
 	}
 ////////////////////////////////////////////
 
+////////////////////////////////////////////
+	function RenderData($content, $array){
+		for ($i=0; $i < count($array); $i++) { 
+			$content = str_replace($array[$i][0], $array[$i][1], $content);
+		}
+		return $content;
+	}
+////////////////////////////////////////////
+
 ?>

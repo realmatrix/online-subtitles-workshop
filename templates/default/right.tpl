@@ -9,13 +9,21 @@
 	{widget_login}
 <!-- end login widget -->
 
+
 <!-- user info widget -->
 	{widget_UserInfo}
 <!-- end user info widget-->
 
+
+<!-- Quick Links widget -->
+	{widget_QuickLinks}
+<!-- end Quick Links widget-->
+
+
 <!-- News Letter Widget-->
 	{widget_NewsLetter}
 <!-- end of news letter widget -->
+
 
 <!-- shout box widget -->
 				{widget_shoutbox}

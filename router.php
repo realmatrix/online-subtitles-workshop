@@ -37,16 +37,16 @@
 	switch ($SystemPage) {
     case ($SystemPage=="home" || $SystemPage=="otherpage") and $dataonly!="yes":
 		//loading template
-		echo render($TemplateHeader, "header");
 		echo render($TemplateHead, "head");
+		echo render($TemplateHeader, "header");
 		echo render($TemplateLeft, "left");
 		echo render($TemplateBody, "body");
 		echo render($TemplateRight, "right");
 		echo render($TemplateFooter, "footer");
         break;
     case $SystemPage=="video" :
-		echo render($TemplateHeader, "header");
 		echo render($TemplateHead, "head");
+		echo render($TemplateHeader, "header");
 		echo render($TemplateBody, "body");
 		echo render($TemplateFooter, "footer");
         break;
