@@ -7,6 +7,17 @@
 			return self::AddVideo_content();
 		}
 	
+		function AddVideo_hooks(){
+			$array = array(
+				array("SubmitVideo", "AddNewVideo"),
+			);
+			return $array;
+		}
+			
+		function AddNewVideo(){
+			return true;
+		}
+				
 		function AddVideo_content(){
 				$content = array
 				  (
