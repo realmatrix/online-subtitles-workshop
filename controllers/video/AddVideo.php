@@ -15,7 +15,7 @@
 		}
 			
 		function AddNewVideo(){
-			return true;
+			echo "sdfkl;gd;lkgjdf;slkgjdfs;lkgjdf;gkljgpoierjug;dfkjg;dlgj;dflkgjdfl;kgjdf;lgjkdf;lkgjdf;lgjkf;lgkjfdglk;djfdlf;kjdf;lkgjdf;ljgk";
 		}
 				
 		function AddVideo_content(){

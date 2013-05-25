@@ -7,4 +7,6 @@
 	<script type='text/javascript' charset='utf-8' src='apps/DataTables-1.9.4/extras/TableTools/media/js/TableTools.js'></script>
 	";
 	
+	$GLOBALS['SystemData']['SystemHeader'] = $SystemHeader;
+		
 ?>

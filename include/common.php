@@ -139,7 +139,9 @@
 		include_once "controllers/".$controller."/".$section.".php";
 		$content = call_user_func('C'.$section.'::'.$section);
 		$hooks = call_user_func('C'.$section.'::'.$section.'_hooks');
-		print_r($hooks);
+			for ($i=0; $i < count($hooks); $i++) { 
+				if(CheckControllerHook($section, $hooks[$i][0])==TRUE){call_user_func('C'.$section.'::'.$hooks[$i][1]);}
+			}
 		$res = RenderView($content, $controller, $section);
 		if(!array_key_exists($controller.'_'.$section.'_title', $GLOBALS['page'])){$GLOBALS['ERROR'][]= "GLOBALS['page']['".$controller.'_'.$section."_title'] not found inside language file.";}
 		$array = array(
@@ -153,8 +155,8 @@
 
 ////////////////////////////////////////////
 	function CheckControllerHook($section, $hook){
-		if((isset($_GET['sec']) and $_GET['sec']==$section) and (isset($_GET['h']) and $_GET['h']==$hook)){$res = "yes";}
-		if((isset($_POST['sec']) and $_POST['sec']==$section) and (isset($_POST['h']) and $_POST['h']==$hook)){$res = "yes";}
+		if((isset($_GET['ssec']) and $_GET['ssec']==$section) and (isset($_GET['h']) and $_GET['h']==$hook)){$res = "yes";}
+		if((isset($_POST['ssec']) and $_POST['ssec']==$section) and (isset($_POST['h']) and $_POST['h']==$hook)){$res = "yes";}
 		if($res=="yes"){return TRUE;}else{return FALSE;}
 	}
 ////////////////////////////////////////////
