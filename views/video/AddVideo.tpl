@@ -1,14 +1,6 @@
-<html>
-<head>
-{SystemHeader}
-</head>
-<body>
-
-
-
 <div id="add-new-video"> <!-- begin add video content-->
 
-<form method="get" action="index.php" onsubmit="$.get('http://www.msn.com', function(data){$('#SystemAjax_video_AddVideo').html(data);alert('Load was performed.');});">
+<form method="get" id="submitnewvideo" action="" onsubmit="processFormGET('submitnewvideo','SystemAjax_video_AddVideo');return false;">
 <div id="addvideo-select"> <!-- begin select boxs -->
 <div id="addvideo-type">{VideoType}<select>{types}</select></div>
 <div id="addvideo-categories">{VideoCategory}<select>{categories}</select></div>
@@ -24,10 +16,4 @@
 </form>
 
 </div> <!-- end add video content-->
-
-
-
-
-</body>
-</html>
 

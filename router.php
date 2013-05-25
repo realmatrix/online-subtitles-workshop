@@ -51,6 +51,7 @@
 		echo render($TemplateFooter, "footer");
         break;
     case $SystemPage!="" and $dataonly=="yes" and $getwidget!="":
+		echo render($TemplateHead, "head");
 		echo GetWidget($getwidget);
         break;
     case $SystemPage!="" and $dataonly=="yes" and $getcontroller!="" and $getsection!="":
