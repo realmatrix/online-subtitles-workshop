@@ -143,7 +143,6 @@
 				if(CheckControllerHook($section, $hooks[$i][0])==TRUE){call_user_func('C'.$section.'::'.$hooks[$i][1]);}
 			}
 		$res = RenderView($content, $controller, $section);
-		$res = str_replace("{SystemHeader}", $GLOBALS['SystemData']['SystemHeader'], $res);
 		if(!array_key_exists($controller.'_'.$section.'_title', $GLOBALS['page'])){$GLOBALS['ERROR'][]= "GLOBALS['page']['".$controller.'_'.$section."_title'] not found inside language file.";}
 		$array = array(
 		array("{content}",$res),

@@ -1,8 +1,5 @@
-<html>
-	<head>
-		{SystemHeader}
-	</head>
-	<body>
+
+
 {test}
 
 
@@ -445,5 +442,3 @@
 	</tbody>
 </table>
 </div>
-	</body>
-</html>

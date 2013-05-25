@@ -54,6 +54,7 @@
 		echo GetWidget($getwidget);
         break;
     case $SystemPage!="" and $dataonly=="yes" and $getcontroller!="" and $getsection!="":
+		echo render($TemplateHead, "head");
 		echo LoadSection($getcontroller, $getsection);
         break;
     case $SystemPage=="register":
