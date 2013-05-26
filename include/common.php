@@ -280,21 +280,37 @@
 
 ////////////////////////////////////////////
 	function form($array){
-		$form = "";
-		$form .= "<form name='".$array['name']."' id='".$array['id']."' method='".$array['method']."' action='".$array['action']."' >";
-		for ($i=0; $i < count($array['input']); $i++) { 
+		$form = "<div id='div-".$array['id']."'>";
+		$form .= "<form name='".$array['name']."' id='".$array['id']."' method='".$array['method']."' action='".$array['action']."' ".$array['extra'].">";
+		for ($i=0; $i < count($array['input']); $i++) {
+			$form .= "<div id='div-".$array['input'][$i]['id']."'>";
+			$form .= " <label for='".$array['input'][$i]['name']."' id='label-".$array['input'][$i]['id']."'>".$array['input'][$i]['text']."</label> ";
 			if($array['input'][$i]['type']=='select'){
-				$form .= "<select>";
+				$form .= "<select name='".$array['input'][$i]['name']."' id='".$array['input'][$i]['id']."' ".$array['input'][$i]['extra'].">";
 				for ($j=0; $j < count($array['input'][$i]['content']); $j++) { 
 					$form .= "<option value='".$array['input'][$i]['content'][$j][0]."'>".$array['input'][$i]['content'][$j][1]."</option>";
 				}
 				$form .= "</select>";
 			}
-			if($array['input']['type']=='text'){}
-			if($array['input']['type']=='textarea'){}
-			if($array['input']['type']=='submit'){}
+			if($array['input'][$i]['type']=='text'){
+				$form .= "<input type='text' name='".$array['input'][$i]['name']."' id='".$array['input'][$i]['id']."' value='".$array['input'][$i]['content']."' ".$array['input'][$i]['extra']."/>";
+			}
+			if($array['input'][$i]['type']=='textarea'){
+				$form .= "<textarea name='".$array['input'][$i]['name']."' id='".$array['input'][$i]['id']."' ".$array['input'][$i]['extra'].">".$array['input'][$i]['content']."</textarea>";
+			}
+			if($array['input'][$i]['type']=='submit'){
+				$form .= "<a href='".$array['input'][$i]['href']."' id='".$array['input'][$i]['id']."' name='".$array['input'][$i]['name']."'>".$array['input'][$i]['content']."</a>";
+			}
+			if($array['input'][$i]['type']=='img'){
+				$form .= "<img name='".$array['input'][$i]['name']."' id='".$array['input'][$i]['id']."' alt='' extra='".$array['input'][$i]['extra']."' src='".$array['input'][$i]['content']."'/>";
+			}
+			if($array['input'][$i]['type']=='hidden'){
+				$form .= "<input type='hidden' name='".$array['input'][$i]['name']."' id='".$array['input'][$i]['id']."' value='".$array['input'][$i]['content']."' ".$array['input'][$i]['extra']."/>";
+			}
+			$form .= "</div>";
 		}
 		$form .= "</form>";
+		$form .= "</div>";
 		return $form;
 	}
 ////////////////////////////////////////////

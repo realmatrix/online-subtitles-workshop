@@ -51,5 +51,7 @@
 	$GLOBALS['lang']['video_AddVideo_VideoType'] = "ADD A NEW";
 	$GLOBALS['lang']['video_AddVideo_VideoCategory'] = "Category";
 	$GLOBALS['lang']['video_AddVideo_VideoLanguage'] = "Language";
-	
+	$GLOBALS['lang']['video_AddVideo_VideoTitle'] = "Video Title";
+	$GLOBALS['lang']['video_AddVideo_VideoImage'] = "Add Image";
+	$GLOBALS['lang']['video_AddVideo_VideoSubmit'] = "Submit Form";
 ?>
