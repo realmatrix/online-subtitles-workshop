@@ -299,7 +299,10 @@
 				$form .= "<textarea name='".$array['input'][$i]['name']."' id='".$array['input'][$i]['id']."' ".$array['input'][$i]['extra'].">".$array['input'][$i]['content']."</textarea>";
 			}
 			if($array['input'][$i]['type']=='submit'){
-				$form .= "<a href='".$array['input'][$i]['href']."' id='".$array['input'][$i]['id']."' name='".$array['input'][$i]['name']."'>".$array['input'][$i]['content']."</a>";
+				$form .= "<input type='submit' id='".$array['input'][$i]['id']."' name='".$array['input'][$i]['name']."' value='".$array['input'][$i]['content']."' ".$array['input'][$i]['extra']."/>";
+			}
+			if($array['input'][$i]['type']=='AjaxSubmit'){
+				$form .= "<a href='#' onclick=\"$('#".$array['AjaxDiv']."').load('".$array['action']."?');\" id='".$array['input'][$i]['id']."' name='".$array['input'][$i]['name']."'>".$array['input'][$i]['content']."</a>";
 			}
 			if($array['input'][$i]['type']=='img'){
 				$form .= "<img name='".$array['input'][$i]['name']."' id='".$array['input'][$i]['id']."' alt='' extra='".$array['input'][$i]['extra']."' src='".$array['input'][$i]['content']."'/>";

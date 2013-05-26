@@ -22,8 +22,9 @@
 			$form = array(
 			 'name' => 'submitnewvideo',
 			 'id' => 'submitnewvideo',
-			 'method' => 'get',
+			 'method' => 'GET',
 			 'action' => 'index.php',
+			 'AjaxDiv' => 'SystemAjax_video_AddVideo',
 			 'extra' => '',
 			 'input' => array(
 			 		array(type=>'select', content=>self::types(), 'text'=>$GLOBALS['lang']['video_AddVideo_VideoType'], 'name'=>'VideoType', 'id'=>'VideoType', 'extra'=>''),
@@ -31,7 +32,7 @@
 			 		array(type=>'select', content=>self::languages(), 'text'=>$GLOBALS['lang']['video_AddVideo_VideoLanguage'], 'name'=>'VideoLanguage', 'id'=>'VideoLanguage', 'extra'=>''),
 			 		array(type=>'text', content=>'', 'text'=>$GLOBALS['lang']['video_AddVideo_VideoTitle'], 'name'=>'VideoTitle', 'id'=>'VideoTitle', 'extra'=>''),
 			 		array(type=>'img', content=>'http://www.w3schools.com/images/compatible_chrome.gif', 'text'=>$GLOBALS['lang']['video_AddVideo_VideoImage'], 'name'=>'VideoImage', 'id'=>'VideoImage', 'extra'=>''),
-			 		array(type=>'submit', content=>$GLOBALS['lang']['video_AddVideo_VideoSubmit'], 'text'=>'', 'name'=>'VideoSubmit', 'id'=>'VideoSubmit', 'href'=>'#', 'extra'=>''),
+			 		array(type=>'AjaxSubmit', content=>$GLOBALS['lang']['video_AddVideo_VideoSubmit'], 'text'=>'', 'name'=>'VideoSubmit', 'id'=>'VideoSubmit', 'extra'=>''),
 			 		),
 			 );	
 			 
