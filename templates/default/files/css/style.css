@@ -103,6 +103,11 @@ a.nolink
 img{
     border: 0px;
 }
+
+#widgt-quicklinks{
+	width:100%;
+	text-align: left;
+}
 /*==========================================*/
 
 #info, #success, #warning, #error, #validation {

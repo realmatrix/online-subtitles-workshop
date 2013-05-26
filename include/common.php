@@ -278,4 +278,25 @@
 	}
 ////////////////////////////////////////////
 
+////////////////////////////////////////////
+	function form($array){
+		$form = "";
+		$form .= "<form name='".$array['name']."' id='".$array['id']."' method='".$array['method']."' action='".$array['action']."' >";
+		for ($i=0; $i < count($array['input']); $i++) { 
+			if($array['input'][$i]['type']=='select'){
+				$form .= "<select>";
+				for ($j=0; $j < count($array['input'][$i]['content']); $j++) { 
+					$form .= "<option value='".$array['input'][$i]['content'][$j][0]."'>".$array['input'][$i]['content'][$j][1]."</option>";
+				}
+				$form .= "</select>";
+			}
+			if($array['input']['type']=='text'){}
+			if($array['input']['type']=='textarea'){}
+			if($array['input']['type']=='submit'){}
+		}
+		$form .= "</form>";
+		return $form;
+	}
+////////////////////////////////////////////
+
 ?>

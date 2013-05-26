@@ -19,23 +19,37 @@
 		}
 				
 		function AddVideo_content(){
+			$form = array(
+			 'name' => 'submitnewvideo',
+			 'id' => 'submitnewvideo',
+			 'method' => 'get',
+			 'action' => 'index.php',
+			 'extra' => '',
+			 'input' => array(
+			 		array(type=>'select', content=>self::types(), 'text'=>$GLOBALS['lang']['video_AddVideo_VideoType'], 'name'=>'VideoType', 'id'=>'VideoType', 'extra'=>''),
+			 		array(type=>'select', content=>self::categories(), 'text'=>$GLOBALS['lang']['video_AddVideo_VideoCategory'], 'name'=>'VideoCategory', 'id'=>'VideoCategory', 'extra'=>''),
+			 		array(type=>'select', content=>self::languages(), 'text'=>$GLOBALS['lang']['video_AddVideo_VideoLanguage'], 'name'=>'VideoLanguage', 'id'=>'VideoLanguage', 'extra'=>''),
+			 		),
+			 );	
+			 
 				$content = array
 				  (
-				  array("{VideoType}", $GLOBALS['lang']['video_AddVideo_VideoType']),
+				  array("{VideoType}", 'text'=>$GLOBALS['lang']['video_AddVideo_VideoType']),
 				  array("{VideoCategory}", $GLOBALS['lang']['video_AddVideo_VideoCategory']),
 				  array("{VideoLanguage}", $GLOBALS['lang']['video_AddVideo_VideoLanguage']),
-				  array("{languages}", self::languages()),
-				  array("{types}", self::types()),
-				  array("{categories}", self::categories()),
+				  array("{languages}", ''),
+				  array("{types}", ''),
+				  array("{categories}", ''),
+				  array("{form}", form($form)),
 				 );
 			 
-			 return $content;
+		return $content;
 		}
 		
 		function languages(){
 			$languages = GetLanguages();
 			for ($i=0; $i < count($languages); $i++) { 
-				$res .= "<option value='".$languages[$i]['id']."'>".$languages[$i]['language']."</option>";
+				$res[] = array($languages[$i]['id'], $languages[$i]['language']);
 			}
 			return $res;
 		}
@@ -43,7 +57,7 @@
 		function types(){
 			$types = GetVideoTypes();
 			for ($i=0; $i < count($types); $i++) { 
-				$res .= "<option value='".$types[$i]['id']."'>".$types[$i]['type']."</option>";
+				$res[] = array($types[$i]['id'], $types[$i]['type']);
 			}
 			return $res;
 		}
@@ -51,7 +65,7 @@
 		function categories(){
 			$categories = GetVideoCategories();
 			for ($i=0; $i < count($categories); $i++) { 
-				$res .= "<option value='".$categories[$i]['id']."'>".$categories[$i]['category']."</option>";
+				$res[] = array($categories[$i]['id'], $categories[$i]['category']);
 			}
 			return $res;
 		}
