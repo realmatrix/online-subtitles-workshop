@@ -100,14 +100,19 @@ a.nolink
 	background: url(../images/navigation-hover.png) repeat-x left top;
 }
 
+/* add new video */
+#div-submitnewvideo{text-align: left; width:100%;}
+#div-VideoType{float:left;}
+#div-VideoCategory{float:left;}
+#div-VideoLanguage{float:left;}
+
 img{
     border: 0px;
 }
 
-#widgt-quicklinks{
-	width:100%;
-	text-align: left;
-}
+/* widget quick links */
+#widgt-quicklinks{width:100%; text-align: left;}
+
 /*==========================================*/
 
 #info, #success, #warning, #error, #validation {
@@ -133,7 +138,11 @@ background-color: #FEEFB3;
 color: #D8000C;
 background-color: #FFBABA;
 }
-
+#FormWait{
+	width:48px;
+	height:48px;
+	background: url(../images/wait.gif) no-repeat right center;
+}
 ul.SystemMessage{
 	text-align: left;
 }

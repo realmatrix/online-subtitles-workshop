@@ -302,7 +302,10 @@
 				$form .= "<input type='submit' id='".$array['input'][$i]['id']."' name='".$array['input'][$i]['name']."' value='".$array['input'][$i]['content']."' ".$array['input'][$i]['extra']."/>";
 			}
 			if($array['input'][$i]['type']=='AjaxSubmit'){
-				$form .= "<a href='#' onclick=\"$('#".$array['AjaxDiv']."').load('".$array['action']."?');\" id='".$array['input'][$i]['id']."' name='".$array['input'][$i]['name']."'>".$array['input'][$i]['content']."</a>";
+					for ($k=0; $k < count($array['input']); $k++) { 
+						$UrlVars .= "+'&".$array['input'][$k]['name']."='+document.getElementById('".$array['input'][$k]['id']."').value";
+					}
+				$form .= "<a href='#' onclick=\"$('#".$array['AjaxDiv']."').load('".$array['action']."?'".$UrlVars."); document.getElementById('".$array['id']."').innerHTML='<div id=&quot;FormWait&quot;></div>'; \" id='".$array['input'][$i]['id']."' name='".$array['input'][$i]['name']."'>".$array['input'][$i]['content']."</a>";
 			}
 			if($array['input'][$i]['type']=='img'){
 				$form .= "<img name='".$array['input'][$i]['name']."' id='".$array['input'][$i]['id']."' alt='' extra='".$array['input'][$i]['extra']."' src='".$array['input'][$i]['content']."'/>";
