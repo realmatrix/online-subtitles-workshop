@@ -14,18 +14,18 @@
 	if(isset($_POST['page'])){$ControllerPage = $_POST['page']; $ControllerSection = $_POST['sec'];}
 
 	//loading controllers
-	if($ControllerPage!="" and $ControllerSection!=""){$SystemContent = LoadSections($ControllerPage, $ControllerSection);}
+	if($ControllerPage!="" and $ControllerSection!=""){$SystemContent = common::LoadSections($ControllerPage, $ControllerSection);}
 	
 		
 	//loading widgets
-	$SystemWidgets = LoadWidgets();
+	$SystemWidgets = common::LoadWidgets();
 	
 		
 	$TemplatePath = $GLOBALS['config']['TemplatesDir'].$GLOBALS['config']['template'];
 	
-	$error_messages = SystemMessage("error",$GLOBALS['ERROR']);
+	$error_messages = common::SystemMessage("error",$GLOBALS['ERROR']);
 	
-	$success_messages = SystemMessage("success",$GLOBALS['SUCCESS']);
+	$success_messages = common::SystemMessage("success",$GLOBALS['SUCCESS']);
 	
 	$TemplateHeader = array
 	  (
@@ -44,7 +44,7 @@
 	  array("{password2}",$GLOBALS['lang']['register_password2']),
 	  array("{email}",$GLOBALS['lang']['register_email']),
 	  array("{birthyear}",$GLOBALS['lang']['register_birthyear']),
-	  array("{birthselect}",GenBirthYears()),
+	  array("{birthselect}",common::GenBirthYears()),
 	  array("{submit}",$GLOBALS['lang']['register_submit']),
 	);
 	

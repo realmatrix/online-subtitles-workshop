@@ -43,14 +43,14 @@
 			 
 				$content = array
 				  (
-				  array("{form}", form($form)),
+				  array("{form}", common::form($form)),
 				 );
 			 
 		return $content;
 		}
 		
 		function languages(){
-			$languages = GetLanguages();
+			$languages = common::GetLanguages();
 			for ($i=0; $i < count($languages); $i++) { 
 				$res[] = array($languages[$i]['id'], $languages[$i]['language']);
 			}
@@ -58,7 +58,7 @@
 		}
 		
 		function types(){
-			$types = GetVideoTypes();
+			$types = common::GetVideoTypes();
 			for ($i=0; $i < count($types); $i++) { 
 				$res[] = array($types[$i]['id'], $types[$i]['type']);
 			}
@@ -66,7 +66,7 @@
 		}
 		
 		function categories(){
-			$categories = GetVideoCategories();
+			$categories = common::GetVideoCategories();
 			for ($i=0; $i < count($categories); $i++) { 
 				$res[] = array($categories[$i]['id'], $categories[$i]['category']);
 			}

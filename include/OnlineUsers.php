@@ -30,14 +30,14 @@
 		$params = array(
 			array(":session", $session, "str")
 		);
-		$result=db_query("SELECT * FROM OnlineUsers WHERE session=:session", $params);
+		$result=common::db_query("SELECT * FROM OnlineUsers WHERE session=:session", $params);
 		if(count($result)=="0"){
 			$params = array(
 				array(":session", $session, "str"),
 				array(":time", $time, "str"),
 				array(":username", $username, "str")
 			);	
-		 $result1=db_query("INSERT INTO OnlineUsers(session, time, username)VALUES(:session, :time, :username)", $params);
+		 $result1=common::db_query("INSERT INTO OnlineUsers(session, time, username)VALUES(:session, :time, :username)", $params);
 		 }
 		 else {
 		 	$params = array(
@@ -45,7 +45,7 @@
 				array(":time", $time, "str"),
 				array(":username", $username, "str")
 			);
-		 $result2=db_query("UPDATE OnlineUsers SET time=:time, username=:username WHERE session = :session", $params);
+		 $result2=common::db_query("UPDATE OnlineUsers SET time=:time, username=:username WHERE session = :session", $params);
 		 }
 	}
 ////////////////////////////////////////////
@@ -56,7 +56,7 @@
 		$params = array(
 			array(":session", $session, "str")
 		);
-		$result = db_query("DELETE FROM OnlineUsers WHERE session =:session", $params);
+		$result = common::db_query("DELETE FROM OnlineUsers WHERE session =:session", $params);
 	}
 ////////////////////////////////////////////
 
@@ -67,7 +67,7 @@
 		$params = array(
 		array(":time",$time_check,"str")
 		);
- 		$result=db_query("DELETE FROM OnlineUsers WHERE time<:time",$params);
+ 		$result=common::db_query("DELETE FROM OnlineUsers WHERE time<:time",$params);
 	}
 ////////////////////////////////////////////
 
@@ -78,13 +78,13 @@
 		$params = array(
 		array(":session", $session, "str")
 		);
-		$result=db_query("SELECT * FROM OnlineUsers WHERE session=:session", $params);
+		$result=common::db_query("SELECT * FROM OnlineUsers WHERE session=:session", $params);
 		if(count($result)=="0" and $session!=""){
 		$params = array(
 			array(":session", $session, "str"),
 			array(":time", $time, "str")
 		);	
-		 $result1=db_query("INSERT INTO OnlineUsers(session, time)VALUES(:session, :time)", $params);
+		 $result1=common::db_query("INSERT INTO OnlineUsers(session, time)VALUES(:session, :time)", $params);
 		 }
 	}
 ////////////////////////////////////////////
@@ -96,7 +96,7 @@
 		$params = array(
 			array(":username", "", "str")
 		);
-		$result = db_query("SELECT * FROM OnlineUsers WHERE username<>:username", $params);
+		$result = common::db_query("SELECT * FROM OnlineUsers WHERE username<>:username", $params);
 		foreach($result as $row){
 			$user[] = $row['username'];
 		}

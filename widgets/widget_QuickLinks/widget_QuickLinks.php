@@ -21,7 +21,7 @@
 				array("{Logout}", $GLOBALS['lang']['widget_quicklinks_logout']),
 			);
 			$content = file_get_contents("widgets/widget_QuickLinks/QuickLinks.tpl");
-			$res = RenderData($content, $render);
+			$res = common::RenderData($content, $render);
 			return $res;
 		}	
 		

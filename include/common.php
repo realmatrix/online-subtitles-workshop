@@ -1,5 +1,5 @@
 <?php
-
+class Common{
 ////////////////////////////////////////////
 	function LoadTemplate($template){
 		$TemplatePath = $GLOBALS['config']['TemplatesDir'].$GLOBALS['config']['template']."/";
@@ -11,7 +11,7 @@
 ////////////////////////////////////////////
 	function render($array, $template){
 		$template = $template.".tpl";
-		$template = LoadTemplate($template);
+		$template = self::LoadTemplate($template);
 		for ($i = 0; $i <= count($array)-1; $i++) {
 		    $template = str_replace($array[$i][0], $array[$i][1], $template);
 		}
@@ -75,7 +75,7 @@
 			});
 			</script>
 			";
-			if(!checkWidgetOptions($cwidget)){$data="";}
+			if(!self::checkWidgetOptions($cwidget)){$data="";}
 			$content[] = array("{".$cwidget."}", $data);
 			}
 		}
@@ -88,7 +88,7 @@
 		    $cwidget = trim($widget);
 			if($cwidget!=""){include_once "widgets/".$cwidget."/".$cwidget.".php";
 			$content = call_user_func("W".$cwidget."::".$cwidget);
-			$content = render(array(array("{content}",$content)),$cwidget);
+			$content = self::render(array(array("{content}",$content)),$cwidget);
 			}		
 		return $content;
 	}
@@ -102,12 +102,12 @@
 		if($_GET['page']!=""){$page = $_GET['page'];}
 		if($_POST['page']!=""){$page = $_POST['page'];}
 		if($_GET['page']=="" and $_POST['page']==""){$page = "home";}
-		if($options['loggedin']=="yes" and IsLoggedin()){$loadwidget = TRUE;}
-		if($options['loggedin']=="no" and !IsLoggedin()){$loadwidget = TRUE;}
+		if($options['loggedin']=="yes" and self::IsLoggedin()){$loadwidget = TRUE;}
+		if($options['loggedin']=="no" and !self::IsLoggedin()){$loadwidget = TRUE;}
 		if(count($options['show'])>0 and in_array($page, $options['show'])){$loadwidget = TRUE;}
 		if(count($options['show'])==0){$loadwidget=TRUE;}
-		if($options['loggedin']=="yes" and !IsLoggedin()){$loadwidget = FALSE;}
-		if($options['loggedin']=="no" and IsLoggedin()){$loadwidget = FALSE;}	
+		if($options['loggedin']=="yes" and !self::IsLoggedin()){$loadwidget = FALSE;}
+		if($options['loggedin']=="no" and self::IsLoggedin()){$loadwidget = FALSE;}	
 		if(count($options['hide'])>0 and in_array($page, $options['hide'])){$loadwidget = FALSE;}
 		return $loadwidget;
 	}
@@ -140,15 +140,15 @@
 		$content = call_user_func('C'.$section.'::'.$section);
 		$hooks = call_user_func('C'.$section.'::'.$section.'_hooks');
 			for ($i=0; $i < count($hooks); $i++) { 
-				if(CheckControllerHook($section, $hooks[$i][0])==TRUE){call_user_func('C'.$section.'::'.$hooks[$i][1]);}
+				if(self::CheckControllerHook($section, $hooks[$i][0])==TRUE){call_user_func('C'.$section.'::'.$hooks[$i][1]);}
 			}
-		$res = RenderView($content, $controller, $section);
+		$res = self::RenderView($content, $controller, $section);
 		if(!array_key_exists($controller.'_'.$section.'_title', $GLOBALS['page'])){$GLOBALS['ERROR'][]= "GLOBALS['page']['".$controller.'_'.$section."_title'] not found inside language file.";}
 		$array = array(
 		array("{content}",$res),
 		array("{title}",$GLOBALS['page'][$controller.'_'.$section.'_title']),
 		);
-		$res = render($array, $controller."_".$section);
+		$res = self::render($array, $controller."_".$section);
 		return $res;
 	}
 ////////////////////////////////////////////
@@ -240,7 +240,7 @@
 	function LoadSections($controller, $section){
 		require_once ("controllers/".$controller."/".$section.".php");
 		$array = call_user_func('C'.$section."::".$section."_sections");
-		$sections = LoadPage($array);
+		$sections = self::LoadPage($array);
 		return $sections;
 	}
 ////////////////////////////////////////////
@@ -248,7 +248,7 @@
 ////////////////////////////////////////////
 	function GetVideoTypes(){
 		$params = array();
-	 	$result = db_query("SELECT * FROM VideoType", $params);
+	 	$result = self::db_query("SELECT * FROM VideoType", $params);
 		return $result;
 	}
 ////////////////////////////////////////////
@@ -256,7 +256,7 @@
 ////////////////////////////////////////////
 	function GetVideoCategories(){
 		$params = array();
-	 	$result = db_query("SELECT * FROM VideoCategory", $params);
+	 	$result = self::db_query("SELECT * FROM VideoCategory", $params);
 		return $result;
 	}
 ////////////////////////////////////////////
@@ -264,7 +264,7 @@
 ////////////////////////////////////////////
 	function GetLanguages(){
 		$params = array();
-	 	$result = db_query("SELECT * FROM Language", $params);
+	 	$result = self::db_query("SELECT * FROM Language", $params);
 		return $result;
 	}
 ////////////////////////////////////////////
@@ -320,5 +320,5 @@
 		return $form;
 	}
 ////////////////////////////////////////////
-
+}
 ?>

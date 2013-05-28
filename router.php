@@ -37,37 +37,37 @@
 	switch ($SystemPage) {
     case ($SystemPage=="home" || $SystemPage=="otherpage") and $dataonly!="yes":
 		//loading template
-		echo render($TemplateHead, "head");
-		echo render($TemplateHeader, "header");
-		echo render($TemplateLeft, "left");
-		echo render($TemplateBody, "body");
-		echo render($TemplateRight, "right");
-		echo render($TemplateFooter, "footer");
+		echo common::render($TemplateHead, "head");
+		echo common::render($TemplateHeader, "header");
+		echo common::render($TemplateLeft, "left");
+		echo common::render($TemplateBody, "body");
+		echo common::render($TemplateRight, "right");
+		echo common::render($TemplateFooter, "footer");
         break;
     case $SystemPage=="video" :
-		echo render($TemplateHead, "head");
-		echo render($TemplateHeader, "header");
-		echo render($TemplateBody, "body");
-		echo render($TemplateFooter, "footer");
+		echo common::render($TemplateHead, "head");
+		echo common::render($TemplateHeader, "header");
+		echo common::render($TemplateBody, "body");
+		echo common::render($TemplateFooter, "footer");
         break;
     case $SystemPage!="" and $dataonly=="yes" and $getwidget!="":
-		echo render($TemplateHead, "head");
-		echo GetWidget($getwidget);
+		echo common::render($TemplateHead, "head");
+		echo common::GetWidget($getwidget);
         break;
     case $SystemPage!="" and $dataonly=="yes" and $getcontroller!="" and $getsection!="":
-		echo render($TemplateHead, "head");
-		echo LoadSection($getcontroller, $getsection);
+		echo common::render($TemplateHead, "head");
+		echo common::LoadSection($getcontroller, $getsection);
         break;
     case $SystemPage=="register":
-		echo render($TemplateRegister, "register");
+		echo common::render($TemplateRegister, "register");
 		break;
     case $SystemPage=="login":
-		echo render($TemplateLogin, "login");
+		echo common::render($TemplateLogin, "login");
         break;
     case $SystemPage=="logout":
-		echo render($TemplateLogout, "logout");
+		echo common::render($TemplateLogout, "logout");
         break;
     default:
-	   echo render($Template404, "404");
+	   echo common::render($Template404, "404");
 }
 ?>
