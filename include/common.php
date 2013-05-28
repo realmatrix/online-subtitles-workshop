@@ -313,6 +313,9 @@ class Common{
 			if($array['input'][$i]['type']=='hidden'){
 				$form .= "<input type='hidden' name='".$array['input'][$i]['name']."' id='".$array['input'][$i]['id']."' value='".$array['input'][$i]['content']."' ".$array['input'][$i]['extra']."/>";
 			}
+			if($array['input'][$i]['type']=='file'){
+				$form .= "<input type='file' name='".$array['input'][$i]['name']."' id='".$array['input'][$i]['id']."'".$array['input'][$i]['extra']."/>";
+			}			
 			$form .= "</div>";
 		}
 		$form .= "</form>";
