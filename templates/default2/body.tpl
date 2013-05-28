@@ -1,0 +1,4 @@
+
+	{widget_ImageGallery}
+	{content}	
+
