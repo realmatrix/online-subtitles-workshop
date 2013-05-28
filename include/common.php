@@ -32,8 +32,8 @@ class Common{
 		  array("{SystemMessage}",$content),
 		);
 	
-		if($type=="error"){$res = render($Message,"error");}
-		if($type=="success"){$res = render($Message,"success");}
+		if($type=="error"){$res = self::render($Message,"error");}
+		if($type=="success"){$res = self::render($Message,"success");}
 		return $res;
 		}
 		else{

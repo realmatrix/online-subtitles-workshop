@@ -11,7 +11,7 @@
 	include "include/OnlineUsers.php";
 	
 	if($_GET['act']=='logout'){
-		logout();
+		common::logout();
 	}
 	
 	include "onload.php";
