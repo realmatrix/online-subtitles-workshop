@@ -33,8 +33,9 @@
 		 	$result = common::db_query("SELECT * FROM Users WHERE username=:username and password=:password", $params);
 		 	if(count($result)>0)
  			{
- 			 $_SESSION['loggedin'] = "YES"; 
-   			 $_SESSION['username'] = $Username;
+ 			 
+   			 common::login($Username);
+			 
 			 AddOnlineUser();
 			 header( 'Location: index.php' ) ;
  			 $GLOBALS['SUCCESS'][] = $GLOBALS['lang']['login_successfull'].'<script type="text/javascript">$("#login").empty();setTimeout(function(){ window.location = "index.php"; }, 5000);</script>';

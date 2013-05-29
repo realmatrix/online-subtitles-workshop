@@ -51,6 +51,17 @@
 </div>
 <!-- end header -->  
 
+<div id="text-2" class="widget-wrapper widget_text">
+<div class="widget-title">Text Widget</div>
+<div class="textwidget">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac magna eu lectus mattis eleifend dapibus ullamcorper orci. Maecenas sit amet ligula quam, nec lobortis libero. Vivamus feugiat dolor ac justo dictum congue. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</div>
+</div>
+
+
+
+<div class="span4">
+<button class="btn btn-primary" style="width:100%;">test headding</button>
+</div>
+<br><br><br><br><br><br>
 
 <!-- Le javascript  
 ================================================== -->  

@@ -135,6 +135,15 @@ class Common{
 ////////////////////////////////////////////
 
 ////////////////////////////////////////////
+	function login($username){
+		$_SESSION['loggedin'] = "YES"; 
+		$_SESSION['username'] = $username;
+		$userinfo = common::GetUserInfo($username,"");
+		$_SESSION['id'] = $userinfo['id'];
+	}
+////////////////////////////////////////////
+
+////////////////////////////////////////////
 	function LoadSection($controller, $section){
 		include_once "controllers/".$controller."/".$section.".php";
 		$content = call_user_func('C'.$section.'::'.$section);
@@ -144,11 +153,7 @@ class Common{
 			}
 		$res = self::RenderView($content, $controller, $section);
 		if(!array_key_exists($controller.'_'.$section.'_title', $GLOBALS['page'])){$GLOBALS['ERROR'][]= "GLOBALS['page']['".$controller.'_'.$section."_title'] not found inside language file.";}
-		$array = array(
-		array("{content}",$res),
-		array("{title}",$GLOBALS['page'][$controller.'_'.$section.'_title']),
-		);
-		$res = self::render($array, $controller."_".$section);
+		$res=str_replace("{title}", $GLOBALS['page'][$controller.'_'.$section.'_title'], $res);
 		return $res;
 	}
 ////////////////////////////////////////////
@@ -163,7 +168,7 @@ class Common{
 
 ////////////////////////////////////////////
 	function RenderView($array, $view, $section){
-		$page = file_get_contents("views/".$view."/".$section.".tpl");
+		$page = file_get_contents($GLOBALS['config']['TemplatesDir'].$GLOBALS['config']['template']."/".$view."_".$section.".tpl");
 		for ($i = 0; $i <= count($array)-1; $i++) {
 		    $page = str_replace($array[$i][0], $array[$i][1], $page);
 		}
@@ -323,5 +328,24 @@ class Common{
 		return $form;
 	}
 ////////////////////////////////////////////
+
+////////////////////////////////////////////
+	function GetUserInfo($username, $id){
+		if($username!=""){
+			$params = array(
+				array(":username", $username, "str"),
+			);
+			$res=self::db_query("SELECT * FROM Users WHERE username=:username", $params);
+		}
+		if($id!=""){
+			$params = array(
+				array(":id", $id, "str"),
+			);
+			$res=self::db_query("SELECT * FROM Users WHERE username=:id", $params);
+		}
+		return $res;
+	}
+////////////////////////////////////////////
+
 }
 ?>
