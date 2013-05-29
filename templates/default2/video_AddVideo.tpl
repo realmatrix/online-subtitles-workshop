@@ -9,6 +9,8 @@ $('#AddVideo').tabs();
 				<li><a href="#tabs-1">{title}</a></li>
 			</ul>
 			<div id="tabs-1">
-				{content}
+<!-- begin add video form -->
+{form}
+<!-- end add video form -->
 			</div>
 		</div>
