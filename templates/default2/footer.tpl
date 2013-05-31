@@ -1,3 +1,4 @@
+<!--
 <br><br>
 
 		<div id="footer">
@@ -48,3 +49,4 @@
 </body>
 
 </html>
+-->
