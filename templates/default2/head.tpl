@@ -109,7 +109,7 @@ rel="stylesheet" type="text/css" href="{TemplatePath}/tmp/ie.css"><![endif]-->
     </SCRIPT>
 
 <DIV class="noise">
-<DIV style="width: 80%;" id="wrap">
+<DIV style="width: 90%;" id="wrap">
 <P class="skiplink"><A href="https://www.phpbb.com/styles/demo/3.0/board/index.php?style=875#start_here">Skip 
 to content</A></P><A accessKey="t" id="top" name="top"></A>
 <DIV id="header">
@@ -155,9 +155,13 @@ value="875" type="hidden"></FIELDSET></FORM></DIV></DIV>
 <DIV class="catglow">
 <DIV class="cathead-m">
 <DIV class="cathead-r">
-<DIV class="cathead-l">                    Forum                
-</DIV></DIV></DIV>
-<DIV class="trigger active"></DIV>
+<DIV class="cathead-l">                    
+	Forum                
+</DIV>
+</DIV>
+</DIV>
+<DIV class="trigger active">
+</DIV>
 <DIV class="collapsethis">
 <TABLE class="cat" cellSpacing="0" cellPadding="0" width="100%">
   <TBODY>
