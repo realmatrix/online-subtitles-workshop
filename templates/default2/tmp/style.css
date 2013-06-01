@@ -3256,5 +3256,15 @@ span.ranktitle {
 }
 
 #wrapper2{
-	width:960px;
+	width:100%;
+}
+
+#left-column{
+	width:69%;
+	float:left;
+}
+
+#right-column{
+	width:30%;
+	float:right;
 }

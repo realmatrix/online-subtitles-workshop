@@ -1,4 +1,1 @@
 
-	{widget_ImageGallery}
-	{content}	
-
