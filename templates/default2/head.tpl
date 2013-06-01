@@ -10,8 +10,9 @@
 <META name="resource-type" content="document">
 <META name="distribution" content="global">
 <META name="keywords" content="">
-<META name="description" content=""><TITLE>phpBB 3.0.x Styles Demo Board • Index 
-page</TITLE><LINK title="Feed - phpBB 3.0.x Styles Demo Board" rel="alternate" 
+<META name="description" content="">
+<TITLE>{SiteName}</TITLE>
+<LINK title="Feed - phpBB 3.0.x Styles Demo Board" rel="alternate" 
 type="application/atom+xml" href="http://www.phpbb.com/styles/demo/3.0/board/feed.php"><LINK 
 title="Feed - News" rel="alternate" type="application/atom+xml" href="http://www.phpbb.com/styles/demo/3.0/board/feed.php?mode=news"><LINK 
 title="Feed - New Topics" rel="alternate" type="application/atom+xml" href="http://www.phpbb.com/styles/demo/3.0/board/feed.php?mode=topics"><LINK 

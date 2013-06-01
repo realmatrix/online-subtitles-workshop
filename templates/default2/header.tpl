@@ -13,7 +13,7 @@
 to content</A></P><A accessKey="t" id="top" name="top"></A>
 <DIV id="header">
 <DIV class="float-left">
-<H1>phpBB 3.0.x Styles Demo Board</H1></DIV>
+<H1>{SiteName}</H1></DIV>
 <DIV class="float-right">
 <DIV class="quicksearch">
 <FORM id="search" method="get" action="./search.php?style=875&amp;sid=7ec0d899c761409bea8aeccee37ca464">
