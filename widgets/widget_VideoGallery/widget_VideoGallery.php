@@ -16,7 +16,9 @@
 		}
 		
 		function widget_VideoGallery_render(){
-			$array = array();
+			$array = array(
+				array("{TemplatePath}",$GLOBALS['config']['TemplatesDir'].$GLOBALS['config']['template']),
+			);
 			return $array;
 		}
 		
