@@ -3,7 +3,7 @@
 	$GLOBALS['config']['site_title'] = "Online Subtitles Workshop";
 	$GLOBALS['config']['site_description'] = "site description here";
 	
-	$GLOBALS['config']['template'] = "default2";
+	$GLOBALS['config']['template'] = "default";
 	
 	$GLOBALS['config']['language'] = "english_us.php";
 	

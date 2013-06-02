@@ -16,11 +16,14 @@
 			
 		function widget_login_content(){
 			$content = file_get_contents("widgets/widget_login/login.tpl");
-			$content = str_replace("{LoginUsername}", $GLOBALS['lang']['login_username'], $content);
-			$content = str_replace("{LoginPassword}", $GLOBALS['lang']['login_password'], $content);		
-			$content = str_replace("{LoginOrRegister}", $GLOBALS['lang']['login_orregister'], $content);
-			$content = str_replace("{LoginSubmit}", $GLOBALS['lang']['login_submit'], $content);
-			return $content;
+			$array = array(
+				array("{LoginUsername}", $GLOBALS['lang']['login_username']),
+				array("{LoginPassword}", $GLOBALS['lang']['login_password']),
+				array("{LoginOrRegister}", $GLOBALS['lang']['login_orregister']),
+				array("{LoginSubmit}", $GLOBALS['lang']['login_submit']),
+			);
+			$data = Common::RenderData($content, $array);
+			return $data;
 		}
 	}
 

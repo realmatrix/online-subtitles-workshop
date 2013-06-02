@@ -17,10 +17,13 @@
 			
 		function widget_NewsLetter_content(){
 			$content = file_get_contents("widgets/widget_NewsLetter/NewsLetter.tpl");
-			$content = str_replace("{NewsLetterName}", $GLOBALS['lang']['widget_newsletter_name'], $content);
-			$content = str_replace("{NewsLetterEmail}", $GLOBALS['lang']['widget_newsletter_email'], $content);
-			$content = str_replace("{NewsLetterSubmit}", $GLOBALS['lang']['widget_newsletter_submit'], $content);
-			return $content;
+			$array = array(
+				array("{NewsLetterName}", $GLOBALS['lang']['widget_newsletter_name']),
+				array("{NewsLetterEmail}", $GLOBALS['lang']['widget_newsletter_email']),
+				array("{NewsLetterSubmit}", $GLOBALS['lang']['widget_newsletter_submit']),
+			);
+			$data = Common::RenderData($content, $array);
+			return $data;
 		}
 		
 	}

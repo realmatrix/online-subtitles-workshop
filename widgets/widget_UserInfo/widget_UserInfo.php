@@ -17,9 +17,12 @@
 			
 		function widget_UserInfo_content(){
 			$content = file_get_contents("widgets/widget_UserInfo/UserInfo.tpl");
-			$content = str_replace("{WelcomeBack}", $GLOBALS['lang']['login_welcomeback'], $content);
-			$content = str_replace("{UserName}", $_SESSION['username'], $content);
-			return $content;
+			$array = array(
+				array("{WelcomeBack}", $GLOBALS['lang']['login_welcomeback']),
+				array("{UserName}", $_SESSION['username']),
+			);
+			$data = Common::RenderData($content, $array);
+			return $data;
 		}	
 		
 	}

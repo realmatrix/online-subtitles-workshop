@@ -1,3 +1,4 @@
+{widget_ImageGallery}
 start here	
 <DIV class="catglow">
 <DIV class="cathead-m">
