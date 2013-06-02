@@ -151,5 +151,4 @@ background : url({TemplatePath}/files/VideoGallery/images/nav.png) no-repeat;
 
 
 <br>
-
 <br>
