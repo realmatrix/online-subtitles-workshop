@@ -16,8 +16,12 @@
 		}
 		
 		function widget_shoutbox_content(){
-			$content = file_get_contents("widgets/widget_shoutbox/chatango.htm");
-			return $content;
+			return "";
+		}
+		
+		function widget_shoutbox_render(){
+			$array = array();
+			return $array;
 		}	
 		
 	}

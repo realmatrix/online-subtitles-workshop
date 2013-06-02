@@ -16,13 +16,15 @@
 		}
 			
 		function widget_QuickLinks_content(){
-			$render = array(
+			return "";
+		}
+		
+		function widget_QuickLinks_render(){
+			$array = array(
 				array("{AddVideo}", $GLOBALS['lang']['widget_quicklinks_addvideo']),
 				array("{Logout}", $GLOBALS['lang']['widget_quicklinks_logout']),
 			);
-			$content = file_get_contents("widgets/widget_QuickLinks/QuickLinks.tpl");
-			$res = common::RenderData($content, $render);
-			return $res;
+			return $array;
 		}	
 		
 	}

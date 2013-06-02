@@ -16,14 +16,16 @@
 		}
 			
 		function widget_NewsLetter_content(){
-			$content = file_get_contents("widgets/widget_NewsLetter/NewsLetter.tpl");
+			return "";
+		}
+		
+		function widget_NewsLetter_render(){
 			$array = array(
 				array("{NewsLetterName}", $GLOBALS['lang']['widget_newsletter_name']),
 				array("{NewsLetterEmail}", $GLOBALS['lang']['widget_newsletter_email']),
 				array("{NewsLetterSubmit}", $GLOBALS['lang']['widget_newsletter_submit']),
-			);
-			$data = Common::RenderData($content, $array);
-			return $data;
+			);	
+			return $array;
 		}
 		
 	}

@@ -1,6 +1,7 @@
 <?php
 
 	$GLOBALS['config']['site_title'] = "Online Subtitles Workshop";
+	
 	$GLOBALS['config']['site_description'] = "site description here";
 	
 	$GLOBALS['config']['template'] = "default";

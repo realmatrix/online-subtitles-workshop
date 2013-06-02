@@ -16,13 +16,15 @@
 		}
 			
 		function widget_UserInfo_content(){
-			$content = file_get_contents("widgets/widget_UserInfo/UserInfo.tpl");
+			return "";
+		}
+		
+		function widget_UserInfo_render(){
 			$array = array(
 				array("{WelcomeBack}", $GLOBALS['lang']['login_welcomeback']),
 				array("{UserName}", $_SESSION['username']),
 			);
-			$data = Common::RenderData($content, $array);
-			return $data;
+			return $array;
 		}	
 		
 	}

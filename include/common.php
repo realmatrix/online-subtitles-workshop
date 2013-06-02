@@ -88,7 +88,8 @@ class Common{
 		    $cwidget = trim($widget);
 			if($cwidget!=""){include_once "widgets/".$cwidget."/".$cwidget.".php";
 			$content = call_user_func("W".$cwidget."::".$cwidget);
-			$content = self::render(array(array("{content}",$content)),$cwidget);
+			$render = call_user_func("W".$cwidget."::".$cwidget."_render");
+			$content = self::render($render, $cwidget);
 			}		
 		return $content;
 	}

@@ -13,18 +13,21 @@
 			);
 			return $options;
 		}
-			
+	
 		function widget_login_content(){
-			$content = file_get_contents("widgets/widget_login/login.tpl");
+			return "";
+		}
+		
+		function widget_login_render(){
 			$array = array(
 				array("{LoginUsername}", $GLOBALS['lang']['login_username']),
 				array("{LoginPassword}", $GLOBALS['lang']['login_password']),
 				array("{LoginOrRegister}", $GLOBALS['lang']['login_orregister']),
 				array("{LoginSubmit}", $GLOBALS['lang']['login_submit']),
 			);
-			$data = Common::RenderData($content, $array);
-			return $data;
+			return $array;			
 		}
+		
 	}
 
 	

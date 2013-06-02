@@ -1,1 +1,0 @@
-{WelcomeBack} <b>{UserName}</b>
