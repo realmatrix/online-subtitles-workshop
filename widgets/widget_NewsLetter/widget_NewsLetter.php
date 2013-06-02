@@ -3,7 +3,7 @@
 	class Wwidget_NewsLetter{
 		
 		function widget_NewsLetter(){
-			return self::widget_NewsLetter_content();
+			return self::widget_NewsLetter_render();
 		}
 	
 		function widget_NewsLetter_options(){
@@ -13,10 +13,6 @@
 			"loggedin"=>"", // show widget if user loggen in options "yes" for logged in only "no" for not logged in "" for both states
 			);
 			return $options;
-		}
-			
-		function widget_NewsLetter_content(){
-			return "";
 		}
 		
 		function widget_NewsLetter_render(){

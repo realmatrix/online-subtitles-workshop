@@ -2,7 +2,7 @@
 
 	class Wwidget_login{
 		function widget_login(){
-			return self::widget_login_content();
+			return self::widget_login_render();
 		}
 	
 		function widget_login_options(){
@@ -12,10 +12,6 @@
 			"loggedin"=>"no", // show widget if user loggen in options "yes" for logged in only "no" for not logged in "" for both states
 			);
 			return $options;
-		}
-	
-		function widget_login_content(){
-			return "";
 		}
 		
 		function widget_login_render(){

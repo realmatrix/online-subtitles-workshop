@@ -3,7 +3,7 @@
 	class Wwidget_QuickLinks{
 		
 		function widget_QuickLinks(){
-			return self::widget_QuickLinks_content();
+			return self::widget_QuickLinks_render();
 		}
 	
 		function widget_QuickLinks_options(){
@@ -13,10 +13,6 @@
 			"loggedin"=>"yes", // show widget if user loggen in options "yes" for logged in only "no" for not logged in "" for both states
 			);
 			return $options;
-		}
-			
-		function widget_QuickLinks_content(){
-			return "";
 		}
 		
 		function widget_QuickLinks_render(){

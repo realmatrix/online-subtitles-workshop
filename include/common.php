@@ -87,8 +87,7 @@ class Common{
 	function GetWidget($widget){
 		    $cwidget = trim($widget);
 			if($cwidget!=""){include_once "widgets/".$cwidget."/".$cwidget.".php";
-			$content = call_user_func("W".$cwidget."::".$cwidget);
-			$render = call_user_func("W".$cwidget."::".$cwidget."_render");
+			$render = call_user_func("W".$cwidget."::".$cwidget);
 			$content = self::render($render, $cwidget);
 			}		
 		return $content;

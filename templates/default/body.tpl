@@ -1,4 +1,4 @@
 
-	{widget_ImageGallery}
+	{widget_VideoGallery}
 	{content}	
 
