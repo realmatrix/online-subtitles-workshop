@@ -3,10 +3,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
  <head>
   <title>jquery sliders</title>
-  <link rel="stylesheet" href="widgets/widget_ImageGallery/style.css" type="text/css" media="screen" />
   <script type="text/javascript">var _siteRoot='index.html',_root='index.html';</script>
   <script type="text/javascript" src="apps/jquery/jquery-1.9.1.js"></script>
-  <script type="text/javascript" src="widgets/widget_ImageGallery/js/scripts.js"></script>
+  <script type="text/javascript" src="{TemplatePath}/files/VideoGallery/js/scripts.js"></script>
   
 <style>
 	a img {
@@ -50,7 +49,7 @@ margin : -1px 0 0;
 }
 div#headerr div.wrap {
 height : 299px;
-background : url(images/header-bg.png) no-repeat 50% 0;
+background : url({TemplatePath}/files/VideoGallery/images/header-bg.png) no-repeat 50% 0;
 }
 div#headerr div#slide-holder {
 z-index : 40;
@@ -78,7 +77,7 @@ width : 746px; /*973*/
 height : 46px;
 display : none;
 position : absolute;
-background : url(images/slide-bg.png) 0 0;
+background : url({TemplatePath}/files/VideoGallery/images/slide-bg.png) 0 0;
 }
 div#headerr div#slide-holder div#slide-controls p.text {
 float : left;
@@ -113,10 +112,10 @@ div#headerr div#slide-holder div#slide-controls p#slide-nav a.on {
 background-position : 0 -24px;
 }
 div#headerr div#slide-holder div#slide-controls p#slide-nav a {
-background-image : url(images/silde-nav.png);
+background-image : url({TemplatePath}/files/VideoGallery/images/silde-nav.png);
 }
 div#nav ul li a {
-background : url(images/nav.png) no-repeat;
+background : url({TemplatePath}/files/VideoGallery/images/nav.png) no-repeat;
 }
 
 </style>
@@ -127,13 +126,13 @@ background : url(images/nav.png) no-repeat;
   <div id="headerr"><div class="wrap">
    <div id="slide-holder">
 <div id="slide-runner">
-    <a href=""><img id="slide-img-1" src="widgets/widget_ImageGallery/images/nature-photo.png" class="slide" alt="" /></a>
-    <a href=""><img id="slide-img-2" src="widgets/widget_ImageGallery/images/nature-photo1.png" class="slide" alt="" /></a>
-    <a href=""><img id="slide-img-3" src="widgets/widget_ImageGallery/images/nature-photo2.png" class="slide" alt="" /></a>
-    <a href=""><img id="slide-img-4" src="widgets/widget_ImageGallery/images/nature-photo3.png" class="slide" alt="" /></a>
-    <a href=""><img id="slide-img-5" src="widgets/widget_ImageGallery/images/nature-photo4.png" class="slide" alt="" /></a>
-    <a href=""><img id="slide-img-6" src="widgets/widget_ImageGallery/images/nature-photo4.png" class="slide" alt="" /></a>
-	<a href=""><img id="slide-img-7" src="widgets/widget_ImageGallery/images/nature-photo6.png" class="slide" alt="" /></a> 
+    <a href=""><img id="slide-img-1" src="{TemplatePath}/files/VideoGallery/images/nature-photo.png" class="slide" alt="" /></a>
+    <a href=""><img id="slide-img-2" src="{TemplatePath}/files/VideoGallery/images/nature-photo1.png" class="slide" alt="" /></a>
+    <a href=""><img id="slide-img-3" src="{TemplatePath}/files/VideoGallery/images/nature-photo2.png" class="slide" alt="" /></a>
+    <a href=""><img id="slide-img-4" src="{TemplatePath}/files/VideoGallery/images/nature-photo3.png" class="slide" alt="" /></a>
+    <a href=""><img id="slide-img-5" src="{TemplatePath}/files/VideoGallery/images/nature-photo4.png" class="slide" alt="" /></a>
+    <a href=""><img id="slide-img-6" src="{TemplatePath}/files/VideoGallery/images/nature-photo4.png" class="slide" alt="" /></a>
+	<a href=""><img id="slide-img-7" src="{TemplatePath}/files/VideoGallery/images/nature-photo6.png" class="slide" alt="" /></a> 
     <div id="slide-controls">
      <p id="slide-client" class="text"><strong>post: </strong><span></span></p>
      <p id="slide-desc" class="text"></p>
@@ -151,4 +150,5 @@ background : url(images/nav.png) no-repeat;
 </html>
 
 
+<br>
 <br>

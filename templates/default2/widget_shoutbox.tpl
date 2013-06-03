@@ -19,7 +19,22 @@ $('#ShoutBox').tabs();
 				<li><a href="#tabs-1">Shout Box</a></li>
 			</ul>
 			<div id="tabs-1">
-				{content}
+
+
+
+
+
+<object width="100%" height="300" id="obj_1295488390137"><param name="movie" value="http://examplegroup.chatango.com/group"/>
+	<param name="wmode" value="transparent"/><param name="AllowScriptAccess" VALUE="always"/>
+	<param name="AllowNetworking" VALUE="all"/><param name="AllowFullScreen" VALUE="true"/>
+	<param name="flashvars" value="cid=1295488390137&v=0&w=0"/>
+	<embed id="emb_1295488390137" src="http://examplegroup.chatango.com/group" width="100%" height="300" wmode="transparent" allowScriptAccess="always" allowNetworking="all" type="application/x-shockwave-flash" allowFullScreen="true" flashvars="cid=1295488390137&v=0&w=0">
+	</embed>
+	</object> 
+
+
+
+
 			</div>
 		</div>
 <!-- end shout box widget -->	

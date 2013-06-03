@@ -19,7 +19,15 @@ $('#UserInfo').tabs();
 				<li><a href="#tabs-1">User Info</a></li>
 			</ul>
 			<div id="tabs-1">
-				<div align="left">{content}</div>
+				<div align="left">
+					
+					
+
+{WelcomeBack} <b>{UserName}</b>
+					
+					
+					
+				</div>
 			</div>
 		</div>
 <!-- end login form -->		
