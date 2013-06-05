@@ -1,0 +1,90 @@
+.table2 p {
+	text-align:center;
+	}	
+.table2 a:link {
+	color:#d42945;
+	text-decoration:none;
+	border-bottom:1px dotted #ffbac8;
+	}	
+.table2 a:visited {
+	color:#d42945;
+	border-bottom:none;
+	text-decoration:none;
+	}		
+.table2 a:hover,
+.table2 a:focus {
+	color:#f03b58;
+	border-bottom:1px solid #f03b58;
+	text-decoration:none;
+	}
+.table2 a,
+.table2 a:link,
+.table2 a:visited {
+	border:none;
+	}							
+	
+.table2 img {
+	border:0;
+	margin-top:.5em;
+	}	
+.table2 {
+	width:90%;
+	border-top:1px solid #e5eff8;
+	border-right:1px solid #e5eff8;
+	margin:1em auto;
+		border-collapse:collapse;
+	}
+.table2 caption {
+	color: #9ba9b4;
+	font-size:.94em;
+		letter-spacing:.1em;
+		margin:1em 0 0 0;
+		padding:0;
+		caption-side:top;
+		text-align:center;
+	}	
+.table2 tr.odd td	{
+	background:#f7fbff
+	}
+.table2 tr.odd .column1	{
+	background:#f4f9fe;
+	}	
+.column1	{
+	background:#f9fcfe;
+	}
+.table2 td {
+	color:#678197;
+	border-bottom:1px solid #e5eff8;
+	border-left:1px solid #e5eff8;
+	padding:.3em 1em;
+	text-align:center;
+	}				
+.table2 th {
+	font-weight:normal;
+	color: #678197;
+	text-align:left;
+	border-bottom: 1px solid #e5eff8;
+	border-left:1px solid #e5eff8;
+	padding:.3em 1em;
+	}							
+.table2 thead th {
+	background:#f4f9fe;
+	text-align:center;
+	font:bold 1.2em/2em "Century Gothic","Trebuchet MS",Arial,Helvetica,sans-serif;
+	color:#66a3d3
+	}	
+.table2 tfoot th {
+	text-align:center;
+	background:#f4f9fe;
+	}	
+.table2 tfoot th strong {
+	font:bold 1.2em "Century Gothic","Trebuchet MS",Arial,Helvetica,sans-serif;
+	margin:.5em .5em .5em 0;
+	color:#66a3d3;
+		}		
+.table2 tfoot th em {
+	color:#f03b58;
+	font-weight: bold;
+	font-size: 1.1em;
+	font-style: normal;
+	}

@@ -32,7 +32,7 @@
 
 <br><br><br>
 <div id="test1">
-<table cellpadding="0" cellspacing="0" border="0" class="display" id="test">
+<table cellpadding="0" cellspacing="0" border="0" class="table2" id="test">
 	<thead>
 		<tr>
 			<th>Rendering engine</th>

@@ -100,4 +100,6 @@ href="{TemplatePath}/tmp/normal.css">
 <LINK title="A+" rel="alternate stylesheet" type="text/css" href="{TemplatePath}/tmp/medium.css">
 <LINK title="A++" rel="alternate stylesheet" type="text/css" href="{TemplatePath}/tmp/large.css"><!--[if IE]><LINK 
 rel="stylesheet" type="text/css" href="{TemplatePath}/tmp/ie.css"><![endif]-->
-<META name="GENERATOR" content="MSHTML 9.00.8112.16484"></HEAD>
+<META name="GENERATOR" content="MSHTML 9.00.8112.16484">
+<link rel="stylesheet" type="text/css" href="{TemplatePath}/tmp/table.css">
+</HEAD>
