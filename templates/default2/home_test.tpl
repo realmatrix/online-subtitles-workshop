@@ -1,37 +1,36 @@
-<script type="text/javascript">
-$(function(){
-$('#HomeTest').tabs();
-});
-</script>
-
-		<div id="HomeTest">
-			<ul>
-				<li><a href="#tabs-1">{title}</a></li>
-			</ul>
-			<div id="tabs-1">
-
-
-
-
-
-
-
-
-{test}
-
-
-
 <script type="text/javascript" charset="utf-8">
 			$(document).ready(function() {
 				$('#test').dataTable( {
 					"sScrollY": 200,
-					"bJQueryUI": true,
+					"bJQueryUI": false,
 					"sPaginationType": "full_numbers"
 				} );
 			} );
-		</script>
-		
-<br>
+</script>
+
+
+<DIV class="catglow">
+<DIV class="cathead-m">
+<DIV class="cathead-r">
+<DIV class="cathead-l">                    
+	{title}                
+</DIV>
+</DIV>
+</DIV>
+<DIV class="trigger active">
+</DIV>
+<DIV class="collapsethis">
+<TABLE class="cat" cellSpacing="0" cellPadding="0" width="100%">
+  <TBODY>
+  <TR>
+    <TD class="forumdetails"><SPAN class="forum-descriptions">
+
+
+<!-- Content Start Here -->
+{test}
+
+
+<br><br><br>
 <div id="test1">
 <table cellpadding="0" cellspacing="0" border="0" class="display" id="test">
 	<thead>
@@ -461,6 +460,14 @@ $('#HomeTest').tabs();
 </div>
 
 
+<!-- Content End Here -->
+
+
+
+</TD>
+  </TR>
+  </TBODY></TABLE>
+  </DIV></DIV>
 
 
 
@@ -468,9 +475,4 @@ $('#HomeTest').tabs();
 
 
 
-			</div>
-		</div>
-
-
-
-
+		

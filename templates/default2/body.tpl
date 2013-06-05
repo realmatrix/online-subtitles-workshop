@@ -1,4 +1,5 @@
 {widget_VideoGallery}
+{content}
 start here	
 <DIV class="catglow">
 <DIV class="cathead-m">
