@@ -1,26 +1,24 @@
-<html>
-	<head>
-<script src="apps/jquery/jquery-1.9.1.js"></script>
-<link href="templates/default/files/css/style.css" media="all" rel="stylesheet" type="text/css">
-<link href="templates/default/files/jquery-ui/css/ui-lightness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
-<script src="templates/default/files/jquery-ui/js/jquery-ui-1.10.3.custom.js"></script>
-<meta charset="utf-8">
-<script type="text/javascript">
-$(function(){
-$('#loginbox').tabs();
-});
-</script>
-	</head>
-	
-	<body>
+<DIV class="catglow">
+<DIV class="cathead-m">
+<DIV class="cathead-r">
+<DIV class="cathead-l">                    
+	Login                
+</DIV>
+</DIV>
+</DIV>
+<DIV class="trigger active">
+</DIV>
+<DIV class="collapsethis">
+<TABLE class="cat" cellSpacing="0" cellPadding="0" width="100%">
+  <TBODY>
+  <TR>
+    <TD class="forumdetails">
+    	
+    	
+
+
 <!-- login form -->
 		<div id="loginbox">
-			<ul>
-				<li><a href="#tabs-1">Login</a></li>
-			</ul>
-			<div id="tabs-1">
-				
-
 						<div id="login"> <!-- keep login form inside div with id="login" -->
 						<form method="post" action="index.php">
 							<table cellspacing="0" cellpadding="1" style="width:100%;">
@@ -40,14 +38,28 @@ $('#loginbox').tabs();
 						</table>
 						</form>
 						</div>
-				
-				
-			</div>
 		</div>
-<!-- end login form -->		
-	</body>
-</html>
-
-
+<!-- end login form -->		   	 
+    </TD>
+	</TR>
+	</TBODY>
+	</TABLE>
+	</DIV></div>
 
 <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+

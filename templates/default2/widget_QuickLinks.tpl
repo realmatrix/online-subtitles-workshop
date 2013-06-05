@@ -1,25 +1,14 @@
-<html>
-	<head>
-<script src="apps/jquery/jquery-1.9.1.js"></script>
-<link href="templates/default/files/css/style.css" media="all" rel="stylesheet" type="text/css">
-<link href="templates/default/files/jquery-ui/css/ui-lightness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
-<script src="templates/default/files/jquery-ui/js/jquery-ui-1.10.3.custom.js"></script>
-<meta charset="utf-8">
-<script type="text/javascript">
-$(function(){
-$('#QuickLinks').tabs();
-});
-</script>
-	</head>
-	
-	<body>
-		<div id="QuickLinks">
-			<ul>
-				<li><a href="#tabs-1">Quick Links</a></li>
-			</ul>
-			<div id="tabs-1">
-
-
+<DIV class="catglow" style="width:100%;">
+<DIV class="cathead-m">
+<DIV class="cathead-r">
+<DIV class="cathead-l">                    
+	Quick Links                
+</DIV>
+</DIV>
+</DIV>
+<DIV class="trigger active">
+</DIV>
+<DIV class="collapsethis">
 
 
 
@@ -32,12 +21,20 @@ $('#QuickLinks').tabs();
 
 
 
-
-			</div>
-		</div>	
-	</body>
-</html>
-
-
-
+</DIV>
+</div>
 <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

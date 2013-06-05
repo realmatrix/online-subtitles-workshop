@@ -1,23 +1,25 @@
-<html>
-	<head>
-<script src="apps/jquery/jquery-1.9.1.js"></script>
-<link href="templates/default/files/css/style.css" media="all" rel="stylesheet" type="text/css">
-<link href="templates/default/files/jquery-ui/css/ui-lightness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
-<script src="templates/default/files/jquery-ui/js/jquery-ui-1.10.3.custom.js"></script>
-<meta charset="utf-8">
-<script type="text/javascript">
-$(function(){
-$('#NewsLetter').tabs();
-});
-</script>
-	</head>
+<DIV class="catglow">
+<DIV class="cathead-m">
+<DIV class="cathead-r">
+<DIV class="cathead-l">                    
+	News Letter                
+</DIV>
+</DIV>
+</DIV>
+<DIV class="trigger active">
+</DIV>
+<DIV class="collapsethis">
+<TABLE class="cat" cellSpacing="0" cellPadding="0" width="100%">
+  <TBODY>
+  <TR>
+    <TD class="forumdetails"><SPAN class="forum-descriptions">
+
 	
-	<body>
+
+
 		<div id="NewsLetter">
-			<ul>
-				<li><a href="#tabs-1">Subscribe To NewsLetter</a></li>
-			</ul>
-			<div id="tabs-1">
+
+
 
 
 
@@ -41,11 +43,30 @@ $('#NewsLetter').tabs();
 
 
 
-			</div>
-		</div>	
-	</body>
-</html>
 
+		</div>	
+	
+	
+	
+	
+	
+	</SPAN></TD>
+	</TR>
+	</TBODY>
+	</TABLE>
+</DIV></div>
 
 
 <br>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -8,7 +8,7 @@
     </SCRIPT>
 
 <DIV class="noise">
-<DIV style="width: 90%;" id="wrap">
+<DIV class="wrapper2" id="wrap">
 <P class="skiplink"><A href="https://www.phpbb.com/styles/demo/3.0/board/index.php?style=875#start_here">Skip 
 to content</A></P><A accessKey="t" id="top" name="top"></A>
 <DIV id="header">
@@ -51,3 +51,4 @@ value="875" type="hidden"></FIELDSET></FORM></DIV></DIV>
   width="16" height="16">Members</A></LI>
   <LI class="divider float-right"></LI></UL></DIV><A name="start_here"></A>
   
+{widget_VideoGallery}

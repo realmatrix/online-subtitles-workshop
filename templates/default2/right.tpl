@@ -1,7 +1,34 @@
 </div>
-<!-- end left column -->
-<!-- start right column -->
 <div id="right-column">
+	
+	<!-- end left column -->
+<!-- start right column -->
+
+<!-- login widget -->
+	{widget_login}
+<!-- end login widget -->
+
+
+<!-- user info widget -->
+	{widget_UserInfo}
+<!-- end user info widget-->
+
+
+<!-- Quick Links widget -->
+	{widget_QuickLinks}
+<!-- end Quick Links widget-->
+
+
+<!-- News Letter Widget-->
+	{widget_NewsLetter}
+<!-- end of news letter widget -->
+
+
+<!-- shout box widget -->
+				{widget_shoutbox}
+<!-- end shout box widget -->
+	
+	
 start here	
 <DIV class="catglow">
 <DIV class="cathead-m">
@@ -34,6 +61,20 @@ end here
 </div>
 <div style="clear:both;"></div>
 <!-- end content wrapper -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 start here	
 <DIV class="catglow">
