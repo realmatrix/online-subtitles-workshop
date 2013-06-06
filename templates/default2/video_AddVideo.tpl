@@ -1,16 +1,33 @@
-<script type="text/javascript">
-$(function(){
-$('#AddVideo').tabs();
-});
-</script>
+<br /><br />
+<div>
+<DIV class="catglow" style="width:90%; margin: 0 auto;">
+<DIV class="cathead-m">
+<DIV class="cathead-r">
+<DIV class="cathead-l">                    
+	{title}                
+</DIV>
+</DIV>
+</DIV>
+<DIV class="trigger active">
+</DIV>
+<DIV class="collapsethis">
+<TABLE class="cat" cellSpacing="0" cellPadding="0" width="100%">
+  <TBODY>
+  <TR>
+    <TD class="forumdetails">
+    	
+    	
 
-		<div id="AddVideo" style="width:972px;">
-			<ul>
-				<li><a href="#tabs-1">{title}</a></li>
-			</ul>
-			<div id="tabs-1">
-<!-- begin add video form -->
+
+<!-- login form -->
+		
 {form}
-<!-- end add video form -->
-			</div>
-		</div>
+		
+<!-- end login form -->		   	 
+    </TD>
+	</TR>
+	</TBODY>
+	</TABLE>
+	</DIV></div>
+</div>
+<br /><br />

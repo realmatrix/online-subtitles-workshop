@@ -30,7 +30,7 @@ value="875" type="hidden"></FIELDSET></FORM></DIV></DIV>
 <DIV id="nav-wrap-right"></DIV>
 <DIV id="nav">
 <UL>
-  <LI class="active"><A href="https://www.phpbb.com/styles/demo/3.0/board/index.php?style=875&amp;sid=7ec0d899c761409bea8aeccee37ca464"><IMG 
+  <LI class="active"><A href="index.php"><IMG 
   alt="" src="{TemplatePath}/tmp/images/nav-home.png" 
   width="16" height="16">Board index</A></LI>
   <LI class="divider"></LI>
@@ -52,3 +52,10 @@ value="875" type="hidden"></FIELDSET></FORM></DIV></DIV>
   <LI class="divider float-right"></LI></UL></DIV><A name="start_here"></A>
   
 {widget_VideoGallery}
+
+<DIV id="page-body">
+<DIV class="contentpadding">
+<DIV class="forumlist">
+
+<!-- start content wrapper -->
+<div id="wrapper2">
