@@ -3281,3 +3281,7 @@ span.ranktitle {
 .single-column{
 	width:90%;
 }
+
+.quicklinks-ul{
+	padding-left: 10px;
+}
