@@ -3268,3 +3268,12 @@ span.ranktitle {
 	width:302px;
 	float:right;
 }
+
+.form-left{
+	width:50px;
+}
+
+.form-right{
+	width:auto;
+	float:left;
+}
