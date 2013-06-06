@@ -18,7 +18,7 @@
 
 
 <!-- login form -->
-		<div id="loginbox">
+		
 						<div id="login"> <!-- keep login form inside div with id="login" -->
 						<form method="post" action="index.php">
 							<table cellspacing="0" cellpadding="1" style="width:100%;">
@@ -38,7 +38,7 @@
 						</table>
 						</form>
 						</div>
-		</div>
+		
 <!-- end login form -->		   	 
     </TD>
 	</TR>
