@@ -28,8 +28,9 @@
 				{widget_shoutbox}
 <!-- end shout box widget -->
 	
-	
-start here	
+
+<!-- start example -->	
+<!--
 <DIV class="catglow">
 <DIV class="cathead-m">
 <DIV class="cathead-r">
@@ -55,7 +56,8 @@ start here
     <TD class="forumtopics">
       <DIV class="statbubble"><SPAN>0</SPAN><BR>Topics</DIV></TD>
 </TR></TBODY></TABLE></DIV></DIV>
-end here
+-->
+<!-- end example -->
 </div>
 <!-- end right column -->	
 </div>
@@ -75,8 +77,8 @@ end here
 
 
 
-
-start here	
+<!-- start examples -->
+<!--	
 <DIV class="catglow">
 <DIV class="cathead-m">
 <DIV class="cathead-r">
@@ -252,5 +254,6 @@ Category 2</A></DIV></DIV></DIV>
       <DIV class="statbubble"><SPAN>0</SPAN><BR>Topics</DIV></TD>
     <TD class="forumposts">
       <DIV 
-class="statbubble"><SPAN>0</SPAN><BR>Posts</DIV></TD></TR></TBODY></TABLE></DIV></DIV></DIV>
-end new box
+class="statbubble"><SPAN>0</SPAN><BR>Posts</DIV></TD></TR></TBODY></TABLE></DIV></DIV>
+-->
+<!-- end examples -->

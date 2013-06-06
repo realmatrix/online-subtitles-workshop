@@ -1,3 +1,4 @@
+</DIV>
 <SCRIPT type="text/javascript">
     // <![CDATA[
                 $(".forumlist").collapse({show: function(){

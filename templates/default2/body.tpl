@@ -1,6 +1,8 @@
 
 {content}
-start here	
+
+<!-- example start -->
+<!--
 <DIV class="catglow">
 <DIV class="cathead-m">
 <DIV class="cathead-r">
@@ -28,4 +30,5 @@ start here
     <TD class="forumposts">
       <DIV 
 class="statbubble"><SPAN>0</SPAN><BR>Posts</DIV></TD></TR></TBODY></TABLE></DIV></DIV>
-end here
+-->
+<!-- example end -->
