@@ -1,4 +1,5 @@
 <?php
+class Onlineusers{
 	
 ////////////////////////////////////////////
 	function CheckSpiders(){
@@ -90,8 +91,23 @@
 ////////////////////////////////////////////
 
 ////////////////////////////////////////////
+	function GetOnlineGuests(){
+		$user = array();
+		$params = array(
+			array(":username", "", "str")
+		);
+		$result = common::db_query("SELECT * FROM OnlineUsers WHERE username=:username", $params);
+		foreach($result as $row){
+			$user[] = $row['username'];
+		}
+		$res = $user;
+		//print_r($res);
+		return $res;
+	}
+////////////////////////////////////////////
+
+////////////////////////////////////////////
 	function GetOnlineUsers(){
-		$spiders[] = CheckSpiders();
 		$user = array();
 		$params = array(
 			array(":username", "", "str")
@@ -100,10 +116,20 @@
 		foreach($result as $row){
 			$user[] = $row['username'];
 		}
-		$res = array_merge($spiders,$user);
+		$res = $user;
 		//print_r($res);
 		return $res;
 	}
 ////////////////////////////////////////////
+
+////////////////////////////////////////////
+	function GetAllOnline(){
+		$online['spiders']= self::CheckSpiders();
+		$online['guests']= self::GetOnlineGuests();
+		$online['users']= self::GetOnlineUsers();
+		return $online;
+	}
+////////////////////////////////////////////
 	
+}
 ?>

@@ -127,7 +127,7 @@ class Common{
 	function logout(){
 		if(isset($_SESSION['loggedin'])){unset($_SESSION['loggedin']);}
 		if(isset($_SESSION['username'])){unset($_SESSION['username']);}
-		RemoveOnlineUser();
+		Onlineusers::RemoveOnlineUser();
 		session_destroy();
 		header('Location: index.php');
 		$_GET['logout'] = "logout";
@@ -344,6 +344,28 @@ class Common{
 			$res=self::db_query("SELECT * FROM Users WHERE username=:id", $params);
 		}
 		return $res;
+	}
+////////////////////////////////////////////
+
+////////////////////////////////////////////
+	function information(){
+		$AllOnline = Onlineusers::GetAllOnline();
+		$total = count($AllOnline['users'])+count($AllOnline['guests'])+count($AllOnline['spiders']);
+		$info['OnlineUsers'] = count($AllOnline['users']);
+		$info['OnlineGuests'] = count($AllOnline['guests']);
+		for ($i=0; $i < count($AllOnline['spiders']); $i++) { 
+			$spiders .= $AllOnline['spiders'][$i].", ";
+		}
+		$info['spiders'] = $spiders;
+		$info['total'] = $total;
+		$info['OnlineHidden'] = 0;
+			$params = array();
+			$AllRegistered=self::db_query("SELECT * FROM Users", $params);
+		$info['TotalRegistered']= count($AllRegistered);
+			$params = array();
+			$LatestUser=self::db_query("SELECT * FROM Users ORDER BY id DESC LIMIT 1", $params);
+		$info['LatestUser']=$LatestUser[0]['username'];
+		return $info;
 	}
 ////////////////////////////////////////////
 

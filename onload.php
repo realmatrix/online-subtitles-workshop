@@ -1,9 +1,9 @@
 <?php
 	
-	UpdateOnlineUsers();
+	Onlineusers::UpdateOnlineUsers();
 	
-	AddOnlineGuest();
+	Onlineusers::AddOnlineGuest();
 	
-	GetOnlineUsers();
+	Onlineusers::GetOnlineUsers();
 	
 ?>

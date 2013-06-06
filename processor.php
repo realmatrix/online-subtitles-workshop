@@ -76,9 +76,10 @@
 	$Template404 = array
 	  (
 	  array("{test}",$test),
-	);
-
-	//common arrays 
+	); 
+	
+	$SystemInfo = Common::information();
+	
 	$TemplatesCommon = array 
 	(
 	  array("{TemplatePath}",$TemplatePath),
@@ -92,7 +93,14 @@
 	  array("{LoginPassword}",$GLOBALS['lang']['login_password']),
 	  array("{LoginOrRegister}",$GLOBALS['lang']['login_orregister']),
 	  array("{LoginSubmit}",$GLOBALS['lang']['login_submit']),
-	  array("{UserName}",$_SESSION['username']),
+	  array("{UserName}",$_SESSION['username']),	  
+	  array("{TotalOnline}",$SystemInfo['total']),
+	  array("{OnlineGuests}",$SystemInfo['OnlineGuests']),
+	  array("{OnlineRegistered}",$SystemInfo['OnlineUsers']),
+	  array("{OnlineHidden}",$SystemInfo['OnlineHidden']),
+	  array("{TotalRegistered}",$SystemInfo['TotalRegistered']),
+	  array("{TotalUsers}",$SystemInfo['TotalRegistered']),
+	  array("{LatestUser}",$SystemInfo['LatestUser']), 
 	);
 
 	$TemplatesCommon = array_merge($TemplatesCommon,$SystemWidgets);

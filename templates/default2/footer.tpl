@@ -33,7 +33,7 @@ is currently Fri May 31, 2013 1:43 pm</DIV><BR>
 <DIV class="collapsethis">
 <DIV style='background-image: url("./styles/absolution_14665/theme/images/who-is-online.png");' 
 class="statspanel">                In total there are <STRONG>{TotalOnline}</STRONG> users 
-online :: {Registered} registered, {Hidden} hidden and {Guestes} guests <!--(based on users active over the past 5 minutes)--><!--<br />Most users ever online was <strong>95</strong> on Fri May 29, 2009 9:31 pm--><BR><BR>Registered 
+online :: {OnlineRegistered} registered, {OnlineHidden} hidden and {OnlineGuests} guests <!--(based on users active over the past 5 minutes)--><!--<br />Most users ever online was <strong>95</strong> on Fri May 29, 2009 9:31 pm--><BR><BR>Registered 
 users: {TotalRegistered} registered users<BR><BR><STRONG>Legend: <A style="color: rgb(170, 0, 0);" 
 href="https://www.phpbb.com/styles/demo/3.0/board/memberlist.php?style=875&amp;mode=group&amp;g=5&amp;sid=7ec0d899c761409bea8aeccee37ca464">Administrators</A>, 
 <A style="color: rgb(0, 170, 0);" href="https://www.phpbb.com/styles/demo/3.0/board/memberlist.php?style=875&amp;mode=group&amp;g=4&amp;sid=7ec0d899c761409bea8aeccee37ca464">Global 
@@ -42,7 +42,7 @@ a group</A></STRONG><BR></DIV>
 <DIV style='background-image: url("./styles/absolution_14665/theme/images/statistics.png");' 
 class="statspanel">            	Total videos <STRONG>{TotalVideos}</STRONG> • Total subtitles 
 <STRONG>{TotalSubtitles}</STRONG> • Total members <STRONG>{TotalUsers}</STRONG> • Our newest member 
-<STRONG><A href="https://www.phpbb.com/styles/demo/3.0/board/memberlist.php?style=875&amp;mode=viewprofile&amp;u=2&amp;sid=7ec0d899c761409bea8aeccee37ca464">Admin</A></STRONG>
+<STRONG><A href="#">{LatestUser}</A></STRONG>
 </DIV>
 </DIV>
 </DIV>
@@ -53,10 +53,10 @@ class="statspanel">            	Total videos <STRONG>{TotalVideos}</STRONG> • 
 </DIV></DIV><!-- /contentpadding --></DIV><!-- /wrap -->
 <DIV style="clear: both;"></DIV>
 <DIV style="width: 80%;" class="footer"><!-- Please do not remove the following credit line. This style is free, and attribution such as this helps to keep it in development. Thanks -->© 
-Absolution design by <A href="http://www.christianbullock.com/">Christian 
-Bullock</A>.     <!-- Please do not remove the above credit line. This style is free, and attribution such as this helps to keep it in development. Thanks --><BR>Powered 
-by <A href="http://www.phpbb.com/">phpBB</A>® Forum Software © phpBB Group    
-<BR>Time : 0.047s | 11 Queries | GZIP : On</DIV></DIV><!-- /noise -->
+Absolution design by <A href="http://www.christianbullock.com/">Christian
+Bullock</A> modified by <a href="#">RealMatrix</a>.     <!-- Please do not remove the above credit line. This style is free, and attribution such as this helps to keep it in development. Thanks --><BR>Powered 
+by <A href="#">Online Subtitles Workshop</A>    
+</DIV></DIV><!-- /noise -->
 <SCRIPT type="text/javascript">
     // <![CDATA[
        $(function() {
@@ -65,4 +65,4 @@ by <A href="http://www.phpbb.com/">phpBB</A>® Forum Software © phpBB Group
     // ]]>
     </SCRIPT>
 
-<DIV><A accessKey="z" id="bottom" name="bottom"></A></DIV></BODY></HTML>
+</BODY></HTML>

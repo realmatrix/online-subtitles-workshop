@@ -36,7 +36,7 @@
  			 
    			 common::login($Username);
 			 
-			 AddOnlineUser();
+			 Onlineusers::AddOnlineUser();
 			 header( 'Location: index.php' ) ;
  			 $GLOBALS['SUCCESS'][] = $GLOBALS['lang']['login_successfull'].'<script type="text/javascript">$("#login").empty();setTimeout(function(){ window.location = "index.php"; }, 5000);</script>';
 			}
