@@ -3277,3 +3277,7 @@ span.ranktitle {
 	width:auto;
 	float:left;
 }
+
+.single-column{
+	width:90%;
+}

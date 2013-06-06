@@ -45,6 +45,7 @@
 
 //widget Quick Links
 	$GLOBALS['lang']['widget_quicklinks_addvideo'] = "Add new video";
+	$GLOBALS['lang']['widget_quicklinks_addsubtitle'] = "Add new subtitle";
 	$GLOBALS['lang']['widget_quicklinks_logout'] = "Logout";
 	
 //add video

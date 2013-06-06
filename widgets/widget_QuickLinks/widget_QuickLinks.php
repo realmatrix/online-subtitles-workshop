@@ -18,6 +18,7 @@
 		function widget_QuickLinks_render(){
 			$array = array(
 				array("{AddVideo}", $GLOBALS['lang']['widget_quicklinks_addvideo']),
+				array("{AddSubtitle}", $GLOBALS['lang']['widget_quicklinks_addsubtitle']),
 				array("{Logout}", $GLOBALS['lang']['widget_quicklinks_logout']),
 			);
 			return $array;

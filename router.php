@@ -44,7 +44,7 @@
 		echo common::render($TemplateRight, "right");
 		echo common::render($TemplateFooter, "footer");
         break;
-    case $SystemPage=="video" :
+    case $SystemPage=="video" or $SystemPage=="subtitle":
 		echo common::render($TemplateHead, "head");
 		echo common::render($TemplateHeader, "header");
 		echo common::render($TemplateBody, "body");
