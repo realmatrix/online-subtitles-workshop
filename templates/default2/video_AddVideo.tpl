@@ -1,7 +1,10 @@
 <style>
 	#submitnewvideo input[type=text], input[type=file]{
-		width:100%;
-		margin:5px;
+		width: 100%;
+		margin: 5px;
+	}
+	#submitnewvideo textarea{
+		width: 100%;
 	}
 </style>
 <br /><br />
@@ -82,6 +85,27 @@
 	<select name="rd-day" id="rd-day"><option></option>{rd-day}</select>
 	<select name="rd-year" id="rd-year"><option></option>{rd-year}</select>
 	
+	<br />
+	<label for="casting">Casting</label>
+	<input type="text" name="casting" id="casting" value=""/>
+
+	<br />
+	<label for="director">Director</label>
+	<input type="text" name="director" id="director" value=""/>
+
+	<label for="length" >Length</label>
+	<select name="length" id="length">
+		<option></option>
+	{minutes}</select>	minute(s)
+	
+	<br />
+	<label for="tags">Casting</label>
+	<input type="text" name="tags" id="tags" value=""/>
+
+	<br />
+	<label for="synopsis">Synopsis</label>
+	<textarea id="synopsis" name="synopsis" rows="5"></textarea>
+		
     <br />
 	<label for="ThumbnailImage" id="label-VideoImage">Thumbnail Image</label>
 	<input type="file" name="ThumbnailImage"/>
