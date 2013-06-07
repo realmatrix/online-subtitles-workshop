@@ -27,30 +27,52 @@
 
 <!-- add video form -->
 <form name="submitnewvideo" id="submitnewvideo" method="post" action="index.php">
+	
 	<label for="VideoType" id="label-VideoType">ADD A NEW</label>
 	<select name="VideoType" id="VideoType">
 		<option></option>
 		{VideoType}
 	</select>
+	
 	<label for="VideoCategory" id="label-VideoCategory">Category</label>
 	<select name="VideoCategory" id="VideoCategory">
 		<option></option>
 		{VideoCategory}
 	</select>
+	
 	<label for="VideoLanguage" id="label-VideoLanguage">Language</label>
 	<select name="VideoLanguage" id="VideoLanguage">
 		<option></option>
 		{VideoLanguage}
 	</select>
+	
 	<br />
 	<label for="VideoTitle" id="label-VideoTitle">Video Title</label>
 	<input type="text" name="VideoTitle" id="VideoTitle" value=""/>
+	
 	<br />
+	<label for="VideoOtherTitle" id="label-VideoTitle">Video Other Title</label>
+	<input type="text" name="VideoOtherTitle" id="VideoOtherTitle" value=""/>
+	
+	<br />
+	<label for="Country" id="label-VideoTitle">Country</label>
+        <div style="overflow: auto; width: 100%; height: 80px; border: 1px solid #336699; padding-left: 5px">
+            <input type="checkbox" name="languages" value="English"> English<br>
+            <input type="checkbox" name="languages" value="Hindi"> Hindi<br>
+            <input type="checkbox" name="languages" value="Italian"> Italian<br>
+            <input type="checkbox" name="languages" value="Chinese"> Chinese<br>
+            <input type="checkbox" name="languages" value="Japanese"> Japanese<br>
+            <input type="checkbox" name="languages" value="German"> German<br>
+        </div>
+        
+    <br />
 	<label for="ThumbnailImage" id="label-VideoImage">Thumbnail Image</label>
 	<input type="file" name="ThumbnailImage"/>
+	
 	<br />
 	<label for="LargeImage" id="label-VideoImage">Large Image</label>
 	<input type="file" name="LargeImage"/>
+	
 	<br />	
 	<div style="width:100%; text-align: center;">
 		<input type="submit" id="forum-submit" value="submit" onclick="$.post('server.php', $('#submitnewvideo').serialize())"/>
