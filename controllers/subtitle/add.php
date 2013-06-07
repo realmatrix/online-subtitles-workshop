@@ -4,7 +4,7 @@
 			
 		function add_sections(){
 			$array = array(
-				array("subttile", "AddSubtitle"),
+				array("subtitle", "AddSubtitle"),
 			);
 			return $array;
 		}	

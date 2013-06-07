@@ -46,7 +46,7 @@ $.ajax( {
 
 <!-- add video form -->
 <div id="div-submitnewvideo">
-<form name="submitnewvideo" id="submitnewvideo" method="post" action="index.php" onsubmit="processForm('submitnewvideo','div-submitnewvideo'); return false;">
+<form name="submitnewvideo" id="submitnewvideo" action="#" onsubmit="processForm('submitnewvideo','div-submitnewvideo'); return false;">
 	
 	<label for="VideoType" id="label-VideoType">ADD A NEW</label>
 	<select name="VideoType" id="VideoType">
