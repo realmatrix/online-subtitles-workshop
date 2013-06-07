@@ -14,7 +14,7 @@
 	//your validation code
 	$.ajax( {
 	        type: 'GET',
-	        url: index.php,
+	        url: 'index.php',
 	        data: $('#'+formId).serialize(), 
 	        success: function(data) {
 	            $('#divid').html(data);
@@ -28,7 +28,7 @@
 	//your validation code
 	$.ajax( {
 	        type: 'POST',
-	        url: index.php,
+	        url: 'index.php',
 	        data: $('#'+formId).serialize(), 
 	        success: function(data) {
 	            $('#divid').html(data);

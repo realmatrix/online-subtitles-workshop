@@ -28,6 +28,11 @@ $(function(){
 </script>
 
 <style>
+section {
+	display: block;
+	overflow: hidden;
+	position: relative;
+}
 .button {
 	background: #014464;
 	background: -moz-linear-gradient(top, #0D658E, #0C577A 50%, #014D71 51%, #003E5C);

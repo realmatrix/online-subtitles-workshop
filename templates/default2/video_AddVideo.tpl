@@ -1,3 +1,19 @@
+<script type='text/javascript' src='apps/jquery/jquery-1.9.1.js'></script> 
+<script>
+function processForm(formId, divID) { 
+//your validation code
+alert($("#"+formId).serialize());
+$.ajax( {
+        type: 'POST',
+        url: 'index.php',
+        data: $("#"+formId).serialize(), 
+        success: function(data) {
+            $("#"+divID).html(data);
+        }
+    } );
+}
+</script>
+
 <style>
 	#submitnewvideo input[type=text], input[type=file]{
 		width: 100%;
@@ -29,7 +45,8 @@
 
 
 <!-- add video form -->
-<form name="submitnewvideo" id="submitnewvideo" method="post" action="index.php">
+<div id="div-submitnewvideo">
+<form name="submitnewvideo" id="submitnewvideo" method="post" action="index.php" onsubmit="processForm('submitnewvideo','div-submitnewvideo'); return false;">
 	
 	<label for="VideoType" id="label-VideoType">ADD A NEW</label>
 	<select name="VideoType" id="VideoType">
@@ -37,24 +54,24 @@
 		{VideoType}
 	</select>
 	
-	<label for="VideoCategory" id="label-VideoCategory">Category</label>
+	<label for="VideoCategory" >Category</label>
 	<select name="VideoCategory" id="VideoCategory">
 		<option></option>
 		{VideoCategory}
 	</select>
 	
-	<label for="VideoLanguage" id="label-VideoLanguage">Language</label>
+	<label for="VideoLanguage">Language</label>
 	<select name="VideoLanguage" id="VideoLanguage">
 		<option></option>
 		{VideoLanguage}
 	</select>
 	
 	<br />
-	<label for="VideoTitle" id="label-VideoTitle">Video Title</label>
+	<label for="VideoTitle">Video Title</label>
 	<input type="text" name="VideoTitle" id="VideoTitle" value=""/>
 	
 	<br />
-	<label for="VideoOtherTitle" id="label-VideoTitle">Video Other Title</label>
+	<label for="VideoOtherTitle">Video Other Title</label>
 	<input type="text" name="VideoOtherTitle" id="VideoOtherTitle" value=""/>
 	
 	<br />
@@ -96,7 +113,7 @@
 	<label for="length" >Length</label>
 	<select name="length" id="length">
 		<option></option>
-	{minutes}</select>	minute(s)
+	{length}</select>	minute(s)
 	
 	<br />
 	<label for="tags">Casting</label>
@@ -116,7 +133,7 @@
 	
 	<br />	
 	<div style="width:100%; text-align: center;">
-		<input type="submit" id="forum-submit" value="submit" onclick="$.post('server.php', $('#submitnewvideo').serialize())"/>
+		<input type="submit" id="forum-submit" value="submit" />
 	</div>
 	<input type="hidden" name="dataonly" id="dataonly" value="yes"/>
 	<input type="hidden" name="getcontroller" id="getcontroller" value="video"/>
@@ -124,6 +141,7 @@
 	<input type="hidden" name="ssec" id="ssec" value="AddVideo"/>
 	<input type="hidden" name="h" id="h" value="SubmitVideo"/>
 </form>
+</div>
 <!-- end add video form -->		
 
 

@@ -28,6 +28,7 @@
 				  array("{rd-day}", self::days()),
 				  array("{rd-month}", self::months()),
 				  array("{rd-year}", self::years()),
+				  array("{length}", self::minutes()),
 				 );
 			 
 		return $content;
@@ -89,6 +90,13 @@
 			return $res;
 		}
 		
+		function minutes(){
+			$minutes = Common::minutes(300);
+			for ($i=0; $i < count($minutes); $i++) { 
+				$res .= "<option value='".$minutes[$i]."'>".$minutes[$i]."</option>";
+			}
+			return $res;	
+		}
 		
 	}
 	

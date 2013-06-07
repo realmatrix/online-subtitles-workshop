@@ -1,7 +1,9 @@
 <?php
 
 	session_start();
-		
+	
+	//print_r($_GET);	
+	
 	include "include/db.php";
 	
 	include "include/config.php";
