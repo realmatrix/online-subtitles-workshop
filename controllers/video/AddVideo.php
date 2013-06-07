@@ -24,13 +24,17 @@
 				  array("{VideoType}", self::types()),
 				  array("{VideoCategory}", self::categories()),
 				  array("{VideoLanguage}", self::languages()),
+				  array("{Countries}", self::countries()),			  
+				  array("{rd-day}", self::days()),
+				  array("{rd-month}", self::months()),
+				  array("{rd-year}", self::years()),
 				 );
 			 
 		return $content;
 		}
 		
 		function languages(){
-			$languages = common::GetLanguages();
+			$languages = Common::GetLanguages();
 			for ($i=0; $i < count($languages); $i++) { 
 				$res .= "<option value='".$languages[$i]['id']."'>".$languages[$i]['language']."</option>";
 			}
@@ -38,7 +42,7 @@
 		}
 		
 		function types(){
-			$types = common::GetVideoTypes();
+			$types = Common::GetVideoTypes();
 			for ($i=0; $i < count($types); $i++) { 
 				$res .= "<option value='".$types[$i]['id']."'>".$types[$i]['type']."</option>";
 			}
@@ -46,15 +50,45 @@
 		}
 		
 		function categories(){
-			$categories = common::GetVideoCategories();
+			$categories = Common::GetVideoCategories();
 			for ($i=0; $i < count($categories); $i++) { 
 				$res .= "<option value='".$categories[$i]['id']."'>".$categories[$i]['category']."</option>";
 			}
 			return $res;
 		}
 		
+		function countries(){
+			$countries = Common::GetCountries();
+			for ($i=0; $i < count($countries); $i++) { 
+				$res .= "<option value='".$countries[$i]['id']."'>".$countries[$i]['short_name']."</option>";
+			}
+			return $res;
+		}
 		
+		function days(){
+			$days = Common::days();
+			for ($i=0; $i < count($days); $i++) { 
+				$res .= "<option value='".$days[$i]."'>".$days[$i]."</option>";
+			}
+			return $res;
+		}
+		
+		function months(){
+			$months = Common::months();
+			for ($i=0; $i < count($months); $i++) { 
+				$res .= "<option value='".$months[$i]."'>".$months[$i]."</option>";
+			}
+			return $res;
+		}
 
+		function years(){
+			$years = Common::years();
+			for ($i=0; $i < count($years); $i++) { 
+				$res .= "<option value='".$years[$i]."'>".$years[$i]."</option>";
+			}
+			return $res;
+		}
+		
 		
 	}
 	

@@ -45,12 +45,41 @@ class Common{
 ////////////////////////////////////////////
 	function GenBirthYears(){
 		$content = "<option></option>";
-		$counter = "2010";
+		$CurrentYear = date("Y");
+		$counter = $CurrentYear;
 		for ($i = 1; $i <= 100; $i++) {
 			$counter = $counter - 1;
 		    $content .= "<option>".$counter."</option>";
 		}
 		return $content;
+	}
+////////////////////////////////////////////
+
+////////////////////////////////////////////
+	function days(){
+		for ($i=1; $i <= 31; $i++) { 
+			$res[] = $i;
+		}
+		return $res;
+	}
+////////////////////////////////////////////
+
+////////////////////////////////////////////
+	function months(){
+		for ($i=1; $i <= 12; $i++) { 
+			$res[] = $i;
+		}
+		return $res;
+	}
+////////////////////////////////////////////
+
+////////////////////////////////////////////
+	function years(){
+		$CurrentYear = date("Y");
+		for ($i=1800; $i <= $CurrentYear; $i++) { 
+			$res[] = $i;
+		}
+		return $res;
 	}
 ////////////////////////////////////////////
 
@@ -270,6 +299,14 @@ class Common{
 	function GetLanguages(){
 		$params = array();
 	 	$result = self::db_query("SELECT * FROM Language", $params);
+		return $result;
+	}
+////////////////////////////////////////////
+
+////////////////////////////////////////////
+	function GetCountries(){
+		$params = array();
+	 	$result = self::db_query("SELECT * FROM Countries", $params);
 		return $result;
 	}
 ////////////////////////////////////////////

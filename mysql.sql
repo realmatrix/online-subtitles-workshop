@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 07, 2013 at 10:02 AM
+-- Generation Time: Jun 07, 2013 at 10:20 AM
 -- Server version: 5.5.29-log
 -- PHP Version: 5.3.21
 
@@ -17,10 +17,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `countries`
+-- Table structure for table `Countries`
 --
 
-CREATE TABLE IF NOT EXISTS `countries` (
+CREATE TABLE IF NOT EXISTS `Countries` (
   `id` int(5) NOT NULL AUTO_INCREMENT,
   `iso2` char(2) DEFAULT NULL,
   `short_name` varchar(80) NOT NULL DEFAULT '',
@@ -34,10 +34,10 @@ CREATE TABLE IF NOT EXISTS `countries` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=251 ;
 
 --
--- Dumping data for table `countries`
+-- Dumping data for table `Countries`
 --
 
-INSERT INTO `countries` (`id`, `iso2`, `short_name`, `long_name`, `iso3`, `numcode`, `un_member`, `calling_code`, `cctld`) VALUES
+INSERT INTO `Countries` (`id`, `iso2`, `short_name`, `long_name`, `iso3`, `numcode`, `un_member`, `calling_code`, `cctld`) VALUES
 (1, 'AF', 'Afghanistan', 'Islamic Republic of Afghanistan', 'AFG', '004', 'yes', '93', '.af'),
 (2, 'AX', 'Aland Islands', '&Aring;land Islands', 'ALA', '248', 'no', '358', '.ax'),
 (3, 'AL', 'Albania', 'Republic of Albania', 'ALB', '008', 'yes', '355', '.al'),
