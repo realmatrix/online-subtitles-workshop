@@ -2,7 +2,7 @@
 <DIV class="cathead-m">
 <DIV class="cathead-r">
 <DIV class="cathead-l">                    
-	Quick Links                
+	Manage Account                
 </DIV>
 </DIV>
 </DIV>
@@ -16,12 +16,12 @@
     <TD class="forumdetails"><SPAN class="forum-descriptions">
 
 
-<div id="widgt-quicklinks">
-  <ul class="quicklinks-ul">
-  	<li><a class="quicklinks-link" href="index.php?page=video&sec=add">{AddVideo}</a></li>
-  	<li><a class="quicklinks-link" href="index.php?page=subtitle&sec=add">{AddSubtitle}</a></li>
-  	<li><a class="quicklinks-link" href="index.php?act=logout">{Logout}</a></li>
-  </ul>
+<div id="widgt-ManageAccount">
+	my videos <br />
+	favourite videos <br />
+	my subtitles <br />
+	my teams <br />
+	joined teams <br />
 </div>
 
 
@@ -33,5 +33,3 @@
 </DIV>
 </div>
 <br>
-
-

@@ -18,6 +18,9 @@
 	{widget_QuickLinks}
 <!-- end Quick Links widget-->
 
+<!-- Manage account -->
+	{widget_Manage}
+<!-- end Manage account-->
 
 <!-- News Letter Widget-->
 	{widget_NewsLetter}
