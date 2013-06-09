@@ -186,12 +186,12 @@ class Common{
 		$res = "";
 		if(self::checkSectionOptions($controller, $section, $message)){
 		include_once "controllers/".$controller."/".$section.".php";
-		$content = call_user_func('C'.$section.'::'.$section);
-		$options = 
 		$hooks = call_user_func('C'.$section.'::'.$section.'_hooks');
 			for ($i=0; $i < count($hooks); $i++) { 
 				if(self::CheckControllerHook($section, $hooks[$i][0])==TRUE){call_user_func('C'.$section.'::'.$hooks[$i][1]);}
 			}
+		$content = call_user_func('C'.$section.'::'.$section);
+		$options = 
 		$res = self::RenderView($content, $controller, $section);
 		if(!array_key_exists($controller.'_'.$section.'_title', $GLOBALS['page'])){$GLOBALS['ERROR'][]= "GLOBALS['page']['".$controller.'_'.$section."_title'] not found inside language file.";}
 		$res=str_replace("{title}", $GLOBALS['page'][$controller.'_'.$section.'_title'], $res);
@@ -445,6 +445,21 @@ class Common{
 		return $info;
 	}
 ////////////////////////////////////////////
+
+////////////////////////////////////////////
+	function FormatMessage($type, $message){
+		if(count($message)>0){
+			$res = "<div class='div-".$type."'><ul class='ul-".$type."'>";
+				for ($i=0; $i < count($message); $i++) { 
+					$res .= "<li>".$message[$i]."</li>";
+				}
+			$res .= "</ul></div>";
+			return $res;
+		}
+		else return "";
+	}
+////////////////////////////////////////////
+
 
 }
 ?>

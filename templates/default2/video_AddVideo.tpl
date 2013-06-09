@@ -2,28 +2,28 @@
 <head>
 <script type='text/javascript' src='apps/jquery/jquery-2.0.0.js'></script> 
 <script>
- 
 // variable to hold request
 var request;
 // bind to the submit event of our form
 $("form#submitnewvideo").submit(function(event){
+	$("#SubmittingForm").show();
     // abort any pending request
     if (request) {
         request.abort();
     }
     //form validation
-    var faults = $('input').filter(function() {
+//    var faults = $('input').filter(function() {
     // filter input elements to required ones that are empty
-    return $(this).data('required') && $(this).val() === "";
-    }).css("background-color", "red"); // make them attract the eye
-    if(faults.length) return false; // if any required are empty, cancel submit
-     var faults = $('select').filter(function() {
+//    return $(this).data('required') && $(this).val() === "";
+//    }).css("background-color", "red"); // make them attract the eye
+//    if(faults.length) return false; // if any required are empty, cancel submit
+//     var faults = $('select').filter(function() {
     // filter input elements to required ones that are empty
-    return $(this).data('required') && $(this).val() === "";
-    }).css("background-color", "red"); // make them attract the eye
-    if(faults.length) return false; // if any required are empty, cancel submit   
+//    return $(this).data('required') && $(this).val() === "";
+//    }).css("background-color", "red"); // make them attract the eye
+//    if(faults.length) return false; // if any required are empty, cancel submit   
     // setup some local variables
-    var $form = $(this);
+   var $form = $(this);
     // let's select and cache all the fields
     var $inputs = $form.find("input, select, button, textarea, file");
     // serialize the data in the form
@@ -77,6 +77,20 @@ $("form#submitnewvideo").submit(function(event){
 	#submitnewvideo textarea{
 		width: 100%;
 	}
+	.div-error{
+		width: 100%;
+		border: 1px;
+		border-color: red;
+		padding: 20px;
+		color: red;
+	}
+	.div-message{
+		width: 100%;
+		border: 1px;
+		border-color: green;
+		padding: 20px;
+		color: green;
+	}
 </style>
 </head>
 <body>
@@ -98,8 +112,10 @@ $("form#submitnewvideo").submit(function(event){
   <TR>
     <TD class="forumdetails">
     	
-    	
+<div id='SubmittingForm' style='width:100%;text-align: center; display: none;'><img src="templates/default2/tmp/ajax-loader.gif"/></div>    	
+{message}
 
+{error}
 
 <!-- add video form -->
 <div id="div-submitnewvideo">
