@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 09, 2013 at 12:51 PM
+-- Generation Time: Jun 09, 2013 at 07:28 PM
 -- Server version: 5.5.29-log
 -- PHP Version: 5.3.21
 
@@ -425,14 +425,14 @@ CREATE TABLE IF NOT EXISTS `OnlineUsers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=249 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=267 ;
 
 --
 -- Dumping data for table `OnlineUsers`
 --
 
 INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(248, '46b9jgm5gcte2bkgpe03fla7u4', 1370778242, 'test');
+(266, '46b9jgm5gcte2bkgpe03fla7u4', 1370802297, '');
 
 -- --------------------------------------------------------
 
@@ -498,13 +498,23 @@ CREATE TABLE IF NOT EXISTS `Videos` (
   `country` int(11) NOT NULL,
   `genres` varchar(255) NOT NULL,
   `release_date` date NOT NULL,
-  `casting` int(11) NOT NULL,
-  `director` int(11) NOT NULL,
+  `casting` varchar(255) NOT NULL,
+  `director` varchar(255) NOT NULL,
   `length` int(11) NOT NULL,
   `tags` varchar(255) NOT NULL,
   `synopsis` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+
+--
+-- Dumping data for table `Videos`
+--
+
+INSERT INTO `Videos` (`id`, `uid`, `title`, `other_title`, `type`, `category`, `language`, `country`, `genres`, `release_date`, `casting`, `director`, `length`, `tags`, `synopsis`) VALUES
+(7, 0, ':title', ':other_title', 0, 0, 0, 0, ':genres', '0000-00-00', '0', '0', 0, ':tags', ':synopsis'),
+(8, 0, ':title', ':other_title', 0, 0, 0, 0, ':genres', '0000-00-00', '0', '0', 0, ':tags', ':synopsis'),
+(9, 0, ':title', ':other_title', 0, 0, 0, 0, ':genres', '0000-00-00', '0', '0', 0, ':tags', ':synopsis'),
+(10, 18, 'jhkghj', 'ghjhgj', 2, 2, 3, 16, '2', '1817-11-19', '0', '0', 5, 'ghjhj', ' ghjghjgjh');
 
 -- --------------------------------------------------------
 
