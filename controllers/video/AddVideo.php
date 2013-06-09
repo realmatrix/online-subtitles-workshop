@@ -114,6 +114,7 @@
 			if($_POST['VideoTitle']==""){self::$error[]="video title is missing";}
 			if($_POST['VideoOtherTitle']==""){self::$error[]="Video Other Title is missing";}
 			if($_POST['country']==""){self::$error[]="select country";}
+			if($_POST['genres']==""){self::$error[]="select genres";}
 			if($_POST['rd-month']==""){self::$error[]="release date month is missing";}
 			if($_POST['rd-day']==""){self::$error[]="release date day is missing";}
 			if($_POST['rd-year']==""){self::$error[]="release date year is missing";}			
@@ -127,22 +128,22 @@
 			//$genres = implode(",", $_POST['genres']);
 			
 			$params = array(
-			array(':uid', $_SESSION['id'], "str"),
-			array(':title', $title, "str"),
-			array(':other_title', $othertitle, "str"),
-			array(':type', $type, "int"),
-			array(':category', $category, "int"),
-			array(':language', $language, "int"),
-			array(':country', $country, "int"),
-			array(':genres', "$genres", "str"),
-			array(':release-date', $release_date, "str"),
-			array(':casting', $casting, "str"),
-			array(':director', $director, "str"),
-			array(':length', $length, "int"),
-			array(':tags', $tags, "str"),
-			array(':synopsis', $synopsis, "str"),
+			array(":uid", $_SESSION['id'], "str"),
+			array(":title", $_POST['VideoTitle'], "str"),
+			array(":other_title", $_POST['VideoOtherTitle'], "str"),
+			array(":type", $_POST['VideoType'], "str"),
+			array(":category", $_POST['VideoCategory'], "str"),
+			array(":language", $_POST['VideoLanguage'], "str"),
+			array(":country", $_POST['country'], "str"),
+			array(":genres", $_POST['genres'], "str"),
+			array(":release-date", $_POST['rd-year']."-".$_POST['rd-month']."-".$_POST['rd-day'], "str"),
+			array(":casting", $_POST['casting'], "str"),
+			array(":director", $_POST['director'], "str"),
+			array(":length", $_POST['length'], "str"),
+			array(":tags", $_POST['tags'], "str"),
+			array(":synopsis", $_POST['synopsis'], "str"),
 			);
-			$res = Common::db_query("INSERT INTO `Videos` (uid, title, other_title, type, category, language, country, genres, release_date, casting, director, length, tags, synopsis) VALUES (:uid, :title, :other_title, :type, :category, :language, :country, :genres, :release-date, :casting, :director, :length, :tags, :synopsis)", $params);			
+			$res = Common::db_query("INSERT INTO `Videos` (`uid`, `title`, `other_title`, `type`, `category`, `language`, `country`, `genres`, `release_date`, `casting`, `director`, `length`, `tags`, `synopsis`) VALUES (:uid, :title, :other_title, :type, :category, :language, :country, :genres, :release-date, :casting, :director, :length, :tags, :synopsis )", $params);			
 			self::$message[] = "video '".$_POST['VideoTitle']."' added successfully";
 			return TRUE;
 		}
