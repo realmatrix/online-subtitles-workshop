@@ -27,9 +27,21 @@
 					
 					
 
-{WelcomeBack} <b>{UserName}</b>
+{WelcomeBack} <b>{UserName}</b> <br />
 					
-					
+Added Videos: {CreatedVideos}<br />	
+
+Favourite Videos: {FavouriteVideos}<br />
+
+Created Subtitles: {CreatedSubtitles}<br />
+
+Finished Subtitles: {FinishedSubtitles}<br />
+
+Created Teams: {CreatedTeams}<br />
+
+Joined Teams: {JoinedTeams}<br />
+
+Private Messages: {PMS}<br />				
 					
 				</div>
 			
