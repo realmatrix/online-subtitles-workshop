@@ -100,7 +100,8 @@
 	  array("{OnlineHidden}",$SystemInfo['OnlineHidden']),
 	  array("{TotalRegistered}",$SystemInfo['TotalRegistered']),
 	  array("{TotalUsers}",$SystemInfo['TotalRegistered']),
-	  array("{LatestUser}",$SystemInfo['LatestUser']), 
+	  array("{LatestUser}",$SystemInfo['LatestUser']),
+	  array("{TotalVideos}",$SystemInfo['TotalVideos']), 
 	);
 
 	$TemplatesCommon = array_merge($TemplatesCommon,$SystemWidgets);

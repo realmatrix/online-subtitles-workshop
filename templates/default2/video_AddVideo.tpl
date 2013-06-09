@@ -121,41 +121,41 @@ $("form#submitnewvideo").submit(function(event){
 <div id="div-submitnewvideo">
 <form id="submitnewvideo" >
 	
-	<label for="VideoType">ADD A NEW</label>
+	<label for="VideoType">{Type}</label>
 	<select name="VideoType" id="VideoType" data-required="true">
 		<option></option>
 		{VideoType}
 	</select>
 	
-	<label for="VideoCategory" >Category</label>
+	<label for="VideoCategory" >{Category}</label>
 	<select name="VideoCategory" id="VideoCategory" data-required="true">
 		<option value=""> </option>
 		{VideoCategory}
 	</select>
 	
-	<label for="VideoLanguage">Language</label>
+	<label for="VideoLanguage">{Language}</label>
 	<select name="VideoLanguage" id="VideoLanguage" data-required="true">
 		<option value=""> </option>
 		{VideoLanguage}
 	</select>
 	
 	<br />
-	<label for="VideoTitle">Video Title</label>
+	<label for="VideoTitle">{Title}</label>
 	<input type="text" name="VideoTitle" id="VideoTitle" value="" data-required="true" />
 	
 	<br />
-	<label for="VideoOtherTitle">Video Other Title</label>
+	<label for="VideoOtherTitle">{OtherTitle}</label>
 	<input type="text" name="VideoOtherTitle" id="VideoOtherTitle" value="" />
 	
 	<br />
-	<label for="countries" >Country</label>
+	<label for="countries" >{Country}</label>
 	<select name="country" id="country"  data-required="true">
 		<option value=""> </option>
 		{Countries}
 	</select>
 	
 	<br />
-	<label for="Genres">Genres</label>
+	<label for="Genres">{Genres}</label>
         <div style="overflow: auto; width: 100%; height: 80px; border: 1px solid #336699; padding-left: 5px">
             <input type="checkbox" name="genres" value="1"> Genre 1<br>
             <input type="checkbox" name="genres" value="2"> Genre 2<br>
@@ -170,35 +170,35 @@ $("form#submitnewvideo").submit(function(event){
         </div>
 
 	<br />
-	<label for="ReleaseDate"  data-required="true">Release Date</label>
+	<label for="ReleaseDate"  data-required="true">{ReleaseDate}</label>
 	<select name="rd-month" id="rd-month"><option value=""> </option>{rd-month}</select>
 	<select name="rd-day" id="rd-day"><option value=""> </option>{rd-day}</select>
 	<select name="rd-year" id="rd-year"><option value=""> </option>{rd-year}</select>
 	
 	<br />
-	<label for="casting">Casting</label>
+	<label for="casting">{Casting}</label>
 	<input type="text" name="casting" id="casting" value=""  data-required="true"/>
 
 	<br />
-	<label for="director">Director</label>
+	<label for="director">{Director}</label>
 	<input type="text" name="director" id="director" value=""  data-required="true"/>
 
-	<label for="length" >Length</label>
+	<label for="length" >{Length}</label>
 	<select name="length" id="length" data-required="true">
 		<option value=""> </option>
 	{length}</select>	minute(s)
 	
 	<br />
-	<label for="tags">Tags</label>
+	<label for="tags">{Tags}</label>
 	<input type="text" name="tags" id="tags" value=""  data-required="true"/>
 
 	<br />
-	<label for="synopsis">Synopsis</label>
+	<label for="synopsis">{Synopsis}</label>
 	<textarea id="synopsis" name="synopsis" rows="5" data-required="true"> </textarea>
 	
 	<br /><br />
 	<div style="width:100%; text-align: center;">
-		<input type="submit" id="submit" value="Add New Video" />
+		<input type="submit" id="submit" value="{Submit}" />
 	</div>
 	<input type="hidden" name="dataonly" id="dataonly" value="yes" />
 	<input type="hidden" name="getcontroller" id="getcontroller" value="video" />

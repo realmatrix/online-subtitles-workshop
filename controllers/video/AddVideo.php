@@ -38,6 +38,20 @@
 				  array("{length}", self::minutes()),
 				  array("{error}", Common::FormatMessage("error", self::$error)),
 				  array("{message}", Common::FormatMessage("message", self::$message)),
+				  array("{Type}", $GLOBALS['lang']['video_AddVideo_VideoType']),
+				  array("{Category}", $GLOBALS['lang']['video_AddVideo_Category']),
+				  array("{Language}", $GLOBALS['lang']['video_AddVideo_Language']),
+				  array("{Title}", $GLOBALS['lang']['video_AddVideo_Title']),
+				  array("{OtherTitle}", $GLOBALS['lang']['video_AddVideo_OtherTitle']),
+				  array("{Country}", $GLOBALS['lang']['video_AddVideo_Country']),
+				  array("{Genres}", $GLOBALS['lang']['video_AddVideo_Genres']),
+				  array("{ReleaseDate}", $GLOBALS['lang']['video_AddVideo_ReleaseDate']),
+				  array("{Casting}", $GLOBALS['lang']['video_AddVideo_Casting']),
+				  array("{Director}", $GLOBALS['lang']['video_AddVideo_Director']),
+				  array("{Length}", $GLOBALS['lang']['video_AddVideo_Length']),
+				  array("{Synopsis}", $GLOBALS['lang']['video_AddVideo_Synopsis']),
+				  array("{Tags}", $GLOBALS['lang']['video_AddVideo_Tags']),
+				  array("{Submit}", $GLOBALS['lang']['video_AddVideo_Submit']),
 				 );
 			 
 		return $content;
@@ -108,21 +122,21 @@
 		}
 		
 		function SubmitVideo(){
-			if($_POST['VideoType']==""){self::$error[]="select video type";}
-			if($_POST['VideoCategory']==""){self::$error[]="select video category";}
-			if($_POST['VideoLanguage']==""){self::$error[]="select video language";}
-			if($_POST['VideoTitle']==""){self::$error[]="video title is missing";}
-			if($_POST['VideoOtherTitle']==""){self::$error[]="Video Other Title is missing";}
-			if($_POST['country']==""){self::$error[]="select country";}
-			if($_POST['genres']==""){self::$error[]="select genres";}
-			if($_POST['rd-month']==""){self::$error[]="release date month is missing";}
-			if($_POST['rd-day']==""){self::$error[]="release date day is missing";}
-			if($_POST['rd-year']==""){self::$error[]="release date year is missing";}			
-			if($_POST['casting']==""){self::$error[]="add cast";}
-			if($_POST['director']==""){self::$error[]="add director";}
-			if($_POST['length']==""){self::$error[]="select video length";}
-			if($_POST['tags']==""){self::$error[]="add video tags";}			
-			if($_POST['synopsis']==""){self::$error[]="add video synopsis";}			
+			if($_POST['VideoType']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_SelectVideoType'];}
+			if($_POST['VideoCategory']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_SelectVideoCategory'];}
+			if($_POST['VideoLanguage']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_SelectVideoLanguage'];}
+			if($_POST['VideoTitle']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_EnterVideoTitle'];}
+			if($_POST['VideoOtherTitle']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_EnterVideoOtherTitle'];}
+			if($_POST['country']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_SelectCountry'];}
+			if($_POST['genres']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_SelectGenres'];}
+			if($_POST['rd-month']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_SelectREleaseMonth'];}
+			if($_POST['rd-day']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_SelectReleaseDay'];}
+			if($_POST['rd-year']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_SelectReleaseYear'];}			
+			if($_POST['casting']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_EnterCast'];}
+			if($_POST['director']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_EnterDirector'];}
+			if($_POST['length']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_SelectVideoLength'];}
+			if($_POST['tags']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_EnterVideoTags'];}			
+			if($_POST['synopsis']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_EnterVideoSynopsis'];}			
 			if(count(self::$error)>0){return FALSE;}
 			
 			//$genres = implode(",", $_POST['genres']);
