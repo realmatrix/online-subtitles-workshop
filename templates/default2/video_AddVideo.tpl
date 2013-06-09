@@ -1,17 +1,61 @@
-<script type='text/javascript' src='apps/jquery/jquery-1.9.1.js'></script> 
+<html>
+<head>
+<script type='text/javascript' src='apps/jquery/jquery-2.0.0.js'></script> 
 <script>
-function processForm(formId, divID) { 
-//your validation code
-alert($("#"+formId).serialize());
-$.ajax( {
-        type: 'POST',
-        url: 'index.php',
-        data: $("#"+formId).serialize(), 
-        success: function(data) {
-            $("#"+divID).html(data);
-        }
-    } );
-}
+ 
+// variable to hold request
+var request;
+// bind to the submit event of our form
+$("form#submitnewvideo").submit(function(event){
+    // abort any pending request
+    if (request) {
+        request.abort();
+    }
+    // setup some local variables
+    var $form = $(this);
+    // let's select and cache all the fields
+    var $inputs = $form.find("input, select, button, textarea, file");
+    // serialize the data in the form
+    var serializedData = $form.serialize();
+alert(serializedData);
+    // let's disable the inputs for the duration of the ajax request
+    $inputs.prop("disabled", true);
+
+    // fire off the request to /form.php
+    request = $.ajax({
+        url: "index.php",
+        type: "post",
+        data: serializedData
+    });
+
+    // callback handler that will be called on success
+    request.done(function (response, textStatus, jqXHR){
+        // log a message to the console
+        console.log("Hooray, it worked!");
+        console.log("Response: "+response);        
+        $("#SystemAjax_video_AddVideo").html(response);
+    });
+
+    // callback handler that will be called on failure
+    request.fail(function (jqXHR, textStatus, errorThrown){
+        // log the error to the console
+        console.error(
+            "The following error occured: "+
+            textStatus, errorThrown
+        );
+    });
+
+    // callback handler that will be called regardless
+    // if the request failed or succeeded
+    request.always(function () {
+        // reenable the inputs
+        $inputs.prop("disabled", false);
+    });
+
+    // prevent default posting of form
+    event.preventDefault();
+});
+
 </script>
 
 <style>
@@ -23,6 +67,8 @@ $.ajax( {
 		width: 100%;
 	}
 </style>
+</head>
+<body>
 <br /><br />
 <div>
 <DIV class="catglow" style="width:90%; margin: 0 auto;">
@@ -46,38 +92,38 @@ $.ajax( {
 
 <!-- add video form -->
 <div id="div-submitnewvideo">
-<form name="submitnewvideo" id="submitnewvideo" action="#" onsubmit="processForm('submitnewvideo','div-submitnewvideo'); return false;">
+<form id="submitnewvideo" >
 	
-	<label for="VideoType" id="label-VideoType">ADD A NEW</label>
+	<label for="VideoType">ADD A NEW</label>
 	<select name="VideoType" id="VideoType">
-		<option></option>
+		<option value=""></option>
 		{VideoType}
 	</select>
 	
 	<label for="VideoCategory" >Category</label>
 	<select name="VideoCategory" id="VideoCategory">
-		<option></option>
+		<option value=""> </option>
 		{VideoCategory}
 	</select>
 	
 	<label for="VideoLanguage">Language</label>
 	<select name="VideoLanguage" id="VideoLanguage">
-		<option></option>
+		<option value=""> </option>
 		{VideoLanguage}
 	</select>
 	
 	<br />
 	<label for="VideoTitle">Video Title</label>
-	<input type="text" name="VideoTitle" id="VideoTitle" value=""/>
+	<input type="text" name="VideoTitle" id="VideoTitle" value="" />
 	
 	<br />
 	<label for="VideoOtherTitle">Video Other Title</label>
-	<input type="text" name="VideoOtherTitle" id="VideoOtherTitle" value=""/>
+	<input type="text" name="VideoOtherTitle" id="VideoOtherTitle" value="" />
 	
 	<br />
 	<label for="countries" >Country</label>
 	<select name="country" id="country">
-		<option></option>
+		<option value=""> </option>
 		{Countries}
 	</select>
 	
@@ -98,48 +144,48 @@ $.ajax( {
 
 	<br />
 	<label for="ReleaseDate" >Release Date</label>
-	<select name="rd-month" id="rd-month"><option></option>{rd-month}</select>
-	<select name="rd-day" id="rd-day"><option></option>{rd-day}</select>
-	<select name="rd-year" id="rd-year"><option></option>{rd-year}</select>
+	<select name="rd-month" id="rd-month"><option value=""> </option>{rd-month}</select>
+	<select name="rd-day" id="rd-day"><option value=""> </option>{rd-day}</select>
+	<select name="rd-year" id="rd-year"><option value=""> </option>{rd-year}</select>
 	
 	<br />
 	<label for="casting">Casting</label>
-	<input type="text" name="casting" id="casting" value=""/>
+	<input type="text" name="casting" id="casting" value="" />
 
 	<br />
 	<label for="director">Director</label>
-	<input type="text" name="director" id="director" value=""/>
+	<input type="text" name="director" id="director" value="" />
 
 	<label for="length" >Length</label>
 	<select name="length" id="length">
-		<option></option>
+		<option value=""> </option>
 	{length}</select>	minute(s)
 	
 	<br />
-	<label for="tags">Casting</label>
-	<input type="text" name="tags" id="tags" value=""/>
+	<label for="tags">Tags</label>
+	<input type="text" name="tags" id="tags" value="" />
 
 	<br />
 	<label for="synopsis">Synopsis</label>
-	<textarea id="synopsis" name="synopsis" rows="5"></textarea>
+	<textarea id="synopsis" name="synopsis" rows="5"> </textarea>
 		
     <br />
-	<label for="ThumbnailImage" id="label-VideoImage">Thumbnail Image</label>
-	<input type="file" name="ThumbnailImage"/>
+	<label for="ThumbnailImage">Thumbnail Image</label>
+	<input type="file" name="ThumbnailImage" />
 	
 	<br />
-	<label for="LargeImage" id="label-VideoImage">Large Image</label>
-	<input type="file" name="LargeImage"/>
+	<label for="LargeImage">Large Image</label>
+	<input type="file" name="LargeImage" />
 	
 	<br />	
 	<div style="width:100%; text-align: center;">
-		<input type="submit" id="forum-submit" value="submit" />
+		<input type="submit" id="submit" value="submit" />
 	</div>
-	<input type="hidden" name="dataonly" id="dataonly" value="yes"/>
-	<input type="hidden" name="getcontroller" id="getcontroller" value="video"/>
-	<input type="hidden" name="getsection" id="getsection" value="AddVideo"/>
-	<input type="hidden" name="ssec" id="ssec" value="AddVideo"/>
-	<input type="hidden" name="h" id="h" value="SubmitVideo"/>
+	<input type="hidden" name="dataonly" id="dataonly" value="yes" />
+	<input type="hidden" name="getcontroller" id="getcontroller" value="video" />
+	<input type="hidden" name="getsection" id="getsection" value="AddVideo" />
+	<input type="hidden" name="ssec" id="ssec" value="AddVideo" />
+	<input type="hidden" name="h" id="h" value="SubmitVideo" />
 </form>
 </div>
 <!-- end add video form -->		
@@ -153,7 +199,8 @@ $.ajax( {
 	</DIV></div>
 </div>
 <br /><br />
-
+</body>
+</html>
 
 
 
