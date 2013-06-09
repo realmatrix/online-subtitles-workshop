@@ -183,8 +183,11 @@ class Common{
 
 ////////////////////////////////////////////
 	function LoadSection($controller, $section){
+		$res = "";
+		if(self::checkSectionOptions($controller, $section)){
 		include_once "controllers/".$controller."/".$section.".php";
 		$content = call_user_func('C'.$section.'::'.$section);
+		$options = 
 		$hooks = call_user_func('C'.$section.'::'.$section.'_hooks');
 			for ($i=0; $i < count($hooks); $i++) { 
 				if(self::CheckControllerHook($section, $hooks[$i][0])==TRUE){call_user_func('C'.$section.'::'.$hooks[$i][1]);}
@@ -193,9 +196,34 @@ class Common{
 		if(!array_key_exists($controller.'_'.$section.'_title', $GLOBALS['page'])){$GLOBALS['ERROR'][]= "GLOBALS['page']['".$controller.'_'.$section."_title'] not found inside language file.";}
 		$res=str_replace("{title}", $GLOBALS['page'][$controller.'_'.$section.'_title'], $res);
 		return $res;
+		}
 	}
 ////////////////////////////////////////////
 
+////////////////////////////////////////////
+	function checkSectionOptions($controller, $section){
+		include_once "widgets/".$controller."/".$section.".php";
+		$options =  call_user_func("C".$section."::".$section."_options");
+		$LoadSEction = FALSE;
+		if($_GET['page']!=""){$page = $_GET['page'];}
+		if($_POST['page']!=""){$page = $_POST['page'];}
+		if($_GET['page']=="" and $_POST['page']==""){$page = "home";}
+		if($options['loggedin']=="yes" and self::IsLoggedin()){$LoadSEction = TRUE;}
+		if($options['loggedin']=="no" and !self::IsLoggedin()){$LoadSEction = TRUE;}
+		if(count($options['show'])>0 and in_array($page, $options['show'])){$LoadSEction = TRUE;}
+		if(count($options['show'])==0){$LoadSEction=TRUE;}
+		if($options['loggedin']=="yes" and !self::IsLoggedin()){
+			$LoadSEction = FALSE;
+			$GLOBALS['ERROR'][] = "require user to be loggedin.";
+			}
+		if($options['loggedin']=="no" and self::IsLoggedin()){
+			$LoadSEction = FALSE;
+			$GLOBALS['ERROR'][] = "require user to be not loggedin.";
+		}	
+		if(count($options['hide'])>0 and in_array($page, $options['hide'])){$LoadSEction = FALSE;}
+		return $LoadSEction;
+	}
+////////////////////////////////////////////
 ////////////////////////////////////////////
 	function CheckControllerHook($section, $hook){
 		if((isset($_GET['ssec']) and $_GET['ssec']==$section) and (isset($_GET['h']) and $_GET['h']==$hook)){$res = "yes";}

@@ -101,7 +101,7 @@
 		function SubmitVideo(){
 			//VideoType=&VideoCategory=&VideoLanguage=&VideoTitle=&VideoOtherTitle=&country=&rd-month=&rd-day=&rd-year=&casting=&director=&length=&tags=&synopsis=+&dataonly=yes&getcontroller=video&getsection=AddVideo&ssec=AddVideo&h=SubmitVideo
 			$UserID = $_SESSION['id'];
-			echo "<script>alert('".$UserID."');</script>";
+			
 			return "aaaaaaaaaaaa";
 		}
 		
