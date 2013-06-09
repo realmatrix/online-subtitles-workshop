@@ -184,7 +184,7 @@ class Common{
 ////////////////////////////////////////////
 	function LoadSection($controller, $section){
 		$res = "";
-		if(self::checkSectionOptions($controller, $section)){
+		if(self::checkSectionOptions($controller, $section, $message)){
 		include_once "controllers/".$controller."/".$section.".php";
 		$content = call_user_func('C'.$section.'::'.$section);
 		$options = 
@@ -197,11 +197,14 @@ class Common{
 		$res=str_replace("{title}", $GLOBALS['page'][$controller.'_'.$section.'_title'], $res);
 		return $res;
 		}
+		else{
+			echo "<script>alert('".$message."')</script>";
+		} 
 	}
 ////////////////////////////////////////////
 
 ////////////////////////////////////////////
-	function checkSectionOptions($controller, $section){
+	function checkSectionOptions($controller, $section, &$message){
 		include_once "controllers/".$controller."/".$section.".php";
 		$options =  call_user_func("C".$section."::".$section."_options");
 		$LoadSEction = FALSE;
@@ -214,11 +217,11 @@ class Common{
 		if(count($options['show'])==0){$LoadSEction=TRUE;}
 		if($options['loggedin']=="yes" and !self::IsLoggedin()){
 			$LoadSEction = FALSE;
-			$GLOBALS['ERROR'][] = "require user to be loggedin.";
-			}
+			$message = "require user to be loggedin.";
+		}
 		if($options['loggedin']=="no" and self::IsLoggedin()){
 			$LoadSEction = FALSE;
-			$GLOBALS['ERROR'][] = "require user to be not loggedin.";
+			$message = "require user to be not loggedin.";
 		}	
 		if(count($options['hide'])>0 and in_array($page, $options['hide'])){$LoadSEction = FALSE;}
 		return $LoadSEction;

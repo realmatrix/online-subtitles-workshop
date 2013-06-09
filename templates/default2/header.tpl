@@ -59,3 +59,5 @@ value="875" type="hidden"></FIELDSET></FORM></DIV></DIV>
 
 <!-- start content wrapper -->
 <div id="wrapper2">
+	{SystemError}
+	{SystemSuccess}	
