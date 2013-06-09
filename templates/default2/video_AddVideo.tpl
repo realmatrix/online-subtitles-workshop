@@ -11,13 +11,24 @@ $("form#submitnewvideo").submit(function(event){
     if (request) {
         request.abort();
     }
+    //form validation
+    var faults = $('input').filter(function() {
+    // filter input elements to required ones that are empty
+    return $(this).data('required') && $(this).val() === "";
+    }).css("background-color", "red"); // make them attract the eye
+    if(faults.length) return false; // if any required are empty, cancel submit
+     var faults = $('select').filter(function() {
+    // filter input elements to required ones that are empty
+    return $(this).data('required') && $(this).val() === "";
+    }).css("background-color", "red"); // make them attract the eye
+    if(faults.length) return false; // if any required are empty, cancel submit   
     // setup some local variables
     var $form = $(this);
     // let's select and cache all the fields
     var $inputs = $form.find("input, select, button, textarea, file");
     // serialize the data in the form
     var serializedData = $form.serialize();
-alert(serializedData);
+	//alert(serializedData);
     // let's disable the inputs for the duration of the ajax request
     $inputs.prop("disabled", true);
 
@@ -95,26 +106,26 @@ alert(serializedData);
 <form id="submitnewvideo" >
 	
 	<label for="VideoType">ADD A NEW</label>
-	<select name="VideoType" id="VideoType">
-		<option value=""></option>
+	<select name="VideoType" id="VideoType" data-required="true">
+		<option></option>
 		{VideoType}
 	</select>
 	
 	<label for="VideoCategory" >Category</label>
-	<select name="VideoCategory" id="VideoCategory">
+	<select name="VideoCategory" id="VideoCategory" data-required="true">
 		<option value=""> </option>
 		{VideoCategory}
 	</select>
 	
 	<label for="VideoLanguage">Language</label>
-	<select name="VideoLanguage" id="VideoLanguage">
+	<select name="VideoLanguage" id="VideoLanguage" data-required="true">
 		<option value=""> </option>
 		{VideoLanguage}
 	</select>
 	
 	<br />
 	<label for="VideoTitle">Video Title</label>
-	<input type="text" name="VideoTitle" id="VideoTitle" value="" />
+	<input type="text" name="VideoTitle" id="VideoTitle" value="" data-required="true" />
 	
 	<br />
 	<label for="VideoOtherTitle">Video Other Title</label>
@@ -122,7 +133,7 @@ alert(serializedData);
 	
 	<br />
 	<label for="countries" >Country</label>
-	<select name="country" id="country">
+	<select name="country" id="country"  data-required="true">
 		<option value=""> </option>
 		{Countries}
 	</select>
@@ -143,43 +154,35 @@ alert(serializedData);
         </div>
 
 	<br />
-	<label for="ReleaseDate" >Release Date</label>
+	<label for="ReleaseDate"  data-required="true">Release Date</label>
 	<select name="rd-month" id="rd-month"><option value=""> </option>{rd-month}</select>
 	<select name="rd-day" id="rd-day"><option value=""> </option>{rd-day}</select>
 	<select name="rd-year" id="rd-year"><option value=""> </option>{rd-year}</select>
 	
 	<br />
 	<label for="casting">Casting</label>
-	<input type="text" name="casting" id="casting" value="" />
+	<input type="text" name="casting" id="casting" value=""  data-required="true"/>
 
 	<br />
 	<label for="director">Director</label>
-	<input type="text" name="director" id="director" value="" />
+	<input type="text" name="director" id="director" value=""  data-required="true"/>
 
 	<label for="length" >Length</label>
-	<select name="length" id="length">
+	<select name="length" id="length" data-required="true">
 		<option value=""> </option>
 	{length}</select>	minute(s)
 	
 	<br />
 	<label for="tags">Tags</label>
-	<input type="text" name="tags" id="tags" value="" />
+	<input type="text" name="tags" id="tags" value=""  data-required="true"/>
 
 	<br />
 	<label for="synopsis">Synopsis</label>
-	<textarea id="synopsis" name="synopsis" rows="5"> </textarea>
-		
-    <br />
-	<label for="ThumbnailImage">Thumbnail Image</label>
-	<input type="file" name="ThumbnailImage" />
+	<textarea id="synopsis" name="synopsis" rows="5" data-required="true"> </textarea>
 	
-	<br />
-	<label for="LargeImage">Large Image</label>
-	<input type="file" name="LargeImage" />
-	
-	<br />	
+	<br /><br />
 	<div style="width:100%; text-align: center;">
-		<input type="submit" id="submit" value="submit" />
+		<input type="submit" id="submit" value="Add New Video" />
 	</div>
 	<input type="hidden" name="dataonly" id="dataonly" value="yes" />
 	<input type="hidden" name="getcontroller" id="getcontroller" value="video" />
@@ -203,7 +206,13 @@ alert(serializedData);
 </html>
 
 
-
+    <br />
+	<label for="ThumbnailImage">Thumbnail Image</label>
+	<input type="file" name="ThumbnailImage" />
+	
+	<br />
+	<label for="LargeImage">Large Image</label>
+	<input type="file" name="LargeImage" />
 
 
 
