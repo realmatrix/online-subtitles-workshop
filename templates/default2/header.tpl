@@ -36,19 +36,22 @@ value="875" type="hidden"></FIELDSET></FORM></DIV></DIV>
   <LI class="divider"></LI>
   <LI class="float-right"><A href="https://www.phpbb.com/styles/demo/3.0/board/ucp.php?style=875&amp;mode=login&amp;sid=7ec0d899c761409bea8aeccee37ca464"><IMG 
   alt="" src="{TemplatePath}/tmp/images/key.png" 
-  width="16" height="16">Login</A></LI>
+  width="16" height="16">Synchronizer</A></LI>
   <LI class="divider float-right"></LI>
   <LI class="float-right"><A href="https://www.phpbb.com/styles/demo/3.0/board/ucp.php?style=875&amp;mode=register&amp;sid=7ec0d899c761409bea8aeccee37ca464"><IMG 
   alt="" src="{TemplatePath}/tmp/images/add.png" 
-  width="16" height="16">Register</A></LI>
+  width="16" height="16">Search</A></LI>
   <LI class="divider float-right"></LI>
   <LI class="float-right"><A href="https://www.phpbb.com/styles/demo/3.0/board/search.php?style=875&amp;sid=7ec0d899c761409bea8aeccee37ca464"><IMG 
   alt="" src="{TemplatePath}/tmp/images/search.png" 
-  width="16" height="16">Search</A></LI>
+  width="16" height="16">Subtitles</A></LI>
   <LI class="divider float-right"></LI>
   <LI class="float-right"><A href="https://www.phpbb.com/styles/demo/3.0/board/memberlist.php?style=875&amp;sid=7ec0d899c761409bea8aeccee37ca464"><IMG 
   alt="" src="{TemplatePath}/tmp/images/nav-members.png" 
-  width="16" height="16">Members</A></LI>
+  width="16" height="16">Videos</A></LI>
+    <LI class="float-right"><A href="https://www.phpbb.com/styles/demo/3.0/board/search.php?style=875&amp;sid=7ec0d899c761409bea8aeccee37ca464"><IMG 
+  alt="" src="{TemplatePath}/tmp/images/search.png" 
+  width="16" height="16">Forums</A></LI>
   <LI class="divider float-right"></LI></UL></DIV><A name="start_here"></A>
   
 {widget_VideoGallery}
