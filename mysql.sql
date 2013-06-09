@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 07, 2013 at 10:20 AM
+-- Generation Time: Jun 09, 2013 at 12:51 PM
 -- Server version: 5.5.29-log
 -- PHP Version: 5.3.21
 
@@ -425,14 +425,14 @@ CREATE TABLE IF NOT EXISTS `OnlineUsers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=208 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=249 ;
 
 --
 -- Dumping data for table `OnlineUsers`
 --
 
 INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(207, 'rp8qhc87jvg3d7q0ikfvkgj2s2', 1370594752, '');
+(248, '46b9jgm5gcte2bkgpe03fla7u4', 1370778242, 'test');
 
 -- --------------------------------------------------------
 
@@ -480,6 +480,31 @@ CREATE TABLE IF NOT EXISTS `VideoCategory` (
 INSERT INTO `VideoCategory` (`id`, `category`) VALUES
 (1, 'test category 1'),
 (2, 'test category 2');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Videos`
+--
+
+CREATE TABLE IF NOT EXISTS `Videos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `other_title` varchar(255) NOT NULL,
+  `type` int(11) NOT NULL,
+  `category` int(11) NOT NULL,
+  `language` int(11) NOT NULL,
+  `country` int(11) NOT NULL,
+  `genres` varchar(255) NOT NULL,
+  `release_date` date NOT NULL,
+  `casting` int(11) NOT NULL,
+  `director` int(11) NOT NULL,
+  `length` int(11) NOT NULL,
+  `tags` varchar(255) NOT NULL,
+  `synopsis` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
