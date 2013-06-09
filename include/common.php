@@ -202,7 +202,7 @@ class Common{
 
 ////////////////////////////////////////////
 	function checkSectionOptions($controller, $section){
-		include_once "widgets/".$controller."/".$section.".php";
+		include_once "controllers/".$controller."/".$section.".php";
 		$options =  call_user_func("C".$section."::".$section."_options");
 		$LoadSEction = FALSE;
 		if($_GET['page']!=""){$page = $_GET['page'];}

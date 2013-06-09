@@ -13,6 +13,15 @@
 			);
 			return $array;
 		}
+		
+		function AddVideo_options(){
+			$options = array(
+			"show"=>array(),
+			"hide"=>array(),
+			"loggedin"=>"yes",
+			);
+			return $options;
+		}
 			
 		function AddNewVideo(){
 			echo "sdfkl;gd;lkgjdf;slkgjdfs;lkgjdf;gkljgpoierjug;dfkjg;dlgj;dflkgjdfl;kgjdf;lgjkdf;lkgjdf;lgjkf;lgkjfdglk;djfdlf;kjdf;lkgjdf;ljgk";
