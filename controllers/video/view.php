@@ -5,6 +5,8 @@
 		function view_sections(){
 			$array = array(
 				array("video", "ViewVideo", self::view_args()),
+				array("video", "VideoSynopsis", self::view_args()),
+				array("subtitle", "AddSubtitle", self::view_args()),
 			);
 			return $array;
 		}
