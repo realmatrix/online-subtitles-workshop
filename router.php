@@ -33,9 +33,11 @@
 	if(isset($_POST['getsection']) and $_POST['getsection']!=""){$getsection=$_POST['getsection'];}
 	if($_GET['page']=="logout"){$SystemPage = "logout";}
 	if($_GET['page']=="none" or $_POST=="none"){$SystemPage = "none";}
-
+	if($_GET['sec']!=""){$SystemSection=$_GET['sec'];}
+	if($_POST['sec']!=""){$SystemSection=$_POST['sec'];}
+	
 	switch ($SystemPage) {
-    case ($SystemPage=="home" || $SystemPage=="otherpage") and $dataonly!="yes":
+    case ($SystemPage=="home" or ($SystemPage=="video" and $SystemSection=="view")) and $dataonly!="yes":
 		//loading template
 		echo common::render($TemplateHead, "head");
 		echo common::render($TemplateHeader, "header");
@@ -44,7 +46,7 @@
 		echo common::render($TemplateRight, "right");
 		echo common::render($TemplateFooter, "footer");
         break;
-    case $SystemPage=="video" or $SystemPage=="subtitle":
+    case ($SystemPage=="video" and $SystemSection=="add") or $SystemPage=="subtitle":
 		echo common::render($TemplateHead, "head");
 		echo common::render($TemplateHeader, "header");
 		echo common::render($TemplateBody, "body");
