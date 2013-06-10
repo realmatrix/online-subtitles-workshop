@@ -7,6 +7,7 @@
 				array("video", "ViewVideo", self::view_args()),
 				array("video", "VideoSynopsis", self::view_args()),
 				array("subtitle", "AddSubtitle", self::view_args()),
+				array("video", "UploadThumbnail", self::view_args()),
 			);
 			return $array;
 		}
