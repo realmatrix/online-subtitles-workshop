@@ -2,7 +2,7 @@
 
 	class Cview{
 			
-		function add_sections(){
+		function view_sections(){
 			$array = array(
 				array("video", "ViewVideo"),
 			);
