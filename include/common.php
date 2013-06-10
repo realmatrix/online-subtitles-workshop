@@ -292,11 +292,15 @@ class Common{
 	function LoadPage($array){
 		$page = "";
 		for ($i = 0; $i <= count($array)-1; $i++) {
+				$args = "";
+				for ($j=0; $j < count($array[$i][2]); $j++) { 
+					$args .= "&".$array[$i][2][$j][0]."=".$array[$i][2][$j][1];
+				}
 			$page .= "
 			<div id='SystemAjax_".$array[$i][0]."_".$array[$i][1]."'></div>
 			<script>
 			$.ajax({
-			    url: 'index.php?page=none&dataonly=yes&getcontroller=".$array[$i][0]."&getsection=".$array[$i][1]."',
+			    url: 'index.php?page=none&dataonly=yes&getcontroller=".$array[$i][0]."&getsection=".$array[$i][1].$args."',
 			    cache: false,
 			    dataType: 'html',
 			    success: function(data) {
@@ -355,6 +359,16 @@ class Common{
 	function GetGenres(){
 		$params = array();
 	 	$result = self::db_query("SELECT * FROM Genres", $params);
+		return $result;
+	}
+////////////////////////////////////////////
+
+////////////////////////////////////////////
+	function GetVideoInfo($VideoID){
+		$params = array(
+			array(":id", $VideoID, "str"),
+		);
+	 	$result = self::db_query("SELECT * FROM `Videos` where `id`=:id ", $params);
 		return $result;
 	}
 ////////////////////////////////////////////

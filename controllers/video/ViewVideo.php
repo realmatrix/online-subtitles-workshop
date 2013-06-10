@@ -23,9 +23,17 @@
 		}
 				
 		function ViewVideo_content(){
+			$video = Common::GetVideoInfo($_GET['vid']);
 				$content = array
 				  (
-				  array("{test}", "test"),
+				  array("{VideoTitle}", $video[0]['title']),
+				  array("{VideoOtherTitle}", $video[0]['other_title']),
+				  array("{VideoCountry}", $video[0]['country']),
+				  array("{VideoGenre}", $video[0]['genres']),
+				  array("{VideoReleaseDate}", $video[0]['release_date']),
+				  array("{VideoCasting}", $video[0]['casting']),
+				  array("{VideoDirector}", $video[0]['director']),
+				  array("{VideoLength}", $video[0]['length']),
 				 );
 			 
 		return $content;
