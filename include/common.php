@@ -352,6 +352,14 @@ class Common{
 ////////////////////////////////////////////
 
 ////////////////////////////////////////////
+	function GetGenres(){
+		$params = array();
+	 	$result = self::db_query("SELECT * FROM Genres", $params);
+		return $result;
+	}
+////////////////////////////////////////////
+
+////////////////////////////////////////////
 	function RenderData($content, $array){
 		for ($i=0; $i < count($array); $i++) { 
 			$content = str_replace($array[$i][0], $array[$i][1], $content);

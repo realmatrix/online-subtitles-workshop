@@ -91,6 +91,10 @@ $("form#submitnewvideo").submit(function(event){
 		padding: 20px;
 		color: green;
 	}
+	.checkbox-genre{
+		float: left;
+		width: 20%;
+	}
 </style>
 </head>
 <body>
@@ -157,16 +161,7 @@ $("form#submitnewvideo").submit(function(event){
 	<br />
 	<label for="Genres">{Genres}</label>
         <div style="overflow: auto; width: 100%; height: 80px; border: 1px solid #336699; padding-left: 5px">
-            <input type="checkbox" name="genres" value="1"> Genre 1<br>
-            <input type="checkbox" name="genres" value="2"> Genre 2<br>
-            <input type="checkbox" name="genres" value="3"> Genre 3<br>
-            <input type="checkbox" name="genres" value="4"> Genre 4<br>
-            <input type="checkbox" name="genres" value="5"> Genre 5<br>
-            <input type="checkbox" name="genres" value="6"> Genre 6<br>
-            <input type="checkbox" name="genres" value="7"> Genre 7<br>
-            <input type="checkbox" name="genres" value="8"> Genre 8<br>
-            <input type="checkbox" name="genres" value="9"> Genre 9<br>
-            <input type="checkbox" name="genres" value="10"> Genre 10<br>
+			{VideoGenres}
         </div>
 
 	<br />

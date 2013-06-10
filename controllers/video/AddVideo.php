@@ -52,6 +52,7 @@
 				  array("{Synopsis}", $GLOBALS['lang']['video_AddVideo_Synopsis']),
 				  array("{Tags}", $GLOBALS['lang']['video_AddVideo_Tags']),
 				  array("{Submit}", $GLOBALS['lang']['video_AddVideo_Submit']),
+				  array("{VideoGenres}", self::genres()),
 				 );
 			 
 		return $content;
@@ -85,6 +86,14 @@
 			$countries = Common::GetCountries();
 			for ($i=0; $i < count($countries); $i++) { 
 				$res .= "<option value='".$countries[$i]['id']."'>".$countries[$i]['short_name']."</option>";
+			}
+			return $res;
+		}
+
+		function genres(){
+			$genres = Common::GetGenres();
+			for ($i=0; $i < count($genres); $i++) { 
+				$res .= "<div class='checkbox-genre'><input type='checkbox' name='genres' value='".$genres[$i]['id']."'> ".$genres[$i]['genre']."</div>";
 			}
 			return $res;
 		}
