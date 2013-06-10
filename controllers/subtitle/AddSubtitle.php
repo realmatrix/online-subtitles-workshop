@@ -13,11 +13,19 @@
 			return $array;
 		}
 			
+		function AddSubtitle_options(){
+			$options = array(
+			"show"=>array(),
+			"hide"=>array(),
+			"loggedin"=>"yes",
+			);
+			return $options;
+		}
 				
 		function AddSubtitle_content(){
 				$content = array
 				  (
-				  array("{title}", "Add Subtitle"),
+				  array("{vid}", $_GET['vid']),
 				 );
 			 
 		return $content;

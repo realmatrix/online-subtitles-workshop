@@ -23,13 +23,12 @@ $.ajax( {
 		width: 100%;
 	}
 </style>
-<br /><br />
 <div>
-<DIV class="catglow" style="width:90%; margin: 0 auto;">
+<DIV class="catglow" style="width:100%;">
 <DIV class="cathead-m">
 <DIV class="cathead-r">
 <DIV class="cathead-l">                    
-	{title}                
+	{AddSubtitle}                
 </DIV>
 </DIV>
 </DIV>
@@ -46,18 +45,11 @@ $.ajax( {
 
 <!-- add subtitle form -->
 <div id="div-submitnewsubtitle">
+
+content here
+	
 <form name="submitnewsubtitle" id="submitnewsubtitle" action="#" onsubmit="processForm('submitnewsubtitle','div-submitnewsubtitle'); return false;">
-	
-	<label for="video">Video</label>
-	<select name="video" id="video">
-		<option></option>
-		{UserVideos}
-	</select>
-	
-	<br />	
-	<div style="width:100%; text-align: center;">
-		<input type="submit" id="forum-submit" value="submit" />
-	</div>
+	<input type="hidden" name="vid" id="vid" value="{Vid}"/>
 	<input type="hidden" name="dataonly" id="dataonly" value="yes"/>
 	<input type="hidden" name="getcontroller" id="getcontroller" value="subtitle"/>
 	<input type="hidden" name="getsection" id="getsection" value="Addsubtitle"/>
@@ -75,7 +67,7 @@ $.ajax( {
 	</TABLE>
 	</DIV></div>
 </div>
-<br /><br />
+<br />
 
 
 
