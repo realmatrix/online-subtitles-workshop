@@ -36,7 +36,6 @@
 	
 //titles
 	$GLOBALS['page']['home_test_title'] = "test title for controller home section home change from language file";
-	$GLOBALS['page']['video_AddVideo_title'] = "Add New Video";
 	
 //widget NewsLetter
 	$GLOBALS['lang']['widget_newsletter_name'] = "Your name or pseudo ...";
@@ -44,11 +43,12 @@
 	$GLOBALS['lang']['widget_newsletter_submit'] = "submit";
 
 //widget Quick Links
-	$GLOBALS['lang']['widget_quicklinks_addvideo'] = "Add new video";
+	$GLOBALS['lang']['widget_quicklinks_addvideo'] = "Add new article";
 	$GLOBALS['lang']['widget_quicklinks_addsubtitle'] = "Add new subtitle";
 	$GLOBALS['lang']['widget_quicklinks_logout'] = "Logout";
 	
 //add video
+	$GLOBALS['page']['video_AddVideo_title'] = "Add New Article";
 	$GLOBALS['lang']['video_AddVideo_VideoType'] = "ADD A NEW";
 	$GLOBALS['lang']['video_AddVideo_VideoCategory'] = "Category";
 	$GLOBALS['lang']['video_AddVideo_VideoLanguage'] = "Language";
@@ -83,6 +83,6 @@
 	$GLOBALS['lang']['video_AddVideo_Length'] = "Length:";
 	$GLOBALS['lang']['video_AddVideo_Synopsis'] = "Synopsis:";
 	$GLOBALS['lang']['video_AddVideo_Tags'] = "Tags:";
-	$GLOBALS['lang']['video_AddVideo_Submit'] = "Add Video";
+	$GLOBALS['lang']['video_AddVideo_Submit'] = "Submit Article";
 	
 ?>

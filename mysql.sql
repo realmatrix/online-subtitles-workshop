@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 09, 2013 at 07:28 PM
+-- Generation Time: Jun 10, 2013 at 05:51 PM
 -- Server version: 5.5.29-log
 -- PHP Version: 5.3.21
 
@@ -322,6 +322,50 @@ CREATE TABLE IF NOT EXISTS `ForumThreads` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `Genres`
+--
+
+CREATE TABLE IF NOT EXISTS `Genres` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `genre` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=27 ;
+
+--
+-- Dumping data for table `Genres`
+--
+
+INSERT INTO `Genres` (`id`, `genre`) VALUES
+(1, 'Action'),
+(2, 'Adventure'),
+(3, 'Animation'),
+(4, 'Biography'),
+(5, 'Comedy'),
+(6, 'Crime'),
+(7, 'Documentary'),
+(8, 'Drama'),
+(9, 'Family'),
+(10, 'Fantasy'),
+(11, 'Film-Noir'),
+(12, 'Game-Show'),
+(13, 'History'),
+(14, 'Horror'),
+(15, 'Music'),
+(16, 'Musical'),
+(17, 'Mystery'),
+(18, 'News'),
+(19, 'Reality-TV'),
+(20, 'Romance'),
+(21, 'Sci-Fi'),
+(22, 'Sport'),
+(23, 'Talk-Show'),
+(24, 'Thriller'),
+(25, 'War'),
+(26, 'Western');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `Groups`
 --
 
@@ -425,14 +469,14 @@ CREATE TABLE IF NOT EXISTS `OnlineUsers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=267 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=282 ;
 
 --
 -- Dumping data for table `OnlineUsers`
 --
 
 INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(266, '46b9jgm5gcte2bkgpe03fla7u4', 1370802297, '');
+(281, '2mfgrdivf93n0crlqosl4qj1o1', 1370880698, 'test');
 
 -- --------------------------------------------------------
 
@@ -503,18 +547,22 @@ CREATE TABLE IF NOT EXISTS `Videos` (
   `length` int(11) NOT NULL,
   `tags` varchar(255) NOT NULL,
   `synopsis` text NOT NULL,
+  `thumbnail` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `Videos`
 --
 
-INSERT INTO `Videos` (`id`, `uid`, `title`, `other_title`, `type`, `category`, `language`, `country`, `genres`, `release_date`, `casting`, `director`, `length`, `tags`, `synopsis`) VALUES
-(7, 0, ':title', ':other_title', 0, 0, 0, 0, ':genres', '0000-00-00', '0', '0', 0, ':tags', ':synopsis'),
-(8, 0, ':title', ':other_title', 0, 0, 0, 0, ':genres', '0000-00-00', '0', '0', 0, ':tags', ':synopsis'),
-(9, 0, ':title', ':other_title', 0, 0, 0, 0, ':genres', '0000-00-00', '0', '0', 0, ':tags', ':synopsis'),
-(10, 18, 'jhkghj', 'ghjhgj', 2, 2, 3, 16, '2', '1817-11-19', '0', '0', 5, 'ghjhj', ' ghjghjgjh');
+INSERT INTO `Videos` (`id`, `uid`, `title`, `other_title`, `type`, `category`, `language`, `country`, `genres`, `release_date`, `casting`, `director`, `length`, `tags`, `synopsis`, `thumbnail`, `image`) VALUES
+(7, 0, ':title', ':other_title', 0, 0, 0, 0, ':genres', '0000-00-00', '0', '0', 0, ':tags', ':synopsis', '', ''),
+(8, 0, ':title', ':other_title', 0, 0, 0, 0, ':genres', '0000-00-00', '0', '0', 0, ':tags', ':synopsis', '', ''),
+(9, 0, ':title', ':other_title', 0, 0, 0, 0, ':genres', '0000-00-00', '0', '0', 0, ':tags', ':synopsis', '', ''),
+(10, 18, 'jhkghj', 'ghjhgj', 2, 2, 3, 16, '2', '1817-11-19', '0', '0', 5, 'ghjhj', ' ghjghjgjh', '', ''),
+(11, 18, 'tty tyu tryu tru tryytu', 'tu t tyu tyutyu', 1, 2, 6, 3, '2', '1816-05-17', 't yu t', 't yutyu', 31, 'ty tyu', ' tyu tyuyu', '', ''),
+(12, 18, 'fhfg f fgh fgh dfh fgh fhfgh', ' fghfg fgh fgh gh', 1, 1, 13, 4, '1', '1806-02-07', 'fgh fgh fgh', 'fhg fggh', 18, 'dfgdfg, dfg dfg,df gdfg ,d fgdf,', '  dfgdf sj dsflkjh lkjsh flkjfh lskdfjh lskdfh oiuehroiuwerh lkewjrh slkjh lkjdfhslkjhlkdsjh', '', '');
 
 -- --------------------------------------------------------
 
