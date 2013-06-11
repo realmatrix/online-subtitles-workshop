@@ -87,4 +87,21 @@
 	
 //add video
 	$GLOBALS['lang']['video_ViewVideo_OtherTitle'] = "Other Title:";
+	$GLOBALS['lang']['video_ViewVideo_Country'] = "Country:";
+	$GLOBALS['lang']['video_ViewVideo_Genre'] = "Genre:";
+	$GLOBALS['lang']['video_ViewVideo_ReleaseDate'] = "Release Date:";
+	$GLOBALS['lang']['video_ViewVideo_Casting'] = "Casting:";
+	$GLOBALS['lang']['video_ViewVideo_Director'] = "Director:";
+	$GLOBALS['lang']['video_ViewVideo_Length'] = "Length:";
+	
+//synopsis
+	$GLOBALS['lang']['video_VideoSynopsis_Synopsis'] = "Synopsis:";
+	
+//upload thumbnail
+	$GLOBALS['lang']['video_UploadThumbnail_UploadThumbnail'] = "Upload Thumbnail:";
+	
+//add subtitle
+	$GLOBALS['lang']['subtitle_AddSubtitle_AddSubtitle'] = "Add subtitle:";
+
+	
 ?>

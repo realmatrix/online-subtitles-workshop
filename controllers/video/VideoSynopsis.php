@@ -27,6 +27,7 @@
 				$content = array
 				  (
 				  array("{VideoSynopsis}", $video[0]['synopsis']),
+				  array("{Synopsis}", $GLOBALS['lang']['video_VideoSynopsis_Synopsis']),
 				 );
 			 
 		return $content;

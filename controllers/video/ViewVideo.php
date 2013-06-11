@@ -36,6 +36,12 @@
 				  array("{VideoLength}", $video[0]['length']),
 				  
 				  array("{OtherTitle}", $GLOBALS['lang']['video_ViewVideo_OtherTitle']),
+				  array("{Country}", $GLOBALS['lang']['video_ViewVideo_Country']),
+				  array("{Genre}", $GLOBALS['lang']['video_ViewVideo_Genre']),
+				  array("{ReleaseDate}", $GLOBALS['lang']['video_ViewVideo_ReleaseDate']),
+				  array("{Casting}", $GLOBALS['lang']['video_ViewVideo_Casting']),
+				  array("{Director}", $GLOBALS['lang']['video_ViewVideo_Director']),
+				  array("{Length}", $GLOBALS['lang']['video_ViewVideo_Length']),
 				 );
 			 
 		return $content;
