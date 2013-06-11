@@ -78,16 +78,25 @@ $.ajax( {
 	</tr>
 	<tr>
 		<td>{Format}</td>
-		<td></td>
+		<td>
+			<select name="format">
+				<option></option>
+			</select>
+		</td>
 	</tr>
 	<tr>
 		<td>{NoCDs}</td>
-		<td></td>
+		<td>
+			<select name="cds">
+				<option></option>
+			</select>
+		</td>
 	</tr>
 	<tr>
-		<td>{CheckBDL}</td>
-		<td></td>
-	</tr>
+		<td colspan="2" style="text-align: center;">
+			<input type="submit" value="add subtitle" />
+		</td>
+	</tr>	
 </table>
 	<input type="hidden" name="vid" value="{vid}" />
 	<input type="hidden" name="dataonly" id="dataonly" value="yes"/>
