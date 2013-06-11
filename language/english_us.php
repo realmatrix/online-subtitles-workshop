@@ -85,4 +85,6 @@
 	$GLOBALS['lang']['video_AddVideo_Tags'] = "Tags:";
 	$GLOBALS['lang']['video_AddVideo_Submit'] = "Submit Article";
 	
+//add video
+	$GLOBALS['lang']['video_ViewVideo_OtherTitle'] = "Other Title:";
 ?>

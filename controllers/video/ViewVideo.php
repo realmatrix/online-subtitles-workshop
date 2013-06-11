@@ -34,6 +34,8 @@
 				  array("{VideoCasting}", $video[0]['casting']),
 				  array("{VideoDirector}", $video[0]['director']),
 				  array("{VideoLength}", $video[0]['length']),
+				  
+				  array("{OtherTitle}", $GLOBALS['lang']['video_ViewVideo_OtherTitle']),
 				 );
 			 
 		return $content;
