@@ -1,3 +1,11 @@
+<script>
+$(document).ready(function(){
+     var photo = $("#photo").val();
+    $.post("upload.php",{photo:photo},function(data){
+      $("#status").html(data);
+     });
+});
+</script>
 <DIV class="catglow" style="width:100%;">
 <DIV class="cathead-m">
 <DIV class="cathead-r">
@@ -18,7 +26,19 @@
 
 <div id="div-synopsis">
 	max width 200 max height 270
-	{VideoUploadThumbnail}
+	<p id="status"></p>
+	<form id="form1" enctype="multipart/formdata">
+	<input type="file" id="photo" name="photo" />
+	<input type="submit" id="save" name="save" value="Upload" />
+	
+	<input type="hidden" name="vid" value="{vid}" />
+	<input type="hidden" name="dataonly" id="dataonly" value="yes"/>
+	<input type="hidden" name="getcontroller" id="getcontroller" value="subtitle"/>
+	<input type="hidden" name="getsection" id="getsection" value="Addsubtitle"/>
+	<input type="hidden" name="ssec" id="ssec" value="Addsubtitle"/>
+	<input type="hidden" name="h" id="h" value="Submitsubtitle"/>
+		
+	</form>
 </div>
 
 

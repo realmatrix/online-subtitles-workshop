@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 10, 2013 at 05:51 PM
+-- Generation Time: Jun 11, 2013 at 08:43 PM
 -- Server version: 5.5.29-log
 -- PHP Version: 5.3.21
 
@@ -469,14 +469,63 @@ CREATE TABLE IF NOT EXISTS `OnlineUsers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=282 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=314 ;
 
 --
 -- Dumping data for table `OnlineUsers`
 --
 
 INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(281, '2mfgrdivf93n0crlqosl4qj1o1', 1370880698, 'test');
+(313, 'vtcr2ku2v17spqk6nehsg9o0d1', 1370978946, '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Subtitles`
+--
+
+CREATE TABLE IF NOT EXISTS `Subtitles` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `teams`
+--
+
+CREATE TABLE IF NOT EXISTS `teams` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `owner` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `TeamUsers`
+--
+
+CREATE TABLE IF NOT EXISTS `TeamUsers` (
+  `id` int(11) NOT NULL,
+  `tid` int(11) NOT NULL,
+  `uid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Thumbnails`
+--
+
+CREATE TABLE IF NOT EXISTS `Thumbnails` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `vid` int(11) NOT NULL,
+  `thumbnail` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -504,6 +553,30 @@ INSERT INTO `Users` (`id`, `username`, `password`, `email`, `BirthYear`, `group`
 (19, 'ghfghh', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'dsd@sd.sd', 2006, 3),
 (20, 'wejhg', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'aaa@aaa.aaa', 1919, 3),
 (21, 't567567567', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'tryrt@erttr.rrt', 1917, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Versions`
+--
+
+CREATE TABLE IF NOT EXISTS `Versions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `version` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `Versions`
+--
+
+INSERT INTO `Versions` (`id`, `version`) VALUES
+(1, 'dvdrip'),
+(2, 'hdtv'),
+(3, 'dvdrip'),
+(4, 'hdtv'),
+(5, 'dvdrip'),
+(6, 'hdtv');
 
 -- --------------------------------------------------------
 

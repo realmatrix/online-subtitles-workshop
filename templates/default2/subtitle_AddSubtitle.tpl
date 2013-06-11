@@ -45,17 +45,58 @@ $.ajax( {
 
 <!-- add subtitle form -->
 <div id="div-submitnewsubtitle">
-
-content here
 	
 <form name="submitnewsubtitle" id="submitnewsubtitle" action="#" onsubmit="processForm('submitnewsubtitle','div-submitnewsubtitle'); return false;">
-	<input type="hidden" name="vid" id="vid" value="{Vid}"/>
+<table>
+	<tr>
+		<td style="width: 20%;">{ReleaseName}</td>
+		<td style="width: 80%;"><input type="text" name="ReleaseName" /></td>
+	</tr>
+	<tr>
+		<td>{Language}</td>
+		<td>
+			<select name="Language">
+				<option></option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td>{Version}</td>
+		<td>
+			<select name="version">
+				<option></option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td>{Fps}</td>
+		<td>
+			<select name="fps">
+				<option></option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td>{Format}</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>{NoCDs}</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>{CheckBDL}</td>
+		<td></td>
+	</tr>
+</table>
+	<input type="hidden" name="vid" value="{vid}" />
 	<input type="hidden" name="dataonly" id="dataonly" value="yes"/>
 	<input type="hidden" name="getcontroller" id="getcontroller" value="subtitle"/>
 	<input type="hidden" name="getsection" id="getsection" value="Addsubtitle"/>
 	<input type="hidden" name="ssec" id="ssec" value="Addsubtitle"/>
 	<input type="hidden" name="h" id="h" value="Submitsubtitle"/>
 </form>
+
 </div>
 <!-- end add subtitle form -->		
 
