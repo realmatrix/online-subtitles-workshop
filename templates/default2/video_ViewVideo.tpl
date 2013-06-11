@@ -2,6 +2,9 @@
 	.table-viewvideo{
 		width: 100%;
 	}
+	.thumnail-container{
+		width: 200px; height: 270px; background-color: black; text-align: center;
+	}
 </style>
 
 
@@ -20,7 +23,7 @@
 <TABLE class="cat" cellSpacing="0" cellPadding="0" width="100%">
   <TBODY>
   <TR>
-  	<td><div style="width: 200px; height: 270px; background-color: black;"><img src="images/videos/none.png" /></div></td>
+  	<td><div class="thumnail-container"><img src="images/videos/none.png" /></div></td>
     <TD class="forumdetails" style="width: 100%;"><SPAN class="forum-descriptions">
 
 
