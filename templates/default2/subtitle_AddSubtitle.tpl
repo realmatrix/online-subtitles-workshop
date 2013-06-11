@@ -47,7 +47,7 @@ $.ajax( {
 <div id="div-submitnewsubtitle">
 	
 <form name="submitnewsubtitle" id="submitnewsubtitle" action="#" onsubmit="processForm('submitnewsubtitle','div-submitnewsubtitle'); return false;">
-<table>
+<table style="width: 100%;">
 	<tr>
 		<td style="width: 20%;">{ReleaseName}</td>
 		<td style="width: 80%;"><input type="text" name="ReleaseName" /></td>

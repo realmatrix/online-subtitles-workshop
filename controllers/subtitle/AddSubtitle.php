@@ -27,10 +27,13 @@
 				  (
 				  array("{vid}", $_GET['vid']),
 				  array("{AddSubtitle}", $GLOBALS['lang']['subtitle_AddSubtitle_AddSubtitle']),
-				  
-				  
-				  
-				  $GLOBALS['lang']['subtitle_AddSubtitle_Language']
+				  array("{ReleaseName}", $GLOBALS['lang']['subtitle_AddSubtitle_ReleaseName']),
+				  array("{Language}", $GLOBALS['lang']['subtitle_AddSubtitle_Language']),
+				  array("{Version}", $GLOBALS['lang']['subtitle_AddSubtitle_Version']),
+				  array("{Fps}", $GLOBALS['lang']['subtitle_AddSubtitle_FPS']),
+				  array("{Format}", $GLOBALS['lang']['subtitle_AddSubtitle_Format']),
+				  array("{NoCDs}", $GLOBALS['lang']['subtitle_AddSubtitle_CDS']),
+				  array("{submit}", $GLOBALS['lang']['subtitle_AddSubtitle_Submit']),
 				 );
 			 
 		return $content;

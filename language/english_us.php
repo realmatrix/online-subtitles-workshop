@@ -107,7 +107,7 @@
 	$GLOBALS['lang']['subtitle_AddSubtitle_Version'] = "Version:";
 	$GLOBALS['lang']['subtitle_AddSubtitle_FPS'] = "FPS:";
 	$GLOBALS['lang']['subtitle_AddSubtitle_Format'] = "Format:";
-	$GLOBALS['lang']['subtitle_AddSubtitle_CDS'] = "Number of cd's:";
-	$GLOBALS['lang']['subtitle_AddSubtitle_Create'] = "Create";
+	$GLOBALS['lang']['subtitle_AddSubtitle_CDS'] = "NO of cd's:";
+	$GLOBALS['lang']['subtitle_AddSubtitle_Submit'] = "Create";
 	
 ?>
