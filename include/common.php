@@ -467,8 +467,11 @@ class Common{
 			$LatestUser=self::db_query("SELECT * FROM Users ORDER BY id DESC LIMIT 1", $params);
 		$info['LatestUser']=$LatestUser[0]['username'];
 			$params = array();
-			$TotalVideos=self::db_query("SELECT * FROM Videos", $params);
+			$TotalVideos=self::db_query("SELECT id FROM Videos", $params);
 		$info['TotalVideos']=count($TotalVideos);
+			$params = array();
+			$TotalSubtitles=self::db_query("SELECT id FROM Subtitles", $params);
+		$info['TotalSubtitles']=count($TotalSubtitles);
 		return $info;
 	}
 ////////////////////////////////////////////

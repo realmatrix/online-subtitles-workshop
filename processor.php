@@ -102,6 +102,7 @@
 	  array("{TotalUsers}",$SystemInfo['TotalRegistered']),
 	  array("{LatestUser}",$SystemInfo['LatestUser']),
 	  array("{TotalVideos}",$SystemInfo['TotalVideos']), 
+	  array("{TotalSubtitles}",$SystemInfo['TotalSubtitles']),
 	);
 
 	$TemplatesCommon = array_merge($TemplatesCommon,$SystemWidgets);
