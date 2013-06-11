@@ -17,6 +17,7 @@
 
 
 <div id="div-synopsis">
+	max width 200 max height 270
 	{VideoUploadThumbnail}
 </div>
 

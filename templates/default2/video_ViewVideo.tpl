@@ -1,14 +1,4 @@
 <style>
-	.div-videothumbnail{
-		float: left;
-		width: 25%;
-		padding: 5px;
-		background-color: black;
-	}
-	.div-viewvideo{
-		float: left;
-		width: 75%;
-	}
 	.table-viewvideo{
 		width: 100%;
 	}
@@ -30,15 +20,14 @@
 <TABLE class="cat" cellSpacing="0" cellPadding="0" width="100%">
   <TBODY>
   <TR>
-    <TD class="forumdetails"><SPAN class="forum-descriptions">
+  	<td><div style="width: 200px; height: 270px; background-color: black;"><img src="images/videos/none.png" /></div></td>
+    <TD class="forumdetails" style="width: 100%;"><SPAN class="forum-descriptions">
 
-<div id="div-videothumbnail"></div>
 
-<div id="div-viewvideo">
 	<table class='table-viewvideo'>
 		<tr>
 			<td>{OtherTitle}</td>
-			<td style="width: 80%;">{VideoOtherTitle}</td>	
+			<td style="width: 75%;">{VideoOtherTitle}</td>	
 		</tr>
 		<tr>
 			<td>{Country}</td>
@@ -65,7 +54,7 @@
 			<td>{VideoLength} Minutes</td>	
 		</tr>
 	</table>
-</div>
+
 
 </td>
 </tr>
