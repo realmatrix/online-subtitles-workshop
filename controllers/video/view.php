@@ -6,7 +6,7 @@
 			$array = array(
 				array("video", "ViewVideo", self::view_args(), TRUE),
 				array("video", "VideoSynopsis", self::view_args(), TRUE),
-				array("video", "UploadThumbnail", self::view_args(), TRUE),
+				array("video", "UploadThumbnail", self::view_args(), self::CheckOwner()),
 				array("subtitle", "AddSubtitle", self::view_args(), TRUE),
 			);
 			return $array;
@@ -17,6 +17,12 @@
 				array("vid", $_GET['vid']),
 			);
 			return $args;
+		}
+		
+		function CheckOwner(){
+			$VideoInfo = Common::GetVideoInfo($_GET['vid']);
+			$owner = $VideoInfo[0][uid];
+			if($_SESSION['id']==$owner){return TRUE;}else{return FALSE;}
 		}	
 			
 	}
