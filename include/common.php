@@ -490,6 +490,25 @@ class Common{
 	}
 ////////////////////////////////////////////
 
+////////////////////////////////////////////
+	function GetCountryById($id){
+		$params = array(
+			array(":id", $id, "str")
+		);
+		$country=self::db_query("SELECT * FROM Countries where id=:id", $params);
+		return $country;
+	}
+////////////////////////////////////////////
+
+////////////////////////////////////////////
+	function GetGenreById($id){
+		$params = array(
+			array(":id", $id, "str")
+		);
+		$genre=self::db_query("SELECT * FROM Genres where id=:id", $params);
+		return $genre;
+	}
+////////////////////////////////////////////
 
 }
 ?>

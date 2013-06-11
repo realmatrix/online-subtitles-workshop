@@ -27,6 +27,10 @@
 				  (
 				  array("{vid}", $_GET['vid']),
 				  array("{AddSubtitle}", $GLOBALS['lang']['subtitle_AddSubtitle_AddSubtitle']),
+				  
+				  
+				  
+				  $GLOBALS['lang']['subtitle_AddSubtitle_Language']
 				 );
 			 
 		return $content;

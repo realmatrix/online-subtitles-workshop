@@ -101,7 +101,13 @@
 	$GLOBALS['lang']['video_UploadThumbnail_UploadThumbnail'] = "Upload Thumbnail:";
 	
 //add subtitle
-	$GLOBALS['lang']['subtitle_AddSubtitle_AddSubtitle'] = "Add subtitle:";
-
+	$GLOBALS['lang']['subtitle_AddSubtitle_AddSubtitle'] = "Create subtitle:";
+	$GLOBALS['lang']['subtitle_AddSubtitle_ReleaseName'] = "Release Name:";
+	$GLOBALS['lang']['subtitle_AddSubtitle_Language'] = "Language:";
+	$GLOBALS['lang']['subtitle_AddSubtitle_Version'] = "Version:";
+	$GLOBALS['lang']['subtitle_AddSubtitle_FPS'] = "FPS:";
+	$GLOBALS['lang']['subtitle_AddSubtitle_Format'] = "Format:";
+	$GLOBALS['lang']['subtitle_AddSubtitle_CDS'] = "Number of cd's:";
+	$GLOBALS['lang']['subtitle_AddSubtitle_Create'] = "Create";
 	
 ?>
