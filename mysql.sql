@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 11, 2013 at 09:04 PM
+-- Generation Time: Jun 12, 2013 at 11:16 PM
 -- Server version: 5.5.29-log
 -- PHP Version: 5.3.21
 
@@ -13,6 +13,74 @@ SET time_zone = "+00:00";
 --
 -- Database: `new`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `CDS`
+--
+
+CREATE TABLE IF NOT EXISTS `CDS` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `cd` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=51 ;
+
+--
+-- Dumping data for table `CDS`
+--
+
+INSERT INTO `CDS` (`id`, `cd`) VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5),
+(6, 6),
+(7, 7),
+(8, 8),
+(9, 9),
+(10, 10),
+(11, 11),
+(12, 12),
+(13, 13),
+(14, 14),
+(15, 15),
+(16, 16),
+(17, 17),
+(18, 18),
+(19, 19),
+(20, 20),
+(21, 21),
+(22, 22),
+(23, 23),
+(24, 24),
+(25, 25),
+(26, 26),
+(27, 27),
+(28, 28),
+(29, 29),
+(30, 30),
+(31, 31),
+(32, 32),
+(33, 33),
+(34, 34),
+(35, 35),
+(36, 36),
+(37, 37),
+(38, 38),
+(39, 39),
+(40, 40),
+(41, 41),
+(42, 42),
+(43, 43),
+(44, 44),
+(45, 45),
+(46, 46),
+(47, 47),
+(48, 48),
+(49, 49),
+(50, 50);
 
 -- --------------------------------------------------------
 
@@ -297,8 +365,26 @@ INSERT INTO `Countries` (`id`, `iso2`, `short_name`, `long_name`, `iso3`, `numco
 
 CREATE TABLE IF NOT EXISTS `Formats` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `format` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+
+--
+-- Dumping data for table `Formats`
+--
+
+INSERT INTO `Formats` (`id`, `format`) VALUES
+(1, 'DVDRip AVI'),
+(2, 'WEBRIP MP4'),
+(3, 'WEBRIP AVI'),
+(4, 'WEBRIP 720p'),
+(5, 'DVDrip MP4'),
+(6, 'BDRip Avi'),
+(7, 'HDRip Avi'),
+(8, '720P MKV'),
+(9, '1080 MKV'),
+(10, 'FLV'),
+(11, 'HDTV');
 
 -- --------------------------------------------------------
 
@@ -480,14 +566,14 @@ CREATE TABLE IF NOT EXISTS `OnlineUsers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=316 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=329 ;
 
 --
 -- Dumping data for table `OnlineUsers`
 --
 
 INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(315, 'vtcr2ku2v17spqk6nehsg9o0d1', 1370980733, '');
+(328, '23gjki5vv08dlbjb5tt6gd8v82', 1371073622, '');
 
 -- --------------------------------------------------------
 
@@ -497,6 +583,8 @@ INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
 
 CREATE TABLE IF NOT EXISTS `Subtitles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `fps_sec` int(11) NOT NULL,
+  `fps_mil_sec` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -564,30 +652,6 @@ INSERT INTO `Users` (`id`, `username`, `password`, `email`, `BirthYear`, `group`
 (19, 'ghfghh', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'dsd@sd.sd', 2006, 3),
 (20, 'wejhg', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'aaa@aaa.aaa', 1919, 3),
 (21, 't567567567', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'tryrt@erttr.rrt', 1917, 3);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `Versions`
---
-
-CREATE TABLE IF NOT EXISTS `Versions` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `version` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
-
---
--- Dumping data for table `Versions`
---
-
-INSERT INTO `Versions` (`id`, `version`) VALUES
-(1, 'dvdrip'),
-(2, 'hdtv'),
-(3, 'dvdrip'),
-(4, 'hdtv'),
-(5, 'dvdrip'),
-(6, 'hdtv');
 
 -- --------------------------------------------------------
 
