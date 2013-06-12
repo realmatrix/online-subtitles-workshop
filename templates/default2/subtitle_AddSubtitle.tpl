@@ -57,6 +57,7 @@ $.ajax( {
 		<td>
 			<select name="Language">
 				<option></option>
+				{SubtitleLanguages}
 			</select>
 		</td>
 	</tr>
@@ -65,6 +66,7 @@ $.ajax( {
 		<td>
 			<select name="version">
 				<option></option>
+				{SubtitleVersions}
 			</select>
 		</td>
 	</tr>
@@ -73,6 +75,7 @@ $.ajax( {
 		<td>
 			<select name="fps">
 				<option></option>
+				{SubtitleFPS}
 			</select>
 		</td>
 	</tr>
@@ -89,6 +92,7 @@ $.ajax( {
 		<td>
 			<select name="cds">
 				<option></option>
+				{SubtitleCDS}
 			</select>
 		</td>
 	</tr>
@@ -103,7 +107,7 @@ $.ajax( {
 	<input type="hidden" name="getcontroller" id="getcontroller" value="subtitle"/>
 	<input type="hidden" name="getsection" id="getsection" value="Addsubtitle"/>
 	<input type="hidden" name="ssec" id="ssec" value="Addsubtitle"/>
-	<input type="hidden" name="h" id="h" value="Submitsubtitle"/>
+	<input type="hidden" name="h" id="h" value="SubmitSubtitle"/>
 </form>
 
 </div>

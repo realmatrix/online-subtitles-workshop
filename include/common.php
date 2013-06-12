@@ -350,6 +350,30 @@ class Common{
 ////////////////////////////////////////////
 
 ////////////////////////////////////////////
+	function GetCds(){
+		$params = array();
+	 	$result = self::db_query("SELECT * FROM CDS", $params);
+		return $result;
+	}
+////////////////////////////////////////////
+
+////////////////////////////////////////////
+	function GetFps(){
+		$params = array();
+	 	$result = self::db_query("SELECT * FROM FPS", $params);
+		return $result;
+	}
+////////////////////////////////////////////
+
+////////////////////////////////////////////
+	function GetVersions(){
+		$params = array();
+	 	$result = self::db_query("SELECT * FROM Versions", $params);
+		return $result;
+	}
+////////////////////////////////////////////
+
+////////////////////////////////////////////
 	function GetCountries(){
 		$params = array();
 	 	$result = self::db_query("SELECT * FROM Countries", $params);
