@@ -1,17 +1,71 @@
 <script type='text/javascript' src='apps/jquery/jquery-1.9.1.js'></script> 
+
 <script>
-function processForm(formId, divID) { 
-//your validation code
-alert($("#"+formId).serialize());
-$.ajax( {
-        type: 'POST',
-        url: 'index.php',
-        data: $("#"+formId).serialize(), 
-        success: function(data) {
-            $("#"+divID).html(data);
-        }
-    } );
-}
+// variable to hold request
+var request;
+// bind to the submit event of our form
+$("form#submitnewsubtitle").submit(function(event){
+	//$("#SubmittingForm").show();
+    // abort any pending request
+    if (request) {
+        request.abort();
+    }
+    //form validation
+//    var faults = $('input').filter(function() {
+    // filter input elements to required ones that are empty
+//    return $(this).data('required') && $(this).val() === "";
+//    }).css("background-color", "red"); // make them attract the eye
+//    if(faults.length) return false; // if any required are empty, cancel submit
+//     var faults = $('select').filter(function() {
+    // filter input elements to required ones that are empty
+//    return $(this).data('required') && $(this).val() === "";
+//    }).css("background-color", "red"); // make them attract the eye
+//    if(faults.length) return false; // if any required are empty, cancel submit   
+    // setup some local variables
+   var $form = $(this);
+    // let's select and cache all the fields
+    var $inputs = $form.find("input, select, button, textarea, file");
+    // serialize the data in the form
+    var serializedData = $form.serialize();
+	//alert(serializedData);
+    // let's disable the inputs for the duration of the ajax request
+    $inputs.prop("disabled", true);
+
+    // fire off the request to /form.php
+    request = $.ajax({
+        url: "index.php",
+        type: "post",
+        data: serializedData
+    });
+
+    // callback handler that will be called on success
+    request.done(function (response, textStatus, jqXHR){
+        // log a message to the console
+        console.log("Hooray, it worked!");
+        console.log("Response: "+response);        
+        $("#SystemAjax_subtitle_AddSubtitle").html(response);
+    });
+
+    // callback handler that will be called on failure
+    request.fail(function (jqXHR, textStatus, errorThrown){
+        // log the error to the console
+        console.error(
+            "The following error occured: "+
+            textStatus, errorThrown
+        );
+    });
+
+    // callback handler that will be called regardless
+    // if the request failed or succeeded
+    request.always(function () {
+        // reenable the inputs
+        $inputs.prop("disabled", false);
+    });
+
+    // prevent default posting of form
+    event.preventDefault();
+});
+
 </script>
 
 <style>
@@ -46,7 +100,7 @@ $.ajax( {
 <!-- add subtitle form -->
 <div id="div-submitnewsubtitle">
 	
-<form name="submitnewsubtitle" id="submitnewsubtitle" action="#" onsubmit="processForm('submitnewsubtitle','div-submitnewsubtitle'); return false;">
+<form name="submitnewsubtitle" id="submitnewsubtitle" action="#">
 <table style="width: 100%;">
 	<tr>
 		<td style="width: 20%;">{ReleaseName}</td>
@@ -84,6 +138,7 @@ $.ajax( {
 		<td>
 			<select name="format">
 				<option></option>
+				{SubtitleFormats}
 			</select>
 		</td>
 	</tr>

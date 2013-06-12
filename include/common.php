@@ -374,6 +374,14 @@ class Common{
 ////////////////////////////////////////////
 
 ////////////////////////////////////////////
+	function GetFormats(){
+		$params = array();
+	 	$result = self::db_query("SELECT * FROM Formats", $params);
+		return $result;
+	}
+////////////////////////////////////////////
+
+////////////////////////////////////////////
 	function GetCountries(){
 		$params = array();
 	 	$result = self::db_query("SELECT * FROM Countries", $params);

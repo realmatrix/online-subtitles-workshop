@@ -39,6 +39,7 @@
 				  array("{SubtitleCDS}", self::cds()),
 				  array("{SubtitleFPS}", self::fps()),
 				  array("{SubtitleVersions}", self::versions()),
+				  array("{SubtitleFormats}", self::formats()),
 				 );
 			 
 		return $content;
@@ -75,7 +76,15 @@
 			}
 			return $res;
 		}
-		
+
+		function formats(){
+			$formats = Common::GetFormats();
+			for ($i=0; $i < count($formats); $i++) { 
+				$res .= "<option value='".$formats[$i]['id']."'>".$formats[$i]['format']."</option>";
+			}
+			return $res;
+		}
+				
 	}
 	
 	
