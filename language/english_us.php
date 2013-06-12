@@ -73,7 +73,7 @@
 	$GLOBALS['lang']['video_AddVideo_VideoType'] = "Video type:";
 	$GLOBALS['lang']['video_AddVideo_Category'] = "Category:";
 	$GLOBALS['lang']['video_AddVideo_Language'] = "Language:";
-	$GLOBALS['lang']['video_AddVideo_Title'] = "Title:";
+	$GLOBALS['lang']['video_AddVideo_Title'] = "English Title:";
 	$GLOBALS['lang']['video_AddVideo_OtherTitle'] = "Other title:";
 	$GLOBALS['lang']['video_AddVideo_Country'] = "Country:";
 	$GLOBALS['lang']['video_AddVideo_Genres'] = "Genres:";

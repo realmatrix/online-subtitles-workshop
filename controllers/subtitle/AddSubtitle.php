@@ -37,8 +37,8 @@
 				  array("{submit}", $GLOBALS['lang']['subtitle_AddSubtitle_Submit']),
 				  array("{SubtitleLanguages}", self::languages()),
 				  array("{SubtitleCDS}", self::cds()),
-				  array("{SubtitleFPS}", self::fps()),
-				  array("{SubtitleVersions}", self::versions()),
+				  array("{SubtitleFPSsec}", self::numbers()),
+				  array("{SubtitleFPSmilsec}", self::numbers()),
 				  array("{SubtitleFormats}", self::formats()),
 				 );
 			 
@@ -61,21 +61,12 @@
 			return $res;
 		}	
 		
-		function fps(){
-			$fps = Common::GetFps();
-			for ($i=0; $i < count($fps); $i++) { 
-				$res .= "<option value='".$fps[$i]['id']."'>".$fps[$i]['fps']."</option>";
+		function numbers(){
+			for ($i=1; $i <= 100; $i++) { 
+				$res .= "<option value='".$i."'>".$i."</option>";
 			}
 			return $res;
 		}			
-
-		function versions(){
-			$versions = Common::GetVersions();
-			for ($i=0; $i < count($versions); $i++) { 
-				$res .= "<option value='".$versions[$i]['id']."'>".$versions[$i]['version']."</option>";
-			}
-			return $res;
-		}
 
 		function formats(){
 			$formats = Common::GetFormats();

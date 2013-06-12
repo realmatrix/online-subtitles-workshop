@@ -3,7 +3,7 @@
 		width: 100%;
 	}
 	.thumnail-container{
-		width: 200px; height: 270px; background-color: black; text-align: center;
+		width: 210px; height: 280px; background-color: black; text-align: center;
 	}
 </style>
 
@@ -29,8 +29,8 @@
 
 	<table class='table-viewvideo'>
 		<tr>
-			<td>{OtherTitle}</td>
-			<td style="width: 75%;">{VideoOtherTitle}</td>	
+			<td style="width: 30%;">{OtherTitle}</td>
+			<td style="width: 70%;">{VideoOtherTitle}</td>	
 		</tr>
 		<tr>
 			<td>{Country}</td>

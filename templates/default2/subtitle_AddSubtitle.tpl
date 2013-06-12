@@ -107,6 +107,12 @@ $("form#submitnewsubtitle").submit(function(event){
 		<td style="width: 80%;"><input type="text" name="ReleaseName" /></td>
 	</tr>
 	<tr>
+		<td>{Version}</td>
+		<td>
+			<input type="text" name="version" />
+		</td>
+	</tr>
+	<tr>
 		<td>{Language}</td>
 		<td>
 			<select name="Language">
@@ -116,20 +122,15 @@ $("form#submitnewsubtitle").submit(function(event){
 		</td>
 	</tr>
 	<tr>
-		<td>{Version}</td>
-		<td>
-			<select name="version">
-				<option></option>
-				{SubtitleVersions}
-			</select>
-		</td>
-	</tr>
-	<tr>
 		<td>{Fps}</td>
 		<td>
-			<select name="fps">
+			<select name="fpssec">
 				<option></option>
-				{SubtitleFPS}
+				{SubtitleFPSsec}
+			</select>
+			<select name="fpsmilsec">
+				<option></option>
+				{SubtitleFPSmilsec}
 			</select>
 		</td>
 	</tr>

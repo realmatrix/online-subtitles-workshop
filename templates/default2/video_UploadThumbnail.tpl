@@ -25,7 +25,7 @@ $(document).ready(function(){
 
 
 <div id="div-synopsis">
-	max width 200 max height 270
+	max width 210 max height 280
 	<p id="status"></p>
 	<form id="form1" enctype="multipart/formdata">
 	<input type="file" id="photo" name="photo" />

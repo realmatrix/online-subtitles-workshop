@@ -358,22 +358,6 @@ class Common{
 ////////////////////////////////////////////
 
 ////////////////////////////////////////////
-	function GetFps(){
-		$params = array();
-	 	$result = self::db_query("SELECT * FROM FPS", $params);
-		return $result;
-	}
-////////////////////////////////////////////
-
-////////////////////////////////////////////
-	function GetVersions(){
-		$params = array();
-	 	$result = self::db_query("SELECT * FROM Versions", $params);
-		return $result;
-	}
-////////////////////////////////////////////
-
-////////////////////////////////////////////
 	function GetFormats(){
 		$params = array();
 	 	$result = self::db_query("SELECT * FROM Formats", $params);
