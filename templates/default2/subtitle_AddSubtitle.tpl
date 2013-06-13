@@ -122,6 +122,15 @@ $("form#submitnewsubtitle").submit(function(event){
 		</td>
 	</tr>
 	<tr>
+		<td>{Country}</td>
+		<td>
+			<select name="Country">
+				<option></option>
+				{SubtitleCountry}
+			</select>
+		</td>
+	</tr>
+	<tr>
 		<td>{Fps}</td>
 		<td>
 			<select name="fpssec">

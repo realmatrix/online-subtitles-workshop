@@ -1,6 +1,6 @@
 <script type="text/javascript" charset="utf-8">
 			$(document).ready(function() {
-				$('#test').dataTable( {
+				$('#SystemTable').dataTable( {
 					"sScrollY": 200,
 					"bJQueryUI": false,
 					"sPaginationType": "full_numbers"
@@ -29,23 +29,27 @@
 <!-- content start -->
 
 <div id="test1">
-<table cellpadding="0" cellspacing="0" border="0" class="table2" id="test" width="100%">
+<table cellpadding="0" cellspacing="0" border="0" class="table2" id="SystemTable" width="100%">
 	<thead>
 		<tr>
-			<th>Rendering engine</th>
-			<th>Browser</th>
-			<th>Platform(s)</th>
-			<th>Engine version</th>
-			<th width="12%">grade</th>
+			<th>Flag</th>
+			<th>Team</th>
+			<th>Version(s)</th>
+			<th>%</th>
+			<th>Checked</th>
+			<th>View</th>
+			<th>DL</th>
 		</tr>
 	</thead>
 	<tfoot>
 		<tr>
-			<th>Rendering engine</th>
-			<th>Browser</th>
-			<th>Platform(s)</th>
-			<th>Engine version</th>
-			<th>grade</th>
+			<th>Flag</th>
+			<th>Team</th>
+			<th>Version(s)</th>
+			<th>%</th>
+			<th>Checked</th>
+			<th>View</th>
+			<th>DL</th>
 		</tr>
 	</tfoot>
 	<tbody>
@@ -56,6 +60,8 @@
 			<td>Win 95+</td>
 			<td class="center">4</td>
 			<td class="center">X</td>
+			<td></td>
+			<td></td>
 		</tr>
 		<tr class="odd gradeX">
 			<td>Trident</td>
@@ -64,6 +70,8 @@
 			<td>Win 95+</td>
 			<td class="center">4</td>
 			<td class="center">X</td>
+			<td></td>
+			<td></td>
 		</tr>
 		{TableRows}
 	</tbody>

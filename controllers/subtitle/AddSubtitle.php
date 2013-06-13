@@ -38,6 +38,7 @@
 				  array("{NoCDs}", $GLOBALS['lang']['subtitle_AddSubtitle_CDS']),
 				  array("{submit}", $GLOBALS['lang']['subtitle_AddSubtitle_Submit']),
 				  array("{SubtitleLanguages}", self::languages()),
+				  array("{SubtitleCountry}", self::countries()),
 				  array("{SubtitleCDS}", self::cds()),
 				  array("{SubtitleFPSsec}", self::numbers()),
 				  array("{SubtitleFPSmilsec}", self::numbers()),
@@ -78,6 +79,15 @@
 			return $res;
 		}
 		
+		function countries(){
+			$countries = Common::GetCountries();
+			$res = "";
+			for ($i=0; $i < count($countries); $i++) { 
+				$res.="<option value='".$countries[$i]['id']."'>".$countries[$i]['short_name']."</option>";
+			}
+			return $res;
+		}
+		
 		function CreateSubtitle(){
 			$params = array(
 				array(":fpssec", $_POST['fpssec'], "str"),
@@ -88,9 +98,11 @@
 				array(":format", $_POST['format'], "str"),
 				array(":cds", $_POST['cds'], "str"),
 				array(":vid", $_POST['vid'], "str"),
+				array(":country", $_POST['Country'], "str"),
 			);
-			$res=Common::db_query("INSERT INTO `Subtitles` (`fps_sec`, `fps_mil_sec`, `release_name`, `version`, `language`, `format`, `cds`, `vid`) VALUES (:fpssec, :fpsmilsec, :releasename, :version, :language, :format, :cds, :vid);", $params);	
+			$res=Common::db_query("INSERT INTO `Subtitles` (`fps_sec`, `fps_mil_sec`, `release_name`, `version`, `language`, `format`, `cds`, `vid`, `country`) VALUES (:fpssec, :fpsmilsec, :releasename, :version, :language, :format, :cds, :vid, :country);", $params);	
 		}
+	
 			
 	}
 	
