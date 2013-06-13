@@ -47,9 +47,9 @@
 			$subtitles = self::subtitles();
 			$res = "";
 			for ($i=0; $i < count($subtitles); $i++) {
-			$country=Common::GetCountryById(); 
+			$country=Common::GetCountryById($subtitles[$i]['country']); 
 				$res.="<tr>";
-				$res.="<td></td>";
+				$res.="<td><img src='".$GLOBALS['config']['TemplatesDir'].$GLOBALS['config']['template']."/files/country-flags/".$country[0]['iso2'].".png' ></td>";
 				$res.="<td></td>";
 				$res.="<td></td>";
 				$res.="<td></td>";

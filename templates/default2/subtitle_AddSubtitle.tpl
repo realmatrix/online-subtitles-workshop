@@ -113,20 +113,20 @@ $("form#submitnewsubtitle").submit(function(event){
 		</td>
 	</tr>
 	<tr>
-		<td>{Language}</td>
-		<td>
-			<select name="Language">
-				<option></option>
-				{SubtitleLanguages}
-			</select>
-		</td>
-	</tr>
-	<tr>
 		<td>{Country}</td>
 		<td>
 			<select name="Country">
 				<option></option>
 				{SubtitleCountry}
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td>{Language}</td>
+		<td>
+			<select name="Language">
+				<option></option>
+				{SubtitleLanguages}
 			</select>
 		</td>
 	</tr>

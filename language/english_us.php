@@ -104,6 +104,7 @@
 	$GLOBALS['lang']['subtitle_AddSubtitle_AddSubtitle'] = "Create subtitle:";
 	$GLOBALS['lang']['subtitle_AddSubtitle_ReleaseName'] = "Release Name:";
 	$GLOBALS['lang']['subtitle_AddSubtitle_Language'] = "Language:";
+	$GLOBALS['lang']['subtitle_AddSubtitle_Country'] = "Country:";
 	$GLOBALS['lang']['subtitle_AddSubtitle_Version'] = "Version:";
 	$GLOBALS['lang']['subtitle_AddSubtitle_FPS'] = "FPS:";
 	$GLOBALS['lang']['subtitle_AddSubtitle_Format'] = "Format:";

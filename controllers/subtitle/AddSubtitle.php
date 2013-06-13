@@ -32,6 +32,7 @@
 				  array("{AddSubtitle}", $GLOBALS['lang']['subtitle_AddSubtitle_AddSubtitle']),
 				  array("{ReleaseName}", $GLOBALS['lang']['subtitle_AddSubtitle_ReleaseName']),
 				  array("{Language}", $GLOBALS['lang']['subtitle_AddSubtitle_Language']),
+				  array("{Country}", $GLOBALS['lang']['subtitle_AddSubtitle_Country']),
 				  array("{Version}", $GLOBALS['lang']['subtitle_AddSubtitle_Version']),
 				  array("{Fps}", $GLOBALS['lang']['subtitle_AddSubtitle_FPS']),
 				  array("{Format}", $GLOBALS['lang']['subtitle_AddSubtitle_Format']),
