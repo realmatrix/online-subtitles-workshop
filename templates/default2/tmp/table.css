@@ -1,3 +1,4 @@
+/*
 .SystemTable label{
 	float: left;
 }
@@ -91,3 +92,58 @@
 	font-size: 1.1em;
 	font-style: normal;
 	}
+*/	
+
+div.dataTables_length {
+    float: left;
+    background-color: red;
+}
+ 
+div.dataTables_filter {
+    float: right;
+    background-color: green;
+}
+ 
+div.dataTables_info {
+    float: left;
+    background-color: blue;
+}
+ 
+div.dataTables_paginate {
+    float: right;
+    background-color: yellow;
+}
+ 
+div.dataTables_length,
+div.dataTables_filter,
+div.dataTables_paginate,
+div.dataTables_info {
+    padding: 6px;
+}
+
+table.SystemTable {
+    clear: both;
+}
+ 
+/* Self clearing - */
+div.dataTables_wrapper:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+html[xmlns] .dataTables_wrapper { display: block; }
+* html .dataTables_wrapper { height: 1%; }
+
+table.SystemTable {
+    width: 100%;
+    clear: both;
+}
+ 
+table.SystemTable td,
+table.SystemTable th {
+    padding: 5px;
+    border: 1px solid #fff;
+}

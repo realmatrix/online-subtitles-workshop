@@ -1,3 +1,33 @@
+<style>
+div.dataTables_length {
+    float: left;
+}
+ 
+div.dataTables_filter {
+    float: right;
+    clear: both;
+}
+ 
+div.dataTables_info {
+    float: left;
+}
+ 
+div.dataTables_paginate {
+    float: right;
+}
+ 
+div.dataTables_length,
+div.dataTables_filter,
+div.dataTables_paginate,
+div.dataTables_info {
+    padding: 6px;
+}
+
+table.SystemTable {
+    clear: both;
+}
+
+</style>
 <script type="text/javascript" charset="utf-8">
 			$(document).ready(function() {
 				$('#SystemTable').dataTable( {
@@ -28,7 +58,7 @@
 <div id="div-video-subtitles">
 <!-- content start -->
 
-<div id="test1">
+<div>
 <table cellpadding="0" cellspacing="0" border="0" class="table2" id="SystemTable" class="SystemTable" width="100%">
 	<thead>
 		<tr>
