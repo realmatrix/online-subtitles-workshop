@@ -29,7 +29,7 @@
 <!-- content start -->
 
 <div id="test1">
-<table cellpadding="0" cellspacing="0" border="0" class="table2" id="SystemTable" width="100%">
+<table cellpadding="0" cellspacing="0" border="0" class="table2" id="SystemTable" class="SystemTable" width="100%">
 	<thead>
 		<tr>
 			<th>Flag</th>

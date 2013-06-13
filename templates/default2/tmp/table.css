@@ -1,40 +1,43 @@
-.table2 p {
+.SystemTable label{
+	float: left;
+}
+.SystemTable p {
 	text-align:center;
 	}	
-.table2 a:link {
+.SystemTable a:link {
 	color:#d42945;
 	text-decoration:none;
 	border-bottom:1px dotted #ffbac8;
 	}	
-.table2 a:visited {
+.SystemTable a:visited {
 	color:#d42945;
 	border-bottom:none;
 	text-decoration:none;
 	}		
-.table2 a:hover,
-.table2 a:focus {
+.SystemTable a:hover,
+.SystemTable a:focus {
 	color:#f03b58;
 	border-bottom:1px solid #f03b58;
 	text-decoration:none;
 	}
-.table2 a,
-.table2 a:link,
-.table2 a:visited {
+.SystemTable a,
+.SystemTable a:link,
+.SystemTable a:visited {
 	border:none;
 	}							
 	
-.table2 img {
+.SystemTable img {
 	border:0;
 	margin-top:.5em;
 	}	
-.table2 {
-	width:90%;
+.SystemTable {
+	width:100%;
 	border-top:1px solid #e5eff8;
 	border-right:1px solid #e5eff8;
 	margin:1em auto;
 		border-collapse:collapse;
 	}
-.table2 caption {
+.SystemTable caption {
 	color: #9ba9b4;
 	font-size:.94em;
 		letter-spacing:.1em;
@@ -43,23 +46,23 @@
 		caption-side:top;
 		text-align:center;
 	}	
-.table2 tr.odd td	{
+.SystemTable tr.odd td	{
 	background:#f7fbff
 	}
-.table2 tr.odd .column1	{
+.SystemTable tr.odd .column1	{
 	background:#f4f9fe;
 	}	
 .column1	{
 	background:#f9fcfe;
 	}
-.table2 td {
+.SystemTable td {
 	color:#678197;
 	border-bottom:1px solid #e5eff8;
 	border-left:1px solid #e5eff8;
 	padding:.3em 1em;
 	text-align:center;
 	}				
-.table2 th {
+.SystemTable th {
 	font-weight:normal;
 	color: #678197;
 	text-align:left;
@@ -67,22 +70,22 @@
 	border-left:1px solid #e5eff8;
 	padding:.3em 1em;
 	}							
-.table2 thead th {
+.SystemTable thead th {
 	background:#f4f9fe;
 	text-align:center;
 	font:bold 1.2em/2em "Century Gothic","Trebuchet MS",Arial,Helvetica,sans-serif;
 	color:#66a3d3
 	}	
-.table2 tfoot th {
+.SystemTable tfoot th {
 	text-align:center;
 	background:#f4f9fe;
 	}	
-.table2 tfoot th strong {
+.SystemTable tfoot th strong {
 	font:bold 1.2em "Century Gothic","Trebuchet MS",Arial,Helvetica,sans-serif;
 	margin:.5em .5em .5em 0;
 	color:#66a3d3;
 		}		
-.table2 tfoot th em {
+.SystemTable tfoot th em {
 	color:#f03b58;
 	font-weight: bold;
 	font-size: 1.1em;
