@@ -24,9 +24,11 @@
 		}
 				
 		function AddSubtitle_content(){
+			if($_GET['vid']!=""){$vid=$_GET['vid'];}
+			if($_POST['vid']!=""){$vid=$_POST['vid'];}
 				$content = array
 				  (
-				  array("{vid}", $_GET['vid']),
+				  array("{vid}", $vid),
 				  array("{AddSubtitle}", $GLOBALS['lang']['subtitle_AddSubtitle_AddSubtitle']),
 				  array("{ReleaseName}", $GLOBALS['lang']['subtitle_AddSubtitle_ReleaseName']),
 				  array("{Language}", $GLOBALS['lang']['subtitle_AddSubtitle_Language']),
@@ -75,7 +77,21 @@
 			}
 			return $res;
 		}
-				
+		
+		function CreateSubtitle(){
+			$params = array(
+				array(":fpssec", $_POST['fpssec'], "str"),
+				array(":fpsmilsec", $_POST['fpsmilsec'], "str"),
+				array(":releasename", $_POST['ReleaseName'], "str"),
+				array(":version", $_POST['version'], "str"),
+				array(":language", $_POST['Language'], "str"),
+				array(":format", $_POST['format'], "str"),
+				array(":cds", $_POST['cds'], "str"),
+				array(":vid", $_POST['vid'], "str"),
+			);
+			$res=Common::db_query("INSERT INTO `Subtitles` (`fps_sec`, `fps_mil_sec`, `release_name`, `version`, `language`, `format`, `cds`, `vid`) VALUES (:fpssec, :fpsmilsec, :releasename, :version, :language, :format, :cds, :vid);", $params);	
+		}
+			
 	}
 	
 	
