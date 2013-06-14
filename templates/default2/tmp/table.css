@@ -1,7 +1,3 @@
-/*
-.SystemTable label{
-	float: left;
-}
 .SystemTable p {
 	text-align:center;
 	}	
@@ -92,8 +88,9 @@
 	font-size: 1.1em;
 	font-style: normal;
 	}
-*/	
 
+
+/*
 div.dataTables_length {
     float: left;
     background-color: red;
@@ -124,8 +121,10 @@ div.dataTables_info {
 table.SystemTable {
     clear: both;
 }
- 
+*/
+
 /* Self clearing - */
+/*
 div.dataTables_wrapper:after {
     content: ".";
     display: block;
@@ -147,3 +146,5 @@ table.SystemTable th {
     padding: 5px;
     border: 1px solid #fff;
 }
+
+*/
