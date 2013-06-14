@@ -29,6 +29,7 @@
 				  (
 				  array("{vid}", $vid),
 				  array("{TableRows}", self::TableRows()),
+				  array("{VideoSubtitles}", $GLOBALS['lang']['subtitle_VideoSubtitles_VideosSubtitles'])
 				 );
 			 
 		return $content;
@@ -51,7 +52,7 @@
 				$res.="<tr>";
 				$res.="<td><img src='".$GLOBALS['config']['TemplatesDir'].$GLOBALS['config']['template']."/files/country-flags/".$country[0]['iso2'].".png' ></td>";
 				$res.="<td></td>";
-				$res.="<td></td>";
+				$res.="<td>".$subtitles[$i]['version']."</td>";
 				$res.="<td></td>";
 				$res.="<td></td>";
 				$res.="<td></td>";

@@ -110,5 +110,7 @@
 	$GLOBALS['lang']['subtitle_AddSubtitle_Format'] = "Format:";
 	$GLOBALS['lang']['subtitle_AddSubtitle_CDS'] = "NO of cd's:";
 	$GLOBALS['lang']['subtitle_AddSubtitle_Submit'] = "Create";
-	
+
+//video subtitles
+	$GLOBALS['lang']['subtitle_VideoSubtitles_VideosSubtitles'] = "Video Subtitles";
 ?>
