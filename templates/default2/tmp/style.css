@@ -2985,7 +2985,7 @@ td.forumicon {
 	width: 5%; text-align: center;
 }
 td.forumdetails {
-	padding-right: 30px !important; font-family: Verdana, Geneva, sans-serif; font-size: 12px;
+	padding-right: /*30px !important;*/ font-family: Verdana, Geneva, sans-serif; font-size: 12px;
 }
 td.forumlink {
 	vertical-align: middle !important;
