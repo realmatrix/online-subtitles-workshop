@@ -2,7 +2,8 @@
 
 	class CAddSubtitle{
 
-		
+	public static $RefreshSubtitles = "";
+			
 		function AddSubtitle(){
 			return self::AddSubtitle_content();
 		}
@@ -44,6 +45,7 @@
 				  array("{SubtitleFPSsec}", self::numbers()),
 				  array("{SubtitleFPSmilsec}", self::numbers()),
 				  array("{SubtitleFormats}", self::formats()),
+				  array("{RefreshSubtitles}", self::$RefreshSubtitles),
 				 );
 			 
 		return $content;
@@ -102,6 +104,16 @@
 				array(":country", $_POST['Country'], "str"),
 			);
 			$res=Common::db_query("INSERT INTO `Subtitles` (`fps_sec`, `fps_mil_sec`, `release_name`, `version`, `language`, `format`, `cds`, `vid`, `country`) VALUES (:fpssec, :fpsmilsec, :releasename, :version, :language, :format, :cds, :vid, :country);", $params);	
+			self::$RefreshSubtitles = "				<script>
+				$.ajax({
+				    url: 'index.php?page=none&dataonly=yes&getcontroller=subtitle&getsection=VideoSubtitles&vid=12',
+				    cache: false,
+				    dataType: 'html',
+				    success: function(data) {
+				        $('#SystemAjax_subtitle_VideoSubtitles').html(data);
+				    }
+				});
+				</script>";
 		}
 	
 			

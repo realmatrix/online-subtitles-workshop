@@ -185,10 +185,9 @@ $("form#submitnewsubtitle").submit(function(event){
 	</TBODY>
 	</TABLE>
 	</DIV></div>
+{RefreshSubtitles}
 </div>
 <br />
-
-
 
 
 
