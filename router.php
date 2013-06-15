@@ -68,38 +68,38 @@
 	switch ($SystemPage) {
     case ($SystemPage=="home" or ($SystemPage=="video" and $SystemSection=="view")) and $dataonly!="yes":
 		//loading template
-		echo common::render($TemplateHead, "head");
-		echo common::render($TemplateHeader, "header");
-		echo common::render($TemplateLeft, "left");
-		echo common::render($TemplateBody, "body");
-		echo common::render($TemplateRight, "right");
-		echo common::render($TemplateFooter, "footer");
+		echo $GLOBALS['COMMON']->render($TemplateHead, "head");
+		echo $GLOBALS['COMMON']->render($TemplateHeader, "header");
+		echo $GLOBALS['COMMON']->render($TemplateLeft, "left");
+		echo $GLOBALS['COMMON']->render($TemplateBody, "body");
+		echo $GLOBALS['COMMON']->render($TemplateRight, "right");
+		echo $GLOBALS['COMMON']->render($TemplateFooter, "footer");
         break;
     case ($SystemPage=="video" and $SystemSection=="add") or $SystemPage=="subtitle":
-		echo common::render($TemplateHead, "head");
-		echo common::render($TemplateHeader, "header");
-		echo common::render($TemplateBody, "body");
-		echo common::render($TemplateFooter, "footer");
+		echo $GLOBALS['COMMON']->render($TemplateHead, "head");
+		echo $GLOBALS['COMMON']->render($TemplateHeader, "header");
+		echo $GLOBALS['COMMON']->render($TemplateBody, "body");
+		echo $GLOBALS['COMMON']->render($TemplateFooter, "footer");
         break;
     case $SystemPage!="" and $dataonly=="yes" and $getwidget!="":
-		echo common::render($TemplateHead, "head");
-		echo common::GetWidget($getwidget);
+		echo $GLOBALS['COMMON']->render($TemplateHead, "head");
+		echo $GLOBALS['COMMON']->GetWidget($getwidget);
         break;
     case $SystemPage!="" and $dataonly=="yes" and $getcontroller!="" and $getsection!="":
-		echo common::render($TemplateHead, "head");
-		echo common::LoadSection($getcontroller, $getsection);
+		echo $GLOBALS['COMMON']->render($TemplateHead, "head");
+		echo $GLOBALS['COMMON']->LoadSection($getcontroller, $getsection);
         break;
     case $SystemPage=="register":
-		echo common::render($TemplateRegister, "register");
+		echo $GLOBALS['COMMON']->render($TemplateRegister, "register");
 		break;
     case $SystemPage=="login":
-		echo common::render($TemplateLogin, "login");
+		echo $GLOBALS['COMMON']->render($TemplateLogin, "login");
         break;
     case $SystemPage=="logout":
-		echo common::render($TemplateLogout, "logout");
+		echo $GLOBALS['COMMON']->render($TemplateLogout, "logout");
         break;
     default:
-	   echo common::render($Template404, "404");
+	    echo $GLOBALS['COMMON']->render($Template404, "404");
 }
 
 //////////////////////////////////////////////////////
