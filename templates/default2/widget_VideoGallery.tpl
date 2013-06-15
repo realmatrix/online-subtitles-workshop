@@ -72,84 +72,6 @@ section {
 	border: 1px solid #c7a60c;
 	border-top: 1px solid #e5d51f;
 }
-.price_table {
-    float: right;
-	font-size: 12px;
-    margin: 10px auto 0;
-    padding: 20px 0;
-	position: relative;
-	width: 570px;
-}
-.price_table .price_column.highlighted {
-	background: #ffd838;
-    margin: -5px!important;
-	padding: 10px;
-    z-index: 2;
-}
-.price_table .price_column {
-	display: block;
-	margin: 5px;
-    float: left;
-    position: absolute;
-	width: 180px;
-    z-index: 1;
-}
-.price_table .price_column > div {
-	background: #eeeeee;
-}
-.price_table .price_column > div > div {
-	padding: 10px 15px;
-    border-bottom: 1px solid #cccccc;
-    border-top: 1px solid #f6f6f6;
-}
-.price_table .price_column > div > p {
-	padding: 10px 15px;
-    border-bottom: 1px solid #cccccc;
-    border-top: 1px solid #f6f6f6;
-}
-.price_table .price_column > div > ul {
-	padding: 10px 15px;
-    border-bottom: 1px solid #cccccc;
-    border-top: 1px solid #f6f6f6;
-}
-.price_table .price_title {
-	background-color: #333333;
-    border-top: 0!important;
-    color: #ffffff;
-    font-size: 14px;
-}
-.price_table .highlighted .price_title {
-    font-size: 16px;
-}
-.price_table .price_price {
-    font-size: 36px;
-    line-height: 40px;
-}
-.price_table .highlighted  .price_price {
-    font-size: 40px;
-    line-height: 44px;
-}
-.price_table .price_explanation {
-	font-size: 10px;
-    line-height: 13px;
-    text-transform: uppercase;
-}
-.price_table .cusButton {
-	background-color: #333333;
-	display: block;
-    text-align: center;
-}
-.price_table li {
-	padding: 5px 0;
-}
-.price_table div.pix_check {
-	background: url(images/demo/list-check-green.png) no-repeat 15px center;
-    padding-left: 38px!important;
-}
-.price_table div.pix_error {
-	background: url(images/demo/list-error.png) no-repeat 15px center;
-    padding-left: 38px!important;
-}
 </style>
  
 </head> 
@@ -159,15 +81,15 @@ section {
     	<div style="overflow:hidden; width:100%; margin: 0px auto; padding:0 20px;"> 
                 <div class="pix_diapo">
 
-                    <div data-thumb="images/thumbs/megamind1048.jpg">
-                        <img src="images/slides/megamind1048.jpg">
+                    <div data-thumb="templates/default2/files/diapo/images/thumbs/megamind1048.jpg">
+                        <img src="templates/default2/files/diapo/images/slides/megamind1048.jpg">
                         <div class="caption elemHover fromLeft">
                             This is a simple sliding image with caption. You can have more than one caption and decide the layout of the caption via css.
                         </div>
                     </div>
                     
-                    <div data-thumb="images/thumbs/megamind_07.jpg">
-                        <img src="images/slides/megamind_07.jpg"> 
+                    <div data-thumb="templates/default2/files/diapo/images/thumbs/megamind_07.jpg">
+                        <img src="templates/default2/files/diapo/images/slides/megamind_07.jpg"> 
                         <div class="caption elemHover fromRight" style="bottom:65px; padding-bottom:5px; color:#ff0; text-transform:uppercase">
                             Here you can see two captions.
                         </div>
@@ -176,8 +98,8 @@ section {
                         </div>
                     </div>
                     
-                    <div data-thumb="images/thumbs/wall-e.jpg" data-time="7000">
-                        <img src="images/slides/wall-e.jpg">
+                    <div data-thumb="templates/default2/files/diapo/images/thumbs/wall-e.jpg" data-time="7000">
+                        <img src="templates/default2/files/diapo/images/slides/wall-e.jpg">
                         <div class="elemHover caption fromLeft" style="bottom:70px; width:auto; -webkit-border-top-right-radius: 6px; -webkit-border-bottom-right-radius: 6px; -moz-border-radius-topright: 6px; -moz-border-radius-bottomright: 6px; border-top-right-radius: 6px; border-bottom-right-radius: 6px;">
                             You can also get the same effect as the caption with:
                         </div>
@@ -193,14 +115,14 @@ section {
                         </div>
                     </div>
                     
-                    <div data-thumb="images/thumbs/up-official-trailer-fake.jpg">
+                    <div data-thumb="templates/default2/files/diapo/images/thumbs/up-official-trailer-fake.jpg">
                         <iframe width="940" height="470" src="http://www.youtube.com/embed/qas5lWp7_R0?wmode=transparent&autoplay=0" data-fake="images/slides/up-official-trailer-fake.jpg" frameborder="0" allowfullscreen></iframe>
                         <div class="elemHover caption fromLeft elemToHide" style="bottom: 350px; width:auto; -webkit-border-top-right-radius: 6px; -webkit-border-bottom-right-radius: 6px; -moz-border-radius-topright: 6px; -moz-border-radius-bottomright: 6px; border-top-right-radius: 6px; border-bottom-right-radius: 6px; left:0">
                             You can also display videos, but it requires a "fake image"... read the documentation please
                         </div>
                     </div>
                     
-                    <div data-thumb="images/thumbs/big_buck_bunny.jpg" data-time="7000">
+                    <div data-thumb="templates/default2/files/diapo/images/thumbs/big_buck_bunny.jpg" data-time="7000">
                         <div style="position:absolute; top:0; left:0; width:900px; height:430px; padding:20px; background:#fff; color:#222;">
                         	<div style="float:left; width:300px;">
                                 <p><br><br>You can display any html element directly in the slider, but pay attention, with many elements the transition effect could be slowed.<br>
@@ -212,8 +134,8 @@ section {
                     </div>
                     
                     
-                    <div data-thumb="images/thumbs/ratatouille2.jpg">
-                        <img src="images/slides/ratatouille2.jpg">
+                    <div data-thumb="templates/default2/files/diapo/images/thumbs/ratatouille2.jpg">
+                        <img src="templates/default2/files/diapo/images/slides/ratatouille2.jpg">
                     </div>
                     
                </div><!-- #pix_diapo -->

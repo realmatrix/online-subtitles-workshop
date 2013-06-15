@@ -1,7 +1,7 @@
 <?php
 	
 	$SystemHeader = "
-	<script src='apps/jquery/jquery-1.9.1.js'></script>
+	<script src='apps/jquery/jquery-2.0.2.min.js'></script>
 	<script type='text/javascript' charset='utf-8' src='apps/jquery/jquery.collapse.js'></script>
 	<script type='text/javascript' charset='utf-8' src='apps/jquery/jquery.tipsy.js'></script>
 	<script type='text/javascript' charset='utf-8' src='apps/jquery/jquery.hoverIntent.min.js'></script>

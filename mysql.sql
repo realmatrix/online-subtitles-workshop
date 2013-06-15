@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 12, 2013 at 11:16 PM
+-- Generation Time: Jun 15, 2013 at 08:13 PM
 -- Server version: 5.5.29-log
 -- PHP Version: 5.3.21
 
@@ -566,14 +566,14 @@ CREATE TABLE IF NOT EXISTS `OnlineUsers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=329 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=381 ;
 
 --
 -- Dumping data for table `OnlineUsers`
 --
 
 INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(328, '23gjki5vv08dlbjb5tt6gd8v82', 1371073622, '');
+(380, 'vlgu111q57d5ih8p2ispfgquh2', 1371323149, '');
 
 -- --------------------------------------------------------
 
@@ -585,8 +585,39 @@ CREATE TABLE IF NOT EXISTS `Subtitles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `fps_sec` int(11) NOT NULL,
   `fps_mil_sec` int(11) NOT NULL,
+  `release_name` varchar(255) NOT NULL,
+  `version` varchar(255) NOT NULL,
+  `language` int(11) NOT NULL,
+  `format` int(11) NOT NULL,
+  `cds` int(11) NOT NULL,
+  `vid` int(11) NOT NULL,
+  `country` int(11) NOT NULL,
+  `uid` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
+
+--
+-- Dumping data for table `Subtitles`
+--
+
+INSERT INTO `Subtitles` (`id`, `fps_sec`, `fps_mil_sec`, `release_name`, `version`, `language`, `format`, `cds`, `vid`, `country`, `uid`) VALUES
+(4, 18, 19, 'test releasename', 'test version', 16, 2, 18, 12, 15, 0),
+(5, 17, 20, 'test 2', 'test ersion 2', 22, 10, 19, 12, 154, 0),
+(6, 19, 14, 'test 3', 'version 3', 24, 9, 16, 12, 3, 0),
+(7, 4, 3, 'lkgf;jdfgjk  dsflkj dsfl;kds', 'kgjkjgh ', 2, 2, 3, 12, 114, 0),
+(8, 9, 9, 'f kjs;lfkj sf;lkjdf', ' sdfhsdf lk;jdhsf ', 5, 6, 19, 12, 3, 0),
+(10, 4, 3, 'reelwjt ;ekrjt ;lekj', 'kjh lkjh l', 2, 2, 3, 12, 3, 0),
+(11, 18, 18, 'fghjhj', 'ghjghjhgj', 19, 3, 17, 12, 3, 0),
+(12, 1, 1, 'jf;jkdfg', 'lkjhlkjh', 2, 1, 2, 12, 2, 0),
+(13, 1, 1, 'jhlkjh', 'lkjh', 2, 3, 2, 12, 120, 0),
+(14, 2, 4, 'lkjhglkjh', 'kjh', 4, 2, 2, 12, 120, 0),
+(15, 1, 2, 'hgkjgh', 'jkhgkj', 7, 1, 2, 12, 96, 0),
+(16, 2, 2, 'kjhlkjh', 'lkjh', 4, 2, 1, 12, 120, 0),
+(17, 17, 19, 'lkjhlkjh', 'lkjhlkjh', 20, 10, 17, 12, 110, 0),
+(18, 1, 1, 'kjlh', 'lkjhlkj', 1, 1, 18, 12, 96, 0),
+(19, 19, 18, 'lkj;lkj', ';klj;lkj', 21, 4, 18, 12, 17, 0),
+(20, 34, 17, 'iutiuty', 'ytiutyuyt', 18, 4, 16, 12, 166, 0),
+(21, 18, 16, 'lfk ;fdlkgj ', 'l;kj d;lkfj s;dlfk d;slf', 19, 2, 19, 12, 7, 0);
 
 -- --------------------------------------------------------
 
