@@ -36,8 +36,8 @@
 				  array("{rd-month}", self::months()),
 				  array("{rd-year}", self::years()),
 				  array("{length}", self::minutes()),
-				  array("{error}", Common::FormatMessage("error", self::$error)),
-				  array("{message}", Common::FormatMessage("message", self::$message)),
+				  array("{error}", $GLOBALS['COMMON']->FormatMessage("error", self::$error)),
+				  array("{message}", $GLOBALS['COMMON']->FormatMessage("message", self::$message)),
 				  array("{Type}", $GLOBALS['lang']['video_AddVideo_VideoType']),
 				  array("{Category}", $GLOBALS['lang']['video_AddVideo_Category']),
 				  array("{Language}", $GLOBALS['lang']['video_AddVideo_Language']),
@@ -59,7 +59,7 @@
 		}
 		
 		function languages(){
-			$languages = Common::GetLanguages();
+			$languages = $GLOBALS['COMMON']->GetLanguages();
 			for ($i=0; $i < count($languages); $i++) { 
 				$res .= "<option value='".$languages[$i]['id']."'>".$languages[$i]['language']."</option>";
 			}
@@ -67,7 +67,7 @@
 		}
 		
 		function types(){
-			$types = Common::GetVideoTypes();
+			$types = $GLOBALS['COMMON']->GetVideoTypes();
 			for ($i=0; $i < count($types); $i++) { 
 				$res .= "<option value='".$types[$i]['id']."'>".$types[$i]['type']."</option>";
 			}
@@ -75,7 +75,7 @@
 		}
 		
 		function categories(){
-			$categories = Common::GetVideoCategories();
+			$categories = $GLOBALS['COMMON']->GetVideoCategories();
 			for ($i=0; $i < count($categories); $i++) { 
 				$res .= "<option value='".$categories[$i]['id']."'>".$categories[$i]['category']."</option>";
 			}
@@ -83,7 +83,7 @@
 		}
 		
 		function countries(){
-			$countries = Common::GetCountries();
+			$countries = $GLOBALS['COMMON']->GetCountries();
 			for ($i=0; $i < count($countries); $i++) { 
 				$res .= "<option value='".$countries[$i]['id']."'>".$countries[$i]['short_name']."</option>";
 			}
@@ -91,7 +91,7 @@
 		}
 
 		function genres(){
-			$genres = Common::GetGenres();
+			$genres = $GLOBALS['COMMON']->GetGenres();
 			for ($i=0; $i < count($genres); $i++) { 
 				$res .= "<div class='checkbox-genre'><input type='checkbox' name='genres' value='".$genres[$i]['id']."'> ".$genres[$i]['genre']."</div>";
 			}
@@ -99,7 +99,7 @@
 		}
 		
 		function days(){
-			$days = Common::days();
+			$days = $GLOBALS['COMMON']->days();
 			for ($i=0; $i < count($days); $i++) { 
 				$res .= "<option value='".$days[$i]."'>".$days[$i]."</option>";
 			}
@@ -107,7 +107,7 @@
 		}
 		
 		function months(){
-			$months = Common::months();
+			$months = $GLOBALS['COMMON']->months();
 			for ($i=0; $i < count($months); $i++) { 
 				$res .= "<option value='".$months[$i]."'>".$months[$i]."</option>";
 			}
@@ -115,7 +115,7 @@
 		}
 
 		function years(){
-			$years = Common::years();
+			$years = $GLOBALS['COMMON']->years();
 			for ($i=0; $i < count($years); $i++) { 
 				$res .= "<option value='".$years[$i]."'>".$years[$i]."</option>";
 			}
@@ -123,7 +123,7 @@
 		}
 		
 		function minutes(){
-			$minutes = Common::minutes(300);
+			$minutes = $GLOBALS['COMMON']->minutes(300);
 			for ($i=0; $i < count($minutes); $i++) { 
 				$res .= "<option value='".$minutes[$i]."'>".$minutes[$i]."</option>";
 			}
@@ -166,7 +166,7 @@
 			array(":tags", $_POST['tags'], "str"),
 			array(":synopsis", $_POST['synopsis'], "str"),
 			);
-			$res = Common::db_query("INSERT INTO `Videos` (`uid`, `title`, `other_title`, `type`, `category`, `language`, `country`, `genres`, `release_date`, `casting`, `director`, `length`, `tags`, `synopsis`) VALUES (:uid, :title, :other_title, :type, :category, :language, :country, :genres, :releasedate, :casting, :director, :length, :tags, :synopsis )", $params);			
+			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `Videos` (`uid`, `title`, `other_title`, `type`, `category`, `language`, `country`, `genres`, `release_date`, `casting`, `director`, `length`, `tags`, `synopsis`) VALUES (:uid, :title, :other_title, :type, :category, :language, :country, :genres, :releasedate, :casting, :director, :length, :tags, :synopsis )", $params);			
 			self::$message[] = "video '".$_POST['VideoTitle']."' added successfully";
 			return TRUE;
 		}

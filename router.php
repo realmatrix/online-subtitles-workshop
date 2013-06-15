@@ -99,7 +99,7 @@
 		echo $GLOBALS['COMMON']->render($TemplateLogout, "logout");
         break;
     default:
-	    echo $GLOBALS['COMMON']->render($Template404, "404");
+	   echo $GLOBALS['COMMON']->render($Template404, "404");
 }
 
 //////////////////////////////////////////////////////

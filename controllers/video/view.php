@@ -21,7 +21,7 @@
 		}
 		
 		function CheckOwner(){
-			$VideoInfo = Common::GetVideoInfo($_GET['vid']);
+			$VideoInfo = $GLOBALS['COMMON']->GetVideoInfo($_GET['vid']);
 			$owner = $VideoInfo[0][uid];
 			if($_SESSION['id']==$owner){return TRUE;}else{return FALSE;}
 		}	

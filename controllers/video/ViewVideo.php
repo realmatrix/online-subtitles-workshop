@@ -23,7 +23,7 @@
 		}
 				
 		function ViewVideo_content(){
-			$video = Common::GetVideoInfo($_GET['vid']);
+			$video = $GLOBALS['COMMON']->GetVideoInfo($_GET['vid']);
 				$content = array
 				  (
 				  array("{VideoTitle}", $video[0]['title']),
@@ -48,7 +48,7 @@
 		}
 
 		function GetCountry($id){
-			$country=Common::GetCountryById($id);
+			$country=$GLOBALS['COMMON']->GetCountryById($id);
 			$res=$country[0]['short_name'];
 			return $res;
 		}
@@ -58,12 +58,12 @@
 			if(strpos(",", $ids)>0){
 			$ids = explode(",", $ids);
 			for ($i=0; $i < count($ids); $i++) { 
-				$genre=Common::GetGenreById($id);
+				$genre=$GLOBALS['COMMON']->GetGenreById($id);
 				$res .=$genre[0]['genre'].", ";					
 			}
 			}
 			else{
-				$genre=Common::GetGenreById($ids);
+				$genre=$GLOBALS['COMMON']->GetGenreById($ids);
 				$res =$genre[0]['genre'];
 			}
 			return $res;

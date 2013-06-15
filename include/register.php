@@ -45,7 +45,7 @@
 		 $params = array(
 		 	array(":username", $Username, "str")
 		 );
-		 $res = common::db_query("SELECT * FROM users WHERE username = :username", $params);
+		 $res = $GLOBALS['COMMON']->db_query("SELECT * FROM users WHERE username = :username", $params);
 		 if(count($res)>0){
 		 $GLOBALS['ERROR'][] = $GLOBALS['lang']['register_UsernameExist'];
 		 }	
@@ -53,7 +53,7 @@
 		 $params = array(
 		 	array(":email", $Email, "str")
 		 );
-		 $res = common::db_query("SELECT * FROM users WHERE email = :email", $params);
+		 $res = $GLOBALS['COMMON']->db_query("SELECT * FROM users WHERE email = :email", $params);
 		 if(count($res)>0){
 		 $GLOBALS['ERROR'][] = $GLOBALS['lang']['register_EmailExist'];
 		 }
@@ -67,7 +67,7 @@
 				array(":birth", $Birth, "str"),
 				array(":group", "3", "str")
 			);
-		 	$result = common::db_query("INSERT INTO `Users` (`username`, `password`, `email`, `BirthYear`, `group`) VALUES (:username, :password, :email, :birth, :group)", $params);
+		 	$result = $GLOBALS['COMMON']->db_query("INSERT INTO `Users` (`username`, `password`, `email`, `BirthYear`, `group`) VALUES (:username, :password, :email, :birth, :group)", $params);
 		 	if($result!="error")
  			{
  			 $GLOBALS['SUCCESS'][] = $GLOBALS['lang']['register_completed'].'<script type="text/javascript">$("#register").empty();setTimeout(function(){ window.location = "index.php"; }, 5000);</script>';

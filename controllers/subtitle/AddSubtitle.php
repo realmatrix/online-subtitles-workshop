@@ -52,7 +52,7 @@
 		}
 		
 		function languages(){
-			$languages = Common::GetLanguages();
+			$languages = $GLOBALS['COMMON']->GetLanguages();
 			for ($i=0; $i < count($languages); $i++) { 
 				$res .= "<option value='".$languages[$i]['id']."'>".$languages[$i]['language']."</option>";
 			}
@@ -60,7 +60,7 @@
 		}
 
 		function cds(){
-			$cds = Common::GetCds();
+			$cds = $GLOBALS['COMMON']->GetCds();
 			for ($i=0; $i < count($cds); $i++) { 
 				$res .= "<option value='".$cds[$i]['id']."'>".$cds[$i]['cd']."</option>";
 			}
@@ -75,7 +75,7 @@
 		}			
 
 		function formats(){
-			$formats = Common::GetFormats();
+			$formats = $GLOBALS['COMMON']->GetFormats();
 			for ($i=0; $i < count($formats); $i++) { 
 				$res .= "<option value='".$formats[$i]['id']."'>".$formats[$i]['format']."</option>";
 			}
@@ -83,7 +83,7 @@
 		}
 		
 		function countries(){
-			$countries = Common::GetCountries();
+			$countries = $GLOBALS['COMMON']->GetCountries();
 			$res = "";
 			for ($i=0; $i < count($countries); $i++) { 
 				$res.="<option value='".$countries[$i]['id']."'>".$countries[$i]['short_name']."</option>";
@@ -103,7 +103,7 @@
 				array(":vid", $_POST['vid'], "str"),
 				array(":country", $_POST['Country'], "str"),
 			);
-			$res=Common::db_query("INSERT INTO `Subtitles` (`fps_sec`, `fps_mil_sec`, `release_name`, `version`, `language`, `format`, `cds`, `vid`, `country`) VALUES (:fpssec, :fpsmilsec, :releasename, :version, :language, :format, :cds, :vid, :country);", $params);	
+			$res=$GLOBALS['COMMON']->db_query("INSERT INTO `Subtitles` (`fps_sec`, `fps_mil_sec`, `release_name`, `version`, `language`, `format`, `cds`, `vid`, `country`) VALUES (:fpssec, :fpsmilsec, :releasename, :version, :language, :format, :cds, :vid, :country);", $params);	
 			self::$RefreshSubtitles = "				<script>
 				$.ajax({
 				    url: 'index.php?page=none&dataonly=yes&getcontroller=subtitle&getsection=VideoSubtitles&vid=12',

@@ -176,7 +176,7 @@ class Common{
 	function login($username){
 		$_SESSION['loggedin'] = "YES"; 
 		$_SESSION['username'] = $username;
-		$userinfo = common::GetUserInfo($username,"");
+		$userinfo = self::GetUserInfo($username,"");
 		$_SESSION['id'] = $userinfo[0]['id'];
 	}
 ////////////////////////////////////////////

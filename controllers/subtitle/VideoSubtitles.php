@@ -40,7 +40,7 @@
 			$params=array(
 				array(":vid", $vid, "str"),
 			);
-			$res=Common::db_query("select * from Subtitles where vid=:vid", $params);
+			$res=$GLOBALS['COMMON']->db_query("select * from Subtitles where vid=:vid", $params);
 			return $res;
 		}
 		
@@ -48,7 +48,7 @@
 			$subtitles = self::subtitles();
 			$res = "";
 			for ($i=0; $i < count($subtitles); $i++) {
-			$country=Common::GetCountryById($subtitles[$i]['country']); 
+			$country=$GLOBALS['COMMON']->GetCountryById($subtitles[$i]['country']); 
 				$res.="<tr class='odd gradeX'>";
 				$res.="<td><img src='".$GLOBALS['config']['TemplatesDir'].$GLOBALS['config']['template']."/files/country-flags/".$country[0]['iso2'].".png' ></td>";
 				$res.="<td></td>";

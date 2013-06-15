@@ -30,11 +30,11 @@
 				array(":username", $Username, "str"),
 				array(":password", $Password, "str")
 			);
-		 	$result = common::db_query("SELECT * FROM Users WHERE username=:username and password=:password", $params);
+		 	$result = $GLOBALS['COMMON']->db_query("SELECT * FROM Users WHERE username=:username and password=:password", $params);
 		 	if(count($result)>0)
  			{
  			 
-   			 common::login($Username);
+   			 $GLOBALS['COMMON']->login($Username);
 			 
 			 Onlineusers::AddOnlineUser();
 			 header( 'Location: index.php' ) ;
