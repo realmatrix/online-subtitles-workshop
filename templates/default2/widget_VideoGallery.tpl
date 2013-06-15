@@ -194,7 +194,7 @@ section {
                     </div>
                     
                     <div data-thumb="images/thumbs/up-official-trailer-fake.jpg">
-                        <iframe width="940" height="470" src="http://www.youtube.com/embed/qas5lWp7_R0?wmode=transparent&autoplay=1" data-fake="images/slides/up-official-trailer-fake.jpg" frameborder="0" allowfullscreen></iframe>
+                        <iframe width="940" height="470" src="http://www.youtube.com/embed/qas5lWp7_R0?wmode=transparent&autoplay=0" data-fake="images/slides/up-official-trailer-fake.jpg" frameborder="0" allowfullscreen></iframe>
                         <div class="elemHover caption fromLeft elemToHide" style="bottom: 350px; width:auto; -webkit-border-top-right-radius: 6px; -webkit-border-bottom-right-radius: 6px; -moz-border-radius-topright: 6px; -moz-border-radius-bottomright: 6px; border-top-right-radius: 6px; border-bottom-right-radius: 6px; left:0">
                             You can also display videos, but it requires a "fake image"... read the documentation please
                         </div>
@@ -205,52 +205,9 @@ section {
                         	<div style="float:left; width:300px;">
                                 <p><br><br>You can display any html element directly in the slider, but pay attention, with many elements the transition effect could be slowed.<br>
                                 In this case you can see a Vimeo video and a price table</p>
-                                <iframe src="http://player.vimeo.com/video/1084537?title=0&amp;byline=0&amp;portrait=0&amp;color=f0bc00&amp;autoplay=1" data-fake="images/slides/big_buck_bunny.jpg" width="300" height="169" frameborder="0"></iframe>
+                                <iframe src="http://player.vimeo.com/video/1084537?title=0&amp;byline=0&amp;portrait=0&amp;color=f0bc00&amp;autoplay=0" data-fake="images/slides/big_buck_bunny.jpg" width="300" height="169" frameborder="0"></iframe>
                             </div>
-                            <div class="price_table"><div>
-                                <div class="price_column highlighted" style="top:0; left:190px; height:387px; background:#fff; -moz-box-shadow: 0 1px 4px #666;	-webkit-box-shadow: 0 1px 4px #666; box-shadow: 0 1px 4px #666;"><div>
-                                </div></div><!-- .price_column --> 
-                                <div class="price_column" style="top:0; left:0; height:383px; background:#ddd; -moz-box-shadow: 0 1px 4px #666;	-webkit-box-shadow: 0 1px 4px #666; box-shadow: 0 1px 4px #666;"><div> 
-                                </div></div><!-- .price_column --> 
-                                <div class="price_column" style="top:0; left:380px; height:383px; background:#ddd; -moz-box-shadow: 0 1px 4px #666;	-webkit-box-shadow: 0 1px 4px #666; box-shadow: 0 1px 4px #666;"><div>
-                                </div></div><!-- .price_column -->
-                                <div class="price_column highlighted fadeIn" style="top:0; left:190px;"><div>
-                                    <div class="price_title">Standard</div><!-- .price_title --> 
-                                    <div class="price_price">$9/mo.</div><!-- .price_price --> 
-                                    <div class="price_explanation">And as the day advanced and the engine drivers</div><!-- .price_explanation --> 
-                                    <div class="pix_check">Check sign</div><!-- .pix_check --> 
-                                    <div class="pix_check">Check sign</div><!-- .pix_check --> 
-                                    <div class="pix_check">Check sign</div><!-- .pix_check --> 
-                                    <div class="pix_error">Error sign</div><!-- .pix_error --> 
-                                    <div>
-                                        <a class="button button3" href="#">Purchase</a>
-                                    </div>
-                                </div></div><!-- .price_column --> 
-                                <div class="price_column fromTop" style="top:0; left:0"><div> 
-                                    <div class="price_title">Basic</div><!-- .price_title --> 
-                                    <div class="price_price">Free</div><!-- .price_price --> 
-                                    <div class="price_explanation">And as the day advanced and the engine drivers</div><!-- .price_explanation --> 
-                                    <div class="pix_check">Check sign</div><!-- .pix_check --> 
-                                    <div class="pix_error">Error sign</div><!-- .pix_error --> 
-                                    <div class="pix_check">Check sign</div><!-- .pix_check --> 
-                                    <div class="pix_error">Error sign</div><!-- .pix_error --> 
-                                    <div>
-                                        <a class="button" href="#">Purchase</a>
-                                    </div> 
-                                </div></div><!-- .price_column --> 
-                                <div class="price_column fromBottom" style="top:0; left:380px;"><div>
-                                    <div class="price_title">Professional</div><!-- .price_title --> 
-                                    <div class="price_price">$19/mo.</div><!-- .price_price --> 
-                                    <div class="price_explanation">And as the day advanced and the engine drivers</div><!-- .price_explanation --> 
-                                    <div class="pix_check">Check sign</div><!-- .pix_check --> 
-                                    <div class="pix_check">Check sign</div><!-- .pix_check --> 
-                                    <div class="pix_check">Check sign</div><!-- .pix_check --> 
-                                    <div class="pix_check">Check sign</div><!-- .pix_check --> 
-                                    <div>
-                                        <a class="button" href="#">Purchase</a>
-                                    </div> 
-                                </div></div><!-- .price_column --> 
-                            </div></div><!-- price_table -->
+
                         </div>
                     </div>
                     

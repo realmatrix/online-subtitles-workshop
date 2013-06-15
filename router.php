@@ -35,6 +35,35 @@
 	if($_GET['page']=="none" or $_POST=="none"){$SystemPage = "none";}
 	if($_GET['sec']!=""){$SystemSection=$_GET['sec'];}
 	if($_POST['sec']!=""){$SystemSection=$_POST['sec'];}
+
+//////////////////////////////////////////////////////
+//compress
+    $phpver = phpversion();
+
+     $useragent = (isset($_SERVER["HTTP_USER_AGENT"]) ) ? $_SERVER["HTTP_USER_AGENT"] : $HTTP_USER_AGENT;
+
+     if ( $phpver >= '4.0.4pl1' && ( strstr($useragent,'compatible') || strstr($useragent,'Gecko') ) )
+     {
+         if ( extension_loaded('zlib') )
+         {
+             ob_start('ob_gzhandler');
+         }
+     }
+     else if ( $phpver > '4.0' )
+     {
+         if ( strstr($HTTP_SERVER_VARS['HTTP_ACCEPT_ENCODING'], 'gzip') )
+         {
+             if ( extension_loaded('zlib') )
+             {
+                 $do_gzip_compress = TRUE;
+                 ob_start();
+                 ob_implicit_flush(0);
+
+                 header('Content-Encoding: gzip');
+             }
+         }
+     }
+//////////////////////////////////////////////////////
 	
 	switch ($SystemPage) {
     case ($SystemPage=="home" or ($SystemPage=="video" and $SystemSection=="view")) and $dataonly!="yes":
@@ -72,4 +101,29 @@
     default:
 	   echo common::render($Template404, "404");
 }
+
+//////////////////////////////////////////////////////
+//compress
+// Compress buffered output if required and send to browser
+if ( $do_gzip_compress )
+ {
+     //
+     // Borrowed from php.net!
+     //
+     $gzip_contents = ob_get_contents();
+     ob_end_clean();
+
+     $gzip_size = strlen($gzip_contents);
+     $gzip_crc = crc32($gzip_contents);
+
+     $gzip_contents = gzcompress($gzip_contents, 9);
+     $gzip_contents = substr($gzip_contents, 0, strlen($gzip_contents) - 4);
+
+     echo "\x1f\x8b\x08\x00\x00\x00\x00\x00";
+     echo $gzip_contents;
+     echo pack('V', $gzip_crc);
+     echo pack('V', $gzip_size);
+}
+//////////////////////////////////////////////////////	
+
 ?>

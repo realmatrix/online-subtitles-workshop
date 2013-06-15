@@ -11,6 +11,8 @@
 	if($_GET['template']!=""){$GLOBALS['config']['template'] = $_GET['template'];}
 	
 	include "include/common.php";
+	
+	$GLOBALS['COMMON'] = new Common();
 
 	include "include/OnlineUsers.php";
 	
