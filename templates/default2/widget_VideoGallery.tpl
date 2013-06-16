@@ -6,7 +6,7 @@
 	<link href="templates/default2/files/skitter/css/skitter.styles.css" type="text/css" media="all" rel="stylesheet" />
 	
 	<!-- Skitter JS -->
-	<script type="text/javascript" language="javascript" src="templates/default2/files/skitter/js/jquery-1.6.3.min.js"></script>
+	<!--<script type="text/javascript" language="javascript" src="templates/default2/files/skitter/js/jquery-1.6.3.min.js"></script>-->
 	<script type="text/javascript" language="javascript" src="templates/default2/files/skitter/js/jquery.easing.1.3.js"></script>
 	<script type="text/javascript" language="javascript" src="templates/default2/files/skitter/js/jquery.animate-colors-min.js"></script>
 	<script type="text/javascript" language="javascript" src="templates/default2/files/skitter/js/jquery.skitter.min.js"></script>

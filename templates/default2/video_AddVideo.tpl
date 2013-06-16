@@ -1,6 +1,3 @@
-<html>
-<head>
-<script type='text/javascript' src='apps/jquery/jquery-2.0.0.js'></script> 
 <script>
 // variable to hold request
 var request;
@@ -70,34 +67,14 @@ $("form#submitnewvideo").submit(function(event){
 </script>
 
 <style>
-	#submitnewvideo input[type=text], input[type=file]{
-		width: 100%;
-		margin: 5px;
-	}
-	#submitnewvideo textarea{
-		width: 100%;
-	}
-	.div-error{
-		width: 100%;
-		border: 1px;
-		border-color: red;
-		padding: 20px;
-		color: red;
-	}
-	.div-message{
-		width: 100%;
-		border: 1px;
-		border-color: green;
-		padding: 20px;
-		color: green;
-	}
-	.checkbox-genre{
-		float: left;
-		width: 20%;
-	}
+	#submitnewvideo input[type=text], input[type=file]{width: 100%;	margin: 5px;}
+	#submitnewvideo textarea{width: 100%;}
+	.div-error{width: 100%;	border: 1px; border-color: red; padding: 20px; color: red;}
+	.div-message{width: 100%; border: 1px; border-color: green;	padding: 20px; color: green;}
+	.checkbox-genre{float: left; width: 20%;}
+	#div-submitnewvideo{width:98%;}
 </style>
-</head>
-<body>
+
 <br /><br />
 <div>
 <DIV class="catglow" style="width:90%; margin: 0 auto;">
@@ -123,7 +100,7 @@ $("form#submitnewvideo").submit(function(event){
 
 <!-- add video form -->
 <div id="div-submitnewvideo">
-<form id="submitnewvideo" >
+<form id="submitnewvideo" action="#">
 	
 	<label for="VideoType">{Type}</label>
 	<select name="VideoType" id="VideoType" data-required="true">
@@ -193,7 +170,7 @@ $("form#submitnewvideo").submit(function(event){
 	
 	<br /><br />
 	<div style="width:100%; text-align: center;">
-		<input type="submit" id="submit" value="{Submit}" />
+		<input type="submit" id="submit" value="{Submit}" onclick="return false;"/>
 	</div>
 	<input type="hidden" name="dataonly" id="dataonly" value="yes" />
 	<input type="hidden" name="getcontroller" id="getcontroller" value="video" />
@@ -213,8 +190,7 @@ $("form#submitnewvideo").submit(function(event){
 	</DIV></div>
 </div>
 <br /><br />
-</body>
-</html>
+
 
 
     <br />

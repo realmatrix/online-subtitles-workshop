@@ -100,6 +100,7 @@ class Common{
 		    $cwidget = trim($widget[$i]);
 			if($cwidget!=""){
 			//echo checkWidgetOptions($cwidget);
+			/*
 			$data = "
 			<div id='SystemAjax_".$cwidget."'></div>
 			<script>
@@ -113,6 +114,8 @@ class Common{
 			});
 			</script>
 			";
+			 */
+			 $data = "<div id='SystemAjax_".$cwidget."'>".self::GetWidget($cwidget)."</div>";
 			if(!self::checkWidgetOptions($cwidget)){$data="";}
 			$content[] = array("{".$cwidget."}", $data);
 			}
@@ -297,6 +300,7 @@ class Common{
 					for ($j=0; $j < count($array[$i][2]); $j++) { 
 						$args .= "&".$array[$i][2][$j][0]."=".$array[$i][2][$j][1];
 					}
+				/*
 				$page .= "
 				<div id='SystemAjax_".$array[$i][0]."_".$array[$i][1]."'></div>
 				<script>
@@ -310,6 +314,8 @@ class Common{
 				});
 				</script>
 				";
+				 */
+				 $page = "<div id='SystemAjax_".$array[$i][0]."_".$array[$i][1]."'>".self::LoadSection($array[$i][0], $array[$i][1], $args)."</div>";
 			}
 		}
 		return $page;
