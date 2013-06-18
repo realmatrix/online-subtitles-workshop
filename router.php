@@ -48,7 +48,7 @@
 		echo $GLOBALS['COMMON']->render($TemplateRight, "right");
 		echo $GLOBALS['COMMON']->render($TemplateFooter, "footer");
         break;
-    case ($SystemPage=="video" and $SystemSection=="add") or $SystemPage=="subtitle":
+    case ($SystemPage=="video" and $SystemSection=="add") or $SystemPage=="subtitle" or $SystemPage=="search":
 		echo $GLOBALS['COMMON']->render($TemplateHead, "head");
 		echo $GLOBALS['COMMON']->render($TemplateHeader, "header");
 		echo $GLOBALS['COMMON']->render($TemplateBody, "body");

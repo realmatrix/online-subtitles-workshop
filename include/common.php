@@ -230,6 +230,7 @@ class Common{
 		return $LoadSEction;
 	}
 ////////////////////////////////////////////
+
 ////////////////////////////////////////////
 	function CheckControllerHook($section, $hook){
 		if((isset($_GET['ssec']) and $_GET['ssec']==$section) and (isset($_GET['h']) and $_GET['h']==$hook)){$res = "yes";}
@@ -300,6 +301,7 @@ class Common{
 					for ($j=0; $j < count($array[$i][2]); $j++) { 
 						$args .= "&".$array[$i][2][$j][0]."=".$array[$i][2][$j][1];
 					}
+					$_POST = array_merge($_POST, $array[$i][2]);
 				/*
 				$page .= "
 				<div id='SystemAjax_".$array[$i][0]."_".$array[$i][1]."'></div>
