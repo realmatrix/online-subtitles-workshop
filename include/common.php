@@ -317,7 +317,7 @@ class Common{
 				</script>
 				";
 				 */
-				 $page = "<div id='SystemAjax_".$array[$i][0]."_".$array[$i][1]."'>".self::LoadSection($array[$i][0], $array[$i][1], $args)."</div>";
+				 $page .= "<div id='SystemAjax_".$array[$i][0]."_".$array[$i][1]."'>".self::LoadSection($array[$i][0], $array[$i][1], $args)."</div>";
 			}
 		}
 		return $page;

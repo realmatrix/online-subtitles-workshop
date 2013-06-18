@@ -7,7 +7,7 @@
 <DIV class="cathead-m">
 <DIV class="cathead-r">
 <DIV class="cathead-l">                    
-	{AdvancedSearch}                
+	{title}                
 </DIV>
 </DIV>
 </DIV>
@@ -28,7 +28,8 @@
 <table style="width: 99%;">
 	<form id="advancedsearch" action="#">
 		<tr><td style="width: 100%;">
-		<input type="text" name="title" id="searchtitle" />
+		<label for="VideoTitle">{VideoTitle}</label>
+		<input type="text" name="VideoTitle" id="searchtitle" />
 		</td></tr>
 		<tr><td>
 		<select>
