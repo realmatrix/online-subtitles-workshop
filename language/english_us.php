@@ -113,4 +113,11 @@
 
 //video subtitles
 	$GLOBALS['lang']['subtitle_VideoSubtitles_VideosSubtitles'] = "Video Subtitles";
+	
+//advanced search
+	$GLOBALS['page']['search_AdvancedSearch_title'] = "Advanced Search";
+	
+//search results
+	$GLOBALS['page']['search_SearchResults_title'] = "Search Results";
+	
 ?>
