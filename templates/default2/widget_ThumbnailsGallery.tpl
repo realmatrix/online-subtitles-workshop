@@ -43,7 +43,7 @@
                		<li class="portfolio-item2" data-id="id-0" data-type="cat-item-4">	
 			        <div>
                    <span class="image-block">
-					<a class="image-zoom" href="templates/default2/files/jquery-photo-gallery/images/big/pic1.jpg" rel="prettyPhoto[gallery]" title="Wall-E"><img width="225" height="140" src="templates/default2/files/jquery-photo-gallery/images/thumbs/p1.jpg" alt="Wall-E" title="Wall-E" />                    
+					<a class="image-zoom" href="templates/default2/files/jquery-photo-gallery/images/big/pic1.jpg" rel="prettyPhoto[gallery]" title="Wall-E"><img width="175" height="107" src="templates/default2/files/jquery-photo-gallery/images/thumbs/p1.jpg" alt="Wall-E" title="Wall-E" />                    
                     </a>
                     </span>
                    <div class="home-portfolio-text">
@@ -58,7 +58,7 @@
                		<li class="portfolio-item2" data-id="id-1" data-type="cat-item-2">	
 			        <div>
                    <span class="image-block">
-					<a class="image-zoom" href="templates/default2/files/jquery-photo-gallery/images/big/pic2.jpg" rel="prettyPhoto[gallery]" title="Up"><img width="225" height="140" src="templates/default2/files/jquery-photo-gallery/images/thumbs/p2.jpg" alt="Up" title="Up" />                    
+					<a class="image-zoom" href="templates/default2/files/jquery-photo-gallery/images/big/pic2.jpg" rel="prettyPhoto[gallery]" title="Up"><img width="175" height="107" src="templates/default2/files/jquery-photo-gallery/images/thumbs/p2.jpg" alt="Up" title="Up" />                    
                     </a>
                     </span>
                    <div class="home-portfolio-text">
@@ -73,7 +73,7 @@
                			<li class="portfolio-item2" data-id="id-2" data-type="cat-item-1">	
 			        <div>
                    <span class="image-block">
-					<a class="image-zoom" href="templates/default2/files/jquery-photo-gallery/images/big/pic3.jpg" rel="prettyPhoto[gallery]" title="Cars 2"><img width="225" height="140" src="templates/default2/files/jquery-photo-gallery/images/thumbs/p3.jpg" alt="Cars 2" title="Cars 2" />                    
+					<a class="image-zoom" href="templates/default2/files/jquery-photo-gallery/images/big/pic3.jpg" rel="prettyPhoto[gallery]" title="Cars 2"><img width="175" height="107" src="templates/default2/files/jquery-photo-gallery/images/thumbs/p3.jpg" alt="Cars 2" title="Cars 2" />                    
                     </a>
                     </span>
                    <div class="home-portfolio-text">
@@ -88,7 +88,7 @@
                			<li class="portfolio-item2" data-id="id-3" data-type="cat-item-4">	
 			        <div>
                    <span class="image-block">
-					<a class="image-zoom" href="templates/default2/files/jquery-photo-gallery/images/big/pic4.jpg" rel="prettyPhoto[gallery]" title="Toy Story 3"><img width="225" height="140" src="templates/default2/files/jquery-photo-gallery/images/thumbs/p4.jpg" alt="Toy Story 3" title="Toy Story 3" />                    
+					<a class="image-zoom" href="templates/default2/files/jquery-photo-gallery/images/big/pic4.jpg" rel="prettyPhoto[gallery]" title="Toy Story 3"><img width="175" height="107" src="templates/default2/files/jquery-photo-gallery/images/thumbs/p4.jpg" alt="Toy Story 3" title="Toy Story 3" />                    
                     </a>
                     </span>
                    <div class="home-portfolio-text">
@@ -103,7 +103,7 @@
                		<li class="portfolio-item2" data-id="id-4" data-type="cat-item-3">	
 			        <div>
                    <span class="image-block">
-					<a class="image-zoom" href="templates/default2/files/jquery-photo-gallery/images/big/pic5.jpg" rel="prettyPhoto[gallery]" title="Finding Nemo"><img width="225" height="140" src="templates/default2/files/jquery-photo-gallery/images/thumbs/p5.jpg" alt="Finding Nemo" title="Finding Nemo" />                    
+					<a class="image-zoom" href="templates/default2/files/jquery-photo-gallery/images/big/pic5.jpg" rel="prettyPhoto[gallery]" title="Finding Nemo"><img width="175" height="107" src="templates/default2/files/jquery-photo-gallery/images/thumbs/p5.jpg" alt="Finding Nemo" title="Finding Nemo" />                    
                     </a>
                     </span>
                    <div class="home-portfolio-text">
@@ -118,7 +118,7 @@
                		<li class="portfolio-item2" data-id="id-5" data-type="cat-item-2">	
 			        <div>
                    <span class="image-block">
-					<a class="image-zoom" href="templates/default2/files/jquery-photo-gallery/images/big/pic6.jpg" rel="prettyPhoto[gallery]" title="Lorax"><img width="225" height="140" src="templates/default2/files/jquery-photo-gallery/images/thumbs/p6.jpg" alt="Lorax" title="Lorax" />                    
+					<a class="image-zoom" href="templates/default2/files/jquery-photo-gallery/images/big/pic6.jpg" rel="prettyPhoto[gallery]" title="Lorax"><img width="175" height="107" src="templates/default2/files/jquery-photo-gallery/images/thumbs/p6.jpg" alt="Lorax" title="Lorax" />                    
                     </a>
                     </span>
                    <div class="home-portfolio-text">
@@ -133,7 +133,7 @@
                		<li class="portfolio-item2" data-id="id-6" data-type="cat-item-1">	
 			        <div>
                    <span class="image-block">
-					<a class="image-zoom" href="templates/default2/files/jquery-photo-gallery/images/big/pic7.jpg" rel="prettyPhoto[gallery]" title="Happy Feet 2"><img width="225" height="140" src="templates/default2/files/jquery-photo-gallery/images/thumbs/p7.jpg" alt="Happy Feet 2" title="Happy Feet 2" />                    
+					<a class="image-zoom" href="templates/default2/files/jquery-photo-gallery/images/big/pic7.jpg" rel="prettyPhoto[gallery]" title="Happy Feet 2"><img width="175" height="107" src="templates/default2/files/jquery-photo-gallery/images/thumbs/p7.jpg" alt="Happy Feet 2" title="Happy Feet 2" />                    
                     </a>
                     </span>
                    <div class="home-portfolio-text">
@@ -148,7 +148,7 @@
                     <li class="portfolio-item2" data-id="id-7" data-type="cat-item-1">	
 			        <div>
                    <span class="image-block">
-					<a class="image-zoom" href="templates/default2/files/jquery-photo-gallery/images/big/pic8.jpg" rel="prettyPhoto[gallery]" title="Tangled"><img width="225" height="140" src="templates/default2/files/jquery-photo-gallery/images/thumbs/p8.jpg" alt="Tangled" title="Tangled" />                    
+					<a class="image-zoom" href="templates/default2/files/jquery-photo-gallery/images/big/pic8.jpg" rel="prettyPhoto[gallery]" title="Tangled"><img width="175" height="107" src="templates/default2/files/jquery-photo-gallery/images/thumbs/p8.jpg" alt="Tangled" title="Tangled" />                    
                     </a>
                     </span>
                    <div class="home-portfolio-text">
@@ -163,7 +163,7 @@
 		            <li class="portfolio-item2" data-id="id-8" data-type="cat-item-1">	
 			        <div>
                    <span class="image-block">
-					<a class="image-zoom" href="templates/default2/files/jquery-photo-gallery/images/big/pic9.jpg" rel="prettyPhoto[gallery]" title="Kung Fu Panda 2"><img width="225" height="140" src="templates/default2/files/jquery-photo-gallery/images/thumbs/p9.jpg" alt="Kung Fu Panda 2" title="Kung Fu Panda 2" />                    
+					<a class="image-zoom" href="templates/default2/files/jquery-photo-gallery/images/big/pic9.jpg" rel="prettyPhoto[gallery]" title="Kung Fu Panda 2"><img width="175" height="107" src="templates/default2/files/jquery-photo-gallery/images/thumbs/p9.jpg" alt="Kung Fu Panda 2" title="Kung Fu Panda 2" />                    
                     </a>
                     </span>
                    <div class="home-portfolio-text">
@@ -179,7 +179,7 @@
             		 <li class="portfolio-item2" data-id="id-9" data-type="cat-item-2">	
 			        <div>
                    <span class="image-block">
-					<a class="image-zoom" href="templates/default2/files/jquery-photo-gallery/images/big/pic10.jpg" rel="prettyPhoto[gallery]" title="Madagascar 3"><img width="225" height="140" src="templates/default2/files/jquery-photo-gallery/images/thumbs/p10.jpg" alt="Madagascar 3" title="Madagascar 3" />                    
+					<a class="image-zoom" href="templates/default2/files/jquery-photo-gallery/images/big/pic10.jpg" rel="prettyPhoto[gallery]" title="Madagascar 3"><img width="175" height="107" src="templates/default2/files/jquery-photo-gallery/images/thumbs/p10.jpg" alt="Madagascar 3" title="Madagascar 3" />                    
                     </a>
                     </span>
                    <div class="home-portfolio-text">
@@ -194,7 +194,7 @@
             		 <li class="portfolio-item2" data-id="id-10" data-type="cat-item-3">	
 			        <div>
                    <span class="image-block">
-					<a class="image-zoom" href="templates/default2/files/jquery-photo-gallery/images/big/pic11.jpg" rel="prettyPhoto[gallery]" title="Rango"><img width="225" height="140" src="templates/default2/files/jquery-photo-gallery/images/thumbs/p11.jpg" alt="Rango" title="Rango" />                    
+					<a class="image-zoom" href="templates/default2/files/jquery-photo-gallery/images/big/pic11.jpg" rel="prettyPhoto[gallery]" title="Rango"><img width="175" height="107" src="templates/default2/files/jquery-photo-gallery/images/thumbs/p11.jpg" alt="Rango" title="Rango" />                    
                     </a>
                     </span>
                    <div class="home-portfolio-text">
@@ -209,7 +209,7 @@
 		            <li class="portfolio-item2" data-id="id-11" data-type="cat-item-4">	
 			        <div>
                    <span class="image-block">
-					<a class="image-zoom" href="templates/default2/files/jquery-photo-gallery/images/big/pic12.jpg" rel="prettyPhoto[gallery]" title="Shrek Forever After"><img width="225" height="140" src="templates/default2/files/jquery-photo-gallery/images/thumbs/p12.jpg" alt="Shrek Forever After" title="Shrek Forever After" />                    
+					<a class="image-zoom" href="templates/default2/files/jquery-photo-gallery/images/big/pic12.jpg" rel="prettyPhoto[gallery]" title="Shrek Forever After"><img width="175" height="107" src="templates/default2/files/jquery-photo-gallery/images/thumbs/p12.jpg" alt="Shrek Forever After" title="Shrek Forever After" />                    
                     </a>
                     </span>
                    <div class="home-portfolio-text">
