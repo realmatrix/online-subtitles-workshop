@@ -1,4 +1,4 @@
-
+{widget_ThumbnailsGallery}
 {content}
 
 <!-- example start -->
