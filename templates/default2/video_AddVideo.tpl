@@ -130,7 +130,7 @@ $('form#submitnewvideo').submit(function(event){
 
 <!-- add video form -->
 <div id="div-submitnewvideo">
-<form id="submitnewvideo" action="#">
+<form id="submitnewvideo" action="#" method="post">
 	
 	<label for="VideoType">{Type}</label>
 	<select name="VideoType" id="VideoType" data-required="true">
@@ -167,7 +167,7 @@ $('form#submitnewvideo').submit(function(event){
 	
 	<br />
 	<label for="Genres">{Genres}</label>
-        <div style="overflow: auto; width: 100%; height: 80px; border: 1px solid #336699; padding-left: 5px">
+        <div style="overflow: auto; width: 100%; height: 100px; border: 1px solid #336699; padding-left: 5px">
 			{VideoGenres}
         </div>
 

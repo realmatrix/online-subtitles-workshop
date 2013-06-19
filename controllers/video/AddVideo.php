@@ -130,44 +130,44 @@
 			return $res;	
 		}
 		
-		function SubmitVideo(){
-			if($_POST['VideoType']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_SelectVideoType'];}
-			if($_POST['VideoCategory']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_SelectVideoCategory'];}
-			if($_POST['VideoLanguage']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_SelectVideoLanguage'];}
-			if($_POST['VideoTitle']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_EnterVideoTitle'];}
-			if($_POST['VideoOtherTitle']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_EnterVideoOtherTitle'];}
-			if($_POST['country']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_SelectCountry'];}
-			if($_POST['genres']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_SelectGenres'];}
-			if($_POST['rd-month']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_SelectREleaseMonth'];}
-			if($_POST['rd-day']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_SelectReleaseDay'];}
-			if($_POST['rd-year']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_SelectReleaseYear'];}			
-			if($_POST['casting']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_EnterCast'];}
-			if($_POST['director']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_EnterDirector'];}
-			if($_POST['length']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_SelectVideoLength'];}
-			if($_POST['tags']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_EnterVideoTags'];}			
-			if($_POST['synopsis']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_EnterVideoSynopsis'];}			
+		function SubmitVideo($args){
+			if($args['VideoType']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_SelectVideoType'];}
+			if($args['VideoCategory']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_SelectVideoCategory'];}
+			if($args['VideoLanguage']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_SelectVideoLanguage'];}
+			if($args['VideoTitle']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_EnterVideoTitle'];}
+			if($args['VideoOtherTitle']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_EnterVideoOtherTitle'];}
+			if($args['country']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_SelectCountry'];}
+			if($args['genres']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_SelectGenres'];}
+			if($args['rd-month']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_SelectREleaseMonth'];}
+			if($args['rd-day']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_SelectReleaseDay'];}
+			if($args['rd-year']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_SelectReleaseYear'];}			
+			if($args['casting']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_EnterCast'];}
+			if($args['director']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_EnterDirector'];}
+			if($args['length']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_SelectVideoLength'];}
+			if($args['tags']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_EnterVideoTags'];}			
+			if($args['synopsis']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_EnterVideoSynopsis'];}			
 			if(count(self::$error)>0){return FALSE;}
 			
 			//$genres = implode(",", $_POST['genres']);
 			
 			$params = array(
 			array(":uid", $_SESSION['id'], "str"),
-			array(":title", $_POST['VideoTitle'], "str"),
-			array(":other_title", $_POST['VideoOtherTitle'], "str"),
-			array(":type", $_POST['VideoType'], "str"),
-			array(":category", $_POST['VideoCategory'], "str"),
-			array(":language", $_POST['VideoLanguage'], "str"),
-			array(":country", $_POST['country'], "str"),
-			array(":genres", $_POST['genres'], "str"),
-			array(":releasedate", $_POST['rd-year']."-".$_POST['rd-month']."-".$_POST['rd-day'], "str"),
-			array(":casting", $_POST['casting'], "str"),
-			array(":director", $_POST['director'], "str"),
-			array(":length", $_POST['length'], "str"),
-			array(":tags", $_POST['tags'], "str"),
-			array(":synopsis", $_POST['synopsis'], "str"),
+			array(":title", $args['VideoTitle'], "str"),
+			array(":other_title", $args['VideoOtherTitle'], "str"),
+			array(":type", $args['VideoType'], "str"),
+			array(":category", $args['VideoCategory'], "str"),
+			array(":language", $args['VideoLanguage'], "str"),
+			array(":country", $args['country'], "str"),
+			array(":genres", $args['genres'], "str"),
+			array(":releasedate", $args['rd-year']."-".$args['rd-month']."-".$args['rd-day'], "str"),
+			array(":casting", $args['casting'], "str"),
+			array(":director", $args['director'], "str"),
+			array(":length", $args['length'], "str"),
+			array(":tags", $args['tags'], "str"),
+			array(":synopsis", $args['synopsis'], "str"),
 			);
 			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `Videos` (`uid`, `title`, `other_title`, `type`, `category`, `language`, `country`, `genres`, `release_date`, `casting`, `director`, `length`, `tags`, `synopsis`) VALUES (:uid, :title, :other_title, :type, :category, :language, :country, :genres, :releasedate, :casting, :director, :length, :tags, :synopsis )", $params);			
-			self::$message[] = "video '".$_POST['VideoTitle']."' added successfully";
+			self::$message[] = "video '".$args['VideoTitle']."' added successfully";
 			return TRUE;
 		}
 		
