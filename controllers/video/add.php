@@ -4,9 +4,14 @@
 			
 		function add_sections(){
 			$array = array(
-				array("video", "AddVideo", array(), TRUE),
+				array("video", "AddVideo", self::add_args(), TRUE),
 			);
 			return $array;
+		}
+		
+		function add_args(){
+			$args = $_POST;
+			return $args;
 		}	
 			
 	}

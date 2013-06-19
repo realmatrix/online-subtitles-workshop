@@ -60,7 +60,7 @@
         break;
     case $SystemPage!="" and $dataonly=="yes" and $getcontroller!="" and $getsection!="":
 		echo $GLOBALS['COMMON']->render($TemplateHead, "head");
-		echo $GLOBALS['COMMON']->LoadSection($getcontroller, $getsection);
+		echo $GLOBALS['COMMON']->LoadSection($getcontroller, $getsection, $_POST);
         break;
     case $SystemPage=="register":
 		echo $GLOBALS['COMMON']->render($TemplateRegister, "register");

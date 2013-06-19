@@ -91,6 +91,7 @@ $('form#submitnewvideo').submit(function(event){
 
     // prevent default posting of form
     event.preventDefault();
+    return false;
 });
 
 </script>

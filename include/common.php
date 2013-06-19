@@ -185,13 +185,13 @@ class Common{
 ////////////////////////////////////////////
 
 ////////////////////////////////////////////
-	function LoadSection($controller, $section){
+	function LoadSection($controller, $section, $args){
 		$res = "";
 		if(self::checkSectionOptions($controller, $section, $message)){
 		include_once "controllers/".$controller."/".$section.".php";
 		$hooks = call_user_func('C'.$section.'::'.$section.'_hooks');
 			for ($i=0; $i < count($hooks); $i++) { 
-				if(self::CheckControllerHook($section, $hooks[$i][0])==TRUE){call_user_func('C'.$section.'::'.$hooks[$i][1]);}
+				if(self::CheckControllerHook($section, $hooks[$i][0], $args)==TRUE){call_user_func('C'.$section.'::'.$hooks[$i][1]);}
 			}
 		$content = call_user_func('C'.$section.'::'.$section);
 		$options = 
@@ -232,9 +232,8 @@ class Common{
 ////////////////////////////////////////////
 
 ////////////////////////////////////////////
-	function CheckControllerHook($section, $hook){
-		if((isset($_GET['ssec']) and $_GET['ssec']==$section) and (isset($_GET['h']) and $_GET['h']==$hook)){$res = "yes";}
-		if((isset($_POST['ssec']) and $_POST['ssec']==$section) and (isset($_POST['h']) and $_POST['h']==$hook)){$res = "yes";}
+	function CheckControllerHook($section, $hook, $args){
+		if((isset($args['ssec']) and $args['ssec']==$section) and (isset($args['h']) and $args['h']==$hook)){$res = "yes";}
 		if($res=="yes"){return TRUE;}else{return FALSE;}
 	}
 ////////////////////////////////////////////
@@ -297,7 +296,7 @@ class Common{
 		$page = "";
 		for ($i = 0; $i <= count($array)-1; $i++) {
 			if($array[$i][3]){
-					$args = "";
+					$args = $array[$i][2];
 					for ($j=0; $j < count($array[$i][2]); $j++) { 
 						$args .= "&".$array[$i][2][$j][0]."=".$array[$i][2][$j][1];
 					}

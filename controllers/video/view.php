@@ -14,9 +14,7 @@
 		}
 		
 		function view_args(){
-			$args = array(
-				array("vid", $_GET['vid']),
-			);
+			$args = $_POST;
 			return $args;
 		}
 		
