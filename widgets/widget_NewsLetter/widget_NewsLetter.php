@@ -17,9 +17,9 @@
 		
 		function widget_NewsLetter_render(){
 			$array = array(
-				array("{NewsLetterName}", $GLOBALS['lang']['widget_newsletter_name']),
-				array("{NewsLetterEmail}", $GLOBALS['lang']['widget_newsletter_email']),
-				array("{NewsLetterSubmit}", $GLOBALS['lang']['widget_newsletter_submit']),
+				array("{NewsLetterName}", $GLOBALS['COMMON']->l('widget_newsletter_name')),
+				array("{NewsLetterEmail}", $GLOBALS['COMMON']->l('widget_newsletter_email')),
+				array("{NewsLetterSubmit}", $GLOBALS['COMMON']->l('widget_newsletter_submit')),
 			);	
 			return $array;
 		}

@@ -33,19 +33,7 @@
 
 //logout	
 	$GLOBALS['lang']['logout_logout'] = "logout";
-	
-//titles
-	$GLOBALS['page']['home_test_title'] = "test title for controller home section home change from language file";
-	
-//widget NewsLetter
-	$GLOBALS['lang']['widget_newsletter_name'] = "Your name or pseudo ...";
-	$GLOBALS['lang']['widget_newsletter_email'] = "Enter your email address ...";
-	$GLOBALS['lang']['widget_newsletter_submit'] = "submit";
 
-//widget Quick Links
-	$GLOBALS['lang']['widget_quicklinks_addvideo'] = "Add new article";
-	$GLOBALS['lang']['widget_quicklinks_addsubtitle'] = "Add new subtitle";
-	$GLOBALS['lang']['widget_quicklinks_logout'] = "Logout";
 	
 //add video
 	$GLOBALS['page']['video_AddVideo_title'] = "Add New Article";
@@ -100,16 +88,7 @@
 //upload thumbnail
 	$GLOBALS['lang']['video_UploadThumbnail_UploadThumbnail'] = "Upload Thumbnail:";
 	
-//add subtitle
-	$GLOBALS['lang']['subtitle_AddSubtitle_AddSubtitle'] = "Create subtitle:";
-	$GLOBALS['lang']['subtitle_AddSubtitle_ReleaseName'] = "Release Name:";
-	$GLOBALS['lang']['subtitle_AddSubtitle_Language'] = "Language:";
-	$GLOBALS['lang']['subtitle_AddSubtitle_Country'] = "Country:";
-	$GLOBALS['lang']['subtitle_AddSubtitle_Version'] = "Version:";
-	$GLOBALS['lang']['subtitle_AddSubtitle_FPS'] = "FPS:";
-	$GLOBALS['lang']['subtitle_AddSubtitle_Format'] = "Format:";
-	$GLOBALS['lang']['subtitle_AddSubtitle_CDS'] = "NO of cd's:";
-	$GLOBALS['lang']['subtitle_AddSubtitle_Submit'] = "Create";
+
 
 //video subtitles
 	$GLOBALS['lang']['subtitle_VideoSubtitles_VideosSubtitles'] = "Video Subtitles";

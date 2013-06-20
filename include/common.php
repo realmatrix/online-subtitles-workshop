@@ -196,7 +196,7 @@ class Common{
 		$content = call_user_func('C'.$section.'::'.$section);
 		$options = 
 		$res = self::RenderView($content, $controller, $section);
-		if(!array_key_exists($controller.'_'.$section.'_title', $GLOBALS['page'])){$GLOBALS['ERROR'][]= "GLOBALS['page']['".$controller.'_'.$section."_title'] not found inside language file.";}
+		//if(!array_key_exists($controller.'_'.$section.'_title', $GLOBALS['page'])){$GLOBALS['ERROR'][]= "GLOBALS['page']['".$controller.'_'.$section."_title'] not found inside language file.";}
 		$res=str_replace("{title}", $GLOBALS['page'][$controller.'_'.$section.'_title'], $res);
 		return $res;
 		}
@@ -540,6 +540,7 @@ class Common{
 		);
 		$result = self::db_query("select `text` from `Lang_".$GLOBALS['config']['lang']."` where `key`= :key limit 1", $params);
 		$res = $result[0]['text'];
+		if(count($result<1)){$GLOBALS['ERROR'][]= "Language key '".$key."' not found.";}
 		return $res;
 	}
 ////////////////////////////////////////////
