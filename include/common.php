@@ -533,5 +533,17 @@ class Common{
 	}
 ////////////////////////////////////////////
 
+////////////////////////////////////////////
+	function l($key){
+		$params = array(
+			array(":key", $key, "str"),
+		);
+		$result = self::db_query("select `text` from `Lang_".$GLOBALS['config']['lang']."` where `key`= :key limit 1", $params);
+		$res = $result[0]['text'];
+		return $res;
+	}
+////////////////////////////////////////////
+
+
 }
 ?>

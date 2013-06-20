@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 18, 2013 at 11:40 PM
+-- Generation Time: Jun 20, 2013 at 06:36 AM
 -- Server version: 5.5.29-log
 -- PHP Version: 5.3.21
 
@@ -557,6 +557,117 @@ INSERT INTO `Language` (`id`, `language`, `iso639code`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `Lang_English`
+--
+
+CREATE TABLE IF NOT EXISTS `Lang_English` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `key` varchar(255) NOT NULL,
+  `text` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=95 ;
+
+--
+-- Dumping data for table `Lang_English`
+--
+
+INSERT INTO `Lang_English` (`id`, `key`, `text`) VALUES
+(3, 'register_username', 'User Name'),
+(4, 'register_password', 'Password'),
+(5, 'register_password2', 'Password again'),
+(6, 'register_email', 'Email'),
+(7, 'register_birthyear', 'Birth year'),
+(8, 'register_submit', 'Register'),
+(9, 'register_NoUsername', 'Opps! You don''t enter a username!'),
+(10, 'register_NoPassword', 'Opps! You didn''t enter one of your passwords!'),
+(11, 'register_NoBirthYear', 'Opps! You never entered in your birth year!'),
+(12, 'register_PasswordDontMatch', 'Ouch! Your passwords don''t match! Try again.'),
+(13, 'register_InvalidEmail', 'Opps! That''s not an email!'),
+(14, 'register_usernameaz', 'Invalid username only a-z 0-9 allowed.'),
+(15, 'register_passwordaz', 'Invalid password only a-z 0-9 allowed.'),
+(16, 'register_UsernameExist', 'Username already exist.'),
+(17, 'register_EmailExist', 'email already exist.'),
+(18, 'register_completed', 'Registration completed successfully, you will now be redirected to home page in 5 seconds.'),
+(19, 'login_username', 'Username'),
+(20, 'login_password', 'Password'),
+(21, 'login_submit', 'login'),
+(22, 'login_NoUsername', 'Opps! You don''t enter your username!'),
+(23, 'login_NoPassword', 'Opps! You didn''t enter your passwords!'),
+(24, 'login_usernameaz', 'Invalid username only a-z 0-9 allowed.'),
+(25, 'login_passwordaz', 'Invalid password only a-z 0-9 allowed.'),
+(26, 'login_failed', 'login failed Password was probably incorrect!.'),
+(27, 'login_orregister', 'or register'),
+(28, 'login_successfull', 'sucessfull login you will be redirected to home page in 5 seconds.'),
+(29, 'login_welcomeback', 'welcom back '),
+(30, 'logout_logout', 'logout'),
+(31, 'home_test_title', 'test title for controller home section home change from language file'),
+(32, 'widget_newsletter_name', 'Your name or pseudo ...'),
+(33, 'widget_newsletter_email', 'Enter your email address ...'),
+(34, 'widget_newsletter_submit', 'submit'),
+(35, 'widget_quicklinks_addvideo', 'Add new article'),
+(36, 'widget_quicklinks_addsubtitle', 'Add new subtitle'),
+(37, 'widget_quicklinks_logout', 'Logout'),
+(38, 'video_AddVideo_title', 'Add New Article'),
+(39, 'video_AddVideo_VideoType', 'ADD A NEW'),
+(40, 'video_AddVideo_VideoCategory', 'Category'),
+(41, 'video_AddVideo_VideoLanguage', 'Language'),
+(42, 'video_AddVideo_VideoTitle', 'Video Title'),
+(43, 'video_AddVideo_VideoImage', 'Add Image'),
+(44, 'video_AddVideo_VideoSubmit', 'Submit Form'),
+(45, 'video_AddVideo_SelectVideoType', 'Select video type please'),
+(46, 'video_AddVideo_SelectVideoCategory', 'Select video category please'),
+(47, 'video_AddVideo_SelectVideoLanguage', 'Select video language please'),
+(48, 'video_AddVideo_EnterVideoTitle', 'Enter video title please'),
+(49, 'video_AddVideo_SelectCountry', 'Select country please'),
+(50, 'video_AddVideo_EnterVideoOtherTitle', 'Enter video other title'),
+(51, 'video_AddVideo_SelectGenres', 'Select video genres please'),
+(52, 'video_AddVideo_SelectReleaseDay', 'Select Release Day'),
+(53, 'video_AddVideo_SelectREleaseMonth', 'Select Release Month'),
+(54, 'video_AddVideo_SelectReleaseYear', 'Select Release Year'),
+(55, 'video_AddVideo_EnterCast', 'Enter cast information'),
+(56, 'video_AddVideo_EnterDirector', 'Enter director information'),
+(57, 'video_AddVideo_SelectVideoLength', 'Select video length'),
+(58, 'video_AddVideo_EnterVideoTags', 'Enter video tags'),
+(59, 'video_AddVideo_EnterVideoSynopsis', 'Enter video synopsis'),
+(60, 'video_AddVideo_VideoType', 'Video type:'),
+(61, 'video_AddVideo_Category', 'Category:'),
+(62, 'video_AddVideo_Language', 'Language:'),
+(63, 'video_AddVideo_Title', 'Title:'),
+(64, 'video_AddVideo_OtherTitle', 'Other title:'),
+(65, 'video_AddVideo_Country', 'Country:'),
+(66, 'video_AddVideo_Genres', 'Genres:'),
+(67, 'video_AddVideo_ReleaseDate', 'Release date:'),
+(68, 'video_AddVideo_Casting', 'Casting:'),
+(69, 'video_AddVideo_Director', 'Director:'),
+(70, 'video_AddVideo_Length', 'Length:'),
+(71, 'video_AddVideo_Synopsis', 'Synopsis:'),
+(72, 'video_AddVideo_Tags', 'Tags:'),
+(73, 'video_AddVideo_Submit', 'Submit Article'),
+(74, 'video_ViewVideo_OtherTitle', 'Other Title:'),
+(75, 'video_ViewVideo_Country', 'Country:'),
+(76, 'video_ViewVideo_Genre', 'Genre:'),
+(77, 'video_ViewVideo_ReleaseDate', 'Release Date:'),
+(78, 'video_ViewVideo_Casting', 'Casting:'),
+(79, 'video_ViewVideo_Director', 'Director:'),
+(80, 'video_ViewVideo_Length', 'Length:'),
+(81, 'video_VideoSynopsis_Synopsis', 'Synopsis:'),
+(82, 'video_UploadThumbnail_UploadThumbnail', 'Upload Thumbnail:'),
+(83, 'subtitle_AddSubtitle_AddSubtitle', 'Create subtitle:'),
+(84, 'subtitle_AddSubtitle_ReleaseName', 'Release Name:'),
+(85, 'subtitle_AddSubtitle_Language', 'Language:'),
+(86, 'subtitle_AddSubtitle_Country', 'Country:'),
+(87, 'subtitle_AddSubtitle_Version', 'Version:'),
+(88, 'subtitle_AddSubtitle_FPS', 'FPS:'),
+(89, 'subtitle_AddSubtitle_Format', 'Format:'),
+(90, 'subtitle_AddSubtitle_CDS', 'NO of cd''s:'),
+(91, 'subtitle_AddSubtitle_Submit', 'Create'),
+(92, 'subtitle_VideoSubtitles_VideosSubtitles', 'Video Subtitles'),
+(93, 'search_AdvancedSearch_title', 'Advanced Search'),
+(94, 'search_SearchResults_title', 'Search Results');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `OnlineUsers`
 --
 
@@ -566,14 +677,14 @@ CREATE TABLE IF NOT EXISTS `OnlineUsers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=410 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=433 ;
 
 --
 -- Dumping data for table `OnlineUsers`
 --
 
 INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(409, '03eikjev4drnn6d26oj5qqudp4', 1371594724, '');
+(432, '58gqavpf6r4rta1rdhdo2gj155', 1371694894, '');
 
 -- --------------------------------------------------------
 

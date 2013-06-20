@@ -29,7 +29,7 @@
 	$GLOBALS['lang']['login_failed'] = "login failed Password was probably incorrect!.";
 	$GLOBALS['lang']['login_orregister'] = "or register";
 	$GLOBALS['lang']['login_successfull'] = "sucessfull login you will be redirected to home page in 5 seconds.";
-	$GLOBALS['lang']['login_welcomeback'] = "welcom back ";
+
 
 //logout	
 	$GLOBALS['lang']['logout_logout'] = "logout";

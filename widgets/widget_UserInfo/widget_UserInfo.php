@@ -17,7 +17,7 @@
 		
 		function widget_UserInfo_render(){
 			$array = array(
-				array("{WelcomeBack}", $GLOBALS['lang']['login_welcomeback']),
+				array("{WelcomeBack}", $GLOBALS['COMMON']->l('login_welcomeback')),
 				array("{UserName}", $_SESSION['username']),
 			);
 			return $array;
