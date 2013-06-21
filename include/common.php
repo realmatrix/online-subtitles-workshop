@@ -1,14 +1,15 @@
 <?php
 class Common{
 ////////////////////////////////////////////
+
 	function LoadTemplate($template){
 		$TemplatePath = $GLOBALS['config']['TemplatesDir'].$GLOBALS['config']['template']."/";
 		$content = file_get_contents($TemplatePath.$template);
 		return $content;
 	}
-////////////////////////////////////////////
 
 ////////////////////////////////////////////
+
 	function render($array, $template){
 		$template = $template.".tpl";
 		$template = self::LoadTemplate($template);
@@ -17,9 +18,10 @@ class Common{
 		}
 		return $template;
 	}
-////////////////////////////////////////////
 
 ////////////////////////////////////////////
+
+
 	function SystemMessage($type,$message){
 		if(count($message)>0){
 		$content = "<ul class='SystemMessage'>";
@@ -40,9 +42,9 @@ class Common{
 			return "";
 		}
 	}
-////////////////////////////////////////////
 
 ////////////////////////////////////////////
+
 	function GenBirthYears(){
 		$content = "<option></option>";
 		$CurrentYear = date("Y");
@@ -53,27 +55,27 @@ class Common{
 		}
 		return $content;
 	}
-////////////////////////////////////////////
 
 ////////////////////////////////////////////
+
 	function days(){
 		for ($i=1; $i <= 31; $i++) { 
 			$res[] = $i;
 		}
 		return $res;
 	}
-////////////////////////////////////////////
 
 ////////////////////////////////////////////
+
 	function months(){
 		for ($i=1; $i <= 12; $i++) { 
 			$res[] = $i;
 		}
 		return $res;
 	}
-////////////////////////////////////////////
 
 ////////////////////////////////////////////
+
 	function years(){
 		$CurrentYear = date("Y");
 		for ($i=1800; $i <= $CurrentYear; $i++) { 
@@ -81,18 +83,18 @@ class Common{
 		}
 		return $res;
 	}
-////////////////////////////////////////////
 
 ////////////////////////////////////////////
+
 	function minutes($minutes){
 		for ($i=1; $i <= $minutes; $i++) { 
 			$res[] = $i;
 		}
 		return $res;
 	}
-////////////////////////////////////////////
 
 ////////////////////////////////////////////
+
 	function LoadWidgets(){
 		$widgets = $GLOBALS['config']['widgets'];
 		$widget = explode(",",$widgets);
@@ -122,9 +124,9 @@ class Common{
 		}
 		return $content;
 	}
-////////////////////////////////////////////
 
 ////////////////////////////////////////////
+
 	function GetWidget($widget){
 		    $cwidget = trim($widget);
 			if($cwidget!=""){include_once "widgets/".$cwidget."/".$cwidget.".php";
@@ -133,9 +135,9 @@ class Common{
 			}		
 		return $content;
 	}
-////////////////////////////////////////////
 
 ////////////////////////////////////////////
+
 	function checkWidgetOptions($widget){
 		include_once "widgets/".$widget."/".$widget.".php";
 		$options =  call_user_func("W".$widget."::".$widget."_options");
@@ -152,9 +154,9 @@ class Common{
 		if(count($options['hide'])>0 and in_array($page, $options['hide'])){$loadwidget = FALSE;}
 		return $loadwidget;
 	}
-////////////////////////////////////////////
 
 ////////////////////////////////////////////
+
 	function IsLoggedin(){
 		if($_SESSION['loggedin']=="YES"){
 			return true;
@@ -162,9 +164,9 @@ class Common{
 			return false;
 		}
 	}
-////////////////////////////////////////////
 
 ////////////////////////////////////////////
+
 	function logout(){
 		if(isset($_SESSION['loggedin'])){unset($_SESSION['loggedin']);}
 		if(isset($_SESSION['username'])){unset($_SESSION['username']);}
@@ -173,18 +175,18 @@ class Common{
 		header('Location: index.php');
 		$_GET['logout'] = "logout";
 	}
-////////////////////////////////////////////
 
 ////////////////////////////////////////////
+
 	function login($username){
 		$_SESSION['loggedin'] = "YES"; 
 		$_SESSION['username'] = $username;
 		$userinfo = self::GetUserInfo($username,"");
 		$_SESSION['id'] = $userinfo[0]['id'];
 	}
-////////////////////////////////////////////
 
 ////////////////////////////////////////////
+
 	function LoadSection($controller, $section, $args){
 		$res = "";
 		if(self::checkSectionOptions($controller, $section, $message)){
@@ -204,9 +206,9 @@ class Common{
 			echo "<script>alert('".$message."')</script>";
 		} 
 	}
-////////////////////////////////////////////
 
 ////////////////////////////////////////////
+
 	function checkSectionOptions($controller, $section, &$message){
 		include_once "controllers/".$controller."/".$section.".php";
 		$options =  call_user_func("C".$section."::".$section."_options");
@@ -229,16 +231,16 @@ class Common{
 		if(count($options['hide'])>0 and in_array($page, $options['hide'])){$LoadSEction = FALSE;}
 		return $LoadSEction;
 	}
-////////////////////////////////////////////
 
 ////////////////////////////////////////////
+
 	function CheckControllerHook($section, $hook, $args){
 		if((isset($args['ssec']) and $args['ssec']==$section) and (isset($args['h']) and $args['h']==$hook)){$res = "yes";}
 		if($res=="yes"){return TRUE;}else{return FALSE;}
 	}
-////////////////////////////////////////////
 
 ////////////////////////////////////////////
+
 	function RenderView($array, $view, $section){
 		$page = file_get_contents($GLOBALS['config']['TemplatesDir'].$GLOBALS['config']['template']."/".$view."_".$section.".tpl");
 		for ($i = 0; $i <= count($array)-1; $i++) {
@@ -246,9 +248,9 @@ class Common{
 		}
 		return $page;
 	}
-////////////////////////////////////////////
 
 ////////////////////////////////////////////
+
 	function db_query($query, $array){
 		$DB_HOST=$GLOBALS['DB_HOST'];
 		$DB_NAME=$GLOBALS['DB_NAME'];
@@ -289,9 +291,9 @@ class Common{
 		 //Close the connection
 		 $connDB = null;
 	}
-////////////////////////////////////////////
 
 ////////////////////////////////////////////
+
 	function LoadPage($array){
 		$page = "";
 		for ($i = 0; $i <= count($array)-1; $i++) {
@@ -321,74 +323,74 @@ class Common{
 		}
 		return $page;
 	}
-////////////////////////////////////////////
 
 ////////////////////////////////////////////
+
 	function LoadSections($controller, $section){
 		require_once ("controllers/".$controller."/".$section.".php");
 		$array = call_user_func('C'.$section."::".$section."_sections");
 		$sections = self::LoadPage($array);
 		return $sections;
 	}
-////////////////////////////////////////////
 
 ////////////////////////////////////////////
+
 	function GetVideoTypes(){
 		$params = array();
 	 	$result = self::db_query("SELECT * FROM VideoType", $params);
 		return $result;
 	}
-////////////////////////////////////////////
 
 ////////////////////////////////////////////
+
 	function GetVideoCategories(){
 		$params = array();
 	 	$result = self::db_query("SELECT * FROM VideoCategory", $params);
 		return $result;
 	}
-////////////////////////////////////////////
 
 ////////////////////////////////////////////
+
 	function GetLanguages(){
 		$params = array();
 	 	$result = self::db_query("SELECT * FROM Language", $params);
 		return $result;
 	}
-////////////////////////////////////////////
 
 ////////////////////////////////////////////
+
 	function GetCds(){
 		$params = array();
 	 	$result = self::db_query("SELECT * FROM CDS", $params);
 		return $result;
 	}
-////////////////////////////////////////////
 
 ////////////////////////////////////////////
+
 	function GetFormats(){
 		$params = array();
 	 	$result = self::db_query("SELECT * FROM Formats", $params);
 		return $result;
 	}
-////////////////////////////////////////////
 
 ////////////////////////////////////////////
+
 	function GetCountries(){
 		$params = array();
 	 	$result = self::db_query("SELECT * FROM Countries", $params);
 		return $result;
 	}
-////////////////////////////////////////////
 
 ////////////////////////////////////////////
+
 	function GetGenres(){
 		$params = array();
 	 	$result = self::db_query("SELECT * FROM Genres", $params);
 		return $result;
 	}
-////////////////////////////////////////////
 
 ////////////////////////////////////////////
+
 	function GetVideoInfo($VideoID){
 		$params = array(
 			array(":id", $VideoID, "str"),
@@ -396,18 +398,18 @@ class Common{
 	 	$result = self::db_query("SELECT * FROM `Videos` where `id`=:id ", $params);
 		return $result;
 	}
-////////////////////////////////////////////
 
 ////////////////////////////////////////////
+
 	function RenderData($content, $array){
 		for ($i=0; $i < count($array); $i++) { 
 			$content = str_replace($array[$i][0], $array[$i][1], $content);
 		}
 		return $content;
 	}
-////////////////////////////////////////////
 
 ////////////////////////////////////////////
+
 	function form($array){
 		$form = "<div id='div-".$array['id']."'>";
 		$form .= "<form name='".$array['name']."' id='".$array['id']."' method='".$array['method']."' action='".$array['action']."' ".$array['extra'].">";
@@ -451,9 +453,9 @@ class Common{
 		$form .= "</div>";
 		return $form;
 	}
-////////////////////////////////////////////
 
 ////////////////////////////////////////////
+
 	function GetUserInfo($username, $id){
 		if($username!=""){
 			$params = array(
@@ -469,9 +471,9 @@ class Common{
 		}
 		return $res;
 	}
-////////////////////////////////////////////
 
 ////////////////////////////////////////////
+
 	function information(){
 		$AllOnline = Onlineusers::GetAllOnline();
 		$total = count($AllOnline['users'])+count($AllOnline['guests'])+count($AllOnline['spiders']);
@@ -497,9 +499,9 @@ class Common{
 		$info['TotalSubtitles']=count($TotalSubtitles);
 		return $info;
 	}
-////////////////////////////////////////////
 
 ////////////////////////////////////////////
+
 	function FormatMessage($type, $message){
 		if(count($message)>0){
 			$res = "<div class='div-".$type."'><ul class='ul-".$type."'>";
@@ -511,9 +513,9 @@ class Common{
 		}
 		else return "";
 	}
-////////////////////////////////////////////
 
 ////////////////////////////////////////////
+
 	function GetCountryById($id){
 		$params = array(
 			array(":id", $id, "str")
@@ -521,9 +523,9 @@ class Common{
 		$country=self::db_query("SELECT * FROM Countries where id=:id", $params);
 		return $country;
 	}
-////////////////////////////////////////////
 
 ////////////////////////////////////////////
+
 	function GetGenreById($id){
 		$params = array(
 			array(":id", $id, "str")
@@ -531,9 +533,9 @@ class Common{
 		$genre=self::db_query("SELECT * FROM Genres where id=:id", $params);
 		return $genre;
 	}
-////////////////////////////////////////////
 
 ////////////////////////////////////////////
+
 	function l($key){
 		$params = array(
 			array(":key", $key, "str"),
@@ -543,6 +545,7 @@ class Common{
 		if(count($result<1)){$GLOBALS['ERROR'][]= "Language key '".$key."' not found.";}
 		return $res;
 	}
+	
 ////////////////////////////////////////////
 
 
