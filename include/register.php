@@ -11,35 +11,35 @@
 		
 		 if($Username == "")
 		 {
-		 $GLOBALS['ERROR'][] = $GLOBALS['lang']['register_NoUsername'];
+		 $GLOBALS['ERROR'][] = $GLOBALS['COMMON']->l('register_NoUsername');
 		 }
 		
 		 if($Password == "" || $Re_Password == "")
 		 {
-		 $GLOBALS['ERROR'][] = $GLOBALS['lang']['register_NoPassword'];
+		 $GLOBALS['ERROR'][] = $GLOBALS['COMMON']->l('register_NoPassword');
 		 }
 		
 		 if($Birth == "")
 		 {
-		 $GLOBALS['ERROR'][] = $GLOBALS['lang']['register_NoBirthYear'];
+		 $GLOBALS['ERROR'][] = $GLOBALS['COMMON']->l('register_NoBirthYear');
 		 }
 		
 		 if($Password != $Re_Password)
 		 {
-		 $GLOBALS['ERROR'][] = $GLOBALS['lang']['register_PasswordDontMatch'];
+		 $GLOBALS['ERROR'][] = $GLOBALS['COMMON']->l('register_PasswordDontMatch');
 		 }
 		
 		 if($Email_Check === false)
 		 {
-		 $GLOBALS['ERROR'][] = $GLOBALS['lang']['register_InvalidEmail'];
+		 $GLOBALS['ERROR'][] = $GLOBALS['COMMON']->l('register_InvalidEmail');
 		 }
 		 
 		 if(preg_match("/^[a-zA-Z0-9]+$/", $Username) != 1) {
-		 $GLOBALS['ERROR'][] = $GLOBALS['lang']['register_usernameaz'];
+		 $GLOBALS['ERROR'][] = $GLOBALS['COMMON']->l('register_usernameaz');
 		 }
 
 		 if(preg_match("/^[a-zA-Z0-9]+$/", $Password) != 1) {
-		 $GLOBALS['ERROR'][] = $GLOBALS['lang']['register_passwordaz'];
+		 $GLOBALS['ERROR'][] = $GLOBALS['COMMON']->l('register_passwordaz');
 		 }
 		 
 		 $params = array(
@@ -47,7 +47,7 @@
 		 );
 		 $res = $GLOBALS['COMMON']->db_query("SELECT * FROM users WHERE username = :username", $params);
 		 if(count($res)>0){
-		 $GLOBALS['ERROR'][] = $GLOBALS['lang']['register_UsernameExist'];
+		 $GLOBALS['ERROR'][] = $GLOBALS['COMMON']->l('register_UsernameExist');
 		 }	
 		 
 		 $params = array(
@@ -55,7 +55,7 @@
 		 );
 		 $res = $GLOBALS['COMMON']->db_query("SELECT * FROM users WHERE email = :email", $params);
 		 if(count($res)>0){
-		 $GLOBALS['ERROR'][] = $GLOBALS['lang']['register_EmailExist'];
+		 $GLOBALS['ERROR'][] = $GLOBALS['COMMON']->l('register_EmailExist');
 		 }
 		 	 
 		 if(count($GLOBALS['ERROR'])==0){
@@ -70,7 +70,7 @@
 		 	$result = $GLOBALS['COMMON']->db_query("INSERT INTO `Users` (`username`, `password`, `email`, `BirthYear`, `group`) VALUES (:username, :password, :email, :birth, :group)", $params);
 		 	if($result!="error")
  			{
- 			 $GLOBALS['SUCCESS'][] = $GLOBALS['lang']['register_completed'].'<script type="text/javascript">$("#register").empty();setTimeout(function(){ window.location = "index.php"; }, 5000);</script>';
+ 			 $GLOBALS['SUCCESS'][] = $GLOBALS['COMMON']->l('register_completed').'<script type="text/javascript">$("#register").empty();setTimeout(function(){ window.location = "index.php"; }, 5000);</script>';
 			}
 
 		 }

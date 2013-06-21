@@ -6,20 +6,20 @@
 		
 		 if($Username == "")
 		 {
-		 $GLOBALS['ERROR'][] = $GLOBALS['lang']['login_NoUsername'];
+		 $GLOBALS['ERROR'][] = $GLOBALS['COMMON']->l('login_NoUsername');
 		 }
 		
 		 if($Password == "")
 		 {
-		 $GLOBALS['ERROR'][] = $GLOBALS['lang']['login_NoPassword'];
+		 $GLOBALS['ERROR'][] = $GLOBALS['COMMON']->l('login_NoPassword');
 		 }
 		 
 		 if(preg_match("/^[a-zA-Z0-9]+$/", $Username) != 1) {
-		 $GLOBALS['ERROR'][] = $GLOBALS['lang']['login_usernameaz'];
+		 $GLOBALS['ERROR'][] = $GLOBALS['COMMON']->l('login_usernameaz');
 		 }
 
 		 if(preg_match("/^[a-zA-Z0-9]+$/", $Password) != 1) {
-		 $GLOBALS['ERROR'][] = $GLOBALS['lang']['login_passwordaz'];
+		 $GLOBALS['ERROR'][] = $GLOBALS['COMMON']->l('login_passwordaz');
 		 }
 		 
 
@@ -38,10 +38,10 @@
 			 
 			 Onlineusers::AddOnlineUser();
 			 header( 'Location: index.php' ) ;
- 			 $GLOBALS['SUCCESS'][] = $GLOBALS['lang']['login_successfull'].'<script type="text/javascript">$("#login").empty();setTimeout(function(){ window.location = "index.php"; }, 5000);</script>';
+ 			 $GLOBALS['SUCCESS'][] = $GLOBALS['COMMON']->l('login_successfull').'<script type="text/javascript">$("#login").empty();setTimeout(function(){ window.location = "index.php"; }, 5000);</script>';
 			}
 			else {
-			$GLOBALS['ERROR'][] = $GLOBALS['lang']['login_failed'];
+			$GLOBALS['ERROR'][] = $GLOBALS['COMMON']->l('login_failed');
 			}
 		 }
 ?>
