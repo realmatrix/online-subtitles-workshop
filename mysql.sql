@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 20, 2013 at 06:36 AM
+-- Generation Time: Jun 21, 2013 at 03:08 AM
 -- Server version: 5.5.29-log
 -- PHP Version: 5.3.21
 
@@ -564,7 +564,9 @@ CREATE TABLE IF NOT EXISTS `Lang_English` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `key` varchar(255) NOT NULL,
   `text` text NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `key` (`key`),
+  UNIQUE KEY `id` (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=95 ;
 
 --
@@ -598,7 +600,7 @@ INSERT INTO `Lang_English` (`id`, `key`, `text`) VALUES
 (26, 'login_failed', 'login failed Password was probably incorrect!.'),
 (27, 'login_orregister', 'or register'),
 (28, 'login_successfull', 'sucessfull login you will be redirected to home page in 5 seconds.'),
-(29, 'login_welcomeback', 'welcom back '),
+(29, 'login_welcomeback', 'welcome back '),
 (30, 'logout_logout', 'logout'),
 (31, 'home_test_title', 'test title for controller home section home change from language file'),
 (32, 'widget_newsletter_name', 'Your name or pseudo ...'),
@@ -608,7 +610,7 @@ INSERT INTO `Lang_English` (`id`, `key`, `text`) VALUES
 (36, 'widget_quicklinks_addsubtitle', 'Add new subtitle'),
 (37, 'widget_quicklinks_logout', 'Logout'),
 (38, 'video_AddVideo_title', 'Add New Article'),
-(39, 'video_AddVideo_VideoType', 'ADD A NEW'),
+(39, 'video_AddVideo_NewVideoType', 'ADD A NEW'),
 (40, 'video_AddVideo_VideoCategory', 'Category'),
 (41, 'video_AddVideo_VideoLanguage', 'Language'),
 (42, 'video_AddVideo_VideoTitle', 'Video Title'),
@@ -632,7 +634,7 @@ INSERT INTO `Lang_English` (`id`, `key`, `text`) VALUES
 (60, 'video_AddVideo_VideoType', 'Video type:'),
 (61, 'video_AddVideo_Category', 'Category:'),
 (62, 'video_AddVideo_Language', 'Language:'),
-(63, 'video_AddVideo_Title', 'Title:'),
+(63, 'video_AddVideo_Original_Title', 'Title:'),
 (64, 'video_AddVideo_OtherTitle', 'Other title:'),
 (65, 'video_AddVideo_Country', 'Country:'),
 (66, 'video_AddVideo_Genres', 'Genres:'),
@@ -677,14 +679,14 @@ CREATE TABLE IF NOT EXISTS `OnlineUsers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=433 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=444 ;
 
 --
 -- Dumping data for table `OnlineUsers`
 --
 
 INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(432, '58gqavpf6r4rta1rdhdo2gj155', 1371694894, '');
+(443, 'u5l6vml4rcb4abgjug3bfg2og7', 1371780134, '');
 
 -- --------------------------------------------------------
 
