@@ -1,6 +1,6 @@
 <?php
 class Common{
-////////////////////////////////////////////
+
 
 	function LoadTemplate($template){
 		$TemplatePath = $GLOBALS['config']['TemplatesDir'].$GLOBALS['config']['template']."/";
@@ -8,7 +8,7 @@ class Common{
 		return $content;
 	}
 
-////////////////////////////////////////////
+
 
 	function render($array, $template){
 		$template = $template.".tpl";
@@ -19,7 +19,7 @@ class Common{
 		return $template;
 	}
 
-////////////////////////////////////////////
+
 
 
 	function SystemMessage($type,$message){
@@ -43,7 +43,7 @@ class Common{
 		}
 	}
 
-////////////////////////////////////////////
+
 
 	function GenBirthYears(){
 		$content = "<option></option>";
@@ -56,7 +56,7 @@ class Common{
 		return $content;
 	}
 
-////////////////////////////////////////////
+
 
 	function days(){
 		for ($i=1; $i <= 31; $i++) { 
@@ -65,7 +65,7 @@ class Common{
 		return $res;
 	}
 
-////////////////////////////////////////////
+
 
 	function months(){
 		for ($i=1; $i <= 12; $i++) { 
@@ -74,7 +74,7 @@ class Common{
 		return $res;
 	}
 
-////////////////////////////////////////////
+
 
 	function years(){
 		$CurrentYear = date("Y");
@@ -84,7 +84,7 @@ class Common{
 		return $res;
 	}
 
-////////////////////////////////////////////
+
 
 	function minutes($minutes){
 		for ($i=1; $i <= $minutes; $i++) { 
@@ -93,7 +93,7 @@ class Common{
 		return $res;
 	}
 
-////////////////////////////////////////////
+
 
 	function LoadWidgets(){
 		$widgets = $GLOBALS['config']['widgets'];
@@ -125,7 +125,7 @@ class Common{
 		return $content;
 	}
 
-////////////////////////////////////////////
+
 
 	function GetWidget($widget){
 		    $cwidget = trim($widget);
@@ -136,7 +136,7 @@ class Common{
 		return $content;
 	}
 
-////////////////////////////////////////////
+
 
 	function checkWidgetOptions($widget){
 		include_once "widgets/".$widget."/".$widget.".php";
@@ -155,7 +155,7 @@ class Common{
 		return $loadwidget;
 	}
 
-////////////////////////////////////////////
+
 
 	function IsLoggedin(){
 		if($_SESSION['loggedin']=="YES"){
@@ -165,7 +165,7 @@ class Common{
 		}
 	}
 
-////////////////////////////////////////////
+
 
 	function logout(){
 		if(isset($_SESSION['loggedin'])){unset($_SESSION['loggedin']);}
@@ -176,7 +176,7 @@ class Common{
 		$_GET['logout'] = "logout";
 	}
 
-////////////////////////////////////////////
+
 
 	function login($username){
 		$_SESSION['loggedin'] = "YES"; 
@@ -185,7 +185,7 @@ class Common{
 		$_SESSION['id'] = $userinfo[0]['id'];
 	}
 
-////////////////////////////////////////////
+
 
 	function LoadSection($controller, $section, $args){
 		$res = "";
@@ -207,7 +207,7 @@ class Common{
 		} 
 	}
 
-////////////////////////////////////////////
+
 
 	function checkSectionOptions($controller, $section, &$message){
 		include_once "controllers/".$controller."/".$section.".php";
@@ -232,14 +232,14 @@ class Common{
 		return $LoadSEction;
 	}
 
-////////////////////////////////////////////
+
 
 	function CheckControllerHook($section, $hook, $args){
 		if((isset($args['ssec']) and $args['ssec']==$section) and (isset($args['h']) and $args['h']==$hook)){$res = "yes";}
 		if($res=="yes"){return TRUE;}else{return FALSE;}
 	}
 
-////////////////////////////////////////////
+
 
 	function RenderView($array, $view, $section){
 		$page = file_get_contents($GLOBALS['config']['TemplatesDir'].$GLOBALS['config']['template']."/".$view."_".$section.".tpl");
@@ -249,7 +249,7 @@ class Common{
 		return $page;
 	}
 
-////////////////////////////////////////////
+
 
 	function db_query($query, $array){
 		$DB_HOST=$GLOBALS['DB_HOST'];
@@ -292,7 +292,7 @@ class Common{
 		 $connDB = null;
 	}
 
-////////////////////////////////////////////
+
 
 	function LoadPage($array){
 		$page = "";
@@ -324,7 +324,7 @@ class Common{
 		return $page;
 	}
 
-////////////////////////////////////////////
+
 
 	function LoadSections($controller, $section){
 		require_once ("controllers/".$controller."/".$section.".php");
@@ -333,7 +333,7 @@ class Common{
 		return $sections;
 	}
 
-////////////////////////////////////////////
+
 
 	function GetVideoTypes(){
 		$params = array();
@@ -341,7 +341,7 @@ class Common{
 		return $result;
 	}
 
-////////////////////////////////////////////
+
 
 	function GetVideoCategories(){
 		$params = array();
@@ -349,7 +349,7 @@ class Common{
 		return $result;
 	}
 
-////////////////////////////////////////////
+
 
 	function GetLanguages(){
 		$params = array();
@@ -357,7 +357,7 @@ class Common{
 		return $result;
 	}
 
-////////////////////////////////////////////
+
 
 	function GetCds(){
 		$params = array();
@@ -365,7 +365,7 @@ class Common{
 		return $result;
 	}
 
-////////////////////////////////////////////
+
 
 	function GetFormats(){
 		$params = array();
@@ -373,7 +373,7 @@ class Common{
 		return $result;
 	}
 
-////////////////////////////////////////////
+
 
 	function GetCountries(){
 		$params = array();
@@ -381,7 +381,7 @@ class Common{
 		return $result;
 	}
 
-////////////////////////////////////////////
+
 
 	function GetGenres(){
 		$params = array();
@@ -389,7 +389,7 @@ class Common{
 		return $result;
 	}
 
-////////////////////////////////////////////
+
 
 	function GetVideoInfo($VideoID){
 		$params = array(
@@ -399,7 +399,7 @@ class Common{
 		return $result;
 	}
 
-////////////////////////////////////////////
+
 
 	function RenderData($content, $array){
 		for ($i=0; $i < count($array); $i++) { 
@@ -408,7 +408,7 @@ class Common{
 		return $content;
 	}
 
-////////////////////////////////////////////
+
 
 	function form($array){
 		$form = "<div id='div-".$array['id']."'>";
@@ -454,7 +454,7 @@ class Common{
 		return $form;
 	}
 
-////////////////////////////////////////////
+
 
 	function GetUserInfo($username, $id){
 		if($username!=""){
@@ -472,7 +472,7 @@ class Common{
 		return $res;
 	}
 
-////////////////////////////////////////////
+
 
 	function information(){
 		$AllOnline = Onlineusers::GetAllOnline();
@@ -500,7 +500,7 @@ class Common{
 		return $info;
 	}
 
-////////////////////////////////////////////
+
 
 	function FormatMessage($type, $message){
 		if(count($message)>0){
@@ -514,7 +514,7 @@ class Common{
 		else return "";
 	}
 
-////////////////////////////////////////////
+
 
 	function GetCountryById($id){
 		$params = array(
@@ -524,7 +524,7 @@ class Common{
 		return $country;
 	}
 
-////////////////////////////////////////////
+
 
 	function GetGenreById($id){
 		$params = array(
@@ -534,19 +534,25 @@ class Common{
 		return $genre;
 	}
 
-////////////////////////////////////////////
+
+
+	function GetLanguage($lang){
+		$result = self::db_query("select * from `Lang_".$lang."` ", $params);
+		$res = array();
+		for ($i=0; $i < count($result); $i++) { 
+			$res[$result[$i]['key']]=$result[$i]['text'];
+		}
+		return $res;
+	}
+
+
 
 	function l($key){
-		$params = array(
-			array(":key", $key, "str"),
-		);
-		$result = self::db_query("select `text` from `Lang_".$GLOBALS['config']['lang']."` where `key`= :key limit 1", $params);
-		$res = $result[0]['text'];
-		if(count($result<1)){$GLOBALS['ERROR'][]= "Language key '".$key."' not found.";}
+		$res = $GLOBALS['l'][$key];
 		return $res;
 	}
 	
-////////////////////////////////////////////
+
 
 
 }
