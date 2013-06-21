@@ -39,13 +39,13 @@
 	
 	$TemplateRegister = array
 	  (
-	  array("{username}",$GLOBALS['lang']['register_username']),
-	  array("{password}",$GLOBALS['lang']['register_password']),
-	  array("{password2}",$GLOBALS['lang']['register_password2']),
-	  array("{email}",$GLOBALS['lang']['register_email']),
-	  array("{birthyear}",$GLOBALS['lang']['register_birthyear']),
+	  array("{username}",$GLOBALS['COMMON']->l('register_username')),
+	  array("{password}",$GLOBALS['COMMON']->l('register_password')),
+	  array("{password2}",$GLOBALS['COMMON']->l('register_password2')),
+	  array("{email}",$GLOBALS['COMMON']->l('register_email')),
+	  array("{birthyear}",$GLOBALS['COMMON']->l('register_birthyear')),
 	  array("{birthselect}",$GLOBALS['COMMON']->GenBirthYears()),
-	  array("{submit}",$GLOBALS['lang']['register_submit']),
+	  array("{submit}",$GLOBALS['COMMON']->l('register_submit')),
 	);
 	
 	$TemplateLogin = array
@@ -89,10 +89,10 @@
 	  array("{SystemFooter}",$SystemFooter),
 	  array("{SystemError}",$error_messages),
 	  array("{SystemSuccess}",$success_messages),
-	  array("{LoginUsername}",$GLOBALS['lang']['login_username']),
-	  array("{LoginPassword}",$GLOBALS['lang']['login_password']),
-	  array("{LoginOrRegister}",$GLOBALS['lang']['login_orregister']),
-	  array("{LoginSubmit}",$GLOBALS['lang']['login_submit']),
+	  array("{LoginUsername}",$GLOBALS['COMMON']->l('login_username')),
+	  array("{LoginPassword}",$GLOBALS['COMMON']->l('login_password')),
+	  array("{LoginOrRegister}",$GLOBALS['COMMON']->l('login_orregister')),
+	  array("{LoginSubmit}",$GLOBALS['COMMON']->l('login_submit')),
 	  array("{UserName}",$_SESSION['username']),	  
 	  array("{TotalOnline}",$SystemInfo['total']),
 	  array("{OnlineGuests}",$SystemInfo['OnlineGuests']),

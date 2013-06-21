@@ -26,7 +26,7 @@
 			$video = $GLOBALS['COMMON']->GetVideoInfo($_GET['vid']);
 				$content = array
 				  (
-				  array("{UploadThumbnail}", $GLOBALS['lang']['video_UploadThumbnail_UploadThumbnail']),
+				  array("{UploadThumbnail}", $GLOBALS['COMMON']->l('video_UploadThumbnail_UploadThumbnail')),
 				  array("{vid}", $_GET['vid']),
 				 );
 			 

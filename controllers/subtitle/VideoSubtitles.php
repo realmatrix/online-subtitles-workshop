@@ -29,7 +29,7 @@
 				  (
 				  array("{vid}", $vid),
 				  array("{TableRows}", self::TableRows()),
-				  array("{VideoSubtitles}", $GLOBALS['lang']['subtitle_VideoSubtitles_VideosSubtitles'])
+				  array("{VideoSubtitles}", $GLOBALS['COMMON']->l('subtitle_VideoSubtitles_VideosSubtitles')),
 				 );
 			 
 		return $content;

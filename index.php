@@ -20,8 +20,6 @@
 	
 	include "onload.php";
 	
-	include "language/".$GLOBALS['config']['language'];
-	
 	include "header.php";
 	
 	include "footer.php";

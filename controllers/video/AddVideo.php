@@ -38,20 +38,20 @@
 				  array("{length}", self::minutes()),
 				  array("{error}", $GLOBALS['COMMON']->FormatMessage("error", self::$error)),
 				  array("{message}", $GLOBALS['COMMON']->FormatMessage("message", self::$message)),
-				  array("{Type}", $GLOBALS['lang']['video_AddVideo_VideoType']),
-				  array("{Category}", $GLOBALS['lang']['video_AddVideo_Category']),
-				  array("{Language}", $GLOBALS['lang']['video_AddVideo_Language']),
-				  array("{Title}", $GLOBALS['lang']['video_AddVideo_Title']),
-				  array("{OtherTitle}", $GLOBALS['lang']['video_AddVideo_OtherTitle']),
-				  array("{Country}", $GLOBALS['lang']['video_AddVideo_Country']),
-				  array("{Genres}", $GLOBALS['lang']['video_AddVideo_Genres']),
-				  array("{ReleaseDate}", $GLOBALS['lang']['video_AddVideo_ReleaseDate']),
-				  array("{Casting}", $GLOBALS['lang']['video_AddVideo_Casting']),
-				  array("{Director}", $GLOBALS['lang']['video_AddVideo_Director']),
-				  array("{Length}", $GLOBALS['lang']['video_AddVideo_Length']),
-				  array("{Synopsis}", $GLOBALS['lang']['video_AddVideo_Synopsis']),
-				  array("{Tags}", $GLOBALS['lang']['video_AddVideo_Tags']),
-				  array("{Submit}", $GLOBALS['lang']['video_AddVideo_Submit']),
+				  array("{Type}", $GLOBALS['COMMON']->l('video_AddVideo_VideoType')),
+				  array("{Category}", $GLOBALS['COMMON']->l('video_AddVideo_Category')),
+				  array("{Language}", $GLOBALS['COMMON']->l('video_AddVideo_Language')),
+				  array("{Title}", $GLOBALS['COMMON']->l('video_AddVideo_Title')),
+				  array("{OtherTitle}", $GLOBALS['COMMON']->l('video_AddVideo_OtherTitle')),
+				  array("{Country}", $GLOBALS['COMMON']->l('video_AddVideo_Country')),
+				  array("{Genres}", $GLOBALS['COMMON']->l('video_AddVideo_Genres')),
+				  array("{ReleaseDate}", $GLOBALS['COMMON']->l('video_AddVideo_ReleaseDate')),
+				  array("{Casting}", $GLOBALS['COMMON']->l('video_AddVideo_Casting')),
+				  array("{Director}", $GLOBALS['COMMON']->l('video_AddVideo_Director')),
+				  array("{Length}", $GLOBALS['COMMON']->l('video_AddVideo_Length')),
+				  array("{Synopsis}", $GLOBALS['COMMON']->l('video_AddVideo_Synopsis')),
+				  array("{Tags}", $GLOBALS['COMMON']->l('video_AddVideo_Tags')),
+				  array("{Submit}", $GLOBALS['COMMON']->l('video_AddVideo_Submit')),
 				  array("{VideoGenres}", self::genres()),
 				 );
 			 
@@ -131,21 +131,21 @@
 		}
 		
 		function SubmitVideo($args){
-			if($args['VideoType']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_SelectVideoType'];}
-			if($args['VideoCategory']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_SelectVideoCategory'];}
-			if($args['VideoLanguage']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_SelectVideoLanguage'];}
-			if($args['VideoTitle']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_EnterVideoTitle'];}
-			if($args['VideoOtherTitle']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_EnterVideoOtherTitle'];}
-			if($args['country']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_SelectCountry'];}
-			if($args['genres']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_SelectGenres'];}
-			if($args['rd-month']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_SelectREleaseMonth'];}
-			if($args['rd-day']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_SelectReleaseDay'];}
-			if($args['rd-year']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_SelectReleaseYear'];}			
-			if($args['casting']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_EnterCast'];}
-			if($args['director']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_EnterDirector'];}
-			if($args['length']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_SelectVideoLength'];}
-			if($args['tags']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_EnterVideoTags'];}			
-			if($args['synopsis']==""){self::$error[]=$GLOBALS['lang']['video_AddVideo_EnterVideoSynopsis'];}			
+			if($args['VideoType']==""){self::$error[]=$GLOBALS['COMMON']->l('video_AddVideo_SelectVideoType');}
+			if($args['VideoCategory']==""){self::$error[]=$GLOBALS['COMMON']->l('video_AddVideo_SelectVideoCategory');}
+			if($args['VideoLanguage']==""){self::$error[]=$GLOBALS['COMMON']->l('video_AddVideo_SelectVideoLanguage');}
+			if($args['VideoTitle']==""){self::$error[]=$GLOBALS['COMMON']->l('video_AddVideo_EnterVideoTitle');}
+			if($args['VideoOtherTitle']==""){self::$error[]=$GLOBALS['COMMON']->l('video_AddVideo_EnterVideoOtherTitle');}
+			if($args['country']==""){self::$error[]=$GLOBALS['COMMON']->l('video_AddVideo_SelectCountry');}
+			if($args['genres']==""){self::$error[]=$GLOBALS['COMMON']->l('video_AddVideo_SelectGenres');}
+			if($args['rd-month']==""){self::$error[]=$GLOBALS['COMMON']->l('video_AddVideo_SelectREleaseMonth');}
+			if($args['rd-day']==""){self::$error[]=$GLOBALS['COMMON']->l('video_AddVideo_SelectReleaseDay');}
+			if($args['rd-year']==""){self::$error[]=$GLOBALS['COMMON']->l('video_AddVideo_SelectReleaseYear');}			
+			if($args['casting']==""){self::$error[]=$GLOBALS['COMMON']->l('video_AddVideo_EnterCast');}
+			if($args['director']==""){self::$error[]=$GLOBALS['COMMON']->l('video_AddVideo_EnterDirector');}
+			if($args['length']==""){self::$error[]=$GLOBALS['COMMON']->l('video_AddVideo_SelectVideoLength');}
+			if($args['tags']==""){self::$error[]=$GLOBALS['COMMON']->l('video_AddVideo_EnterVideoTags');}			
+			if($args['synopsis']==""){self::$error[]=$GLOBALS['COMMON']->l('video_AddVideo_EnterVideoSynopsis');}			
 			if(count(self::$error)>0){return FALSE;}
 			
 			//$genres = implode(",", $_POST['genres']);

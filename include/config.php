@@ -6,8 +6,6 @@
 	
 	$GLOBALS['config']['template'] = "default2";
 	
-	$GLOBALS['config']['language'] = "english_us.php";
-	
 	$GLOBALS['config']['lang'] = "English";
 	
 	$GLOBALS['config']['TemplatesDir'] = "templates/"; //example "templates/" or "folder/templates/"
