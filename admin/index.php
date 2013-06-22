@@ -6,4 +6,6 @@
 	
 	include $GLOBALS['SystemPath']."include/common.php";
 	
+	include "include/include.php";
+	
 ?>
