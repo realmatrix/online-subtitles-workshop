@@ -1,25 +1,6 @@
 <?php
 	
 	if(!isset($_GET['page']) and !isset($_POST['page'])){$_GET['page']="home"; $_GET['sec']="home";}
-/*	
-	if($_POST['page']!="register" and $_GET['page']!="register" and $_POST['page']!="login" and $_GET['page']!="login"){
-	//loading template
-	echo render($TemplateHeader, "header");
-	echo render($TemplateLeft, "left");
-	echo render($TemplateBody, "body");
-	echo render($TemplateRight, "right");
-	echo render($TemplateFooter, "footer");
-	}
-	
-	if($_POST['page']=="register" or $_GET['page']=="register"){
-	echo render($TemplateRegister, "register");
-	}
-
-	if($_POST['page']=="login" or $_GET['page']=="login"){
-	echo render($TemplateLogin, "login");
-	}	
-	
-*/
 
 	if(isset($_GET['page'])){$SystemPage = $_GET['page'];}
 	if(isset($_POST['page'])){$SystemPage = $_POST['page'];}
@@ -41,38 +22,38 @@
 	switch ($SystemPage) {
     case ($SystemPage=="home" or ($SystemPage=="video" and $SystemSection=="view")) and $dataonly!="yes":
 		//loading template
-		echo $GLOBALS['COMMON']->render($TemplateHead, "head");
-		echo $GLOBALS['COMMON']->render($TemplateHeader, "header");
-		echo $GLOBALS['COMMON']->render($TemplateLeft, "left");
-		echo $GLOBALS['COMMON']->render($TemplateBody, "body");
-		echo $GLOBALS['COMMON']->render($TemplateRight, "right");
-		echo $GLOBALS['COMMON']->render($TemplateFooter, "footer");
+		echo $GLOBALS['COMMON']->render($GLOBALS['TemplateHead'], "head");
+		echo $GLOBALS['COMMON']->render($GLOBALS['TemplateHeader'], "header");
+		echo $GLOBALS['COMMON']->render($GLOBALS['TemplateLeft'], "left");
+		echo $GLOBALS['COMMON']->render($GLOBALS['TemplateBody'], "body");
+		echo $GLOBALS['COMMON']->render($GLOBALS['TemplateRight'], "right");
+		echo $GLOBALS['COMMON']->render($GLOBALS['TemplateFooter'], "footer");
         break;
     case ($SystemPage=="video" and $SystemSection=="add") or $SystemPage=="subtitle" or $SystemPage=="search":
-		echo $GLOBALS['COMMON']->render($TemplateHead, "head");
-		echo $GLOBALS['COMMON']->render($TemplateHeader, "header");
-		echo $GLOBALS['COMMON']->render($TemplateBody, "body");
-		echo $GLOBALS['COMMON']->render($TemplateFooter, "footer");
+		echo $GLOBALS['COMMON']->render($GLOBALS['TemplateHead'], "head");
+		echo $GLOBALS['COMMON']->render($GLOBALS['TemplateHeader'], "header");
+		echo $GLOBALS['COMMON']->render($GLOBALS['TemplateBody'], "body");
+		echo $GLOBALS['COMMON']->render($GLOBALS['TemplateFooter'], "footer");
         break;
     case $SystemPage!="" and $dataonly=="yes" and $getwidget!="":
-		echo $GLOBALS['COMMON']->render($TemplateHead, "head");
+		echo $GLOBALS['COMMON']->render($GLOBALS['TemplateHead'], "head");
 		echo $GLOBALS['COMMON']->GetWidget($getwidget);
         break;
     case $SystemPage!="" and $dataonly=="yes" and $getcontroller!="" and $getsection!="":
-		echo $GLOBALS['COMMON']->render($TemplateHead, "head");
+		echo $GLOBALS['COMMON']->render($GLOBALS['TemplateHead'], "head");
 		echo $GLOBALS['COMMON']->LoadSection($getcontroller, $getsection, $_POST);
         break;
     case $SystemPage=="register":
-		echo $GLOBALS['COMMON']->render($TemplateRegister, "register");
+		echo $GLOBALS['COMMON']->render($GLOBALS['TemplateRegister'], "register");
 		break;
     case $SystemPage=="login":
-		echo $GLOBALS['COMMON']->render($TemplateLogin, "login");
+		echo $GLOBALS['COMMON']->render($GLOBALS['TemplateLogin'], "login");
         break;
     case $SystemPage=="logout":
-		echo $GLOBALS['COMMON']->render($TemplateLogout, "logout");
+		echo $GLOBALS['COMMON']->render($GLOBALS['TemplateLogout'], "logout");
         break;
     default:
-	   echo $GLOBALS['COMMON']->render($Template404, "404");
+	   echo $GLOBALS['COMMON']->render($GLOBALS['Template404'], "404");
 }
 
 ?>

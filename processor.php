@@ -18,8 +18,7 @@
 	
 		
 	//loading widgets
-	$SystemWidgets = $GLOBALS['COMMON']->LoadWidgets();
-	
+	$GLOBALS['SystemWidgets'] = $GLOBALS['COMMON']->LoadWidgets();	
 		
 	$TemplatePath = $GLOBALS['config']['TemplatesDir'].$GLOBALS['config']['template'];
 	
@@ -27,17 +26,17 @@
 	
 	$success_messages = $GLOBALS['COMMON']->SystemMessage("success",$GLOBALS['SUCCESS']);
 	
-	$TemplateHeader = array
+	$GLOBALS['TemplateHeader'] = array
 	  (
 	  array("{test}",$test),
 	);
 	
-	$TemplateHead = array
+	$GLOBALS['TemplateHead'] = array
 	  (
 	  array("{test}",$test),
 	);
 	
-	$TemplateRegister = array
+	$GLOBALS['TemplateRegister'] = array
 	  (
 	  array("{username}",$GLOBALS['COMMON']->l('register_username')),
 	  array("{password}",$GLOBALS['COMMON']->l('register_password')),
@@ -48,39 +47,39 @@
 	  array("{submit}",$GLOBALS['COMMON']->l('register_submit')),
 	);
 	
-	$TemplateLogin = array
+	$GLOBALS['TemplateLogin'] = array
 	  (
 	  array("{test}",$test),
 	 );
 	
-	$TemplateRight = array
+	$GLOBALS['TemplateRight'] = array
 	  (
 	  array("{test}",$test),
 	);
 
-	$TemplateLeft = array
+	$GLOBALS['TemplateLeft'] = array
 	  (
 	  array("{test}",$test),
 	);
 	
-	$TemplateBody = array
+	$GLOBALS['TemplateBody'] = array
 	  (
 	  array("{content}",$SystemContent),
 	);
 	
-	$TemplateFooter = array
+	$GLOBALS['TemplateFooter'] = array
 	  (
 	  array("{test}",$test),
 	);
 	
-	$Template404 = array
+	$GLOBALS['Template404'] = array
 	  (
 	  array("{test}",$test),
 	); 
 	
 	$SystemInfo = $GLOBALS['COMMON']->information();
 	
-	$TemplatesCommon = array 
+	$GLOBALS['TemplatesCommon'] = array 
 	(
 	  array("{TemplatePath}",$TemplatePath),
 	  array("{SiteName}",$GLOBALS['config']['site_title']),
@@ -105,15 +104,17 @@
 	  array("{TotalSubtitles}",$SystemInfo['TotalSubtitles']),
 	);
 
-	$TemplatesCommon = array_merge($TemplatesCommon,$SystemWidgets);
+	$GLOBALS['TemplatesCommon'] = array_merge($GLOBALS['TemplatesCommon'],$GLOBALS['SystemWidgets']);
 	
-$TemplateHeader = array_merge($TemplateHeader,$TemplatesCommon);
-$TemplateHead = array_merge($TemplateHead,$TemplatesCommon);
-$TemplateLeft = array_merge($TemplateLeft,$TemplatesCommon);
-$TemplateRight = array_merge($TemplateRight,$TemplatesCommon);
-$TemplateBody = array_merge($TemplateBody,$TemplatesCommon);
-$TemplateFooter = array_merge($TemplateFooter,$TemplatesCommon);
-$TemplateLogin = array_merge($TemplateLogin,$TemplatesCommon);
-$TemplateRegister = array_merge($TemplateRegister,$TemplatesCommon);
-$Template404 = array_merge($Template404,$TemplatesCommon);
+	$GLOBALS['TemplateHeader'] = array_merge($GLOBALS['TemplateHeader'], $GLOBALS['TemplatesCommon']);
+	$GLOBALS['TemplateHead'] = array_merge($GLOBALS['TemplateHead'], $GLOBALS['TemplatesCommon']);
+	$GLOBALS['TemplateLeft'] = array_merge($GLOBALS['TemplateLeft'], $GLOBALS['TemplatesCommon']);
+	$GLOBALS['TemplateRight'] = array_merge($GLOBALS['TemplateRight'], $GLOBALS['TemplatesCommon']);
+	$GLOBALS['TemplateBody'] = array_merge($GLOBALS['TemplateBody'], $GLOBALS['TemplatesCommon']);
+	$GLOBALS['TemplateFooter'] = array_merge($GLOBALS['TemplateFooter'], $GLOBALS['TemplatesCommon']);
+	$GLOBALS['TemplateLogin'] = array_merge($GLOBALS['TemplateLogin'], $GLOBALS['TemplatesCommon']);
+	$GLOBALS['TemplateRegister'] = array_merge($GLOBALS['TemplateRegister'], $GLOBALS['TemplatesCommon']);
+	$GLOBALS['Template404'] = array_merge($GLOBALS['Template404'], $GLOBALS['TemplatesCommon']);
+
+
 ?>
