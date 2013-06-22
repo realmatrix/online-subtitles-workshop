@@ -8,4 +8,6 @@
 	
 	$GLOBALS['SiteTitle'] = "Online Subtitles Workshop";
 	
+	$GLOBALS['SiteDescription'] = "";
+	
 ?>
