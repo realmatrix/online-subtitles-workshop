@@ -16,4 +16,6 @@
 	
 	include "router.php";
 	
+	unset($GLOBALS);
+	
 ?>

@@ -7,21 +7,21 @@
 	switch ($AdminPage) {
     case ($AdminPage=="main"):
 		//loading template
-		echo $GLOBALS['ACOMMON']->render($TemplateHead, "head");
-		echo $GLOBALS['ACOMMON']->render($TemplateHeader, "header");
-		echo $GLOBALS['ACOMMON']->render($TemplateLeft, "left");
-		echo $GLOBALS['ACOMMON']->render($TemplateBody, "body");
-		echo $GLOBALS['ACOMMON']->render($TemplateRight, "right");
-		echo $GLOBALS['ACOMMON']->render($TemplateFooter, "footer");
+		echo $GLOBALS['ACOMMON']->render($GLOBALS['TemplateHead'], "head");
+		echo $GLOBALS['ACOMMON']->render($GLOBALS['TemplateHeader'], "header");
+		echo $GLOBALS['ACOMMON']->render($GLOBALS['TemplateLeft'], "left");
+		echo $GLOBALS['ACOMMON']->render($GLOBALS['TemplateBody'], "body");
+		echo $GLOBALS['ACOMMON']->render($GLOBALS['TemplateRight'], "right");
+		echo $GLOBALS['ACOMMON']->render($GLOBALS['TemplateFooter'], "footer");
         break;
     case $AdminPage=="login":
-		echo $GLOBALS['ACOMMON']->render($TemplateLogin, "login");
+		echo $GLOBALS['ACOMMON']->render($GLOBALS['TemplateLogin'], "login");
         break;
     case $AdminPage=="logout":
-		echo $GLOBALS['ACOMMON']->render($TemplateLogout, "logout");
+		echo $GLOBALS['ACOMMON']->render($GLOBALS['TemplateLogout'], "logout");
         break;
     default:
-	   echo $GLOBALS['ACOMMON']->render($Template404, "404");
+	   echo $GLOBALS['ACOMMON']->render($GLOBALS['Template404'], "404");
 	}
 
 
