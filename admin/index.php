@@ -6,6 +6,14 @@
 	
 	include $GLOBALS['SystemPath']."include/common.php";
 	
-	include "include/include.php";
+	$GLOBALS['COMMON'] = new Common();
+	
+	include "include/Acommon.php";
+	
+	$GLOBALS['ACOMMON'] = new Acommon();
+	
+	include "processor.php";
+	
+	include "router.php";
 	
 ?>
