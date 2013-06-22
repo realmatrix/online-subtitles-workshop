@@ -18,7 +18,37 @@
 	if($_POST['sec']!=""){$SystemSection=$_POST['sec'];}
 
 
-	
+/////////////////////////////////////////////////////////
+//compress
+    $phpver = phpversion();
+
+     $useragent = (isset($_SERVER["HTTP_USER_AGENT"]) ) ? $_SERVER["HTTP_USER_AGENT"] : $HTTP_USER_AGENT;
+
+     if ( $phpver >= '4.0.4pl1' && ( strstr($useragent,'compatible') || strstr($useragent,'Gecko') ) )
+     {
+         if ( extension_loaded('zlib') )
+         {
+         	 ini_set('zlib.output_compression_level', 1);
+             ob_start('ob_gzhandler');
+			 $gzhandler = TRUE; 
+         }
+     }
+     else if ( $phpver > '4.0' )
+     {
+         if ( strstr($HTTP_SERVER_VARS['HTTP_ACCEPT_ENCODING'], 'gzip') )
+         {
+             if ( extension_loaded('zlib') )
+             {
+                 $do_gzip_compress = TRUE;
+                 ob_start();
+                 ob_implicit_flush(0);
+
+                 header('Content-Encoding: gzip');
+             }
+         }
+     }
+/////////////////////////////////////////////////////////	 
+	 	
 	switch ($SystemPage) {
     case ($SystemPage=="home" or ($SystemPage=="video" and $SystemSection=="view")) and $dataonly!="yes":
 		//loading template
@@ -55,5 +85,35 @@
     default:
 	   echo $GLOBALS['COMMON']->render($GLOBALS['Template404'], "404");
 }
+
+/////////////////////////////////////////////////////////
+//compress
+// Compress buffered output if required and send to browser
+if($gzhandler === TRUE)
+{
+	ob_end_flush();
+}
+if ( $do_gzip_compress )
+ {
+     //
+     // Borrowed from php.net!
+     //
+     echo "gzip compress is running - message from router.php";
+     $gzip_contents = ob_get_contents();
+     ob_end_clean();
+
+     $gzip_size = strlen($gzip_contents);
+     $gzip_crc = crc32($gzip_contents);
+
+     $gzip_contents = gzcompress($gzip_contents, 9);
+     $gzip_contents = substr($gzip_contents, 0, strlen($gzip_contents) - 4);
+
+     echo "\x1f\x8b\x08\x00\x00\x00\x00\x00";
+     echo $gzip_contents;
+     echo pack('V', $gzip_crc);
+     echo pack('V', $gzip_size);
+ }
+/////////////////////////////////////////////////////////
+
 
 ?>
