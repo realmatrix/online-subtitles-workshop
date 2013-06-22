@@ -10,12 +10,13 @@ class Common{
 
 
 
-	function render($array, $template){
-		$template = $template.".tpl";
+	function render($array, $tpl){
+		$template = $tpl.".tpl";
 		$template = self::LoadTemplate($template);
 		for ($i = 0; $i <= count($array)-1; $i++) {
 		    $template = str_replace($array[$i][0], $array[$i][1], $template);
 		}
+		if($tpl=="footer"){$template = str_replace("{LoadTime}", self::LoadTime(), $template);}
 		return $template;
 	}
 
@@ -553,6 +554,12 @@ class Common{
 	}
 	
 
+	function LoadTime(){
+		$LoadEnd = microtime(true);
+		$res = $LoadEnd - $GLOBALS['LoadStart'];
+		$res = number_format($res, 4);
+		return $res;
+	}
 
 
 }

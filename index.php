@@ -1,7 +1,9 @@
 <?php
 
 	session_start();
-	
+
+	$GLOBALS['LoadStart'] = microtime(true);
+		
 	include "include/db.php";
 	
 	include "include/config.php";
@@ -25,11 +27,11 @@
 	include "header.php";
 	
 	include "footer.php";
-
+	
 	include "processor.php";
 	
 	include "router.php";
-	
+		
 	unset($GLOBALS);
 	
 ?>
