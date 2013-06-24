@@ -7,7 +7,7 @@
 	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
 
 	<!-- The styles -->
-	<link id="bs-css" href="{TemplatePath}/files/css/bootstrap-cerulean.css" rel="stylesheet">
+	<link id="bs-css" href="{TemplatePath}/css/bootstrap-cerulean.css" rel="stylesheet">
 	<style type="text/css">
 	  body {
 		padding-bottom: 40px;
@@ -16,22 +16,22 @@
 		padding: 9px 0;
 	  }
 	</style>
-	<link href="{TemplatePath}/files/css/bootstrap-responsive.css" rel="stylesheet">
-	<link href="{TemplatePath}/files/css/charisma-app.css" rel="stylesheet">
-	<link href="{TemplatePath}/files/css/jquery-ui-1.8.21.custom.css" rel="stylesheet">
-	<link href='{TemplatePath}/files/css/fullcalendar.css' rel='stylesheet'>
-	<link href='{TemplatePath}/files/css/fullcalendar.print.css' rel='stylesheet'  media='print'>
-	<link href='{TemplatePath}/files/css/chosen.css' rel='stylesheet'>
-	<link href='{TemplatePath}/files/css/uniform.default.css' rel='stylesheet'>
-	<link href='{TemplatePath}/files/css/colorbox.css' rel='stylesheet'>
-	<link href='{TemplatePath}/files/css/jquery.cleditor.css' rel='stylesheet'>
-	<link href='{TemplatePath}/files/css/jquery.noty.css' rel='stylesheet'>
-	<link href='{TemplatePath}/files/css/noty_theme_default.css' rel='stylesheet'>
-	<link href='{TemplatePath}/files/css/elfinder.min.css' rel='stylesheet'>
-	<link href='{TemplatePath}/files/css/elfinder.theme.css' rel='stylesheet'>
-	<link href='{TemplatePath}/files/css/jquery.iphone.toggle.css' rel='stylesheet'>
-	<link href='{TemplatePath}/files/css/opa-icons.css' rel='stylesheet'>
-	<link href='{TemplatePath}/files/css/uploadify.css' rel='stylesheet'>
+	<link href="{TemplatePath}/css/bootstrap-responsive.css" rel="stylesheet">
+	<link href="{TemplatePath}/css/charisma-app.css" rel="stylesheet">
+	<link href="{TemplatePath}/css/jquery-ui-1.8.21.custom.css" rel="stylesheet">
+	<link href='{TemplatePath}/css/fullcalendar.css' rel='stylesheet'>
+	<link href='{TemplatePath}/css/fullcalendar.print.css' rel='stylesheet'  media='print'>
+	<link href='{TemplatePath}/css/chosen.css' rel='stylesheet'>
+	<link href='{TemplatePath}/css/uniform.default.css' rel='stylesheet'>
+	<link href='{TemplatePath}/css/colorbox.css' rel='stylesheet'>
+	<link href='{TemplatePath}/css/jquery.cleditor.css' rel='stylesheet'>
+	<link href='{TemplatePath}/css/jquery.noty.css' rel='stylesheet'>
+	<link href='{TemplatePath}/css/noty_theme_default.css' rel='stylesheet'>
+	<link href='{TemplatePath}/css/elfinder.min.css' rel='stylesheet'>
+	<link href='{TemplatePath}/css/elfinder.theme.css' rel='stylesheet'>
+	<link href='{TemplatePath}/css/jquery.iphone.toggle.css' rel='stylesheet'>
+	<link href='{TemplatePath}/css/opa-icons.css' rel='stylesheet'>
+	<link href='{TemplatePath}/css/uploadify.css' rel='stylesheet'>
 
 	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
@@ -39,7 +39,7 @@
 	<![endif]-->
 
 	<!-- The fav icon -->
-	<link rel="shortcut icon" href="{TemplatePath}/files/img/favicon.ico">
+	<link rel="shortcut icon" href="{TemplatePath}/img/favicon.ico">
 		
 </head>
 
@@ -53,7 +53,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.html"> <img alt="Charisma Logo" src="{TemplatePath}/files/img/logo20.png" /> <span>Charisma</span></a>
+				<a class="brand" href="index.html"> <img alt="Charisma Logo" src="{TemplatePath}/img/logo20.png" /> <span>Charisma</span></a>
 				
 				<!-- theme selector starts -->
 				<div class="btn-group pull-right theme-container" >
@@ -227,7 +227,7 @@
 						<div id="myTabContent" class="tab-content">
 							<div class="tab-pane active" id="info">
 								<h3>Charisma <small>a fully featued template</small></h3>
-								<p>Its a fully featured, responsive template for your admin panel. Its optimized for tablet and mobile phones. Scan the QR code below to view it in your mobile device.</p> <img alt="QR Code" class="charisma_qr center" src="{TemplatePath}/files/img/qrcode136.png" />
+								<p>Its a fully featured, responsive template for your admin panel. Its optimized for tablet and mobile phones. Scan the QR code below to view it in your mobile device.</p> <img alt="QR Code" class="charisma_qr center" src="{TemplatePath}/img/qrcode136.png" />
 							</div>
 							<div class="tab-pane" id="custom">
 								<h3>Custom <small>small text</small></h3>
@@ -499,75 +499,79 @@
 	<!-- Placed at the end of the document so the pages load faster -->
 
 	<!-- jQuery -->
-	<script src="{TemplatePath}/files/js/jquery-1.7.2.min.js"></script>
+	<script src="{TemplatePath}/js/jquery-1.7.2.min.js"></script>
 	<!-- jQuery UI -->
-	<script src="{TemplatePath}/files/js/jquery-ui-1.8.21.custom.min.js"></script>
+	<script src="{TemplatePath}/js/jquery-ui-1.8.21.custom.min.js"></script>
 	<!-- transition / effect library -->
-	<script src="{TemplatePath}/files/js/bootstrap-transition.js"></script>
+	<script src="{TemplatePath}/js/bootstrap-transition.js"></script>
 	<!-- alert enhancer library -->
-	<script src="{TemplatePath}/files/js/bootstrap-alert.js"></script>
+	<script src="{TemplatePath}/js/bootstrap-alert.js"></script>
 	<!-- modal / dialog library -->
-	<script src="{TemplatePath}/files/js/bootstrap-modal.js"></script>
+	<script src="{TemplatePath}/js/bootstrap-modal.js"></script>
 	<!-- custom dropdown library -->
-	<script src="{TemplatePath}/files/js/bootstrap-dropdown.js"></script>
+	<script src="{TemplatePath}/js/bootstrap-dropdown.js"></script>
 	<!-- scrolspy library -->
-	<script src="{TemplatePath}/files/js/bootstrap-scrollspy.js"></script>
+	<script src="{TemplatePath}/js/bootstrap-scrollspy.js"></script>
 	<!-- library for creating tabs -->
-	<script src="{TemplatePath}/files/js/bootstrap-tab.js"></script>
+	<script src="{TemplatePath}/js/bootstrap-tab.js"></script>
 	<!-- library for advanced tooltip -->
-	<script src="{TemplatePath}/files/js/bootstrap-tooltip.js"></script>
+	<script src="{TemplatePath}/js/bootstrap-tooltip.js"></script>
 	<!-- popover effect library -->
-	<script src="{TemplatePath}/files/js/bootstrap-popover.js"></script>
+	<script src="{TemplatePath}/js/bootstrap-popover.js"></script>
 	<!-- button enhancer library -->
-	<script src="{TemplatePath}/files/js/bootstrap-button.js"></script>
+	<script src="{TemplatePath}/js/bootstrap-button.js"></script>
 	<!-- accordion library (optional, not used in demo) -->
-	<script src="{TemplatePath}/files/js/bootstrap-collapse.js"></script>
+	<script src="{TemplatePath}/js/bootstrap-collapse.js"></script>
 	<!-- carousel slideshow library (optional, not used in demo) -->
-	<script src="{TemplatePath}/files/js/bootstrap-carousel.js"></script>
+	<script src="{TemplatePath}/js/bootstrap-carousel.js"></script>
 	<!-- autocomplete library -->
-	<script src="{TemplatePath}/files/js/bootstrap-typeahead.js"></script>
+	<script src="{TemplatePath}/js/bootstrap-typeahead.js"></script>
 	<!-- tour library -->
-	<script src="{TemplatePath}/files/js/bootstrap-tour.js"></script>
+	<script src="{TemplatePath}/js/bootstrap-tour.js"></script>
 	<!-- library for cookie management -->
-	<script src="{TemplatePath}/files/js/jquery.cookie.js"></script>
+	<script src="{TemplatePath}/js/jquery.cookie.js"></script>
 	<!-- calander plugin -->
-	<script src='{TemplatePath}/files/js/fullcalendar.min.js'></script>
+	<script src='{TemplatePath}/js/fullcalendar.min.js'></script>
 	<!-- data table plugin -->
-	<script src='{TemplatePath}/files/js/jquery.dataTables.min.js'></script>
+	<script src='{TemplatePath}/js/jquery.dataTables.min.js'></script>
 
 	<!-- chart libraries start -->
-	<script src="{TemplatePath}/files/js/excanvas.js"></script>
-	<script src="{TemplatePath}/files/js/jquery.flot.min.js"></script>
-	<script src="{TemplatePath}/files/js/jquery.flot.pie.min.js"></script>
-	<script src="{TemplatePath}/files/js/jquery.flot.stack.js"></script>
-	<script src="{TemplatePath}/files/js/jquery.flot.resize.min.js"></script>
+	<script src="{TemplatePath}/js/excanvas.js"></script>
+	<script src="{TemplatePath}/js/jquery.flot.min.js"></script>
+	<script src="{TemplatePath}/js/jquery.flot.pie.min.js"></script>
+	<script src="{TemplatePath}/js/jquery.flot.stack.js"></script>
+	<script src="{TemplatePath}/js/jquery.flot.resize.min.js"></script>
 	<!-- chart libraries end -->
 
 	<!-- select or dropdown enhancer -->
-	<script src="{TemplatePath}/files/js/jquery.chosen.min.js"></script>
+	<script src="{TemplatePath}/js/jquery.chosen.min.js"></script>
 	<!-- checkbox, radio, and file input styler -->
-	<script src="{TemplatePath}/files/js/jquery.uniform.min.js"></script>
+	<script src="{TemplatePath}/js/jquery.uniform.min.js"></script>
 	<!-- plugin for gallery image view -->
-	<script src="{TemplatePath}/files/js/jquery.colorbox.min.js"></script>
+	<script src="{TemplatePath}/js/jquery.colorbox.min.js"></script>
 	<!-- rich text editor library -->
-	<script src="{TemplatePath}/files/js/jquery.cleditor.min.js"></script>
+	<script src="{TemplatePath}/js/jquery.cleditor.min.js"></script>
 	<!-- notification plugin -->
-	<script src="{TemplatePath}/files/js/jquery.noty.js"></script>
+	<script src="{TemplatePath}/js/jquery.noty.js"></script>
 	<!-- file manager library -->
-	<script src="{TemplatePath}/files/js/jquery.elfinder.min.js"></script>
+	<script src="{TemplatePath}/js/jquery.elfinder.min.js"></script>
 	<!-- star rating plugin -->
-	<script src="{TemplatePath}/files/js/jquery.raty.min.js"></script>
+	<script src="{TemplatePath}/js/jquery.raty.min.js"></script>
 	<!-- for iOS style toggle switch -->
-	<script src="{TemplatePath}/files/js/jquery.iphone.toggle.js"></script>
+	<script src="{TemplatePath}/js/jquery.iphone.toggle.js"></script>
 	<!-- autogrowing textarea plugin -->
-	<script src="{TemplatePath}/files/js/jquery.autogrow-textarea.js"></script>
+	<script src="{TemplatePath}/js/jquery.autogrow-textarea.js"></script>
 	<!-- multiple file upload plugin -->
-	<script src="{TemplatePath}/files/js/jquery.uploadify-3.1.min.js"></script>
+	<script src="{TemplatePath}/js/jquery.uploadify-3.1.min.js"></script>
 	<!-- history.js for cross-browser state change on ajax -->
-	<script src="{TemplatePath}/files/js/jquery.history.js"></script>
+	<script src="{TemplatePath}/js/jquery.history.js"></script>
 	<!-- application script for Charisma demo -->
-	<script src="{TemplatePath}/files/js/charisma.js"></script>
+	<script src="{TemplatePath}/js/charisma.js"></script>
 	
-		
+	<script>
+		$(document).ready(function () {
+		        $('head').append('<link id="bs-css" href="{TemplatePath}/css/bootstrap-cerulean.css" rel="stylesheet"><style type="text/css"> body {padding-bottom: 40px;}.sidebar-nav {padding: 9px 0;}</style><link href="{TemplatePath}/css/bootstrap-responsive.css" rel="stylesheet"><link href="{TemplatePath}/css/charisma-app.css" rel="stylesheet"><link href="{TemplatePath}/css/jquery-ui-1.8.21.custom.css" rel="stylesheet"><link href="{TemplatePath}/css/fullcalendar.css" rel="stylesheet"><link href="{TemplatePath}/css/fullcalendar.print.css" rel="stylesheet"  media="print"><link href="{TemplatePath}/css/chosen.css" rel="stylesheet"><link href="{TemplatePath}/css/uniform.default.css" rel="stylesheet"><link href="{TemplatePath}/css/colorbox.css" rel="stylesheet"><link href="{TemplatePath}/css/jquery.cleditor.css" rel="stylesheet"><link href="{TemplatePath}/css/jquery.noty.css" rel="stylesheet"><link href="{TemplatePath}/css/noty_theme_default.css" rel="stylesheet"><link href="{TemplatePath}/css/elfinder.min.css" rel="stylesheet"><link href="{TemplatePath}/css/elfinder.theme.css" rel="stylesheet"><link href="{TemplatePath}/css/jquery.iphone.toggle.css" rel="stylesheet"><link href="{TemplatePath}/css/opa-icons.css" rel="stylesheet"><link href="{TemplatePath}/css/uploadify.css" rel="stylesheet"><!-- The HTML5 shim, for IE6-8 support of HTML5 elements --><!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]--><!-- The fav icon --><link rel="shortcut icon" href="{TemplatePath}/img/favicon.ico">');
+		});
+	</script>	
 </body>
 </html>
