@@ -52,38 +52,46 @@
 	switch ($SystemPage) {
     case ($SystemPage=="home" or ($SystemPage=="video" and $SystemSection=="view")) and $dataonly!="yes":
 		//loading template
-		echo $GLOBALS['COMMON']->render($GLOBALS['TemplateHead'], "head");
-		echo $GLOBALS['COMMON']->render($GLOBALS['TemplateHeader'], "header");
-		echo $GLOBALS['COMMON']->render($GLOBALS['TemplateLeft'], "left");
-		echo $GLOBALS['COMMON']->render($GLOBALS['TemplateBody'], "body");
-		echo $GLOBALS['COMMON']->render($GLOBALS['TemplateRight'], "right");
-		echo $GLOBALS['COMMON']->render($GLOBALS['TemplateFooter'], "footer");
+		$GLOBALS['FinalPage'] = $GLOBALS['COMMON']->render($GLOBALS['TemplateHead'], "head");
+		$GLOBALS['FinalPage'] .= $GLOBALS['COMMON']->render($GLOBALS['TemplateHeader'], "header");
+		$GLOBALS['FinalPage'] .= $GLOBALS['COMMON']->render($GLOBALS['TemplateLeft'], "left");
+		$GLOBALS['FinalPage'] .= $GLOBALS['COMMON']->render($GLOBALS['TemplateBody'], "body");
+		$GLOBALS['FinalPage'] .= $GLOBALS['COMMON']->render($GLOBALS['TemplateRight'], "right");
+		$GLOBALS['FinalPage'] .= $GLOBALS['COMMON']->render($GLOBALS['TemplateFooter'], "footer");
+		echo $GLOBALS['FinalPage'];
         break;
     case ($SystemPage=="video" and $SystemSection=="add") or $SystemPage=="subtitle" or $SystemPage=="search":
-		echo $GLOBALS['COMMON']->render($GLOBALS['TemplateHead'], "head");
-		echo $GLOBALS['COMMON']->render($GLOBALS['TemplateHeader'], "header");
-		echo $GLOBALS['COMMON']->render($GLOBALS['TemplateBody'], "body");
-		echo $GLOBALS['COMMON']->render($GLOBALS['TemplateFooter'], "footer");
+		$GLOBALS['FinalPage'] = $GLOBALS['COMMON']->render($GLOBALS['TemplateHead'], "head");
+		$GLOBALS['FinalPage'] .= $GLOBALS['COMMON']->render($GLOBALS['TemplateHeader'], "header");
+		$GLOBALS['FinalPage'] .= $GLOBALS['COMMON']->render($GLOBALS['TemplateBody'], "body");
+		$GLOBALS['FinalPage'] .= $GLOBALS['COMMON']->render($GLOBALS['TemplateFooter'], "footer");
+		echo $GLOBALS['FinalPage'];
         break;
     case $SystemPage!="" and $dataonly=="yes" and $getwidget!="":
-		echo $GLOBALS['COMMON']->render($GLOBALS['TemplateHead'], "head");
-		echo $GLOBALS['COMMON']->GetWidget($getwidget);
+		$GLOBALS['FinalPage'] = $GLOBALS['COMMON']->render($GLOBALS['TemplateHead'], "head");
+		$GLOBALS['FinalPage'] .= $GLOBALS['COMMON']->GetWidget($getwidget);
+		echo $GLOBALS['FinalPage'];
         break;
     case $SystemPage!="" and $dataonly=="yes" and $getcontroller!="" and $getsection!="":
-		echo $GLOBALS['COMMON']->render($GLOBALS['TemplateHead'], "head");
-		echo $GLOBALS['COMMON']->LoadSection($getcontroller, $getsection, $_POST);
+		$GLOBALS['FinalPage'] = $GLOBALS['COMMON']->render($GLOBALS['TemplateHead'], "head");
+		$GLOBALS['FinalPage'] .= $GLOBALS['COMMON']->LoadSection($getcontroller, $getsection, $_POST);
+		echo $GLOBALS['FinalPage'];
         break;
     case $SystemPage=="register":
-		echo $GLOBALS['COMMON']->render($GLOBALS['TemplateRegister'], "register");
+		$GLOBALS['FinalPage'] = $GLOBALS['COMMON']->render($GLOBALS['TemplateRegister'], "register");
+		echo $GLOBALS['FinalPage'];
 		break;
     case $SystemPage=="login":
-		echo $GLOBALS['COMMON']->render($GLOBALS['TemplateLogin'], "login");
+		$GLOBALS['FinalPage'] = $GLOBALS['COMMON']->render($GLOBALS['TemplateLogin'], "login");
+		echo $GLOBALS['FinalPage'];
         break;
     case $SystemPage=="logout":
-		echo $GLOBALS['COMMON']->render($GLOBALS['TemplateLogout'], "logout");
+		$GLOBALS['FinalPage'] = $GLOBALS['COMMON']->render($GLOBALS['TemplateLogout'], "logout");
+		echo $GLOBALS['FinalPage'];
         break;
     default:
-	   echo $GLOBALS['COMMON']->render($GLOBALS['Template404'], "404");
+	    $GLOBALS['FinalPage'] = $GLOBALS['COMMON']->render($GLOBALS['Template404'], "404");
+		echo $GLOBALS['FinalPage'];
 }
 
 /////////////////////////////////////////////////////////
