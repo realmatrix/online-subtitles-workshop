@@ -8,25 +8,7 @@ if(!window.jQuery)
    document.getElementsByTagName('head')[0].appendChild(script);
 }
 </script>
-<script>
-	// this is the id of the submit button
-$("#submitButtonId").click(function() {
 
-    var url = "path/to/your/script.php"; // the script where you handle the form input.
-
-    $.ajax({
-           type: "POST",
-           url: url,
-           data: $("#idForm").serialize(), // serializes the form's elements.
-           success: function(data)
-           {
-               alert(data); // show response from the php script.
-           }
-         });
-
-    return false; // avoid to execute the actual submit of the form.
-});
-</script>
 <script>
 // variable to hold request
 var request;
@@ -91,7 +73,6 @@ $('form#submitnewvideo').submit(function(event){
 
     // prevent default posting of form
     event.preventDefault();
-    return false;
 });
 
 </script>
@@ -130,7 +111,7 @@ $('form#submitnewvideo').submit(function(event){
 
 <!-- add video form -->
 <div id="div-submitnewvideo">
-<form id="submitnewvideo" action="#" method="post">
+<form id="submitnewvideo" method="post" action="#">
 	
 	<label for="VideoType">{Type}</label>
 	<select name="VideoType" id="VideoType" data-required="true">
@@ -198,15 +179,16 @@ $('form#submitnewvideo').submit(function(event){
 	<label for="synopsis">{Synopsis}</label>
 	<textarea id="synopsis" name="synopsis" rows="5" data-required="true"> </textarea>
 	
+	<input type="hidden" name="dataonly" value="yes" /> <!-- uncomment if using with ajax -->
+	<input type="hidden" name="getcontroller" value="video" />
+	<input type="hidden" name="getsection" value="AddVideo" />
+	<input type="hidden" name="ssec" value="AddVideo" />
+	<input type="hidden" name="h" value="SubmitVideo" />
+
 	<br /><br />
 	<div style="width:100%; text-align: center;">
-		<input type="submit" id="submitButtonId" value="{Submit}" />
+		<input type="submit" value="{Submit}" />
 	</div>
-	<input type="hidden" name="dataonly" id="dataonly" value="yes" />
-	<input type="hidden" name="getcontroller" id="getcontroller" value="video" />
-	<input type="hidden" name="getsection" id="getsection" value="AddVideo" />
-	<input type="hidden" name="ssec" id="ssec" value="AddVideo" />
-	<input type="hidden" name="h" id="h" value="SubmitVideo" />
 </form>
 </div>
 <!-- end add video form -->		

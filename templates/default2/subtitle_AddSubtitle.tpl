@@ -168,11 +168,11 @@ $("form#submitnewsubtitle").submit(function(event){
 	</tr>	
 </table>
 	<input type="hidden" name="vid" value="{vid}" />
-	<input type="hidden" name="dataonly" id="dataonly" value="yes"/>
-	<input type="hidden" name="getcontroller" id="getcontroller" value="subtitle"/>
-	<input type="hidden" name="getsection" id="getsection" value="Addsubtitle"/>
-	<input type="hidden" name="ssec" id="ssec" value="Addsubtitle"/>
-	<input type="hidden" name="h" id="h" value="SubmitSubtitle"/>
+	<input type="hidden" name="dataonly" value="yes"/> <!-- uncomment if using with ajax -->
+	<input type="hidden" name="getcontroller" value="subtitle"/>
+	<input type="hidden" name="getsection" value="Addsubtitle"/>
+	<input type="hidden" name="ssec" value="Addsubtitle"/>
+	<input type="hidden" name="h" value="SubmitSubtitle"/>
 </form>
 
 </div>

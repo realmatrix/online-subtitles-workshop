@@ -93,7 +93,7 @@
 		function genres(){
 			$genres = $GLOBALS['COMMON']->GetGenres();
 			for ($i=0; $i < count($genres); $i++) { 
-				$res .= "<div class='checkbox-genre'><input type='checkbox' name='genres' value='".$genres[$i]['id']."'> ".$genres[$i]['genre']."</div>";
+				$res .= "<div class='checkbox-genre'><label for='chkgenre".$genres[$i]['id']."'><input type='checkbox' name='genres' id='chkgenre".$genres[$i]['id']."' value='".$genres[$i]['id']."'> ".$genres[$i]['genre']."</label></div>";
 			}
 			return $res;
 		}

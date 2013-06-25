@@ -1,5 +1,3 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
-<!-- saved from url=(0063)https://www.phpbb.com/styles/demo/3.0/board/index.php -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><HTML dir="ltr" lang="en-gb" xml:lang="en-gb" xmlns="http://www.w3.org/1999/xhtml">
 <HEAD>
 	{SystemHeader}
@@ -8,7 +6,7 @@
 	<script type='text/javascript' charset='utf-8' src='{TemplatePath}/files/apps/jquery/jquery.collapse.js'></script>
 	<script type='text/javascript' charset='utf-8' src='{TemplatePath}/files/apps/jquery/jquery.tipsy.js'></script>
 	<script type='text/javascript' charset='utf-8' src='{TemplatePath}/files/apps/jquery/jquery.hoverIntent.min.js'></script>
-	<script type='text/javascript' language='javascript' src='{TemplatePath}/files/apps/DataTables-1.9.4/media/js/jquery.dataTables.js'></script>
+	<script type='text/javascript' src='{TemplatePath}/files/apps/DataTables-1.9.4/media/js/jquery.dataTables.js'></script>
 	<script type='text/javascript' charset='utf-8' src='{TemplatePath}/files/apps/DataTables-1.9.4/extras/TableTools/media/js/ZeroClipboard.js'></script>
 	<script type='text/javascript' charset='utf-8' src='{TemplatePath}/files/apps/DataTables-1.9.4/extras/TableTools/media/js/TableTools.js'></script>
 	
@@ -42,24 +40,12 @@
 	
 <META content="text/html; charset=UTF-8" http-equiv="content-type">
 <META content="text/css" http-equiv="content-style-type">
-<META content="en-gb" http-equiv="content-language">
 <META content="no" http-equiv="imagetoolbar">
 <META name="resource-type" content="document">
-<META name="distribution" content="global">
 <META name="keywords" content="">
 <META name="description" content="">
 <TITLE>{SiteName}</TITLE>
-<LINK title="Feed - phpBB 3.0.x Styles Demo Board" rel="alternate" 
-type="application/atom+xml" href="http://www.phpbb.com/styles/demo/3.0/board/feed.php"><LINK 
-title="Feed - News" rel="alternate" type="application/atom+xml" href="http://www.phpbb.com/styles/demo/3.0/board/feed.php?mode=news"><LINK 
-title="Feed - New Topics" rel="alternate" type="application/atom+xml" href="http://www.phpbb.com/styles/demo/3.0/board/feed.php?mode=topics"><LINK 
-title="Feed - Active Topics" rel="alternate" type="application/atom+xml" href="http://www.phpbb.com/styles/demo/3.0/board/feed.php?mode=topics_active"><!--
-	phpBB style name: Absolution
-	Based on style:   prosilver (this is the default phpBB3 style)
-	Original author:  Tom Beddard ( http://www.subBlue.com/ )
-	Modified by:      Christian Bullock ( http://www.ChristianBullock.com/ )
 
--->
 <SCRIPT type="text/javascript">
 // <![CDATA[
 	var jump_page = 'Enter the page number you wish to go to:';
