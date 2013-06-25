@@ -3,6 +3,43 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><HTML dir="ltr" lang="en-gb" xml:lang="en-gb" xmlns="http://www.w3.org/1999/xhtml">
 <HEAD>
 	{SystemHeader}
+
+	<script src='{TemplatePath}/files/apps/jquery/jquery-2.0.0.js'></script>
+	<script type='text/javascript' charset='utf-8' src='{TemplatePath}/files/apps/jquery/jquery.collapse.js'></script>
+	<script type='text/javascript' charset='utf-8' src='{TemplatePath}/files/apps/jquery/jquery.tipsy.js'></script>
+	<script type='text/javascript' charset='utf-8' src='{TemplatePath}/files/apps/jquery/jquery.hoverIntent.min.js'></script>
+	<script type='text/javascript' language='javascript' src='{TemplatePath}/files/apps/DataTables-1.9.4/media/js/jquery.dataTables.js'></script>
+	<script type='text/javascript' charset='utf-8' src='{TemplatePath}/files/apps/DataTables-1.9.4/extras/TableTools/media/js/ZeroClipboard.js'></script>
+	<script type='text/javascript' charset='utf-8' src='{TemplatePath}/files/apps/DataTables-1.9.4/extras/TableTools/media/js/TableTools.js'></script>
+	
+	<script>
+	function processFormGet(formId, divid) { 
+	//your validation code
+	$.ajax( {
+	        type: 'GET',
+	        url: 'index.php',
+	        data: $('#'+formId).serialize(), 
+	        success: function(data) {
+	            $('#divid').html(data);
+	        }
+	    } );
+	}
+	</script>
+	
+	<script>
+	function processFormPOST(formId, divid) { 
+	//your validation code
+	$.ajax( {
+	        type: 'POST',
+	        url: 'index.php',
+	        data: $('#'+formId).serialize(), 
+	        success: function(data) {
+	            $('#divid').html(data);
+	        }
+	    } );
+	}
+	</script>
+	
 <META content="text/html; charset=UTF-8" http-equiv="content-type">
 <META content="text/css" http-equiv="content-style-type">
 <META content="en-gb" http-equiv="content-language">
@@ -67,17 +104,6 @@ title="Feed - Active Topics" rel="alternate" type="application/atom+xml" href="h
 // ]]>
 </SCRIPT>
 
-<SCRIPT type="text/javascript" src="phpBB%203_0_x%20Styles%20Demo%20Board%20•%20Index%20page_php_files/forum_fn.js"></SCRIPT>
-
-<SCRIPT type="text/javascript" src="phpBB%203_0_x%20Styles%20Demo%20Board%20•%20Index%20page_php_files/jquery-1.7.1.min.js"></SCRIPT>
-
-<SCRIPT type="text/javascript" src="phpBB%203_0_x%20Styles%20Demo%20Board%20•%20Index%20page_php_files/jquery.tipsy.js"></SCRIPT>
-
-<SCRIPT type="text/javascript" src="phpBB%203_0_x%20Styles%20Demo%20Board%20•%20Index%20page_php_files/jquery.hoverIntent.min.js"></SCRIPT>
-
-<SCRIPT type="text/javascript" src="phpBB%203_0_x%20Styles%20Demo%20Board%20•%20Index%20page_php_files/jquery.cookie.js"></SCRIPT>
-
-<SCRIPT type="text/javascript" src="phpBB%203_0_x%20Styles%20Demo%20Board%20•%20Index%20page_php_files/jquery.collapse.js"></SCRIPT>
 
 <SCRIPT type="text/javascript">
 // <![CDATA[
