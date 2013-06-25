@@ -52,21 +52,8 @@
 	var on_page = '';
 	var per_page = '';
 	var base_url = '';
-	var style_cookie = 'phpBBstyle';
-	var style_cookie_settings = '; path=styles/demo/3.0/board/; domain=.phpbb.com';
 	var onload_functions = new Array();
 	var onunload_functions = new Array();
-
-	
-
-	/**
-	* Find a member
-	*/
-	function find_username(url)
-	{
-		popup(url, 760, 570, '_usersearch');
-		return false;
-	}
 
 	/**
 	* New function for handling multiple calls to window.onload and window.unload by pentapenguin

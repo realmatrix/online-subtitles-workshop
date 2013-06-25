@@ -28,7 +28,7 @@
      {
          if ( extension_loaded('zlib') )
          {
-         	 ini_set('zlib.output_compression_level', 1);
+         	 ini_set('zlib.output_compression_level', 4);
              ob_start('ob_gzhandler');
 			 $gzhandler = TRUE; 
          }
