@@ -25,7 +25,7 @@
         height: "400",
     listbar: {
         position: 'right',
-        size: 300
+        size: 310
     },
         width: "100%",
     });
