@@ -7,22 +7,20 @@
     // ]]>
     </SCRIPT>
 
+<div id="headernavbar"><p>{SiteName}</p></div>
+
+		
+
+
+<br />
+
 <DIV class="noise">
 <DIV class="wrapper2" id="wrap">
 <P class="skiplink"><A href="https://www.phpbb.com/styles/demo/3.0/board/index.php?style=875#start_here">Skip 
 to content</A></P><A accessKey="t" id="top" name="top"></A>
-<DIV id="header">
-<DIV class="float-left">
-<H1>{SiteName}</H1></DIV>
-<DIV class="float-right">
-<DIV class="quicksearch">
-<FORM id="search" method="get" action="./search.php?style=875&amp;sid=7ec0d899c761409bea8aeccee37ca464">
-<FIELDSET><INPUT onblur="if(this.value=='')this.value='Search…';" id="keywords" 
-onclick="if(this.value=='Search…')this.value='';" name="keywords" maxLength="128" 
-value="Search…" type="text"><!--<input class="button2" value="Search" type="submit" />--><BR><INPUT 
-name="sid" value="7ec0d899c761409bea8aeccee37ca464" type="hidden"><INPUT name="style" 
-value="875" type="hidden"></FIELDSET></FORM></DIV></DIV>
-<DIV style="clear: both;"></DIV></DIV><!-- /header -->
+
+
+
 
 
 <DIV style="clear: both;"></DIV>

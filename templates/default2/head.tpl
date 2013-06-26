@@ -92,6 +92,8 @@ $(function(){
 });
 // ]]>
 </SCRIPT>
+<!-- Including the Lobster font from Google's Font Directory -->
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lobster" />
 <LINK title="printonly" rel="stylesheet" type="text/css" href="{TemplatePath}/tmp/print.css" 
 media="print"><LINK rel="stylesheet" type="text/css" href="{TemplatePath}/tmp/style.css" 
 media="screen, projection"><LINK title="A" rel="stylesheet" type="text/css" 
