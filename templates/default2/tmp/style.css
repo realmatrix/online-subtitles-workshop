@@ -3437,12 +3437,20 @@ span.ranktitle {
 	width: 100%;
 	height: 50px;
 	font: 20px/1 Lobster,Arial,sans-serif;
-	background-image:url('menu-bg.png');
+	/*background-image:url('menu-bg.png');*/
 	padding-left: 15px;
 	margin-top: 0px;
+	margin-bottom: 20px;
+background: -webkit-linear-gradient(bottom, rgb(9, 57, 109) 0%, rgb(21, 98, 181) 100%);
+background: -o-linear-gradient(bottom, rgb(9, 57, 109) 0%, rgb(21, 98, 181) 100%);
+background: -ms-linear-gradient(bottom, rgb(9, 57, 109) 0%, rgb(21, 98, 181) 100%);
+background: -moz-linear-gradient(bottom, rgb(9, 57, 109) 0%, rgb(21, 98, 181) 100%);
+background: linear-gradient(to top, rgb(9, 57, 109) 0%, rgb(21, 98, 181) 100%);
 }
 
 #headernavbar p{
 	color: white;
 	line-height: 45px;
 }
+
+
