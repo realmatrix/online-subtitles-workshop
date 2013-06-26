@@ -1,32 +1,32 @@
-<!doctype html>
+<script type="text/javascript" src="apps/jwplayer/jwplayer.js"></script>
+<script type="text/javascript">jwplayer.key="Xa0+lctKi2ueLhuTyGOzLSUPiglowRgViyyr/w==";</script>
 
-<head>
+<div id="myElement">Loading the player...</div>
 
-   <!-- player skin -->
-   <link rel="stylesheet" type="text/css" href="apps/flowplayer-5.4.3/skin/minimalist.css">
+<style>
+	#myElement{
+		width: 100%;
+	}
+</style>
 
-   <!-- site specific styling -->
-   <style type="text/css">
-   .flowplayer { width: 100%; }
-   </style>
-
-   <!-- flowplayer depends on jQuery 1.7.1+ (for now) -->
-   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-
-   <!-- include flowplayer -->
-   <script type="text/javascript" src="apps/flowplayer-5.4.3/flowplayer.min.js"></script>
-
-</head>
-
-<body>
-
-   <!-- the player -->
-   <div class="flowplayer" data-swf="apps/flowplayer-5.4.3/flowplayer.swf" data-ratio="0.4167">
-      <video>
-         <source type="video/webm" src="http://stream.flowplayer.org/bauhaus/624x260.webm">
-         <source type="video/mp4" src="http://stream.flowplayer.org/bauhaus/624x260.mp4">
-         <source type="video/ogv" src="http://stream.flowplayer.org/bauhaus/624x260.ogv">
-      </video>
-   </div>
-<br />
-</body>
+<script type="text/javascript">
+    jwplayer("myElement").setup({
+    playlist: [{
+        image: "http://img.youtube.com/vi/A85EtOalcsM/0.jpg",
+        file: "http://www.youtube.com/watch?v=5guMumPFBag",
+        title: "Sintel Movie Trailer",
+        description: "dsdlk;f hdskfljh asldkfh sdlkfjh sdlkfhsdkjfh"
+    },{
+        image: "http://img.youtube.com/vi/A85EtOalcsM/0.jpg",
+        file: "http://www.youtube.com/watch?v=5guMumPFBag",
+        title: "Big Buck Bunny Movie Trailer",
+        description: "wsdkfj wokrjhopeiwjr wekjrewl;krj3o;i2jri3"
+    }],
+        height: "400",
+    listbar: {
+        position: 'right',
+        size: 300
+    },
+        width: "100%",
+    });
+</script>
