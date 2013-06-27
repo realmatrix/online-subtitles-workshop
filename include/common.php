@@ -550,6 +550,15 @@ class Common{
 		$res = self::db_query("SELECT * FROM `Teams` WHERE `owner`=:uid ", $args);
 		return $res;
 	}
+	
+	
+	function GetTeamMembers($tid){
+		$args = array(
+			array(":tid", $tid, "str"),
+		);
+		$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `TeamUsers` WHERE `tid`=:tid", $args);
+		return $res;
+	}
 
 }
 ?>

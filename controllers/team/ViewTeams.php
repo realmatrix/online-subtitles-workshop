@@ -34,15 +34,16 @@
 		function GetTeams(){
 			$teams = $GLOBALS['COMMON']->GetUserTeams($_SESSION['id']);
 			$res = "";
-			for ($i=0; $i <= count($teams); $i++) {
+			for ($i=0; $i < count($teams); $i++) {
 				$index = $i+1;
+				$TeamMembers = $GLOBALS['COMMON']->GetTeamMembers($teams[$i]['id']);
 				$res .= "<tr class='odd gradeX' >";
 				$res .= "<td>".$index."</td>";
 				$res .= "<td>".$teams[$i]['title']."</td>";
-				$res .= "<td>"."</td>";
-				$res .= "<td>"."</td>";
-				$res .= "<td>"."</td>";
-				$res .= "<td>"."</td>";
+				$res .= "<td>".count($TeamMembers)."</td>";
+				$res .= "<td><a href='index.php?page=team&sec=manage&tid=".$teams[$i]['id']."'>manage</a></td>";
+				$res .= "<td><a href='index.php?page=team&sec=edit&tid=".$teams[$i]['id']."'>edit</a></td>";
+				$res .= "<td><a href='index.php?page=team&sec=manage&tid=".$teams[$i]['id']."'>delete</a></td>";
 				$res .= "</tr>";
 			}
 			return $res;
