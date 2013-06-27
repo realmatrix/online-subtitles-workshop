@@ -1,20 +1,13 @@
 <?php
 
-	if($_POST['register']=="yes"){
-		include "include/register.php";
-	}
-	
-	if($_POST['login']=="yes"){
-		include "include/login.php";
-	}
-	
-	
-	if(!isset($_GET['page']) and !isset($_POST['page'])){$ControllerPage="home"; $ControllerSection="home";}
-	if(isset($_GET['page'])){$ControllerPage = $_GET['page']; $ControllerSection = $_GET['sec'];}
-	if(isset($_POST['page'])){$ControllerPage = $_POST['page']; $ControllerSection = $_POST['sec'];}
+	if($GLOBALS['vars']['register']=="yes"){include "include/register.php";}
+	if($GLOBALS['vars']['login']=="yes"){include "include/login.php";}
+		
+	$ControllerPage=$GLOBALS['vars']['page']; 
+	$ControllerSection=$GLOBALS['vars']['sec'];
 
 	//loading controllers
-	if($ControllerPage!="" and $ControllerSection!=""){$SystemContent = $GLOBALS['COMMON']->LoadSections($ControllerPage, $ControllerSection);}
+	if($ControllerPage!="" and $ControllerSection!=""){$SystemContent = $GLOBALS['COMMON']->LoadSections($ControllerPage, $ControllerSection, $_POST);}
 	
 		
 	//loading widgets

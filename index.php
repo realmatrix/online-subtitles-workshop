@@ -22,8 +22,6 @@
 	
 	include "onload.php";
 	
-	$GLOBALS['l']=$GLOBALS['COMMON']->GetLanguage($GLOBALS['config']['lang']);
-	
 	include "header.php";
 	
 	include "footer.php";
