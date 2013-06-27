@@ -23,11 +23,9 @@
 		}
 				
 		function VideoSubtitles_content(){
-			if($_GET['vid']!=""){$vid=$_GET['vid'];}
-			if($_POST['vid']!=""){$vid=$_POST['vid'];}
 				$content = array
 				  (
-				  array("{vid}", $vid),
+				  array("{vid}", $GLOBALS['vars']['vid']),
 				  array("{TableRows}", self::TableRows()),
 				  array("{VideoSubtitles}", $GLOBALS['COMMON']->l('subtitle_VideoSubtitles_VideosSubtitles')),
 				 );
@@ -36,9 +34,8 @@
 		}
 		
 		function subtitles(){
-			$vid = $_GET['vid'];
 			$params=array(
-				array(":vid", $vid, "str"),
+				array(":vid", $GLOBALS['vars']['vid'], "str"),
 			);
 			$res=$GLOBALS['COMMON']->db_query("select * from Subtitles where vid=:vid", $params);
 			return $res;

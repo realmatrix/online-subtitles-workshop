@@ -193,7 +193,7 @@ class Common{
 		if(self::checkSectionOptions($controller, $section, $message)){
 		include_once "controllers/".$controller."/".$section.".php";
 		$hooks = call_user_func('C'.$section.'::'.$section.'_hooks');
-			for ($i=0; $i < count($hooks); $i++) { 
+			for ($i=0; $i < count($hooks); $i++) {
 				if(self::CheckControllerHook($section, $hooks[$i][0], $args)===TRUE){call_user_func('C'.$section.'::'.$hooks[$i][1], $args);}
 			}
 		$content = call_user_func('C'.$section.'::'.$section);

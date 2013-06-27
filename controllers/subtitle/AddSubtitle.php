@@ -25,11 +25,9 @@
 		}
 				
 		function AddSubtitle_content(){
-			if($_GET['vid']!=""){$vid=$_GET['vid'];}
-			if($_POST['vid']!=""){$vid=$_POST['vid'];}
 				$content = array
 				  (
-				  array("{vid}", $vid),
+				  array("{vid}", $GLOBALS['vars']['vid']),
 				  array("{AddSubtitle}", $GLOBALS['COMMON']->l('subtitle_AddSubtitle_AddSubtitle')),
 				  array("{ReleaseName}", $GLOBALS['COMMON']->l('subtitle_AddSubtitle_ReleaseName')),
 				  array("{Language}", $GLOBALS['COMMON']->l('subtitle_AddSubtitle_Language')),
@@ -93,27 +91,17 @@
 		
 		function CreateSubtitle(){
 			$params = array(
-				array(":fpssec", $_POST['fpssec'], "str"),
-				array(":fpsmilsec", $_POST['fpsmilsec'], "str"),
-				array(":releasename", $_POST['ReleaseName'], "str"),
-				array(":version", $_POST['version'], "str"),
-				array(":language", $_POST['Language'], "str"),
-				array(":format", $_POST['format'], "str"),
-				array(":cds", $_POST['cds'], "str"),
-				array(":vid", $_POST['vid'], "str"),
-				array(":country", $_POST['Country'], "str"),
+				array(":fpssec", $GLOBALS['vars']['fpssec'], "str"),
+				array(":fpsmilsec", $GLOBALS['vars']['fpsmilsec'], "str"),
+				array(":releasename", $GLOBALS['vars']['ReleaseName'], "str"),
+				array(":version", $GLOBALS['vars']['version'], "str"),
+				array(":language", $GLOBALS['vars']['Language'], "str"),
+				array(":format", $GLOBALS['vars']['format'], "str"),
+				array(":cds", $GLOBALS['vars']['cds'], "str"),
+				array(":vid", $GLOBALS['vars']['vid'], "str"),
+				array(":country", $GLOBALS['vars']['Country'], "str"),
 			);
 			$res=$GLOBALS['COMMON']->db_query("INSERT INTO `Subtitles` (`fps_sec`, `fps_mil_sec`, `release_name`, `version`, `language`, `format`, `cds`, `vid`, `country`) VALUES (:fpssec, :fpsmilsec, :releasename, :version, :language, :format, :cds, :vid, :country);", $params);	
-			self::$RefreshSubtitles = "				<script>
-				$.ajax({
-				    url: 'index.php?page=none&dataonly=yes&getcontroller=subtitle&getsection=VideoSubtitles&vid=12',
-				    cache: false,
-				    dataType: 'html',
-				    success: function(data) {
-				        $('#SystemAjax_subtitle_VideoSubtitles').html(data);
-				    }
-				});
-				</script>";
 		}
 	
 			

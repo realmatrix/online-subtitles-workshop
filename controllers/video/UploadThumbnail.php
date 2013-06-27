@@ -23,7 +23,7 @@
 		}
 				
 		function UploadThumbnail_content(){
-			$video = $GLOBALS['COMMON']->GetVideoInfo($_GET['vid']);
+			$video = $GLOBALS['COMMON']->GetVideoInfo($GLOBALS['vars']['vid']);
 				$content = array
 				  (
 				  array("{UploadThumbnail}", $GLOBALS['COMMON']->l('video_UploadThumbnail_UploadThumbnail')),

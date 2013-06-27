@@ -4,7 +4,7 @@
 			
 		function add_sections(){
 			$array = array(
-				array("team", "AddTeam", array(), TRUE),
+				array("team", "AddTeam", $GLOBALS['vars'], TRUE),
 			);
 			return $array;
 		}	

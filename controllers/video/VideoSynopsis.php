@@ -23,7 +23,7 @@
 		}
 				
 		function VideoSynopsis_content(){
-			$video = $GLOBALS['COMMON']->GetVideoInfo($_GET['vid']);
+			$video = $GLOBALS['COMMON']->GetVideoInfo($GLOBALS['vars']['vid']);
 				$content = array
 				  (
 				  array("{VideoSynopsis}", $video[0]['synopsis']),

@@ -4,7 +4,7 @@
 			
 		function list_sections(){
 			$array = array(
-				array("video", "VideoList", $_POST, TRUE),
+				array("video", "VideoList", $GLOBALS['vars'], TRUE),
 			);
 			return $array;
 		}	

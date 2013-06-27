@@ -4,7 +4,7 @@
 			
 		function view_sections(){
 			$array = array(
-				array("team", "VieoTeam", array(), TRUE),
+				array("team", "VieoTeam", $GLOBALS['vars'], TRUE),
 			);
 			return $array;
 		}	

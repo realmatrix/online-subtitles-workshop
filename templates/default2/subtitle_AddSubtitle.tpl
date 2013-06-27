@@ -101,9 +101,9 @@
 	<!-- <input type="hidden" name="dataonly" value="yes"/> --> <!-- uncomment if using ajax -->
 	<!-- <input type="hidden" name="getcontroller" value="subtitle"/> --> <!-- uncomment if using ajax -->
 	<!-- <input type="hidden" name="getsection" value="Addsubtitle"/> --> <!-- uncomment if using ajax -->
-	<input type="hidden" name="page" value="subtitle" /> <!-- comment if using ajax -->
-	<input type="hidden" name="sec" value="add" /> <!-- comment if using ajax -->
-	<input type="hidden" name="ssec" value="Addsubtitle"/>
+	<input type="hidden" name="page" value="video" /> <!-- comment if using ajax -->
+	<input type="hidden" name="sec" value="view" /> <!-- comment if using ajax -->
+	<input type="hidden" name="ssec" value="AddSubtitle"/>
 	<input type="hidden" name="h" value="SubmitSubtitle"/>
 </form>
 
