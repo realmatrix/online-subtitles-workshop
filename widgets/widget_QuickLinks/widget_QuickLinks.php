@@ -18,7 +18,7 @@
 		function widget_QuickLinks_render(){
 			$array = array(
 				array("{AddVideo}", $GLOBALS['COMMON']->l('widget_quicklinks_addvideo')),
-				array("{AddSubtitle}", $GLOBALS['COMMON']->l('widget_quicklinks_addsubtitle')),
+				array("{AddTeam}", $GLOBALS['COMMON']->l('widget_quicklinks_addteam')),
 				array("{Logout}", $GLOBALS['COMMON']->l('widget_quicklinks_logout')),
 			);
 			return $array;
