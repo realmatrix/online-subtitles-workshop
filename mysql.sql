@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 27, 2013 at 08:33 AM
+-- Generation Time: Jun 27, 2013 at 09:36 PM
 -- Server version: 5.5.29-log
 -- PHP Version: 5.3.21
 
@@ -567,7 +567,7 @@ CREATE TABLE IF NOT EXISTS `Lang_English` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `key` (`key`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=96 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=104 ;
 
 --
 -- Dumping data for table `Lang_English`
@@ -665,7 +665,13 @@ INSERT INTO `Lang_English` (`id`, `key`, `text`) VALUES
 (92, 'subtitle_VideoSubtitles_VideosSubtitles', 'Video Subtitles'),
 (93, 'search_AdvancedSearch_title', 'Advanced Search'),
 (94, 'search_SearchResults_title', 'Search Results'),
-(95, 'widget_quicklinks_addteam', 'Create Team');
+(95, 'widget_quicklinks_addteam', 'Create Team'),
+(96, 'team_AddTeam_title', 'Add Team'),
+(97, 'team_AddTeam_TeamName', 'Team Name:'),
+(98, 'team_AddTeam_submit', 'Submit'),
+(99, 'team_ViewTeams_Title', 'My Teams'),
+(100, 'team_ViewTeam_title', 'Team Information'),
+(101, 'team_ManageTeam_title', 'Manage Team');
 
 -- --------------------------------------------------------
 
@@ -679,14 +685,14 @@ CREATE TABLE IF NOT EXISTS `OnlineUsers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=512 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=524 ;
 
 --
 -- Dumping data for table `OnlineUsers`
 --
 
 INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(511, 'fvgtnlm6lkgl02k0ku8uisnst2', 1372318146, '');
+(523, 'jda2u0t76sca5859b3e4983rp1', 1372364938, '');
 
 -- --------------------------------------------------------
 
@@ -743,6 +749,29 @@ CREATE TABLE IF NOT EXISTS `Teams` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `owner` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
+  `created` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `Teams`
+--
+
+INSERT INTO `Teams` (`id`, `owner`, `title`, `created`) VALUES
+(4, 18, 'team 1', '2013-06-27 21:33:19'),
+(5, 18, 'team 2', '2013-06-27 21:34:15'),
+(6, 18, 'team 3', '2013-06-27 21:34:39');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `TeamSubtitles`
+--
+
+CREATE TABLE IF NOT EXISTS `TeamSubtitles` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tid` int(11) NOT NULL,
+  `sid` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 

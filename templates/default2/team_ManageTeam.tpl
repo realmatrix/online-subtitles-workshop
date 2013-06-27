@@ -17,7 +17,9 @@
 
 
 <div id="div-manageteam" style="width: 99%;">
-	content here
+	<table>
+		{TableData}
+	</table>
 </div>
 
 
