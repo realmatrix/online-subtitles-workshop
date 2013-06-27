@@ -7,7 +7,7 @@
 	$ControllerSection=$GLOBALS['vars']['sec'];
 
 	//loading controllers
-	if($ControllerPage!="" and $ControllerSection!=""){$SystemContent = $GLOBALS['COMMON']->LoadSections($ControllerPage, $ControllerSection, $_POST);}
+	if($ControllerPage!="" and $ControllerSection!=""){$SystemContent = $GLOBALS['COMMON']->LoadSections($ControllerPage, $ControllerSection, $GLOBALS['vars']);}
 	
 		
 	//loading widgets

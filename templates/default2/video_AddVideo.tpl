@@ -105,6 +105,7 @@
 	<!-- <input type="hidden" name="getsection" value="AddVideo" /> --> <!-- uncomment if using ajax -->
 	<input type="hidden" name="page" value="video" /> <!-- comment if using ajax -->
 	<input type="hidden" name="sec" value="add" /> <!-- comment if using ajax -->
+	<input type="hidden" name="ssec" value="AddVideo" />
 	<input type="hidden" name="h" value="SubmitVideo" />
 
 	<br /><br />

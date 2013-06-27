@@ -194,7 +194,7 @@ class Common{
 		include_once "controllers/".$controller."/".$section.".php";
 		$hooks = call_user_func('C'.$section.'::'.$section.'_hooks');
 			for ($i=0; $i < count($hooks); $i++) { 
-				if(self::CheckControllerHook($section, $hooks[$i][0], $args)==TRUE){call_user_func('C'.$section.'::'.$hooks[$i][1], $args);}
+				if(self::CheckControllerHook($section, $hooks[$i][0], $args)===TRUE){call_user_func('C'.$section.'::'.$hooks[$i][1], $args);}
 			}
 		$content = call_user_func('C'.$section.'::'.$section);
 		$options = 
@@ -295,11 +295,11 @@ class Common{
 
 
 
-	function LoadPage($array){
+	function LoadPage($array, $vars){
 		$page = "";
 		for ($i = 0; $i <= count($array)-1; $i++) {
 			if($array[$i][3]){
-				 $args = array_merge($_POST, $array[$i][2]);
+				 $args = array_merge($vars, $array[$i][2]);
 				 $page .= "<div id='SystemAjax_".$array[$i][0]."_".$array[$i][1]."'>".self::LoadSection($array[$i][0], $array[$i][1], $args)."</div>";
 			}
 		}
@@ -308,10 +308,10 @@ class Common{
 
 
 
-	function LoadSections($controller, $section){
+	function LoadSections($controller, $section, $vars){
 		require_once ("controllers/".$controller."/".$section.".php");
 		$array = call_user_func('C'.$section."::".$section."_sections");
-		$sections = self::LoadPage($array);
+		$sections = self::LoadPage($array, $vars);
 		return $sections;
 	}
 
