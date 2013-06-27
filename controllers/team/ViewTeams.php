@@ -1,19 +1,19 @@
 <?php
 
-	class CViewTeam{
+	class CViewTeams{
 			
-		function ViewTeam(){
-			return self::ViewTeam_content();
+		function ViewTeams(){
+			return self::ViewTeams_content();
 		}
 	
-		function ViewTeam_hooks(){
+		function ViewTeams_hooks(){
 			$array = array(
 				array("search", "search")
 			);
 			return $array;
 		}
 			
-		function ViewTeam_options(){
+		function ViewTeams_options(){
 			$options = array(
 			"show"=>array(),
 			"hide"=>array(),
@@ -22,7 +22,7 @@
 			return $options;
 		}
 				
-		function ViewTeam_content(){
+		function ViewTeams_content(){
 				$content = array
 				  (
 				  array("{test}", $test),

@@ -42,7 +42,7 @@
 /////////////////////////////////////////////////////////	 
 	 	
 	switch ($SystemPage) {
-    case ($SystemPage=="home" or ($SystemPage=="video" and $SystemSection=="view")) and $dataonly!="yes":
+    case ($SystemPage=="home" or ($SystemPage=="video" and $SystemSection=="view") or $SystemPage=="team") and $dataonly!="yes":
 		//loading template
 		$GLOBALS['FinalPage'] = $GLOBALS['COMMON']->render($GLOBALS['TemplateHead'], "head");
 		$GLOBALS['FinalPage'] .= $GLOBALS['COMMON']->render($GLOBALS['TemplateHeader'], "header");
