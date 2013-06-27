@@ -16,7 +16,7 @@
     <TD class="forumdetails"><SPAN class="forum-descriptions">
 
 
-<div id="div-viewteam" style="width: 99%;">
+<div id="div-manageteam" style="width: 99%;">
 	content here
 </div>
 
