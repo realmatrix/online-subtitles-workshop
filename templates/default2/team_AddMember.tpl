@@ -19,9 +19,9 @@
 <div id="div-addteammember" style="width: 99%;">
 	<form method="post" action="index.php">
 		<label for="teammember">{username}</label>
-		<input type="text" name="username" style="width: 100%"/>
+		<input type="text" name="tusername" style="width: 100%"/>
 		<input type="submit" value="{submit}" />
-		<input type="hidden" name="vid" value="{vid}" />
+		<input type="hidden" name="tid" value="{tid}" />
 	<!-- <input type="hidden" name="dataonly" value="yes"/> --> <!-- uncomment if using ajax -->
 	<!-- <input type="hidden" name="getcontroller" value="team"/> --> <!-- uncomment if using ajax -->
 	<!-- <input type="hidden" name="getsection" value="AddMember"/> --> <!-- uncomment if using ajax -->
