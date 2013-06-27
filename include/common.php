@@ -200,7 +200,6 @@ class Common{
 		$options = 
 		$res = self::RenderView($content, $controller, $section);
 		//if(!array_key_exists($controller.'_'.$section.'_title', $GLOBALS['page'])){$GLOBALS['ERROR'][]= "GLOBALS['page']['".$controller.'_'.$section."_title'] not found inside language file.";}
-		$res=str_replace("{title}", $GLOBALS['page'][$controller.'_'.$section.'_title'], $res);
 		return $res;
 		}
 		else{
