@@ -42,7 +42,7 @@
 			$uid = $GLOBALS['COMMON']->GetUserInfo($GLOBALS['vars']['tusername'], "");
 			$args = array(
 				array(":tid", $GLOBALS['vars']['tid'], "str"),
-				array(":uid", $uid[0]['id']),
+				array(":uid", $uid[0]['id'], "str"),
 			);
 			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `TeamUsers` (`tid`, `uid`) VALUES (:tid, :uid);", $args);
 		}
