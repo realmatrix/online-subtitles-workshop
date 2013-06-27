@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 21, 2013 at 03:08 AM
+-- Generation Time: Jun 27, 2013 at 08:33 AM
 -- Server version: 5.5.29-log
 -- PHP Version: 5.3.21
 
@@ -567,7 +567,7 @@ CREATE TABLE IF NOT EXISTS `Lang_English` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `key` (`key`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=95 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=96 ;
 
 --
 -- Dumping data for table `Lang_English`
@@ -607,7 +607,6 @@ INSERT INTO `Lang_English` (`id`, `key`, `text`) VALUES
 (33, 'widget_newsletter_email', 'Enter your email address ...'),
 (34, 'widget_newsletter_submit', 'submit'),
 (35, 'widget_quicklinks_addvideo', 'Add new article'),
-(36, 'widget_quicklinks_addsubtitle', 'Add new subtitle'),
 (37, 'widget_quicklinks_logout', 'Logout'),
 (38, 'video_AddVideo_title', 'Add New Article'),
 (39, 'video_AddVideo_NewVideoType', 'ADD A NEW'),
@@ -665,7 +664,8 @@ INSERT INTO `Lang_English` (`id`, `key`, `text`) VALUES
 (91, 'subtitle_AddSubtitle_Submit', 'Create'),
 (92, 'subtitle_VideoSubtitles_VideosSubtitles', 'Video Subtitles'),
 (93, 'search_AdvancedSearch_title', 'Advanced Search'),
-(94, 'search_SearchResults_title', 'Search Results');
+(94, 'search_SearchResults_title', 'Search Results'),
+(95, 'widget_quicklinks_addteam', 'Create Team');
 
 -- --------------------------------------------------------
 
@@ -679,14 +679,14 @@ CREATE TABLE IF NOT EXISTS `OnlineUsers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=444 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=512 ;
 
 --
 -- Dumping data for table `OnlineUsers`
 --
 
 INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(443, 'u5l6vml4rcb4abgjug3bfg2og7', 1371780134, '');
+(511, 'fvgtnlm6lkgl02k0ku8uisnst2', 1372318146, '');
 
 -- --------------------------------------------------------
 
@@ -707,7 +707,7 @@ CREATE TABLE IF NOT EXISTS `Subtitles` (
   `country` int(11) NOT NULL,
   `uid` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
 
 --
 -- Dumping data for table `Subtitles`
@@ -730,7 +730,8 @@ INSERT INTO `Subtitles` (`id`, `fps_sec`, `fps_mil_sec`, `release_name`, `versio
 (18, 1, 1, 'kjlh', 'lkjhlkj', 1, 1, 18, 12, 96, 0),
 (19, 19, 18, 'lkj;lkj', ';klj;lkj', 21, 4, 18, 12, 17, 0),
 (20, 34, 17, 'iutiuty', 'ytiutyuyt', 18, 4, 16, 12, 166, 0),
-(21, 18, 16, 'lfk ;fdlkgj ', 'l;kj d;lkfj s;dlfk d;slf', 19, 2, 19, 12, 7, 0);
+(21, 18, 16, 'lfk ;fdlkgj ', 'l;kj d;lkfj s;dlfk d;slf', 19, 2, 19, 12, 7, 0),
+(22, 5, 5, 'aaaaaaaaaaaaaaa', 'bbbbbbbbbbbb', 6, 4, 27, 12, 8, 0);
 
 -- --------------------------------------------------------
 
@@ -842,7 +843,7 @@ CREATE TABLE IF NOT EXISTS `Videos` (
   `thumbnail` varchar(255) NOT NULL,
   `image` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
 
 --
 -- Dumping data for table `Videos`
@@ -854,7 +855,9 @@ INSERT INTO `Videos` (`id`, `uid`, `title`, `other_title`, `type`, `category`, `
 (9, 0, ':title', ':other_title', 0, 0, 0, 0, ':genres', '0000-00-00', '0', '0', 0, ':tags', ':synopsis', '', ''),
 (10, 18, 'jhkghj', 'ghjhgj', 2, 2, 3, 16, '2', '1817-11-19', '0', '0', 5, 'ghjhj', ' ghjghjgjh', '', ''),
 (11, 18, 'tty tyu tryu tru tryytu', 'tu t tyu tyutyu', 1, 2, 6, 3, '2', '1816-05-17', 't yu t', 't yutyu', 31, 'ty tyu', ' tyu tyuyu', '', ''),
-(12, 18, 'fhfg f fgh fgh dfh fgh fhfgh', ' fghfg fgh fgh gh', 1, 1, 13, 4, '1', '1806-02-07', 'fgh fgh fgh', 'fhg fggh', 18, 'dfgdfg, dfg dfg,df gdfg ,d fgdf,', '  dfgdf sj dsflkjh lkjsh flkjfh lskdfjh lskdfh oiuehroiuwerh lkewjrh slkjh lkjdfhslkjhlkdsjh', '', '');
+(12, 18, 'fhfg f fgh fgh dfh fgh fhfgh', ' fghfg fgh fgh gh', 1, 1, 13, 4, '1', '1806-02-07', 'fgh fgh fgh', 'fhg fggh', 18, 'dfgdfg, dfg dfg,df gdfg ,d fgdf,', '  dfgdf sj dsflkjh lkjsh flkjfh lskdfjh lskdfh oiuehroiuwerh lkewjrh slkjh lkjdfhslkjhlkdsjh', '', ''),
+(13, 18, 'aaaaaaaaaaaaa', 'bbbbbbbbbbbbbb', 1, 2, 6, 25, '1', '1800-01-01', 'cccccccccc', 'ddddddddd', 4, 'kjh, kjh, kjh, jklh, jkh', ' uyiyui yu uyi', '', ''),
+(14, 18, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'aaaaaaaaaaaaaaaaaaaaaaaaaa', 3, 1, 10, 14, '5', '1805-03-04', 'aaaaaaaaaaaaaaaaaaaaaaaa', 'aaaaaaaaaaaaaa', 14, 'aaaaaaaaaaaaaaaaa', ' aaaaaaaaaaaaaaaaaa', '', '');
 
 -- --------------------------------------------------------
 
