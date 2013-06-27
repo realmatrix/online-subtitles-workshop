@@ -534,13 +534,22 @@ class Common{
 	}
 	
 
+
 	function LoadTime(){
 		$LoadEnd = microtime(true);
 		$res = $LoadEnd - $GLOBALS['LoadStart'];
 		$res = number_format($res, 4);
 		return $res;
 	}
-
+	
+	
+	function GetUserTeams($uid){
+		$args = array(
+			array(":uid", $uid, "str"),
+		);
+		$res = self::db_query("SELECT * FROM `Teams` WHERE `owner`=:uid ", $args);
+		return $res;
+	}
 
 }
 ?>
