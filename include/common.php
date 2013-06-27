@@ -560,5 +560,23 @@ class Common{
 		return $res;
 	}
 
+	
+	function GetTeamInfo($tid){
+		$args = array(
+			array(":tid", $tid, "str"),
+		);
+		$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Teams` WHERE `id`=:tid", $args);
+		return $res;
+	}
+	
+	
+	function GetTeamSubtitles($tid){
+		$args = array(
+			array(":tid", $tid, "str"),
+		);
+		$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `TeamSubtitles` WHERE `tid`=:tid", $args);
+		return $res;
+	}
+	
 }
 ?>

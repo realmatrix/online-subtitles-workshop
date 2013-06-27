@@ -41,8 +41,9 @@
 				$args = array(
 					array(":uid", $_SESSION['id'], "str"),
 					array(":team", $GLOBALS['vars']['teamname'], "str"),
+					array(":created", date('Y-m-d H:i:s'), "str"),
 				);
-				$res = $GLOBALS['COMMON']->db_query("INSERT INTO `Teams` (`owner`, `title`) VALUES (:uid, :team);", $args);
+				$res = $GLOBALS['COMMON']->db_query("INSERT INTO `Teams` (`owner`, `title`, `created`) VALUES (:uid, :team, :created);", $args);
 		}
 		
 	

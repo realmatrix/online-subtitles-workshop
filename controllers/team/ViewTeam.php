@@ -23,11 +23,17 @@
 		}
 				
 		function ViewTeam_content(){
+				$TeamInfo = $GLOBALS['COMMON']->GetTeamInfo($GLOBALS['vars']['tid']);
+				$TeamMembers = $GLOBALS['COMMON']->GetTeamMembers($GLOBALS['vars']['tid']);
+				$TeamSubtitles = $GLOBALS['COMMON']->GetTeamSubtitles($GLOBALS['vars']['tid']);
 				$content = array
 				  (
-				  array("{test}", $test),
-				 );
-			 
+				  array("{title}", $GLOBALS['COMMON']->l('team_ViewTeam_title')),
+				  array("{Cteamname}", $TeamInfo[0]['title']),
+				  array("{Cteammembers}", count($TeamMembers)),
+				  array("{Ccreated}", $TeamInfo[0]['created']),
+				  array("{Csubtitles}", count($TeamSubtitles)),
+				 );			 
 		return $content;
 		}
 		
