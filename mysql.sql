@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 27, 2013 at 09:36 PM
+-- Generation Time: Jun 28, 2013 at 11:45 PM
 -- Server version: 5.5.29-log
 -- PHP Version: 5.3.21
 
@@ -567,7 +567,7 @@ CREATE TABLE IF NOT EXISTS `Lang_English` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `key` (`key`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=104 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=109 ;
 
 --
 -- Dumping data for table `Lang_English`
@@ -671,7 +671,12 @@ INSERT INTO `Lang_English` (`id`, `key`, `text`) VALUES
 (98, 'team_AddTeam_submit', 'Submit'),
 (99, 'team_ViewTeams_Title', 'My Teams'),
 (100, 'team_ViewTeam_title', 'Team Information'),
-(101, 'team_ManageTeam_title', 'Manage Team');
+(101, 'team_ManageTeam_title', 'Manage Team'),
+(104, 'team_AddMember_title', 'Add User'),
+(105, 'team_AddMember_username', 'User Name:'),
+(106, 'team_AddMember_submit', 'Submit'),
+(107, 'subtitle_ViewSubtitle_title', 'Subtitle'),
+(108, 'subtitle_UserSubtitles_title', 'My Subtitles');
 
 -- --------------------------------------------------------
 
@@ -685,14 +690,14 @@ CREATE TABLE IF NOT EXISTS `OnlineUsers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=524 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=542 ;
 
 --
 -- Dumping data for table `OnlineUsers`
 --
 
 INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(523, 'jda2u0t76sca5859b3e4983rp1', 1372364938, '');
+(541, 'eqre2klvn5rhlv43c83vss84d2', 1372458939, '');
 
 -- --------------------------------------------------------
 
@@ -713,31 +718,16 @@ CREATE TABLE IF NOT EXISTS `Subtitles` (
   `country` int(11) NOT NULL,
   `uid` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=34 ;
 
 --
 -- Dumping data for table `Subtitles`
 --
 
 INSERT INTO `Subtitles` (`id`, `fps_sec`, `fps_mil_sec`, `release_name`, `version`, `language`, `format`, `cds`, `vid`, `country`, `uid`) VALUES
-(4, 18, 19, 'test releasename', 'test version', 16, 2, 18, 12, 15, 0),
-(5, 17, 20, 'test 2', 'test ersion 2', 22, 10, 19, 12, 154, 0),
-(6, 19, 14, 'test 3', 'version 3', 24, 9, 16, 12, 3, 0),
-(7, 4, 3, 'lkgf;jdfgjk  dsflkj dsfl;kds', 'kgjkjgh ', 2, 2, 3, 12, 114, 0),
-(8, 9, 9, 'f kjs;lfkj sf;lkjdf', ' sdfhsdf lk;jdhsf ', 5, 6, 19, 12, 3, 0),
-(10, 4, 3, 'reelwjt ;ekrjt ;lekj', 'kjh lkjh l', 2, 2, 3, 12, 3, 0),
-(11, 18, 18, 'fghjhj', 'ghjghjhgj', 19, 3, 17, 12, 3, 0),
-(12, 1, 1, 'jf;jkdfg', 'lkjhlkjh', 2, 1, 2, 12, 2, 0),
-(13, 1, 1, 'jhlkjh', 'lkjh', 2, 3, 2, 12, 120, 0),
-(14, 2, 4, 'lkjhglkjh', 'kjh', 4, 2, 2, 12, 120, 0),
-(15, 1, 2, 'hgkjgh', 'jkhgkj', 7, 1, 2, 12, 96, 0),
-(16, 2, 2, 'kjhlkjh', 'lkjh', 4, 2, 1, 12, 120, 0),
-(17, 17, 19, 'lkjhlkjh', 'lkjhlkjh', 20, 10, 17, 12, 110, 0),
-(18, 1, 1, 'kjlh', 'lkjhlkj', 1, 1, 18, 12, 96, 0),
-(19, 19, 18, 'lkj;lkj', ';klj;lkj', 21, 4, 18, 12, 17, 0),
-(20, 34, 17, 'iutiuty', 'ytiutyuyt', 18, 4, 16, 12, 166, 0),
-(21, 18, 16, 'lfk ;fdlkgj ', 'l;kj d;lkfj s;dlfk d;slf', 19, 2, 19, 12, 7, 0),
-(22, 5, 5, 'aaaaaaaaaaaaaaa', 'bbbbbbbbbbbb', 6, 4, 27, 12, 8, 0);
+(26, 1, 1, 'kjhlkhjlkjh lkjh ', 'kjhlkjh', 31, 2, 1, 12, 120, 18),
+(31, 0, 0, 'dfsjkh lskjhfdklsjfh ghg', 'jkg kj', 0, 0, 0, 12, 84, 18),
+(33, 1, 1, 'iuhh', 'kljh', 21, 1, 1, 12, 120, 18);
 
 -- --------------------------------------------------------
 
@@ -750,8 +740,9 @@ CREATE TABLE IF NOT EXISTS `Teams` (
   `owner` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `created` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `title` (`title`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `Teams`
@@ -760,7 +751,8 @@ CREATE TABLE IF NOT EXISTS `Teams` (
 INSERT INTO `Teams` (`id`, `owner`, `title`, `created`) VALUES
 (4, 18, 'team 1', '2013-06-27 21:33:19'),
 (5, 18, 'team 2', '2013-06-27 21:34:15'),
-(6, 18, 'team 3', '2013-06-27 21:34:39');
+(6, 18, 'team 3', '2013-06-27 21:34:39'),
+(7, 18, 'team 4', '2013-06-28 23:30:15');
 
 -- --------------------------------------------------------
 
@@ -782,10 +774,19 @@ CREATE TABLE IF NOT EXISTS `TeamSubtitles` (
 --
 
 CREATE TABLE IF NOT EXISTS `TeamUsers` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `tid` int(11) NOT NULL,
-  `uid` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `uid` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `tid` (`tid`,`uid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `TeamUsers`
+--
+
+INSERT INTO `TeamUsers` (`id`, `tid`, `uid`) VALUES
+(5, 4, 18);
 
 -- --------------------------------------------------------
 
