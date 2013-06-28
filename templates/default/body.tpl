@@ -1,4 +1,0 @@
-
-	{widget_VideoGallery}
-	{content}	
-

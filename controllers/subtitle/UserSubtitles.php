@@ -1,19 +1,19 @@
 <?php
 
-	class CViewSubtitle{
+	class CUserSubtitles{
 			
-		function ViewSubtitle(){
-			return self::ViewSubtitle_content();
+		function UserSubtitles(){
+			return self::UserSubtitles_content();
 		}
 	
-		function ViewSubtitle_hooks(){
+		function UserSubtitles_hooks(){
 			$array = array(
 				array("test", "test")
 			);
 			return $array;
 		}
 			
-		function ViewSubtitle_options(){
+		function UserSubtitles_options(){
 			$options = array(
 			"show"=>array(),
 			"hide"=>array(),
@@ -22,15 +22,14 @@
 			return $options;
 		}
 				
-		function ViewSubtitle_content(){
+		function UserSubtitles_content(){
 				$content = array
 				  (
-				  array("{title}", $GLOBALS['COMMON']->l("subtitle_ViewSubtitle_title")),
+				  array("{vid}", $GLOBALS['vars']['vid']),
 				 );
 			 
 		return $content;
 		}
-		
 		
 
 	

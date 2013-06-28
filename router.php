@@ -42,7 +42,7 @@
 /////////////////////////////////////////////////////////	 
 	 	
 	switch ($SystemPage) {
-    case ($SystemPage=="home" or ($SystemPage=="video" and $SystemSection=="view") or $SystemPage=="team") and $dataonly!="yes":
+    case ($SystemPage=="home" or ($SystemPage=="video" and $SystemSection=="view") or $SystemPage=="team" or $SystemPage=="subtitle") and $dataonly!="yes":
 		//loading template
 		$GLOBALS['FinalPage'] = $GLOBALS['COMMON']->render($GLOBALS['TemplateHead'], "head");
 		$GLOBALS['FinalPage'] .= $GLOBALS['COMMON']->render($GLOBALS['TemplateHeader'], "header");
@@ -52,7 +52,7 @@
 		$GLOBALS['FinalPage'] .= $GLOBALS['COMMON']->render($GLOBALS['TemplateFooter'], "footer");
 		echo $GLOBALS['FinalPage'];
         break;
-    case ($SystemPage=="video" and $SystemSection=="add") or $SystemPage=="subtitle" or $SystemPage=="search":
+    case ($SystemPage=="video" and $SystemSection=="add") /*or $SystemPage=="subtitle"*/ or $SystemPage=="search":
 		$GLOBALS['FinalPage'] = $GLOBALS['COMMON']->render($GLOBALS['TemplateHead'], "head");
 		$GLOBALS['FinalPage'] .= $GLOBALS['COMMON']->render($GLOBALS['TemplateHeader'], "header");
 		$GLOBALS['FinalPage'] .= $GLOBALS['COMMON']->render($GLOBALS['TemplateBody'], "body");
