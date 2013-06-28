@@ -556,7 +556,7 @@ class Common{
 		$args = array(
 			array(":tid", $tid, "str"),
 		);
-		$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `TeamUsers` WHERE `tid`=:tid", $args);
+		$res = self::db_query("SELECT * FROM `TeamUsers` WHERE `tid`=:tid", $args);
 		return $res;
 	}
 
@@ -565,7 +565,7 @@ class Common{
 		$args = array(
 			array(":tid", $tid, "str"),
 		);
-		$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Teams` WHERE `id`=:tid", $args);
+		$res = self::db_query("SELECT * FROM `Teams` WHERE `id`=:tid", $args);
 		return $res;
 	}
 	
@@ -575,6 +575,15 @@ class Common{
 			array(":tid", $tid, "str"),
 		);
 		$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `TeamSubtitles` WHERE `tid`=:tid", $args);
+		return $res;
+	}
+	
+	
+	function GetUserSubtitles($uid){
+		$args = array(
+			array(":uid", $uid, "str")
+		);
+		$res = self::db_query("SELECT * FROM `Subtitles` WHERE `uid`=:uid", $args);
 		return $res;
 	}
 	

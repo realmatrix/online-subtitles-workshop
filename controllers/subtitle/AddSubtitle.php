@@ -100,8 +100,9 @@
 				array(":cds", $GLOBALS['vars']['cds'], "str"),
 				array(":vid", $GLOBALS['vars']['vid'], "str"),
 				array(":country", $GLOBALS['vars']['Country'], "str"),
+				array(":uid", $_SESSION['id'], "str")
 			);
-			$res=$GLOBALS['COMMON']->db_query("INSERT INTO `Subtitles` (`fps_sec`, `fps_mil_sec`, `release_name`, `version`, `language`, `format`, `cds`, `vid`, `country`) VALUES (:fpssec, :fpsmilsec, :releasename, :version, :language, :format, :cds, :vid, :country);", $params);	
+			$res=$GLOBALS['COMMON']->db_query("INSERT INTO `Subtitles` (`fps_sec`, `fps_mil_sec`, `release_name`, `version`, `language`, `format`, `cds`, `vid`, `country`, `uid`) VALUES (:fpssec, :fpsmilsec, :releasename, :version, :language, :format, :cds, :vid, :country, :uid);", $params);	
 		}
 	
 			

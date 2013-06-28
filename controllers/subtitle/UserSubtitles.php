@@ -8,7 +8,7 @@
 	
 		function UserSubtitles_hooks(){
 			$array = array(
-				array("test", "test")
+				array("test", "test"),
 			);
 			return $array;
 		}
@@ -25,10 +25,17 @@
 		function UserSubtitles_content(){
 				$content = array
 				  (
-				  array("{vid}", $GLOBALS['vars']['vid']),
+				  array("{title}", $GLOBALS['COMMON']->l("subtitle_UserSubtitles_title")),
+				  array("{tablerows}", self::GetSubtitles()),
 				 );
 			 
 		return $content;
+		}
+		
+		function GetSubtitles(){
+			$subtitles = $GLOBALS['COMMON']->GetUserSubtitles($_SESSION['id']);
+			print_r($subtitles);
+			echo $_SESSION['id'];
 		}
 		
 
