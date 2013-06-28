@@ -34,8 +34,18 @@
 		
 		function GetSubtitles(){
 			$subtitles = $GLOBALS['COMMON']->GetUserSubtitles($_SESSION['id']);
-			print_r($subtitles);
-			echo $_SESSION['id'];
+			$res = "";
+			for ($i=0; $i < count($subtitles); $i++) {
+				$index = $i + 1; 
+				$res .= "<tr>";
+				$res .= "<td>".$index."</td>";
+				$res .= "<td><a href='index.php?page=subtitle&sec=view&sid=".$subtitles[$i]['id']."'>".$subtitles[$i]['release_name']."</a></td>";
+				$res .= "<td>".$subtitles[$i]['version']."</td>";
+				$res .= "<td>".$subtitles[$i]['language']."</td>";
+				$res .= "<td><a href='index.php?page=subtitle&sec=manage&sid=".$subtitles[$i]['id']."'>Manage</a></td>";
+				$res .= "</tr>";
+			}
+			return $res;
 		}
 		
 

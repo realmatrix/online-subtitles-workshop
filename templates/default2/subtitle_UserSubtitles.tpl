@@ -17,8 +17,15 @@
 
 
 <!-- user subtitles -->
-<div id="usersubtitles">
-	<table>
+<div id="usersubtitles" style="width: 99%;">
+	<table style="width: 100%;">
+		<thead>
+			<th>#</th>
+			<th>Release name</th>
+			<th>Version</th>
+			<th>Language</th>
+			<th>Manage</th>
+		</thead>
 		{tablerows}
 	</table>
 </div>
