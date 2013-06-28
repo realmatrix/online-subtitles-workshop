@@ -251,7 +251,7 @@ class Common{
 
 
 
-	function db_query($query, $array){
+	function db_query($query, $array, &$ExecState=""){
 		$DB_HOST=$GLOBALS['DB_HOST'];
 		$DB_NAME=$GLOBALS['DB_NAME'];
 		$DB_USER=$GLOBALS['DB_USER'];
@@ -274,7 +274,13 @@ class Common{
 		 
 		 //$statement->bindParam(':columnA', $columnA, PDO::PARAM_INT);
 		 $statement->setFetchMode(PDO::FETCH_ASSOC);
-		 $statement->execute();
+		 if($statement->execute()){
+		 	$ExecState = TRUE;
+		 }
+		 else {
+			 $ExecState = FALSE;
+		 }
+		 
 		 // Get data
 		 $rows = array();
 		 if($statement->rowCount() > 0){

@@ -102,7 +102,8 @@
 				array(":country", $GLOBALS['vars']['Country'], "str"),
 				array(":uid", $_SESSION['id'], "str")
 			);
-			$res=$GLOBALS['COMMON']->db_query("INSERT INTO `Subtitles` (`fps_sec`, `fps_mil_sec`, `release_name`, `version`, `language`, `format`, `cds`, `vid`, `country`, `uid`) VALUES (:fpssec, :fpsmilsec, :releasename, :version, :language, :format, :cds, :vid, :country, :uid);", $params);	
+			$res=$GLOBALS['COMMON']->db_query("INSERT INTO `Subtitles` (`fps_sec`, `fps_mil_sec`, `release_name`, `version`, `language`, `format`, `cds`, `vid`, `country`, `uid`) VALUES (:fpssec, :fpsmilsec, :releasename, :version, :language, :format, :cds, :vid, :country, :uid);", $params, $ExecState);
+			if($ExecState === TRUE){$GLOBALS['SUCCESS'][]="Subtitle Added Successfully";} else {$GLOBALS['ERROR'][]="Adding Subtitle Failed";}
 		}
 	
 			
