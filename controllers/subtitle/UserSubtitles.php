@@ -8,7 +8,7 @@
 	
 		function UserSubtitles_hooks(){
 			$array = array(
-				array("test", "test"),
+				array("DeleteSubtitles", "DeleteSubtitles"),
 			);
 			return $array;
 		}
@@ -36,9 +36,8 @@
 			$subtitles = $GLOBALS['COMMON']->GetUserSubtitles($_SESSION['id']);
 			$res = "";
 			for ($i=0; $i < count($subtitles); $i++) {
-				$index = $i + 1; 
 				$res .= "<tr>";
-				$res .= "<td>".$index."</td>";
+				$res .= "<td><input type='checkbox' name='subtitle[]' value='".$subtitles[$i]['id']."'></td>";
 				$res .= "<td><a href='index.php?page=subtitle&sec=view&sid=".$subtitles[$i]['id']."'>".$subtitles[$i]['release_name']."</a></td>";
 				$res .= "<td>".$subtitles[$i]['version']."</td>";
 				$res .= "<td>".$subtitles[$i]['language']."</td>";
@@ -46,6 +45,20 @@
 				$res .= "</tr>";
 			}
 			return $res;
+		}
+		
+		function DeleteSubtitles(){
+			$subtitles = $GLOBALS['vars']['subtitle'];
+			//if(!is_array($subtitles)){$subtitles = array($subtitles);}
+			$uid = $_SESSION['id'];
+			for ($i=0; $i <count($subtitles) ; $i++) { 
+				$args = array(
+					array(":id", $subtitles[$i], "str"),
+					array(":uid", $uid, "str"),
+				);
+				$res = $GLOBALS['COMMON']->db_query("DELETE FROM `Subtitles` WHERE `id` = :id and `uid` = :uid ", $args, $ExecState);
+				if($ExecState === TRUE){$GLOBALS['SUCCESS'][]="Subtitle deleted sucessfully.";}else{$GLOBALS['ERROR'][]="Subtitle delete failed.";}
+			}
 		}
 		
 
