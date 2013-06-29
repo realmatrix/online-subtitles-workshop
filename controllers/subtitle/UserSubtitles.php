@@ -59,6 +59,11 @@
 				);
 				$res = $GLOBALS['COMMON']->db_query("DELETE FROM `Subtitles` WHERE `id` = :id and `uid` = :uid ", $args, $ExecState);
 				if($ExecState === TRUE){$GLOBALS['SUCCESS'][]="Subtitle deleted sucessfully.";}else{$GLOBALS['ERROR'][]="Subtitle delete failed.";}
+				$args = array(
+					array(":sid", $subtitles[$i], "str"),
+				);
+				$res = $GLOBALS['COMMON']->db_query("DELETE FROM `SubtitleCDS` WHERE `sid` = :sid", $args, $ExecState);
+				//if($ExecState === TRUE){$GLOBALS['SUCCESS'][]="Subtitle CDS deleted sucessfully.";}else{$GLOBALS['ERROR'][]="Subtitle CDS delete failed.";}
 			}
 		}
 		
