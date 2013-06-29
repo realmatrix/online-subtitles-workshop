@@ -38,7 +38,7 @@
 			<td><input type="file" /></td>
 		</tr>
 		<tr>
-			<td colspan="2">note: you can add subtitle text or select subtitle file to upload subtitle.</td>
+			<td colspan="2"><font color="green">note: you can add subtitle content to the text area above directly or select subtitle file to upload subtitle.</font></td>
 		</tr>
 		<tr>
 			<td colspan="2" style="text-align: center;"><input type="submit" value="{submit}"/></td>
