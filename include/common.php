@@ -577,6 +577,8 @@ class Common{
 	}
 	
 	
+	
+	
 	function GetTeamMembers($tid){
 		$args = array(
 			array(":tid", $tid, "str"),
@@ -586,6 +588,8 @@ class Common{
 	}
 
 	
+	
+	
 	function GetTeamInfo($tid){
 		$args = array(
 			array(":tid", $tid, "str"),
@@ -593,6 +597,8 @@ class Common{
 		$res = self::db_query("SELECT * FROM `Teams` WHERE `id`=:tid", $args);
 		return $res;
 	}
+	
+	
 	
 	
 	function GetTeamSubtitles($tid){
@@ -604,6 +610,8 @@ class Common{
 	}
 	
 	
+	
+	
 	function GetUserSubtitles($uid){
 		$args = array(
 			array(":uid", $uid, "str")
@@ -612,11 +620,25 @@ class Common{
 		return $res;
 	}
 	
+	
+	
+	
 	function GetSubtitleInfo($sid){
 		$args = array(
 			array(":sid", $sid, "str"),
 		);
 		$res = self::db_query("SELECT * FROM `Subtitles` WHERE `id` = :sid", $args);
+		return $res;
+	}
+	
+	
+	
+	
+	function GetSubtitleCDS($sid){
+		$args = array(
+			array(":sid", $sid, "str")
+		);
+		$res = self::db_query("SELECT * FROM `SubtitleCDS` WHERE `id`=:sid", $args);
 		return $res;
 	}
 	

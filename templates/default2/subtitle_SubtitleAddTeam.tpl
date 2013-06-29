@@ -16,17 +16,15 @@
 
 
 
-<!-- subtitle cds -->
-<div id="subtitlecds" style="width: 99%;">
+<!-- subtitle add team -->
+<div id="subtitleaddteam" style="width: 99%;">
 
 
-	<table>
-		{tablerows}
-	</table>
+	content here
 
 
 </div>
-<!-- end subtitle cds -->	
+<!-- end subtitle add team -->	
 
 
 
