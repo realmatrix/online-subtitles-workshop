@@ -1,19 +1,19 @@
 <?php
 
-	class CSubtitleEditor{
+	class CSubtitleCDS{
 			
-		function SubtitleEditor(){
-			return self::SubtitleEditor_content();
+		function SubtitleCDS(){
+			return self::SubtitleCDS_content();
 		}
 	
-		function SubtitleEditor_hooks(){
+		function SubtitleCDS_hooks(){
 			$array = array(
 				array("DeleteSubtitles", "DeleteSubtitles"),
 			);
 			return $array;
 		}
 			
-		function SubtitleEditor_options(){
+		function SubtitleCDS_options(){
 			$options = array(
 			"show"=>array(),
 			"hide"=>array(),
@@ -22,10 +22,10 @@
 			return $options;
 		}
 				
-		function SubtitleEditor_content(){
+		function SubtitleCDS_content(){
 				$content = array
 				  (
-				  array("{title}", $GLOBALS['COMMON']->l("subtitle_SubtitleEditor_title")),
+				  array("{title}", $GLOBALS['COMMON']->l("subtitle_SubtitleCDS_title")),
 				 );
 			 
 		return $content;

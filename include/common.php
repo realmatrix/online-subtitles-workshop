@@ -523,6 +523,25 @@ class Common{
 
 
 
+	function GetLanguageById($id){
+		$params = array(
+			array(":id", $id, "str")
+		);
+		$genre=self::db_query("SELECT * FROM Language where id=:id", $params);
+		return $genre;
+	}
+
+
+
+	function GetFormatById($id){
+		$params = array(
+			array(":id", $id, "str")
+		);
+		$genre=self::db_query("SELECT * FROM Formats where id=:id", $params);
+		return $genre;
+	}
+
+
 	function GetLanguage($lang){
 		$result = self::db_query("select * from `Lang_".$lang."` ", $params);
 		$res = array();
@@ -590,6 +609,14 @@ class Common{
 			array(":uid", $uid, "str")
 		);
 		$res = self::db_query("SELECT * FROM `Subtitles` WHERE `uid`=:uid", $args);
+		return $res;
+	}
+	
+	function GetSubtitleInfo($sid){
+		$args = array(
+			array(":sid", $sid, "str"),
+		);
+		$res = self::db_query("SELECT * FROM `Subtitles` WHERE `id` = :sid", $args);
 		return $res;
 	}
 	

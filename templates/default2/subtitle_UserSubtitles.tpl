@@ -27,6 +27,7 @@
 			<th>Version</th>
 			<th>Language</th>
 			<th>Manage</th>
+			<th>Edit</th>
 		</thead>
 		{tablerows}
 	</table>

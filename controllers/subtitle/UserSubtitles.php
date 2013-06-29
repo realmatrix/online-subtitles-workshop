@@ -42,6 +42,7 @@
 				$res .= "<td>".$subtitles[$i]['version']."</td>";
 				$res .= "<td>".$subtitles[$i]['language']."</td>";
 				$res .= "<td><a href='index.php?page=subtitle&sec=manage&sid=".$subtitles[$i]['id']."'>Manage</a></td>";
+				$res .= "<td><a href='index.php?page=subtitle&sec=edit&sid=".$subtitles[$i]['id']."'>Edit</a></td>";
 				$res .= "</tr>";
 			}
 			return $res;

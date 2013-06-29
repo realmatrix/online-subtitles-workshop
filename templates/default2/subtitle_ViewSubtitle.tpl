@@ -1,3 +1,11 @@
+<style>
+	.tableleft{
+		width: 20%;
+	}
+	.tableright{
+		width: 80%;
+	}
+</style>
 <DIV class="catglow">
 <DIV class="cathead-m">
 <DIV class="cathead-r">
@@ -17,8 +25,37 @@
 
 
 <!-- view subtitle -->
-<div id="viewsubtitle">
-	content here
+<div id="viewsubtitle" style="width: 99%;">
+	<table style="width: 100%;">
+		<tr>
+		<td class="tableleft">{releasename}</td>
+		<td class="tableright">{Creleasename}</td>
+		</tr>
+		<tr>
+		<td class="tableleft">{version}</td>
+		<td class="tableright">{Cversion}</td>
+		</tr>
+		<tr>
+		<td class="tableleft">{country}</td>
+		<td class="tableright">{Ccountry}</td>
+		</tr>
+		<tr>
+		<td class="tableleft">{language}</td>
+		<td class="tableright">{Clanguage}</td>
+		</tr>
+		<tr>
+		<td class="tableleft">{fps}</td>
+		<td class="tableright">{Cfps}</td>
+		</tr>
+		<tr>
+		<td class="tableleft">{format}</td>
+		<td class="tableright">{Cformat}</td>
+		</tr>
+		<tr>
+		<td class="tableleft">{cds}</td>
+		<td class="tableright">{Ccds}</td>
+		</tr>
+	</table>
 </div>
 <!-- end view subtitle -->	
 
