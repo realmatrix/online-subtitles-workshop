@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 28, 2013 at 11:45 PM
+-- Generation Time: Jun 29, 2013 at 04:40 AM
 -- Server version: 5.5.29-log
 -- PHP Version: 5.3.21
 
@@ -567,7 +567,7 @@ CREATE TABLE IF NOT EXISTS `Lang_English` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `key` (`key`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=109 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=119 ;
 
 --
 -- Dumping data for table `Lang_English`
@@ -675,8 +675,18 @@ INSERT INTO `Lang_English` (`id`, `key`, `text`) VALUES
 (104, 'team_AddMember_title', 'Add User'),
 (105, 'team_AddMember_username', 'User Name:'),
 (106, 'team_AddMember_submit', 'Submit'),
-(107, 'subtitle_ViewSubtitle_title', 'Subtitle'),
-(108, 'subtitle_UserSubtitles_title', 'My Subtitles');
+(107, 'subtitle_ViewSubtitle_title', 'Subtitle Information'),
+(108, 'subtitle_UserSubtitles_title', 'My Subtitles'),
+(109, 'subtitle_ViewSubtitle_ReleaseName', 'Release Name:'),
+(110, 'subtitle_ViewSubtitle_version', 'Version:'),
+(111, 'subtitle_ViewSubtitle_country', 'Country:'),
+(112, 'subtitle_ViewSubtitle_language', 'Language:'),
+(113, 'subtitle_ViewSubtitle_fps', 'FPS:'),
+(114, 'subtitle_ViewSubtitle_format', 'Format:'),
+(115, 'subtitle_ViewSubtitle_cds', 'NO of CDs:'),
+(116, '', ''),
+(117, 'subtitle_SubtitleEditor_title', 'Editing Subtitle'),
+(118, 'subtitle_SubtitleCDS_title', 'Subtitle CDS');
 
 -- --------------------------------------------------------
 
@@ -690,14 +700,14 @@ CREATE TABLE IF NOT EXISTS `OnlineUsers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=542 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=552 ;
 
 --
 -- Dumping data for table `OnlineUsers`
 --
 
 INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(541, 'eqre2klvn5rhlv43c83vss84d2', 1372458939, '');
+(551, 'eqre2klvn5rhlv43c83vss84d2', 1372476647, '');
 
 -- --------------------------------------------------------
 
