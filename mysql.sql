@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 29, 2013 at 04:40 AM
+-- Generation Time: Jun 29, 2013 at 07:54 AM
 -- Server version: 5.5.29-log
 -- PHP Version: 5.3.21
 
@@ -567,7 +567,7 @@ CREATE TABLE IF NOT EXISTS `Lang_English` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `key` (`key`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=119 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=128 ;
 
 --
 -- Dumping data for table `Lang_English`
@@ -686,7 +686,16 @@ INSERT INTO `Lang_English` (`id`, `key`, `text`) VALUES
 (115, 'subtitle_ViewSubtitle_cds', 'NO of CDs:'),
 (116, '', ''),
 (117, 'subtitle_SubtitleEditor_title', 'Editing Subtitle'),
-(118, 'subtitle_SubtitleCDS_title', 'Subtitle CDS');
+(118, 'subtitle_SubtitleCDS_title', 'Subtitle CDS'),
+(119, 'subtitle_SubtitleListTeams_title', 'Subtitle Teams'),
+(120, 'subtitle_SubtitleAddTeam_title', 'Add Team'),
+(121, 'subtitle_SubtitleUploader_title', 'Upload/Create Subtitle'),
+(122, 'subtitle_SubtitleUploader_cd', 'Select CD'),
+(123, 'subtitle_SubtitleUploader_CDTitle', 'CD title (optional)'),
+(124, 'subtitle_SubtitleUploader_SubtitleText', 'Subtitle Text'),
+(125, 'subtitle_SubtitleUploader_SubtitleFile', 'Subtitle File'),
+(126, 'subtitle_SubtitleUploader_note', 'note: you can add subtitle content to the text area above directly or select subtitle file to upload subtitle.'),
+(127, 'subtitle_SubtitleUploader_submit', 'Upload');
 
 -- --------------------------------------------------------
 
@@ -700,14 +709,27 @@ CREATE TABLE IF NOT EXISTS `OnlineUsers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=552 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=564 ;
 
 --
 -- Dumping data for table `OnlineUsers`
 --
 
 INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(551, 'eqre2klvn5rhlv43c83vss84d2', 1372476647, '');
+(563, 'eqre2klvn5rhlv43c83vss84d2', 1372488581, '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `SubtitleCDS`
+--
+
+CREATE TABLE IF NOT EXISTS `SubtitleCDS` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sid` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -728,16 +750,14 @@ CREATE TABLE IF NOT EXISTS `Subtitles` (
   `country` int(11) NOT NULL,
   `uid` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=34 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=35 ;
 
 --
 -- Dumping data for table `Subtitles`
 --
 
 INSERT INTO `Subtitles` (`id`, `fps_sec`, `fps_mil_sec`, `release_name`, `version`, `language`, `format`, `cds`, `vid`, `country`, `uid`) VALUES
-(26, 1, 1, 'kjhlkhjlkjh lkjh ', 'kjhlkjh', 31, 2, 1, 12, 120, 18),
-(31, 0, 0, 'dfsjkh lskjhfdklsjfh ghg', 'jkg kj', 0, 0, 0, 12, 84, 18),
-(33, 1, 1, 'iuhh', 'kljh', 21, 1, 1, 12, 120, 18);
+(34, 8, 8, 'khklh lkjh lkhj', 'lkjhl', 12, 9, 6, 12, 119, 18);
 
 -- --------------------------------------------------------
 
