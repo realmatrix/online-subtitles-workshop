@@ -3,7 +3,7 @@
 	class CAddSubtitle{
 
 	public static $RefreshSubtitles = "";
-			
+	
 		function AddSubtitle(){
 			return self::AddSubtitle_content();
 		}
@@ -90,6 +90,7 @@
 		}
 		
 		function CreateSubtitle(){
+			$key = $_SESSION['id'].$GLOBALS['COMMON']->GetMicroTime().$GLOBALS['COMMON']->GenRandomStr(5);
 			$params = array(
 				array(":fpssec", $GLOBALS['vars']['fpssec'], "str"),
 				array(":fpsmilsec", $GLOBALS['vars']['fpsmilsec'], "str"),
@@ -100,10 +101,12 @@
 				array(":cds", $GLOBALS['vars']['cds'], "str"),
 				array(":vid", $GLOBALS['vars']['vid'], "str"),
 				array(":country", $GLOBALS['vars']['Country'], "str"),
-				array(":uid", $_SESSION['id'], "str")
+				array(":uid", $_SESSION['id'], "str"),
+				array(":key", $key, "str"),
 			);
-			$res=$GLOBALS['COMMON']->db_query("INSERT INTO `Subtitles` (`fps_sec`, `fps_mil_sec`, `release_name`, `version`, `language`, `format`, `cds`, `vid`, `country`, `uid`) VALUES (:fpssec, :fpsmilsec, :releasename, :version, :language, :format, :cds, :vid, :country, :uid);", $params, $ExecState);
+			$res=$GLOBALS['COMMON']->db_query("INSERT INTO `Subtitles` (`fps_sec`, `fps_mil_sec`, `release_name`, `version`, `language`, `format`, `cds`, `vid`, `country`, `uid`, `key`) VALUES (:fpssec, :fpsmilsec, :releasename, :version, :language, :format, :cds, :vid, :country, :uid, :key);", $params, $ExecState);
 			if($ExecState === TRUE){$GLOBALS['SUCCESS'][]="Subtitle Added Successfully";} else {$GLOBALS['ERROR'][]="Adding Subtitle Failed";}
+			//INSERT INTO tbl_name (a,b,c) VALUES(1,2,3),(4,5,6),(7,8,9);
 		}
 	
 			

@@ -642,5 +642,28 @@ class Common{
 		return $res;
 	}
 	
+	
+	
+	
+	function GenRandomStr($length = 10) {
+	    $characters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	    $res = "";
+	    for ($i = 0; $i < $length; $i++) {
+	        $res .= $characters[rand(0, strlen($characters) - 1)];
+	    }
+	    $res = trim($res);
+	    return $res;
+	}
+
+
+
+	function GetMicroTime(){
+		$time = microtime();
+		$time = explode(".", $time);
+		$time = trim($time[1]);
+		return $time;
+	}
+	
+	
 }
 ?>

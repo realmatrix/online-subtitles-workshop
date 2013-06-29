@@ -28,7 +28,7 @@
 
 
 <!-- add subtitle form -->
-<div id="div-submitnewsubtitle">
+<div id="div-submitnewsubtitle" style="width: 99%;">
 	
 <form name="submitnewsubtitle" id="submitnewsubtitle" method="post" action="index.php">
 <table style="width: 100%;">
