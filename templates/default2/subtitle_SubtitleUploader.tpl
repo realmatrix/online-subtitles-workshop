@@ -19,7 +19,7 @@
 <!-- subtitle uploader -->
 <div id="subtitleuploader" style="width: 99%;">
 
-<form method="post" action="index.php">
+<form method="post" action="index.php" enctype="multipart/form-data">
 	<table style="width: 100%;">
 		<tr>
 			<td style="width: 25%;">{cd}</td>
@@ -35,7 +35,7 @@
 		</tr>
 		<tr>
 			<td>{subtitlefile}</td>
-			<td><input type="file" /></td>
+			<td><input type="file" name="file" /></td>
 		</tr>
 		<tr>
 			<td colspan="2"><font color="green">{note}</font></td>

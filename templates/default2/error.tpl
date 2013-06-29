@@ -1,8 +1,20 @@
-<div class="ui-widget" style="width:972px;">
-	<div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
-		<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
-		<!--<strong>Alert:</strong> -->{SystemMessage}</p>
-	</div>
+<style>
+	.diverror{
+		width:100%;
+		border-color: red;
+		color: red;
+		text-align: left;
+		margin: 0 auto;
+		border-style: solid;
+		border-width: 1px;
+	}	
+	.diverror ul{
+		margin-left: 20px;
+	}
+</style>
+
+<div style="width: 100%; text-align: center;">
+	<div class="diverror"><br />{SystemMessage}<br /></div>
 </div>
 
 <br>
