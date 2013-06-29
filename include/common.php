@@ -351,6 +351,16 @@ class Common{
 	 	$result = self::db_query("SELECT * FROM CDS", $params);
 		return $result;
 	}
+	
+	
+	
+	function GetCDById($id){
+		$params = array(
+			array(":id", $id, "str")
+		);
+	 	$result = self::db_query("SELECT * FROM CDS where id = :id", $params);
+		return $result;
+	}
 
 
 
@@ -659,7 +669,7 @@ class Common{
 
 	function GetMicroTime(){
 		$time = microtime();
-		$time = explode(".", $time);
+		$time = explode(" ", $time);
 		$time = trim($time[1]);
 		return $time;
 	}

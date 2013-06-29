@@ -89,6 +89,12 @@
 			return $res;
 		}
 		
+		function GetCD($id){
+			$cd = $GLOBALS['COMMON']->GetCDById($id);
+			$res = $cd[0]['cd'];
+			return $res;
+		}
+		
 		function CreateSubtitle(){
 			$key = $_SESSION['id'].$GLOBALS['COMMON']->GetMicroTime().$GLOBALS['COMMON']->GenRandomStr(5);
 			$params = array(
@@ -104,8 +110,22 @@
 				array(":uid", $_SESSION['id'], "str"),
 				array(":key", $key, "str"),
 			);
+			//creating subtitle
 			$res=$GLOBALS['COMMON']->db_query("INSERT INTO `Subtitles` (`fps_sec`, `fps_mil_sec`, `release_name`, `version`, `language`, `format`, `cds`, `vid`, `country`, `uid`, `key`) VALUES (:fpssec, :fpsmilsec, :releasename, :version, :language, :format, :cds, :vid, :country, :uid, :key);", $params, $ExecState);
 			if($ExecState === TRUE){$GLOBALS['SUCCESS'][]="Subtitle Added Successfully";} else {$GLOBALS['ERROR'][]="Adding Subtitle Failed";}
+			//creating cds
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Subtitles` WHERE `key` = :key", array(array(":key", $key, "str")));
+			$values = "";
+			echo self::GetCD($res[0]['cds']);
+			for ($i=0; $i < self::GetCD($res[0]['cds']); $i++) {
+				$counter = $i + 1; 
+				if($i==self::GetCD($res[0]['cds'])){$values .= "('".$res[0]['id']."', 'CD ".$counter."')";}else{$values .= "('".$res[0]['id']."', 'CD ".$counter."'),";}
+			}
+			$args = array(
+				array(":values", $values, "str"),
+			);
+			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `SubtitleCDS` (`sid`, `title`) VALUES :values", $args, $ExecState);
+			if($ExecState === TRUE){} else {$GLOBALS['ERROR'][]="Creating subtitle CDS Failed";}
 			//INSERT INTO tbl_name (a,b,c) VALUES(1,2,3),(4,5,6),(7,8,9);
 		}
 	
