@@ -38,12 +38,20 @@
 			<td><input type="file" /></td>
 		</tr>
 		<tr>
-			<td colspan="2"><font color="green">note: you can add subtitle content to the text area above directly or select subtitle file to upload subtitle.</font></td>
+			<td colspan="2"><font color="green">{note}</font></td>
 		</tr>
 		<tr>
 			<td colspan="2" style="text-align: center;"><input type="submit" value="{submit}"/></td>
 		</tr>
 	</table>
+<!-- <input type="hidden" name="dataonly" value="yes"/> --> <!-- uncomment if using ajax -->
+<!-- <input type="hidden" name="getcontroller" value="subtitle"/> --> <!-- uncomment if using ajax -->
+<!-- <input type="hidden" name="getsection" value="SubtitleUploader"/> --> <!-- uncomment if using ajax -->
+<input type="hidden" name="page" value="subtitle" /> <!-- comment if using ajax -->
+<input type="hidden" name="sec" value="manage" /> <!-- comment if using ajax -->
+<input type="hidden" name="ssec" value="SubtitleUploader"/>
+<input type="hidden" name="h" value="UploadSubtitle"/>
+<input type="hidden" name="sid" value="{sid}" />
 </form>
 
 

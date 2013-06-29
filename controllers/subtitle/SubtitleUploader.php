@@ -8,7 +8,7 @@
 	
 		function SubtitleUploader_hooks(){
 			$array = array(
-				array("DeleteSubtitles", "DeleteSubtitles"),
+				array("UploadSubtitle", "UploadSubtitle"),
 			);
 			return $array;
 		}
@@ -26,9 +26,22 @@
 				$content = array
 				  (
 				  array("{title}", $GLOBALS['COMMON']->l("subtitle_SubtitleUploader_title")),
+				  array("{sid}", $GLOBALS['vars']['sid']),
+				  array("{cd}", $GLOBALS['COMMON']->l("subtitle_SubtitleUploader_cd")),
+				  array("{cdtitle}", $GLOBALS['COMMON']->l("subtitle_SubtitleUploader_CDTitle")),
+				  array("{subtitletext}", $GLOBALS['COMMON']->l("subtitle_SubtitleUploader_SubtitleText")),
+				  array("{subtitlefile}", $GLOBALS['COMMON']->l("subtitle_SubtitleUploader_SubtitleFile")),
+				  array("{note}", $GLOBALS['COMMON']->l("subtitle_SubtitleUploader_note")),
+				  array("{submit}", $GLOBALS['COMMON']->l("subtitle_SubtitleUploader_submit")),
 				 );
 			 
 		return $content;
+		}
+		
+		function UploadSubtitle(){
+			include "include/SubtitleParser.php";
+			$parser = new Subtitleparser;
+			$content = $parser->convert_srt($filename);
 		}
 	
 			
