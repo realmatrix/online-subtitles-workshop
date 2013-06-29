@@ -40,11 +40,11 @@
 		}
 		
 		function CDList(){
-			$SubtitleInfo = $GLOBALS['COMMON']->GetSubtitleInfo($GLOBALS['vars']['sid']);
+			$subtitleCDS = $GLOBALS['COMMON']->GetSubtitleCDS($GLOBALS['vars']['sid']);
 			$res = "";
-			for ($i=0; $i < $SubtitleInfo[0]['cds']; $i++) {
+			for ($i=0; $i < count($subtitleCDS); $i++) {
 				$cd = $i + 1; 
-				$res .= "<option value='".$cd."'>".$cd."</option>";
+				$res .= "<option value='".$subtitleCDS[$i]['id']."'>".$subtitleCDS[$i]['title']."</option>";
 			}
 			return $res;	
 		}

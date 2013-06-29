@@ -648,7 +648,7 @@ class Common{
 		$args = array(
 			array(":sid", $sid, "str")
 		);
-		$res = self::db_query("SELECT * FROM `SubtitleCDS` WHERE `id`=:sid", $args);
+		$res = self::db_query("SELECT * FROM `SubtitleCDS` WHERE `sid`=:sid", $args);
 		return $res;
 	}
 	

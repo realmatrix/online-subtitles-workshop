@@ -112,7 +112,7 @@
 			);
 			//creating subtitle
 			$res=$GLOBALS['COMMON']->db_query("INSERT INTO `Subtitles` (`fps_sec`, `fps_mil_sec`, `release_name`, `version`, `language`, `format`, `cds`, `vid`, `country`, `uid`, `key`) VALUES (:fpssec, :fpsmilsec, :releasename, :version, :language, :format, :cds, :vid, :country, :uid, :key);", $params, $ExecState);
-			if($ExecState === TRUE){$GLOBALS['SUCCESS'][]="Subtitle Added Successfully";} else {$GLOBALS['ERROR'][]="Adding Subtitle Failed";}
+			if($ExecState === TRUE){$GLOBALS['SUCCESS'][]="Subtitle '".$GLOBALS['vars']['ReleaseName']."' Added Successfully";} else {$GLOBALS['ERROR'][]="Adding Subtitle '".$GLOBALS['vars']['ReleaseName']."' Failed";}
 			//creating cds
 			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Subtitles` WHERE `key` = :key", array(array(":key", $key, "str")));
 			$values = "";
@@ -122,7 +122,7 @@
 			}
 			$args = array();
 			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `SubtitleCDS` (`sid`, `title`) VALUES ".$values.";", $args, $ExecState);
-			if($ExecState === TRUE){} else {$GLOBALS['ERROR'][]="Creating subtitle CDS Failed";}
+			if($ExecState === TRUE){} else {$GLOBALS['ERROR'][]="Creating subtitle '".$GLOBALS['vars']['ReleaseName']."' CDS Failed";}
 		}
 	
 			
