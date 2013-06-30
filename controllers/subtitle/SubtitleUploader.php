@@ -82,18 +82,19 @@
 			unlink($file);
 			$args = array();
 			for ($i=0; $i < count($content); $i++) { 
-					$args[] = array(
-					array(":sid", $GLOBALS['vars']['sid'], "str"),
-					array(":uid", $_SESSION['id'], "str"),
-					array(":cid", $GLOBALS['vars']['cd'], ),
-					array(":line", $content[$i]->{'number'}, "str"),
-					array(":start", $content[$i]->{'startTime'}, "str"),
-					array(":end", $content[$i]->{'endTime'}, "str"),
-					array(":text", $content[$i]->{'text'}, "str"),
+					$args[1][] = array(
+					array(":sid".$i, $GLOBALS['vars']['sid'], "str"),
+					array(":uid".$i, $_SESSION['id'], "str"),
+					array(":cid".$i, $GLOBALS['vars']['cd'], ),
+					array(":line".$i, $content[$i]->{'number'}, "str"),
+					array(":start".$i, $content[$i]->{'startTime'}, "str"),
+					array(":end".$i, $content[$i]->{'stopTime'}, "str"),
+					array(":text".$i, $content[$i]->{'text'}, "str"),
 				);
+					if($i!=count($content)-1){$args[0][] = "(:sid".$i.", :uid".$i.", :cid".$i.", :line".$i.", :start".$i.", :end".$i.", :text".$i."),";}else{$args[0][]="(:sid".$i.", :uid".$i.", :cid".$i.", :line".$i.", :start".$i.", :end".$i.", :text".$i.")";}
 			}
 			//print_r($args);
-			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `new`.`SubtitlesContent` (`sid`, `uid`, `cid`, `line`, `start`, `end`, `text`) VALUES (:sid, :uid, :cid, :line, :start, :end, :text);", $args, $ExecState, TRUE);
+			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `SubtitlesContent` (`sid`, `uid`, `cid`, `line`, `start`, `end`, `text`) VALUES ", $args, $ExecState, TRUE);
 			if($ExecState===TRUE){}else{$GLOBALS['ERROR'][]="uploading subtitle failed.";}	
 			
 		}

@@ -265,7 +265,7 @@ class Common{
 		 $statement = $connDB->prepare($query);
 		 }
 		 else {
-			$query = $query . " " . implode(",", $array[0]);
+			$query = $query . " " . implode("", $array[0]);
 			$statement = $connDB->prepare($query);
 		 }
 		 // Assign and execute query
@@ -281,7 +281,6 @@ class Common{
 		 }
 		else
 		{
-			echo "yes";
 		 for ($i = 0; $i < count($array[1]); $i++) {
 			 	for ($j=0; $j < count($array[1][$i]) ; $j++) { 
 				if($array[1][$i][$j][2]=="int"){$type = PDO::PARAM_INT;}
@@ -316,6 +315,7 @@ class Common{
 		 	 if($connDB->errorCode() != "00000"){$GLOBALS['ERROR'][] = $e->getMessage()." ". $connDB->errorCode();} 
 		 }
 		 //Close the connection
+		 //echo $statement->queryString;
 		 $connDB = null;
 	}
 
