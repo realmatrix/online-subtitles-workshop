@@ -49,10 +49,14 @@
 			return $res;	
 		}
 		
+		
 		function UploadSubtitle(){
+			ignore_user_abort(true);
 			if ($_FILES["file"]["error"] > 0 and $_FILES["file"]["error"] != 4){$GLOBALS['ERROR'][]=$_FILES["file"]["error"]; return FALSE;}
 			if ($_FILES["file"]["error"] == 4 and $GLOBALS['vars']['subtitletext']==""){$GLOBALS['ERROR'][]="enter subtitle content or select file."; return FALSE;}
 			if($GLOBALS['vars']['cd']==""){$GLOBALS['ERROR'][]="select cd."; return FALSE;}
+			$key = $_SESSION['id'].$GLOBALS['COMMON']->GetMicroTime().$GLOBALS['COMMON']->GenRandomStr(5).".tmp";
+			$file = "tmp/".$key;
 			
 			if($GLOBALS['vars']['subtitletext']==""){
 			$FileName = $_FILES["file"]["name"];
@@ -64,12 +68,34 @@
 			$temp = explode(".", $_FILES["file"]["name"]);
 			$extension = end($temp);
 			if(!in_array($extension, $allowedExts)){$GLOBALS['ERROR'][]="invalid file type only ".implode(",", $allowedExts)." is allowed." ; return FALSE;}
-			move_uploaded_file($_FILES["file"]["tmp_name"], "tmp/" . $_FILES["file"]["name"]);
+			move_uploaded_file($_FILES["file"]["tmp_name"], $file);
 			}
 			
-			include "include/SubtitleParser.php";
-			$parser = new Subtitleparser;
-			$content = $parser->convert_srt($filename);
+			if($GLOBALS['vars']['subtitletext']!=""){
+				file_put_contents($file, $GLOBALS['vars']['subtitletext']);
+			}
+			
+			include "include/Srtparser.php";
+			$parser = new Srtparser();
+			$content = $parser->parse($file);
+			//print_r($content);
+			unlink($file);
+			$args = array();
+			for ($i=0; $i < count($content); $i++) { 
+					$args[] = array(
+					array(":sid", $GLOBALS['vars']['sid'], "str"),
+					array(":uid", $_SESSION['id'], "str"),
+					array(":cid", $GLOBALS['vars']['cd'], ),
+					array(":line", $content[$i]->{'number'}, "str"),
+					array(":start", $content[$i]->{'startTime'}, "str"),
+					array(":end", $content[$i]->{'endTime'}, "str"),
+					array(":text", $content[$i]->{'text'}, "str"),
+				);
+			}
+			//print_r($args);
+			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `new`.`SubtitlesContent` (`sid`, `uid`, `cid`, `line`, `start`, `end`, `text`) VALUES (:sid, :uid, :cid, :line, :start, :end, :text);", $args, $ExecState, TRUE);
+			if($ExecState===TRUE){}else{$GLOBALS['ERROR'][]="uploading subtitle failed.";}	
+			
 		}
 		
 	

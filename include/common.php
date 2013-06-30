@@ -251,7 +251,7 @@ class Common{
 
 
 
-	function db_query($query, $array, &$ExecState=""){
+	function db_query($query, $array, &$ExecState="", $multi=FALSE){
 		$DB_HOST=$GLOBALS['DB_HOST'];
 		$DB_NAME=$GLOBALS['DB_NAME'];
 		$DB_USER=$GLOBALS['DB_USER'];
@@ -261,9 +261,16 @@ class Common{
 		 $connDB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		 try {
 		 // Query
+		 if($multi===FALSE){
 		 $statement = $connDB->prepare($query);
+		 }
+		 else {
+			$query = $query . " " . implode(",", $array[0]);
+			$statement = $connDB->prepare($query);
+		 }
 		 // Assign and execute query
 		 
+		 if($multi===FALSE){
 		 for ($i = 0; $i <= count($array)-1; $i++) {
 		 	if($array[$i][2]=="int"){$type = PDO::PARAM_INT;}
 			if($array[$i][2]=="str"){$type = PDO::PARAM_STR;}
@@ -271,6 +278,20 @@ class Common{
 			if($array[$i][2]=="null"){$type = PDO::PARAM_NULL;}
 			 $statement->bindParam($array[$i][0], $array[$i][1], $type);
  		 }
+		 }
+		else
+		{
+			echo "yes";
+		 for ($i = 0; $i < count($array[1]); $i++) {
+			 	for ($j=0; $j < count($array[1][$i]) ; $j++) { 
+				if($array[1][$i][$j][2]=="int"){$type = PDO::PARAM_INT;}
+				if($array[1][$i][$j][2]=="str"){$type = PDO::PARAM_STR;}
+				if($array[1][$i][$j][2]=="bool"){$type = PDO::PARAM_BOOL;}
+				if($array[1][$i][$j][2]=="null"){$type = PDO::PARAM_NULL;}
+				$statement->bindParam($array[1][$i][$j][0], $array[1][$i][$j][1], $type);
+			 }
+ 		 }
+		}
 		 
 		 //$statement->bindParam(':columnA', $columnA, PDO::PARAM_INT);
 		 $statement->setFetchMode(PDO::FETCH_ASSOC);
