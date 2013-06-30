@@ -17,7 +17,7 @@
 
 
 <div id="widgt-ManageAccount">
-	my videos <br />
+	<a href="index.php?page=video&sec=view">my videos</a> <br />
 	favourite videos <br />
 	<a href="index.php?page=subtitle&sec=list">my subtitles</a> <br />
 	my teams <br />
