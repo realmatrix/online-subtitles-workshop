@@ -1,12 +1,12 @@
 <?php
 
-	class Wwidget_VideoGallery{
+	class Wwidget_FeaturedVideos{
 		
-		function widget_VideoGallery(){
-			return self::widget_VideoGallery_render();
+		function widget_FeaturedVideos(){
+			return self::widget_FeaturedVideos_render();
 		}
 		
-		function widget_VideoGallery_options(){
+		function widget_FeaturedVideos_options(){
 			$options = array(
 			"show"=>array("home",), //show widget on this pages only - leave blank to show on all pages
 			"hide"=>array(), // hide widget on this pages
@@ -15,7 +15,7 @@
 			return $options;
 		}
 		
-		function widget_VideoGallery_render(){
+		function widget_FeaturedVideos_render(){
 			$array = array(
 				array("{TemplatePath}",$GLOBALS['config']['TemplatesDir'].$GLOBALS['config']['template']),
 			);

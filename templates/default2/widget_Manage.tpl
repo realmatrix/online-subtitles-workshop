@@ -17,7 +17,7 @@
 
 
 <div id="widgt-ManageAccount">
-	<a href="index.php?page=video&sec=view">my videos</a> <br />
+	<a href="index.php?page=video&sec=list">my videos</a> <br />
 	<a href="index.php?pag=video&sec=followed">favourite videos</a> <br />
 	<a href="index.php?pag=subtitle&sec=followed">favourite subtitles</a> <br />
 	<a href="index.php?page=subtitle&sec=list">my subtitles</a> <br />
