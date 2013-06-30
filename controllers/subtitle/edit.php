@@ -5,6 +5,7 @@
 		function edit_sections(){
 			$array = array(
 				array("subtitle", "SubtitleCDS", $GLOBALS['vars'], TRUE),
+				array("player", "EditorPlayer", $GLOBALS['vars'], self::show()),
 				array("subtitle", "SubtitleEditor", $GLOBALS['vars'], self::show()),
 				array("subtitle", "EditorControls", $GLOBALS['vars'], self::show()),
 			);

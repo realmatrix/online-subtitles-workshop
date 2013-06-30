@@ -1,14 +1,3 @@
-<style>
-	#editor-SubtitleContent{
-		width: 100%;
-		height: 600px;
-		overflow-y: scroll;
-	}
-	.otext{
-		width: 100%;
-		text-align: left;
-	}
-</style>
 <DIV class="catglow">
 <DIV class="cathead-m">
 <DIV class="cathead-r">
@@ -27,11 +16,11 @@
 
 
 
-<!-- subtitle editor -->
+<!-- editor player -->
 <div id="subtitleeditor" style="width: 99%;">
-	{EditorContent}
+	content here
 </div>
-<!-- end subtitle editor -->	
+<!-- end editor player -->	
 
 
 

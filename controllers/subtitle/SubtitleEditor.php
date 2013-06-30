@@ -33,7 +33,7 @@
 		}
 		
 		function GetContent(){
-			$content = "<div id='editor-CubtitleContent'>";
+			$content = "<div id='editor-SubtitleContent'>";
 			$content .= self::GetAllLines();
 			$content .= "</div>";
 			return $content;
@@ -49,6 +49,7 @@
 			for ($i=0; $i < count($AllLines); $i++) {
 				$res .="<a name='line".$AllLines[$i]['line']."'></a>"; 
 				$res .= "<div id='dline".$AllLines[$i]['line']."'>";
+				$res .= "<div class='otext'>".$AllLines[$i]['text']."</div>";
 				$res .= "</div>";
 			}
 			return $res;
