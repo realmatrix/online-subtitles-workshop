@@ -1,11 +1,3 @@
-<style>
-	#table-subtitlecds td:nth-child(1){
-		width: 10px;
-	}
-	#table-subtitlecds td:nth-child(3){
-		width: 30px;
-	}
-</style>
 <DIV class="catglow">
 <DIV class="cathead-m">
 <DIV class="cathead-r">
@@ -24,17 +16,15 @@
 
 
 
-<!-- subtitle cds -->
-<div id="subtitlecds" style="width: 99%;">
+<!-- editor controls -->
+<div id="editorcontrols" style="width: 99%;">
 
 
-	<table id='table-subtitlecds' style="width: 100%;">
-		{tablerows}
-	</table>
+	content here
 
 
 </div>
-<!-- end subtitle cds -->	
+<!-- end editor controls -->	
 
 
 

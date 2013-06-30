@@ -1,3 +1,9 @@
+<style>
+	#editor-CubtitleContent{
+		width: 100%;
+		height: 600px;
+	}
+</style>
 <DIV class="catglow">
 <DIV class="cathead-m">
 <DIV class="cathead-r">
@@ -18,7 +24,7 @@
 
 <!-- subtitle editor -->
 <div id="subtitleeditor" style="width: 99%;">
-	content here
+	{EditorContent}
 </div>
 <!-- end subtitle editor -->	
 
