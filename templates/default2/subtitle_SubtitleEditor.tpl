@@ -1,3 +1,11 @@
+<script>
+	function ShowHide(show, hide){
+		var elm2 = document.getElementById(hide);
+ 		elm2.style.display = "none"; //hide
+		var elm1 = document.getElementById(show);
+ 		elm1.style.display = "block"; //show
+	}
+</script>
 <style>
 	#editor-SubtitleContent{
 		width: 100%;
@@ -19,6 +27,12 @@
 		width: 75%;
 		height: 50px;
 		text-align: left;
+	}
+	.tlstart{
+	display: none; /* hide start time textbox*/
+	}
+	.tlend{
+	display: none; /* hide start time textbox*/
 	}
 </style>
 <DIV class="catglow">
