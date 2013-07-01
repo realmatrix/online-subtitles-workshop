@@ -81,6 +81,9 @@
 		$GLOBALS['FinalPage'] = $GLOBALS['COMMON']->render($GLOBALS['TemplateLogout'], "logout");
 		echo $GLOBALS['FinalPage'];
         break;
+    case $SystemPage=="query":
+		echo $GLOBALS['SystemContent'];
+        break;
     default:
 	    $GLOBALS['FinalPage'] = $GLOBALS['COMMON']->render($GLOBALS['Template404'], "404");
 		echo $GLOBALS['FinalPage'];

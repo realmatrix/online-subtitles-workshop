@@ -66,7 +66,7 @@
 				$res .= self::PrepareStart($LineNumber, $Start);
 				$res .= self::PrepareEnd($LineNumber, $End);
 				$res .= "</div>";
-				$res .= self::PrepareTransscript($pindex, $Taindex, $LineNumber, $Transcript);
+				$res .= self::PrepareTransscript($id, $pindex, $Taindex, $LineNumber, $Transcript);
 				$res .= "</div>";
 			}
 			return $res;
@@ -91,12 +91,13 @@
 			return $res;
 		}
 		
-		function PrepareTransscript($pindex, $tindex, $LineNumber, $Transcript){
+		function PrepareTransscript($lineid, $pindex, $tindex, $LineNumber, $Transcript){
 			$res = "<div class='ltext'><p tabindex=".$pindex." id='ptrans".$LineNumber."' class='ptransscript'";
 			$res .= " onclick='ShowHide(&quot;ttransscript".$LineNumber."&quot;, &quot;ptrans".$LineNumber."&quot;);'";
 			$res .= " onfocus='ShowHide(&quot;ttransscript".$LineNumber."&quot;, &quot;ptrans".$LineNumber."&quot;);'>".$Transcript."</p>";
 			$res .= " <textarea tabindex=".$tindex." class='tatransscript' id='ttransscript".$LineNumber."'";
-			$res .= " onblur='ShowHide(&quot;ptrans".$LineNumber."&quot;, &quot;ttransscript".$LineNumber."&quot;);'>".$Transcript."</textarea></div>";
+			$res .= " onblur='ShowHide(&quot;ptrans".$LineNumber."&quot;, &quot;ttransscript".$LineNumber."&quot;);";
+			$res .= " SaveSubtitle(&quot;text&quot;, &quot;ptrans".$LineNumber."&quot;, &quot;ttransscript".$LineNumber."&quot;, &quot;".$GLOBALS['vars']['sid']."&quot;, &quot;".$GLOBALS['vars']['cid']."&quot;, &quot;".$lineid."&quot;)'>".$Transcript."</textarea></div>";
 			return $res;
 		}		
 

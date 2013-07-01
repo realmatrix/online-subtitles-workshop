@@ -9,3 +9,5 @@
 {SystemFooter}		required by system keep before </body> 
 
 {content}			add this where the pages content will appear
+
+note: don't edit any *query.tpl file

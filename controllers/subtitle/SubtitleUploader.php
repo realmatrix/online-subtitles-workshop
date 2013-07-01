@@ -78,10 +78,11 @@
 			include "include/Srtparser.php";
 			$parser = new Srtparser();
 			$content = $parser->parse($file);
-			//print_r($content);
 			unlink($file);
 			$args = array();
-			for ($i=0; $i < count($content); $i++) { 
+			for ($i=0; $i < count($content); $i++) {
+				$text = $content[$i]->{'text'};
+				$text = str_replace("\r\n", "<br />", $text) ;
 					$args[1][] = array(
 					array(":sid".$i, $GLOBALS['vars']['sid'], "str"),
 					array(":uid".$i, $_SESSION['id'], "str"),
@@ -89,7 +90,7 @@
 					array(":line".$i, $content[$i]->{'number'}, "str"),
 					array(":start".$i, $content[$i]->{'startTime'}, "str"),
 					array(":end".$i, $content[$i]->{'stopTime'}, "str"),
-					array(":text".$i, $content[$i]->{'text'}, "str"),
+					array(":text".$i, $text, "str"),
 				);
 					if($i!=count($content)-1){$args[0][] = "(:sid".$i.", :uid".$i.", :cid".$i.", :line".$i.", :start".$i.", :end".$i.", :text".$i."),";}else{$args[0][]="(:sid".$i.", :uid".$i.", :cid".$i.", :line".$i.", :start".$i.", :end".$i.", :text".$i.")";}
 			}

@@ -10,11 +10,30 @@
  		}
 	}
 	
-	function save(type, id){
-		//type=> start end text
-		//id=> textbox or textarea id
-	}
+	function SaveSubtitle(type, pid, taid, sid, cid, lid) {
+		var content = document.getElementById(taid).innerHTML;
+		document.getElementById(pid).innerHTML="updating...";
+		var str = "index.php?page=query&sec=subtitle&ssec=QuerySubtitle&h=edit&type="+type+"&sid="+sid+"&cid="+cid+"&lid="+lid+"&content="+content;	
+		if (window.XMLHttpRequest)
+		   {
+		   xmlhttp=new XMLHttpRequest();
+		   }
+		 else
+		   {
+		   xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		   }
+		 xmlhttp.onreadystatechange=function()
+		   {
+		   if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		     {
+		     document.getElementById(pid).innerHTML=xmlhttp.responseText;
+		     }
+		   }
+		 xmlhttp.open("GET", str, false);
+		 xmlhttp.send();
+	 }
 </script>
+
 <style>
 	#editor-SubtitleContent{
 		width: 100%;
@@ -54,6 +73,10 @@
 	.tatransscript{
 		display: none; /* hide transscript textbox*/
 		width: 90%;
+	}
+	.ptransscript{
+		width: 90%;
+		height: 100%;
 	}
 </style>
 <DIV class="catglow">

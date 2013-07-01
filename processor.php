@@ -7,7 +7,7 @@
 	$ControllerSection=$GLOBALS['vars']['sec'];
 
 	//loading controllers
-	if($ControllerPage!="" and $ControllerSection!=""){$SystemContent = $GLOBALS['COMMON']->LoadSections($ControllerPage, $ControllerSection, $GLOBALS['vars']);}
+	if($ControllerPage!="" and $ControllerSection!=""){$GLOBALS['SystemContent'] = $GLOBALS['COMMON']->LoadSections($ControllerPage, $ControllerSection, $GLOBALS['vars']);}
 	
 		
 	//loading widgets
@@ -57,7 +57,7 @@
 	
 	$GLOBALS['TemplateBody'] = array
 	  (
-	  array("{content}",$SystemContent),
+	  array("{content}",$GLOBALS['SystemContent']),
 	);
 	
 	$GLOBALS['TemplateFooter'] = array
