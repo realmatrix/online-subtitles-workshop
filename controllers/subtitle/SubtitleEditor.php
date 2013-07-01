@@ -50,6 +50,11 @@
 				$res .="<a name='line".$AllLines[$i]['line']."'></a>"; 
 				$res .= "<div id='dline".$AllLines[$i]['line']."'>";
 				$res .= "<div class='otext'>".$AllLines[$i]['text']."</div>";
+				$res .= "<div class='ltime'>";
+				$res .= "<div class='lstart'>".$AllLines[$i]['start']."</div>";
+				$res .= "<div class='lend'>".$AllLines[$i]['end']."</div>";
+				$res .= "</div>";
+				$res .= "<div class='ltext'>".$AllLines[$i]['TranscribedText']."<--</div>";
 				$res .= "</div>";
 			}
 			return $res;

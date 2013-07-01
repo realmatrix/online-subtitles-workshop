@@ -7,6 +7,18 @@
 	.otext{
 		width: 100%;
 		text-align: left;
+		clear: left;
+	}
+	.ltime{
+		float: left;
+		width: 25%;
+		height: 50px;
+	}
+	.ltext{
+		float: left;
+		width: 75%;
+		height: 50px;
+		text-align: left;
 	}
 </style>
 <DIV class="catglow">
