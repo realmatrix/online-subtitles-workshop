@@ -34,6 +34,12 @@
 	.tlend{
 	display: none; /* hide start time textbox*/
 	}
+	.lstart{
+		height: 50%;
+	}
+	.lend{
+		height: 50%;
+	}
 </style>
 <DIV class="catglow">
 <DIV class="cathead-m">

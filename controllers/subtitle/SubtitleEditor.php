@@ -47,14 +47,21 @@
 			$AllLines = $GLOBALS['COMMON']->db_query("SELECT * FROM `SubtitlesContent` WHERE `sid` = :sid and `cid` = :cid", $args);
 			$res = "";
 			for ($i=0; $i < count($AllLines); $i++) {
-				$res .="<a name='line".$AllLines[$i]['line']."'></a>"; 
-				$res .= "<div id='dline".$AllLines[$i]['line']."'>";
-				$res .= "<div class='otext'>".$AllLines[$i]['text']."</div>";
+				$id = $AllLines[$i]['id'];
+				$LineNumber = $AllLines[$i]['line'];
+				$Start = $AllLines[$i]['start'];
+				$End = $AllLines[$i]['end'];
+				$Text = $AllLines[$i]['text'];
+				$Transcript = $AllLines[$i]['TranscribedText'];
+				if($Transcript==""){$Transcript = "...";}
+				$res .="<a name='line".$LineNumber."'></a>"; 
+				$res .= "<div id='dline".$LineNumber."'>";
+				$res .= "<div class='otext'>".$Text."</div>";
 				$res .= "<div class='ltime'>";
-				$res .= "<div class='lstart'><p id='pstart".$AllLines[$i]['line']."'  onclick='ShowHide(&quot;tlstart".$AllLines[$i]['line']."&quot, &quot;pstart".$AllLines[$i]['line']."&quot;);'>".$AllLines[$i]['start']."</p><input type='text' id='tlstart".$AllLines[$i]['line']."' class='tlstart' value='".$AllLines[$i]['start']."'></div>";
-				$res .= "<div class='lend'><p id='pend".$AllLines[$i]['line']."' onclick='ShowHide(&quot;tlend".$AllLines[$i]['line']."&quot, &quot;pend".$AllLines[$i]['line']."&quot;);'>".$AllLines[$i]['end']."</p><input type='text' id='tlend".$AllLines[$i]['line']."' class='tlend' value='".$AllLines[$i]['end']."'></div>";
+				$res .= "<div class='lstart'><p class='pstart' id='pstart".$LineNumber."'  onclick='ShowHide(&quot;tlstart".$LineNumber."&quot, &quot;pstart".$LineNumber."&quot;);'>".$Start."</p><input type='text' id='tlstart".$LineNumber."' class='tlstart' value='".$Start."'></div>";
+				$res .= "<div class='lend'><p class='pend' id='pend".$LineNumber."' onclick='ShowHide(&quot;tlend".$LineNumber."&quot, &quot;pend".$LineNumber."&quot;);'>".$End."</p><input type='text' id='tlend".$LineNumber."' class='tlend' value='".$End."'></div>";
 				$res .= "</div>";
-				$res .= "<div class='ltext'>".$AllLines[$i]['TranscribedText']."<--</div>";
+				$res .= "<div class='ltext'>".$Transcript."</div>";
 				$res .= "</div>";
 			}
 			return $res;
