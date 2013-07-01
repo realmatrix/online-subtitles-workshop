@@ -19,12 +19,12 @@
 	}
 	.ltime{
 		float: left;
-		width: 25%;
+		width: 20%;
 		height: 50px;
 	}
 	.ltext{
 		float: left;
-		width: 75%;
+		width: 80%;
 		height: 50px;
 		text-align: left;
 	}
@@ -40,12 +40,16 @@
 	.lend{
 		height: 50%;
 	}
+	.tatransscript{
+		display: none; /* hide transscript textbox*/
+		width: 90%;
+	}
 </style>
 <DIV class="catglow">
 <DIV class="cathead-m">
 <DIV class="cathead-r">
 <DIV class="cathead-l">                    
-	{title}                
+	{title} - {CDTitle}                
 </DIV>
 </DIV>
 </DIV>
