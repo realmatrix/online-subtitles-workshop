@@ -63,7 +63,7 @@
 				<p class='pstart' id='pstart".$LineNumber."'  onclick='ShowHide(&quot;tlstart".$LineNumber."&quot, &quot;pstart".$LineNumber."&quot;);'>".$Start."</p><input type='text' id='tlstart".$LineNumber."' class='tlstart' value='".$Start."'></div>";
 				$res .= "<div class='lend'><p class='pend' id='pend".$LineNumber."' onclick='ShowHide(&quot;tlend".$LineNumber."&quot, &quot;pend".$LineNumber."&quot;);'>".$End."</p><input type='text' id='tlend".$LineNumber."' class='tlend' value='".$End."'></div>";
 				$res .= "</div>";
-				$res .= "<div class='ltext'><p tabindex=".$index." id='ptrans".$LineNumber."' class='ptransscript' onclick='ShowHide(&quot;ttransscript".$LineNumber."&quot;, &quot;ptrans".$LineNumber."&quot;);' onfocus='ShowHide(&quot;ttransscript".$LineNumber."&quot;, &quot;ptrans".$LineNumber."&quot;);'>".$Transcript."</p><textarea class='tatransscript' id='ttransscript".$LineNumber."'>".$Transcript."</textarea></div>";
+				$res .= "<div class='ltext'><p tabindex=".$index." id='ptrans".$LineNumber."' class='ptransscript' onclick='ShowHide(&quot;ttransscript".$LineNumber."&quot;, &quot;ptrans".$LineNumber."&quot;);' onfocus='ShowHide(&quot;ttransscript".$LineNumber."&quot;, &quot;ptrans".$LineNumber."&quot;);'>".$Transcript."</p><textarea class='tatransscript' id='ttransscript".$LineNumber."' onlosefocus=''>".$Transcript."</textarea></div>";
 				$res .= "</div>";
 			}
 			return $res;
