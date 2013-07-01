@@ -6,7 +6,13 @@
  		elm1.style.display = "block"; //show
  		if( show.substring(0,12) == "ttransscript" ){
  			document.getElementById(show).focus();
+ 			document.getElementById(show).select();
  		}
+	}
+	
+	function save(type, id){
+		//type=> start end text
+		//id=> textbox or textarea id
 	}
 </script>
 <style>
@@ -19,6 +25,8 @@
 		width: 100%;
 		text-align: left;
 		clear: left;
+		font-weight: bold;
+		color: #000066;
 	}
 	.ltime{
 		float: left;
