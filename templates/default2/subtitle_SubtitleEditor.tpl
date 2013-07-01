@@ -4,6 +4,9 @@
  		elm2.style.display = "none"; //hide
 		var elm1 = document.getElementById(show);
  		elm1.style.display = "block"; //show
+ 		if(elm1.substr(0,11)='ttransscript'){
+ 			alert('yes');
+ 		}
 	}
 </script>
 <style>
