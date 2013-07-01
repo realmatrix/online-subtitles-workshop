@@ -4,8 +4,8 @@
  		elm2.style.display = "none"; //hide
 		var elm1 = document.getElementById(show);
  		elm1.style.display = "block"; //show
- 		if(show.substring(0,12)='ttransscript'){
- 			alert('yes');
+ 		if( show.substring(0,12) == "ttransscript" ){
+ 			document.getElementById(show).focus();
  		}
 	}
 </script>
