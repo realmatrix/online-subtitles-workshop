@@ -35,6 +35,12 @@
 		
 		function UpdateSubtitle(){
 			if($GLOBALS['vars']['type']!="start" and $GLOBALS['vars']['type']!="end" and $GLOBALS['vars']['type']!="text"){return false;}
+			if($GLOBALS['vars']['type']=="start"){self::UpdateStart();}
+			if($GLOBALS['vars']['type']=="end"){self::UpdateEnd();}
+			if($GLOBALS['vars']['type']=="text"){self::UpdateText();}
+		}
+		
+		function UpdateStart(){
 			$args = array(
 				array(),
 			);
@@ -42,6 +48,21 @@
 			self::$query = "it works";
 		}
 		
+		function UpdateEnd(){
+			$args = array(
+				array(),
+			);
+			$res = $GLOBALS['COMMON']->db_query("", $args);
+			self::$query = "it works";
+		}
+		
+		function UpdateText(){
+			$args = array(
+				array(),
+			);
+			$res = $GLOBALS['COMMON']->db_query("", $args);
+			self::$query = "it works";
+		}
 
 
 		

@@ -80,7 +80,9 @@
 		function PrepareStart($LineNumber, $Start){
 			$res = "<div class='lstart'><p class='pstart' id='pstart".$LineNumber."'";
 			$res .= " onclick='ShowHide(&quot;tlstart".$LineNumber."&quot, &quot;pstart".$LineNumber."&quot;);'>".$Start."</p>";
-			$res .= " <input type='text' id='tlstart".$LineNumber."' class='tlstart' value='".$Start."'>";
+			$res .= " <input type='text' id='tlstart".$LineNumber."' class='tlstart' value='".$Start."'";
+			$res .= " onblur='ShowHide(&quot;pstart".$LineNumber."&quot;, &quot;tlstart".$LineNumber."&quot;);";
+			$res .= " />";
 			$res .= "</div>";
 			return $res;
 		}
