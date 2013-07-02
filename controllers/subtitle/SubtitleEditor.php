@@ -27,6 +27,7 @@
 				  (
 				  array("{title}", $GLOBALS['COMMON']->l("subtitle_SubtitleEditor_title")),
 				  array("{EditorContent}", self::GetContent()),
+				  array("{CDTitle}", "cd title here"),
 				 );
 			 
 		return $content;
@@ -82,7 +83,7 @@
 			$res .= " <p class='pstart' id='pstart".$LineNumber."'";
 			$res .= " onclick='ShowHide(&quot;tlstart".$LineNumber."&quot, &quot;pstart".$LineNumber."&quot;);'>".$Start."</p>";
 			$res .= " <input type='text' id='tlstart".$LineNumber."' class='tlstart' value='".$Start."'";
-			$res .= " onblur='ShowHide(&quot;pstart".$LineNumber."&quot;, &quot;tlstart".$LineNumber."&quot;);'";
+			$res .= " onblur='ShowHide(&quot;pstart".$LineNumber."&quot;, &quot;tlstart".$LineNumber."&quot;);";
 			$res .= " SaveSubtitle(&quot;start&quot;, &quot;pstart".$LineNumber."&quot;, &quot;tlstart".$LineNumber."&quot;, &quot;".$GLOBALS['vars']['sid']."&quot;, &quot;".$GLOBALS['vars']['cid']."&quot;, &quot;".$lineid."&quot;);'";
 			$res .= " />";
 			$res .= "</div>";
