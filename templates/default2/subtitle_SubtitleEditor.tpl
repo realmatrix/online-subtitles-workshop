@@ -4,14 +4,16 @@
  		elm2.style.display = "none"; //hide
 		var elm1 = document.getElementById(show);
  		elm1.style.display = "block"; //show
- 		if( show.substring(0,12) == "ttransscript" ){
+ 		if( show.substring(0,12) == "ttransscript" || show.substring(0,5) == "tlend" ){
  			document.getElementById(show).focus();
  			document.getElementById(show).select();
  		}
 	}
 	
 	function SaveSubtitle(type, pid, taid, sid, cid, lid) {
-	if(document.getElementById(pid).innerHTML != document.getElementById(taid).value){
+		var save = false;
+	if(document.getElementById(pid).innerHTML != document.getElementById(taid).value){ save = true;}	
+	if(save === true){
 		var content = document.getElementById(taid).value;
 		document.getElementById(pid).innerHTML="updating...";
 		var str = "index.php?page=query&sec=subtitle&ssec=QuerySubtitle&h=edit&type="+type+"&sid="+sid+"&cid="+cid+"&lid="+lid+"&content="+content;	

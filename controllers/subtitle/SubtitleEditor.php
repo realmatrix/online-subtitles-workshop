@@ -64,7 +64,7 @@
 				$res .= self::PrepareText($Text);
 				$res .= "<div class='ltime'>";
 				$res .= self::PrepareStart($LineNumber, $Start);
-				$res .= self::PrepareEnd($LineNumber, $End);
+				$res .= self::PrepareEnd($id, $LineNumber, $End);
 				$res .= "</div>";
 				$res .= self::PrepareTransscript($id, $pindex, $Taindex, $LineNumber, $Transcript);
 				$res .= "</div>";
@@ -85,11 +85,12 @@
 			return $res;
 		}
 		
-		function PrepareEnd($LineNumber, $End){
+		function PrepareEnd($lineid, $LineNumber, $End){
 			$res = "<div class='lend'><p class='pend' id='pend".$LineNumber."'";
 			$res .= " onclick='ShowHide(&quot;tlend".$LineNumber."&quot, &quot;pend".$LineNumber."&quot;);'>".$End."</p>";
 			$res .= " <input type='text' id='tlend".$LineNumber."' class='tlend' value='".$End."'";
-			$res .= " onblur='ShowHide(&quot;pend".$LineNumber."&quot;, &quot;tlend".$LineNumber."&quot;);'";
+			$res .= " onblur='ShowHide(&quot;pend".$LineNumber."&quot;, &quot;tlend".$LineNumber."&quot;);";
+			$res .= " SaveSubtitle(&quot;end&quot;, &quot;pend".$LineNumber."&quot;, &quot;tlend".$LineNumber."&quot;, &quot;".$GLOBALS['vars']['sid']."&quot;, &quot;".$GLOBALS['vars']['cid']."&quot;, &quot;".$lineid."&quot;);'";
 			$res .= " />";
 			$res .= "</div>";
 			return $res;
