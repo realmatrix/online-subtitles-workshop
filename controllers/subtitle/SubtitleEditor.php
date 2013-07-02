@@ -63,7 +63,7 @@
 				$res .= "<div id='dline".$LineNumber."'>";
 				$res .= self::PrepareText($Text);
 				$res .= "<div class='ltime'>";
-				$res .= self::PrepareStart($LineNumber, $Start);
+				$res .= self::PrepareStart($id, $LineNumber, $Start);
 				$res .= self::PrepareEnd($id, $LineNumber, $End);
 				$res .= "</div>";
 				$res .= self::PrepareTransscript($id, $pindex, $Taindex, $LineNumber, $Transcript);
@@ -77,11 +77,13 @@
 			return $res;
 		}
 		
-		function PrepareStart($LineNumber, $Start){
-			$res = "<div class='lstart'><p class='pstart' id='pstart".$LineNumber."'";
+		function PrepareStart($lineid, $LineNumber, $Start){
+			$res = "<div class='lstart'>";
+			$res .= " <p class='pstart' id='pstart".$LineNumber."'";
 			$res .= " onclick='ShowHide(&quot;tlstart".$LineNumber."&quot, &quot;pstart".$LineNumber."&quot;);'>".$Start."</p>";
 			$res .= " <input type='text' id='tlstart".$LineNumber."' class='tlstart' value='".$Start."'";
-			$res .= " onblur='ShowHide(&quot;pstart".$LineNumber."&quot;, &quot;tlstart".$LineNumber."&quot;);";
+			$res .= " onblur='ShowHide(&quot;pstart".$LineNumber."&quot;, &quot;tlstart".$LineNumber."&quot;);'";
+			$res .= " SaveSubtitle(&quot;start&quot;, &quot;pstart".$LineNumber."&quot;, &quot;tlstart".$LineNumber."&quot;, &quot;".$GLOBALS['vars']['sid']."&quot;, &quot;".$GLOBALS['vars']['cid']."&quot;, &quot;".$lineid."&quot;);'";
 			$res .= " />";
 			$res .= "</div>";
 			return $res;
