@@ -11,7 +11,8 @@
 	}
 	
 	function SaveSubtitle(type, pid, taid, sid, cid, lid) {
-		var content = document.getElementById(taid).innerHTML;
+	if(document.getElementById(pid).innerHTML != document.getElementById(taid).value){
+		var content = document.getElementById(taid).value;
 		document.getElementById(pid).innerHTML="updating...";
 		var str = "index.php?page=query&sec=subtitle&ssec=QuerySubtitle&h=edit&type="+type+"&sid="+sid+"&cid="+cid+"&lid="+lid+"&content="+content;	
 		if (window.XMLHttpRequest)
@@ -31,7 +32,8 @@
 		   }
 		 xmlhttp.open("GET", str, false);
 		 xmlhttp.send();
-	 }
+	}
+	}
 </script>
 
 <style>

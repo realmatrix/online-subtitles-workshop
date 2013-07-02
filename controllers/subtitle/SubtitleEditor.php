@@ -80,14 +80,18 @@
 		function PrepareStart($LineNumber, $Start){
 			$res = "<div class='lstart'><p class='pstart' id='pstart".$LineNumber."'";
 			$res .= " onclick='ShowHide(&quot;tlstart".$LineNumber."&quot, &quot;pstart".$LineNumber."&quot;);'>".$Start."</p>";
-			$res .= " <input type='text' id='tlstart".$LineNumber."' class='tlstart' value='".$Start."'></div>";
+			$res .= " <input type='text' id='tlstart".$LineNumber."' class='tlstart' value='".$Start."'>";
+			$res .= "</div>";
 			return $res;
 		}
 		
 		function PrepareEnd($LineNumber, $End){
 			$res = "<div class='lend'><p class='pend' id='pend".$LineNumber."'";
 			$res .= " onclick='ShowHide(&quot;tlend".$LineNumber."&quot, &quot;pend".$LineNumber."&quot;);'>".$End."</p>";
-			$res .= " <input type='text' id='tlend".$LineNumber."' class='tlend' value='".$End."'></div>";
+			$res .= " <input type='text' id='tlend".$LineNumber."' class='tlend' value='".$End."'";
+			$res .= " onblur='ShowHide(&quot;pend".$LineNumber."&quot;, &quot;tlend".$LineNumber."&quot;);'";
+			$res .= " />";
+			$res .= "</div>";
 			return $res;
 		}
 		
@@ -97,7 +101,9 @@
 			$res .= " onfocus='ShowHide(&quot;ttransscript".$LineNumber."&quot;, &quot;ptrans".$LineNumber."&quot;);'>".$Transcript."</p>";
 			$res .= " <textarea tabindex=".$tindex." class='tatransscript' id='ttransscript".$LineNumber."'";
 			$res .= " onblur='ShowHide(&quot;ptrans".$LineNumber."&quot;, &quot;ttransscript".$LineNumber."&quot;);";
-			$res .= " SaveSubtitle(&quot;text&quot;, &quot;ptrans".$LineNumber."&quot;, &quot;ttransscript".$LineNumber."&quot;, &quot;".$GLOBALS['vars']['sid']."&quot;, &quot;".$GLOBALS['vars']['cid']."&quot;, &quot;".$lineid."&quot;)'>".$Transcript."</textarea></div>";
+			$res .= " SaveSubtitle(&quot;text&quot;, &quot;ptrans".$LineNumber."&quot;, &quot;ttransscript".$LineNumber."&quot;, &quot;".$GLOBALS['vars']['sid']."&quot;, &quot;".$GLOBALS['vars']['cid']."&quot;, &quot;".$lineid."&quot;)';>".$Transcript;
+			$res .= "</textarea>";
+			$res .= "</div>";
 			return $res;
 		}		
 

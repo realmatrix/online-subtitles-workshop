@@ -34,6 +34,11 @@
 		}
 		
 		function UpdateSubtitle(){
+			if($GLOBALS['vars']['type']!="start" and $GLOBALS['vars']['type']!="end" and $GLOBALS['vars']['type']!="text"){return false;}
+			$args = array(
+				array(),
+			);
+			$res = $GLOBALS['COMMON']->db_query("", $args);
 			self::$query = "it works";
 		}
 		
