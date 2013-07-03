@@ -5,6 +5,7 @@
 		var elm1 = document.getElementById(show);
  		elm1.style.display = "block"; //show
  		if( show.substring(0,12) == "ttransscript" || show.substring(0,5) == "tlend" || show.substring(0,7) == "tlstart" ){
+ 			document.getElementById(show).innerHTML = document.getElementById(hide).innerHTML;
  			document.getElementById(show).focus();
  			document.getElementById(show).select();
  		}

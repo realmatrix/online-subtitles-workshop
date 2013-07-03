@@ -40,6 +40,11 @@
 			if($GLOBALS['vars']['type']=="start"){self::UpdateStart();}
 			if($GLOBALS['vars']['type']=="end"){self::UpdateEnd();}
 			if($GLOBALS['vars']['type']=="text"){self::UpdateText();}
+			$args = array(
+				array(":lid", $GLOBALS['vars']['lid'], "str"),
+			);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `SubtitlesContent` WHERE `id` = :lid", $args);
+			self::$query = $res[0][$GLOBALS['vars']['type']];
 		}
 		
 		function UpdateStart(){
@@ -48,12 +53,12 @@
 			if($timing['h']=="" or $timing['m']=="" or $timing['s']=="" or $timing['ms']==""){$update = FALSE;}
 			if(strlen($timing['h'])!=2 or strlen($timing['m'])!=2 or strlen($timing['s'])!=2 or strlen($timing['ms'])!=3){$update = FALSE;}
 			if(!is_numeric($timing['h']) or !is_numeric($timing['m']) or !is_numeric($timing['s']) or !is_numeric($timing['ms'])){$update = FALSE;}
-			if($update === FALSE){self::$query = $GLOBALS['vars']['content']; return FALSE;}
+			if($update === FALSE){return FALSE;}
 			$args = array(
-				array(),
+				array(":lid", $GLOBALS['vars']['lid'], "str"),
+				array(":start", $GLOBALS['vars']['content'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("", $args);
-			self::$query = "it works";
+			$res = $GLOBALS['COMMON']->db_query("UPDATE `SubtitlesContent` SET `start` = :start WHERE `id` = :lid ;", $args);
 		}
 		
 		function UpdateEnd(){
@@ -61,7 +66,6 @@
 				array(),
 			);
 			$res = $GLOBALS['COMMON']->db_query("", $args);
-			self::$query = "it works";
 		}
 		
 		function UpdateText(){
@@ -69,7 +73,6 @@
 				array(),
 			);
 			$res = $GLOBALS['COMMON']->db_query("", $args);
-			self::$query = "it works";
 		}
 		
 		function GetPermission(){
