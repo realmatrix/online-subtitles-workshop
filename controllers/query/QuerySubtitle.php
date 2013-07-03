@@ -44,6 +44,7 @@
 				array(":lid", $GLOBALS['vars']['lid'], "str"),
 			);
 			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `SubtitlesContent` WHERE `id` = :lid", $args);
+			if($GLOBALS['vars']['type']=="text"){$GLOBALS['vars']['type'] = "TranscribedText";}
 			self::$query = $res[0][$GLOBALS['vars']['type']];
 		}
 		
@@ -62,17 +63,25 @@
 		}
 		
 		function UpdateEnd(){
+			$update = TRUE;
+			$timing = self::Timing($GLOBALS['vars']['content']);
+			if($timing['h']=="" or $timing['m']=="" or $timing['s']=="" or $timing['ms']==""){$update = FALSE;}
+			if(strlen($timing['h'])!=2 or strlen($timing['m'])!=2 or strlen($timing['s'])!=2 or strlen($timing['ms'])!=3){$update = FALSE;}
+			if(!is_numeric($timing['h']) or !is_numeric($timing['m']) or !is_numeric($timing['s']) or !is_numeric($timing['ms'])){$update = FALSE;}
+			if($update === FALSE){return FALSE;}
 			$args = array(
-				array(),
+				array(":lid", $GLOBALS['vars']['lid'], "str"),
+				array(":end", $GLOBALS['vars']['content'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("", $args);
+			$res = $GLOBALS['COMMON']->db_query("UPDATE `SubtitlesContent` SET `end` = :end WHERE `id` = :lid ;", $args);
 		}
 		
 		function UpdateText(){
 			$args = array(
-				array(),
+				array(":lid", $GLOBALS['vars']['lid'], "str"),
+				array(":text", $GLOBALS['vars']['content'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("", $args);
+			$res = $GLOBALS['COMMON']->db_query("UPDATE `SubtitlesContent` SET `TranscribedText` = :text WHERE `id` = :lid ;", $args);
 		}
 		
 		function GetPermission(){
