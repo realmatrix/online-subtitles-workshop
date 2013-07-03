@@ -46,8 +46,8 @@
 			$update = TRUE;
 			$timing = self::Timing($GLOBALS['vars']['content']);
 			if($timing['h']=="" or $timing['m']=="" or $timing['s']=="" or $timing['ms']==""){$update = FALSE;}
-			if(strlen($timing['h'])!=2 and strlen($timing['m'])!=2 and strlen($timing['s'])!=2 and strlen($timing['ms'])!=3){$update = FALSE;}
-			if(!is_int($timing['h']) and !is_int($timing['m']) and !is_int($timing['s']) and !is_int($timing['ms'])){$update = FALSE;}
+			if(strlen($timing['h'])!=2 or strlen($timing['m'])!=2 or strlen($timing['s'])!=2 or strlen($timing['ms'])!=3){$update = FALSE;}
+			if(!is_numeric($timing['h']) or !is_numeric($timing['m']) or !is_numeric($timing['s']) or !is_numeric($timing['ms'])){$update = FALSE;}
 			if($update === FALSE){self::$query = $GLOBALS['vars']['content']; return FALSE;}
 			$args = array(
 				array(),
