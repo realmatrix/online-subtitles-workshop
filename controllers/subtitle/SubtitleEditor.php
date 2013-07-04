@@ -61,8 +61,9 @@
 				$Transcript = $AllLines[$i]['TranscribedText'];
 				if($Transcript==""){$Transcript = "...";}
 				$res .="<a name='line".$LineNumber."'></a>"; 
-				$res .= "<div id='dline".$LineNumber."'>";
+				$res .= "<div class='NewLine' id='dline".$LineNumber."'>";
 				$res .= self::PrepareText($Text);
+				$res .= self::PrepareNumber($LineNumber);
 				$res .= "<div class='ltime'>";
 				$res .= self::PrepareStart($id, $LineNumber, $Start);
 				$res .= self::PrepareEnd($id, $LineNumber, $End);
@@ -70,6 +71,11 @@
 				$res .= self::PrepareTransscript($id, $pindex, $Taindex, $LineNumber, $Transcript);
 				$res .= "</div>";
 			}
+			return $res;
+		}
+
+		function PrepareNumber($LineNumber){
+			$res = "<div class='LineNumber'>".$LineNumber."</div>";
 			return $res;
 		}
 

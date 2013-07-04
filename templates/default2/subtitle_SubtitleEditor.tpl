@@ -40,12 +40,16 @@
 </script>
 
 <style>
+	.NewLine{
+		clear: left;
+	}
 	#editor-SubtitleContent{
 		width: 100%;
 		height: 600px;
 		overflow-y: scroll;
 	}
-	.otext{
+	.otext
+	{
 		width: 100%;
 		text-align: left;
 		clear: left;
@@ -59,7 +63,7 @@
 	}
 	.ltext{
 		float: left;
-		width: 80%;
+		width: 70%;
 		height: 50px;
 		text-align: left;
 	}
@@ -82,6 +86,11 @@
 	.ptransscript{
 		width: 90%;
 		height: 100%;
+	}
+	.LineNumber{
+		float: left;
+		width: 40px;
+		font-weight: bold;
 	}
 </style>
 <DIV class="catglow">
