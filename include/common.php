@@ -696,5 +696,22 @@ class Common{
 	}
 	
 	
+	
+	function ArrangeLines($sid, $cid){
+		$args = array(
+			array(":sid", $sid, "str"),
+			array("cid", $cid, "str"),
+		);
+		$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `SubtitlesContent` WHERE `sid` = :sid and `cid` = :cid ORDER BY start ASC", $args);
+		for ($i=0; $i < count($res); $i++) { 
+			$args = array(
+				array(":id", $res[$i]['id'], "str"),
+				array(":start", $res[$i]['start'], "str"),
+			);
+			$GLOBALS['COMMON']->db_query("UPDATE `SubtitlesContent` SET `start` = :start WHERE `id` = :id ;", $args);
+		}
+	}
+	
+	
 }
 ?>

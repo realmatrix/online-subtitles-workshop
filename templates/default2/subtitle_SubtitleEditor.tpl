@@ -90,7 +90,7 @@
 	.LineNumber{
 		float: left;
 		width: 40px;
-		font-weight: bold;
+		color: #082C52;
 	}
 </style>
 <DIV class="catglow">
