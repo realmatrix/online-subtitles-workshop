@@ -36,6 +36,7 @@
 				  array("{rd-month}", self::months()),
 				  array("{rd-year}", self::years()),
 				  array("{length}", self::minutes()),
+				  array("{title}", $GLOBALS['COMMON']->l("video_AddVideo_title")),
 				  array("{error}", $GLOBALS['COMMON']->FormatMessage("error", self::$error)),
 				  array("{message}", $GLOBALS['COMMON']->FormatMessage("message", self::$message)),
 				  array("{Type}", $GLOBALS['COMMON']->l('video_AddVideo_NewVideoType')),
