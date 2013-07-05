@@ -7,9 +7,9 @@
 	#div-submitnewvideo{width:98%;}
 </style>
 
-<br /><br />
+
 <div>
-<DIV class="catglow" style="width:90%; margin: 0 auto;">
+<DIV class="catglow" style="width:100%; margin: 0 auto;">
 <DIV class="cathead-m">
 <DIV class="cathead-r">
 <DIV class="cathead-l">                    
