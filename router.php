@@ -39,7 +39,10 @@
              }
          }
      }
-/////////////////////////////////////////////////////////	 
+/////////////////////////////////////////////////////////
+
+	//if($GLOBALS['vars']['dataonly']=="yes"){$DataOnly=1;}else{$DataOnly=0;}
+	//echo $GLOBALS['COMMON']->SystemRouter($SystemPage, $SystemSection, $DataOnly, $getcontroller, $getsection);	 
 	 	
 	switch ($SystemPage) {
     case ($SystemPage=="home" or $SystemPage=="video" or $SystemPage=="team" or $SystemPage=="subtitle") and $dataonly!="yes":

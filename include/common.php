@@ -1,5 +1,39 @@
 <?php
 class Common{
+	
+	
+	function SystemRouter($page="", $sec="", $dataonly="", $controller="", $widget=""){
+		if($page!=""){
+			$args = array(
+				array(":page", $page, "str"),
+				array(":sec", $sec, "str"),
+				array(":dataonly", $dataonly, "str"),
+			);
+			$res = self::db_query("SELECT * FROM `SystemRouter` WHERE `page`=:page and `sec`=:sec and `dataonly`=:dataonly", $args);
+			if(count($res)===0){
+				$res = self::db_query("SELECT * FROM `SystemRouter` WHERE `page`=:page and `dataonly`=:dataonly", $args);
+				print_r($res);
+			}			
+		$route = self::Route($res);
+		return $route;
+		}
+	}
+	
+	
+	
+	function Route($res){
+		$content = "";
+		for ($i=0; $i < count($res); $i++) { 
+			if($res[$i]['head']!=0){$content.=self::render($GLOBALS['TemplateHead'], "head");}
+			if($res[$i]['header']!=0){$content.=self::render($GLOBALS['TemplateHeader'], "header");}
+			if($res[$i]['left']!=0){$content.=self::render($GLOBALS['TemplateLeft'], "left");}
+			if($res[$i]['body']!=0){$content.=self::render($GLOBALS['TemplateBody'], "body");}
+			if($res[$i]['right']!=0){$content.=self::render($GLOBALS['TemplateRight'], "right");}
+			if($res[$i]['footer']!=0){$content.=self::render($GLOBALS['TemplateFooter'], "footer");}
+		}
+		return $content;
+	}
+
 
 
 	function LoadTemplate($template){
