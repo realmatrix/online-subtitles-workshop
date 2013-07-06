@@ -17,7 +17,7 @@
 
 
 <!-- editor player -->
-<div id="subtitleeditor" style="width: 99%;">
+<div id="subtitleeditor" style="width: 100%;">
 	
 
 
@@ -32,25 +32,13 @@
 		}
 	</style>
 	
+
 	<script type="text/javascript">
 	    jwplayer("myElement").setup({
-	    playlist: [{
-	        image: "http://img.youtube.com/vi/A85EtOalcsM/0.jpg",
-	        file: "http://www.youtube.com/watch?v=5guMumPFBag",
-	        title: "Sintel Movie Trailer",
-	        description: "dsdlk;f hdskfljh asldkfh sdlkfjh sdlkfhsdkjfh"
-	    },{
-	        image: "http://img.youtube.com/vi/A85EtOalcsM/0.jpg",
-	        file: "http://www.youtube.com/watch?v=5guMumPFBag",
-	        title: "Big Buck Bunny Movie Trailer",
-	        description: "wsdkfj wokrjhopeiwjr wekjrewl;krj3o;i2jri3"
-	    }],
+	        file: "{source}",
+	        image: "{thumb}",
+	        width: "100%;",
 	        height: "400",
-	    listbar: {
-	        position: 'right',
-	        size: 310
-	    },
-	        width: "100%",
 	    });
 	</script>
 
