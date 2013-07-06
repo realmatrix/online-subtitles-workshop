@@ -1,3 +1,8 @@
+<style>
+	.login-container input{
+		margin-bottom: 2px;
+	}
+</style>
 <DIV class="catglow">
 <DIV class="cathead-m">
 <DIV class="cathead-r">
@@ -18,27 +23,23 @@
 
 
 <!-- login form -->
-		
+<div class="login-container" style="width: 97%;">		
 						<div id="login"> <!-- keep login form inside div with id="login" -->
 						<form method="post" action="index.php">
-							<table cellspacing="0" cellpadding="1" style="width:100%;">
-								<tr>
-						<td><p>{LoginUsername}</p></td><td><input type="text" name="username" style="width:100%;"/></td>
-						</tr><tr>
-						<td><p>{LoginPassword}</p></td><td><input type="password" name="password" style="width:100%;"/></td>
-						</tr><tr>
-							<td></td>
-							<td>
+
+						<label for="username" style="width: 100%;">{LoginUsername}</label>
+						<input type="text" name="username" style="width:100%;"/>
+						<label for="password" style="width: 100%;">{LoginPassword}</label>
+						<input type="password" name="password" style="width:100%;"/>
+
 						<input type="submit" value="{LoginSubmit}" class="SubmitButton"/>
 						<input type="hidden" name="login" value="yes" />
 						<input type="hidden" name="page" value="login" />
 						<a href="?page=register">{LoginOrRegister}</a>
-						</td>
-						</tr>
-						</table>
+				
 						</form>
 						</div>
-		
+</div>		
 <!-- end login form -->		   	 
     </TD>
 	</TR>
