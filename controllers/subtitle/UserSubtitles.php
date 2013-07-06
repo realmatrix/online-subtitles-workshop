@@ -27,6 +27,13 @@
 				  (
 				  array("{title}", $GLOBALS['COMMON']->l("subtitle_UserSubtitles_title")),
 				  array("{tablerows}", self::GetSubtitles()),
+				  array("{delete}", $GLOBALS['COMMON']->l("subtitle_UserSubtitles_delete")),
+				  array("{del}", $GLOBALS['COMMON']->l("subtitles_UserSubtitles_del")),
+				  array("{releasename}", $GLOBALS['COMMON']->l("subtitle_UserSubtitles_ReleaseName")),
+				  array("{version}", $GLOBALS['COMMON']->l("subtitle_UserSubtitles_version")),
+				  array("{language}", $GLOBALS['COMMON']->l("subtitle_UserSubtitles_language")),
+				  array("{manage}", $GLOBALS['COMMON']->l("subtitle_UserSubtitles_manage")),
+				  array("{edit}", $GLOBALS['COMMON']->l("subtitle_UserSubtitles_edit")),
 				 );
 			 
 		return $content;

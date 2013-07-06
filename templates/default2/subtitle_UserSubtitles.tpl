@@ -1,3 +1,23 @@
+<style>
+	.table-usersubtitles td:nth-child(1){
+		text-align: center;
+	}
+	.table-usersubtitles td:nth-child(2){
+		text-align: left;
+	}
+	.table-usersubtitles td:nth-child(3){
+		text-align: center;
+	}
+	.table-usersubtitles td:nth-child(4){
+		text-align: center;
+	}
+	.table-usersubtitles td:nth-child(5){
+		text-align: center;
+	}
+	.table-usersubtitles td:nth-child(6){
+		text-align: center;
+	}
+</style>
 <DIV class="catglow">
 <DIV class="cathead-m">
 <DIV class="cathead-r">
@@ -19,20 +39,20 @@
 <!-- user subtitles -->
 <div id="usersubtitles" style="width: 99%;">
 <form method="post" action="index.php">
-	<table style="width: 100%;">
+	<table class="table-usersubtitles" style="width: 100%;">
 
 		<thead>
-			<th>Del</th>
-			<th>Release name</th>
-			<th>Version</th>
-			<th>Language</th>
-			<th>Manage</th>
-			<th>Edit</th>
+			<th style="text-align: center;">{del}</th>
+			<th style="text-align: left;">{releasename}</th>
+			<th style="text-align: center;">{version}</th>
+			<th style="text-align: center;">{language}</th>
+			<th style="text-align: center;">{manage}</th>
+			<th style="text-align: center;">{edit}</th>
 		</thead>
 		{tablerows}
 	</table>
 <br />
-Delete selected subtitles <input type="submit" value="{delete}"/>
+	<input type="submit" value="{delete}"/>
 	<!-- <input type="hidden" name="dataonly" value="yes"/> --> <!-- uncomment if using ajax -->
 	<!-- <input type="hidden" name="getcontroller" value="subtitle"/> --> <!-- uncomment if using ajax -->
 	<!-- <input type="hidden" name="getsection" value="UserSubtitles"/> --> <!-- uncomment if using ajax -->
