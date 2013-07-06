@@ -27,9 +27,27 @@
 				$content = array
 				  (
 				  array("{title}", $GLOBALS['COMMON']->l("video_VideoList_title")),
+				  array("{TableRows}", self::GetUserVideos()),
 				 );
 			 
 		return $content;
+		}
+		
+		function GetUserVideos(){
+			$args = array(
+				array(":uid", $_SESSION['id'], "str"),
+			);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Videos` WHERE `uid` = :uid", $args);
+			$rows = "";
+			$counter = 0;
+			for ($i=0; $i < count($res); $i++) {
+				$counter++;
+				$rows .= "<tr>"; 
+				$rows .= "<td>".$counter."</td>";
+				$rows .= "<td><a href='index.php?page=video&sec=view&vid=".$res[$i]['id']."'>".$res[$i]['title']."</a></td>";
+				$rows .= "</tr>";
+			}
+			return $rows;
 		}
 
 }

@@ -17,9 +17,17 @@
 
 
 <!-- video list -->
-
-	content here
-
+<div style="width: 99%;">
+	<table style="width: 100%;">
+		<thead>
+			<th>#</th>
+			<th>Title</th>
+		</thead>
+		<tbody>
+		{TableRows}
+		</tbody>
+	</table>
+</div>
 <!-- end video list -->	
 
 
