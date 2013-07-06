@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 03, 2013 at 02:33 AM
+-- Generation Time: Jul 06, 2013 at 05:22 PM
 -- Server version: 5.5.29-log
 -- PHP Version: 5.3.21
 
@@ -567,7 +567,7 @@ CREATE TABLE IF NOT EXISTS `Lang_English` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `key` (`key`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=131 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=141 ;
 
 --
 -- Dumping data for table `Lang_English`
@@ -590,8 +590,8 @@ INSERT INTO `Lang_English` (`id`, `key`, `text`) VALUES
 (16, 'register_UsernameExist', 'Username already exist.'),
 (17, 'register_EmailExist', 'email already exist.'),
 (18, 'register_completed', 'Registration completed successfully, you will now be redirected to home page in 5 seconds.'),
-(19, 'login_username', 'Username'),
-(20, 'login_password', 'Password'),
+(19, 'login_username', 'Username:'),
+(20, 'login_password', 'Password:'),
 (21, 'login_submit', 'login'),
 (22, 'login_NoUsername', 'Opps! You don''t enter your username!'),
 (23, 'login_NoPassword', 'Opps! You didn''t enter your passwords!'),
@@ -698,7 +698,17 @@ INSERT INTO `Lang_English` (`id`, `key`, `text`) VALUES
 (127, 'subtitle_SubtitleUploader_submit', 'Upload'),
 (128, 'subtitle_SubtitleDownload_title', 'Download Subtitle'),
 (129, 'subtitle_EditorControls_title', 'Editor Controls'),
-(130, 'player_EditorPlayer_title', 'Video Player');
+(130, 'player_EditorPlayer_title', 'Video Player'),
+(131, 'subtitle_UserSubtitles_delete', 'Delete selected subtitles'),
+(132, 'subtitles_UserSubtitles_del', 'Del'),
+(133, 'subtitle_UserSubtitles_ReleaseName', 'Release Name'),
+(134, 'subtitle_UserSubtitles_version', 'Version'),
+(135, 'subtitle_UserSubtitles_language', 'Language'),
+(136, 'subtitle_UserSubtitles_manage', 'Manage'),
+(137, 'subtitle_UserSubtitles_edit', 'Edit'),
+(138, 'subtitle_SubtitleCDS_edit', 'Edit'),
+(139, 'video_VideoList_title', 'My Videos'),
+(140, 'team_UserTeams_title', 'My Teams');
 
 -- --------------------------------------------------------
 
@@ -712,14 +722,14 @@ CREATE TABLE IF NOT EXISTS `OnlineUsers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=653 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=685 ;
 
 --
 -- Dumping data for table `OnlineUsers`
 --
 
 INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(652, 'l0rbe1a5bes5331l7os1gn6ne0', 1372814929, '');
+(684, 't9slgnq3d8tmf03pilbv7n0hb6', 1373127742, '');
 
 -- --------------------------------------------------------
 
@@ -803,9 +813,9 @@ CREATE TABLE IF NOT EXISTS `SubtitlesContent` (
 --
 
 INSERT INTO `SubtitlesContent` (`id`, `sid`, `uid`, `cid`, `line`, `start`, `end`, `text`, `TranscribedText`) VALUES
-(7729, 52, 18, 10, 0, '00:01:02,111', '00:01:04,241', 'Are you seriously<br />trying to rope-a-dope me? <br />', 'test aaa2222 bbbb'),
-(7730, 52, 18, 10, 2, '00:01:04,242', '00:01:05,891', 'That''s an old man''s move.<br />', ''),
-(7731, 52, 18, 10, 3, '00:01:05,891', '00:01:08,239', '- I am old man. <br />- No, you''re not.<br />', ''),
+(7729, 52, 18, 10, 0, '00:01:02,111', '00:01:04,241', 'Are you seriously<br />trying to rope-a-dope me? <br />', 'this is test 1'),
+(7730, 52, 18, 10, 2, '00:01:04,242', '00:01:05,891', 'That''s an old man''s move.<br />', 'this is test 2'),
+(7731, 52, 18, 10, 3, '00:01:05,891', '00:01:08,239', '- I am old man. <br />- No, you''re not.<br />', 'this is test 3'),
 (7732, 52, 18, 10, 4, '00:01:08,240', '00:01:09,685', 'But you box like one.<br />', ''),
 (7733, 52, 18, 10, 5, '00:01:13,120', '00:01:14,119', 'Not bad.<br />', ''),
 (7734, 52, 18, 10, 6, '00:01:14,120', '00:01:16,009', 'Come on. Keep your guard up.Come on.<br />', ''),
@@ -2051,6 +2061,39 @@ INSERT INTO `SubtitlesContent` (`id`, `sid`, `uid`, `cid`, `line`, `start`, `end
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `SystemRouter`
+--
+
+CREATE TABLE IF NOT EXISTS `SystemRouter` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `head` tinyint(1) NOT NULL,
+  `header` tinyint(1) NOT NULL,
+  `left` tinyint(1) NOT NULL,
+  `body` tinyint(1) NOT NULL,
+  `right` tinyint(1) NOT NULL,
+  `footer` tinyint(1) NOT NULL,
+  `dataonly` tinyint(1) NOT NULL,
+  `controller` tinyint(1) NOT NULL,
+  `widget` tinyint(1) NOT NULL,
+  `page` varchar(255) NOT NULL,
+  `sec` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `page` (`page`,`sec`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `SystemRouter`
+--
+
+INSERT INTO `SystemRouter` (`id`, `head`, `header`, `left`, `body`, `right`, `footer`, `dataonly`, `controller`, `widget`, `page`, `sec`) VALUES
+(1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'home', ''),
+(2, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'video', ''),
+(3, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'team', ''),
+(4, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'subtitle', '');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `TeamPermissions`
 --
 
@@ -2076,7 +2119,7 @@ CREATE TABLE IF NOT EXISTS `Teams` (
   `created` datetime NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `title` (`title`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `Teams`
@@ -2088,7 +2131,8 @@ INSERT INTO `Teams` (`id`, `owner`, `title`, `created`) VALUES
 (6, 18, 'team 3', '2013-06-27 21:34:39'),
 (7, 18, 'team 4', '2013-06-28 23:30:15'),
 (8, 18, 'vbnvghjghjghj', '2013-06-30 00:53:03'),
-(9, 18, 'team 6', '2013-06-30 02:26:06');
+(9, 18, 'team 6', '2013-06-30 02:26:06'),
+(10, 18, 'team 7', '2013-07-06 17:21:34');
 
 -- --------------------------------------------------------
 
