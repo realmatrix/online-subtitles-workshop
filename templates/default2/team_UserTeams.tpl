@@ -20,9 +20,10 @@
 
 	<div style="width: 99%;">
 		
-		<table>
+		<table style="width: 100%;">
 			<thead>
 				<th>#</th>
+				<th>Title</th>
 			</thead>
 			<tbody>
 				{TableRows}

@@ -17,25 +17,25 @@
 
 
 <div id="form-addteam" style="width: 99%;">
-<table style="width: 100%;">
+
 <form method="post" action="index.php">
-	<tr><td>
-	<label for="teamname">{teamname}</label>
+<div style="float: left; width: 13%">{teamname}</div>
+<div style="float: left; width: 75%; text-align: left;">
 	<input type="text" name="teamname" style="width: 100%;"/>
-	</td></tr>
-	<tr><td style="text-align: center;">
+</div>
+<div style="float: right; width: 10%; text-align: right;">
 	<input type="submit" value="{submit}" />
-	</td></tr>
+</div>
 	
 	<!-- <input type="hidden" name="dataonly" value="yes" /> --> <!-- uncomment if using ajax -->
 	<!-- <input type="hidden" name="getcontroller" value="team" /> --> <!-- uncomment if using ajax -->
 	<!-- <input type="hidden" name="getsection" value="AddTeam" /> --> <!-- uncomment if using ajax -->
-	<input type="hidden" name="page" value="team" /> <!-- comment if using ajax -->
-	<input type="hidden" name="sec" value="add" /> <!-- comment if using ajax -->
+	<input type="hidden" name="page" value="{page}" /> <!-- comment if using ajax -->
+	<input type="hidden" name="sec" value="{sec}" /> <!-- comment if using ajax -->
 	<input type="hidden" name="ssec" value="AddTeam" />
 	<input type="hidden" name="h" value="CreateTeam" />
 </form>
-</table>
+
 </div>
 
 

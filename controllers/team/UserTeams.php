@@ -43,6 +43,7 @@
 				$counter++;
 				$rows .= "<tr>";
 				$rows .= "<td>".$counter."</td>";
+				$rows .= "<td>".$res[$i]['title']."</td>";
 				$rows .= "</tr>";
 			}
 			return $rows;

@@ -28,8 +28,9 @@
 				  array("{title}", $GLOBALS['COMMON']->l('team_AddTeam_title')),
 				  array("{teamname}", $GLOBALS['COMMON']->l('team_AddTeam_TeamName')),
 				  array("{submit}", $GLOBALS['COMMON']->l('team_AddTeam_submit')),
+				  array("{page}", $GLOBALS['vars']['page']),
+				  array("{sec}", $GLOBALS['vars']['sec']),
 				 );
-			 
 		return $content;
 		}
 		
