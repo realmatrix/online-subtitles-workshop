@@ -45,7 +45,7 @@
 	//echo $GLOBALS['COMMON']->SystemRouter($SystemPage, $SystemSection, $DataOnly, $getcontroller, $getsection);	 
 	 	
 	switch ($SystemPage) {
-    case ($SystemPage=="home" or $SystemPage=="video" or $SystemPage=="team" or $SystemPage=="subtitle") and $dataonly!="yes":
+    case ($SystemPage=="home" or $SystemPage=="video" or $SystemPage=="team" or $SystemPage=="subtitle" or $SystemPage=="forum") and $dataonly!="yes":
 		//loading template
 		$GLOBALS['FinalPage'] = $GLOBALS['COMMON']->render($GLOBALS['TemplateHead'], "head");
 		$GLOBALS['FinalPage'] .= $GLOBALS['COMMON']->render($GLOBALS['TemplateHeader'], "header");
