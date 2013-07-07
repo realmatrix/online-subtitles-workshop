@@ -37,7 +37,9 @@
 			$rows = "";
 			for ($i=0; $i < count($res); $i++) { 
 				$rows .= "<tr>";
-				$rows .= "<td>".$res[$i]['title']."</td>";
+				$rows .= "<td><a href='index.php?page=forum&sec=forums&cat=".$res[$i]['id']."'>".$res[$i]['title']."</a></td>";
+				$rows .= "<td>".$res[$i]['description']."</td>";
+				$rows .= "<td>forums count</td>";
 				$rows .= "</tr>";
 			}
 			return $rows;
