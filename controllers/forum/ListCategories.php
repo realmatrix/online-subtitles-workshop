@@ -1,19 +1,19 @@
 <?php
 
-	class CListThreads{
+	class CListCategories{
 	
-		function ListThreads(){
-			return self::ListThreads_content();
+		function ListCategories(){
+			return self::ListCategories_content();
 		}
 	
-		function ListThreads_hooks(){
+		function ListCategories_hooks(){
 			$array = array(
 				array("test", "test")
 			);
 			return $array;
 		}
 			
-		function ListThreads_options(){
+		function ListCategories_options(){
 			$options = array(
 			"show"=>array(),
 			"hide"=>array(),
@@ -22,10 +22,10 @@
 			return $options;
 		}
 				
-		function ListThreads_content(){
+		function ListCategories_content(){
 				$content = array
 				  (
-				  array("{title}", $GLOBALS['COMMON']->l("forum_ListThreads_title")),
+				  array("{title}", $GLOBALS['COMMON']->l("forum_ListCategories_title")),
 				 );
 			 
 		return $content;

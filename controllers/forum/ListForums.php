@@ -25,7 +25,7 @@
 		function ListForums_content(){
 				$content = array
 				  (
-				  array("{vid}", $GLOBALS['vars']['vid']),
+				  array("{title}", $GLOBALS['COMMON']->l("forum_ListForums_title")),
 				 );
 			 
 		return $content;
