@@ -26,33 +26,33 @@
 <div style="width: 99%;">
 <!-- advanced search form -->
 <table style="width: 99%;">
-	<form id="advancedsearch" action="#">
+	<form id="advancedsearch" action="index.php" method="post">
 		<tr><td style="width: 100%;">
 		<label for="VideoTitle">{VideoTitle}</label>
-		<input type="text" name="VideoTitle" id="searchtitle" />
+		<input type="text" name="VideoTitle" id="searchtitle" value="{vthistory}"/>
 		</td></tr>
 		<tr><td>
-		<select>
+		<select name="language">
 			<option>{Language}</option>
 			{SearchLanguage}
 		</select>
-		<select>
+		<select name="category">
 			<option>{Category}</option>
 			{SearchCategory}
 		</select>
-		<select>
+		<select name="genre">
 			<option>{Genre}</option>
 			{SearchGenre}
 		</select>
-		<select>
+		<select name="country">
 			<option>{Country}</option>
 			{SearchCountry}
 		</select>
-		<select>
+		<select name="year">
 			<option>{Year}</option>
 			{SearchYear}
 		</select>
-		<select>
+		<select name="status">
 			<option>{Status}</option>
 			{SearchStatus}
 		</select>
@@ -66,7 +66,7 @@
 	<!-- <input type="hidden" name="getsection" value="AdvancedSearch" /> --> <!-- uncomment if using ajax -->
 	<input type="hidden" name="page" value="search" /> <!-- comment if using ajax -->
 	<input type="hidden" name="sec" value="advanced" /> <!-- comment if using ajax -->
-	<input type="hidden" name="ssec" value="AdvancedSearch" />
+	<input type="hidden" name="ssec" value="SearchResults" />
 	<input type="hidden" name="h" value="search" />
 		</form>
 </table>
