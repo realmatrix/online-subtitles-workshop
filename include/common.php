@@ -619,6 +619,7 @@ class Common{
 
 
 	function l($key){
+		if(!array_key_exists($key, $GLOBALS['l'])){$GLOBALS['ERROR'][]="language key '".$key."' not found";}
 		$res = $GLOBALS['l'][$key];
 		return $res;
 	}

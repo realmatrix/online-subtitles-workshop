@@ -1,7 +1,7 @@
 <?php
 
 	class CSearchResults{
-			
+//SELECT * FROM articles WHERE a_title LIKE %$input% OR a_content LIKE %$input%			
 		function SearchResults(){
 			return self::SearchResults_content();
 		}
@@ -17,7 +17,7 @@
 			$options = array(
 			"show"=>array(),
 			"hide"=>array(),
-			"loggedin"=>"both",
+			"loggedin"=>"",
 			);
 			return $options;
 		}
@@ -25,10 +25,14 @@
 		function SearchResults_content(){
 				$content = array
 				  (
-				  array("{test}", $test),
+				  array("{title}", $GLOBALS['COMMON']->l("search_SearchResults_title")),
 				 );
 			 
 		return $content;
+		}
+		
+		function search(){
+			
 		}
 		
 	

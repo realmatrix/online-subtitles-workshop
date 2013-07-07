@@ -56,15 +56,18 @@
 			<option>{Status}</option>
 			{SearchStatus}
 		</select>
-		<select>
-			<option value="A">A</option>
-			{SearchAlphabet}
-		</select>
 		</td></tr>
 		<tr><td style="text-align: center;">
 			<input type="reset" value="{reset}"/>
 			<input type="submit" value="{submit}" />
 		</td></tr>	
+	<!-- <input type="hidden" name="dataonly" value="yes" /> --> <!-- uncomment if using ajax -->
+	<!-- <input type="hidden" name="getcontroller" value="search" /> --> <!-- uncomment if using ajax -->
+	<!-- <input type="hidden" name="getsection" value="AdvancedSearch" /> --> <!-- uncomment if using ajax -->
+	<input type="hidden" name="page" value="search" /> <!-- comment if using ajax -->
+	<input type="hidden" name="sec" value="advanced" /> <!-- comment if using ajax -->
+	<input type="hidden" name="ssec" value="AdvancedSearch" />
+	<input type="hidden" name="h" value="search" />
 		</form>
 </table>
 <!-- end advanced search form -->	

@@ -90,7 +90,7 @@ table.SystemTable {
 <DIV class="cathead-m">
 <DIV class="cathead-r">
 <DIV class="cathead-l">                    
-	{SearchResults}                
+	{title}                
 </DIV>
 </DIV>
 </DIV>
