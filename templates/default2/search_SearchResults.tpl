@@ -79,7 +79,7 @@ table.SystemTable {
 <script type="text/javascript" charset="utf-8">
 			$(document).ready(function() {
 				$('#SystemTable').dataTable( {
-					"sScrollY": 200,
+					"sScrollY": 400,
 					"bJQueryUI": false,
 					"sPaginationType": "full_numbers"
 				} );
@@ -138,18 +138,7 @@ table.SystemTable {
 				</tr>
 			</tfoot>
 			<tbody>
-			<tr>
-				<td class="field">a</td>
-				<td class="field">b</td>
-				<td class="field">c</td>
-				<td class="field">d</td>
-				<td class="field">e</td>
-				<td class="field">f</td>
-				<td class="field">g</td>
-				<td class="field">h</td>
-				<td class="field">i</td>
-				<td class="field">j</td>
-			</tr>
+				{TableRows}
 			</tbody>
 		</table>
 	</div>
