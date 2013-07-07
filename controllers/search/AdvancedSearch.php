@@ -49,40 +49,35 @@
 		function languages(){
 			$languages = $GLOBALS['COMMON']->GetLanguages();
 			for ($i=0; $i < count($languages); $i++) {
-				if($GLOBALS['vars']['language']!=""){$selected="selected='selected'";}else{$selected="";} 
+				if($GLOBALS['vars']['language']==$languages[$i]['id']){$selected="selected='selected'";}else{$selected="";} 
 				$res .= "<option value='".$languages[$i]['id']."' ".$selected.">".$languages[$i]['language']."</option>";
-			}
-			return $res;
-		}
-		
-		function types(){
-			$types = $GLOBALS['COMMON']->GetVideoTypes();
-			for ($i=0; $i < count($types); $i++) { 
-				$res .= "<option value='".$types[$i]['id']."'>".$types[$i]['type']."</option>";
 			}
 			return $res;
 		}
 		
 		function categories(){
 			$categories = $GLOBALS['COMMON']->GetVideoCategories();
-			for ($i=0; $i < count($categories); $i++) { 
-				$res .= "<option value='".$categories[$i]['id']."'>".$categories[$i]['category']."</option>";
+			for ($i=0; $i < count($categories); $i++) {
+				if($GLOBALS['vars']['category']==$categories[$i]['id']){$selected="selected='selected'";}else{$selected="";} 
+				$res .= "<option value='".$categories[$i]['id']."' ".$selected.">".$categories[$i]['category']."</option>";
 			}
 			return $res;
 		}
 		
 		function countries(){
 			$countries = $GLOBALS['COMMON']->GetCountries();
-			for ($i=0; $i < count($countries); $i++) { 
-				$res .= "<option value='".$countries[$i]['id']."'>".$countries[$i]['short_name']."</option>";
+			for ($i=0; $i < count($countries); $i++) {
+				if($GLOBALS['vars']['country']==$countries[$i]['id']){$selected="selected='selected'";}else{$selected="";}
+				$res .= "<option value='".$countries[$i]['id']."' ".$selected.">".$countries[$i]['short_name']."</option>";
 			}
 			return $res;
 		}
 
 		function genres(){
 			$genres = $GLOBALS['COMMON']->GetGenres();
-			for ($i=0; $i < count($genres); $i++) { 
-				$res .= "<option value='".$genres[$i]['id']."'>".$genres[$i]['genre']."</option>";
+			for ($i=0; $i < count($genres); $i++) {
+				if($GLOBALS['vars']['genre']==$genres[$i]['id']){$selected="selected='selected'";}else{$selected="";}
+				$res .= "<option value='".$genres[$i]['id']."' ".$selected.">".$genres[$i]['genre']."</option>";
 			}
 			return $res;
 		}
