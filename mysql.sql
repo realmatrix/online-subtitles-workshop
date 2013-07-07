@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 06, 2013 at 05:22 PM
+-- Generation Time: Jul 07, 2013 at 01:22 PM
 -- Server version: 5.5.29-log
 -- PHP Version: 5.3.21
 
@@ -567,7 +567,7 @@ CREATE TABLE IF NOT EXISTS `Lang_English` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `key` (`key`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=141 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=152 ;
 
 --
 -- Dumping data for table `Lang_English`
@@ -708,7 +708,17 @@ INSERT INTO `Lang_English` (`id`, `key`, `text`) VALUES
 (137, 'subtitle_UserSubtitles_edit', 'Edit'),
 (138, 'subtitle_SubtitleCDS_edit', 'Edit'),
 (139, 'video_VideoList_title', 'My Videos'),
-(140, 'team_UserTeams_title', 'My Teams');
+(140, 'team_UserTeams_title', 'My Teams'),
+(141, 'player_ViewPlayer_title', 'Video Player'),
+(143, 'search_AdvancedSearch_VideoTitle', 'Title:'),
+(144, 'search_AdvancedSearch_submit', 'search'),
+(145, 'search_AdvancedSearch_reset', 'reset'),
+(146, 'search_AdvancedSearch_language', 'Language'),
+(147, 'search_AdvancedSearch_category', 'Category'),
+(148, 'search_AdvancedSearch_genre', 'Genre'),
+(149, 'search_AdvancedSearch_country', 'Country'),
+(150, 'search_AdvancedSearch_year', 'Year'),
+(151, 'search_AdvancedSearch_status', 'Status');
 
 -- --------------------------------------------------------
 
@@ -722,14 +732,14 @@ CREATE TABLE IF NOT EXISTS `OnlineUsers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=685 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=700 ;
 
 --
 -- Dumping data for table `OnlineUsers`
 --
 
 INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(684, 't9slgnq3d8tmf03pilbv7n0hb6', 1373127742, '');
+(699, '02svt3d5spked1qkp1ikqdujc7', 1373188479, '');
 
 -- --------------------------------------------------------
 
@@ -2252,6 +2262,8 @@ CREATE TABLE IF NOT EXISTS `Videos` (
   `synopsis` text NOT NULL,
   `thumbnail` varchar(255) NOT NULL,
   `image` varchar(255) NOT NULL,
+  `source` varchar(255) NOT NULL,
+  `year` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
 
@@ -2259,15 +2271,12 @@ CREATE TABLE IF NOT EXISTS `Videos` (
 -- Dumping data for table `Videos`
 --
 
-INSERT INTO `Videos` (`id`, `uid`, `title`, `other_title`, `type`, `category`, `language`, `country`, `genres`, `release_date`, `casting`, `director`, `length`, `tags`, `synopsis`, `thumbnail`, `image`) VALUES
-(7, 0, ':title', ':other_title', 0, 0, 0, 0, ':genres', '0000-00-00', '0', '0', 0, ':tags', ':synopsis', '', ''),
-(8, 0, ':title', ':other_title', 0, 0, 0, 0, ':genres', '0000-00-00', '0', '0', 0, ':tags', ':synopsis', '', ''),
-(9, 0, ':title', ':other_title', 0, 0, 0, 0, ':genres', '0000-00-00', '0', '0', 0, ':tags', ':synopsis', '', ''),
-(10, 18, 'jhkghj', 'ghjhgj', 2, 2, 3, 16, '2', '1817-11-19', '0', '0', 5, 'ghjhj', ' ghjghjgjh', '', ''),
-(11, 18, 'tty tyu tryu tru tryytu', 'tu t tyu tyutyu', 1, 2, 6, 3, '2', '1816-05-17', 't yu t', 't yutyu', 31, 'ty tyu', ' tyu tyuyu', '', ''),
-(12, 18, 'fhfg f fgh fgh dfh fgh fhfgh', ' fghfg fgh fgh gh', 1, 1, 13, 4, '1', '1806-02-07', 'fgh fgh fgh', 'fhg fggh', 18, 'dfgdfg, dfg dfg,df gdfg ,d fgdf,', '  dfgdf sj dsflkjh lkjsh flkjfh lskdfjh lskdfh oiuehroiuwerh lkewjrh slkjh lkjdfhslkjhlkdsjh', '', ''),
-(13, 18, 'aaaaaaaaaaaaa', 'bbbbbbbbbbbbbb', 1, 2, 6, 25, '1', '1800-01-01', 'cccccccccc', 'ddddddddd', 4, 'kjh, kjh, kjh, jklh, jkh', ' uyiyui yu uyi', '', ''),
-(14, 18, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'aaaaaaaaaaaaaaaaaaaaaaaaaa', 3, 1, 10, 14, '5', '1805-03-04', 'aaaaaaaaaaaaaaaaaaaaaaaa', 'aaaaaaaaaaaaaa', 14, 'aaaaaaaaaaaaaaaaa', ' aaaaaaaaaaaaaaaaaa', '', '');
+INSERT INTO `Videos` (`id`, `uid`, `title`, `other_title`, `type`, `category`, `language`, `country`, `genres`, `release_date`, `casting`, `director`, `length`, `tags`, `synopsis`, `thumbnail`, `image`, `source`, `year`) VALUES
+(10, 18, 'jhkghj', 'ghjhgj', 2, 2, 3, 16, '2', '1817-11-19', '0', '0', 5, 'ghjhj', ' ghjghjgjh', '', '', 'http://www.youtube.com/watch?v=5guMumPFBag', 0),
+(11, 18, 'tty tyu tryu tru tryytu', 'tu t tyu tyutyu', 1, 2, 6, 3, '2', '1816-05-17', 't yu t', 't yutyu', 31, 'ty tyu', ' tyu tyuyu', '', '', '', 0),
+(12, 18, 'fhfg f fgh fgh dfh fgh fhfgh', ' fghfg fgh fgh gh', 1, 1, 13, 4, '1', '1806-02-07', 'fgh fgh fgh', 'fhg fggh', 18, 'dfgdfg, dfg dfg,df gdfg ,d fgdf,', '  dfgdf sj dsflkjh lkjsh flkjfh lskdfjh lskdfh oiuehroiuwerh lkewjrh slkjh lkjdfhslkjhlkdsjh', '', '', '', 0),
+(13, 18, 'aaaaaaaaaaaaa', 'bbbbbbbbbbbbbb', 1, 2, 6, 25, '1', '1800-01-01', 'cccccccccc', 'ddddddddd', 4, 'kjh, kjh, kjh, jklh, jkh', ' uyiyui yu uyi', '', '', '', 0),
+(14, 18, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'aaaaaaaaaaaaaaaaaaaaaaaaaa', 3, 1, 10, 14, '5', '1805-03-04', 'aaaaaaaaaaaaaaaaaaaaaaaa', 'aaaaaaaaaaaaaa', 14, 'aaaaaaaaaaaaaaaaa', ' aaaaaaaaaaaaaaaaaa', '', '', '', 0);
 
 -- --------------------------------------------------------
 
