@@ -41,7 +41,7 @@ Created Teams: {CreatedTeams} <br />
 
 Joined Teams: {JoinedTeams} <br />
 
-Private Messages: <a href="index.php?page=messages&sec=pms">{PMS}</a> <br />				
+Private Messages: <a href="index.php?page=message&sec=umsg">{PMS}</a> <br />				
 					
 				</div>
 			
