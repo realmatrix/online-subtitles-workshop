@@ -27,7 +27,7 @@
 		function QuerySubtitle_content(){
 				$content = array
 				  (
-				  array("{query}", self::$query),
+				  array("{query}", nl2br(self::$query)), 
 				 );
 			 
 		return $content;

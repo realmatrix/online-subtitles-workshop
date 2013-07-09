@@ -16,6 +16,7 @@
 	if(document.getElementById(pid).innerHTML != document.getElementById(taid).value){ save = true;}	
 	if(save === true){
 		var content = document.getElementById(taid).value;
+		content = encodeURIComponent(content);
 		document.getElementById(pid).innerHTML="updating...";
 		var str = "index.php?page=query&sec=subtitle&ssec=QuerySubtitle&h=edit&type="+type+"&sid="+sid+"&cid="+cid+"&lid="+lid+"&content="+content;	
 		if (window.XMLHttpRequest)

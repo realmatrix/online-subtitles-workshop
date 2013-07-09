@@ -39,18 +39,19 @@
 	        file: "http://www.youtube.com/watch?v=5guMumPFBag",
 	        title: "Sintel Movie Trailer",
 	        description: "dsdlk;f hdskfljh asldkfh sdlkfjh sdlkfhsdkjfh"
-	    },{
-	        image: "http://img.youtube.com/vi/A85EtOalcsM/0.jpg",
-	        file: "http://www.youtube.com/watch?v=5guMumPFBag",
-	        title: "Big Buck Bunny Movie Trailer",
-	        description: "wsdkfj wokrjhopeiwjr wekjrewl;krj3o;i2jri3"
 	    }],
 	        height: "400",
-	    listbar: {
-	        position: 'right',
-	        size: 310
-	    },
-	        width: "100%",
+	        width: "100%",    
+	    tracks: [{ 
+            file: "/assets/captions-en.vtt", 
+            label: "English",
+            kind: "captions",
+            "default": true 
+        },{ 
+            file: "/assets/captions-fr.vtt", 
+            kind: "captions",
+            label: "French"
+        }],        
 	    });
 	</script>
 

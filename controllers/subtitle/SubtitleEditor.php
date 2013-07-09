@@ -80,6 +80,7 @@
 		}
 
 		function PrepareText($Text){
+			$Text = nl2br($Text);
 			$res = "<div class='otext' >".$Text."</div>";
 			return $res;
 		}
@@ -108,6 +109,7 @@
 		}
 		
 		function PrepareTransscript($lineid, $pindex, $tindex, $LineNumber, $Transcript){
+			$Transcript = nl2br($Transcript);
 			$res = "<div class='ltext'><p tabindex=".$pindex." id='ptrans".$LineNumber."' class='ptransscript'";
 			$res .= " onclick='ShowHide(&quot;ttransscript".$LineNumber."&quot;, &quot;ptrans".$LineNumber."&quot;);'";
 			$res .= " onfocus='ShowHide(&quot;ttransscript".$LineNumber."&quot;, &quot;ptrans".$LineNumber."&quot;);'>".$Transcript."</p>";

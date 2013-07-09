@@ -82,7 +82,7 @@
 			$args = array();
 			for ($i=0; $i < count($content); $i++) {
 				$text = $content[$i]->{'text'};
-				$text = str_replace("\r\n", "<br />", $text) ;
+				//$text = str_replace("\r\n", "<br />", $text) ;
 					$args[1][] = array(
 					array(":sid".$i, $GLOBALS['vars']['sid'], "str"),
 					array(":uid".$i, $_SESSION['id'], "str"),
