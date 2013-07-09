@@ -70,9 +70,11 @@
 	}
 	.tlstart{
 	display: none; /* hide start time textbox*/
+	width: 90%;
 	}
 	.tlend{
 	display: none; /* hide start time textbox*/
+	width: 90%;
 	}
 	.lstart{
 		height: 50%;
