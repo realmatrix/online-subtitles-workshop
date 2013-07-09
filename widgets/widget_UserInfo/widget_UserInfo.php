@@ -19,9 +19,27 @@
 			$array = array(
 				array("{WelcomeBack}", $GLOBALS['COMMON']->l('login_welcomeback')),
 				array("{UserName}", $_SESSION['username']),
+				array("{CreatedVideos}", self::UserVideos()),
+				array("{CreatedSubtitles}", self::UserSubtitles()),
 			);
 			return $array;
-		}	
+		}
+		
+		function UserVideos(){
+			$args = array(
+				array(":uid", $_SESSION['id'], "str")
+			);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Videos` WHERE `uid` = :uid ", $args);
+			return count($res);
+		}
+		
+		function UserSubtitles(){
+			$args = array(
+				array(":uid", $_SESSION['id'], "str")
+			);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Subtitles` WHERE `uid` = :uid ", $args);
+			return count($res);
+		}
 		
 	}
 

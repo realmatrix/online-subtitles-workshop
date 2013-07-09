@@ -27,21 +27,21 @@
 					
 					
 
-{WelcomeBack} <b>{UserName}</b> <br />
+{WelcomeBack} <b>{UserName} </b> <br />
 					
-Added Videos: {CreatedVideos}<br />	
+Created Videos: <a href="index.php?page=video&sec=list">{CreatedVideos}</a> <br />	
 
-Favourite Videos: {FavouriteVideos}<br />
+Created Subtitles: <a href="index.php?page=subtitle&sec=list">{CreatedSubtitles}</a> <br />
 
-Created Subtitles: {CreatedSubtitles}<br />
+Followed Videos: {FavouriteVideos} <br />
 
-Finished Subtitles: {FinishedSubtitles}<br />
+Finished Subtitles: {FinishedSubtitles} <br />
 
-Created Teams: {CreatedTeams}<br />
+Created Teams: {CreatedTeams} <br />
 
-Joined Teams: {JoinedTeams}<br />
+Joined Teams: {JoinedTeams} <br />
 
-Private Messages: {PMS}<br />				
+Private Messages: <a href="index.php?page=messages&sec=pms">{PMS}</a> <br />				
 					
 				</div>
 			
