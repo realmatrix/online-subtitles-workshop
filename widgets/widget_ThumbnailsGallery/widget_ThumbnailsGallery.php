@@ -17,7 +17,7 @@
 		
 		function widget_ThumbnailsGallery_render(){
 			$array = array(
-				array("{test}", "test"),
+				array("{ThumbnailGallery}", $GLOBALS['COMMON']->l("widget_ThumbnailGallery_title")),
 			);
 			return $array;
 		}	
