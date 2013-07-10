@@ -24,23 +24,23 @@
 <style>
 	.pan_wrap
 	{
-		background: url('templates/default2/files/thumbnails-gallery/images/pan_checks.gif') repeat;
+		background: url('templates/default2/files/thumbnails-gallery/pan_checks.gif') repeat;
 		margin: 0 auto 15px;
 		position: relative;
 		width: 150px;
-		height: 113px;
+		height: 93px;
 	}
 	
 	.pan_frame
 	{
-		background: url('templates/default2/files/thumbnails-gallery/images/pan_frame.png') no-repeat;
-		background-size: 100%;
+		background: url('templates/default2/files/thumbnails-gallery/pan_frame.png') no-repeat;
+		background-size: 100% 100%;
 		overflow: hidden;
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 150px;
-		height: 113px;
+		height: 93px;
 	}
 	
 	.thumbwrapper{
