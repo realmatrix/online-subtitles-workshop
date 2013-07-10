@@ -19,7 +19,7 @@
 <!-- User PM -->
 <div id="editorcontrols" style="width: 99%;">
 
-
+<form method="post" action="index.php">
 	<table style="width: 100%;">
 		<thead>
 			<th>#</th>
@@ -32,7 +32,15 @@
 			{TableRows}
 		</tbody>
 	</table>
-
+<input type="submit"  value="{submit}"/>
+	<!-- <input type="hidden" name="dataonly" value="yes" /> --> <!-- uncomment if using ajax -->
+	<!-- <input type="hidden" name="getcontroller" value="message" /> --> <!-- uncomment if using ajax -->
+	<!-- <input type="hidden" name="getsection" value="UserPM" /> --> <!-- uncomment if using ajax -->
+	<input type="hidden" name="page" value="message" /> <!-- comment if using ajax -->
+	<input type="hidden" name="sec" value="umsg" /> <!-- comment if using ajax -->
+	<input type="hidden" name="ssec" value="UserPM" />
+	<input type="hidden" name="h" value="DelMsg" />
+</form>
 
 </div>
 <!-- end User PM -->	

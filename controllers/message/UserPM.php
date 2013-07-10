@@ -27,10 +27,11 @@
 				  (
 				  array("{title}", $GLOBALS['COMMON']->l("subtitle_UserPM_title")),
 				  array("{TableRows}", self::GetPMS()),
-				  array("{from}", $GLOBALS['COMMON']->l("subtitle_IserPM_from")),
-				  array("{subject}", $GLOBALS['COMMON']->l("subtitle_IserPM_subject")),
-				  array("{date}", $GLOBALS['COMMON']->l("subtitle_IserPM_date")),
-				  array("{del}", $GLOBALS['COMMON']->l("subtitle_IserPM_del")),
+				  array("{from}", $GLOBALS['COMMON']->l("message_UserPM_from")),
+				  array("{subject}", $GLOBALS['COMMON']->l("message_UserPM_subject")),
+				  array("{date}", $GLOBALS['COMMON']->l("message_UserPM_date")),
+				  array("{del}", $GLOBALS['COMMON']->l("message_UserPM_del")),
+				  array("{submit}", $GLOBALS['COMMON']->l("message_UserSubtitle_submit"))
 				 );
 			 
 		return $content;
@@ -42,13 +43,15 @@
 			);
 			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `PrivateMessages` WHERE `to` = :to", $args);
 			$rows = "";
-			for ($i=0; $i < count($res); $i++) { 
+			$counter = 0;
+			for ($i=0; $i < count($res); $i++) {
+				$counter++; 
 				$rows .= "<tr>";
-				$rows .= "<td></td>";
-				$rows .= "<td></td>";
-				$rows .= "<td></td>";
-				$rows .= "<td></td>";
-				$rows .= "<td></td>";
+				$rows .= "<td>".$counter."</td>";
+				$rows .= "<td>".$res[$i]['from']."</td>";
+				$rows .= "<td>".$res[$i]['subject']."</td>";
+				$rows .= "<td>".$res[$i]['date']."</td>";
+				$rows .= "<td><input type='checkbox' name='mid[]' value='".$res[$i]['id']."' /></td>";
 				$rows .= "</tr>";
 			}
 			return $rows;
