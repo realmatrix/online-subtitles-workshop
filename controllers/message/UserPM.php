@@ -8,7 +8,7 @@
 	
 		function UserPM_hooks(){
 			$array = array(
-				array("test", "test"),
+				array("DelMsg", "DeleteMessages"),
 			);
 			return $array;
 		}

@@ -1,8 +1,8 @@
 <?php
 
-	class Cumsg{
+	class Clist{
 			
-		function umsg_sections(){
+		function list_sections(){
 			$array = array(
 				array("message", "UserPM", $GLOBALS['vars'], TRUE),
 				array("message", "SendPM", $GLOBALS['vars'], TRUE),

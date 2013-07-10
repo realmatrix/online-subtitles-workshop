@@ -61,7 +61,7 @@
 			<!-- <input type="hidden" name="getcontroller" value="message" /> --> <!-- uncomment if using ajax -->
 			<!-- <input type="hidden" name="getsection" value="SendPM" /> --> <!-- uncomment if using ajax -->
 			<input type="hidden" name="page" value="message" /> <!-- comment if using ajax -->
-			<input type="hidden" name="sec" value="umsg" /> <!-- comment if using ajax -->
+			<input type="hidden" name="sec" value="list" /> <!-- comment if using ajax -->
 			<input type="hidden" name="ssec" value="SendPM" />
 			<input type="hidden" name="h" value="SendMessage" />
 	</form>
