@@ -519,7 +519,7 @@ class Common{
 			$params = array(
 				array(":id", $id, "str"),
 			);
-			$res=self::db_query("SELECT * FROM Users WHERE username=:id", $params);
+			$res=self::db_query("SELECT * FROM Users WHERE id=:id", $params);
 		}
 		return $res;
 	}

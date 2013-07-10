@@ -46,9 +46,11 @@
 			$counter = 0;
 			for ($i=0; $i < count($res); $i++) {
 				$counter++; 
+				$FromInfo = $GLOBALS['COMMON']->GetUserInfo("", $res[$i]['from']);
+				$from = $FromInfo[0]['username'];
 				$rows .= "<tr>";
 				$rows .= "<td>".$counter."</td>";
-				$rows .= "<td>".$res[$i]['from']."</td>";
+				$rows .= "<td>".$from."</td>";
 				$rows .= "<td>".$res[$i]['subject']."</td>";
 				$rows .= "<td>".$res[$i]['date']."</td>";
 				$rows .= "<td><input type='checkbox' name='mid[]' value='".$res[$i]['id']."' /></td>";
