@@ -19,7 +19,24 @@
 <!-- view message -->
 <div style="width: 99%;">
 
-	content here
+	<table style="width: 100%;">
+		<tr>
+			<td>{from}</td>
+			<td>{mfrom}</td>
+		</tr>
+		<tr>
+			<td>{date}</td>
+			<td>{mdate}</td>
+		</tr>
+		<tr>
+			<td>{subject}</td>
+			<td>{msubject}</td>
+		</tr>
+		<tr>
+			<td>{message}</td>
+			<td>{mmessage}</td>
+		</tr>
+	</table>
 
 </div>
 <!-- end view message -->	
