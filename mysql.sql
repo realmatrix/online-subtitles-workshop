@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 09, 2013 at 10:53 AM
+-- Generation Time: Jul 10, 2013 at 08:34 AM
 -- Server version: 5.5.29-log
 -- PHP Version: 5.3.21
 
@@ -596,7 +596,7 @@ CREATE TABLE IF NOT EXISTS `Lang_English` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `key` (`key`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=154 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=168 ;
 
 --
 -- Dumping data for table `Lang_English`
@@ -749,7 +749,21 @@ INSERT INTO `Lang_English` (`id`, `key`, `text`) VALUES
 (150, 'search_AdvancedSearch_year', 'Year'),
 (151, 'search_AdvancedSearch_status', 'Status'),
 (152, 'forum_ListForums_title', 'Forums'),
-(153, 'forum_ListCategories_title', 'Categories');
+(153, 'forum_ListCategories_title', 'Categories'),
+(154, 'widget_ThumbnailGallery_title', 'Video Gallery'),
+(155, 'subtitle_SendPM_title', 'Send Message'),
+(156, 'subtitle_UserPM_title', 'Inbox'),
+(157, 'message_UserPM_from', 'From'),
+(158, 'message_UserPM_subject', 'Subject'),
+(159, 'message_UserPM_date', 'Date'),
+(160, 'message_UserPM_del', 'Del'),
+(161, 'message_UserSubtitle_submit', 'Delete selected messages'),
+(162, 'video_AddVideo_VideoUrl', 'Video URL: (optional)'),
+(163, 'widget_quicklinks_pms', 'Private messages'),
+(164, 'subtitle_SendPM_to', 'To:'),
+(165, 'subtitle_SendPM_subject', 'Subject:'),
+(166, 'subtitle_SendPM_message', 'Message:'),
+(167, 'subtitle_SendPM_submit', 'Send Message');
 
 -- --------------------------------------------------------
 
@@ -763,14 +777,37 @@ CREATE TABLE IF NOT EXISTS `OnlineUsers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=712 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=734 ;
 
 --
 -- Dumping data for table `OnlineUsers`
 --
 
 INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(711, 'kdnovrud16han7vvejik38dr03', 1373363140, '');
+(733, 't507mrv53rur9ed491ek0bua11', 1373440875, '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `PrivateMessages`
+--
+
+CREATE TABLE IF NOT EXISTS `PrivateMessages` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `from` int(11) NOT NULL,
+  `to` int(11) NOT NULL,
+  `subject` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `message` text COLLATE utf8_unicode_ci NOT NULL,
+  `date` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `PrivateMessages`
+--
+
+INSERT INTO `PrivateMessages` (`id`, `from`, `to`, `subject`, `message`, `date`) VALUES
+(6, 18, 18, 'test subject', 'test message', '2013-07-10 08:16:46');
 
 -- --------------------------------------------------------
 
@@ -2295,6 +2332,7 @@ CREATE TABLE IF NOT EXISTS `Videos` (
   `image` varchar(255) NOT NULL,
   `source` varchar(255) NOT NULL,
   `year` int(11) NOT NULL,
+  `url` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
 
@@ -2302,12 +2340,12 @@ CREATE TABLE IF NOT EXISTS `Videos` (
 -- Dumping data for table `Videos`
 --
 
-INSERT INTO `Videos` (`id`, `uid`, `title`, `other_title`, `type`, `category`, `language`, `country`, `genres`, `release_date`, `casting`, `director`, `length`, `tags`, `synopsis`, `thumbnail`, `image`, `source`, `year`) VALUES
-(10, 18, 'jhkghj', 'ghjhgj', 2, 2, 3, 16, '2', '1817-11-19', '0', '0', 5, 'ghjhj', ' ghjghjgjh', '', '', 'http://www.youtube.com/watch?v=5guMumPFBag', 0),
-(11, 18, 'tty tyu tryu tru tryytu', 'tu t tyu tyutyu', 1, 2, 6, 3, '2', '1816-05-17', 't yu t', 't yutyu', 31, 'ty tyu', ' tyu tyuyu', '', '', '', 0),
-(12, 18, 'fhfg f fgh fgh dfh fgh fhfgh', ' fghfg fgh fgh gh', 1, 1, 13, 4, '1', '1806-02-07', 'fgh fgh fgh', 'fhg fggh', 18, 'dfgdfg, dfg dfg,df gdfg ,d fgdf,', '  dfgdf sj dsflkjh lkjsh flkjfh lskdfjh lskdfh oiuehroiuwerh lkewjrh slkjh lkjdfhslkjhlkdsjh', '', '', '', 0),
-(13, 18, 'aaaaaaaaaaaaa', 'bbbbbbbbbbbbbb', 1, 2, 6, 25, '1', '1800-01-01', 'cccccccccc', 'ddddddddd', 4, 'kjh, kjh, kjh, jklh, jkh', ' uyiyui yu uyi', '', '', '', 0),
-(14, 18, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'aaaaaaaaaaaaaaaaaaaaaaaaaa', 3, 1, 10, 14, '5', '1805-03-04', 'aaaaaaaaaaaaaaaaaaaaaaaa', 'aaaaaaaaaaaaaa', 14, 'aaaaaaaaaaaaaaaaa', ' aaaaaaaaaaaaaaaaaa', '', '', '', 0);
+INSERT INTO `Videos` (`id`, `uid`, `title`, `other_title`, `type`, `category`, `language`, `country`, `genres`, `release_date`, `casting`, `director`, `length`, `tags`, `synopsis`, `thumbnail`, `image`, `source`, `year`, `url`) VALUES
+(10, 18, 'jhkghj', 'ghjhgj', 2, 2, 3, 16, '2', '1817-11-19', '0', '0', 5, 'ghjhj', ' ghjghjgjh', '', '', 'http://www.youtube.com/watch?v=5guMumPFBag', 0, ''),
+(11, 18, 'tty tyu tryu tru tryytu', 'tu t tyu tyutyu', 1, 2, 6, 3, '2', '1816-05-17', 't yu t', 't yutyu', 31, 'ty tyu', ' tyu tyuyu', '', '', '', 0, ''),
+(12, 18, 'fhfg f fgh fgh dfh fgh fhfgh', ' fghfg fgh fgh gh', 1, 1, 13, 4, '1', '1806-02-07', 'fgh fgh fgh', 'fhg fggh', 18, 'dfgdfg, dfg dfg,df gdfg ,d fgdf,', '  dfgdf sj dsflkjh lkjsh flkjfh lskdfjh lskdfh oiuehroiuwerh lkewjrh slkjh lkjdfhslkjhlkdsjh', '', '', '', 0, ''),
+(13, 18, 'aaaaaaaaaaaaa', 'bbbbbbbbbbbbbb', 1, 2, 6, 25, '1', '1800-01-01', 'cccccccccc', 'ddddddddd', 4, 'kjh, kjh, kjh, jklh, jkh', ' uyiyui yu uyi', '', '', '', 0, ''),
+(14, 18, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'aaaaaaaaaaaaaaaaaaaaaaaaaa', 3, 1, 10, 14, '5', '1805-03-04', 'aaaaaaaaaaaaaaaaaaaaaaaa', 'aaaaaaaaaaaaaa', 14, 'aaaaaaaaaaaaaaaaa', ' aaaaaaaaaaaaaaaaaa', '', '', '', 0, '');
 
 -- --------------------------------------------------------
 
