@@ -29,7 +29,7 @@
 				  array("{subject}", $GLOBALS['COMMON']->l("subtitle_ReplyMessage_subject")),
 				  array("{message}", $GLOBALS['COMMON']->l("subtitle_ReplyMessage_message")),
 				  array("{submit}", $GLOBALS['COMMON']->l("subtitle_ReplyMessage_submit")),
-				  array("{mif}", $GLOBALS['vars']['mid']),
+				  array("{mid}", $GLOBALS['vars']['mid']),
 				 );
 			 
 		return $content;
@@ -43,14 +43,15 @@
 			);
 			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `PrivateMessages` WHERE `id` = :id", $args);
 			$MessageInfo = $res;
-			print_r($MessageInfo);
 			$args = array(
-				array(":from", $GLOBALS['vars']['message'], "str"),
-				array(":to", $GLOBALS['vars']['message'], "str"),
-				array(":subject", $GLOBALS['vars']['message'], "str"),
+				array(":from", $_SESSION['id'], "str"),
+				array(":to", $MessageInfo[0]['from'], "str"),
+				array(":subject", $GLOBALS['vars']['subject'], "str"),
 				array(":message", $GLOBALS['vars']['message'], "str"),
 				array(":date", date("Y-m-d H:i:s"), "str"),
 			);
+			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `new`.`PrivateMessages` (`from`, `to`, `subject`, `message`, `date`) VALUES (:from, :to, :subject, :message, :date);", $args, $ExecState);
+			if($ExecState===TRUE){$GLOBALS['SUCCESS'][]="message sent";}else{$GLOBALS['ERROR'][]="sendind message failed.";}
 		}
 
 
