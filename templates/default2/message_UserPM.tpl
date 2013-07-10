@@ -23,8 +23,8 @@
 	<table style="width: 100%;">
 		<thead>
 			<th>#</th>
-			<th>{from}</th>
 			<th>{subject}</th>
+			<th>{from}</th>
 			<th>{date}</th>
 			<th>{del}</th>
 		</thead>

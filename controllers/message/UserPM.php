@@ -50,8 +50,8 @@
 				$from = $FromInfo[0]['username'];
 				$rows .= "<tr>";
 				$rows .= "<td>".$counter."</td>";
+				$rows .= "<td><a href='index.php?page=message&sec=view&mid=".$res[$i]['id']."'>".$res[$i]['subject']."</a></td>";
 				$rows .= "<td>".$from."</td>";
-				$rows .= "<td>".$res[$i]['subject']."</td>";
 				$rows .= "<td>".$res[$i]['date']."</td>";
 				$rows .= "<td><input type='checkbox' name='mid[]' value='".$res[$i]['id']."' /></td>";
 				$rows .= "</tr>";
