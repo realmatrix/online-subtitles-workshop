@@ -53,6 +53,7 @@
 				  array("{Synopsis}", $GLOBALS['COMMON']->l('video_AddVideo_Synopsis')),
 				  array("{Tags}", $GLOBALS['COMMON']->l('video_AddVideo_Tags')),
 				  array("{Submit}", $GLOBALS['COMMON']->l('video_AddVideo_Submit')),
+				  array("{VideoUrl}", $GLOBALS['COMMON']->l('video_AddVideo_VideoUrl')),
 				  array("{VideoGenres}", self::genres()),
 				 );
 			 

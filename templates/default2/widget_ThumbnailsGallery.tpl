@@ -341,6 +341,36 @@
 </div>
 </div>
 
+<div class="thumb-row" >
+<div class="thumb-cell-container">	
+<div class="pan_wrap thumb-cell ">
+	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p7.jpg" alt="panoramic" />
+	<div class="pan_frame">&nbsp;</div>
+</div>
+</div>
+
+<div class="thumb-cell-container">	
+<div class="pan_wrap thumb-cell">
+	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p8.jpg" alt="panoramic" />
+	<div class="pan_frame">&nbsp;</div>
+</div>
+</div>
+
+<div class="thumb-cell-container">	
+<div class="pan_wrap thumb-cell">
+	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p9.jpg" alt="panoramic" />
+	<div class="pan_frame">&nbsp;</div>
+</div>
+</div>
+
+<div class="thumb-cell-container">	
+<div class="pan_wrap thumb-cell">
+	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p12.jpg" alt="panoramic" />
+	<div class="pan_frame">&nbsp;</div>
+</div>
+</div>
+</div>
+
 </div> <!-- wrapper -->
 
 <!-- end thumbnail gallery -->	

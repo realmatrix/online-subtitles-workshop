@@ -59,6 +59,10 @@
 	<br />
 	<label for="VideoOtherTitle">{OtherTitle}</label>
 	<input type="text" name="VideoOtherTitle" id="VideoOtherTitle" value="" />
+
+	<br />
+	<label for="VideoUrl">{VideoUrl}</label>
+	<input type="text" name="VideoUrl" id="VideoUrl" value="" />
 	
 	<br />
 	<label for="countries" >{Country}</label>
