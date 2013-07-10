@@ -21,6 +21,7 @@
 				array("{UserName}", $_SESSION['username']),
 				array("{CreatedVideos}", self::UserVideos()),
 				array("{CreatedSubtitles}", self::UserSubtitles()),
+				array("{PMS}", self::UserPMS()),
 			);
 			return $array;
 		}
@@ -38,6 +39,14 @@
 				array(":uid", $_SESSION['id'], "str")
 			);
 			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Subtitles` WHERE `uid` = :uid ", $args);
+			return count($res);
+		}
+
+		function UserPMS(){
+			$args = array(
+				array(":uid", $_SESSION['id'], "str")
+			);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `PrivateMessages` WHERE `to` = :uid ", $args);
 			return count($res);
 		}
 		
