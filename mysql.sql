@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 10, 2013 at 08:34 AM
+-- Generation Time: Jul 10, 2013 at 11:16 PM
 -- Server version: 5.5.29-log
 -- PHP Version: 5.3.21
 
@@ -596,7 +596,7 @@ CREATE TABLE IF NOT EXISTS `Lang_English` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `key` (`key`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=168 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=177 ;
 
 --
 -- Dumping data for table `Lang_English`
@@ -632,8 +632,8 @@ INSERT INTO `Lang_English` (`id`, `key`, `text`) VALUES
 (29, 'login_welcomeback', 'welcome back '),
 (30, 'logout_logout', 'logout'),
 (31, 'home_test_title', 'test title for controller home section home change from language file'),
-(32, 'widget_newsletter_name', 'Your name or pseudo ...'),
-(33, 'widget_newsletter_email', 'Enter your email address ...'),
+(32, 'widget_newsletter_name', 'Name:'),
+(33, 'widget_newsletter_email', 'Email:'),
 (34, 'widget_newsletter_submit', 'submit'),
 (35, 'widget_quicklinks_addvideo', 'Add new article'),
 (37, 'widget_quicklinks_logout', 'Logout'),
@@ -763,7 +763,16 @@ INSERT INTO `Lang_English` (`id`, `key`, `text`) VALUES
 (164, 'subtitle_SendPM_to', 'To:'),
 (165, 'subtitle_SendPM_subject', 'Subject:'),
 (166, 'subtitle_SendPM_message', 'Message:'),
-(167, 'subtitle_SendPM_submit', 'Send Message');
+(167, 'subtitle_SendPM_submit', 'Send Message'),
+(168, 'subtitle_ViewMessage_title', 'Message'),
+(169, 'subtitle_ViewMessage_from', 'From:'),
+(170, 'subtitle_ViewMessage_date', 'Date:'),
+(171, 'subtitle_ViewMessage_subject', 'Subject:'),
+(172, 'subtitle_ViewMessage_message', 'Message:'),
+(173, 'subtitle_ReplyMessage_title', 'Reply'),
+(174, 'subtitle_ReplyMessage_message', 'Message:'),
+(175, 'subtitle_ReplyMessage_submit', 'Send'),
+(176, 'subtitle_ReplyMessage_subject', 'Subject:');
 
 -- --------------------------------------------------------
 
@@ -777,14 +786,14 @@ CREATE TABLE IF NOT EXISTS `OnlineUsers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=734 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=747 ;
 
 --
 -- Dumping data for table `OnlineUsers`
 --
 
 INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(733, 't507mrv53rur9ed491ek0bua11', 1373440875, '');
+(746, 'leb7kdi69i30f3tcrs96i899f3', 1373494096, '');
 
 -- --------------------------------------------------------
 
@@ -800,14 +809,16 @@ CREATE TABLE IF NOT EXISTS `PrivateMessages` (
   `message` text COLLATE utf8_unicode_ci NOT NULL,
   `date` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `PrivateMessages`
 --
 
 INSERT INTO `PrivateMessages` (`id`, `from`, `to`, `subject`, `message`, `date`) VALUES
-(6, 18, 18, 'test subject', 'test message', '2013-07-10 08:16:46');
+(6, 18, 18, 'test subject', 'test message', '2013-07-10 08:16:46'),
+(7, 18, 18, 'this is test subject 2', 'sdfg ;ksjhf ;sldkf ;slkjdf sdl;kfjowiqjef;sdlkjf ;lkjfi\n\nsdflkj sd;lkfj sd;lkfjoiwejfioewjrfkldjf;lsdkjf;lskjdf;lksdjfiowwjeoioij   ijerfl;ksdjf ;lskdf\n\n\nwer ;lkjksdflksdjf oisjdfoiwerjfowe4jrwejrpewokrpeowkrew \n\nwef; ljsdlfkjds;lkfj sodifj oiwejfoweijrf\nwero ijewroiwer powieuropeiwuroiweur\n\nweroijwe oruweoirueowirueiowru', '2013-07-10 22:06:48'),
+(9, 18, 18, 'test reply subject', 'test reply message', '2013-07-10 23:08:23');
 
 -- --------------------------------------------------------
 
