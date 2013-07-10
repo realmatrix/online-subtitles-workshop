@@ -32,6 +32,7 @@
 			{TableRows}
 		</tbody>
 	</table>
+<br />
 <input type="submit"  value="{submit}"/>
 	<!-- <input type="hidden" name="dataonly" value="yes" /> --> <!-- uncomment if using ajax -->
 	<!-- <input type="hidden" name="getcontroller" value="message" /> --> <!-- uncomment if using ajax -->

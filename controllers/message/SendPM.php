@@ -8,7 +8,7 @@
 	
 		function SendPM_hooks(){
 			$array = array(
-				array("test", "test"),
+				array("SendMessage", "SendMessage"),
 			);
 			return $array;
 		}
@@ -26,6 +26,10 @@
 				$content = array
 				  (
 				  array("{title}", $GLOBALS['COMMON']->l("subtitle_SendPM_title")),
+				  array("{to}", $GLOBALS['COMMON']->l("subtitle_SendPM_to")),
+				  array("{subject}", $GLOBALS['COMMON']->l("subtitle_SendPM_subject")),
+				  array("{message}", $GLOBALS['COMMON']->l("subtitle_SendPM_message")),
+				  array("{submit}", $GLOBALS['COMMON']->l("subtitle_SendPM_submit")),
 				 );
 			 
 		return $content;

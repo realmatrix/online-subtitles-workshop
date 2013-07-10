@@ -56,8 +56,14 @@
 		</div>
 		<div class="row">
 		<div class="pm-submit"><input type="submit" value="{submit}" /></div>
-		</div>
-		
+		</div>	
+			<!-- <input type="hidden" name="dataonly" value="yes" /> --> <!-- uncomment if using ajax -->
+			<!-- <input type="hidden" name="getcontroller" value="message" /> --> <!-- uncomment if using ajax -->
+			<!-- <input type="hidden" name="getsection" value="SendPM" /> --> <!-- uncomment if using ajax -->
+			<input type="hidden" name="page" value="message" /> <!-- comment if using ajax -->
+			<input type="hidden" name="sec" value="umsg" /> <!-- comment if using ajax -->
+			<input type="hidden" name="ssec" value="SendPM" />
+			<input type="hidden" name="h" value="SendMessage" />
 	</form>
 
 
