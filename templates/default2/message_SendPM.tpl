@@ -1,3 +1,24 @@
+<style>
+	.row{
+		width: 100%;
+		margin-bottom: 10px;
+	}
+	.pm-label{
+		width: 100%;
+	}
+	.pm-text{
+		width: 100%;
+	}
+	.pm-textarea{
+		width: 99%;
+		height: 100px;
+	}
+	.pm-submit{
+		width: 100%;
+		text-align: center;
+	}
+</style>
+
 <DIV class="catglow">
 <DIV class="cathead-m">
 <DIV class="cathead-r">
@@ -20,7 +41,24 @@
 <div id="editorcontrols" style="width: 99%;">
 
 
-	content here
+	<form>
+		<div class="row">
+		<label for="to" class="pm-label">{to}</label>
+		<input type="text" name="to"  class="pm-text" />
+		</div>
+		<div class="row">
+		<label for="subject" class="pm-label">{subject}</label>
+		<input type="text" name="subject"  class="pm-text" />
+		</div>
+		<div class="row">
+		<label for="message" class="pm-label">{message}</label>
+		<textarea name="message" class="pm-textarea"></textarea>
+		</div>
+		<div class="row">
+		<div class="pm-submit"><input type="submit" value="{submit}" /></div>
+		</div>
+		
+	</form>
 
 
 </div>

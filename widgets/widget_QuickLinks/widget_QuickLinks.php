@@ -20,6 +20,7 @@
 				array("{AddVideo}", $GLOBALS['COMMON']->l('widget_quicklinks_addvideo')),
 				array("{AddTeam}", $GLOBALS['COMMON']->l('widget_quicklinks_addteam')),
 				array("{Logout}", $GLOBALS['COMMON']->l('widget_quicklinks_logout')),
+				array("{PMS}", $GLOBALS['COMMON']->l('widget_quicklinks_pms')),
 			);
 			return $array;
 		}	
