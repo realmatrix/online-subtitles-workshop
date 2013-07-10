@@ -26,6 +26,8 @@
 				$content = array
 				  (
 				  array("{title}", $GLOBALS['COMMON']->l("subtitle_ReplyMessage_title")),
+				  array("{message}", $GLOBALS['COMMON']->l("subtitle_ReplyMessage_message")),
+				  array("{submit}", $GLOBALS['COMMON']->l("subtitle_ReplyMessage_submit")),
 				 );
 			 
 		return $content;

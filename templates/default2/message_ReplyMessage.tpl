@@ -20,7 +20,11 @@
 <div id="editorcontrols" style="width: 99%;">
 
 
-	content here
+	<form method="post" action="index.php">
+		<label for="message">{message}</label>
+		<textarea name="message" style="width: 99%; height: 100px;"></textarea>
+		<div style="width: 100%; text-align: center; margin-top: 5px;"><input type="submit" value="{submit}" /></div>
+	</form>
 
 
 </div>
