@@ -21,6 +21,8 @@
 
 
 	<form method="post" action="index.php">
+		<label for="subject" style="width: 100%;">{subject}</label>
+		<input type="text" name="subject" style="width: 99%;"/>
 		<label for="message">{message}</label>
 		<textarea name="message" style="width: 99%; height: 100px;"></textarea>
 		<div style="width: 100%; text-align: center; margin-top: 5px;"><input type="submit" value="{submit}" /></div>

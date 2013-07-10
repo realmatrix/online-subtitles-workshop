@@ -26,6 +26,7 @@
 				$content = array
 				  (
 				  array("{title}", $GLOBALS['COMMON']->l("subtitle_ReplyMessage_title")),
+				  array("{subject}", $GLOBALS['COMMON']->l("subtitle_ReplyMessage_subject")),
 				  array("{message}", $GLOBALS['COMMON']->l("subtitle_ReplyMessage_message")),
 				  array("{submit}", $GLOBALS['COMMON']->l("subtitle_ReplyMessage_submit")),
 				  array("{mif}", $GLOBALS['vars']['mid']),
@@ -35,8 +36,11 @@
 		}
 		
 		function SendMessage(){
+			if($GLOBALS['vars']['subject']==""){$GLOBALS['ERROR'][]="enter subject"; return FALSE;}
 			if($GLOBALS['vars']['message']==""){$GLOBALS['ERROR'][]="enter message"; return FALSE;}
-			$args = array(":id", $GLOBALS['vars']['mid']);
+			$args = array(
+				array(":id", $GLOBALS['vars']['mid']),
+			);
 			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `PrivateMessages` WHERE `id` = :id", $args);
 			$MessageInfo = $res;
 			print_r($MessageInfo);
