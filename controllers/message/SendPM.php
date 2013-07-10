@@ -35,11 +35,20 @@
 		return $content;
 		}
 		
+		function SendMessage(){
+			if($GLOBALS['vars']['to']==""){$GLOBALS['ERROR'][]="enter username"; return FALSE;}
+			if($GLOBALS['vars']['subject']==""){$GLOBALS['ERROR'][]="enter subject"; return FALSE;}
+			if($GLOBALS['vars']['message']==""){$GLOBALS['ERROR'][]="enter message"; return FALSE;}
+			$args = array(
+				array(":from", $_SESSION['id'], "str"),
+				array(":to", $GLOBALS['vars']['to'], "str"),
+				array(":subject", $GLOBALS['vars']['subject'], "str"),
+				array(":message", $GLOBALS['vars']['message'], "str"),
+			);
+			$res = $GLOBALS['COMMON']->db_query("", $args, $ExecState);
+		}
 
 
-		
-
-	
 			
 	}
 	
