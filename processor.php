@@ -71,7 +71,7 @@
 	); 
 	
 	$SystemInfo = $GLOBALS['COMMON']->information();
-	
+//Fri May 31, 2013 1:43 pm	
 	$GLOBALS['TemplatesCommon'] = array 
 	(
 	  array("{TemplatePath}",$TemplatePath),
@@ -95,6 +95,7 @@
 	  array("{LatestUser}",$SystemInfo['LatestUser']),
 	  array("{TotalVideos}",$SystemInfo['TotalVideos']), 
 	  array("{TotalSubtitles}",$SystemInfo['TotalSubtitles']),
+	  array("{DateTime}",date("D M d, Y h:i a")),
 	);
 
 	$GLOBALS['TemplatesCommon'] = array_merge($GLOBALS['TemplatesCommon'],$GLOBALS['SystemWidgets']);

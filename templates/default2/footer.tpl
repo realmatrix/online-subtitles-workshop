@@ -22,10 +22,7 @@
     // ]]>
     </SCRIPT>
 <BR>
-<DIV class="indexlinks"><A href="https://www.phpbb.com/styles/demo/3.0/board/memberlist.php?style=875&amp;mode=leaders&amp;sid=7ec0d899c761409bea8aeccee37ca464">The 
-team</A> | <A href="https://www.phpbb.com/styles/demo/3.0/board/ucp.php?style=875&amp;mode=delete_cookies&amp;sid=7ec0d899c761409bea8aeccee37ca464">Delete 
-all board cookies</A> |     <A href="https://www.phpbb.com/styles/demo/3.0/board/faq.php?style=875&amp;sid=7ec0d899c761409bea8aeccee37ca464">FAQ</A><BR>It 
-is currently Fri May 31, 2013 1:43 pm</DIV><BR>
+<DIV class="indexlinks"><A href="index.php?page=message&sec=contact">Contact Us</A> | <A href="index.php?page=info&sec=about">About us</A> |     <A href="index.php?page=faq&sec=list">FAQ</A><BR>It is currently {DateTime}</DIV><BR>
 	
 	
 	
