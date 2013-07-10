@@ -8,7 +8,7 @@
 	
 		function ReplyMessage_hooks(){
 			$array = array(
-				array("test", "test"),
+				array("SendMessage", "SendMessage"),
 			);
 			return $array;
 		}
@@ -28,11 +28,26 @@
 				  array("{title}", $GLOBALS['COMMON']->l("subtitle_ReplyMessage_title")),
 				  array("{message}", $GLOBALS['COMMON']->l("subtitle_ReplyMessage_message")),
 				  array("{submit}", $GLOBALS['COMMON']->l("subtitle_ReplyMessage_submit")),
+				  array("{mif}", $GLOBALS['vars']['mid']),
 				 );
 			 
 		return $content;
 		}
 		
+		function SendMessage(){
+			if($GLOBALS['vars']['message']==""){$GLOBALS['ERROR'][]="enter message"; return FALSE;}
+			$args = array(":id", $GLOBALS['vars']['mid']);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `PrivateMessages` WHERE `id` = :id", $args);
+			$MessageInfo = $res;
+			print_r($MessageInfo);
+			$args = array(
+				array(":from", $GLOBALS['vars']['message'], "str"),
+				array(":to", $GLOBALS['vars']['message'], "str"),
+				array(":subject", $GLOBALS['vars']['message'], "str"),
+				array(":message", $GLOBALS['vars']['message'], "str"),
+				array(":date", date("Y-m-d H:i:s"), "str"),
+			);
+		}
 
 
 		
