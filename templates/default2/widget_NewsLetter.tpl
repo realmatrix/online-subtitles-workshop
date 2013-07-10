@@ -1,3 +1,12 @@
+<style>
+	.nw-label{
+		width: 100%;
+		margin-top: 5px;
+	}
+	.nw-text{
+		width: 98%;
+	}
+</style>
 <DIV class="catglow">
 <DIV class="cathead-m">
 <DIV class="cathead-r">
@@ -17,27 +26,18 @@
 	
 
 
-		<div id="NewsLetter">
+		<div id="NewsLetter" style="width: 99%;">
 
 
 
-
-
-		<script>
-			function inputFocus(i){
-			    if(i.value==i.defaultValue){ i.value=""; i.style.color="#000"; }
-			}
-			function inputBlur(i){
-			    if(i.value==""){ i.value=i.defaultValue; i.style.color="#888"; }
-			}
-		</script>
 
 		<form method="get" action="index.php">			
-			<table cellspacing="0" cellpadding="1" style="width:100%;">
-				<tr><td><input type="text" name="name" value="{NewsLetterName}" style="width:100%;color:#888;" onfocus="inputFocus(this)" onblur="inputBlur(this)" /></td></tr>
-				<tr><td><input type="text" name="email" value="{NewsLetterEmail}" style="width:100%;color:#888;" onfocus="inputFocus(this)" onblur="inputBlur(this)" /></td></tr>
-				<tr><td><input type="submit" value="{NewsLetterSubmit}" /></td></tr>
-			</table>
+				<label for="name" class="nw-label">{NewsLetterName}</label>
+				<input type="text" name="name" class="nw-text" />
+				<label for="email" class="nw-label">{NewsLetterEmail}</label>
+				<input type="text" name="email" class="nw-text" />
+				<input type="submit" value="{NewsLetterSubmit}" />
+
 			<input type="hidden" name="NewsSubscribe" value="yes"/>
 		</form>
 
