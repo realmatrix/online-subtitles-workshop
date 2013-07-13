@@ -26,9 +26,25 @@
 				$content = array
 				  (
 				  array("{title}", $GLOBALS['COMMON']->l("forum_ListThreads_title")),
+				  array("{TableRows}", self::GetThreads()),
 				 );
 			 
 		return $content;
+		}
+		
+		function GetThreads(){
+			$args = array(
+				array(":fid", $GLOBALS['vars']['fid']),
+			);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `ForumThreads` WHERE `forum` = :fid", $args);
+			$rows = "";
+			for ($i=0; $i < count($res); $i++) { 
+				$rows .= "<tr>";
+				$rows .= "<td><a href='index.php?page=forum&sec=threads&fid=".$GLOBALS['vars']['fid']."&tid=".$res[$i]['id']."'>".$res[$i]['title']."</a></td>";
+				$rows .= "<td>posts count</td>";
+				$rows .= "</tr>";
+			}
+			return $rows;
 		}
 	
 			

@@ -40,7 +40,7 @@
 			$rows = "";
 			for ($i=0; $i < count($res); $i++) { 
 				$rows .= "<tr>";
-				$rows .= "<td><a href='index.php?page=forum&sec=threads&cat=".$GLOBALS['vars']['cat']."&forum=".$res[$i]['id']."'>".$res[$i]['title']."</a></td>";
+				$rows .= "<td><a href='index.php?page=forum&sec=threads&cat=".$GLOBALS['vars']['cat']."&fid=".$res[$i]['id']."'>".$res[$i]['title']."</a></td>";
 				$rows .= "<td>".$res[$i]['description']."</td>";
 				$rows .= "<td>threads count</td>";
 				$rows .= "</tr>";
