@@ -20,7 +20,11 @@
 <div id="editorcontrols" style="width: 99%;">
 
 
-	content here
+	<table style="width: 100%;">
+		<tr>
+			
+		</tr>
+	</table>
 
 
 </div>
