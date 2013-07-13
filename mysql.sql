@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 10, 2013 at 11:16 PM
+-- Generation Time: Jul 13, 2013 at 03:10 AM
 -- Server version: 5.5.29-log
 -- PHP Version: 5.3.21
 
@@ -418,16 +418,39 @@ INSERT INTO `ForumCategories` (`id`, `title`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `ForumReplies`
+--
+
+CREATE TABLE IF NOT EXISTS `ForumReplies` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tid` int(11) NOT NULL,
+  `uid` int(11) NOT NULL,
+  `reply` text COLLATE utf8_unicode_ci NOT NULL,
+  `date` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `Forums`
 --
 
 CREATE TABLE IF NOT EXISTS `Forums` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
-  `parent` int(11) NOT NULL,
-  `IsCategory` tinyint(1) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `category` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `Forums`
+--
+
+INSERT INTO `Forums` (`id`, `title`, `description`, `category`) VALUES
+(1, 'test forum 1', 'test desc 1', 1),
+(2, 'test forum 2', 'test desc 2', 1);
 
 -- --------------------------------------------------------
 
@@ -441,9 +464,17 @@ CREATE TABLE IF NOT EXISTS `ForumThreads` (
   `title` varchar(255) NOT NULL,
   `content` text NOT NULL,
   `uid` int(11) NOT NULL,
-  `time` int(11) NOT NULL,
+  `time` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `ForumThreads`
+--
+
+INSERT INTO `ForumThreads` (`id`, `forum`, `title`, `content`, `uid`, `time`) VALUES
+(1, 1, 'test thread title 1', 'test content 1', 18, '2013-07-10 00:00:00'),
+(2, 1, 'test title 2', 'test content 2', 18, '2013-07-25 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -596,7 +627,7 @@ CREATE TABLE IF NOT EXISTS `Lang_English` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `key` (`key`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=177 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=180 ;
 
 --
 -- Dumping data for table `Lang_English`
@@ -772,7 +803,9 @@ INSERT INTO `Lang_English` (`id`, `key`, `text`) VALUES
 (173, 'subtitle_ReplyMessage_title', 'Reply'),
 (174, 'subtitle_ReplyMessage_message', 'Message:'),
 (175, 'subtitle_ReplyMessage_submit', 'Send'),
-(176, 'subtitle_ReplyMessage_subject', 'Subject:');
+(176, 'subtitle_ReplyMessage_subject', 'Subject:'),
+(177, 'forum_ListThreads_title', 'Threads'),
+(178, 'forum_ViewThread_title', 'Thread');
 
 -- --------------------------------------------------------
 
@@ -786,14 +819,14 @@ CREATE TABLE IF NOT EXISTS `OnlineUsers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=747 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=759 ;
 
 --
 -- Dumping data for table `OnlineUsers`
 --
 
 INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(746, 'leb7kdi69i30f3tcrs96i899f3', 1373494096, '');
+(758, '7delm7rinokvn3jvstc2bkbvo7', 1373681346, '');
 
 -- --------------------------------------------------------
 
