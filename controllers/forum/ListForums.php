@@ -26,9 +26,26 @@
 				$content = array
 				  (
 				  array("{title}", $GLOBALS['COMMON']->l("forum_ListForums_title")),
+				  array("{TableRows}", self::GetForums())
 				 );
 			 
 		return $content;
+		}
+		
+		function GetForums(){
+			$args = array(
+				array(":cat", $GLOBALS['vars']['cat'], "str"),
+			);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Forums` WHERE `category` = :cat", $args);
+			$rows = "";
+			for ($i=0; $i < count($res); $i++) { 
+				$rows .= "<tr>";
+				$rows .= "<td><a href='index.php?page=forum&sec=threads&cat=".$GLOBALS['vars']['cat']."&forum=".$res[$i]['id']."'>".$res[$i]['title']."</a></td>";
+				$rows .= "<td>".$res[$i]['description']."</td>";
+				$rows .= "<td>threads count</td>";
+				$rows .= "</tr>";
+			}
+			return $rows;
 		}
 	
 			

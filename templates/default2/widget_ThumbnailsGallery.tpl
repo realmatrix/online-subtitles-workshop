@@ -66,6 +66,10 @@
 		float: left;
 		text-align: center;
 	}
+	.thumb-title{
+		width: 100%;
+		background-color: #000000
+	}
 </style>
 
 <div class="thumbwrapper">
@@ -76,6 +80,7 @@
 <div class="pan_wrap thumb-cell ">
 	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p1.jpg" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
+	<div class='thumb-title'>test content</div>
 </div>
 </div>
 
