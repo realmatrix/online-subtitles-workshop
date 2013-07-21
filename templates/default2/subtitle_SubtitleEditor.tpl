@@ -5,7 +5,11 @@
 		var elm1 = document.getElementById(show);
  		elm1.style.display = "block"; //show
  		if( show.substring(0,12) == "ttransscript" || show.substring(0,5) == "tlend" || show.substring(0,7) == "tlstart" ){
- 			document.getElementById(show).innerHTML = document.getElementById(hide).innerHTML;
+ 			var text = document.getElementById(hide).innerHTML;
+ 			text = text.replace('<br />', '\r\n');
+ 			text = text.replace('<br/>', '\r\n');
+ 			text = text.replace('<br>', '\r\n');
+ 			document.getElementById(show).innerHTML = text;
  			document.getElementById(show).focus();
  			document.getElementById(show).select();
  		}

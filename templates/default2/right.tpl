@@ -26,9 +26,12 @@
 	{widget_NewsLetter}
 <!-- end of news letter widget -->
 
+<!-- team chat -->
+	{widget_TeamChat}
+<!-- end team chat widget -->
 
 <!-- shout box widget -->
-				{widget_shoutbox}
+	{widget_shoutbox}
 <!-- end shout box widget -->
 	
 
