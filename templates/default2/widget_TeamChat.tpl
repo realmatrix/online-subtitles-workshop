@@ -1,3 +1,17 @@
+<style>
+	#teamchat-messages{
+		width: 100%;
+		height: 200px;
+		border-style: solid;
+		border-width: 1px;
+		overflow-x: hidden;
+		margin-bottom: 5px;
+	}
+	#teamchat-textarea{
+		width: 95%;
+		height: 40px;
+	}
+</style>
 <DIV class="catglow" style="width:100%;">
 <DIV class="cathead-m">
 <DIV class="cathead-r">
@@ -17,7 +31,11 @@
 
 
 <div id="widgt-teamchat">
-	content
+	<div id='teamchat-messages'></div>
+	<form>
+		<textarea id='teamchat-textarea'></textarea>
+		<div style="width: 100%; text-align: right;"><input type="submit" value="Send"/></div>
+	</form>
 </div>
 
 
