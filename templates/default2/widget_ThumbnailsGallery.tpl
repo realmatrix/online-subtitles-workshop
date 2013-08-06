@@ -86,7 +86,7 @@
 	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p1.jpg" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
-<div class='thumb-title'>test content</div>
+<div class='thumb-title'>{title_1}</div>
 </div>
 
 <div class="thumb-cell-container">	
@@ -94,6 +94,7 @@
 	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p2.jpg" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+<div class='thumb-title'>{title_2}</div>
 </div>
 
 <div class="thumb-cell-container">	
@@ -101,6 +102,7 @@
 	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p3.jpg" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+<div class='thumb-title'>{title_3}</div>
 </div>
 
 <div class="thumb-cell-container">	
@@ -108,6 +110,7 @@
 	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p10.jpg" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+<div class='thumb-title'>{title_4}</div>
 </div>
 </div>
 
@@ -117,6 +120,7 @@
 	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p4.jpg" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+<div class='thumb-title'>{title_5}</div>
 </div>
 
 <div class="thumb-cell-container">	
@@ -124,6 +128,7 @@
 	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p5.jpg" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+<div class='thumb-title'>{title_6}</div>
 </div>
 
 <div class="thumb-cell-container">	
@@ -131,6 +136,7 @@
 	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p6.jpg" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+<div class='thumb-title'>{title_7}</div>
 </div>
 
 <div class="thumb-cell-container">	
@@ -138,6 +144,7 @@
 	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p11.jpg" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+<div class='thumb-title'>{title_8}</div>
 </div>
 </div>
 
@@ -147,6 +154,7 @@
 	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p7.jpg" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+<div class='thumb-title'>{title_9}</div>
 </div>
 
 <div class="thumb-cell-container">	
@@ -154,6 +162,7 @@
 	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p8.jpg" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+<div class='thumb-title'>{title_10}</div>
 </div>
 
 <div class="thumb-cell-container">	
@@ -161,6 +170,7 @@
 	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p9.jpg" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+<div class='thumb-title'>{title_11}</div>
 </div>
 
 <div class="thumb-cell-container">	
@@ -168,6 +178,7 @@
 	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p12.jpg" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+<div class='thumb-title'>{title_12}</div>
 </div>
 </div>
 
@@ -177,6 +188,7 @@
 	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p1.jpg" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+<div class='thumb-title'>{title_13}</div>
 </div>
 
 <div class="thumb-cell-container">	
@@ -184,6 +196,7 @@
 	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p2.jpg" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+<div class='thumb-title'>{title_14}</div>
 </div>
 
 <div class="thumb-cell-container">	
@@ -191,6 +204,7 @@
 	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p3.jpg" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+<div class='thumb-title'>{title_15}</div>
 </div>
 
 <div class="thumb-cell-container">	
@@ -198,6 +212,7 @@
 	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p10.jpg" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+<div class='thumb-title'>{title_16}</div>
 </div>
 </div>
 
@@ -207,6 +222,7 @@
 	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p4.jpg" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+<div class='thumb-title'>{title_17}</div>
 </div>
 
 <div class="thumb-cell-container">	
@@ -214,6 +230,7 @@
 	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p5.jpg" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+<div class='thumb-title'>{title_18}</div>
 </div>
 
 <div class="thumb-cell-container">	
@@ -221,6 +238,7 @@
 	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p6.jpg" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+<div class='thumb-title'>{title_19}</div>
 </div>
 
 <div class="thumb-cell-container">	
@@ -228,6 +246,7 @@
 	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p11.jpg" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+<div class='thumb-title'>{title_20}</div>
 </div>
 </div>
 
@@ -237,6 +256,7 @@
 	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p7.jpg" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+<div class='thumb-title'>{title_21}</div>
 </div>
 
 <div class="thumb-cell-container">	
@@ -244,6 +264,7 @@
 	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p8.jpg" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+<div class='thumb-title'>{title_22}</div>
 </div>
 
 <div class="thumb-cell-container">	
@@ -251,6 +272,7 @@
 	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p9.jpg" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+<div class='thumb-title'>{title_23}</div>
 </div>
 
 <div class="thumb-cell-container">	
@@ -258,128 +280,13 @@
 	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p12.jpg" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+<div class='thumb-title'>{title_24}</div>
 </div>
 </div>
 
-<div class="thumb-row" >
-<div class="thumb-cell-container">	
-<div class="pan_wrap thumb-cell ">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p1.jpg" alt="panoramic" />
-	<div class="pan_frame">&nbsp;</div>
-</div>
-</div>
 
-<div class="thumb-cell-container">	
-<div class="pan_wrap thumb-cell">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p2.jpg" alt="panoramic" />
-	<div class="pan_frame">&nbsp;</div>
-</div>
-</div>
 
-<div class="thumb-cell-container">	
-<div class="pan_wrap thumb-cell">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p3.jpg" alt="panoramic" />
-	<div class="pan_frame">&nbsp;</div>
-</div>
-</div>
 
-<div class="thumb-cell-container">	
-<div class="pan_wrap thumb-cell ">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p10.jpg" alt="panoramic" />
-	<div class="pan_frame">&nbsp;</div>
-</div>
-</div>
-</div>
-
-<div class="thumb-row" >
-<div class="thumb-cell-container">	
-<div class="pan_wrap thumb-cell ">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p4.jpg" alt="panoramic" />
-	<div class="pan_frame">&nbsp;</div>
-</div>
-</div>
-
-<div class="thumb-cell-container">	
-<div class="pan_wrap thumb-cell">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p5.jpg" alt="panoramic" />
-	<div class="pan_frame">&nbsp;</div>
-</div>
-</div>
-
-<div class="thumb-cell-container">	
-<div class="pan_wrap thumb-cell">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p6.jpg" alt="panoramic" />
-	<div class="pan_frame">&nbsp;</div>
-</div>
-</div>
-
-<div class="thumb-cell-container">	
-<div class="pan_wrap thumb-cell">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p11.jpg" alt="panoramic" />
-	<div class="pan_frame">&nbsp;</div>
-</div>
-</div>
-</div>
-
-<div class="thumb-row" >
-<div class="thumb-cell-container">	
-<div class="pan_wrap thumb-cell ">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p7.jpg" alt="panoramic" />
-	<div class="pan_frame">&nbsp;</div>
-</div>
-</div>
-
-<div class="thumb-cell-container">	
-<div class="pan_wrap thumb-cell">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p8.jpg" alt="panoramic" />
-	<div class="pan_frame">&nbsp;</div>
-</div>
-</div>
-
-<div class="thumb-cell-container">	
-<div class="pan_wrap thumb-cell">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p9.jpg" alt="panoramic" />
-	<div class="pan_frame">&nbsp;</div>
-</div>
-</div>
-
-<div class="thumb-cell-container">	
-<div class="pan_wrap thumb-cell">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p12.jpg" alt="panoramic" />
-	<div class="pan_frame">&nbsp;</div>
-</div>
-</div>
-</div>
-
-<div class="thumb-row" >
-<div class="thumb-cell-container">	
-<div class="pan_wrap thumb-cell ">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p7.jpg" alt="panoramic" />
-	<div class="pan_frame">&nbsp;</div>
-</div>
-</div>
-
-<div class="thumb-cell-container">	
-<div class="pan_wrap thumb-cell">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p8.jpg" alt="panoramic" />
-	<div class="pan_frame">&nbsp;</div>
-</div>
-</div>
-
-<div class="thumb-cell-container">	
-<div class="pan_wrap thumb-cell">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p9.jpg" alt="panoramic" />
-	<div class="pan_frame">&nbsp;</div>
-</div>
-</div>
-
-<div class="thumb-cell-container">	
-<div class="pan_wrap thumb-cell">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p12.jpg" alt="panoramic" />
-	<div class="pan_frame">&nbsp;</div>
-</div>
-</div>
-</div>
 
 </div> <!-- wrapper -->
 
