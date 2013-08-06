@@ -22,6 +22,7 @@
 <!-- thumbnail gallery -->
 
 <style>
+/* max-width:100%; max-height:100%; */
 	.pan_wrap
 	{
 		background: url('templates/default2/files/thumbnails-gallery/pan_checks.gif') repeat;
