@@ -62,13 +62,17 @@
 		height: 100px;
 	}
 	.thumb-cell-container{
-		width: 25%;
+		width: 24.7%;
 		float: left;
 		text-align: center;
+		padding-top: 4px;
+		padding-bottom: 4px;
+    border:1px outset #999;
+    -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+    -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.4);
 	}
 	.thumb-title{
 		width: 100%;
-		background-color: #000000
 	}
 </style>
 
@@ -80,8 +84,8 @@
 <div class="pan_wrap thumb-cell ">
 	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p1.jpg" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
-	<div class='thumb-title'>test content</div>
 </div>
+<div class='thumb-title'>test content</div>
 </div>
 
 <div class="thumb-cell-container">	
