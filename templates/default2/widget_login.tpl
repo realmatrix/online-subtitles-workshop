@@ -31,12 +31,12 @@
 						<input type="text" name="username" style="width:100%;"/>
 						<label for="password" style="width: 100%;">{LoginPassword}</label>
 						<input type="password" name="password" style="width:100%;"/>
-
+						<div style="width: 100%; text-align: right;">
 						<input type="submit" value="{LoginSubmit}" class="SubmitButton"/>
+						<a href="?page=register">{LoginOrRegister}</a>
+						</div>
 						<input type="hidden" name="login" value="yes" />
 						<input type="hidden" name="page" value="login" />
-						<a href="?page=register">{LoginOrRegister}</a>
-				
 						</form>
 						</div>
 </div>		

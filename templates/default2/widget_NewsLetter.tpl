@@ -36,7 +36,7 @@
 				<input type="text" name="name" class="nw-text" />
 				<label for="email" class="nw-label">{NewsLetterEmail}</label>
 				<input type="text" name="email" class="nw-text" />
-				<input type="submit" value="{NewsLetterSubmit}" />
+				<div style="width: 100%; text-align: right; padding-top: 2px;"><input type="submit" value="{NewsLetterSubmit}" /></div>
 
 			<input type="hidden" name="NewsSubscribe" value="yes"/>
 		</form>
