@@ -2,7 +2,10 @@
 class Common{
 	
 	
-	function SystemRouter($page="", $sec="", $dataonly="", $controller="", $widget=""){
+	function SystemRouter($page="", $sec="", $dataonly="", $controller="", $GetSection="", $GetWidget=""){
+		if($dataonly==""){$dataonly=0;}
+		if($controller==""){$controller=0;}
+		if($widget==""){$widget=0;}
 		if($page!=""){
 			$args = array(
 				array(":page", $page, "str"),
@@ -10,7 +13,7 @@ class Common{
 				array(":dataonly", $dataonly, "str"),
 			);
 			$res = self::db_query("SELECT * FROM `SystemRouter` WHERE `page`=:page and `sec`=:sec and `dataonly`=:dataonly", $args);
-			if(count($res)===0){
+			if(count($res)<1){
 				$res = self::db_query("SELECT * FROM `SystemRouter` WHERE `page`=:page and `dataonly`=:dataonly", $args);
 				print_r($res);
 			}			
@@ -177,12 +180,11 @@ class Common{
 		include_once "widgets/".$widget."/".$widget.".php";
 		$options =  call_user_func("W".$widget."::".$widget."_options");
 		$loadwidget = FALSE;
-		if($_GET['page']!=""){$page = $_GET['page'];}
-		if($_POST['page']!=""){$page = $_POST['page'];}
-		if($_GET['page']=="" and $_POST['page']==""){$page = "home";}
+		$page = $GLOBALS['vars']['page'];
+		if($page==""){$page="home";}
 		if($options['loggedin']=="yes" and self::IsLoggedin()){$loadwidget = TRUE;}
 		if($options['loggedin']=="no" and !self::IsLoggedin()){$loadwidget = TRUE;}
-		if(count($options['show'])>0 and in_array($page, $options['show'])){$loadwidget = TRUE;}
+		if(count($options['show'])>0 and in_array($page, $options['show'])){$loadwidget = TRUE;}else{$loadwidget = FALSE;}
 		if(count($options['show'])==0){$loadwidget=TRUE;}
 		if($options['loggedin']=="yes" and !self::IsLoggedin()){$loadwidget = FALSE;}
 		if($options['loggedin']=="no" and self::IsLoggedin()){$loadwidget = FALSE;}	

@@ -40,27 +40,27 @@
          }
      }
 /////////////////////////////////////////////////////////
-
-	//if($GLOBALS['vars']['dataonly']=="yes"){$DataOnly=1;}else{$DataOnly=0;}
-	//echo $GLOBALS['COMMON']->SystemRouter($SystemPage, $SystemSection, $DataOnly, $getcontroller, $getsection);	 
+	if($SystemPage=="home" and $SystemSection==""){$SystemSection="home";}
+	if($GLOBALS['vars']['dataonly']=="yes"){$DataOnly=1;}else{$DataOnly=0;}
+	echo $GLOBALS['COMMON']->SystemRouter($SystemPage, $SystemSection, $DataOnly, $getcontroller, $getsection, $getwidget);	 
 	 	
 	switch ($SystemPage) {
     case ($SystemPage=="home" or $SystemPage=="video" or $SystemPage=="team" or $SystemPage=="subtitle" or $SystemPage=="forum" or $SystemPage=="message") and $dataonly!="yes":
 		//loading template
-		$GLOBALS['FinalPage'] = $GLOBALS['COMMON']->render($GLOBALS['TemplateHead'], "head");
-		$GLOBALS['FinalPage'] .= $GLOBALS['COMMON']->render($GLOBALS['TemplateHeader'], "header");
-		$GLOBALS['FinalPage'] .= $GLOBALS['COMMON']->render($GLOBALS['TemplateLeft'], "left");
-		$GLOBALS['FinalPage'] .= $GLOBALS['COMMON']->render($GLOBALS['TemplateBody'], "body");
-		$GLOBALS['FinalPage'] .= $GLOBALS['COMMON']->render($GLOBALS['TemplateRight'], "right");
-		$GLOBALS['FinalPage'] .= $GLOBALS['COMMON']->render($GLOBALS['TemplateFooter'], "footer");
-		echo $GLOBALS['FinalPage'];
+		//$GLOBALS['FinalPage'] = $GLOBALS['COMMON']->render($GLOBALS['TemplateHead'], "head");
+		//$GLOBALS['FinalPage'] .= $GLOBALS['COMMON']->render($GLOBALS['TemplateHeader'], "header");
+		//$GLOBALS['FinalPage'] .= $GLOBALS['COMMON']->render($GLOBALS['TemplateLeft'], "left");
+		//$GLOBALS['FinalPage'] .= $GLOBALS['COMMON']->render($GLOBALS['TemplateBody'], "body");
+		//$GLOBALS['FinalPage'] .= $GLOBALS['COMMON']->render($GLOBALS['TemplateRight'], "right");
+		//$GLOBALS['FinalPage'] .= $GLOBALS['COMMON']->render($GLOBALS['TemplateFooter'], "footer");
+		//echo $GLOBALS['FinalPage'];
         break;
     case (/*$SystemPage=="video" and $SystemSection=="add") or $SystemPage=="subtitle" or*/ $SystemPage=="search"):
-		$GLOBALS['FinalPage'] = $GLOBALS['COMMON']->render($GLOBALS['TemplateHead'], "head");
-		$GLOBALS['FinalPage'] .= $GLOBALS['COMMON']->render($GLOBALS['TemplateHeader'], "header");
-		$GLOBALS['FinalPage'] .= $GLOBALS['COMMON']->render($GLOBALS['TemplateBody'], "body");
-		$GLOBALS['FinalPage'] .= $GLOBALS['COMMON']->render($GLOBALS['TemplateFooter'], "footer");
-		echo $GLOBALS['FinalPage'];
+		//$GLOBALS['FinalPage'] = $GLOBALS['COMMON']->render($GLOBALS['TemplateHead'], "head");
+		//$GLOBALS['FinalPage'] .= $GLOBALS['COMMON']->render($GLOBALS['TemplateHeader'], "header");
+		//$GLOBALS['FinalPage'] .= $GLOBALS['COMMON']->render($GLOBALS['TemplateBody'], "body");
+		//$GLOBALS['FinalPage'] .= $GLOBALS['COMMON']->render($GLOBALS['TemplateFooter'], "footer");
+		//echo $GLOBALS['FinalPage'];
         break;
     case $SystemPage!="" and $dataonly=="yes" and $getwidget!="":
 		$GLOBALS['FinalPage'] = $GLOBALS['COMMON']->render($GLOBALS['TemplateHead'], "head");

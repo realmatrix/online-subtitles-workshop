@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 13, 2013 at 03:10 AM
+-- Generation Time: Aug 07, 2013 at 09:22 PM
 -- Server version: 5.5.29-log
 -- PHP Version: 5.3.21
 
@@ -627,7 +627,7 @@ CREATE TABLE IF NOT EXISTS `Lang_English` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `key` (`key`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=180 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=179 ;
 
 --
 -- Dumping data for table `Lang_English`
@@ -819,14 +819,14 @@ CREATE TABLE IF NOT EXISTS `OnlineUsers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=759 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=784 ;
 
 --
 -- Dumping data for table `OnlineUsers`
 --
 
 INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(758, '7delm7rinokvn3jvstc2bkbvo7', 1373681346, '');
+(783, 'puc54s2qen6ouae1us7k8ngqk5', 1375906511, '');
 
 -- --------------------------------------------------------
 
@@ -918,7 +918,7 @@ INSERT INTO `Subtitles` (`id`, `fps_sec`, `fps_mil_sec`, `release_name`, `versio
 --
 
 CREATE TABLE IF NOT EXISTS `SubtitlesContent` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `sid` int(11) NOT NULL,
   `uid` int(11) NOT NULL,
   `cid` int(11) NOT NULL,
@@ -935,8 +935,8 @@ CREATE TABLE IF NOT EXISTS `SubtitlesContent` (
 --
 
 INSERT INTO `SubtitlesContent` (`id`, `sid`, `uid`, `cid`, `line`, `start`, `end`, `text`, `TranscribedText`) VALUES
-(8971, 52, 18, 10, 0, '00:01:02,000', '00:01:04,241', 'Are you seriously\r\ntrying to rope-a-dope me?\r\n', 'sdkjf sdf\nsdf jslkfj  ?'),
-(8972, 52, 18, 10, 2, '00:01:04,242', '00:01:05,890', 'That''s an old man''s move.\r\n', 'sdfh lkasf lkjsdf\nsdfj sdlfkjs;lkjdf\nsdkfj lksdjf'),
+(8971, 52, 18, 10, 0, '00:01:02,000', '00:01:04,241', 'Are you seriously\r\ntrying to rope-a-dope me?\r\n', 'test'),
+(8972, 52, 18, 10, 2, '00:01:04,242', '00:01:05,890', 'That''s an old man''s move.\r\n', 'test\ntest'),
 (8973, 52, 18, 10, 3, '00:01:05,891', '00:01:08,239', '- I am old man. \r\n- No, you''re not.\r\n', '...'),
 (8974, 52, 18, 10, 4, '00:01:08,240', '00:01:09,685', 'But you box like one.\r\n', ''),
 (8975, 52, 18, 10, 5, '00:01:13,120', '00:01:14,119', 'Not bad.\r\n', ''),
@@ -1432,9 +1432,9 @@ INSERT INTO `SubtitlesContent` (`id`, `sid`, `uid`, `cid`, `line`, `start`, `end
 (9465, 52, 18, 10, 495, '00:48:22,291', '00:48:24,886', '- He...\r\n- Can we trust him?\r\n', ''),
 (9466, 52, 18, 10, 496, '00:48:25,760', '00:48:27,884', 'Banning was one of our best agents.\r\n', ''),
 (9467, 52, 18, 10, 497, '00:48:27,885', '00:48:30,319', 'Mr. Speaker, I just have to say,\r\nthis is Mike Banning.\r\n', ''),
-(9468, 52, 18, 10, 498, '00:48:30,320', '00:48:32,799', 'This is the same guy that was removed\r\nfrom the president''s detail...\r\n', '');
+(9468, 52, 18, 10, 498, '00:48:30,320', '00:48:32,799', 'This is the same guy that was removed\r\nfrom the president''s detail...\r\n', ''),
+(9469, 52, 18, 10, 499, '00:48:32,800', '00:48:33,720', '- after the accident\r\n- Whoa, whoa,\r\n', '');
 INSERT INTO `SubtitlesContent` (`id`, `sid`, `uid`, `cid`, `line`, `start`, `end`, `text`, `TranscribedText`) VALUES
-(9469, 52, 18, 10, 499, '00:48:32,800', '00:48:33,720', '- after the accident\r\n- Whoa, whoa,\r\n', ''),
 (9470, 52, 18, 10, 500, '00:48:33,721', '00:48:34,959', '- when we lost the first lady?\r\n- Ray! Ray! Ray!\r\n', ''),
 (9471, 52, 18, 10, 501, '00:48:34,960', '00:48:35,959', '- You wanna add something?\r\n- Well, what''s he doing\r\n', ''),
 (9472, 52, 18, 10, 502, '00:48:35,960', '00:48:36,766', '- I suggest you get your facts straight.\r\n- In the White House right now?\r\n', ''),
@@ -1934,9 +1934,9 @@ INSERT INTO `SubtitlesContent` (`id`, `sid`, `uid`, `cid`, `line`, `start`, `end
 (9966, 52, 18, 10, 996, '01:29:02,120', '01:29:03,007', 'Mike?\r\n', ''),
 (9967, 52, 18, 10, 997, '01:29:03,520', '01:29:05,568', 'Hey. I was just checking in.\r\n', ''),
 (9968, 52, 18, 10, 998, '01:29:07,200', '01:29:09,441', 'Babe. How''s your day been?\r\n', ''),
-(9969, 52, 18, 10, 999, '01:29:11,080', '01:29:12,525', 'Yeah, it''s been busy.\r\n', '');
+(9969, 52, 18, 10, 999, '01:29:11,080', '01:29:12,525', 'Yeah, it''s been busy.\r\n', ''),
+(9970, 52, 18, 10, 1000, '01:29:13,440', '01:29:15,090', 'It''s good, you know.\r\n', '');
 INSERT INTO `SubtitlesContent` (`id`, `sid`, `uid`, `cid`, `line`, `start`, `end`, `text`, `TranscribedText`) VALUES
-(9970, 52, 18, 10, 1000, '01:29:13,440', '01:29:15,090', 'It''s good, you know.\r\n', ''),
 (9971, 52, 18, 10, 1001, '01:29:16,560', '01:29:17,891', 'How ''bout you?\r\n', ''),
 (9972, 52, 18, 10, 1002, '01:29:18,920', '01:29:21,287', 'Yeah.Busy.\r\n', ''),
 (9973, 52, 18, 10, 1003, '01:29:22,240', '01:29:23,651', 'Hey, you okay?\r\n', ''),
@@ -2201,7 +2201,7 @@ CREATE TABLE IF NOT EXISTS `SystemRouter` (
   `sec` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `page` (`page`,`sec`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
 
 --
 -- Dumping data for table `SystemRouter`
@@ -2211,7 +2211,36 @@ INSERT INTO `SystemRouter` (`id`, `head`, `header`, `left`, `body`, `right`, `fo
 (1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'home', ''),
 (2, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'video', ''),
 (3, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'team', ''),
-(4, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'subtitle', '');
+(4, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'subtitle', ''),
+(6, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'home', 'home'),
+(7, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'forum', ''),
+(8, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'message', ''),
+(9, 1, 1, 0, 1, 0, 1, 0, 0, 0, 'search', 'advanced'),
+(10, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'video', 'list'),
+(11, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'video', 'add'),
+(12, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'team', 'add'),
+(13, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'message', 'list'),
+(14, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'video', 'followed'),
+(15, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'subtitle', 'followed'),
+(16, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'subtitle', 'list'),
+(17, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'team', 'list'),
+(18, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'team', 'joined');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `TeamChat`
+--
+
+CREATE TABLE IF NOT EXISTS `TeamChat` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` datetime NOT NULL,
+  `uid` int(11) NOT NULL,
+  `text` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `sid` int(11) NOT NULL,
+  `tid` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -2302,6 +2331,17 @@ CREATE TABLE IF NOT EXISTS `Thumbnails` (
   `thumbnail` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Transcriptions`
+--
+
+CREATE TABLE IF NOT EXISTS `Transcriptions` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 

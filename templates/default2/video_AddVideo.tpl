@@ -73,7 +73,7 @@
 	
 	<br />
 	<label for="Genres">{Genres}</label>
-        <div style="overflow: auto; width: 100%; height: 100px; border: 1px solid #336699; padding-left: 5px">
+        <div style="padding-top: 3px; overflow: auto; width: 100%; height: 90px; border: 0px solid #b0b0b0; padding-left: 5px">
 			{VideoGenres}
         </div>
 
