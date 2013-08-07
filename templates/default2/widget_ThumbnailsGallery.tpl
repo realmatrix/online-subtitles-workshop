@@ -46,6 +46,8 @@
 	
 	.thumbwrapper{
 		width: 100%;
+		text-align: center;
+		margin-bottom: 10px;
 	}
 	
 	.thumb-cell{
@@ -64,11 +66,12 @@
 	}
 	.thumb-cell-container{
 		width: 24.7%;
+		height: auto;
 		float: left;
 		text-align: center;
 		padding-top: 4px;
 		padding-bottom: 4px;
-    border:1px outset #999;
+    border:1px outset #ccccff;
     -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.4);
     -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.4);
 	}
