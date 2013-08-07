@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 07, 2013 at 09:22 PM
+-- Generation Time: Aug 08, 2013 at 12:09 AM
 -- Server version: 5.5.29-log
 -- PHP Version: 5.3.21
 
@@ -819,14 +819,14 @@ CREATE TABLE IF NOT EXISTS `OnlineUsers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=784 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=786 ;
 
 --
 -- Dumping data for table `OnlineUsers`
 --
 
 INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(783, 'puc54s2qen6ouae1us7k8ngqk5', 1375906511, '');
+(785, 'puc54s2qen6ouae1us7k8ngqk5', 1375915603, '');
 
 -- --------------------------------------------------------
 
@@ -2201,7 +2201,7 @@ CREATE TABLE IF NOT EXISTS `SystemRouter` (
   `sec` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `page` (`page`,`sec`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
 
 --
 -- Dumping data for table `SystemRouter`
@@ -2224,7 +2224,9 @@ INSERT INTO `SystemRouter` (`id`, `head`, `header`, `left`, `body`, `right`, `fo
 (15, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'subtitle', 'followed'),
 (16, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'subtitle', 'list'),
 (17, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'team', 'list'),
-(18, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'team', 'joined');
+(18, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'team', 'joined'),
+(19, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'forum', 'forums'),
+(20, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'forum', 'threads');
 
 -- --------------------------------------------------------
 
@@ -2340,6 +2342,11 @@ CREATE TABLE IF NOT EXISTS `Thumbnails` (
 
 CREATE TABLE IF NOT EXISTS `Transcriptions` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `sid` int(11) NOT NULL,
+  `cid` int(11) NOT NULL,
+  `uid` int(11) NOT NULL,
+  `lid` int(11) NOT NULL,
+  `text` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
