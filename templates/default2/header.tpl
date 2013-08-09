@@ -61,5 +61,6 @@ to content</A></P><A accessKey="t" id="top" name="top"></A>
 
 <!-- start content wrapper -->
 <div id="wrapper2">
+	{widget_breadcrumbs}
 	{SystemError}
 	{SystemSuccess}	
