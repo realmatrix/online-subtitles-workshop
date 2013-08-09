@@ -1,11 +1,3 @@
-<script>
-$(document).ready(function(){
-     var photo = $("#photo").val();
-    $.post("upload.php",{photo:photo},function(data){
-      $("#status").html(data);
-     });
-});
-</script>
 <DIV class="catglow" style="width:100%;">
 <DIV class="cathead-m">
 <DIV class="cathead-r">
@@ -26,7 +18,6 @@ $(document).ready(function(){
 
 <div id="div-synopsis">
 	max width 210 max height 280
-	<p id="status"></p>
 	<form id="form1" enctype="multipart/formdata">
 	<input type="file" id="photo" name="photo" />
 	<input type="submit" id="save" name="save" value="Upload" />
