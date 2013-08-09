@@ -4,6 +4,12 @@
 	}
 	.thumnail-container{
 		width: 210px; height: 280px; background-color: black; text-align: center;
+		text-align: center;
+		vertical-align: middle;
+	}
+	.video-thumbnail{
+		max-height: 100%;
+		max-width: 100%;
 	}
 </style>
 
@@ -23,7 +29,7 @@
 <TABLE class="cat" cellSpacing="0" cellPadding="0" width="100%">
   <TBODY>
   <TR>
-  	<td><div class="thumnail-container"><img src="images/videos/none.png" /></div></td>
+  	<td><div class="thumnail-container"><img class='video-thumbnail' src="uploads/thumbnails/video/{thumbnail}" /></div></td>
     <TD class="forumdetails" style="width: 100%;"><SPAN class="forum-descriptions">
 
 

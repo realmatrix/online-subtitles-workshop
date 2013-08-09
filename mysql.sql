@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 08, 2013 at 12:09 AM
+-- Generation Time: Aug 09, 2013 at 06:00 PM
 -- Server version: 5.5.29-log
 -- PHP Version: 5.3.21
 
@@ -819,14 +819,14 @@ CREATE TABLE IF NOT EXISTS `OnlineUsers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=786 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=795 ;
 
 --
 -- Dumping data for table `OnlineUsers`
 --
 
 INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(785, 'puc54s2qen6ouae1us7k8ngqk5', 1375915603, '');
+(794, '3i9f5k76bnnmuigp3d59ii6081', 1376067035, '');
 
 -- --------------------------------------------------------
 
@@ -2201,7 +2201,7 @@ CREATE TABLE IF NOT EXISTS `SystemRouter` (
   `sec` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `page` (`page`,`sec`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
 
 --
 -- Dumping data for table `SystemRouter`
@@ -2226,7 +2226,8 @@ INSERT INTO `SystemRouter` (`id`, `head`, `header`, `left`, `body`, `right`, `fo
 (17, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'team', 'list'),
 (18, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'team', 'joined'),
 (19, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'forum', 'forums'),
-(20, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'forum', 'threads');
+(20, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'forum', 'threads'),
+(22, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'video', 'view');
 
 -- --------------------------------------------------------
 
@@ -2432,7 +2433,7 @@ CREATE TABLE IF NOT EXISTS `Videos` (
 --
 
 INSERT INTO `Videos` (`id`, `uid`, `title`, `other_title`, `type`, `category`, `language`, `country`, `genres`, `release_date`, `casting`, `director`, `length`, `tags`, `synopsis`, `thumbnail`, `image`, `source`, `year`, `url`) VALUES
-(10, 18, 'jhkghj', 'ghjhgj', 2, 2, 3, 16, '2', '1817-11-19', '0', '0', 5, 'ghjhj', ' ghjghjgjh', '', '', 'http://www.youtube.com/watch?v=5guMumPFBag', 0, ''),
+(10, 18, 'jhkghj', 'ghjhgj', 2, 2, 3, 16, '2', '1817-11-19', '0', '0', 5, 'ghjhj', ' ghjghjgjh', '10_181376066641tlkOX.jpg', '', 'http://www.youtube.com/watch?v=5guMumPFBag', 0, ''),
 (11, 18, 'tty tyu tryu tru tryytu', 'tu t tyu tyutyu', 1, 2, 6, 3, '2', '1816-05-17', 't yu t', 't yutyu', 31, 'ty tyu', ' tyu tyuyu', '', '', '', 0, ''),
 (12, 18, 'fhfg f fgh fgh dfh fgh fhfgh', ' fghfg fgh fgh gh', 1, 1, 13, 4, '1', '1806-02-07', 'fgh fgh fgh', 'fhg fggh', 18, 'dfgdfg, dfg dfg,df gdfg ,d fgdf,', '  dfgdf sj dsflkjh lkjsh flkjfh lskdfjh lskdfh oiuehroiuwerh lkewjrh slkjh lkjdfhslkjhlkdsjh', '', '', '', 0, ''),
 (13, 18, 'aaaaaaaaaaaaa', 'bbbbbbbbbbbbbb', 1, 2, 6, 25, '1', '1800-01-01', 'cccccccccc', 'ddddddddd', 4, 'kjh, kjh, kjh, jklh, jkh', ' uyiyui yu uyi', '', '', '', 0, ''),

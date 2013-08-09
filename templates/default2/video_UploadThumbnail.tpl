@@ -18,17 +18,18 @@
 
 <div id="div-synopsis">
 	max width 210 max height 280
-	<form id="form1" enctype="multipart/formdata">
-	<input type="file" id="photo" name="photo" />
+	<form method="post" action="index.php" enctype="multipart/form-data">
+	<input type="file" name="file" />
 	<input type="submit" id="save" name="save" value="Upload" />
 	
 	<input type="hidden" name="vid" value="{vid}" />
-	<input type="hidden" name="dataonly" value="yes"/> <!-- uncomment if using with ajax -->
-	<input type="hidden" name="getcontroller" value="subtitle"/>
-	<input type="hidden" name="getsection" value="Addsubtitle"/>
-	<input type="hidden" name="ssec" value="Addsubtitle"/>
-	<input type="hidden" name="h" value="Submitsubtitle"/>
-		
+	<!-- <input type="hidden" name="dataonly" value="yes"/> --> <!-- uncomment if using with ajax -->
+	<!-- <input type="hidden" name="getcontroller" value="subtitle"/> -->
+	<!-- <input type="hidden" name="getsection" value="Addsubtitle"/> -->
+	<input type="hidden" name="page" value="video" /> <!-- comment if using ajax -->
+	<input type="hidden" name="sec" value="view" /> <!-- comment if using ajax -->
+	<input type="hidden" name="ssec" value="UploadThumbnail"/>
+	<input type="hidden" name="h" value="UploadThumb"/>
 	</form>
 </div>
 

@@ -33,8 +33,7 @@
 				  array("{VideoReleaseDate}", $video[0]['release_date']),
 				  array("{VideoCasting}", $video[0]['casting']),
 				  array("{VideoDirector}", $video[0]['director']),
-				  array("{VideoLength}", $video[0]['length']),
-				  
+				  array("{VideoLength}", $video[0]['length']),				  
 				  array("{OtherTitle}", $GLOBALS['COMMON']->l('video_ViewVideo_OtherTitle')),
 				  array("{Country}", $GLOBALS['COMMON']->l('video_ViewVideo_Country')),
 				  array("{Genre}", $GLOBALS['COMMON']->l('video_ViewVideo_Genre')),
@@ -42,6 +41,7 @@
 				  array("{Casting}", $GLOBALS['COMMON']->l('video_ViewVideo_Casting')),
 				  array("{Director}", $GLOBALS['COMMON']->l('video_ViewVideo_Director')),
 				  array("{Length}", $GLOBALS['COMMON']->l('video_ViewVideo_Length')),
+				  array("{thumbnail}", $video[0]['thumbnail']),
 				 );
 			 
 		return $content;
