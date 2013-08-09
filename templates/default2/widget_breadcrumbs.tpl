@@ -6,5 +6,5 @@
 </style>
 
 <div id="breadcrumbs">
-	<a>{page}</a>>><a>{section}</a>
+	<a href="index.php?page={page}">{page}</a> >> <a href="index.php?page={page}&sec={section}">{section}</a>
 </div>
