@@ -18,8 +18,8 @@
 		function widget_breadcrumbs_render(){
 			$array = array(
 				array("{TemplatePath}",$GLOBALS['config']['TemplatesDir'].$GLOBALS['config']['template']),
-				array("{page}", $GLOBALS['vars']['page']),
-				array("{section}", $GLOBALS['vars']['sec']),
+				array("{page}", ucfirst($GLOBALS['vars']['page'])),
+				array("{section}", ucfirst($GLOBALS['vars']['sec'])),
 			);
 			return $array;
 		}
