@@ -1,3 +1,9 @@
+<script>
+var thumbimg = document.getElementById("imgvideothumbnail");
+thumbimg.onerror = function () { 
+    this.style.display = "none";
+}
+</script>
 <style>
 	.table-viewvideo{
 		width: 100%;
@@ -29,7 +35,7 @@
 <TABLE class="cat" cellSpacing="0" cellPadding="0" width="100%">
   <TBODY>
   <TR>
-  	<td><div class="thumnail-container"><img class='video-thumbnail' src="uploads/thumbnails/video/{thumbnail}" /></div></td>
+  	<td><div class="thumnail-container"><img id='imgvideothumbnail' class='video-thumbnail' src="uploads/thumbnails/video/{thumbnail}" /></div></td>
     <TD class="forumdetails" style="width: 100%;"><SPAN class="forum-descriptions">
 
 

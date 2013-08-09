@@ -37,6 +37,13 @@
 				  array("{rd-year}", self::years()),
 				  array("{length}", self::minutes()),
 				  array("{title}", $GLOBALS['COMMON']->l("video_AddVideo_title")),
+				  array("{htitle}", $GLOBALS['vars']['VideoTitle']),
+				  array("{hothertitle}", $GLOBALS['vars']['VideoOtherTitle']),
+				  array("{hvideourl}", $GLOBALS['vars']['VideoUrl']),
+				  array("{hcasting}", $GLOBALS['vars']['casting']),
+				  array("{htags}", $GLOBALS['vars']['tags']),
+				  array("{hsynopsis}", $GLOBALS['vars']['synopsis']),
+				  array("{hdirector}", $GLOBALS['vars']['director']),
 				  array("{error}", $GLOBALS['COMMON']->FormatMessage("error", self::$error)),
 				  array("{message}", $GLOBALS['COMMON']->FormatMessage("message", self::$message)),
 				  array("{Type}", $GLOBALS['COMMON']->l('video_AddVideo_NewVideoType')),
@@ -62,48 +69,56 @@
 		
 		function languages(){
 			$languages = $GLOBALS['COMMON']->GetLanguages();
-			for ($i=0; $i < count($languages); $i++) { 
-				$res .= "<option value='".$languages[$i]['id']."'>".$languages[$i]['language']."</option>";
+			for ($i=0; $i < count($languages); $i++) {
+				if($GLOBALS['vars']['VideoLanguage'] == $languages[$i]['id']){$selected = "selected='selected'";}else{$selected="";}
+				$res .= "<option value='".$languages[$i]['id']."' ".$selected.">".$languages[$i]['language']."</option>";
 			}
 			return $res;
 		}
 		
 		function types(){
 			$types = $GLOBALS['COMMON']->GetVideoTypes();
-			for ($i=0; $i < count($types); $i++) { 
-				$res .= "<option value='".$types[$i]['id']."'>".$types[$i]['type']."</option>";
+			for ($i=0; $i < count($types); $i++) {
+				if($GLOBALS['vars']['VideoType'] == $types[$i]['id']){$selected = "selected='selected'";}else{$selected="";} 
+				$res .= "<option value='".$types[$i]['id']."' ".$selected.">".$types[$i]['type']."</option>";
 			}
 			return $res;
 		}
 		
 		function categories(){
 			$categories = $GLOBALS['COMMON']->GetVideoCategories();
-			for ($i=0; $i < count($categories); $i++) { 
-				$res .= "<option value='".$categories[$i]['id']."'>".$categories[$i]['category']."</option>";
+			for ($i=0; $i < count($categories); $i++) {
+				if($GLOBALS['vars']['VideoCategory'] == $categories[$i]['id']){$selected = "selected='selected'";}else{$selected="";} 
+				$res .= "<option value='".$categories[$i]['id']."' ".$selected.">".$categories[$i]['category']."</option>";
 			}
 			return $res;
 		}
 		
 		function countries(){
 			$countries = $GLOBALS['COMMON']->GetCountries();
-			for ($i=0; $i < count($countries); $i++) { 
-				$res .= "<option value='".$countries[$i]['id']."'>".$countries[$i]['short_name']."</option>";
+			for ($i=0; $i < count($countries); $i++) {
+				if($GLOBALS['vars']['country'] == $countries[$i]['id']){$selected = "selected='selected'";}else{$selected="";} 
+				$res .= "<option value='".$countries[$i]['id']."' ".$selected.">".$countries[$i]['short_name']."</option>";
 			}
 			return $res;
 		}
 
 		function genres(){
-			$genres = $GLOBALS['COMMON']->GetGenres();
-			for ($i=0; $i < count($genres); $i++) { 
-				$res .= "<div class='checkbox-genre'><label for='chkgenre".$genres[$i]['id']."'><input type='checkbox' name='genres' id='chkgenre".$genres[$i]['id']."' value='".$genres[$i]['id']."'> ".$genres[$i]['genre']."</label></div>";
+			$genres = $GLOBALS['COMMON']->GetGenres();			
+			for ($i=0; $i < count($genres); $i++) {
+				if(is_array($GLOBALS['vars']['genres'])){
+				if(in_array($genres[$i]['id'], $GLOBALS['vars']['genres'])){$checked="checked";}else{$checked="";}
+				}
+				$res .= "<div class='checkbox-genre'><label for='chkgenre".$genres[$i]['id']."'><input type='checkbox' name='genres[]' id='chkgenre".$genres[$i]['id']."' value='".$genres[$i]['id']."' ".$checked."> ".$genres[$i]['genre']."</label></div>";
 			}
 			return $res;
 		}
 		
 		function days(){
 			$days = $GLOBALS['COMMON']->days();
-			for ($i=0; $i < count($days); $i++) { 
-				$res .= "<option value='".$days[$i]."'>".$days[$i]."</option>";
+			for ($i=0; $i < count($days); $i++) {
+				if($GLOBALS['vars']['rd-day'] == $days[$i]){$selected = "selected='selected'";}else{$selected="";}  
+				$res .= "<option value='".$days[$i]."' ".$selected.">".$days[$i]."</option>";
 			}
 			return $res;
 		}
@@ -126,8 +141,9 @@
 		
 		function minutes(){
 			$minutes = $GLOBALS['COMMON']->minutes(300);
-			for ($i=0; $i < count($minutes); $i++) { 
-				$res .= "<option value='".$minutes[$i]."'>".$minutes[$i]."</option>";
+			for ($i=0; $i < count($minutes); $i++) {
+				if($GLOBALS['vars']['length'] == $minutes[$i]){$selected = "selected='selected'";}else{$selected="";} 
+				$res .= "<option value='".$minutes[$i]."' ".$selected.">".$minutes[$i]."</option>";
 			}
 			return $res;	
 		}
@@ -147,7 +163,8 @@
 			if($args['director']==""){self::$error[]=$GLOBALS['COMMON']->l('video_AddVideo_EnterDirector');}
 			if($args['length']==""){self::$error[]=$GLOBALS['COMMON']->l('video_AddVideo_SelectVideoLength');}
 			if($args['tags']==""){self::$error[]=$GLOBALS['COMMON']->l('video_AddVideo_EnterVideoTags');}			
-			if($args['synopsis']==""){self::$error[]=$GLOBALS['COMMON']->l('video_AddVideo_EnterVideoSynopsis');}			
+			if($args['synopsis']==""){self::$error[]=$GLOBALS['COMMON']->l('video_AddVideo_EnterVideoSynopsis');}
+			if($GLOBALS['vars']['VideoUrl']!="" and !filter_var($GLOBALS['vars']['VideoUrl'], FILTER_VALIDATE_URL)){self::$error[]="invalid url";}		
 			if(count(self::$error)>0){return FALSE;}
 			
 			//$genres = implode(",", $_POST['genres']);

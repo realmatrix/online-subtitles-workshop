@@ -54,15 +54,15 @@
 	
 	<br />
 	<label for="VideoTitle">{Title}</label>
-	<input type="text" name="VideoTitle" id="VideoTitle" value="" data-required="true" />
+	<input type="text" name="VideoTitle" id="VideoTitle" value="{htitle}" data-required="true" />
 	
 	<br />
 	<label for="VideoOtherTitle">{OtherTitle}</label>
-	<input type="text" name="VideoOtherTitle" id="VideoOtherTitle" value="" />
+	<input type="text" name="VideoOtherTitle" id="VideoOtherTitle" value="{hothertitle}" />
 
 	<br />
 	<label for="VideoUrl">{VideoUrl}</label>
-	<input type="text" name="VideoUrl" id="VideoUrl" value="" />
+	<input type="text" name="VideoUrl" id="VideoUrl" value="{hvideourl}" />
 	
 	<br />
 	<label for="countries" >{Country}</label>
@@ -85,11 +85,11 @@
 	
 	<br />
 	<label for="casting">{Casting}</label>
-	<input type="text" name="casting" id="casting" value=""  data-required="true"/>
+	<input type="text" name="casting" id="casting" value="{hcasting}"  data-required="true"/>
 
 	<br />
 	<label for="director">{Director}</label>
-	<input type="text" name="director" id="director" value=""  data-required="true"/>
+	<input type="text" name="director" id="director" value="{hdirector}"  data-required="true"/>
 
 	<label for="length" >{Length}</label>
 	<select name="length" id="length" data-required="true">
@@ -98,11 +98,11 @@
 	
 	<br />
 	<label for="tags">{Tags}</label>
-	<input type="text" name="tags" id="tags" value=""  data-required="true"/>
+	<input type="text" name="tags" id="tags" value="{htags}"  data-required="true"/>
 
 	<br />
 	<label for="synopsis">{Synopsis}</label>
-	<textarea id="synopsis" name="synopsis" rows="5" data-required="true"> </textarea>
+	<textarea id="synopsis" name="synopsis" rows="5" data-required="true">{hsynopsis}</textarea>
 	
 	<!-- <input type="hidden" name="dataonly" value="yes" /> --> <!-- uncomment if using ajax -->
 	<!-- <input type="hidden" name="getcontroller" value="video" /> --> <!-- uncomment if using ajax -->
