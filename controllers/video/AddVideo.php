@@ -125,16 +125,18 @@
 		
 		function months(){
 			$months = $GLOBALS['COMMON']->months();
-			for ($i=0; $i < count($months); $i++) { 
-				$res .= "<option value='".$months[$i]."'>".$months[$i]."</option>";
+			for ($i=0; $i < count($months); $i++) {
+				if($GLOBALS['vars']['rd-month'] == $months[$i]){$selected = "selected='selected'";}else{$selected="";} 
+				$res .= "<option value='".$months[$i]."' ".$selected.">".$months[$i]."</option>";
 			}
 			return $res;
 		}
 
 		function years(){
 			$years = $GLOBALS['COMMON']->years();
-			for ($i=0; $i < count($years); $i++) { 
-				$res .= "<option value='".$years[$i]."'>".$years[$i]."</option>";
+			for ($i=0; $i < count($years); $i++) {
+				if($GLOBALS['vars']['rd-year'] == $years[$i]){$selected = "selected='selected'";}else{$selected="";}  
+				$res .= "<option value='".$years[$i]."' ".$selected.">".$years[$i]."</option>";
 			}
 			return $res;
 		}
