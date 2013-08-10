@@ -5,6 +5,15 @@
 	#table-subtitlecds td:nth-child(3){
 		width: 30px;
 	}
+	#table-subtitlecds td:nth-child(4){
+		width: 20px;
+		text-align: center;
+	}
+	.teamdownload{
+		background-image: url("templates/default2/tmp/icon_download.gif");
+		width: 16px;
+		height: 16px;
+	}
 </style>
 <DIV class="catglow">
 <DIV class="cathead-m">
