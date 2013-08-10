@@ -78,6 +78,7 @@
 		}
 		
 		function UpdateText(){
+			$GLOBALS['vars']['content'] = preg_replace('/^[ \t]*[\r\n]+/m', '', $GLOBALS['vars']['content']);
 			$args = array(
 				array(":sid", $GLOBALS['vars']['sid'], "str"),
 				array(":cid", $GLOBALS['vars']['cid'], "str"),

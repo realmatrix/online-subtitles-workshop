@@ -46,7 +46,11 @@
 				array(":cid", $GLOBALS['vars']['cid'], "str"),
 			);
 			$AllLines = $GLOBALS['COMMON']->db_query("SELECT * FROM `SubtitlesContent` WHERE `sid` = :sid and `cid` = :cid", $args);
-			print_r(self::GetUserTranscriptins());
+			$AllUserTranscbtions = self::GetUserTranscriptins();
+			$UserTranscribtions = array();
+			for ($i=0; $i < count($AllUserTranscbtions); $i++) {
+				$UserTranscribtions[$AllUserTranscbtions[$i]['lid']] = $AllUserTranscbtions[$i]['text']; 
+			}
 			$res = "";
 			$counter = 0;
 			for ($i=0; $i < count($AllLines); $i++) {
@@ -59,7 +63,7 @@
 				$Start = $AllLines[$i]['start'];
 				$End = $AllLines[$i]['end'];
 				$Text = $AllLines[$i]['text'];
-				$Transcript = $AllLines[$i]['TranscribedText'];
+				$Transcript = $UserTranscribtions[$id];
 				if($Transcript==""){$Transcript = "...";}
 				$res .="<a name='line".$LineNumber."'></a>"; 
 				$res .= "<div class='NewLine' id='dline".$LineNumber."'>";
