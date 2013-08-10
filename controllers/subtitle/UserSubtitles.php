@@ -43,11 +43,12 @@
 			$subtitles = $GLOBALS['COMMON']->GetUserSubtitles($_SESSION['id']);
 			$res = "";
 			for ($i=0; $i < count($subtitles); $i++) {
+				$lang = $GLOBALS['COMMON']->GetLanguageById($subtitles[$i]['language']);
 				$res .= "<tr>";
 				$res .= "<td><input type='checkbox' name='subtitle[]' value='".$subtitles[$i]['id']."'></td>";
 				$res .= "<td><a href='index.php?page=subtitle&sec=view&sid=".$subtitles[$i]['id']."'>".$subtitles[$i]['release_name']."</a></td>";
 				$res .= "<td>".$subtitles[$i]['version']."</td>";
-				$res .= "<td>".$subtitles[$i]['language']."</td>";
+				$res .= "<td>".$lang[0]['language']."</td>";
 				$res .= "<td><a href='index.php?page=subtitle&sec=manage&sid=".$subtitles[$i]['id']."'>Manage</a></td>";
 				$res .= "<td><a href='index.php?page=subtitle&sec=edit&sid=".$subtitles[$i]['id']."'>Edit</a></td>";
 				$res .= "</tr>";

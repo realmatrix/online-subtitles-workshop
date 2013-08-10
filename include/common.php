@@ -594,8 +594,8 @@ class Common{
 		$params = array(
 			array(":id", $id, "str")
 		);
-		$genre=self::db_query("SELECT * FROM Language where id=:id", $params);
-		return $genre;
+		$language = self::db_query("SELECT * FROM Language where id=:id", $params);
+		return $language;
 	}
 
 
