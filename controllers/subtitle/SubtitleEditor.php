@@ -46,6 +46,7 @@
 				array(":cid", $GLOBALS['vars']['cid'], "str"),
 			);
 			$AllLines = $GLOBALS['COMMON']->db_query("SELECT * FROM `SubtitlesContent` WHERE `sid` = :sid and `cid` = :cid", $args);
+			print_r(self::GetUserTranscriptins());
 			$res = "";
 			$counter = 0;
 			for ($i=0; $i < count($AllLines); $i++) {
@@ -119,7 +120,17 @@
 			$res .= "</textarea>";
 			$res .= "</div>";
 			return $res;
-		}		
+		}	
+		
+		function GetUserTranscriptins(){
+			$args = array(
+				array(":sid", $GLOBALS['vars']['sid'], "str"),
+				array(":cid", $GLOBALS['vars']['cid'], "str"),
+				array(":uid", $_SESSION['id'], "str"),
+			);
+			$TranscibedLines = $GLOBALS['COMMON']->db_query("SELECT * FROM `Transcriptions` WHERE `sid` =:sid AND `cid` =:cid AND `uid` =:uid ", $args);
+			return $TranscibedLines;
+		}	
 
 	
 			

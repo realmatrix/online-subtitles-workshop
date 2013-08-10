@@ -42,9 +42,10 @@
 			if($GLOBALS['vars']['type']=="text"){self::UpdateText();}
 			$args = array(
 				array(":lid", $GLOBALS['vars']['lid'], "str"),
+				array(":uid", $_SESSION['id'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `SubtitlesContent` WHERE `id` = :lid", $args);
-			if($GLOBALS['vars']['type']=="text"){$GLOBALS['vars']['type'] = "TranscribedText";}
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Transcriptions` WHERE `lid` = :lid AND `uid` = :uid", $args);
+			//if($GLOBALS['vars']['type']=="text"){$GLOBALS['vars']['type'] = "TranscribedText";}
 			self::$query = $res[0][$GLOBALS['vars']['type']];
 		}
 		
@@ -78,10 +79,32 @@
 		
 		function UpdateText(){
 			$args = array(
+				array(":sid", $GLOBALS['vars']['sid'], "str"),
+				array(":cid", $GLOBALS['vars']['cid'], "str"),
+				array(":lid", $GLOBALS['vars']['lid'], "str"),
+				array(":uid", $_SESSION['id'], "str"),
+			);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Transcriptions` WHERE `sid` = :sid AND `cid` = :cid AND `uid` = :uid AND `lid` = :lid", $args);
+			if(count($res)>0){
+			$args = array(
+				array(":sid", $GLOBALS['vars']['sid'], "str"),
+				array(":cid", $GLOBALS['vars']['cid'], "str"),
 				array(":lid", $GLOBALS['vars']['lid'], "str"),
 				array(":text", $GLOBALS['vars']['content'], "str"),
+				array(":uid", $_SESSION['id'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("UPDATE `SubtitlesContent` SET `TranscribedText` = :text WHERE `id` = :lid ;", $args);
+			$res = $GLOBALS['COMMON']->db_query("UPDATE `Transcriptions` SET `text` = :text WHERE `sid` = :sid AND `cid` = :cid AND `lid` = :lid AND `uid` = :uid", $args);
+			}
+			else {
+				$args = array(
+					array(":sid", $GLOBALS['vars']['sid'], "str"),
+					array(":cid", $GLOBALS['vars']['cid'], "str"),
+					array(":lid", $GLOBALS['vars']['lid'], "str"),
+					array(":text", $GLOBALS['vars']['content'], "str"),
+					array(":uid", $_SESSION['id'], "str"),
+				);
+				$res = $GLOBALS['COMMON']->db_query("INSERT INTO `Transcriptions` (`sid` ,`cid` ,`uid` ,`lid` ,`text`) VALUES (:sid, :cid, :uid, :lid, :text)", $args);
+			}
 		}
 		
 		function GetPermission(){
