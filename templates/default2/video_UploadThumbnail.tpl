@@ -17,7 +17,6 @@
 
 
 <div id="div-synopsis">
-	max width 210 max height 280
 	<form method="post" action="index.php" enctype="multipart/form-data">
 	<input type="file" name="file" />
 	<input type="submit" id="save" name="save" value="Upload" />

@@ -151,6 +151,7 @@
 		}
 		
 		function SubmitVideo($args){
+			if(is_array($args['genres'])){$args['genres'] = implode(",", $args['genres']);}
 			if($args['VideoType']==""){self::$error[]=$GLOBALS['COMMON']->l('video_AddVideo_SelectVideoType');}
 			if($args['VideoCategory']==""){self::$error[]=$GLOBALS['COMMON']->l('video_AddVideo_SelectVideoCategory');}
 			if($args['VideoLanguage']==""){self::$error[]=$GLOBALS['COMMON']->l('video_AddVideo_SelectVideoLanguage');}

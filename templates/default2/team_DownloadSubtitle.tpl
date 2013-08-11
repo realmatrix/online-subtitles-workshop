@@ -30,6 +30,17 @@
 			<label><input class="radiodl" type="radio" name="type" value="2">download my lines and latest edited </label><br />
 			<label><input class="radiodl" type="radio" name="type" value="3">download checked lines </label><br />
 			<div style="width: 100%; text-align: center;"><input type="submit" value="Download" /></div>
+			
+	<input type="hidden" name="sid" value="{sid}" />		
+	<input type="hidden" name="cid" value="{cid}" />
+	<input type="hidden" name="dl" value="yes" />
+	<!-- <input type="hidden" name="dataonly" value="yes" /> --> <!-- uncomment if using ajax -->
+	<!-- <input type="hidden" name="getcontroller" value="subtitle" /> --> <!-- uncomment if using ajax -->
+	<!-- <input type="hidden" name="getsection" value="DownloadSubtitle" /> --> <!-- uncomment if using ajax -->
+	<input type="hidden" name="page" value="subtitle" /> <!-- comment if using ajax -->
+	<input type="hidden" name="sec" value="edit" /> <!-- comment if using ajax -->
+	<input type="hidden" name="ssec" value="DownloadSubtitle" />
+	<input type="hidden" name="h" value="DlSubtitle" />
 	</form>
 
 
