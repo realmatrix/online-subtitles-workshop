@@ -34,6 +34,7 @@
 		}
 		
 		function download(){
+			if($GLOBALS['vars']['type']=="0"){$content = self::GetOriginalLines();}
 			if($GLOBALS['vars']['type']=="1"){$content = self::GetUserLines();}
 			$file = $GLOBALS['COMMON']->GetTmpDir()."/test.srt.gz";
 			$data = $content;
@@ -64,6 +65,21 @@
 				$res.=$SubtitleContent[$i]['line']."\r\n";
 				$res.=$SubtitleContent[$i]['start']." --> ".$SubtitleContent[$i]['end']."\r\n";
 				$res.=$UserTranscriptions[$SubtitleContent[$i]['id']]."\r\n\r\n";
+			}
+			return $res;
+		}
+
+		function GetOriginalLines(){
+			$args = array(
+				array(":sid", $GLOBALS['vars']['sid'], "str"),
+				array(":cid", $GLOBALS['vars']['cid'], "str"),
+			);
+			$SubtitleContent = $GLOBALS['COMMON']->db_query("SELECT * FROM `SubtitlesContent` WHERE `sid` = :sid AND `cid` = :cid ", $args);
+			$res = "";
+			for ($i=0; $i < count($SubtitleContent); $i++) { 
+				$res.=$SubtitleContent[$i]['line']."\r\n";
+				$res.=$SubtitleContent[$i]['start']." --> ".$SubtitleContent[$i]['end']."\r\n";
+				$res.=$SubtitleContent[$i]['text']."\r\n\r\n";
 			}
 			return $res;
 		}
