@@ -54,11 +54,18 @@
 				array(":uid", $_SESSION['id'], "str"),
 			);
 			$UserLines = $GLOBALS['COMMON']->db_query("SELECT * FROM `Transcriptions` WHERE `sid` = :sid AND `cid` = :cid AND `uid` = :uid ", $args);
-			echo count($UserLines);
+			//echo count($UserLines);
 			$UserTranscriptions = array();
-			for ($i=0; $i < count($AllUserTranscptions); $i++) {
-				$UserTranscriptions[$AllUserTranscptions[$i]['lid']] = $AllUserTranscptions[$i]['text']; 
+			for ($i=0; $i < count($UserLines); $i++) {
+				$UserTranscriptions[$UserLines[$i]['lid']] = $UserLines[$i]['text']; 
 			}
+			$res = "";
+			for ($i=0; $i < count($SubtitleContent); $i++) { 
+				$res.=$SubtitleContent[$i]['line']."\r\n";
+				$res.=$SubtitleContent[$i]['start']." --> ".$SubtitleContent[$i]['end']."\r\n";
+				$res.=$UserTranscriptions[$SubtitleContent[$i]['id']]."\r\n\r\n";
+			}
+			return $res;
 		}
 		
 

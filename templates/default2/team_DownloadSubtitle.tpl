@@ -26,6 +26,7 @@
 
 
 	<form method="post" action="index.php">
+			<label><input class="radiodl" type="radio" name="type" value="0" checked="">download original subtitle file </label><br />
 			<label><input class="radiodl" type="radio" name="type" value="1" checked="checked">download my lines only </label><br />
 			<label><input class="radiodl" type="radio" name="type" value="2">download my lines and latest edited </label><br />
 			<label><input class="radiodl" type="radio" name="type" value="3">download checked lines </label><br />
