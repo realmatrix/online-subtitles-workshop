@@ -34,14 +34,9 @@
 		}
 		
 		function download(){
-			header("Content-type: text/plain");
-			header("Content-Disposition: attachment; filename=savethis.txt");
-			$content = "This is some text...\n";
-			print $content;
-	
-			header_remove("Content-Disposition");
-			header_remove("Content-type");
-			
+			$file = $GLOBALS['COMMON']->GetTmpDir()."/test.srt";
+			file_put_contents($file, "his is test");
+			header("location:".$file);
 		}
 		
 

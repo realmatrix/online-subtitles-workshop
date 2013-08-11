@@ -749,6 +749,14 @@ class Common{
 		}
 	}
 	
+	function GetTmpDir(){
+		$name = date("d-m-Y");
+		if (!file_exists('tmp/'.$name)) {
+		    mkdir('tmp/'.$name);
+		}
+		return 'tmp/'.$name;
+	}
+	
 
 	
 	
