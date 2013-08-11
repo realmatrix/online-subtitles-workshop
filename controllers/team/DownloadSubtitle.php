@@ -34,11 +34,27 @@
 		}
 		
 		function download(){
+			if($GLOBALS['vars']['type']=="1"){$content = self::GetUserLines();}
 			$file = $GLOBALS['COMMON']->GetTmpDir()."/test.srt.gz";
-			$data = "this is test";
+			$data = $content;
 			$gzdata = gzencode($data, 9);
 			file_put_contents($file, $gzdata);
 			header("location:".$file);
+		}
+		
+		function GetUserLines(){
+			$args = array(
+				array(":sid", $GLOBALS['vars']['sid'], "str"),
+				array(":cid", $GLOBALS['vars']['cid'], "str"),
+			);
+			$SubtitleContent = $GLOBALS['COMMON']->db_query("SELECT * FROM `SubtitlesContent` WHERE `sid` = :sid AND `cid` = :cid ", $args);
+			$args = array(
+				array(":sid", $GLOBALS['vars']['sid'], "str"),
+				array(":cid", $GLOBALS['vars']['cid'], "str"),
+				array(":uid", $_SESSION['id'], "str"),
+			);
+			$UserLines = $GLOBALS['COMMON']->db_query("SELECT * FROM `Transcriptions` WHERE `sid` = :sid AND `cid` = :cid AND `uid` = :uid ", $args);
+			print_r($UserLines);
 		}
 		
 
