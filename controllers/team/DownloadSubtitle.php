@@ -34,8 +34,10 @@
 		}
 		
 		function download(){
-			$file = $GLOBALS['COMMON']->GetTmpDir()."/test.srt";
-			file_put_contents($file, "his is test");
+			$file = $GLOBALS['COMMON']->GetTmpDir()."/test.srt.gz";
+			$data = "this is test";
+			$gzdata = gzencode($data, 9);
+			file_put_contents($file, $gzdata);
 			header("location:".$file);
 		}
 		
