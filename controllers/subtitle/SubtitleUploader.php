@@ -96,7 +96,7 @@
 			}
 			//print_r($args);
 			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `SubtitlesContent` (`sid`, `uid`, `cid`, `line`, `start`, `end`, `text`) VALUES ", $args, $ExecState, TRUE);
-			if($ExecState===TRUE){}else{$GLOBALS['ERROR'][]="uploading subtitle failed.";}	
+			if($ExecState===TRUE){$GLOBALS['SUCCESS'][]="Subtitle uploaded successfully.";}else{$GLOBALS['ERROR'][]="uploading subtitle failed.";}	
 			
 		}
 		
