@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 12, 2013 at 08:11 PM
+-- Generation Time: Aug 12, 2013 at 08:37 PM
 -- Server version: 5.5.29-log
 -- PHP Version: 5.3.21
 
@@ -820,14 +820,14 @@ CREATE TABLE IF NOT EXISTS `OnlineUsers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=840 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=841 ;
 
 --
 -- Dumping data for table `OnlineUsers`
 --
 
 INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(839, 's4j4hdqa203gs482vl14aaoiu1', 1376333673, '');
+(840, 's4j4hdqa203gs482vl14aaoiu1', 1376335729, '');
 
 -- --------------------------------------------------------
 
@@ -2201,7 +2201,7 @@ CREATE TABLE IF NOT EXISTS `SystemRouter` (
   `sec` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `page` (`page`,`sec`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=26 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
 
 --
 -- Dumping data for table `SystemRouter`
@@ -2230,7 +2230,9 @@ INSERT INTO `SystemRouter` (`id`, `head`, `header`, `left`, `body`, `right`, `fo
 (22, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'video', 'view'),
 (23, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'subtitle', 'edit'),
 (24, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'subtitle', 'manage'),
-(25, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'subtitle', 'view');
+(25, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'subtitle', 'view'),
+(26, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'team', 'manage'),
+(27, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'team', 'edit');
 
 -- --------------------------------------------------------
 
