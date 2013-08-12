@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 11, 2013 at 08:31 PM
+-- Generation Time: Aug 12, 2013 at 08:11 PM
 -- Server version: 5.5.29-log
 -- PHP Version: 5.3.21
 
@@ -820,14 +820,14 @@ CREATE TABLE IF NOT EXISTS `OnlineUsers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=838 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=840 ;
 
 --
 -- Dumping data for table `OnlineUsers`
 --
 
 INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(837, 'h1p06n753c24qbfemecsd4cat4', 1376248967, '');
+(839, 's4j4hdqa203gs482vl14aaoiu1', 1376333673, '');
 
 -- --------------------------------------------------------
 
@@ -926,9 +926,9 @@ CREATE TABLE IF NOT EXISTS `SubtitlesContent` (
   `line` int(11) NOT NULL,
   `start` varchar(12) CHARACTER SET latin1 NOT NULL,
   `end` varchar(12) CHARACTER SET latin1 NOT NULL,
-  `text` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `text` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=10213 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=11497 ;
 
 --
 -- Dumping data for table `SubtitlesContent`
