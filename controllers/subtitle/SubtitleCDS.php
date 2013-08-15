@@ -41,7 +41,7 @@
 				$res .= "<td>".$index."</td>";
 				$res .= "<td>".$cds[$i]['title']."</td>";
 				$res .= "<td><a href='index.php?page=subtitle&sec=edit&sid=".$GLOBALS['vars']['sid']."&cid=".$cds[$i]['id']."'>".$GLOBALS['COMMON']->l("subtitle_SubtitleCDS_edit")."</a></td>";
-				$res .= "<td><a href='index.php?page=subtitle&sec=edit&sid=".$GLOBALS['vars']['sid']."&cid=".$cds[$i]['id']."&dl=yes'><img class='teamdownload'></a></td>";
+				$res .= "<td><a href='index.php?page=subtitle&sec=edit&sid=".$GLOBALS['vars']['sid']."&cid=".$cds[$i]['id']."&dl=yes'><div class='teamdownload'></div></a></td>";
 				$res .= "</tr>";
 			}
 			if($res==""){$res="no cd subtitles found go to 'manage subtitle' to create or upload subtitle to cd.";}

@@ -10,7 +10,7 @@
 		text-align: center;
 	}
 	.teamdownload{
-		background-image: url("templates/default2/tmp/icon_download.gif");
+		background-image:url("templates/default2/tmp/icon_download.gif");
 		width: 16px;
 		height: 16px;
 	}
