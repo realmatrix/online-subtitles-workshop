@@ -20,7 +20,18 @@
 <div id="editorcontrols" style="width: 99%;">
 
 
-	content here
+	<table style="width: 100%;">
+		<thead>
+			<th>#</th>
+			<th>Sender</th>
+			<th>Team</th>
+			<th>Accept</th>
+			<th>Reject</th>
+		</thead>
+		<tbody>
+			{TableContent}
+		</tbody>
+	</table>
 
 
 </div>
