@@ -27,6 +27,7 @@
 			<th>Team</th>
 			<th>Accept</th>
 			<th>Reject</th>
+			<th>State</th>
 		</thead>
 		<tbody>
 			{TableContent}

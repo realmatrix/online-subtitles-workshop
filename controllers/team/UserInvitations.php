@@ -30,7 +30,7 @@
 				$content = array
 				  (
 				  array("{title}", $GLOBALS['COMMON']->l("subtitle_UserInvitations_title")),
-				  array(" {TableContent}", self::GetInvitations()),
+				  array("{TableContent}", self::GetInvitations()),
 				 );
 			 
 		return $content;
@@ -40,8 +40,36 @@
 			$args = array(
 				array(":uid", $_SESSION['id'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `TeamUsers` WHERE `uid` = :uid", $args);
-			print_r($res);
+			$invitations = $GLOBALS['COMMON']->db_query("SELECT * FROM `TeamUsers` WHERE `uid` = :uid and state = 0", $args);
+			$res = "";
+			for ($i=0; $i < count($invitations); $i++) {
+				$count = $i + 1; 
+				$TeamInfo = self::GetTeamInfo($invitations[$i]['tid']);
+				$res.= "<tr>";
+				$res.="<td>".$count."</td>";
+				$res.="<td>".$TeamInfo['owner']."</td>";
+				$res.="<td>".$TeamInfo['title']."</td>";
+				$res.="<td><a href=''>Accept</a></td>";
+				$res.="<td><a href=''>Reject</a></td>";
+				$res.="<td>".self::state($invitations[$i]['state'])."</td>";
+				$res.= "</tr>";
+			}
+			return $res;
+		}
+		
+		function GetTeamInfo($tid){
+			$args = array(
+				array(":tid", $tid, "str"),
+			);
+			$TeamInfo = $GLOBALS['COMMON']->db_query("SELECT * FROM `Teams` WHERE `id` = :tid", $args);
+			return $TeamInfo[0];
+		}
+		
+		function State($s){
+			if($s=="0"){$res = "waiting";}
+			if($s=="1"){$res = "ACCEPTED";}
+			if($s=="-1"){$res = "REJECTED";}
+			return $res;
 		}
 		
 
