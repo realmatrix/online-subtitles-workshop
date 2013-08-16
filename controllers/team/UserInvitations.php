@@ -12,7 +12,8 @@
 	
 		function UserInvitations_hooks(){
 			$array = array(
-				array("test", "test"),
+				array("accept", "accept"),
+				array("reject", "reject"),
 			);
 			return $array;
 		}
@@ -50,8 +51,8 @@
 				$res.="<td>".$count."</td>";
 				$res.="<td>".$InviterInfo[0]['username']."</td>";
 				$res.="<td>".$TeamInfo['title']."</td>";
-				$res.="<td><a href='index.php?page=team&sec=joined&h=accept'>Accept</a></td>";
-				$res.="<td><a href='index.php?page=team&sec=joined&h=reject'>Reject</a></td>";
+				$res.="<td><a href='index.php?page=team&sec=joined&ssec=UserInvitations&h=accept&tid=".$invitations[$i]['tid']."'>Accept</a></td>";
+				$res.="<td><a href='index.php?page=team&sec=joined&ssec=UserInvitations&h=reject&tid=".$invitations[$i]['tid']."'>Reject</a></td>";
 				$res.="<td>".self::state($invitations[$i]['state'])."</td>";
 				$res.= "</tr>";
 			}
@@ -71,6 +72,14 @@
 			if($s=="1"){$res = "ACCEPTED";}
 			if($s=="-1"){$res = "REJECTED";}
 			return $res;
+		}
+		
+		function accept(){
+			echo "accept";
+		}
+		
+		function reject(){
+			echo "reject";
 		}
 		
 
