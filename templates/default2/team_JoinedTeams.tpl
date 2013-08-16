@@ -27,10 +27,9 @@
 			<th>Admin</th>
 			<th>Team Count</th>
 			<th>Subtitles Count</th>
-			<th>State</th>
 		</thead>
 		<tbody>
-			
+			{TableContent}
 		</tbody>
 	</table>
 
