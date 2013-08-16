@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 12, 2013 at 08:37 PM
+-- Generation Time: Aug 16, 2013 at 08:41 AM
 -- Server version: 5.5.29-log
 -- PHP Version: 5.3.21
 
@@ -627,7 +627,7 @@ CREATE TABLE IF NOT EXISTS `Lang_English` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `key` (`key`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=181 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=183 ;
 
 --
 -- Dumping data for table `Lang_English`
@@ -806,7 +806,9 @@ INSERT INTO `Lang_English` (`id`, `key`, `text`) VALUES
 (176, 'subtitle_ReplyMessage_subject', 'Subject:'),
 (177, 'forum_ListThreads_title', 'Threads'),
 (178, 'forum_ViewThread_title', 'Thread'),
-(180, 'subtitle_DownloadSubtitle_title', 'Download Subtitle');
+(180, 'subtitle_DownloadSubtitle_title', 'Download Subtitle'),
+(181, 'subtitle_UserInvitations_title', 'Received Invitations'),
+(182, 'subtitle_JoinedTeams_title', 'Joined Teams');
 
 -- --------------------------------------------------------
 
@@ -820,14 +822,14 @@ CREATE TABLE IF NOT EXISTS `OnlineUsers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=841 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=861 ;
 
 --
 -- Dumping data for table `OnlineUsers`
 --
 
 INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(840, 's4j4hdqa203gs482vl14aaoiu1', 1376335729, '');
+(860, '1lob5dnt4g4gbckc9tokurg8v6', 1376638737, '');
 
 -- --------------------------------------------------------
 
@@ -928,7 +930,7 @@ CREATE TABLE IF NOT EXISTS `SubtitlesContent` (
   `end` varchar(12) CHARACTER SET latin1 NOT NULL,
   `text` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=11497 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=10213 ;
 
 --
 -- Dumping data for table `SubtitlesContent`
@@ -2316,6 +2318,7 @@ CREATE TABLE IF NOT EXISTS `TeamUsers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `tid` int(11) NOT NULL,
   `uid` int(11) NOT NULL,
+  `state` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `tid` (`tid`,`uid`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
@@ -2324,8 +2327,8 @@ CREATE TABLE IF NOT EXISTS `TeamUsers` (
 -- Dumping data for table `TeamUsers`
 --
 
-INSERT INTO `TeamUsers` (`id`, `tid`, `uid`) VALUES
-(5, 4, 18);
+INSERT INTO `TeamUsers` (`id`, `tid`, `uid`, `state`) VALUES
+(5, 4, 18, 1);
 
 -- --------------------------------------------------------
 
@@ -2354,15 +2357,16 @@ CREATE TABLE IF NOT EXISTS `Transcriptions` (
   `lid` int(11) NOT NULL,
   `text` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `Transcriptions`
 --
 
 INSERT INTO `Transcriptions` (`id`, `sid`, `cid`, `uid`, `lid`, `text`) VALUES
-(3, 52, 10, 18, 8971, 'test text'),
-(4, 52, 10, 18, 8972, '');
+(3, 52, 10, 18, 8971, 'test'),
+(4, 52, 10, 18, 8972, 'test'),
+(5, 52, 10, 18, 8973, 'test');
 
 -- --------------------------------------------------------
 
