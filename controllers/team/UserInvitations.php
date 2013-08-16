@@ -75,11 +75,21 @@
 		}
 		
 		function accept(){
-			echo "accept";
+			$args = array(
+				array(":uid", $_SESSION['id'], "str"),
+				array(":tid", $GLOBALS['vars']['tid'], "str"),
+			);
+			$res = $GLOBALS['COMMON']->db_query("UPDATE `TeamUsers` SET `state` = '1' WHERE `uid` =:uid AND `tid` =:tid;", $args, $state);
+			if($state===TRUE){$GLOBALS['SUCCESS'][]="Invitation state updated successfully.";}else{$GLOBALS['ERROR'][]="Invitation state update failed.";}
 		}
 		
 		function reject(){
-			echo "reject";
+			$args = array(
+				array(":uid", $_SESSION['id'], "str"),
+				array(":tid", $GLOBALS['vars']['tid'], "str"),
+			);
+			$res = $GLOBALS['COMMON']->db_query("UPDATE `TeamUsers` SET `state` = '-1' WHERE `uid` =:uid AND `tid` =:tid;", $args, $state);
+			if($state===TRUE){$GLOBALS['SUCCESS'][]="Invitation state updated successfully.";}else{$GLOBALS['ERROR'][]="Invitation state update failed.";}
 		}
 		
 
