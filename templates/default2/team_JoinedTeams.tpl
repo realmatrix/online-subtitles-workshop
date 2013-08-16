@@ -20,7 +20,19 @@
 <div id="editorcontrols" style="width: 99%;">
 
 
-	content here
+	<table style="width: 100%;">
+		<thead>
+			<th>#</th>
+			<th>Team Name</th>
+			<th>Admin</th>
+			<th>Team Count</th>
+			<th>Subtitles Count</th>
+			<th>State</th>
+		</thead>
+		<tbody>
+			
+		</tbody>
+	</table>
 
 
 </div>
