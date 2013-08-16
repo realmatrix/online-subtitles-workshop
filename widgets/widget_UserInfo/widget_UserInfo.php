@@ -22,6 +22,7 @@
 				array("{CreatedVideos}", self::UserVideos()),
 				array("{CreatedSubtitles}", self::UserSubtitles()),
 				array("{PMS}", self::UserPMS()),
+				array("{invitations}", self::UserInvitations()),
 			);
 			return $array;
 		}
@@ -47,6 +48,14 @@
 				array(":uid", $_SESSION['id'], "str")
 			);
 			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `PrivateMessages` WHERE `to` = :uid ", $args);
+			return count($res);
+		}
+		
+		function UserInvitations(){
+			$args = array(
+				array(":uid", $_SESSION['id'], "str")
+			);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `TeamUsers` WHERE `uid` = :uid AND `state` = 0", $args);
 			return count($res);
 		}
 		
