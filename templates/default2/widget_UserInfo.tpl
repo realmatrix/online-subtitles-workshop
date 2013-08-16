@@ -37,7 +37,7 @@ Followed Videos: {FavouriteVideos} <br />
 
 Finished Subtitles: {FinishedSubtitles} <br />
 
-Created Teams: {CreatedTeams} <br />
+Created Teams: <a href='index.php?page=team&sec=list'>{CreatedTeams}</a> <br />
 
 Joined Teams: {JoinedTeams} <br />
 

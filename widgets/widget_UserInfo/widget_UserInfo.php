@@ -23,6 +23,8 @@
 				array("{CreatedSubtitles}", self::UserSubtitles()),
 				array("{PMS}", self::UserPMS()),
 				array("{invitations}", self::UserInvitations()),
+				array("{JoinedTeams}", self::JoinedTeams()),
+				array("{CreatedTeams}", self::CreatedTeams()),
 			);
 			return $array;
 		}
@@ -58,6 +60,24 @@
 			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `TeamUsers` WHERE `uid` = :uid AND `state` = 0", $args);
 			return count($res);
 		}
+		
+		function JoinedTeams(){
+			$args = array(
+				array(":uid", $_SESSION['id'], "str")
+			);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `TeamUsers` WHERE `uid` = :uid AND `state` = 1", $args);
+			return count($res);
+		}
+
+		function CreatedTeams(){
+			$args = array(
+				array(":uid", $_SESSION['id'], "str")
+			);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Teams` WHERE `owner` = :uid", $args);
+			return count($res);
+		}
+		
+						
 		
 	}
 
