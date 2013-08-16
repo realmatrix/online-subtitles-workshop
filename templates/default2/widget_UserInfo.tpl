@@ -41,7 +41,7 @@ Created Teams: {CreatedTeams} <br />
 
 Joined Teams: {JoinedTeams} <br />
 
-Teams Invitations: {invitations} <br />
+Teams Invitations: <a href="index.php?page=team&sec=joined">{invitations}</a> <br />
 
 Private Messages: <a href="index.php?page=message&sec=list">{PMS}</a> <br />				
 					
