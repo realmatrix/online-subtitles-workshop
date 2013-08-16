@@ -40,13 +40,14 @@
 			$teams = "";
 			for ($i=0; $i < count($res); $i++) {
 				$TeamInfo = self::GetTeamInfo($res[$i]['tid']);
+				$admin = $GLOBALS['COMMON']->GetUserInfo("", $TeamInfo['owner']);
 				$index = $i + 1; 
 				$teams.= "<tr>";
 				$teams.= "<td>".$index."</td>";
-				$teams.= "<td></td>";
-				$teams.= "<td></td>";
-				$teams.= "<td></td>";
-				$teams.= "<td></td>";
+				$teams.= "<td>".$TeamInfo['title']."</td>";
+				$teams.= "<td>".$admin[0]['username']."</td>";
+				$teams.= "<td>".self::GetTeamUsers($res[$i]['tid'])."</td>";
+				$teams.= "<td>".self::GetTeamSubtitles($res[$i]['tid'])."</td>";
 				$teams.= "</tr>";
 			}
 			return $teams;
@@ -58,6 +59,22 @@
 			);
 			$TeamInfo = $GLOBALS['COMMON']->db_query("SELECT * FROM `Teams` WHERE `id` = :tid", $args);
 			return $TeamInfo[0];
+		}
+		
+		function GetTeamUsers($tid){
+			$args = array(
+				array(":tid", $tid, "str"),
+			);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `TeamUsers` WHERE `tid` = :tid", $args);
+			return count($res);
+		}
+		
+		function GetTeamSubtitles(){
+			$args = array(
+				array(":tid", $tid, "str"),
+			);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `TeamSubtitles` WHERE `tid` = :tid", $args);
+			return count($res);
 		}
 
 		

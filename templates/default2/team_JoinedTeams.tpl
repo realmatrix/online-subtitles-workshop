@@ -20,13 +20,13 @@
 <div id="editorcontrols" style="width: 99%;">
 
 
-	<table style="width: 100%;">
+	<table style="width: 100%; text-align: center;">
 		<thead>
 			<th>#</th>
 			<th>Team Name</th>
 			<th>Admin</th>
-			<th>Team Count</th>
-			<th>Subtitles Count</th>
+			<th>Members</th>
+			<th>Subtitles</th>
 		</thead>
 		<tbody>
 			{TableContent}

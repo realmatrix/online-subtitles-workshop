@@ -20,7 +20,7 @@
 <div id="editorcontrols" style="width: 99%;">
 
 
-	<table style="width: 100%;">
+	<table style="width: 100%; text-align: center;">
 		<thead>
 			<th>#</th>
 			<th>Sender</th>
