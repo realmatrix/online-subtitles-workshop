@@ -41,7 +41,7 @@
 			$args = array(
 				array(":uid", $_SESSION['id'], "str"),
 			);
-			$invitations = $GLOBALS['COMMON']->db_query("SELECT * FROM `TeamUsers` WHERE `uid` = :uid and state = 0", $args);
+			$invitations = $GLOBALS['COMMON']->db_query("SELECT * FROM `TeamUsers` WHERE `uid` = :uid", $args);
 			$res = "";
 			for ($i=0; $i < count($invitations); $i++) {
 				$count = $i + 1; 
