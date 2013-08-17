@@ -16,15 +16,25 @@
 
 
 
-<!-- editor controls -->
+<!-- list members -->
 <div id="editorcontrols" style="width: 99%;">
 
 
-	content here
+	<table style="width: 100%; text-align: center;">
+		<thead>
+			<th>#</th>
+			<th>User</th>
+			<th>State</th>
+			<th>DEL</th>
+		</thead>
+		<tbody>
+			{tablecontent}
+		</tbody>
+	</table>
 
 
 </div>
-<!-- end editor controls -->	
+<!-- end list members -->	
 
 
 

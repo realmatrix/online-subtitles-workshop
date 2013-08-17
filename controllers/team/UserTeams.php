@@ -43,7 +43,7 @@
 				$counter++;
 				$rows .= "<tr>";
 				$rows .= "<td>".$counter."</td>";
-				$rows .= "<td><a href='index.php?page=team&sec=info'>".$res[$i]['title']."</a></td>";
+				$rows .= "<td><a href='index.php?page=team&sec=info&tid=".$res[$i]['id']."'>".$res[$i]['title']."</a></td>";
 				$rows .= "</tr>";
 			}
 			return $rows;

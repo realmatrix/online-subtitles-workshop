@@ -26,9 +26,33 @@
 				$content = array
 				  (
 				  array("{title}", $GLOBALS['COMMON']->l("subtitle_ListMembers_title")),
+				  array("{tablecontent}", self::GetMembers()),
 				 );
 			 
 		return $content;
+		}
+		
+		function GetMembers(){
+			$args = array(
+				array(":tid", $GLOBALS['vars']['tid'], "str"),
+			);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `TeamUsers` WHERE `tid` = :tid", $args);
+			$team = "";
+			for ($i=0; $i < count($res); $i++) {
+				$username = $GLOBALS['COMMON']->GetUserInfo("", $res[$i]['uid']);
+				$counter = $i + 1; 
+				$team.= "<tr>";
+				$team.= "<td>".$counter."</td>";
+				$team.= "<td>".$username[0]['username']."</td>";
+				$team.= "<td>".$res[$i]['state']."</td>";
+				$team.= "<td><a href='index.php'>delete</a></td>";
+				$team.="</tr>";
+			}
+			return $team;
+		}
+		
+		function state($s){
+			
 		}
 		
 
