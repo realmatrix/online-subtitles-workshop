@@ -44,7 +44,7 @@
 				$team.= "<tr>";
 				$team.= "<td>".$counter."</td>";
 				$team.= "<td>".$username[0]['username']."</td>";
-				$team.= "<td>".$res[$i]['state']."</td>";
+				$team.= "<td>".self::state($res[$i]['state'])."</td>";
 				$team.= "<td><a href='index.php'>delete</a></td>";
 				$team.="</tr>";
 			}
@@ -52,7 +52,9 @@
 		}
 		
 		function state($s){
-			
+			if($s=="0"){return "waiting";}
+			if($s=="1"){return "accepted";}
+			if($s=="-1"){return "rejected";}
 		}
 		
 

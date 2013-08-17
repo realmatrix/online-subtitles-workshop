@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 16, 2013 at 08:41 AM
+-- Generation Time: Aug 17, 2013 at 02:47 AM
 -- Server version: 5.5.29-log
 -- PHP Version: 5.3.21
 
@@ -627,7 +627,7 @@ CREATE TABLE IF NOT EXISTS `Lang_English` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `key` (`key`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=183 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=185 ;
 
 --
 -- Dumping data for table `Lang_English`
@@ -729,7 +729,7 @@ INSERT INTO `Lang_English` (`id`, `key`, `text`) VALUES
 (96, 'team_AddTeam_title', 'Add Team'),
 (97, 'team_AddTeam_TeamName', 'Team Name:'),
 (98, 'team_AddTeam_submit', 'Submit'),
-(99, 'team_ViewTeams_Title', 'My Teams'),
+(99, 'team_ViewTeams_Title', 'Manage Teams'),
 (100, 'team_ViewTeam_title', 'Team Information'),
 (101, 'team_ManageTeam_title', 'Manage Team'),
 (104, 'team_AddMember_title', 'Add User'),
@@ -808,7 +808,9 @@ INSERT INTO `Lang_English` (`id`, `key`, `text`) VALUES
 (178, 'forum_ViewThread_title', 'Thread'),
 (180, 'subtitle_DownloadSubtitle_title', 'Download Subtitle'),
 (181, 'subtitle_UserInvitations_title', 'Received Invitations'),
-(182, 'subtitle_JoinedTeams_title', 'Joined Teams');
+(182, 'subtitle_JoinedTeams_title', 'Joined Teams'),
+(183, 'subtitle_ListSubtitles_title', 'Team Subtitles'),
+(184, 'subtitle_ListMembers_title', 'Team Members');
 
 -- --------------------------------------------------------
 
@@ -822,14 +824,14 @@ CREATE TABLE IF NOT EXISTS `OnlineUsers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=861 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=872 ;
 
 --
 -- Dumping data for table `OnlineUsers`
 --
 
 INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(860, '1lob5dnt4g4gbckc9tokurg8v6', 1376638737, '');
+(871, '7rfkbvb7h3a7ktp9coon4v3j15', 1376703875, '');
 
 -- --------------------------------------------------------
 
@@ -2203,7 +2205,7 @@ CREATE TABLE IF NOT EXISTS `SystemRouter` (
   `sec` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `page` (`page`,`sec`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=29 ;
 
 --
 -- Dumping data for table `SystemRouter`
@@ -2234,7 +2236,8 @@ INSERT INTO `SystemRouter` (`id`, `head`, `header`, `left`, `body`, `right`, `fo
 (24, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'subtitle', 'manage'),
 (25, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'subtitle', 'view'),
 (26, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'team', 'manage'),
-(27, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'team', 'edit');
+(27, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'team', 'edit'),
+(28, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'team', 'info');
 
 -- --------------------------------------------------------
 
