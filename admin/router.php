@@ -1,7 +1,8 @@
 <?php
 	
-	if($_GET['page']!=""){$AdminPage=$_GET['page'];}
-	if($_POST['page']!=""){$AdminPage=$_POST['page'];}
+	if(isset($_GET)){$GLOBALS['vars'] = $_GET;}
+	if(isset($_POST)){$GLOBALS['vars'] = $_POST;}
+	$AdminPage = $GLOBALS['vars']['page'];
 	if($AdminPage==""){$AdminPage = "main";}
 	
 	switch ($AdminPage) {
