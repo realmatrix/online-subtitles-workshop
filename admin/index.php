@@ -8,6 +8,8 @@
 	
 	$GLOBALS['COMMON'] = new Common();
 	
+	$GLOBALS['l']=$GLOBALS['COMMON']->GetLanguage($GLOBALS['config']['lang']);
+	
 	include "include/Acommon.php";
 	
 	$GLOBALS['ACOMMON'] = new Acommon();
