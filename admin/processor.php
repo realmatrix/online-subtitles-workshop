@@ -1,6 +1,7 @@
 <?php
 
-
+	if($GLOBALS['vars']['login']=="yes"){include "include/login.php";}
+	
 	$GLOBALS['TemplateHeader'] = array
 	  (
 	  array("{test}",$test),

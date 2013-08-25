@@ -1,7 +1,7 @@
 <?php
 	
-	if(isset($_GET)){$GLOBALS['vars'] = $_GET;}
-	if(isset($_POST)){$GLOBALS['vars'] = $_POST;}
+	if($GLOBALS['ACOMMON']->CheckAuthority()==""){$GLOBALS['vars']['page']="login";}
+	
 	$AdminPage = $GLOBALS['vars']['page'];
 	if($AdminPage==""){$AdminPage = "main";}
 	
