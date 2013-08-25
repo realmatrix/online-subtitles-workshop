@@ -1,4 +1,7 @@
 <?php
+
+	if(isset($_GET)){$GLOBALS['vars'] = $_GET;}	
+	if(isset($_POST)){$GLOBALS['vars'] = $_POST;}
 	
 	include "include/config.php";
 	
@@ -14,9 +17,9 @@
 	
 	$GLOBALS['ACOMMON'] = new Acommon();
 	
-	include "processor.php";
+	include "./processor.php";
 	
-	include "router.php";
+	include "./router.php";
 	
 	unset($GLOBALS);
 	
