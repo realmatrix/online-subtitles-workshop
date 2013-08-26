@@ -749,12 +749,22 @@ class Common{
 		}
 	}
 	
+	
 	function GetTmpDir(){
 		$name = date("d-m-Y");
 		if (!file_exists('tmp/'.$name)) {
 		    mkdir('tmp/'.$name);
 		}
 		return 'tmp/'.$name;
+	}
+	
+	
+	function GetOption($name){
+		$args = array(
+			array(":name", $name, "str"),
+		);
+		$res = self::db_query("SELECT * FROM `Settings` WHERE `name` = :name", $args);
+		return $res[0]['value'];
 	}
 	
 

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 26, 2013 at 05:40 AM
+-- Generation Time: Aug 26, 2013 at 10:58 AM
 -- Server version: 5.5.29-log
 -- PHP Version: 5.3.21
 
@@ -825,14 +825,14 @@ CREATE TABLE IF NOT EXISTS `OnlineUsers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=885 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=888 ;
 
 --
 -- Dumping data for table `OnlineUsers`
 --
 
 INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(884, '753ompo1f62s920dhqpvp3ti00', 1377491808, '');
+(887, '753ompo1f62s920dhqpvp3ti00', 1377510916, '');
 
 -- --------------------------------------------------------
 
@@ -859,6 +859,27 @@ INSERT INTO `PrivateMessages` (`id`, `from`, `to`, `subject`, `message`, `date`,
 (6, 18, 18, 'test subject', 'test message', '2013-07-10 08:16:46', 0),
 (7, 18, 18, 'this is test subject 2', 'sdfg ;ksjhf ;sldkf ;slkjdf sdl;kfjowiqjef;sdlkjf ;lkjfi\n\nsdflkj sd;lkfj sd;lkfjoiwejfioewjrfkldjf;lsdkjf;lskjdf;lksdjfiowwjeoioij   ijerfl;ksdjf ;lskdf\n\n\nwer ;lkjksdflksdjf oisjdfoiwerjfowe4jrwejrpewokrpeowkrew \n\nwef; ljsdlfkjds;lkfj sodifj oiwejfoweijrf\nwero ijewroiwer powieuropeiwuroiweur\n\nweroijwe oruweoirueowirueiowru', '2013-07-10 22:06:48', 0),
 (9, 18, 18, 'test reply subject', 'test reply message', '2013-07-10 23:08:23', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Settings`
+--
+
+CREATE TABLE IF NOT EXISTS `Settings` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `value` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `Settings`
+--
+
+INSERT INTO `Settings` (`id`, `name`, `value`) VALUES
+(1, 'a', 'c');
 
 -- --------------------------------------------------------
 
@@ -2464,7 +2485,7 @@ CREATE TABLE IF NOT EXISTS `Videos` (
   `year` int(11) NOT NULL,
   `url` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
 
 --
 -- Dumping data for table `Videos`
@@ -2475,7 +2496,8 @@ INSERT INTO `Videos` (`id`, `uid`, `title`, `other_title`, `type`, `category`, `
 (11, 18, 'tty tyu tryu tru tryytu', 'tu t tyu tyutyu', 1, 2, 6, 3, '2', '1816-05-17', 't yu t', 't yutyu', 31, 'ty tyu', ' tyu tyuyu', '', '', '', 0, ''),
 (12, 18, 'fhfg f fgh fgh dfh fgh fhfgh', ' fghfg fgh fgh gh', 1, 1, 13, 4, '1', '1806-02-07', 'fgh fgh fgh', 'fhg fggh', 18, 'dfgdfg, dfg dfg,df gdfg ,d fgdf,', '  dfgdf sj dsflkjh lkjsh flkjfh lskdfjh lskdfh oiuehroiuwerh lkewjrh slkjh lkjdfhslkjhlkdsjh', '', '', '', 0, ''),
 (13, 18, 'aaaaaaaaaaaaa', 'bbbbbbbbbbbbbb', 1, 2, 6, 25, '1', '1800-01-01', 'cccccccccc', 'ddddddddd', 4, 'kjh, kjh, kjh, jklh, jkh', ' uyiyui yu uyi', '', '', '', 0, ''),
-(14, 18, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'aaaaaaaaaaaaaaaaaaaaaaaaaa', 3, 1, 10, 14, '5', '1805-03-04', 'aaaaaaaaaaaaaaaaaaaaaaaa', 'aaaaaaaaaaaaaa', 14, 'aaaaaaaaaaaaaaaaa', ' aaaaaaaaaaaaaaaaaa', '', '', '', 0, '');
+(14, 18, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'aaaaaaaaaaaaaaaaaaaaaaaaaa', 3, 1, 10, 14, '5', '1805-03-04', 'aaaaaaaaaaaaaaaaaaaaaaaa', 'aaaaaaaaaaaaaa', 14, 'aaaaaaaaaaaaaaaaa', ' aaaaaaaaaaaaaaaaaa', '', '', '', 0, ''),
+(15, 18, '300: Rise of an Empire', '300: Rise of an Empire', 1, 1, 14, 236, '25', '2013-07-09', 'Lena Headey, Eva Green, Rodrigo Santoro', 'Noam Murro', 90, '300, Rise, Empire', 'The Greek general Themistocles battles an invading army of Persians under the mortal-turned-god, Xerxes.', '15_1813775109260FC1S.jpg', '', '', 0, '');
 
 -- --------------------------------------------------------
 

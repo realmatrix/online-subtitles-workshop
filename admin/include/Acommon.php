@@ -87,6 +87,16 @@
 		}
 		
 		
+		function SetOption($name, $value){
+			$args = array(
+				array(":name", $name, "res"),
+				array(":value", $value, "res"),
+			);
+			$res = $GLOBALS['COMMON']->db_query("UPDATE `Settings` SET `value` = :value WHERE `name` = :name;", $args, $state);
+			if($state===TRUE){return TRUE;}else{return FALSE;}
+		}
+		
+		
 	}
 	
 ?>
