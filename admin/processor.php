@@ -1,5 +1,7 @@
 <?php
 
+	if($GLOBALS['vars']['logout']=="yes"){$GLOBALS['ACOMMON']->logout();}
+
 	if($GLOBALS['vars']['login']=="yes"){include "include/login.php";}
 	
 	$GLOBALS['TemplateHeader'] = array
@@ -59,15 +61,6 @@
 	  array("{LoginOrRegister}", $GLOBALS['COMMON']->l('login_orregister')),
 	  array("{LoginSubmit}", $GLOBALS['COMMON']->l('login_submit')),
 	  array("{UserName}", $_SESSION['username']),	  
-	  array("{TotalOnline}", $SystemInfo['total']),
-	  array("{OnlineGuests}", $SystemInfo['OnlineGuests']),
-	  array("{OnlineRegistered}", $SystemInfo['OnlineUsers']),
-	  array("{OnlineHidden}", $SystemInfo['OnlineHidden']),
-	  array("{TotalRegistered}", $SystemInfo['TotalRegistered']),
-	  array("{TotalUsers}", $SystemInfo['TotalRegistered']),
-	  array("{LatestUser}", $SystemInfo['LatestUser']),
-	  array("{TotalVideos}", $SystemInfo['TotalVideos']), 
-	  array("{TotalSubtitles}", $SystemInfo['TotalSubtitles']),
 	);
 	
 

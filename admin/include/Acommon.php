@@ -36,11 +36,23 @@
 		
 		
 		function CheckLogin(){
-			if(!$GLOBALS['COMMON']->IsLoggedin()){echo "not logged in ACOMMON"; return FALSE;}else{echo "logged in ACOMMOM"; return TRUE;}			
+			if(!$GLOBALS['COMMON']->IsLoggedin()){return FALSE;}else{return TRUE;}			
 		}
 		
-		function login(){
-			
+		function login($username){
+			$_SESSION['loggedin'] = "YES"; 
+			$_SESSION['username'] = $username;
+			$userinfo = $GLOBALS['COMMON']::GetUserInfo($username,"");
+			$_SESSION['id'] = $userinfo[0]['id'];
+		}
+		
+		
+		function logout(){
+			if(isset($_SESSION['loggedin'])){unset($_SESSION['loggedin']);}
+			if(isset($_SESSION['username'])){unset($_SESSION['username']);}
+			session_destroy();
+			header('Location: index.php');
+			$_GET['logout'] = "logout";
 		}
 		
 		

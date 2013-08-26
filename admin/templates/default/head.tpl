@@ -84,7 +84,7 @@
 					<ul class="dropdown-menu">
 						<li><a href="#">Profile</a></li>
 						<li class="divider"></li>
-						<li><a href="login.html">Logout</a></li>
+						<li><a href="index.php?logout=yes">Logout</a></li>
 					</ul>
 				</div>
 				<!-- user dropdown ends -->

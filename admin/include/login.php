@@ -1,7 +1,7 @@
 <?php
 		 $Username = $GLOBALS['vars']['username'];
 		 $Password = $GLOBALS['vars']['password'];
-		
+
 		 //Check To See If All Information Is Correct
 		
 		 if($Username == "")
@@ -34,14 +34,13 @@
 		 	if(count($result)>0)
  			{
  			 
-   			 $GLOBALS['COMMON']->login($Username);
-			 
+   			 $GLOBALS['ACOMMON']->login($Username);
+			 //echo "ID->".$_SESSION['id'];
 			 header( 'Location: index.php' ) ;
  			 $GLOBALS['SUCCESS'][] = $GLOBALS['COMMON']->l('login_successfull').'<script type="text/javascript">$("#login").empty();setTimeout(function(){ window.location = "index.php"; }, 5000);</script>';
 			}
 			else {
 			$GLOBALS['ERROR'][] = $GLOBALS['COMMON']->l('login_failed');
-			//session_destroy();
 			}
 			
 		 }
