@@ -60,7 +60,8 @@
 	  array("{LoginPassword}", $GLOBALS['COMMON']->l('login_password')),
 	  array("{LoginOrRegister}", $GLOBALS['COMMON']->l('login_orregister')),
 	  array("{LoginSubmit}", $GLOBALS['COMMON']->l('login_submit')),
-	  array("{UserName}", $_SESSION['username']),	  
+	  array("{UserName}", $_SESSION['username']),	 
+	  array("{TotalMembers}", $GLOBALS['ACOMMON']->GetTotalMembers()), 
 	);
 	
 

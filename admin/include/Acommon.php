@@ -55,6 +55,12 @@
 			$_GET['logout'] = "logout";
 		}
 		
+		function GetTotalMembers(){
+			$args = array();
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Users`", $args);
+			return count($res);
+		}
+		
 		
 		
 	}
