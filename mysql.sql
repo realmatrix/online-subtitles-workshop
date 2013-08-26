@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 17, 2013 at 08:36 AM
+-- Generation Time: Aug 26, 2013 at 05:40 AM
 -- Server version: 5.5.29-log
 -- PHP Version: 5.3.21
 
@@ -530,17 +530,18 @@ CREATE TABLE IF NOT EXISTS `Groups` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `group` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `Groups`
 --
 
 INSERT INTO `Groups` (`id`, `group`) VALUES
-(1, 'admins'),
-(2, 'moderators'),
-(3, 'users'),
-(4, 'approval');
+(1, 'admin'),
+(2, 'moderator'),
+(3, 'user'),
+(4, 'verified'),
+(5, 'banned');
 
 -- --------------------------------------------------------
 
@@ -824,14 +825,14 @@ CREATE TABLE IF NOT EXISTS `OnlineUsers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=878 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=885 ;
 
 --
 -- Dumping data for table `OnlineUsers`
 --
 
 INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(877, 'pd6rdn289rq5crjkrtrsaumvn0', 1376724411, '');
+(884, '753ompo1f62s920dhqpvp3ti00', 1377491808, '');
 
 -- --------------------------------------------------------
 
@@ -846,6 +847,7 @@ CREATE TABLE IF NOT EXISTS `PrivateMessages` (
   `subject` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `message` text COLLATE utf8_unicode_ci NOT NULL,
   `date` datetime NOT NULL,
+  `opened` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=10 ;
 
@@ -853,10 +855,10 @@ CREATE TABLE IF NOT EXISTS `PrivateMessages` (
 -- Dumping data for table `PrivateMessages`
 --
 
-INSERT INTO `PrivateMessages` (`id`, `from`, `to`, `subject`, `message`, `date`) VALUES
-(6, 18, 18, 'test subject', 'test message', '2013-07-10 08:16:46'),
-(7, 18, 18, 'this is test subject 2', 'sdfg ;ksjhf ;sldkf ;slkjdf sdl;kfjowiqjef;sdlkjf ;lkjfi\n\nsdflkj sd;lkfj sd;lkfjoiwejfioewjrfkldjf;lsdkjf;lskjdf;lksdjfiowwjeoioij   ijerfl;ksdjf ;lskdf\n\n\nwer ;lkjksdflksdjf oisjdfoiwerjfowe4jrwejrpewokrpeowkrew \n\nwef; ljsdlfkjds;lkfj sodifj oiwejfoweijrf\nwero ijewroiwer powieuropeiwuroiweur\n\nweroijwe oruweoirueowirueiowru', '2013-07-10 22:06:48'),
-(9, 18, 18, 'test reply subject', 'test reply message', '2013-07-10 23:08:23');
+INSERT INTO `PrivateMessages` (`id`, `from`, `to`, `subject`, `message`, `date`, `opened`) VALUES
+(6, 18, 18, 'test subject', 'test message', '2013-07-10 08:16:46', 0),
+(7, 18, 18, 'this is test subject 2', 'sdfg ;ksjhf ;sldkf ;slkjdf sdl;kfjowiqjef;sdlkjf ;lkjfi\n\nsdflkj sd;lkfj sd;lkfjoiwejfioewjrfkldjf;lsdkjf;lskjdf;lksdjfiowwjeoioij   ijerfl;ksdjf ;lskdf\n\n\nwer ;lkjksdflksdjf oisjdfoiwerjfowe4jrwejrpewokrpeowkrew \n\nwef; ljsdlfkjds;lkfj sodifj oiwejfoweijrf\nwero ijewroiwer powieuropeiwuroiweur\n\nweroijwe oruweoirueowirueiowru', '2013-07-10 22:06:48', 0),
+(9, 18, 18, 'test reply subject', 'test reply message', '2013-07-10 23:08:23', 0);
 
 -- --------------------------------------------------------
 
@@ -2393,7 +2395,7 @@ CREATE TABLE IF NOT EXISTS `Users` (
 --
 
 INSERT INTO `Users` (`id`, `username`, `password`, `email`, `BirthYear`, `group`) VALUES
-(18, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.test', 2009, 3),
+(18, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.test', 2009, 1),
 (19, 'ghfghh', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'dsd@sd.sd', 2006, 3),
 (20, 'wejhg', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'aaa@aaa.aaa', 1919, 3),
 (21, 't567567567', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'tryrt@erttr.rrt', 1917, 3),

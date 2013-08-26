@@ -61,7 +61,10 @@
 	  array("{LoginOrRegister}", $GLOBALS['COMMON']->l('login_orregister')),
 	  array("{LoginSubmit}", $GLOBALS['COMMON']->l('login_submit')),
 	  array("{UserName}", $_SESSION['username']),	 
-	  array("{TotalMembers}", $GLOBALS['ACOMMON']->GetTotalMembers()), 
+	  array("{TotalMembers}", $GLOBALS['ACOMMON']->GetTotalMembers()),
+	  array("{TotalSubtitles}", $GLOBALS['ACOMMON']->GetTotalSubtitles()),
+	  array("{TotalVideos}", $GLOBALS['ACOMMON']->GetTotalVideos()),
+	  array("{NewMessages}", $GLOBALS['ACOMMON']->GetNewMessages()), 
 	);
 	
 

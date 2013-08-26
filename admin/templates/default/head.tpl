@@ -178,7 +178,7 @@
 				<a data-rel="tooltip" title="12 new messages." class="well span3 top-block" href="#">
 					<span class="icon32 icon-color icon-envelope-closed"></span>
 					<div>Messages</div>
-					<div>{TotalMessages}</div>
+					<div>{NewMessages}</div>
 					<span class="notification red">12</span>
 				</a>
 			</div>

@@ -39,6 +39,7 @@
 			if(!$GLOBALS['COMMON']->IsLoggedin()){return FALSE;}else{return TRUE;}			
 		}
 		
+		
 		function login($username){
 			$_SESSION['loggedin'] = "YES"; 
 			$_SESSION['username'] = $username;
@@ -55,12 +56,35 @@
 			$_GET['logout'] = "logout";
 		}
 		
+		
 		function GetTotalMembers(){
 			$args = array();
 			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Users`", $args);
 			return count($res);
 		}
 		
+		
+		function GetTotalSubtitles(){
+			$args = array();
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Subtitles`", $args);
+			return count($res);		
+		}
+		
+		
+		function GetTotalVideos(){
+			$args = array();
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Videos`", $args);
+			return count($res);			
+		}
+		
+		
+		function GetNewMessages(){
+			$args = array(
+				array(":uid", $_SESSION['id'], "str"),
+			);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `PrivateMessages` WHERE `to` = :uid", $args);
+			return count($res);
+		}
 		
 		
 	}
