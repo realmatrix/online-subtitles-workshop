@@ -14,7 +14,6 @@
 	//loading controllers
 	if($ControllerPage!="" and $ControllerSection!=""){$GLOBALS['AdminContent'] = $GLOBALS['ACOMMON']->LoadSections($ControllerPage, $ControllerSection, $GLOBALS['vars']);}
 	
-	
 	$GLOBALS['TemplateHeader'] = array
 	  (
 	  array("{test}",$test),
@@ -22,38 +21,38 @@
 	
 	$GLOBALS['TemplateHead'] = array
 	  (
-	  array("{test}",$test),
+	  array("{test}", $test),
 	);
 	
 	
 	$GLOBALS['TemplateLogin'] = array
 	  (
-	  array("{test}",$test),
+	  array("{test}", $test),
 	 );
 	
 	$GLOBALS['TemplateRight'] = array
 	  (
-	  array("{test}",$test),
+	  array("{test}", $test),
 	);
 
 	$GLOBALS['TemplateLeft'] = array
 	  (
-	  array("{test}",$test),
+	  array("{test}", $test),
 	);
 	
 	$GLOBALS['TemplateBody'] = array
 	  (
-	  array("{content}",$GLOBALS['AdminContent']),
+	  array("{content}", $GLOBALS['AdminContent']),
 	);
 	
 	$GLOBALS['TemplateFooter'] = array
 	  (
-	  array("{test}",$test),
+	  array("{test}", $test),
 	);
 	
 	$GLOBALS['Template404'] = array
 	  (
-	  array("{test}",$test),
+	  array("{test}", $test),
 	); 
 	
 	
