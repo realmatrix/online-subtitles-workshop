@@ -9,7 +9,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.html"> <img alt="Charisma Logo" src="{TemplatePath}/img/logo20.png" /> <span>Charisma</span></a>
+				<a class="brand" href="index.html"> <img alt="Charisma Logo" src="{TemplatePath}/img/logo20.png" /> <span>Admin cp</span></a>
 				
 				<!-- theme selector starts -->
 				<div class="btn-group pull-right theme-container" >
@@ -47,7 +47,7 @@
 				
 				<div class="top-nav nav-collapse">
 					<ul class="nav">
-						<li><a href="#">Visit Site</a></li>
+						<li><a href="../index.php">Visit Site</a></li>
 						<li>
 							<form class="navbar-search pull-left">
 								<input placeholder="Search" class="search-query span2" name="query" type="text">

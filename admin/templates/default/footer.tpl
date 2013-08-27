@@ -1,3 +1,7 @@
+   
+					<!-- content ends -->
+			</div><!--/#content.span10-->
+				</div><!--/fluid-row-->
 				
 		<hr>
 

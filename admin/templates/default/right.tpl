@@ -1,24 +1,4 @@
-			<noscript>
-				<div class="alert alert-block span10">
-					<h4 class="alert-heading">Warning!</h4>
-					<p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> enabled to use this site.</p>
-				</div>
-			</noscript>
-			
-			<div id="content" class="span10">
-			<!-- content starts -->
-			
 
-			<div>
-				<ul class="breadcrumb">
-					<li>
-						<a href="#">Home</a> <span class="divider">/</span>
-					</li>
-					<li>
-						<a href="#">Dashboard</a>
-					</li>
-				</ul>
-			</div>
 			<div class="sortable row-fluid">
 				<a data-rel="tooltip" title="6 new members." class="well span3 top-block" href="#">
 					<span class="icon32 icon-red icon-user"></span>
@@ -28,14 +8,14 @@
 				</a>
 
 				<a data-rel="tooltip" title="4 new pro members." class="well span3 top-block" href="#">
-					<span class="icon32 icon-color icon-star-on"></span>
+					<span class="icon32 icon-color icon-document"></span>
 					<div>Total Subtitles</div>
 					<div>{TotalSubtitles}</div>
 					<span class="notification green">4</span>
 				</a>
 
 				<a data-rel="tooltip" title="$34 new sales." class="well span3 top-block" href="#">
-					<span class="icon32 icon-color icon-cart"></span>
+					<span class="icon32 icon-color icon-comment-video"></span>
 					<div>Total Videos</div>
 					<div>{TotalVideos}</div>
 					<span class="notification yellow">$34</span>
@@ -333,7 +313,3 @@
 				  
 
 		  
-       
-					<!-- content ends -->
-			</div><!--/#content.span10-->
-				</div><!--/fluid-row-->
