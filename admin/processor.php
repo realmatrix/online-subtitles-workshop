@@ -4,6 +4,17 @@
 
 	if($GLOBALS['vars']['login']=="yes"){include "include/login.php";}
 	
+	if($GLOBALS['vars']['page']==""){$GLOBALS['vars']['page']="main";}
+	
+	if($GLOBALS['vars']['page']!="" & $GLOBALS['vars']['sec']==""){$GLOBALS['vars']['sec']="dashboard";}
+	
+	$ControllerPage=$GLOBALS['vars']['page']; 
+	$ControllerSection=$GLOBALS['vars']['sec'];
+
+	//loading controllers
+	if($ControllerPage!="" and $ControllerSection!=""){$GLOBALS['AdminContent'] = $GLOBALS['ACOMMON']->LoadSections($ControllerPage, $ControllerSection, $GLOBALS['vars']);}
+	
+	
 	$GLOBALS['TemplateHeader'] = array
 	  (
 	  array("{test}",$test),
@@ -32,7 +43,7 @@
 	
 	$GLOBALS['TemplateBody'] = array
 	  (
-	  array("{content}",$AdminContent),
+	  array("{content}",$GLOBALS['AdminContent']),
 	);
 	
 	$GLOBALS['TemplateFooter'] = array

@@ -18,7 +18,105 @@
 			}
 			return $template;
 		}
+
 		
+		
+		function LoadSections($controller, $section, $vars){
+			require_once ("controllers/".$controller."/".$section.".php");
+			$array = call_user_func('C'.$section."::".$section."_sections");
+			$sections = self::LoadPage($array, $vars);
+			return $sections;
+		}
+
+		
+		
+		function LoadSection($controller, $section, $args){
+			$res = "";
+			if(self::checkSectionOptions($controller, $section, $message)){
+			include_once "controllers/".$controller."/".$section.".php";
+			$hooks = call_user_func('C'.$section.'::'.$section.'_hooks');
+				for ($i=0; $i < count($hooks); $i++) {
+					if(self::CheckControllerHook($section, $hooks[$i][0], $args)===TRUE){call_user_func('C'.$section.'::'.$hooks[$i][1], $args);}
+				}
+			$content = call_user_func('C'.$section.'::'.$section);
+			$options = 
+			$res = self::RenderView($content, $controller, $section);
+			//if(!array_key_exists($controller.'_'.$section.'_title', $GLOBALS['page'])){$GLOBALS['ERROR'][]= "GLOBALS['page']['".$controller.'_'.$section."_title'] not found inside language file.";}
+			return $res;
+			}
+			else{
+				echo "<script>alert('".$message."')</script>";
+			} 
+		}
+		
+		
+		
+		function LoadPage($array, $vars){
+			$page = "";
+			for ($i = 0; $i <= count($array)-1; $i++) {
+				if($array[$i][3]){
+					 $args = array_merge($vars, $array[$i][2]);
+					 $page .= "<div id='SystemAjax_".$array[$i][0]."_".$array[$i][1]."'>".self::LoadSection($array[$i][0], $array[$i][1], $args)."</div>";
+				}
+			}
+			return $page;
+		}
+		
+
+		function checkSectionOptions($controller, $section, &$message){
+			include_once "controllers/".$controller."/".$section.".php";
+			$options =  call_user_func("C".$section."::".$section."_options");
+			$LoadSEction = FALSE;
+			if($_GET['page']!=""){$page = $_GET['page'];}
+			if($_POST['page']!=""){$page = $_POST['page'];}
+			if($_GET['page']=="" and $_POST['page']==""){$page = "home";}
+			if($options['loggedin']=="yes" and self::IsLoggedin()){$LoadSEction = TRUE;}
+			if($options['loggedin']=="no" and !self::IsLoggedin()){$LoadSEction = TRUE;}
+			if(count($options['show'])>0 and in_array($page, $options['show'])){$LoadSEction = TRUE;}
+			if(count($options['show'])==0){$LoadSEction=TRUE;}
+			if($options['loggedin']=="yes" and !self::IsLoggedin()){
+				$LoadSEction = FALSE;
+				$message = "require user to be loggedin.";
+			}
+			if($options['loggedin']=="no" and self::IsLoggedin()){
+				$LoadSEction = FALSE;
+				$message = "require user to be not loggedin.";
+			}	
+			if(count($options['hide'])>0 and in_array($page, $options['hide'])){$LoadSEction = FALSE;}
+			return $LoadSEction;
+		}
+
+
+
+		function IsLoggedin(){
+			if($_SESSION['loggedin']=="YES"){
+				return true;
+			}else{
+				return false;
+			}
+		}
+		
+		
+		
+		function CheckControllerHook($section, $hook, $args){
+			if((isset($args['ssec']) and $args['ssec']==$section) and (isset($args['h']) and $args['h']==$hook)){$res = "yes";}
+			if($res=="yes"){return TRUE;}else{return FALSE;}
+		}
+	
+	
+	
+
+	
+
+		function RenderView($array, $view, $section){
+			$page = file_get_contents($GLOBALS['TemplatePath'].$GLOBALS['Template']."/".$view."_".$section.".tpl");
+			for ($i = 0; $i <= count($array)-1; $i++) {
+			    $page = str_replace($array[$i][0], $array[$i][1], $page);
+			}
+			return $page;
+		}
+	
+	
 		
 		function CheckAuthority(){
 			if(!self::CheckLogin()){return FALSE;}
