@@ -12,7 +12,7 @@
 	$ControllerSection=$GLOBALS['vars']['sec'];
 
 	//loading controllers
-	if($ControllerPage!="" and $ControllerSection!=""){$GLOBALS['AdminContent'] = $GLOBALS['ACOMMON']->LoadSections($ControllerPage, $ControllerSection, $GLOBALS['vars']);}
+	if($ControllerPage!="" and $ControllerSection!="" and $ControllerPage!="login"){$GLOBALS['AdminContent'] = $GLOBALS['ACOMMON']->LoadSections($ControllerPage, $ControllerSection, $GLOBALS['vars']);}
 	
 	$GLOBALS['TemplateHeader'] = array
 	  (

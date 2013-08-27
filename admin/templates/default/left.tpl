@@ -41,10 +41,10 @@
 			<div>
 				<ul class="breadcrumb">
 					<li>
-						<a href="#">Home</a> <span class="divider">/</span>
+						<a href="#">{page}</a> <span class="divider">/</span>
 					</li>
 					<li>
-						<a href="#">Dashboard</a>
+						<a href="#">{sec}</a>
 					</li>
 				</ul>
 			</div>

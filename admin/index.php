@@ -23,6 +23,8 @@
 	
 	$GLOBALS['ACOMMON'] = new Acommon();
 	
+	if($GLOBALS['ACOMMON']->CheckAuthority()==""){$GLOBALS['vars']['page']="login"; $GLOBALS['vars']['sec']="login";}
+	
 	include "./processor.php";
 	
 	include "./router.php";

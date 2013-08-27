@@ -1,7 +1,5 @@
 <?php
 	
-	if($GLOBALS['ACOMMON']->CheckAuthority()==""){$GLOBALS['vars']['page']="login";}
-	
 	$AdminPage = $GLOBALS['vars']['page'];
 	
 	switch ($AdminPage) {
