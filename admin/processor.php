@@ -75,6 +75,8 @@
 	  array("{TotalSubtitles}", $GLOBALS['ACOMMON']->GetTotalSubtitles()),
 	  array("{TotalVideos}", $GLOBALS['ACOMMON']->GetTotalVideos()),
 	  array("{NewMessages}", $GLOBALS['ACOMMON']->GetNewMessages()), 
+	  array("{page}", ucfirst($GLOBALS['vars']['page'])),
+	  array("{sec}", ucfirst($GLOBALS['vars']['sec'])),
 	);
 	
 

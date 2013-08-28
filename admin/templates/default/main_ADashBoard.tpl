@@ -70,11 +70,17 @@
 									<td class="center">{PendingMembers}</td>                                       
 								</tr> 
 								<tr>
+									<td class="center">Online Members</td>
+									<td class="center">{OnlineMembers}</td>    
 									<td>Banned Members</td>
-									<td class="center">{BannedMembers}</td>
-									<td class="center">.........</td>
-									<td class="center">{.........}</td>                                       
-								</tr>                         
+									<td class="center">{BannedMembers}</td>                                   
+								</tr> 
+								<tr>
+									<td class="center">Total Teams</td>
+									<td class="center">{TotalTeams}</td>    
+									<td>Total Messages</td>
+									<td class="center">{TotalMessages}</td>                                   
+								</tr>                        
 							  </tbody>
 						 </table>       
 					</div>
