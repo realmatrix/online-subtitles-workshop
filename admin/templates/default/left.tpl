@@ -12,6 +12,7 @@
 						<li><a class="ajax-link" href="#"><i class="icon-list-alt"></i><span class="hidden-tablet"> Manage subtitles</span></a></li>
 						<li><a class="ajax-link" href="#"><i class="icon-th-large"></i><span class="hidden-tablet"> Manage groups</span></a></li>
 						<li><a class="ajax-link" href="#"><i class="icon-tasks"></i><span class="hidden-tablet"> Manage forums</span></a></li>
+						<li><a class="ajax-link" href="index.php?page=main&sec=phpinfo"><i class="icon-info-sign"></i><span class="hidden-tablet"> PHP info</span></a></li>
 						
 						<li class="nav-header hidden-tablet">System Configuration</li>
 						<li><a class="ajax-link" href="#"><i class="icon-wrench"></i><span class="hidden-tablet"> System settings</span></a></li>
@@ -74,3 +75,6 @@
 					</li>
 				</ul>
 			</div>
+			
+	{SystemError}
+	{SystemSuccess}
