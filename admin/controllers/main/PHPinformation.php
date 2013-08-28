@@ -23,9 +23,10 @@
 		}
 				
 		function PHPinformation_content(){
+			$info = file_get_contents("phpinfo.php");
 				$content = array
 				  (
-				  array("{info}", phpinfo()),
+				  array("{info}", $info),
 				 );
 			 
 		return $content;
