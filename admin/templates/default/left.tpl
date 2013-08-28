@@ -6,7 +6,33 @@
 				<div class="well nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
 						<li class="nav-header hidden-tablet">Main</li>
-						<li><a class="ajax-link" href="index.html"><i class="icon-home"></i><span class="hidden-tablet"> Dashboard</span></a></li>
+						<li><a class="ajax-link" href="index.php"><i class="icon-home"></i><span class="hidden-tablet"> Dashboard</span></a></li>
+						<li><a class="ajax-link" href="#"><i class="icon-user"></i><span class="hidden-tablet"> Manage users</span></a></li>
+						<li><a class="ajax-link" href="#"><i class="icon-film"></i><span class="hidden-tablet"> Manage videos</span></a></li>
+						<li><a class="ajax-link" href="#"><i class="icon-list-alt"></i><span class="hidden-tablet"> Manage subtitles</span></a></li>
+						<li><a class="ajax-link" href="#"><i class="icon-th-large"></i><span class="hidden-tablet"> Manage groups</span></a></li>
+						<li><a class="ajax-link" href="#"><i class="icon-tasks"></i><span class="hidden-tablet"> Manage forums</span></a></li>
+						
+						<li class="nav-header hidden-tablet">System Configuration</li>
+						<li><a class="ajax-link" href="#"><i class="icon-wrench"></i><span class="hidden-tablet"> System settings</span></a></li>
+						<li><a class="ajax-link" href="#"><i class="icon-cog"></i><span class="hidden-tablet"> System features</span></a></li>
+						<li><a class="ajax-link" href="#"><i class="icon-inbox"></i><span class="hidden-tablet"> Private message settings</span></a></li>
+						<li><a class="ajax-link" href="#"><i class="icon-edit"></i><span class="hidden-tablet"> Post settings</span></a></li>
+						<li><a class="ajax-link" href="#"><i class="icon-globe"></i><span class="hidden-tablet"> Feed settings</span></a></li>
+						<li><a class="ajax-link" href="#"><i class="icon-star"></i><span class="hidden-tablet"> SEO settings</span></a></li>
+						<li><a class="ajax-link" href="#"><i class="icon-pencil"></i><span class="hidden-tablet"> Registeration settings</span></a></li>
+						<li><a class="ajax-link" href="#"><i class="icon-remove"></i><span class="hidden-tablet"> Spam settings</span></a></li>
+						
+						<li class="nav-header hidden-tablet">System Communications</li>
+						<li><a class="ajax-link" href="#"><i class="icon-envelope"></i><span class="hidden-tablet"> E-mail settings</span></a></li>
+						<li><a class="ajax-link" href="#"><i class="icon-repeat"></i><span class="hidden-tablet"> Jabber settings</span></a></li>
+						
+						
+						
+						
+						
+						
+						
 						<li><a class="ajax-link" href="ui.html"><i class="icon-eye-open"></i><span class="hidden-tablet"> UI Features</span></a></li>
 						<li><a class="ajax-link" href="form.html"><i class="icon-edit"></i><span class="hidden-tablet"> Forms</span></a></li>
 						<li><a class="ajax-link" href="chart.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> Charts</span></a></li>
@@ -22,7 +48,7 @@
 						<li><a href="error.html"><i class="icon-ban-circle"></i><span class="hidden-tablet"> Error Page</span></a></li>
 						<li><a href="login.html"><i class="icon-lock"></i><span class="hidden-tablet"> Login Page</span></a></li>
 					</ul>
-					<label id="for-is-ajax" class="hidden-tablet" for="is-ajax"><input id="is-ajax" type="checkbox"> Ajax on menu</label>
+					<!--<label id="for-is-ajax" class="hidden-tablet" for="is-ajax"><input id="is-ajax" type="checkbox"> Ajax on menu</label>-->
 				</div><!--/.well -->
 			</div><!--/span-->
 			<!-- left menu ends -->

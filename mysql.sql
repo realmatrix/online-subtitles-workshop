@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 26, 2013 at 10:58 AM
+-- Generation Time: Aug 28, 2013 at 03:26 AM
 -- Server version: 5.5.29-log
 -- PHP Version: 5.3.21
 
@@ -530,7 +530,7 @@ CREATE TABLE IF NOT EXISTS `Groups` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `group` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `Groups`
@@ -541,7 +541,9 @@ INSERT INTO `Groups` (`id`, `group`) VALUES
 (2, 'moderator'),
 (3, 'user'),
 (4, 'verified'),
-(5, 'banned');
+(5, 'banned'),
+(6, 'approved'),
+(7, 'pending');
 
 -- --------------------------------------------------------
 
@@ -825,14 +827,14 @@ CREATE TABLE IF NOT EXISTS `OnlineUsers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=888 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=893 ;
 
 --
 -- Dumping data for table `OnlineUsers`
 --
 
 INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(887, '753ompo1f62s920dhqpvp3ti00', 1377510916, '');
+(892, 'v7seb493v9095ulr4lmeopv9c4', 1377655575, '');
 
 -- --------------------------------------------------------
 
