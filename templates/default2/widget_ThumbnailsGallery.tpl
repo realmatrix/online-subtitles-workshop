@@ -85,204 +85,253 @@
 
 <div class="thumb-row" >
 <div class="thumb-cell-container">	
+<a href='index.php?page=video&sec=view&vid={id0}'>
 <div class="pan_wrap thumb-cell ">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p1.jpg" alt="panoramic" />
+	<img class="thumbimage" src="uploads/thumbnails/video/{thumbnail0}" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+</a>
 <div class='thumb-title'>{title0}</div>
 </div>
 
 <div class="thumb-cell-container">	
+<a href='index.php?page=video&sec=view&vid={id1}'>
 <div class="pan_wrap thumb-cell">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p2.jpg" alt="panoramic" />
+	<img class="thumbimage" src="uploads/thumbnails/video/{thumbnail1}" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+</a>
+
 <div class='thumb-title'>{title1}</div>
 </div>
 
 <div class="thumb-cell-container">	
+<a href='index.php?page=video&sec=view&vid={id2}'>
 <div class="pan_wrap thumb-cell">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p3.jpg" alt="panoramic" />
+	<img class="thumbimage" src="uploads/thumbnails/video/{thumbnail2}" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+</a>
 <div class='thumb-title'>{title2}</div>
 </div>
 
 <div class="thumb-cell-container">	
+<a href='index.php?page=video&sec=view&vid={id3}'>
 <div class="pan_wrap thumb-cell ">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p10.jpg" alt="panoramic" />
+	<img class="thumbimage" src="uploads/thumbnails/video/{thumbnail3}" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+</a>
 <div class='thumb-title'>{title3}</div>
 </div>
 </div>
 
 <div class="thumb-row" >
 <div class="thumb-cell-container">	
+<a href='index.php?page=video&sec=view&vid={id4}'>
 <div class="pan_wrap thumb-cell ">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p4.jpg" alt="panoramic" />
+	<img class="thumbimage" src="uploads/thumbnails/video/{thumbnail4}" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+</a>
 <div class='thumb-title'>{title4}</div>
 </div>
 
 <div class="thumb-cell-container">	
+<a href='index.php?page=video&sec=view&vid={id5}'>
 <div class="pan_wrap thumb-cell">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p5.jpg" alt="panoramic" />
+	<img class="thumbimage" src="uploads/thumbnails/video/{thumbnail5}" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+</a>
 <div class='thumb-title'>{title5}</div>
 </div>
 
 <div class="thumb-cell-container">	
+<a href='index.php?page=video&sec=view&vid={id6}'>
 <div class="pan_wrap thumb-cell">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p6.jpg" alt="panoramic" />
+	<img class="thumbimage" src="uploads/thumbnails/video/{thumbnail6}" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+</a>
 <div class='thumb-title'>{title6}</div>
 </div>
 
 <div class="thumb-cell-container">	
+<a href='index.php?page=video&sec=view&vid={id7}'>
 <div class="pan_wrap thumb-cell">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p11.jpg" alt="panoramic" />
+	<img class="thumbimage" src="uploads/thumbnails/video/{thumbnail7}" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+</a>
 <div class='thumb-title'>{title7}</div>
 </div>
 </div>
 
 <div class="thumb-row" >
 <div class="thumb-cell-container">	
+<a href='index.php?page=video&sec=view&vid={id8}'>
 <div class="pan_wrap thumb-cell ">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p7.jpg" alt="panoramic" />
+	<img class="thumbimage" src="uploads/thumbnails/video/{thumbnail8}" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+</a>
 <div class='thumb-title'>{title8}</div>
 </div>
 
 <div class="thumb-cell-container">	
+<a href='index.php?page=video&sec=view&vid={id9}'>
 <div class="pan_wrap thumb-cell">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p8.jpg" alt="panoramic" />
+	<img class="thumbimage" src="uploads/thumbnails/video/{thumbnail9}" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+</a>
 <div class='thumb-title'>{title9}</div>
 </div>
 
 <div class="thumb-cell-container">	
+<a href='index.php?page=video&sec=view&vid={id10}'>
 <div class="pan_wrap thumb-cell">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p9.jpg" alt="panoramic" />
+	<img class="thumbimage" src="uploads/thumbnails/video/{thumbnail10}" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+</a>
 <div class='thumb-title'>{title10}</div>
 </div>
 
 <div class="thumb-cell-container">	
+<a href='index.php?page=video&sec=view&vid={id11}'>
 <div class="pan_wrap thumb-cell">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p12.jpg" alt="panoramic" />
+	<img class="thumbimage" src="uploads/thumbnails/video/{thumbnail11}" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+</a>
 <div class='thumb-title'>{title11}</div>
 </div>
 </div>
 
 <div class="thumb-row" >
 <div class="thumb-cell-container">	
+<a href='index.php?page=video&sec=view&vid={id12}'>
 <div class="pan_wrap thumb-cell ">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p1.jpg" alt="panoramic" />
+	<img class="thumbimage" src="uploads/thumbnails/video/{thumbnail12}" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+</a>
 <div class='thumb-title'>{title12}</div>
 </div>
 
 <div class="thumb-cell-container">	
+<a href='index.php?page=video&sec=view&vid={id13}'>
 <div class="pan_wrap thumb-cell">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p2.jpg" alt="panoramic" />
+	<img class="thumbimage" src="uploads/thumbnails/video/{thumbnail13}" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+</a>
 <div class='thumb-title'>{title13}</div>
 </div>
 
 <div class="thumb-cell-container">	
+<a href='index.php?page=video&sec=view&vid={id14}'>
 <div class="pan_wrap thumb-cell">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p3.jpg" alt="panoramic" />
+	<img class="thumbimage" src="uploads/thumbnails/video/{thumbnail14}" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+</a>
 <div class='thumb-title'>{title14}</div>
 </div>
 
 <div class="thumb-cell-container">	
+<a href='index.php?page=video&sec=view&vid={id15}'>
 <div class="pan_wrap thumb-cell ">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p10.jpg" alt="panoramic" />
+	<img class="thumbimage" src="uploads/thumbnails/video/{thumbnail15}" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+</a>
 <div class='thumb-title'>{title15}</div>
 </div>
 </div>
 
 <div class="thumb-row" >
 <div class="thumb-cell-container">	
+<a href='index.php?page=video&sec=view&vid={id16}'>
 <div class="pan_wrap thumb-cell ">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p4.jpg" alt="panoramic" />
+	<img class="thumbimage" src="uploads/thumbnails/video/{thumbnail16}" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+</a>
 <div class='thumb-title'>{title16}</div>
 </div>
 
 <div class="thumb-cell-container">	
+<a href='index.php?page=video&sec=view&vid={id17}'>
 <div class="pan_wrap thumb-cell">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p5.jpg" alt="panoramic" />
+	<img class="thumbimage" src="uploads/thumbnails/video/{thumbnail17}" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+</a>
 <div class='thumb-title'>{title17}</div>
 </div>
 
 <div class="thumb-cell-container">	
+<a href='index.php?page=video&sec=view&vid={id18}'>
 <div class="pan_wrap thumb-cell">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p6.jpg" alt="panoramic" />
+	<img class="thumbimage" src="uploads/thumbnails/video/{thumbnail18}" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+</a>
 <div class='thumb-title'>{title18}</div>
 </div>
 
 <div class="thumb-cell-container">	
+<a href='index.php?page=video&sec=view&vid={id19}'>
 <div class="pan_wrap thumb-cell">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p11.jpg" alt="panoramic" />
+	<img class="thumbimage" src="uploads/thumbnails/video/{thumbnail19}" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+</a>
 <div class='thumb-title'>{title19}</div>
 </div>
 </div>
 
 <div class="thumb-row" >
 <div class="thumb-cell-container">	
+<a href='index.php?page=video&sec=view&vid={id20}'>
 <div class="pan_wrap thumb-cell ">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p7.jpg" alt="panoramic" />
+	<img class="thumbimage" src="uploads/thumbnails/video/{thumbnail20}" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+</a>
 <div class='thumb-title'>{title20}</div>
 </div>
 
 <div class="thumb-cell-container">	
+<a href='index.php?page=video&sec=view&vid={id21}'>
 <div class="pan_wrap thumb-cell">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p8.jpg" alt="panoramic" />
+	<img class="thumbimage" src="uploads/thumbnails/video/{thumbnail21}" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+</a>
 <div class='thumb-title'>{title21}</div>
 </div>
 
 <div class="thumb-cell-container">	
+<a href='index.php?page=video&sec=view&vid={id22}'>
 <div class="pan_wrap thumb-cell">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p9.jpg" alt="panoramic" />
+	<img class="thumbimage" src="uploads/thumbnails/video/{thumbnail22}" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+</a>
 <div class='thumb-title'>{title22}</div>
 </div>
 
 <div class="thumb-cell-container">	
+<a href='index.php?page=video&sec=view&vid={id23}'>
 <div class="pan_wrap thumb-cell">
-	<img class="thumbimage" src="templates/default2/files/thumbnails-gallery/images/thumbs/p12.jpg" alt="panoramic" />
+	<img class="thumbimage" src="uploads/thumbnails/video/{thumbnail23}" alt="panoramic" />
 	<div class="pan_frame">&nbsp;</div>
 </div>
+</a>
 <div class='thumb-title'>{title23}</div>
 </div>
 </div>

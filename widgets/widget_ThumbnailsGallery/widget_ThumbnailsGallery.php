@@ -26,7 +26,7 @@
 		function GetVideos(){
 			$args = array(
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Videos` WHERE `public` = 1 and `thumbnail` !='' limit 10", $args);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Videos` WHERE `public` = 1 and `thumbnail` !='' limit 24", $args);
 			$array = array();
 			for ($i=0; $i < count($res); $i++) {
 				$array[] = array('{id'.$i.'}', $res[$i]['id']); 
