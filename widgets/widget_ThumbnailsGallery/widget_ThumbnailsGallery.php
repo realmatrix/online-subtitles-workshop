@@ -19,8 +19,23 @@
 			$array = array(
 				array("{ThumbnailGallery}", $GLOBALS['COMMON']->l("widget_ThumbnailGallery_title")),
 			);
+			$array = array_merge($array, self::GetVideos());
 			return $array;
 		}	
+		
+		function GetVideos(){
+			$args = array(
+			);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Videos` WHERE `public` = 1 and `thumbnail` !='' limit 10", $args);
+			$array = array();
+			for ($i=0; $i < count($res); $i++) {
+				$array[] = array('{id'.$i.'}', $res[$i]['id']); 
+				$array[] = array('{title'.$i.'}', $res[$i]['title']);
+				$array[] = array('{thumbnail'.$i.'}', $res[$i]['thumbnail']);
+			}
+			return $array;
+		}
+		
 		
 	}
 

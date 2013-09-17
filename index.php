@@ -1,6 +1,8 @@
 <?php
 
 	session_start();
+	
+	//ini_set('memory_limit', '256');
 
 	$GLOBALS['LoadStart'] = microtime(true);
 		
