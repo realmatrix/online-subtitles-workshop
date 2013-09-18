@@ -187,8 +187,9 @@
 			array(":length", $args['length'], "str"),
 			array(":tags", $args['tags'], "str"),
 			array(":synopsis", $args['synopsis'], "str"),
+			array(":source", $args['VideoUrl'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `Videos` (`uid`, `title`, `other_title`, `type`, `category`, `language`, `country`, `genres`, `release_date`, `casting`, `director`, `length`, `tags`, `synopsis`) VALUES (:uid, :title, :other_title, :type, :category, :language, :country, :genres, :releasedate, :casting, :director, :length, :tags, :synopsis )", $params);			
+			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `Videos` (`uid`, `title`, `other_title`, `type`, `category`, `language`, `country`, `genres`, `release_date`, `casting`, `director`, `length`, `tags`, `synopsis`, `source`) VALUES (:uid, :title, :other_title, :type, :category, :language, :country, :genres, :releasedate, :casting, :director, :length, :tags, :synopsis, :source )", $params);			
 			self::$message[] = "video '".$args['VideoTitle']."' added successfully";
 			return TRUE;
 		}

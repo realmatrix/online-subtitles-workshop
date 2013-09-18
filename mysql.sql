@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 17, 2013 at 10:18 PM
+-- Generation Time: Sep 18, 2013 at 10:58 PM
 -- Server version: 5.5.29-log
 -- PHP Version: 5.3.21
 
@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `CDS` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `cd` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=51 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -613,9 +613,9 @@ INSERT INTO `Lang_English` (`id`, `key`, `text`) VALUES
 (32, 'widget_newsletter_name', 'Name:'),
 (33, 'widget_newsletter_email', 'Email:'),
 (34, 'widget_newsletter_submit', 'submit'),
-(35, 'widget_quicklinks_addvideo', 'Add new article'),
+(35, 'widget_quicklinks_addvideo', 'Add Video'),
 (37, 'widget_quicklinks_logout', 'Logout'),
-(38, 'video_AddVideo_title', 'Add New Article'),
+(38, 'video_AddVideo_title', 'Add Video'),
 (39, 'video_AddVideo_NewVideoType', 'ADD A NEW'),
 (40, 'video_AddVideo_VideoCategory', 'Category'),
 (41, 'video_AddVideo_VideoLanguage', 'Language'),
@@ -650,7 +650,7 @@ INSERT INTO `Lang_English` (`id`, `key`, `text`) VALUES
 (70, 'video_AddVideo_Length', 'Length:'),
 (71, 'video_AddVideo_Synopsis', 'Synopsis:'),
 (72, 'video_AddVideo_Tags', 'Tags:'),
-(73, 'video_AddVideo_Submit', 'Submit Article'),
+(73, 'video_AddVideo_Submit', 'Submit Video'),
 (74, 'video_ViewVideo_OtherTitle', 'Other Title:'),
 (75, 'video_ViewVideo_Country', 'Country:'),
 (76, 'video_ViewVideo_Genre', 'Genre:'),
@@ -771,14 +771,14 @@ CREATE TABLE IF NOT EXISTS `OnlineUsers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=905 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=911 ;
 
 --
 -- Dumping data for table `OnlineUsers`
 --
 
 INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(904, 'j718dti1en3efjsgj4i9up87c6', 1379452300, '');
+(910, 'hv46o0m4ic8p6pi9g8d7fapl77', 1379540828, '');
 
 -- --------------------------------------------------------
 
@@ -838,7 +838,7 @@ CREATE TABLE IF NOT EXISTS `SubtitleCDS` (
   `sid` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -860,7 +860,7 @@ CREATE TABLE IF NOT EXISTS `Subtitles` (
   `uid` int(11) NOT NULL,
   `key` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=54 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -878,7 +878,7 @@ CREATE TABLE IF NOT EXISTS `SubtitlesContent` (
   `end` varchar(12) CHARACTER SET latin1 NOT NULL,
   `text` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=10213 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -1159,14 +1159,19 @@ CREATE TABLE IF NOT EXISTS `Videos` (
   `url` varchar(255) NOT NULL,
   `public` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
 
 --
 -- Dumping data for table `Videos`
 --
 
 INSERT INTO `Videos` (`id`, `uid`, `title`, `other_title`, `type`, `category`, `language`, `country`, `genres`, `release_date`, `casting`, `director`, `length`, `tags`, `synopsis`, `thumbnail`, `image`, `source`, `year`, `url`, `public`) VALUES
-(15, 18, '300: Rise of an Empire', '300: Rise of an Empire', 1, 1, 14, 236, '25', '2013-07-09', 'Lena Headey, Eva Green, Rodrigo Santoro', 'Noam Murro', 90, '300, Rise, Empire', 'The Greek general Themistocles battles an invading army of Persians under the mortal-turned-god, Xerxes.', '15_1813775109260FC1S.jpg', '', 'http://www.youtube.com/watch?v=2zqy21Z29ps', 0, '', 1);
+(15, 18, '300: Rise of an Empire', '300: Rise of an Empire', 1, 1, 14, 236, '25', '2013-07-09', 'Lena Headey, Eva Green, Rodrigo Santoro', 'Noam Murro', 90, '300, Rise, Empire', 'The Greek general Themistocles battles an invading army of Persians under the mortal-turned-god, Xerxes.', '15_1813775109260FC1S.jpg', '', 'http://www.youtube.com/watch?v=2zqy21Z29ps', 0, '', 1),
+(16, 18, 'Riddick (2013)', 'Riddick', 1, 1, 14, 236, '1,21,24', '2013-09-06', 'Vin Diesel, Karl Urban, Katee Sackhoff', 'David Twohy', 90, 'Riddick', 'Left for dead on a sun-scorched planet, Riddick finds himself up against an alien race of predators. Activating an emergency beacon alerts two ships: one carrying a new breed of mercenary, the other captained by a man from Riddick''s past.', '16_181379538810wvn1x.jpg', '', 'http://www.youtube.com/watch?v=zH3O-CeZckE', 0, '', 1),
+(17, 18, 'Thor: The Dark World', 'Thor 2013', 1, 1, 14, 236, '1,2,10', '2013-11-08', 'Chris Hemsworth, Natalie Portman, Christopher Eccleston', 'Alan Taylor', 100, 'Thor, 2013, Dark, World', 'Faced with an enemy that even Odin and Asgard cannot withstand, Thor must embark on his most perilous and personal journey yet, one that will reunite him with Jane Foster and force him to sacrifice everything to save us all.', '17_181379539607ivkN3.jpg', '', 'http://www.youtube.com/watch?v=npvJ9FTgZbM', 0, '', 1),
+(18, 18, 'World War Z', 'World War Z 2013', 1, 2, 14, 236, '1,2,14,21,24', '2013-06-21', 'Brad Pitt, Mireille Enos, Daniella Kertesz', 'Marc Forster', 95, 'World, War, 2013', 'United Nations employee Gerry Lane traverses the world in a race against time to stop the Zombie pandemic that is toppling armies and governments, and threatening to destroy humanity itself.', '18_181379540179OpIRB.jpg', '', 'http://www.youtube.com/watch?v=HcwTxRuq-uk', 0, '', 1),
+(19, 18, 'Man of Steel (2013)', 'Man of Steel', 1, 1, 14, 236, '1,2,10,21', '2013-06-14', 'Henry Cavill, Amy Adams, Michael Shannon', 'Zack Snyder', 90, 'Man, Steel, 2013', 'A young itinerant worker is forced to confront his secret extraterrestrial heritage when Earth is invaded by members of his race.', '19_181379540798E44XC.jpg', '', 'http://www.youtube.com/watch?v=T6DJcgm3wNY', 0, '', 1),
+(20, 18, 'R.I.P.D. (2013)', 'R.I.P.D.', 1, 2, 14, 236, '1,5,6,10', '2013-07-19', 'Ryan Reynolds, Jeff Bridges, Mary-Louise Parker', 'Robert Schwentke', 90, 'R.I.P.D., 2013', 'A recently slain cop joins a team of undead police officers working for the Rest in Peace Department and tries to find the man who murdered him.', '20_1813795412300JEoP.jpg', '', 'http://www.youtube.com/watch?v=X07xNrVd7DU', 0, '', 1);
 
 -- --------------------------------------------------------
 
