@@ -4,14 +4,18 @@
 			
 		function view_sections(){
 			$array = array(
+				array("video", "UploadThumbnail", $GLOBALS['vars'], self::Show()),
 				array("player", "ViewPlayer", $GLOBALS['vars'], self::CheckVideoSource()),
 				array("video", "ViewVideo", $GLOBALS['vars'], TRUE),
 				array("video", "VideoSynopsis", $GLOBALS['vars'], TRUE),
-				array("video", "UploadThumbnail", $GLOBALS['vars'], self::CheckOwner()),
 				array("subtitle", "VideoSubtitles", $GLOBALS['vars'], TRUE),
 				array("subtitle", "AddSubtitle", $GLOBALS['vars'], TRUE),
 			);
 			return $array;
+		}
+		
+		function Show(){
+			if(self::CheckOwner() and !IsThumbnailExist()){return TRUE;}else{return FALSE;}
 		}
 		
 		function CheckOwner(){
@@ -26,6 +30,16 @@
 			);
 			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Videos` WHERE `id` = :id", $args);
 			if($res[0]['source']!=""){return TRUE;}else{return FALSE;}
+		}
+		
+		function IsThumbnailExist(){
+			if(self::CheckOwner()){
+			$args = array(
+				array(":id", $GLOBALS['vars']['vid'], "str"),
+			);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Videos` WHERE `id` = :id", $args);
+			if($res[0]['thumbnail']!=""){return TRUE;}else{return FALSE;}
+			}
 		}	
 			
 	}

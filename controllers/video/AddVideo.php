@@ -174,23 +174,39 @@
 			
 			$params = array(
 			array(":uid", $_SESSION['id'], "str"),
-			array(":title", $args['VideoTitle'], "str"),
-			array(":other_title", $args['VideoOtherTitle'], "str"),
+			array(":title", trim($args['VideoTitle']), "str"),
+			array(":other_title", trim($args['VideoOtherTitle']), "str"),
 			array(":type", $args['VideoType'], "str"),
 			array(":category", $args['VideoCategory'], "str"),
 			array(":language", $args['VideoLanguage'], "str"),
 			array(":country", $args['country'], "str"),
 			array(":genres", $args['genres'], "str"),
 			array(":releasedate", $args['rd-year']."-".$args['rd-month']."-".$args['rd-day'], "str"),
-			array(":casting", $args['casting'], "str"),
-			array(":director", $args['director'], "str"),
+			array(":casting", trim($args['casting']), "str"),
+			array(":director", trim($args['director']), "str"),
 			array(":length", $args['length'], "str"),
-			array(":tags", $args['tags'], "str"),
-			array(":synopsis", $args['synopsis'], "str"),
-			array(":source", $args['VideoUrl'], "str"),
+			array(":tags", trim($args['tags']), "str"),
+			array(":synopsis", trim($args['synopsis']), "str"),
+			array(":source", trim($args['VideoUrl']), "str"),
 			);
 			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `Videos` (`uid`, `title`, `other_title`, `type`, `category`, `language`, `country`, `genres`, `release_date`, `casting`, `director`, `length`, `tags`, `synopsis`, `source`) VALUES (:uid, :title, :other_title, :type, :category, :language, :country, :genres, :releasedate, :casting, :director, :length, :tags, :synopsis, :source )", $params);			
 			self::$message[] = "video '".$args['VideoTitle']."' added successfully";
+			$GLOBALS['vars']['VideoTitle'] = "";
+			$GLOBALS['vars']['VideoOtherTitle'] = "";
+			$GLOBALS['vars']['VideoType'] = "";
+			$GLOBALS['vars']['VideoCategory'] = "";
+			$GLOBALS['vars']['VideoLanguage'] = "";
+			$GLOBALS['vars']['country'] = "";
+			$GLOBALS['vars']['genres'] = "";
+			$GLOBALS['vars']['rd-year'] = "";
+			$GLOBALS['vars']['rd-month'] = "";
+			$GLOBALS['vars']['rd-day'] = "";
+			$GLOBALS['vars']['casting'] = "";
+			$GLOBALS['vars']['director'] = "";
+			$GLOBALS['vars']['length'] = "";
+			$GLOBALS['vars']['tags'] = "";
+			$GLOBALS['vars']['synopsis'] = "";
+			$GLOBALS['vars']['VideoUrl'] = "";
 			return TRUE;
 		}
 		
