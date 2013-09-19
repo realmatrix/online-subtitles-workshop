@@ -15,7 +15,7 @@
 		}
 		
 		function Show(){
-			if(self::CheckOwner() and !IsThumbnailExist()){return TRUE;}else{return FALSE;}
+			if(self::CheckOwner() and !self::IsThumbnailExist()){return TRUE;}else{return FALSE;}
 		}
 		
 		function CheckOwner(){

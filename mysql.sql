@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 18, 2013 at 10:58 PM
+-- Generation Time: Sep 19, 2013 at 07:54 PM
 -- Server version: 5.5.29-log
 -- PHP Version: 5.3.21
 
@@ -771,14 +771,14 @@ CREATE TABLE IF NOT EXISTS `OnlineUsers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=911 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=920 ;
 
 --
 -- Dumping data for table `OnlineUsers`
 --
 
 INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(910, 'hv46o0m4ic8p6pi9g8d7fapl77', 1379540828, '');
+(919, 'lpp3hk5qhpjgg2u39v5p0u62u7', 1379616733, '');
 
 -- --------------------------------------------------------
 
@@ -1158,20 +1158,27 @@ CREATE TABLE IF NOT EXISTS `Videos` (
   `year` int(11) NOT NULL,
   `url` varchar(255) NOT NULL,
   `public` int(11) NOT NULL DEFAULT '1',
+  `featured` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=27 ;
 
 --
 -- Dumping data for table `Videos`
 --
 
-INSERT INTO `Videos` (`id`, `uid`, `title`, `other_title`, `type`, `category`, `language`, `country`, `genres`, `release_date`, `casting`, `director`, `length`, `tags`, `synopsis`, `thumbnail`, `image`, `source`, `year`, `url`, `public`) VALUES
-(15, 18, '300: Rise of an Empire', '300: Rise of an Empire', 1, 1, 14, 236, '25', '2013-07-09', 'Lena Headey, Eva Green, Rodrigo Santoro', 'Noam Murro', 90, '300, Rise, Empire', 'The Greek general Themistocles battles an invading army of Persians under the mortal-turned-god, Xerxes.', '15_1813775109260FC1S.jpg', '', 'http://www.youtube.com/watch?v=2zqy21Z29ps', 0, '', 1),
-(16, 18, 'Riddick (2013)', 'Riddick', 1, 1, 14, 236, '1,21,24', '2013-09-06', 'Vin Diesel, Karl Urban, Katee Sackhoff', 'David Twohy', 90, 'Riddick', 'Left for dead on a sun-scorched planet, Riddick finds himself up against an alien race of predators. Activating an emergency beacon alerts two ships: one carrying a new breed of mercenary, the other captained by a man from Riddick''s past.', '16_181379538810wvn1x.jpg', '', 'http://www.youtube.com/watch?v=zH3O-CeZckE', 0, '', 1),
-(17, 18, 'Thor: The Dark World', 'Thor 2013', 1, 1, 14, 236, '1,2,10', '2013-11-08', 'Chris Hemsworth, Natalie Portman, Christopher Eccleston', 'Alan Taylor', 100, 'Thor, 2013, Dark, World', 'Faced with an enemy that even Odin and Asgard cannot withstand, Thor must embark on his most perilous and personal journey yet, one that will reunite him with Jane Foster and force him to sacrifice everything to save us all.', '17_181379539607ivkN3.jpg', '', 'http://www.youtube.com/watch?v=npvJ9FTgZbM', 0, '', 1),
-(18, 18, 'World War Z', 'World War Z 2013', 1, 2, 14, 236, '1,2,14,21,24', '2013-06-21', 'Brad Pitt, Mireille Enos, Daniella Kertesz', 'Marc Forster', 95, 'World, War, 2013', 'United Nations employee Gerry Lane traverses the world in a race against time to stop the Zombie pandemic that is toppling armies and governments, and threatening to destroy humanity itself.', '18_181379540179OpIRB.jpg', '', 'http://www.youtube.com/watch?v=HcwTxRuq-uk', 0, '', 1),
-(19, 18, 'Man of Steel (2013)', 'Man of Steel', 1, 1, 14, 236, '1,2,10,21', '2013-06-14', 'Henry Cavill, Amy Adams, Michael Shannon', 'Zack Snyder', 90, 'Man, Steel, 2013', 'A young itinerant worker is forced to confront his secret extraterrestrial heritage when Earth is invaded by members of his race.', '19_181379540798E44XC.jpg', '', 'http://www.youtube.com/watch?v=T6DJcgm3wNY', 0, '', 1),
-(20, 18, 'R.I.P.D. (2013)', 'R.I.P.D.', 1, 2, 14, 236, '1,5,6,10', '2013-07-19', 'Ryan Reynolds, Jeff Bridges, Mary-Louise Parker', 'Robert Schwentke', 90, 'R.I.P.D., 2013', 'A recently slain cop joins a team of undead police officers working for the Rest in Peace Department and tries to find the man who murdered him.', '20_1813795412300JEoP.jpg', '', 'http://www.youtube.com/watch?v=X07xNrVd7DU', 0, '', 1);
+INSERT INTO `Videos` (`id`, `uid`, `title`, `other_title`, `type`, `category`, `language`, `country`, `genres`, `release_date`, `casting`, `director`, `length`, `tags`, `synopsis`, `thumbnail`, `image`, `source`, `year`, `url`, `public`, `featured`) VALUES
+(15, 18, '300: Rise of an Empire', '300: Rise of an Empire', 1, 1, 14, 236, '25', '2013-07-09', 'Lena Headey, Eva Green, Rodrigo Santoro', 'Noam Murro', 90, '300, Rise, Empire', 'The Greek general Themistocles battles an invading army of Persians under the mortal-turned-god, Xerxes.', '15_1813775109260FC1S.jpg', '', 'http://www.youtube.com/watch?v=2zqy21Z29ps', 0, '', 1, 1),
+(16, 18, 'Riddick (2013)', 'Riddick', 1, 1, 14, 236, '1,21,24', '2013-09-06', 'Vin Diesel, Karl Urban, Katee Sackhoff', 'David Twohy', 90, 'Riddick', 'Left for dead on a sun-scorched planet, Riddick finds himself up against an alien race of predators. Activating an emergency beacon alerts two ships: one carrying a new breed of mercenary, the other captained by a man from Riddick''s past.', '16_181379538810wvn1x.jpg', '', 'http://www.youtube.com/watch?v=zH3O-CeZckE', 0, '', 1, 1),
+(17, 18, 'Thor: The Dark World', 'Thor 2013', 1, 1, 14, 236, '1,2,10', '2013-11-08', 'Chris Hemsworth, Natalie Portman, Christopher Eccleston', 'Alan Taylor', 100, 'Thor, 2013, Dark, World', 'Faced with an enemy that even Odin and Asgard cannot withstand, Thor must embark on his most perilous and personal journey yet, one that will reunite him with Jane Foster and force him to sacrifice everything to save us all.', '17_181379539607ivkN3.jpg', '', 'http://www.youtube.com/watch?v=npvJ9FTgZbM', 0, '', 1, 1),
+(18, 18, 'World War Z', 'World War Z 2013', 1, 2, 14, 236, '1,2,14,21,24', '2013-06-21', 'Brad Pitt, Mireille Enos, Daniella Kertesz', 'Marc Forster', 95, 'World, War, 2013', 'United Nations employee Gerry Lane traverses the world in a race against time to stop the Zombie pandemic that is toppling armies and governments, and threatening to destroy humanity itself.', '18_181379540179OpIRB.jpg', '', 'http://www.youtube.com/watch?v=HcwTxRuq-uk', 0, '', 1, 1),
+(19, 18, 'Man of Steel (2013)', 'Man of Steel', 1, 1, 14, 236, '1,2,10,21', '2013-06-14', 'Henry Cavill, Amy Adams, Michael Shannon', 'Zack Snyder', 90, 'Man, Steel, 2013', 'A young itinerant worker is forced to confront his secret extraterrestrial heritage when Earth is invaded by members of his race.', '19_181379540798E44XC.jpg', '', 'http://www.youtube.com/watch?v=T6DJcgm3wNY', 0, '', 1, 1),
+(20, 18, 'R.I.P.D. (2013)', 'R.I.P.D.', 1, 2, 14, 236, '1,5,6,10', '2013-07-19', 'Ryan Reynolds, Jeff Bridges, Mary-Louise Parker', 'Robert Schwentke', 90, 'R.I.P.D., 2013', 'A recently slain cop joins a team of undead police officers working for the Rest in Peace Department and tries to find the man who murdered him.', '20_1813795412300JEoP.jpg', '', 'http://www.youtube.com/watch?v=X07xNrVd7DU', 0, '', 1, 1),
+(21, 18, '2 Guns (2013)', '2 Guns', 1, 2, 14, 236, '1,5,6,8,24', '2013-08-02', 'Denzel Washington, Mark Wahlberg, Paula Patton', 'Baltasar Kormákur', 90, 'guns', 'A DEA agent and a naval intelligence officer find themselves on the run after a botched attempt to infiltrate a drug cartel. While fleeing, they learn the secret of their shaky alliance: Neither knew that the other was an undercover agent.', '21_181379612635T4A25.jpg', '', 'http://www.youtube.com/watch?v=dVNe3RK2fgI', 0, '', 1, 1),
+(22, 18, 'Percy Jackson: Sea of Monsters (2013)', 'Percy Jackson', 1, 1, 14, 236, '2,9,10', '2013-08-07', 'Logan Lerman, Alexandra Daddario, Brandon T. Jackson', 'Thor Freudenthal', 90, 'Percy, Jackson, Sea, Monsters, 2013', 'In order to restore their dying safe haven, the son of Poseidon and his friends embark on a quest to the Sea of Monsters to find the mythical Golden Fleece while trying to stop an ancient evil from rising.', '22_1813796135777IswV.jpg', '', 'http://www.youtube.com/watch?v=5KoOtiuSjuI', 0, '', 1, 1),
+(23, 18, 'Elysium (I) (2013)', 'Elysium', 1, 1, 14, 236, '1,8,21,24', '2013-08-09', 'Matt Damon, Jodie Foster, Sharlto Copley', 'Neill Blomkamp', 100, 'Elysium, 2013', 'Set in the year 2154, where the very wealthy live on a man-made space station while the rest of the population resides on a ruined Earth, a man takes on a mission that could bring equality to the polarized worlds.', '23_1813796141370BYmG.jpg', '', 'http://www.youtube.com/watch?v=QILNSgou5BY', 0, '', 1, 1),
+(24, 18, 'Homeland Season 3', 'Homeland', 2, 1, 14, 236, '8,17,24', '2013-10-02', 'Claire Danes, Damian Lewis, Morena Baccarin', '.', 45, 'Homeland, Season 3', 'When Marine Nicolas Brody is hailed as a hero after he returns home from eight years of captivity in Iraq, intelligence officer Carrie Mathison is the only one who suspects that he may have been "turned".', '24_181379614725AJrot.jpg', '', 'http://www.youtube.com/watch?v=iXOUIsu-E0Q', 0, '', 1, 1),
+(25, 18, 'The Hobbit: An Unexpected Journey (2012)', 'The Hobbit', 1, 2, 14, 236, '2,10', '2012-12-14', 'Martin Freeman, Ian McKellen, Richard Armitage', 'Peter Jackson', 120, 'Hobbit, Unexpected, Journey, 2012', 'A younger and more reluctant Hobbit, Bilbo Baggins, sets out on an "unexpected journey" to the Lonely Mountain with a spirited group of Dwarves to reclaim their stolen mountain home from a dragon named Smaug.', '25_181379616244XC1g0.jpg', '', 'http://www.youtube.com/watch?v=fnaojlfdUbs', 0, '', 1, 1),
+(26, 18, 'Monsters University (2013)', 'Monsters University 2', 3, 2, 14, 236, '2,3,5,9,10', '2013-06-21', 'Billy Crystal, John Goodman, Steve Buscemi', 'Dan Scanlon', 90, 'Monsters, University, 2013', 'A look at the relationship between Mike and Sulley during their days at Monsters University -- when they weren''t necessarily the best of friends.', '26_181379616741NtRbG.jpg', '', 'http://www.youtube.com/watch?v=ODePHkWSg-U', 0, '', 1, 1);
 
 -- --------------------------------------------------------
 
