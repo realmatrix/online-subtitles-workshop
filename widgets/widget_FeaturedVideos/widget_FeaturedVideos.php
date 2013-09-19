@@ -30,10 +30,10 @@
 			$array = array();
 			for ($i=0; $i < count($res); $i++) {
 				$array[] = array('{id'.$i.'}', $res[$i]['id']); 
-				$array[] = array('{title'.$i.'}', $res[$i]['title']);
+				$array[] = array('{title'.$i.'}', str_replace('"', "'", $res[$i]['title']));
 				$array[] = array('{source'.$i.'}', $res[$i]['source']);
 				$array[] = array('{thumbnail'.$i.'}', $res[$i]['thumbnail']);
-				$array[] = array('{description'.$i.'}', $res[$i]['synopsis']);
+				$array[] = array('{description'.$i.'}', str_replace('"', "'", $res[$i]['synopsis']));
 			}
 			return $array;
 		}
