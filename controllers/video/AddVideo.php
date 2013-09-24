@@ -1,9 +1,6 @@
 <?php
 
 	class CAddVideo{
-
-	public static $error = array();
-	public static $message = array();
 		
 		function AddVideo(){
 			return self::AddVideo_content();
@@ -44,8 +41,6 @@
 				  array("{htags}", $GLOBALS['vars']['tags']),
 				  array("{hsynopsis}", $GLOBALS['vars']['synopsis']),
 				  array("{hdirector}", $GLOBALS['vars']['director']),
-				  array("{error}", $GLOBALS['COMMON']->FormatMessage("error", self::$error)),
-				  array("{message}", $GLOBALS['COMMON']->FormatMessage("message", self::$message)),
 				  array("{Type}", $GLOBALS['COMMON']->l('video_AddVideo_NewVideoType')),
 				  array("{Category}", $GLOBALS['COMMON']->l('video_AddVideo_Category')),
 				  array("{Language}", $GLOBALS['COMMON']->l('video_AddVideo_Language')),
@@ -62,6 +57,8 @@
 				  array("{Submit}", $GLOBALS['COMMON']->l('video_AddVideo_Submit')),
 				  array("{VideoUrl}", $GLOBALS['COMMON']->l('video_AddVideo_VideoUrl')),
 				  array("{VideoGenres}", self::genres()),
+				  array("{page}", $GLOBALS['vars']['page']),
+				  array("{sec}", $GLOBALS['vars']['sec']),
 				 );
 			 
 		return $content;
@@ -127,7 +124,7 @@
 			$months = $GLOBALS['COMMON']->months();
 			for ($i=0; $i < count($months); $i++) {
 				if($GLOBALS['vars']['rd-month'] == $months[$i]){$selected = "selected='selected'";}else{$selected="";} 
-				$res .= "<option value='".$months[$i]."' ".$selected.">".$months[$i]."</option>";
+				$res .= "<option value='".$months[$i]."' ".$selected.">".date("F", mktime(0, 0, 0, $months[$i], 10))."</option>";
 			}
 			return $res;
 		}
@@ -152,23 +149,23 @@
 		
 		function SubmitVideo($args){
 			if(is_array($args['genres'])){$args['genres'] = implode(",", $args['genres']);}
-			if($args['VideoType']==""){self::$error[]=$GLOBALS['COMMON']->l('video_AddVideo_SelectVideoType');}
-			if($args['VideoCategory']==""){self::$error[]=$GLOBALS['COMMON']->l('video_AddVideo_SelectVideoCategory');}
-			if($args['VideoLanguage']==""){self::$error[]=$GLOBALS['COMMON']->l('video_AddVideo_SelectVideoLanguage');}
-			if($args['VideoTitle']==""){self::$error[]=$GLOBALS['COMMON']->l('video_AddVideo_EnterVideoTitle');}
-			if($args['VideoOtherTitle']==""){self::$error[]=$GLOBALS['COMMON']->l('video_AddVideo_EnterVideoOtherTitle');}
-			if($args['country']==""){self::$error[]=$GLOBALS['COMMON']->l('video_AddVideo_SelectCountry');}
-			if($args['genres']==""){self::$error[]=$GLOBALS['COMMON']->l('video_AddVideo_SelectGenres');}
-			if($args['rd-month']==""){self::$error[]=$GLOBALS['COMMON']->l('video_AddVideo_SelectREleaseMonth');}
-			if($args['rd-day']==""){self::$error[]=$GLOBALS['COMMON']->l('video_AddVideo_SelectReleaseDay');}
-			if($args['rd-year']==""){self::$error[]=$GLOBALS['COMMON']->l('video_AddVideo_SelectReleaseYear');}			
-			if($args['casting']==""){self::$error[]=$GLOBALS['COMMON']->l('video_AddVideo_EnterCast');}
-			if($args['director']==""){self::$error[]=$GLOBALS['COMMON']->l('video_AddVideo_EnterDirector');}
-			if($args['length']==""){self::$error[]=$GLOBALS['COMMON']->l('video_AddVideo_SelectVideoLength');}
-			if($args['tags']==""){self::$error[]=$GLOBALS['COMMON']->l('video_AddVideo_EnterVideoTags');}			
-			if($args['synopsis']==""){self::$error[]=$GLOBALS['COMMON']->l('video_AddVideo_EnterVideoSynopsis');}
-			if($GLOBALS['vars']['VideoUrl']!="" and !filter_var($GLOBALS['vars']['VideoUrl'], FILTER_VALIDATE_URL)){self::$error[]="invalid url";}		
-			if(count(self::$error)>0){return FALSE;}
+			if($args['VideoType']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_AddVideo_SelectVideoType');}
+			if($args['VideoCategory']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_AddVideo_SelectVideoCategory');}
+			if($args['VideoLanguage']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_AddVideo_SelectVideoLanguage');}
+			if($args['VideoTitle']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_AddVideo_EnterVideoTitle');}
+			if($args['VideoOtherTitle']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_AddVideo_EnterVideoOtherTitle');}
+			if($args['country']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_AddVideo_SelectCountry');}
+			if($args['genres']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_AddVideo_SelectGenres');}
+			if($args['rd-month']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_AddVideo_SelectREleaseMonth');}
+			if($args['rd-day']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_AddVideo_SelectReleaseDay');}
+			if($args['rd-year']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_AddVideo_SelectReleaseYear');}			
+			if($args['casting']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_AddVideo_EnterCast');}
+			if($args['director']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_AddVideo_EnterDirector');}
+			if($args['length']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_AddVideo_SelectVideoLength');}
+			if($args['tags']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_AddVideo_EnterVideoTags');}			
+			if($args['synopsis']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_AddVideo_EnterVideoSynopsis');}
+			if($GLOBALS['vars']['VideoUrl']!="" and !filter_var($GLOBALS['vars']['VideoUrl'], FILTER_VALIDATE_URL)){$ERROR[]="invalid url";}		
+			if(count($ERROR)>0){$GLOBALS['ERROR'] = $ERROR; return FALSE;}
 			
 			//$genres = implode(",", $_POST['genres']);
 			
@@ -190,7 +187,7 @@
 			array(":source", trim($args['VideoUrl']), "str"),
 			);
 			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `Videos` (`uid`, `title`, `other_title`, `type`, `category`, `language`, `country`, `genres`, `release_date`, `casting`, `director`, `length`, `tags`, `synopsis`, `source`) VALUES (:uid, :title, :other_title, :type, :category, :language, :country, :genres, :releasedate, :casting, :director, :length, :tags, :synopsis, :source )", $params);			
-			self::$message[] = "video '".$args['VideoTitle']."' added successfully";
+			$GLOBALS['SUCCESS'][] = "video '".$args['VideoTitle']."' added successfully";
 			$GLOBALS['vars']['VideoTitle'] = "";
 			$GLOBALS['vars']['VideoOtherTitle'] = "";
 			$GLOBALS['vars']['VideoType'] = "";

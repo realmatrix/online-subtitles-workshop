@@ -26,9 +26,6 @@
     <TD class="forumdetails">
     	
 <div id='SubmittingForm' style='width:100%;text-align: center; display: none;'><img src="templates/default2/tmp/ajax-loader.gif"/></div>    	
-{message}
-
-{error}
 
 <!-- add video form -->
 <div id="div-submitnewvideo">
@@ -107,8 +104,8 @@
 	<!-- <input type="hidden" name="dataonly" value="yes" /> --> <!-- uncomment if using ajax -->
 	<!-- <input type="hidden" name="getcontroller" value="video" /> --> <!-- uncomment if using ajax -->
 	<!-- <input type="hidden" name="getsection" value="AddVideo" /> --> <!-- uncomment if using ajax -->
-	<input type="hidden" name="page" value="video" /> <!-- comment if using ajax -->
-	<input type="hidden" name="sec" value="add" /> <!-- comment if using ajax -->
+	<input type="hidden" name="page" value="{page}" /> <!-- comment if using ajax -->
+	<input type="hidden" name="sec" value="{sec}" /> <!-- comment if using ajax -->
 	<input type="hidden" name="ssec" value="AddVideo" />
 	<input type="hidden" name="h" value="SubmitVideo" />
 
