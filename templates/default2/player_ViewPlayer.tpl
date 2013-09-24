@@ -36,6 +36,7 @@
 	<script type="text/javascript">
 	    jwplayer("myElement").setup({
 	        file: "{source}",
+	        title: "{vtitle}",
 	        image: "{thumb}",
 	        width: "100%;",
 	        height: "400",

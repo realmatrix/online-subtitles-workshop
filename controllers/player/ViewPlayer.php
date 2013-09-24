@@ -27,6 +27,8 @@
 				  (
 				  array("{title}", $GLOBALS['COMMON']->l("player_ViewPlayer_title")),
 				  array("{source}", self::GetVideoSource()),
+				  array("{vtitle}", self::GetVideoTitle()),
+				  array("{thumb}", "uploads/thumbnails/video/".self::GetVideoThumbnail()),
 				 );
 			 
 		return $content;
@@ -39,6 +41,24 @@
 			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Videos` WHERE `id` = :id", $args);
 			$source = $res[0]['source'];
 			return $source;
+		}
+		
+		function GetVideoThumbnail(){
+			$args = array(
+				array(":id", $GLOBALS['vars']['vid'], "str"),
+			);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Videos` WHERE `id` = :id", $args);
+			$thumbnail = $res[0]['thumbnail'];
+			return $thumbnail;
+		}
+		
+		function GetVideoTitle(){
+			$args = array(
+				array(":id", $GLOBALS['vars']['vid'], "str"),
+			);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Videos` WHERE `id` = :id", $args);
+			$title = $res[0]['title'];
+			return $title;
 		}
 		
 	
