@@ -5,6 +5,7 @@
 	.div-message{width: 100%; border: 1px; border-color: green;	padding: 20px; color: green;}
 	.checkbox-genre{float: left; width: 20%;}
 	#div-submitnewvideo{width:98%;}
+	#VideoCategory{width: 150px;}
 </style>
 
 
