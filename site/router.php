@@ -4,8 +4,9 @@
 	if($GLOBALS['vars']['getwidget']!=""){$getwidget = $GLOBALS['vars']['getwidget'];}
 	if($GLOBALS['vars']['getcontroller']!=""){$getcontroller = $GLOBALS['vars']['getcontroller'];}
 	if($GLOBALS['vars']['getsection']!=""){$getsection = $GLOBALS['vars']['getsection'];}	
-	if($GLOBALS['vars']['page']=="logout"){$SystemPage = "logout";}	
-	if($GLOBALS['vars']['page']=="none"){$SystemPage = "none";}	
+	//if($GLOBALS['vars']['page']=="logout"){$SystemPage = "logout";}	
+	//if($GLOBALS['vars']['page']=="none"){$SystemPage = "none";}	
+	if($GLOBALS['vars']['page']!=""){$SystemPage=$GLOBALS['vars']['page'];}
 	if($GLOBALS['vars']['sec']!=""){$SystemSection=$GLOBALS['vars']['sec'];}
 
 
@@ -84,7 +85,7 @@
 		$GLOBALS['FinalPage'] = $GLOBALS['COMMON']->render($GLOBALS['TemplateLogout'], "logout");
 		echo $GLOBALS['FinalPage'];
         break;
-    case $SystemPage=="query":
+    case $SystemPage=="query" or $SystemPage=="cron":
 		echo $GLOBALS['SystemContent'];
         break;
     default:

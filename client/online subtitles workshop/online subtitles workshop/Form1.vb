@@ -20,7 +20,7 @@ Public Class Form1
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        MessageBox.Show(GetData("http://wwww.google.com", "").ToString)
+        MessageBox.Show(GetData("http://localhost/new/trunk/site/index.php", "").ToString)
 
     End Sub
 End Class
