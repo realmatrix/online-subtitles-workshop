@@ -1,34 +1,26 @@
-﻿Imports System.Net
-Imports System.Net.WebUtility
-Imports System.Text
-Imports System.Web
-
-
-
-
-
+﻿
 Public Class Form1
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
     End Sub
 
-    Function AuthUser(ByVal AuthenticationPage As String, ByVal Username As String, ByVal Password As String) As Boolean
-        Dim wc As New WebClient()
-        wc.Headers.Add("Content-Type", "application/x-www-form-urlencoded")
-        Dim Data As String = String.Format("username={0}&password={1}", System.Web.HttpUtility.UrlEncode(Username), System.Web.HttpUtility.UrlEncode(Password))
-        Dim ResponseBytes() As Byte = wc.UploadData(AuthenticationPage, "POST", Encoding.ASCII.GetBytes(Data))
-        Dim Response As String = Encoding.ASCII.GetString(ResponseBytes)
-        If Response.Contains("Correct") Then
-            Return True
-        Else
-            Return False
-        End If
+    Function AuthUser(ByVal url As String, ByVal Username As String, ByVal Password As String) As Boolean
+        Dim response, query As String
+        query = String.Format("username={0}&password={1}", System.Web.HttpUtility.UrlEncode(Username), System.Web.HttpUtility.UrlEncode(Password))
+        response = GetData(url, Username)
+        'If Response.Contains("Correct") Then
+        MessageBox.Show(response)
     End Function
 
 
     Private Sub TextBox2_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TxtUsername.TextChanged
         TxtUsername.Text = TxtUsername.Text.Replace(" ", "")
         TxtUsername.Select(TxtUsername.Text.Length, 0)
+    End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        MessageBox.Show(GetData("http://wwww.google.com", "").ToString)
+
     End Sub
 End Class
