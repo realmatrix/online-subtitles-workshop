@@ -1,0 +1,10 @@
+C:\Program Files\Ampps\www\new\trunk\client\online subtitles workshop\online subtitles workshop\bin\Debug\online subtitles workshop.exe.config
+C:\Program Files\Ampps\www\new\trunk\client\online subtitles workshop\online subtitles workshop\obj\x86\Debug\online_subtitles_workshop.Form1.resources
+C:\Program Files\Ampps\www\new\trunk\client\online subtitles workshop\online subtitles workshop\obj\x86\Debug\online_subtitles_workshop.Resources.resources
+C:\Program Files\Ampps\www\new\trunk\client\online subtitles workshop\online subtitles workshop\obj\x86\Debug\online subtitles workshop.vbproj.GenerateResource.Cache
+C:\Program Files\Ampps\www\new\trunk\client\online subtitles workshop\online subtitles workshop\bin\Debug\online subtitles workshop.exe
+C:\Program Files\Ampps\www\new\trunk\client\online subtitles workshop\online subtitles workshop\bin\Debug\online subtitles workshop.pdb
+C:\Program Files\Ampps\www\new\trunk\client\online subtitles workshop\online subtitles workshop\bin\Debug\online subtitles workshop.xml
+C:\Program Files\Ampps\www\new\trunk\client\online subtitles workshop\online subtitles workshop\obj\x86\Debug\online subtitles workshop.exe
+C:\Program Files\Ampps\www\new\trunk\client\online subtitles workshop\online subtitles workshop\obj\x86\Debug\online subtitles workshop.xml
+C:\Program Files\Ampps\www\new\trunk\client\online subtitles workshop\online subtitles workshop\obj\x86\Debug\online subtitles workshop.pdb
