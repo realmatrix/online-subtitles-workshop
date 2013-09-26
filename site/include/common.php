@@ -766,7 +766,23 @@ class Common{
 		$res = self::db_query("SELECT * FROM `Settings` WHERE `name` = :name", $args);
 		return $res[0]['value'];
 	}
-	
+
+	function FailedLogin(){
+		$args = array(
+			array(":ip", $_SERVER['REMOTE_ADDR'], "str"),
+		);
+		$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `FailedLogins` WHERE `ip` = :ip", $args);
+		$args = array(
+			array(":ip", $_SERVER['REMOTE_ADDR'], "str"),
+			array(":time", GetMicroTime(), "str"),
+		);
+		if(count($res>0)){
+			$res = $GLOBALS['COMMON']->db_query("UPDATE  `FailedLogins` SET  `tries` =  tries+1,`time` =  :time WHERE  `ip` =:ip;", $args);
+		}
+		else{
+			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `FailedLogins` (`ip` ,`tries` ,`time`)VALUES(:ip, '1', :time);", $args);
+		}
+	}
 
 	
 	

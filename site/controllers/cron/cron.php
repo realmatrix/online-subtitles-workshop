@@ -2,7 +2,7 @@
 
 	class Ccron{
 		
-		public static $content = "aaaaaaaaaa";
+		public static $content = "Cron started.";
 	
 		function cron(){
 			return self::cron_content();
@@ -10,7 +10,7 @@
 	
 		function cron_hooks(){
 			$array = array(
-				array("test", "test")
+				array("runall", "RunAll")
 			);
 			return $array;
 		}
@@ -31,6 +31,10 @@
 				 );
 			 
 		return $content;
+		}
+		
+		function RunAll(){
+			echo "run all";
 		}
 		
 		function ClearLoginBan(){
