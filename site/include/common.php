@@ -362,7 +362,12 @@ class Common{
 		for ($i = 0; $i <= count($array)-1; $i++) {
 			if($array[$i][3]){
 				 $args = array_merge($vars, $array[$i][2]);
+				 if($GLOBALS['vars']['page']!="query" and $GLOBALS['vars']['sec']!="client"){
 				 $page .= "<div id='SystemAjax_".$array[$i][0]."_".$array[$i][1]."'>".self::LoadSection($array[$i][0], $array[$i][1], $args)."</div>";
+				 }
+				 else{
+				 	$page .= self::LoadSection($array[$i][0], $array[$i][1], $args);
+				 }
 			}
 		}
 		return $page;
