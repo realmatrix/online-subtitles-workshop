@@ -767,6 +767,7 @@ class Common{
 		return $res[0]['value'];
 	}
 
+
 	function FailedLogin(){
 		$args = array(
 			array(":ip", $_SERVER['REMOTE_ADDR'], "str"),
@@ -774,14 +775,49 @@ class Common{
 		$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `FailedLogins` WHERE `ip` = :ip", $args);
 		$args = array(
 			array(":ip", $_SERVER['REMOTE_ADDR'], "str"),
-			array(":time", GetMicroTime(), "str"),
+			array(":time", self::GetMicroTime(), "str"),
 		);
-		if(count($res>0)){
-			$res = $GLOBALS['COMMON']->db_query("UPDATE  `FailedLogins` SET  `tries` =  tries+1,`time` =  :time WHERE  `ip` =:ip;", $args);
+		if(count($res)>0){
+			$res = $GLOBALS['COMMON']->db_query("UPDATE  `FailedLogins` SET  `tries` =  tries+1,`time` =  :time WHERE  `ip` =:ip", $args);
 		}
 		else{
-			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `FailedLogins` (`ip` ,`tries` ,`time`)VALUES(:ip, '1', :time);", $args);
+			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `FailedLogins` (`ip` ,`tries` ,`time`)VALUES(:ip, 1, :time)", $args);
 		}
+	}
+	
+	
+	function CheckLoginBan(){
+		$args = array(
+			array(":ip", $_SERVER['REMOTE_ADDR'], "str"),
+		);
+		$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `FailedLogins` WHERE `ip` = :ip", $args);
+		if($res[0]['tries']>5){return TRUE;}else{return FALSE;}
+	}
+	
+	
+	function UpdateUsersKeys(){
+		$args = array(
+			array(":KeyTime", $GLOBALS['COMMON']->GetMicroTime()-86400, "str"),
+		);
+		$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Users` WHERE `KeyTime`< :KeyTime limit 10", $args);
+		for ($i=0; $i < count($res); $i++) {
+			$args = array(
+				array(":id", $res[$i]['id']),
+				array(":key", self::GenRandomStr(30), "str"),
+				array(":KeyTime", self::GetMicroTime(), "str"),
+			); 
+			$GLOBALS['COMMON']->db_query("UPDATE `Users` SET  `key` =  :key, `KeyTime` =  :KeyTime WHERE `id` = :id", $args);
+		}
+	}
+	
+	
+	function RunCron(){
+		$url = "http://".$_SERVER[HTTP_HOST].$_SERVER[REQUEST_URI];
+		$url = explode("/index.php", $url);
+		$url = $url[0];
+		$url = rtrim($url, "/");
+		//echo $url;
+		$cron = file_get_contents($url."/index.php??page=query&sec=client&ssec=QueryClient&h=runall");
 	}
 
 	

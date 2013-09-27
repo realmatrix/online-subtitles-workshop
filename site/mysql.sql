@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 24, 2013 at 11:57 PM
+-- Generation Time: Sep 26, 2013 at 04:24 PM
 -- Server version: 5.5.29-log
 -- PHP Version: 5.3.21
 
@@ -24,7 +24,44 @@ CREATE TABLE IF NOT EXISTS `CDS` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `cd` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=32 ;
+
+--
+-- Dumping data for table `CDS`
+--
+
+INSERT INTO `CDS` (`id`, `cd`) VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5),
+(6, 6),
+(7, 7),
+(8, 8),
+(9, 9),
+(10, 10),
+(11, 11),
+(12, 12),
+(13, 13),
+(14, 14),
+(15, 15),
+(16, 16),
+(17, 17),
+(18, 18),
+(19, 19),
+(20, 20),
+(21, 21),
+(22, 21),
+(23, 22),
+(24, 23),
+(25, 24),
+(26, 25),
+(27, 26),
+(28, 27),
+(29, 28),
+(30, 29),
+(31, 30);
 
 -- --------------------------------------------------------
 
@@ -300,6 +337,28 @@ INSERT INTO `Countries` (`id`, `iso2`, `short_name`, `long_name`, `iso3`, `numco
 (248, 'YE', 'Yemen', 'Republic of Yemen', 'YEM', '887', 'yes', '967', '.ye'),
 (249, 'ZM', 'Zambia', 'Republic of Zambia', 'ZMB', '894', 'yes', '260', '.zm'),
 (250, 'ZW', 'Zimbabwe', 'Republic of Zimbabwe', 'ZWE', '716', 'yes', '263', '.zw');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `FailedLogins`
+--
+
+CREATE TABLE IF NOT EXISTS `FailedLogins` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ip` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `tries` int(11) NOT NULL,
+  `time` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `ip` (`ip`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `FailedLogins`
+--
+
+INSERT INTO `FailedLogins` (`id`, `ip`, `tries`, `time`) VALUES
+(5, '127.0.0.1', 7, 1380208645);
 
 -- --------------------------------------------------------
 
@@ -771,14 +830,21 @@ CREATE TABLE IF NOT EXISTS `OnlineUsers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=937 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1020 ;
 
 --
 -- Dumping data for table `OnlineUsers`
 --
 
 INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(936, 'sbf7horenbgq66sa1p0uael1d7', 1380063093, '');
+(1012, 'g2jm1og020u5uri9o4nlgl63t3', 1380208165, ''),
+(1013, 'ens208cbvkshrj2ptg860jnn90', 1380208208, ''),
+(1014, 'hnekklcud99p0881nt294afvg4', 1380208248, ''),
+(1015, 'divltn7693v8208m4qdeh8bbc6', 1380208541, ''),
+(1016, 'qfadp06dld3h7qi6rbedglqu26', 1380208575, ''),
+(1017, 'obsdis6ervnhqn05jcvh49q8p2', 1380208606, ''),
+(1018, 'im7uobmk8tlbvgs85e2oh0ebo0', 1380208637, ''),
+(1019, '14ls9c6c0kbreqngnh9flch924', 1380208733, '');
 
 -- --------------------------------------------------------
 
@@ -825,7 +891,7 @@ CREATE TABLE IF NOT EXISTS `Settings` (
 --
 
 INSERT INTO `Settings` (`id`, `name`, `value`) VALUES
-(1, 'a', 'c');
+(1, 'run_cron_onload', '0');
 
 -- --------------------------------------------------------
 
@@ -1080,6 +1146,9 @@ CREATE TABLE IF NOT EXISTS `Users` (
   `email` varchar(255) NOT NULL,
   `BirthYear` int(11) NOT NULL,
   `group` int(11) NOT NULL,
+  `key` varchar(30) NOT NULL,
+  `LastLogin` int(11) NOT NULL,
+  `KeyTime` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=38 ;
@@ -1088,27 +1157,27 @@ CREATE TABLE IF NOT EXISTS `Users` (
 -- Dumping data for table `Users`
 --
 
-INSERT INTO `Users` (`id`, `username`, `password`, `email`, `BirthYear`, `group`) VALUES
-(18, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.test', 2009, 1),
-(19, 'ghfghh', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'dsd@sd.sd', 2006, 3),
-(20, 'wejhg', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'aaa@aaa.aaa', 1919, 3),
-(21, 't567567567', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'tryrt@erttr.rrt', 1917, 3),
-(22, 'test2', '109f4b3c50d7b0df729d299bc6f8e9ef9066971f', 'test2@test2.com', 2010, 3),
-(23, 'test3', '3ebfa301dc59196f18593c45e519287a23297589', 'test3@test3.com', 2003, 3),
-(24, 'test4', '1ff2b3704aede04eecb51e50ca698efd50a1379b', 'test4@test4.com', 2002, 3),
-(25, 'test5', '911ddc3b8f9a13b5499b6bc4638a2b4f3f68bf23', 'test5@test5.com', 2001, 3),
-(26, 'test6', 'a66df261120b6c2311c6ef0b1bab4e583afcbcc0', 'test6@test6.com', 2005, 3),
-(27, 'test7', 'ea3243132d653b39025a944e70f3ecdf70ee3994', 'test7@test7.com', 2002, 3),
-(28, 'test8', 'd03f9d34194393019e6d12d7c942827ebd694443', 'test8@test8.com', 1999, 3),
-(29, 'test9', '53d525836cc96d089a5a4218b464fda532f7debe', 'test9@test9.com', 2001, 3),
-(30, 'test10', '168f4029f416ee06565f12e697dfc1534ae69d32', 'test10@test10.com', 2002, 3),
-(31, 'test11', '100c4e57374fc998e57164d4c0453bd3a4876a58', 'test11@test11.com', 2004, 3),
-(32, 'test12', '4ff1a33e188b7b86123d6e3be2722a23514a83b4', 'test12@test12.com', 1999, 3),
-(33, 'test13', 'd804cd9cc0c42b0652bab002f67858ab803c40c6', 'test13@test13.com', 2005, 3),
-(34, 'test14', 'd79336a97da7d284c0fe15497d2fa944d1f2abb1', 'test14@test14.com', 2003, 3),
-(35, 'test15', '61bb70fa60368f069e62d601c357d203700ab2d2', 'test15@test15.com', 2000, 3),
-(36, 'test16', '1fbefee9cfb86926757519357e077fd6a21aef0f', 'test16@test16.com', 1998, 3),
-(37, 'test17', '08a25c0f270b29aeba650e6b2d1a9947a778c5da', 'test17@test17.com', 1996, 3);
+INSERT INTO `Users` (`id`, `username`, `password`, `email`, `BirthYear`, `group`, `key`, `LastLogin`, `KeyTime`) VALUES
+(18, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.test', 2009, 1, 'AhCTcRntmPlGh3w6GQkRM4Mwi4jbsG', 1380199589, 1380204111),
+(19, 'ghfghh', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'dsd@sd.sd', 2006, 3, 'UsYf1q4DEFt9einFLTvvGz5wZUQ48Z', 0, 1380204112),
+(20, 'wejhg', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'aaa@aaa.aaa', 1919, 3, 'ZZ5rfBjjPMNfrQZilES4cxUFhm4Fgs', 0, 1380204113),
+(21, 't567567567', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'tryrt@erttr.rrt', 1917, 3, 'PboE8NoktBriObjUCFb0RBMX07lz2N', 0, 1380204114),
+(22, 'test2', '109f4b3c50d7b0df729d299bc6f8e9ef9066971f', 'test2@test2.com', 2010, 3, 'zcoJGI4woqwfWbIv2l8pTKJweJZXh9', 0, 1380204115),
+(23, 'test3', '3ebfa301dc59196f18593c45e519287a23297589', 'test3@test3.com', 2003, 3, 'RjJkPFP8RCiTqhksudEavwuRtOzTQb', 0, 1380204116),
+(24, 'test4', '1ff2b3704aede04eecb51e50ca698efd50a1379b', 'test4@test4.com', 2002, 3, '56zcMP9YRVx63JdGz68h8mL1Xl5uLq', 0, 1380204117),
+(25, 'test5', '911ddc3b8f9a13b5499b6bc4638a2b4f3f68bf23', 'test5@test5.com', 2001, 3, 'zLMrasHIlFL66XHXSsH7EJuVTTidAw', 0, 1380204118),
+(26, 'test6', 'a66df261120b6c2311c6ef0b1bab4e583afcbcc0', 'test6@test6.com', 2005, 3, 'QlaJk8C6vYqIyEwbdypBHv3yJRU8wr', 0, 1380204119),
+(27, 'test7', 'ea3243132d653b39025a944e70f3ecdf70ee3994', 'test7@test7.com', 2002, 3, 'WWNCD4MdX6aBm9cAPNBwP8zhkKPaNL', 0, 1380204120),
+(28, 'test8', 'd03f9d34194393019e6d12d7c942827ebd694443', 'test8@test8.com', 1999, 3, 'C3bJChZM5GauIBbXJS0MRS72jqtkOR', 0, 1380204244),
+(29, 'test9', '53d525836cc96d089a5a4218b464fda532f7debe', 'test9@test9.com', 2001, 3, 'xKA3iUkjdSgvff8YS88y480BhjWWuh', 0, 1380204245),
+(30, 'test10', '168f4029f416ee06565f12e697dfc1534ae69d32', 'test10@test10.com', 2002, 3, 'FVb7qpirUJjkkIdoqJrHqBZR1HjXrP', 0, 1380204246),
+(31, 'test11', '100c4e57374fc998e57164d4c0453bd3a4876a58', 'test11@test11.com', 2004, 3, 'oBpnGR89ammviagi2TBRTDz2NXUaeZ', 0, 1380204247),
+(32, 'test12', '4ff1a33e188b7b86123d6e3be2722a23514a83b4', 'test12@test12.com', 1999, 3, 'O6ai1b4ZJgUEGF8o5fKMEmdWBPtrF0', 0, 1380204248),
+(33, 'test13', 'd804cd9cc0c42b0652bab002f67858ab803c40c6', 'test13@test13.com', 2005, 3, '1o4KOnvnkucKwkScRYLAl3zepCv01i', 0, 1380204249),
+(34, 'test14', 'd79336a97da7d284c0fe15497d2fa944d1f2abb1', 'test14@test14.com', 2003, 3, 'jeGabLkORWsmxB0mX6tWkiNGmutGiy', 0, 1380204250),
+(35, 'test15', '61bb70fa60368f069e62d601c357d203700ab2d2', 'test15@test15.com', 2000, 3, 'swPPdjb9JD5SsBLQnMUoWhLn8H27q7', 0, 1380204251),
+(36, 'test16', '1fbefee9cfb86926757519357e077fd6a21aef0f', 'test16@test16.com', 1998, 3, 'WtL8dNDQ3V0QccldRsCzJ3iZ4Pl5A7', 0, 1380204253),
+(37, 'test17', '08a25c0f270b29aeba650e6b2d1a9947a778c5da', 'test17@test17.com', 1996, 3, 'eVtMW6t9VKO49pbT6dPrJJr5w5gEqQ', 0, 1380204254);
 
 -- --------------------------------------------------------
 
@@ -1195,18 +1264,18 @@ INSERT INTO `Videos` (`id`, `uid`, `title`, `other_title`, `type`, `category`, `
 (24, 18, 'Homeland Season 3', 'Homeland', 2, 10, 14, 236, '8,17,24', '2013-10-02', 'Claire Danes, Damian Lewis, Morena Baccarin', '.', 45, 'Homeland, Season 3', 'When Marine Nicolas Brody is hailed as a hero after he returns home from eight years of captivity in Iraq, intelligence officer Carrie Mathison is the only one who suspects that he may have been "turned".', '24_181379614725AJrot.jpg', '', 'http://www.youtube.com/watch?v=iXOUIsu-E0Q', 0, '', 1, 1),
 (25, 18, 'The Hobbit: An Unexpected Journey (2012)', 'The Hobbit', 1, 10, 14, 236, '2,10', '2012-12-14', 'Martin Freeman, Ian McKellen, Richard Armitage', 'Peter Jackson', 120, 'Hobbit, Unexpected, Journey, 2012', 'A younger and more reluctant Hobbit, Bilbo Baggins, sets out on an "unexpected journey" to the Lonely Mountain with a spirited group of Dwarves to reclaim their stolen mountain home from a dragon named Smaug.', '25_181379616244XC1g0.jpg', '', 'http://www.youtube.com/watch?v=fnaojlfdUbs', 0, '', 1, 1),
 (26, 18, 'Monsters University (2013)', 'Monsters University 2', 3, 10, 14, 236, '2,3,5,9,10', '2013-06-21', 'Billy Crystal, John Goodman, Steve Buscemi', 'Dan Scanlon', 90, 'Monsters, University, 2013', 'A look at the relationship between Mike and Sulley during their days at Monsters University -- when they weren''t necessarily the best of friends.', '26_181379616741NtRbG.jpg', '', 'http://www.youtube.com/watch?v=ODePHkWSg-U', 0, '', 1, 1),
-(27, 18, 'Oblivion (I) (2013)', 'Oblivion', 1, 10, 14, 236, '1,2,17,21', '2013-04-19', 'Tom Cruise, Morgan Freeman, Andrea Riseborough', 'Joseph Kosinski', 90, 'Oblivion, 2013', 'A veteran assigned to extract Earth''s remaining resources begins to question what he knows about his mission and himself.', '27_181380022846LbWdk.jpg', '', 'http://www.youtube.com/watch?v=XmIIgE7eSak', 0, '', 1, 0),
-(28, 18, 'Iron Man 3 (2013)', 'Iron Man', 1, 10, 14, 236, '1,2,21', '2013-05-03', 'Robert Downey Jr., Guy Pearce, Gwyneth Paltrow', 'Shane Black', 90, 'Iron Man, 2013', 'When Tony Stark''s world is torn apart by a formidable terrorist called the Mandarin, he starts an odyssey of rebuilding and retribution.', '28_1813800247974xTLD.jpg', '', 'http://www.youtube.com/watch?v=2CzoSeClcw0', 0, '', 1, 0),
-(29, 18, 'Fast & Furious 6 (2013)', 'Fast & Furious 6', 1, 10, 14, 236, '1,6,24', '2013-05-24', 'Vin Diesel, Paul Walker, Dwayne Johnson', 'Justin Lin', 90, 'Fast, Furious, 2013', 'Hobbs has Dom and Brian reassemble their crew in order to take down a mastermind who commands an organization of mercenary drivers across 12 countries. Payment? Full pardons for them all.', '29_181380025557oniLF.jpg', '', 'http://www.youtube.com/watch?v=dKi5XoeTN0k', 0, '', 1, 0),
-(30, 18, 'Red 2 (2013)', 'Red 2', 1, 10, 14, 236, '1,5,6,24', '2013-07-19', 'Jon Hoeber, Erich Hoeber, 2 more credits', 'Dean Parisot', 90, 'Red, 2013', 'Retired C.I.A. agent Frank Moses reunites his unlikely team of elite operatives for a global quest to track down a missing portable nuclear device.', '30_181380026531aqnhX.jpg', '', 'http://www.youtube.com/watch?v=ZfB8QwYBPxY', 0, '', 1, 0),
-(31, 18, 'Skyfall (2012)', 'Skyfall', 1, 10, 14, 236, '1,2,24', '2011-11-09', 'Neal Purvis, Robert Wade, 2 more credits', 'Sam Mendes', 90, 'Skyfall, 2012', 'Bond''s loyalty to M is tested when her past comes back to haunt her. Whilst MI6 comes under attack, 007 must track down and destroy the threat, no matter how personal the cost.', '31_181380027287OigpU.jpg', '', 'http://www.youtube.com/watch?v=6kw1UVovByw', 0, '', 1, 0),
-(32, 18, 'The Croods (2013)', 'The Croods', 3, 10, 14, 236, '2,3,5,9,10', '2013-03-12', 'Nicolas Cage, Ryan Reynolds, Emma Stone', 'Kirk De Micco, Chris Sanders', 90, 'The Croods, 2013', 'After their cave is destroyed, a caveman family must trek through an unfamiliar fantastical world with the help of an inventive boy.', '32_181380027840Qv80h.jpg', '', 'http://www.youtube.com/watch?v=4fVCKy69zUY', 0, '', 1, 0),
-(33, 22, 'Escape Plan (2013)', 'Escape Plan', 1, 10, 14, 236, '1,17,24', '2013-10-18', 'Sylvester Stallone, Arnold Schwarzenegger, 50 Cent', 'Mikael Håfström', 90, 'Escape, Plan, 2013', 'When a structural-security authority finds himself incarcerated in a prison he designed, he has to put his skills to escape and find out who framed him.', '33_221380058929LcQRw.jpg', '', 'http://www.youtube.com/watch?v=CI4EjV_x_PQ', 0, '', 1, 0),
-(34, 22, 'Total Recall (2012)', 'Total Recall', 1, 10, 14, 236, '1,2,21,24', '2012-08-03', 'Colin Farrell, Bokeem Woodbine, Bryan Cranston', 'Len Wiseman', 90, 'Total, Recall, 2012', 'A factory worker, Douglas Quaid, begins to suspect that he is a spy after visiting Rekall - a company that provides its clients with implanted fake memories of a life they would like to have led - goes wrong and he finds himself on the run.', '34_221380061085gybZK.jpg', '', 'http://www.youtube.com/watch?v=4SerZm7DheA', 0, '', 1, 0),
-(35, 22, 'Men in Black 3 (2012)', 'Men in Black 3', 1, 10, 14, 236, '1,5,21', '2012-05-25', 'Will Smith, Tommy Lee Jones, Josh Brolin', 'Barry Sonnenfeld', 90, 'Men in Black, 2012', 'Agent J travels in time to M.I.B.''s early days in 1969 to stop an alien from assassinating his friend Agent K and changing history.', '35_221380061647Iqc5u.jpg', '', 'http://www.youtube.com/watch?v=yc4tk27ZzZk', 0, '', 1, 0),
-(36, 22, 'Looper (2012)', 'Looper', 1, 10, 14, 236, '1,6,21,24', '2012-09-28', 'Joseph Gordon-Levitt, Bruce Willis, Emily Blunt', 'Rian Johnson', 90, 'Looper, 2012', 'In 2074, when the mob wants to get rid of someone, the target is sent 30 years into the past, where a hired gun awaits. Someone like Joe, who one day learns the mob wants to ''close the loop'' by transporting back Joe''s future self.', '36_2213800621454nP8S.jpg', '', 'http://www.youtube.com/watch?v=eI3ju17W070', 0, '', 1, 0),
-(37, 22, 'Safe (I) (2012)', 'Safe', 1, 10, 14, 236, '1,6,24', '2012-04-27', 'Jason Statham, Catherine Chan, Chris Sarandon', 'Boaz Yakin', 90, 'Safe, 2012', 'Mei, a young girl whose memory holds a priceless numerical code, finds herself pursued by the Triads, the Russian mob, and corrupt NYC cops. Coming to her aid is an ex-cage fighter whose life was destroyed by the gangsters on Mei''s trail.', '37_221380062467n8ikl.jpg', '', 'http://www.youtube.com/watch?v=i-D26g3CEuc', 0, '', 1, 0),
-(38, 22, 'The Last Stand (2013)', 'The Last Stand', 1, 10, 14, 236, '1,6,24', '2013-01-18', 'Arnold Schwarzenegger, Forest Whitaker, Johnny Knoxville', 'Kim Jee-Woon', 90, 'Last, Stand, 2013', 'The leader of a drug cartel busts out of a courthouse and speeds to the Mexican border, where the only thing in his path is a sheriff and his inexperienced staff.', '38_221380063319Klk0X.jpg', '', 'http://www.youtube.com/watch?v=zxt8kRhLaMs', 0, '', 1, 0);
+(27, 18, 'Oblivion (I) (2013)', 'Oblivion', 1, 10, 14, 236, '1,2,17,21', '2013-04-19', 'Tom Cruise, Morgan Freeman, Andrea Riseborough', 'Joseph Kosinski', 90, 'Oblivion, 2013', 'A veteran assigned to extract Earth''s remaining resources begins to question what he knows about his mission and himself.', '27_181380022846LbWdk.jpg', '', 'http://www.youtube.com/watch?v=XmIIgE7eSak', 0, '', 1, 1),
+(28, 18, 'Iron Man 3 (2013)', 'Iron Man', 1, 10, 14, 236, '1,2,21', '2013-05-03', 'Robert Downey Jr., Guy Pearce, Gwyneth Paltrow', 'Shane Black', 90, 'Iron Man, 2013', 'When Tony Stark''s world is torn apart by a formidable terrorist called the Mandarin, he starts an odyssey of rebuilding and retribution.', '28_1813800247974xTLD.jpg', '', 'http://www.youtube.com/watch?v=2CzoSeClcw0', 0, '', 1, 1),
+(29, 18, 'Fast & Furious 6 (2013)', 'Fast & Furious 6', 1, 10, 14, 236, '1,6,24', '2013-05-24', 'Vin Diesel, Paul Walker, Dwayne Johnson', 'Justin Lin', 90, 'Fast, Furious, 2013', 'Hobbs has Dom and Brian reassemble their crew in order to take down a mastermind who commands an organization of mercenary drivers across 12 countries. Payment? Full pardons for them all.', '29_181380025557oniLF.jpg', '', 'http://www.youtube.com/watch?v=dKi5XoeTN0k', 0, '', 1, 1),
+(30, 18, 'Red 2 (2013)', 'Red 2', 1, 10, 14, 236, '1,5,6,24', '2013-07-19', 'Jon Hoeber, Erich Hoeber, 2 more credits', 'Dean Parisot', 90, 'Red, 2013', 'Retired C.I.A. agent Frank Moses reunites his unlikely team of elite operatives for a global quest to track down a missing portable nuclear device.', '30_181380026531aqnhX.jpg', '', 'http://www.youtube.com/watch?v=ZfB8QwYBPxY', 0, '', 1, 1),
+(31, 18, 'Skyfall (2012)', 'Skyfall', 1, 10, 14, 236, '1,2,24', '2011-11-09', 'Neal Purvis, Robert Wade, 2 more credits', 'Sam Mendes', 90, 'Skyfall, 2012', 'Bond''s loyalty to M is tested when her past comes back to haunt her. Whilst MI6 comes under attack, 007 must track down and destroy the threat, no matter how personal the cost.', '31_181380027287OigpU.jpg', '', 'http://www.youtube.com/watch?v=6kw1UVovByw', 0, '', 1, 1),
+(32, 18, 'The Croods (2013)', 'The Croods', 3, 10, 14, 236, '2,3,5,9,10', '2013-03-12', 'Nicolas Cage, Ryan Reynolds, Emma Stone', 'Kirk De Micco, Chris Sanders', 90, 'The Croods, 2013', 'After their cave is destroyed, a caveman family must trek through an unfamiliar fantastical world with the help of an inventive boy.', '32_181380027840Qv80h.jpg', '', 'http://www.youtube.com/watch?v=4fVCKy69zUY', 0, '', 1, 1),
+(33, 22, 'Escape Plan (2013)', 'Escape Plan', 1, 10, 14, 236, '1,17,24', '2013-10-18', 'Sylvester Stallone, Arnold Schwarzenegger, 50 Cent', 'Mikael Håfström', 90, 'Escape, Plan, 2013', 'When a structural-security authority finds himself incarcerated in a prison he designed, he has to put his skills to escape and find out who framed him.', '33_221380058929LcQRw.jpg', '', 'http://www.youtube.com/watch?v=CI4EjV_x_PQ', 0, '', 1, 1),
+(34, 22, 'Total Recall (2012)', 'Total Recall', 1, 10, 14, 236, '1,2,21,24', '2012-08-03', 'Colin Farrell, Bokeem Woodbine, Bryan Cranston', 'Len Wiseman', 90, 'Total, Recall, 2012', 'A factory worker, Douglas Quaid, begins to suspect that he is a spy after visiting Rekall - a company that provides its clients with implanted fake memories of a life they would like to have led - goes wrong and he finds himself on the run.', '34_221380061085gybZK.jpg', '', 'http://www.youtube.com/watch?v=4SerZm7DheA', 0, '', 1, 1),
+(35, 22, 'Men in Black 3 (2012)', 'Men in Black 3', 1, 10, 14, 236, '1,5,21', '2012-05-25', 'Will Smith, Tommy Lee Jones, Josh Brolin', 'Barry Sonnenfeld', 90, 'Men in Black, 2012', 'Agent J travels in time to M.I.B.''s early days in 1969 to stop an alien from assassinating his friend Agent K and changing history.', '35_221380061647Iqc5u.jpg', '', 'http://www.youtube.com/watch?v=yc4tk27ZzZk', 0, '', 1, 1),
+(36, 22, 'Looper (2012)', 'Looper', 1, 10, 14, 236, '1,6,21,24', '2012-09-28', 'Joseph Gordon-Levitt, Bruce Willis, Emily Blunt', 'Rian Johnson', 90, 'Looper, 2012', 'In 2074, when the mob wants to get rid of someone, the target is sent 30 years into the past, where a hired gun awaits. Someone like Joe, who one day learns the mob wants to ''close the loop'' by transporting back Joe''s future self.', '36_2213800621454nP8S.jpg', '', 'http://www.youtube.com/watch?v=eI3ju17W070', 0, '', 1, 1),
+(37, 22, 'Safe (I) (2012)', 'Safe', 1, 10, 14, 236, '1,6,24', '2012-04-27', 'Jason Statham, Catherine Chan, Chris Sarandon', 'Boaz Yakin', 90, 'Safe, 2012', 'Mei, a young girl whose memory holds a priceless numerical code, finds herself pursued by the Triads, the Russian mob, and corrupt NYC cops. Coming to her aid is an ex-cage fighter whose life was destroyed by the gangsters on Mei''s trail.', '37_221380062467n8ikl.jpg', '', 'http://www.youtube.com/watch?v=i-D26g3CEuc', 0, '', 1, 1),
+(38, 22, 'The Last Stand (2013)', 'The Last Stand', 1, 10, 14, 236, '1,6,24', '2013-01-18', 'Arnold Schwarzenegger, Forest Whitaker, Johnny Knoxville', 'Kim Jee-Woon', 90, 'Last, Stand, 2013', 'The leader of a drug cartel busts out of a courthouse and speeds to the Mexican border, where the only thing in his path is a sheriff and his inexperienced staff.', '38_221380063319Klk0X.jpg', '', 'http://www.youtube.com/watch?v=zxt8kRhLaMs', 0, '', 1, 1);
 
 -- --------------------------------------------------------
 

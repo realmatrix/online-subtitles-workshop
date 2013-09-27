@@ -31,6 +31,8 @@
 	include "processor.php";
 	
 	include "router.php";
+	
+	if($GLOBALS['COMMON']->GetOption("run_cron_onload")=="1"){$GLOBALS['COMMON']->RunCron();}
 		
 	unset($GLOBALS);
 	

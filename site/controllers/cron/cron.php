@@ -10,7 +10,8 @@
 	
 		function cron_hooks(){
 			$array = array(
-				array("runall", "RunAll")
+				array("runall", "RunAll"),
+				array("userkeys", "UpdateUserKeys"),
 			);
 			return $array;
 		}
@@ -34,11 +35,16 @@
 		}
 		
 		function RunAll(){
-			echo "run all";
+			self::UpdateUserKeys();
+			echo "done";
 		}
 		
 		function ClearLoginBan(){
 			
+		}
+		
+		function UpdateUserKeys(){
+			$GLOBALS['COMMON']->UpdateUsersKeys();
 		}
 		
 
