@@ -800,6 +800,16 @@ class Common{
 	}
 	
 	
+	function UpdateLoginBan(){
+		$time = self::GetMicroTime();
+		$time = $time - 300;
+		$args = array(
+			array(":time", $time, "str"),
+		);
+		$res = $GLOBALS['COMMON']->db_query("DELETE FROM `FailedLogins` WHERE `time` < :time", $args);
+	}
+	
+	
 	function UpdateUsersKeys(){
 		$args = array(
 			array(":KeyTime", $GLOBALS['COMMON']->GetMicroTime()-86400, "str"),

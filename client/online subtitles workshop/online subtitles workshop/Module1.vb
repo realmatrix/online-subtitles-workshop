@@ -9,8 +9,8 @@ Module Module1
         Dim wc As New WebClient()
         wc.Headers.Add("Content-Type", "application/x-www-form-urlencoded")
         Dim Data As String = query
-        Dim ResponseBytes() As Byte = wc.UploadData(url, "POST", Encoding.ASCII.GetBytes(Data))
-        Dim Response As String = Encoding.ASCII.GetString(ResponseBytes)
+        Dim ResponseBytes() As Byte = wc.UploadData(url, "POST", Encoding.UTF8.GetBytes(Data))
+        Dim Response As String = Encoding.UTF8.GetString(ResponseBytes)
         Return Response
     End Function
 

@@ -32,7 +32,9 @@
 		return $content;
 		}
 		
+		
 		function ClientLogin(){
+			$GLOBALS['COMMON']->UpdateLoginBan();
 			if(!$GLOBALS['COMMON']->CheckLoginBan()){
 			$args = array(
 				array(":username", $GLOBALS['vars']['u'], "str"),
@@ -40,17 +42,39 @@
 			);
 			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM Users WHERE username=:username and password=:password limit 1", $args);
 			if(count($res)>0){
-				echo $res[0]['key'];
+				$array = array(
+					array("key" => $res[0]['key']),
+				); 
+				echo self::xml("1", "", $array);
 			}
 			else{
 				$GLOBALS['COMMON']->FailedLogin();
+				echo self::xml("0","invalid username or password");
 			}
 			}
 			else{
-				echo "banned try sgsin in 5 minutes";
+				echo self::xml("0", "banned try sgsin in 5 minutes");
 			}
 		}
 		
+		
+		function xml($state, $message, $content = array()){
+			$newsXML = new SimpleXMLElement("<response></response>");
+			//$newsXML->addAttribute('newsPagePrefix', 'value goes here');
+			$system = $newsXML->addChild('system');
+			$system->addAttribute('state', $state);
+			$system->addAttribute('message', $message);
+			//print_r($keys);
+			for ($i=0; $i < count($content); $i++) {
+				 $keys = array_keys($content[$i]);
+				 $data = $newsXML->addChild('data');
+				 for ($j=0; $j < count($keys); $j++) {
+					 $data->addAttribute($keys[$j], $content[$i][$keys[$j]]);
+				 }
+			}
+			Header('Content-type: text/xml');
+			return $newsXML->asXML();
+		}
 
 
 
