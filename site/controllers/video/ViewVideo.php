@@ -30,7 +30,7 @@
 				  array("{VideoOtherTitle}", $video[0]['other_title']),
 				  array("{VideoCountry}", self::GetCountry($video[0]['country'])),
 				  array("{VideoGenre}", self::GetGenre($video[0]['genres'])),
-				  array("{VideoReleaseDate}", date("F d Y", strtotime($video[0]['release_date']))),
+				  array("{VideoReleaseDate}", date("d F Y", strtotime($video[0]['release_date']))),
 				  array("{VideoCasting}", $video[0]['casting']),
 				  array("{VideoDirector}", $video[0]['director']),
 				  array("{VideoLength}", $video[0]['length']),				  

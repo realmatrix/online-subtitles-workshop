@@ -33,6 +33,10 @@
 				  array("{Cteammembers}", count($TeamMembers)),
 				  array("{Ccreated}", $TeamInfo[0]['created']),
 				  array("{Csubtitles}", count($TeamSubtitles)),
+				  array("{teamname}", $GLOBALS['COMMON']->l("team_ViewTeam_TeamName")),
+				  array("{teammembers}", $GLOBALS['COMMON']->l("team_ViewTeam_MembersCount")),
+				  array("{created}", $GLOBALS['COMMON']->l("team_ViewTeam_Created")),
+				  array("{subtitles}", $GLOBALS['COMMON']->l("team_ViewTeam_SubtitlesCount")),
 				 );			 
 		return $content;
 		}
