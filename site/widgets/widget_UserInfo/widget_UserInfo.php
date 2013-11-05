@@ -25,6 +25,7 @@
 				array("{invitations}", self::UserInvitations()),
 				array("{JoinedTeams}", self::JoinedTeams()),
 				array("{CreatedTeams}", self::CreatedTeams()),
+				array("{u}", $_SESSION['username']),
 			);
 			return $array;
 		}

@@ -22,6 +22,7 @@
 				array("{Logout}", $GLOBALS['COMMON']->l('widget_quicklinks_logout')),
 				array("{PMS}", $GLOBALS['COMMON']->l('widget_quicklinks_pms')),
 				array("{UserCp}", $GLOBALS['COMMON']->l('widget_quicklinks_UserCp')),
+				array("{uid}", $_SESSION['id']),
 			);
 			return $array;
 		}	

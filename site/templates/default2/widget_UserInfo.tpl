@@ -27,7 +27,7 @@
 					
 					
 
-{WelcomeBack} <b><a href="index.php?page=user&sec=profile">{UserName}</a> </b> <br />
+{WelcomeBack} <b><a href="index.php?page=user&sec=profile&u={u}">{UserName}</a> </b> <br />
 					
 Created Videos: <a href="index.php?page=video&sec=list">{CreatedVideos}</a> <br />	
 
