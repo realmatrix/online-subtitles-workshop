@@ -21,6 +21,7 @@
   	<li><a class="quicklinks-link" href="index.php?page=video&sec=add">{AddVideo}</a></li>
   	<li><a class="quicklinks-link" href="index.php?page=team&sec=add">{AddTeam}</a></li>
   	<li><a class="quicklinks-link" href="index.php?page=message&sec=list">{PMS}</a></li>
+  	<li><a class="quicklinks-link" href="index.php?page=user&sec=cp">{UserCp}</a></li>
   	<li><a class="quicklinks-link" href="index.php?act=logout">{Logout}</a></li>
   </ul>
 </div>

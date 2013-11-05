@@ -1,8 +1,8 @@
 <?php
 
-	class Cuser{
+	class Cprofile{
 			
-		function user_sections(){
+		function profile_sections(){
 			$array = array(
 				array("user", "UserProfile", $GLOBALS['vars'], TRUE),
 			);

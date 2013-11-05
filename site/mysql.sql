@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 05, 2013 at 08:25 PM
+-- Generation Time: Nov 05, 2013 at 10:22 PM
 -- Server version: 5.6.14-log
 -- PHP Version: 5.3.27
 
@@ -633,7 +633,7 @@ CREATE TABLE IF NOT EXISTS `Lang_English` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `key` (`key`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=188 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=195 ;
 
 --
 -- Dumping data for table `Lang_English`
@@ -738,7 +738,7 @@ INSERT INTO `Lang_English` (`id`, `key`, `text`) VALUES
 (99, 'team_ViewTeams_Title', 'Manage Teams'),
 (100, 'team_ViewTeam_title', 'Team Information'),
 (101, 'team_ManageTeam_title', 'Manage Team'),
-(104, 'team_AddMember_title', 'Add User'),
+(104, 'team_AddMember_title', 'Add Team Member'),
 (105, 'team_AddMember_username', 'User Name:'),
 (106, 'team_AddMember_submit', 'Submit'),
 (107, 'subtitle_ViewSubtitle_title', 'Subtitle Information'),
@@ -819,7 +819,14 @@ INSERT INTO `Lang_English` (`id`, `key`, `text`) VALUES
 (184, 'subtitle_ListMembers_title', 'Team Members'),
 (185, 'message_ContactUs_title', 'Contact Us'),
 (186, 'info_AboutUs_title', 'About Us'),
-(187, 'faq_FaqList_title', 'Frequently Asked Questions');
+(187, 'faq_FaqList_title', 'Frequently Asked Questions'),
+(188, 'team_ViewTeam_TeamName', 'Team Name:'),
+(189, 'team_ViewTeam_MembersCount', 'Members Count:'),
+(190, 'team_ViewTeam_Created', 'Created:'),
+(191, 'team_ViewTeam_SubtitlesCount', 'Subtitles Count:'),
+(192, 'team_UserProfile_title', 'User Profile'),
+(193, 'widget_quicklinks_UserCp', 'Manage Account'),
+(194, 'team_UserCp_title', 'User Control Panel');
 
 -- --------------------------------------------------------
 
@@ -833,14 +840,14 @@ CREATE TABLE IF NOT EXISTS `OnlineUsers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1027 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1034 ;
 
 --
 -- Dumping data for table `OnlineUsers`
 --
 
 INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(1026, 'kgp3o87glu1eh9sgihs3ho9833', 1383682614, 'test');
+(1033, 'kgp3o87glu1eh9sgihs3ho9833', 1383689643, '');
 
 -- --------------------------------------------------------
 
@@ -963,7 +970,7 @@ CREATE TABLE IF NOT EXISTS `SystemRouter` (
   `sec` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `page` (`page`,`sec`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=33 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=35 ;
 
 --
 -- Dumping data for table `SystemRouter`
@@ -999,7 +1006,9 @@ INSERT INTO `SystemRouter` (`id`, `head`, `header`, `left`, `body`, `right`, `fo
 (29, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'message', 'contact'),
 (30, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'info', 'about'),
 (31, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'faq', 'list'),
-(32, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'info', '');
+(32, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'info', ''),
+(33, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'user', 'profile'),
+(34, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'user', 'cp');
 
 -- --------------------------------------------------------
 
@@ -1158,7 +1167,7 @@ CREATE TABLE IF NOT EXISTS `Users` (
 --
 
 INSERT INTO `Users` (`id`, `username`, `password`, `email`, `BirthYear`, `group`, `key`, `LastLogin`, `KeyTime`) VALUES
-(18, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.test', 2009, 1, 'AhCTcRntmPlGh3w6GQkRM4Mwi4jbsG', 1383682614, 1380204111),
+(18, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.test', 2009, 1, 'AhCTcRntmPlGh3w6GQkRM4Mwi4jbsG', 1383683711, 1380204111),
 (19, 'ghfghh', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'dsd@sd.sd', 2006, 3, 'UsYf1q4DEFt9einFLTvvGz5wZUQ48Z', 0, 1380204112),
 (20, 'wejhg', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'aaa@aaa.aaa', 1919, 3, 'ZZ5rfBjjPMNfrQZilES4cxUFhm4Fgs', 0, 1380204113),
 (21, 't567567567', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'tryrt@erttr.rrt', 1917, 3, 'PboE8NoktBriObjUCFb0RBMX07lz2N', 0, 1380204114),
