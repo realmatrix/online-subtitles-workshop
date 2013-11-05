@@ -44,7 +44,7 @@
 	echo $GLOBALS['COMMON']->SystemRouter($SystemPage, $SystemSection, $DataOnly, $getcontroller, $getsection, $getwidget);	 
 	 	
 	switch ($GLOBALS['vars']['page']) {
-    case ($GLOBALS['vars']['page']=="home" or $GLOBALS['vars']['page']=="video" or $GLOBALS['vars']['page']=="team" or $GLOBALS['vars']['page']=="subtitle" or $GLOBALS['vars']['page']=="forum" or $GLOBALS['vars']['page']=="message" or $GLOBALS['vars']['page']=="info" or $GLOBALS['vars']['page']=="faq") and $dataonly!="yes":
+    case ($GLOBALS['vars']['page']=="home" or $GLOBALS['vars']['page']=="video" or $GLOBALS['vars']['page']=="team" or $GLOBALS['vars']['page']=="subtitle" or $GLOBALS['vars']['page']=="forum" or $GLOBALS['vars']['page']=="message" or $GLOBALS['vars']['page']=="info" or $GLOBALS['vars']['page']=="faq" or $GLOBALS['vars']['page']=="user") and $dataonly!="yes":
 		//loading template
 		//$GLOBALS['FinalPage'] = $GLOBALS['COMMON']->render($GLOBALS['TemplateHead'], "head");
 		//$GLOBALS['FinalPage'] .= $GLOBALS['COMMON']->render($GLOBALS['TemplateHeader'], "header");
@@ -87,8 +87,8 @@
 		echo $GLOBALS['SystemContent'];
         break;
     default:
-	    $GLOBALS['FinalPage'] = $GLOBALS['COMMON']->render($GLOBALS['Template404'], "404");
-		echo $GLOBALS['FinalPage'];
+	    $GLOBALS['NotFound'] = $GLOBALS['COMMON']->render($GLOBALS['Template404'], "404");
+		echo $GLOBALS['NotFound'];
 }
 
 /////////////////////////////////////////////////////////
