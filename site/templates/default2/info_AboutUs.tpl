@@ -17,14 +17,14 @@
 
 
 <!-- editor controls -->
-<div id="editorcontrols" style="width: 99%;">
+<div id="aboutus" style="width: 99%;">
 
 
 	content here
 
 
 </div>
-<!-- end contact us -->	
+<!-- end about us -->	
 
 
 
