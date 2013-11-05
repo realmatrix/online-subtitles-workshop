@@ -9,7 +9,7 @@
 				array("video", "ViewVideo", $GLOBALS['vars'], TRUE),
 				array("video", "VideoSynopsis", $GLOBALS['vars'], TRUE),
 				array("subtitle", "VideoSubtitles", $GLOBALS['vars'], TRUE),
-				array("subtitle", "AddSubtitle", $GLOBALS['vars'], TRUE),
+				array("subtitle", "AddSubtitle", $GLOBALS['vars'], $GLOBALS['COMMON']->IsLoggedin()),
 			);
 			return $array;
 		}
