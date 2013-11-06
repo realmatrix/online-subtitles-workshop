@@ -20,9 +20,24 @@
 <div id="aboutus" style="width: 99%;">
 
 
-	content here
+	<table style="width: 100%">
+		<tr><td colspan="2"><b>Email</b></td></tr>
+		<tr><td>Current Password:</td><td><input type="password" /></td></tr>
+		<tr><td>New Email:</td><td><input type="text" /></td></tr>
+		<tr><td>Confirm Email:</td><td><input type="text" /></td></tr>
+		<tr><td colspan="2"><input type="submit" value="Edit Email" /></td></tr>
+	</table>
 
+<br />
 
+	<table style="width: 100%">
+		<tr><td colspan="2"><b>Password</b></td></tr>
+		<tr><td>Current Password:</td><td><input type="password" /></td></tr>
+		<tr><td>New Password:</td><td><input type="text" /></td></tr>
+		<tr><td>Confirm Password:</td><td><input type="text" /></td></tr>
+		<tr><td colspan="2"><input type="submit" value="Edit Password" /></td></tr>
+	</table>
+	
 </div>
 <!-- end user cp -->	
 
