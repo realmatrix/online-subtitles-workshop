@@ -11,6 +11,7 @@
 		function QuerySubtitle_hooks(){
 			$array = array(
 				array("edit", "UpdateSubtitle"),
+				array("loadsubtitle", "LoadSubtitle"),
 			);
 			return $array;
 		}
@@ -138,6 +139,20 @@
 			$res['s'] = $t2[0];
 			$res['ms'] = $t2[1];
 			return $res;
+		}
+		
+		function LoadSubtitle(){
+			$args = array(
+				array(":sid", $GLOBALS['vars']['sid'], "str"),
+				array(":cid", $GLOBALS['vars']['cid'], "str"),
+			);
+			$subtitle = $GLOBALS['COMMON']->db_query("SELECT * FROM `SubtitlesContent` WHERE sid = :sid and cid = :cid ORDER BY line ASC", $args);
+			echo "WEBVTT\r\n\r\n";
+			for ($i=0; $i < count($subtitle); $i++) { 
+				//echo $subtitle[$i]['line']."\r\n";
+				echo $subtitle[$i]['start']." --> ".$subtitle[$i]['end']."\r\n";
+				echo $subtitle[$i]['text']."\r\n\r\n";
+			}
 		}
 
 

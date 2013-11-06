@@ -35,23 +35,20 @@
 	<script type="text/javascript">
 	    jwplayer("myElement").setup({
 	    playlist: [{
-	        image: "http://img.youtube.com/vi/A85EtOalcsM/0.jpg",
-	        file: "http://www.youtube.com/watch?v=5guMumPFBag",
-	        title: "Sintel Movie Trailer",
-	        description: "dsdlk;f hdskfljh asldkfh sdlkfjh sdlkfhsdkjfh"
+	        image: "uploads/thumbnails/video/{VideoImage}",
+	        file: "{VideoUrl}",
+	        title: "{VideoTitle}",
+	        description: "{VideoDescription}"
 	    }],
 	        height: "400",
 	        width: "100%",    
 	    tracks: [{ 
-            file: "/assets/captions-en.vtt", 
-            label: "English",
+            file: "index.php?page=query&sec=subtitle&ssec=QuerySubtitle&h=loadsubtitle&sid={sid}&cid={cid}&ext=.vtt", 
+            label: "{SubtitleLanguage}",
             kind: "captions",
-            "default": true 
-        },{ 
-            file: "/assets/captions-fr.vtt", 
-            kind: "captions",
-            label: "French"
-        }],        
+            "default": true, 
+        },
+        ],        
 	    });
 	</script>
 
