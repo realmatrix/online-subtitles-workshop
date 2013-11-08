@@ -22,9 +22,24 @@
 				array("{FavouriteVideos}", $GLOBALS['COMMON']->l('widget_QuickAccess_FavouriteVideos')),
 				array("{Subtitles}", $GLOBALS['COMMON']->l('widget_QuickAccess_Subtitles')),
 				array("{TeamSubtitles}", $GLOBALS['COMMON']->l('widget_QuickAccess_TeamSubtitles')),
+				array("{CVideos}", self::GetUserVideos()),
 			);	
 			return $array;
 		}
+		
+		function GetUserVideos(){
+			$args = array(
+				array("uid", $_SESSION['id'], "str")
+			);
+			$videos = $GLOBALS['COMMON']->db_query("SELECT * FROM Videos WHERE uid = :uid", $args);
+			$res = "";
+			for ($i=0; $i < count($videos) ; $i++) { 
+				$res .= "<option value='".$videos[$i]['id']."'>".$videos[$i]['title']."</option>";
+			}
+			return $res;
+		}
+		
+		
 		
 	}
 
