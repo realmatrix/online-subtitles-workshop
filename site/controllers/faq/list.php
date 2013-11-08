@@ -11,12 +11,26 @@
 		}	
 		
 		function list_set(){
-			$GLOBALS['vars']['PageTitle'] = "Frequently Asked Questions";
+				if($GLOBALS['vars']['qid']!=""){
+					$GLOBALS['vars']['PageTitle'] = self::GetQuestion();
+				}
+				else
+				{
+					$GLOBALS['vars']['PageTitle'] = "Frequently Asked Questions";
+				}
 			$GLOBALS['vars']['PageDesc'] = $GLOBALS['config']['site_description'];
 		}
 		
 		function ShowAnswer(){
 			if($GLOBALS['vars']['qid']!=""){return TRUE;}else{return FALSE;}
+		}
+		
+		function GetQuestion(){
+			$args = array(
+				array("qid", $GLOBALS['vars']['qid'], "str")
+			);
+			$question = $GLOBALS['COMMON']->db_query("SELECT * FROM Faq where id = :qid", $args);
+			return $question[0]['q'];
 		}
 			
 	}
