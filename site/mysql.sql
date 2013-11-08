@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 08, 2013 at 06:14 PM
+-- Generation Time: Nov 08, 2013 at 11:22 PM
 -- Server version: 5.6.14-log
 -- PHP Version: 5.3.27
 
@@ -52,15 +52,15 @@ INSERT INTO `CDS` (`id`, `cd`) VALUES
 (19, 19),
 (20, 20),
 (21, 21),
-(22, 21),
-(23, 22),
-(24, 23),
-(25, 24),
-(26, 25),
-(27, 26),
-(28, 27),
-(29, 28),
-(30, 29),
+(22, 22),
+(23, 23),
+(24, 24),
+(25, 25),
+(26, 26),
+(27, 27),
+(28, 28),
+(29, 29),
+(30, 30),
 (31, 30);
 
 -- --------------------------------------------------------
@@ -363,6 +363,30 @@ INSERT INTO `FailedLogins` (`id`, `ip`, `tries`, `time`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `Faq`
+--
+
+CREATE TABLE IF NOT EXISTS `Faq` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `q` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `a` text COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `Faq`
+--
+
+INSERT INTO `Faq` (`id`, `q`, `a`) VALUES
+(1, 'How to create new account', 'dfjhb sdofijhdsoifh dsoifh sdoiufhdsoiufh'),
+(2, 'How to add new video', ''),
+(3, 'How to add new subtitle', ''),
+(4, 'how to create new team', ''),
+(5, 'how to add new user to team', '');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `Formats`
 --
 
@@ -633,7 +657,7 @@ CREATE TABLE IF NOT EXISTS `Lang_English` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `key` (`key`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=200 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=202 ;
 
 --
 -- Dumping data for table `Lang_English`
@@ -830,8 +854,10 @@ INSERT INTO `Lang_English` (`id`, `key`, `text`) VALUES
 (195, 'widget_QuickAccess_title', 'Quick Access'),
 (196, 'widget_QuickAccess_Videos', 'Videos:'),
 (197, 'widget_QuickAccess_FavouriteVideos', 'Favourite Videos:'),
-(198, 'widget_QuickAccess_Subtitles', 'Subtitles:'),
-(199, 'widget_QuickAccess_TeamSubtitles', 'Team Subtitles');
+(198, 'widget_QuickAccess_Subtitles', 'Edit Subtitles:'),
+(199, 'widget_QuickAccess_TeamSubtitles', 'Team Subtitles'),
+(200, 'widget_QuickAccess_ManageSubtitles', 'Manage Subtitles:'),
+(201, 'faq_answer_title', 'Answer');
 
 -- --------------------------------------------------------
 
@@ -845,14 +871,14 @@ CREATE TABLE IF NOT EXISTS `OnlineUsers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1055 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1062 ;
 
 --
 -- Dumping data for table `OnlineUsers`
 --
 
 INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(1054, 'pldj3ssq3qohlfhbala8vknp46', 1383934092, '');
+(1061, '909kde94bdlonrfm9l3ac741q4', 1383952837, '');
 
 -- --------------------------------------------------------
 
@@ -1212,7 +1238,7 @@ CREATE TABLE IF NOT EXISTS `Users` (
 --
 
 INSERT INTO `Users` (`id`, `username`, `password`, `email`, `BirthYear`, `group`, `key`, `LastLogin`, `KeyTime`) VALUES
-(18, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.test', 2009, 1, 'AhCTcRntmPlGh3w6GQkRM4Mwi4jbsG', 1383932017, 1380204111),
+(18, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.test', 2009, 1, 'AhCTcRntmPlGh3w6GQkRM4Mwi4jbsG', 1383948622, 1380204111),
 (19, 'ghfghh', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'dsd@sd.sd', 2006, 3, 'UsYf1q4DEFt9einFLTvvGz5wZUQ48Z', 0, 1380204112),
 (20, 'wejhg', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'aaa@aaa.aaa', 1919, 3, 'ZZ5rfBjjPMNfrQZilES4cxUFhm4Fgs', 0, 1380204113),
 (21, 't567567567', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'tryrt@erttr.rrt', 1917, 3, 'PboE8NoktBriObjUCFb0RBMX07lz2N', 0, 1380204114),
