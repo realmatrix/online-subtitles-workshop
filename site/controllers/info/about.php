@@ -8,6 +8,11 @@
 			);
 			return $array;
 		}	
+		
+		function about_set(){
+			$GLOBALS['vars']['PageTitle'] = "About US";
+			$GLOBALS['vars']['PageDesc'] = $GLOBALS['config']['site_description'];
+		}
 			
 	}
 

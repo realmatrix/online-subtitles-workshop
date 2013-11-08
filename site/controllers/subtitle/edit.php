@@ -13,6 +13,11 @@
 			return $array;
 		}
 		
+		function edit_set(){
+			$GLOBALS['vars']['PageTitle'] = "Edit Subtitle";
+			$GLOBALS['vars']['PageDesc'] = $GLOBALS['config']['site_description'];
+		}
+		
 		function show(){
 			if($GLOBALS['vars']['sid']=="" or $GLOBALS['vars']['cid']==""){return FALSE;}else{return TRUE;}
 		}

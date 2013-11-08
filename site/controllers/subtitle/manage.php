@@ -10,6 +10,11 @@
 			);
 			return $array;
 		}	
+		
+		function manage_set(){
+			$GLOBALS['vars']['PageTitle'] = "Manage Subtitle";
+			$GLOBALS['vars']['PageDesc'] = $GLOBALS['config']['site_description'];
+		}
 			
 	}
 

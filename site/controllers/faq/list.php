@@ -8,6 +8,11 @@
 			);
 			return $array;
 		}	
+		
+		function list_set(){
+			$GLOBALS['vars']['PageTitle'] = "Frequently Asked Questions";
+			$GLOBALS['vars']['PageDesc'] = $GLOBALS['config']['site_description'];
+		}
 			
 	}
 

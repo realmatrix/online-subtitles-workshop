@@ -8,6 +8,11 @@
 			);
 			return $array;
 		}	
+		
+		function contact_set(){
+			$GLOBALS['vars']['PageTitle'] = "Contact Us";
+			$GLOBALS['vars']['PageDesc'] = $GLOBALS['config']['site_description'];
+		}
 			
 	}
 

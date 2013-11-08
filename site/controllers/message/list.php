@@ -9,6 +9,11 @@
 			);
 			return $array;
 		}	
+		
+		function list_set(){
+			$GLOBALS['vars']['PageTitle'] = "Private Messages";
+			$GLOBALS['vars']['PageDesc'] = $GLOBALS['config']['site_description'];
+		}
 			
 	}
 

@@ -7,6 +7,11 @@
 				array("subtitle", "UserSubtitles", $GLOBALS['vars'], TRUE),
 			);
 			return $array;
+		}
+		
+		function list_set(){
+			$GLOBALS['vars']['PageTitle'] = "My Subtitles";
+			$GLOBALS['vars']['PageDesc'] = $GLOBALS['config']['site_description'];
 		}	
 			
 	}

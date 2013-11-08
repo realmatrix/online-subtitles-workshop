@@ -10,6 +10,11 @@
 			);
 			return $array;
 		}	
+		
+		function list_set(){
+			$GLOBALS['vars']['PageTitle'] = "My Teams";
+			$GLOBALS['vars']['PageDesc'] = $GLOBALS['config']['site_description'];
+		}
 			
 	}
 

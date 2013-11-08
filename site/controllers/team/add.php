@@ -9,6 +9,11 @@
 			);
 			return $array;
 		}	
+		
+		function add_set(){
+			$GLOBALS['vars']['PageTitle'] = "Add Team";
+			$GLOBALS['vars']['PageDesc'] = $GLOBALS['config']['site_description'];
+		}
 			
 	}
 

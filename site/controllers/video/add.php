@@ -9,6 +9,11 @@
 			return $array;
 		}
 		
+		function add_set(){
+			$GLOBALS['vars']['PageTitle'] = "Add Video";
+			$GLOBALS['vars']['PageDesc'] = $GLOBALS['config']['site_description'];
+		}
+		
 			
 	}
 

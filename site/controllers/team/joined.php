@@ -9,6 +9,11 @@
 			);
 			return $array;
 		}	
+		
+		function joined_set(){
+			$GLOBALS['vars']['PageTitle'] = "Joined Teams";
+			$GLOBALS['vars']['PageDesc'] = $GLOBALS['config']['site_description'];
+		}
 			
 	}
 
