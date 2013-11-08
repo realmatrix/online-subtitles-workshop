@@ -15,8 +15,9 @@
 		}
 		
 		function view_set(){
-			$GLOBALS['vars']['PageTitle'] = ">>>> ???????????? <<<<";
-			$GLOBALS['vars']['PageDesc'] = ">>>> ???????????? <<<<";
+			$VideoInfo = self::GetVideoInfo();
+			$GLOBALS['vars']['PageTitle'] = $VideoInfo[0]['title'];
+			$GLOBALS['vars']['PageDesc'] = $VideoInfo[0]['synopsis'];
 		}
 		
 		function Show(){
@@ -45,6 +46,14 @@
 			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Videos` WHERE `id` = :id", $args);
 			if($res[0]['thumbnail']!=""){return TRUE;}else{return FALSE;}
 			}
+		}
+		
+		function GetVideoInfo(){
+			$args = array(
+				array("vid", $GLOBALS['vars']['vid'], "str")
+			);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM Videos WHERE id = :vid", $args);
+			return $res;
 		}	
 			
 	}
