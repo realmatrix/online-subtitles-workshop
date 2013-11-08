@@ -42,9 +42,10 @@
 			<form method="get" action="index.php">
 			<select  class="QuickAccessSelect" name="sid" onchange="this.form.submit()">
 			<option value="">select subtitle to open</option>
+			{CSubtitles}
 			</select>
-			<input type="hidden" name="page" value="" />
-			<input type="hidden" name="sec" value="" />
+			<input type="hidden" name="page" value="subtitle" />
+			<input type="hidden" name="sec" value="edit" />
 			</form>
 			
 
