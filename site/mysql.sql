@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 05, 2013 at 10:22 PM
+-- Generation Time: Nov 08, 2013 at 06:14 PM
 -- Server version: 5.6.14-log
 -- PHP Version: 5.3.27
 
@@ -633,7 +633,7 @@ CREATE TABLE IF NOT EXISTS `Lang_English` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `key` (`key`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=195 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=200 ;
 
 --
 -- Dumping data for table `Lang_English`
@@ -826,7 +826,12 @@ INSERT INTO `Lang_English` (`id`, `key`, `text`) VALUES
 (191, 'team_ViewTeam_SubtitlesCount', 'Subtitles Count:'),
 (192, 'team_UserProfile_title', 'User Profile'),
 (193, 'widget_quicklinks_UserCp', 'Manage Account'),
-(194, 'team_UserCp_title', 'User Control Panel');
+(194, 'team_UserCp_title', 'User Control Panel'),
+(195, 'widget_QuickAccess_title', 'Quick Access'),
+(196, 'widget_QuickAccess_Videos', 'Videos:'),
+(197, 'widget_QuickAccess_FavouriteVideos', 'Favourite Videos:'),
+(198, 'widget_QuickAccess_Subtitles', 'Subtitles:'),
+(199, 'widget_QuickAccess_TeamSubtitles', 'Team Subtitles');
 
 -- --------------------------------------------------------
 
@@ -840,14 +845,14 @@ CREATE TABLE IF NOT EXISTS `OnlineUsers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1034 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1055 ;
 
 --
 -- Dumping data for table `OnlineUsers`
 --
 
 INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(1033, 'kgp3o87glu1eh9sgihs3ho9833', 1383689643, '');
+(1054, 'pldj3ssq3qohlfhbala8vknp46', 1383934092, '');
 
 -- --------------------------------------------------------
 
@@ -907,7 +912,14 @@ CREATE TABLE IF NOT EXISTS `SubtitleCDS` (
   `sid` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `SubtitleCDS`
+--
+
+INSERT INTO `SubtitleCDS` (`id`, `sid`, `title`) VALUES
+(1, 1, 'CD 1');
 
 -- --------------------------------------------------------
 
@@ -929,7 +941,14 @@ CREATE TABLE IF NOT EXISTS `Subtitles` (
   `uid` int(11) NOT NULL,
   `key` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `Subtitles`
+--
+
+INSERT INTO `Subtitles` (`id`, `fps_sec`, `fps_mil_sec`, `release_name`, `version`, `language`, `format`, `cds`, `vid`, `country`, `uid`, `key`) VALUES
+(1, 8, 6, '2 guns test', '2 guns test version', 14, 2, 1, 21, 236, 18, '181383757068RiPGE');
 
 -- --------------------------------------------------------
 
@@ -947,7 +966,33 @@ CREATE TABLE IF NOT EXISTS `SubtitlesContent` (
   `end` varchar(12) CHARACTER SET latin1 NOT NULL,
   `text` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=21 ;
+
+--
+-- Dumping data for table `SubtitlesContent`
+--
+
+INSERT INTO `SubtitlesContent` (`id`, `sid`, `uid`, `cid`, `line`, `start`, `end`, `text`) VALUES
+(1, 1, 18, 1, 1, '00:01:27,520', '00:01:28,987', '- Hi.\r\n- Hi.\r\n'),
+(2, 1, 18, 1, 2, '00:01:30,123', '00:01:31,156', 'How many?\r\n'),
+(3, 1, 18, 1, 3, '00:01:32,125', '00:01:33,525', 'Two.\r\n'),
+(4, 1, 18, 1, 4, '00:02:01,954', '00:02:06,792', 'Listen, I wanted to get a safe deposit box.\r\nCan you do that for me?\r\n'),
+(5, 1, 18, 1, 5, '00:02:14,567', '00:02:16,868', 'Okay.\r\nYour box will be available\r\n'),
+(6, 1, 18, 1, 6, '00:02:16,870', '00:02:18,637', 'any time from\r\nan hour after opening\r\n'),
+(7, 1, 18, 1, 7, '00:02:18,639', '00:02:21,173', 'to 30 minutes before close.\r\nThis is your key.\r\n'),
+(8, 1, 18, 1, 8, '00:02:21,175', '00:02:22,241', 'Thank you.\r\n'),
+(9, 1, 18, 1, 9, '00:02:22,243', '00:02:24,676', 'Oh, um, also, if you open\r\na checking account,\r\n'),
+(10, 1, 18, 1, 10, '00:02:24,678', '00:02:27,679', 'we''ll give you 5% off the box\r\nalong with free overdraft protection.\r\n'),
+(11, 1, 18, 1, 11, '00:02:27,681', '00:02:29,981', 'Oh, here I was hopin''\r\nfor a free toaster.\r\n'),
+(12, 1, 18, 1, 12, '00:02:31,985', '00:02:34,186', 'Why would a bank\r\ngive out free toasters?\r\n'),
+(13, 1, 18, 1, 13, '00:02:36,122', '00:02:37,522', 'Hello, Ma.\r\n'),
+(14, 1, 18, 1, 14, '00:02:37,524', '00:02:39,491', 'I''m ordering you\r\nthe French toast.\r\n'),
+(15, 1, 18, 1, 15, '00:02:39,493', '00:02:42,227', '- No, thank you.\r\n<i>- Our very patient waitress, Maggie,</i>\r\n'),
+(16, 1, 18, 1, 16, '00:02:42,229', '00:02:43,695', '<i>well, at least it says</i>\r\n<i>Maggie on her name tag,</i>\r\n'),
+(17, 1, 18, 1, 17, '00:02:43,697', '00:02:44,996', '<i>has asked me\r\nto order four times.</i>\r\n'),
+(18, 1, 18, 1, 18, '00:02:44,998', '00:02:46,698', 'If I don''t order at this point,\r\nit''s just rude.\r\n'),
+(19, 1, 18, 1, 19, '00:02:46,700', '00:02:48,166', '- I can come back.\r\n- No, it''s okay.\r\n'),
+(20, 1, 18, 1, 20, '00:02:48,168', '00:02:49,768', 'You know what?\r\nI''m making an executive decision.\r\n');
 
 -- --------------------------------------------------------
 
@@ -1167,7 +1212,7 @@ CREATE TABLE IF NOT EXISTS `Users` (
 --
 
 INSERT INTO `Users` (`id`, `username`, `password`, `email`, `BirthYear`, `group`, `key`, `LastLogin`, `KeyTime`) VALUES
-(18, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.test', 2009, 1, 'AhCTcRntmPlGh3w6GQkRM4Mwi4jbsG', 1383683711, 1380204111),
+(18, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.test', 2009, 1, 'AhCTcRntmPlGh3w6GQkRM4Mwi4jbsG', 1383932017, 1380204111),
 (19, 'ghfghh', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'dsd@sd.sd', 2006, 3, 'UsYf1q4DEFt9einFLTvvGz5wZUQ48Z', 0, 1380204112),
 (20, 'wejhg', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'aaa@aaa.aaa', 1919, 3, 'ZZ5rfBjjPMNfrQZilES4cxUFhm4Fgs', 0, 1380204113),
 (21, 't567567567', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'tryrt@erttr.rrt', 1917, 3, 'PboE8NoktBriObjUCFb0RBMX07lz2N', 0, 1380204114),

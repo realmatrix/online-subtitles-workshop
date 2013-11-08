@@ -10,7 +10,7 @@
 	
 	$GLOBALS['config']['TemplatesDir'] = "templates/"; //example "templates/" or "folder/templates/"
 	
-	$GLOBALS['config']['widgets'] = "widget_shoutbox,widget_login,widget_UserInfo,widget_NewsLetter,widget_QuickLinks,widget_Manage,widget_FeaturedVideos,widget_ThumbnailsGallery,widget_TeamChat,widget_breadcrumbs"; //example "widget_example1,widget_example2,widget_example3"
+	$GLOBALS['config']['widgets'] = "widget_shoutbox,widget_login,widget_UserInfo,widget_NewsLetter,widget_QuickLinks,widget_Manage,widget_FeaturedVideos,widget_ThumbnailsGallery,widget_TeamChat,widget_breadcrumbs,widget_QuickAccess"; //example "widget_example1,widget_example2,widget_example3"
 	
 
 ?>

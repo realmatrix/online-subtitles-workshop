@@ -18,6 +18,10 @@
 	{widget_QuickLinks}
 <!-- end Quick Links widget-->
 
+<!-- Quick Access widget -->
+	{widget_QuickAccess}
+<!-- end Quick Access widget-->
+
 <!-- Manage account -->
 	{widget_Manage}
 <!-- end Manage account-->
