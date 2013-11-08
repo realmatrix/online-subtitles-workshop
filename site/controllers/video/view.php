@@ -14,6 +14,11 @@
 			return $array;
 		}
 		
+		function view_set(){
+			$GLOBALS['vars']['PageTitle'] = ">>>> ???????????? <<<<";
+			$GLOBALS['vars']['PageDesc'] = ">>>> ???????????? <<<<";
+		}
+		
 		function Show(){
 			if(self::CheckOwner() and !self::IsThumbnailExist()){return TRUE;}else{return FALSE;}
 		}

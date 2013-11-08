@@ -43,8 +43,8 @@
 <META content="no" http-equiv="imagetoolbar">
 <META name="resource-type" content="document">
 <META name="keywords" content="">
-<META name="description" content="">
-<TITLE>{SiteName}</TITLE>
+<META name="description" content="{PageDescription}">
+<TITLE>{SiteName} - {PageTitle}</TITLE>
 
 <SCRIPT type="text/javascript">
 // <![CDATA[

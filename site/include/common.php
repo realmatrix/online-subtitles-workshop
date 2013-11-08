@@ -378,6 +378,7 @@ class Common{
 	function LoadSections($controller, $section, $vars){
 		require_once ("controllers/".$controller."/".$section.".php");
 		$array = call_user_func('C'.$section."::".$section."_sections");
+		$set = call_user_func('C'.$section."::".$section."_set");
 		$sections = self::LoadPage($array, $vars);
 		return $sections;
 	}

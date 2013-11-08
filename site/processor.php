@@ -76,6 +76,8 @@
 	(
 	  array("{TemplatePath}",$TemplatePath),
 	  array("{SiteName}",$GLOBALS['config']['site_title']),
+	  array("{PageTitle}",$GLOBALS['vars']['PageTitle']),
+	  array("{PageDescription}",$GLOBALS['vars']['PageDesc']),
 	  array("{SiteDescription}",$GLOBALS['config']['site_description']),
 	  array("{SystemHeader}",$SystemHeader),
 	  array("{SystemFooter}",$SystemFooter),
