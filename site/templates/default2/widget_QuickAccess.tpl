@@ -47,7 +47,19 @@
 			<input type="hidden" name="page" value="subtitle" />
 			<input type="hidden" name="sec" value="edit" />
 			</form>
+
+
+			{ManageSubtitles}
 			
+			<form method="get" action="index.php">
+			<select  class="QuickAccessSelect" name="sid" onchange="this.form.submit()">
+			<option value="">select subtitle to open</option>
+			{CMSubtitles}
+			</select>
+			<input type="hidden" name="page" value="subtitle" />
+			<input type="hidden" name="sec" value="manage" />
+			</form>
+						
 
 			{TeamSubtitles}
 			

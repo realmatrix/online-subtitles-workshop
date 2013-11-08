@@ -21,9 +21,11 @@
 				array("{Videos}", $GLOBALS['COMMON']->l('widget_QuickAccess_Videos')),
 				array("{FavouriteVideos}", $GLOBALS['COMMON']->l('widget_QuickAccess_FavouriteVideos')),
 				array("{Subtitles}", $GLOBALS['COMMON']->l('widget_QuickAccess_Subtitles')),
+				array("{ManageSubtitles}", $GLOBALS['COMMON']->l('widget_QuickAccess_ManageSubtitles')),
 				array("{TeamSubtitles}", $GLOBALS['COMMON']->l('widget_QuickAccess_TeamSubtitles')),
 				array("{CVideos}", self::GetUserVideos()),
-				array("{CSubtitles}", self::EditUserSubtitles()),
+				array("{CSubtitles}", self::GetUserSubtitles()),
+				array("{CMSubtitles}", self::GetUserSubtitles()),
 			);	
 			return $array;
 		}
@@ -45,17 +47,14 @@
 				array("uid", $_SESSION['id'], "str")
 			);
 			$subtitles = $GLOBALS['COMMON']->db_query("SELECT * FROM subtitles WHERE uid = :uid", $args);
-			return $subtitles;
-		}
-		
-		function EditUserSubtitles(){
-			$subtitles = self::GetUserSubtitles();
 			$res = "";
 			for ($i=0; $i < count($subtitles); $i++) { 
 				$res .= "<option value='".$subtitles[$i]['id']."'>".$subtitles[$i]['release_name']."</option>";
 			}
 			return $res;
 		}
+		
+
 		
 		
 		
