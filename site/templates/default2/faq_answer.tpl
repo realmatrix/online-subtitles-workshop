@@ -16,15 +16,17 @@
 
 
 
-<!-- faq -->
+<!-- editor controls -->
 <div id="aboutus" style="width: 99%;">
 
-
-	{questions}
-
+	<b>{question}</b>
+	
+	<br /><br />
+	
+	{answer}
 
 </div>
-<!-- end faq -->	
+<!-- end about us -->	
 
 
 
