@@ -7,6 +7,11 @@
 				array("query", "QueryClient", $GLOBALS['vars'], TRUE),
 			);
 			return $array;
+		}
+		
+		function client_set(){
+			$GLOBALS['vars']['PageTitle'] = "Home";
+			$GLOBALS['vars']['PageDesc'] = $GLOBALS['config']['site_description'];
 		}	
 			
 	}
