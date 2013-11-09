@@ -42,6 +42,12 @@
 		 xmlhttp.send();
 	}
 	}
+	
+	function ShowInfo(LineNumber){
+		document.getElementById("lineinfo-subtitle").innerHTML=document.getElementById("ptrans"+LineNumber).innerHTML;
+		document.getElementById("lineinfo-start").innerHTML=document.getElementById("pstart"+LineNumber).innerHTML;
+		document.getElementById("lineinfo-stop").innerHTML=document.getElementById("pend"+LineNumber).innerHTML;
+	}
 </script>
 
 <style>

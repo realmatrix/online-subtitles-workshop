@@ -119,7 +119,7 @@
 			$res .= " onclick='ShowHide(&quot;ttransscript".$LineNumber."&quot;, &quot;ptrans".$LineNumber."&quot;);'";
 			$res .= " onfocus='ShowHide(&quot;ttransscript".$LineNumber."&quot;, &quot;ptrans".$LineNumber."&quot;);'>".$Transcript."</p>";
 			$res .= " <textarea tabindex=".$tindex." class='tatransscript' id='ttransscript".$LineNumber."'";
-			$res .= " onblur='ShowHide(&quot;ptrans".$LineNumber."&quot;, &quot;ttransscript".$LineNumber."&quot;);";
+			$res .= " onblur='ShowInfo(&quot;".$LineNumber."&quot;);ShowHide(&quot;ptrans".$LineNumber."&quot;, &quot;ttransscript".$LineNumber."&quot;);";
 			$res .= " SaveSubtitle(&quot;text&quot;, &quot;ptrans".$LineNumber."&quot;, &quot;ttransscript".$LineNumber."&quot;, &quot;".$GLOBALS['vars']['sid']."&quot;, &quot;".$GLOBALS['vars']['cid']."&quot;, &quot;".$lineid."&quot;)';>".$Transcript;
 			$res .= "</textarea>";
 			$res .= "</div>";

@@ -7,6 +7,7 @@
 				array("subtitle", "SubtitleCDS", $GLOBALS['vars'], TRUE),
 				array("team", "DownloadSubtitle", $GLOBALS['vars'], self::CheckDownload()),
 				array("player", "EditorPlayer", $GLOBALS['vars'], self::show()),
+				array("subtitle", "LineInfo", $GLOBALS['vars'], self::show()),
 				array("subtitle", "SubtitleEditor", $GLOBALS['vars'], self::show()),
 				array("subtitle", "EditorControls", $GLOBALS['vars'], self::show()),
 			);
