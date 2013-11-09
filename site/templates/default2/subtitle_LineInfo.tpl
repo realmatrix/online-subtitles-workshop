@@ -4,6 +4,15 @@ var stopat = '';
 var startat = '';
 var currenttime = '';
 
+function TimeToSecond(time){
+	var hms = time; 
+	var a = hms.split(':');
+	var sec = Math.ceil(a[2]);
+	alert(sec);
+	var seconds = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]); 
+	return seconds;
+}
+
 function rectime(sec) {
 	var hr = Math.floor(sec / 3600);
 	var min = Math.floor((sec - (hr * 3600))/60);
