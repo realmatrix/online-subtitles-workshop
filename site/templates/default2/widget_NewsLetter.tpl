@@ -38,7 +38,8 @@
 				<input type="text" name="email" class="nw-text" />
 				<div style="width: 100%; text-align: right; padding-top: 2px;"><input type="submit" value="{NewsLetterSubmit}" /></div>
 
-			<input type="hidden" name="NewsSubscribe" value="yes"/>
+			<input type="hidden" name="h" value="add"/>
+			<input type="hidden" name="w" value="{w}"/>
 		</form>
 
 

@@ -27,6 +27,7 @@
 				array("{NewsLetterName}", $GLOBALS['COMMON']->l('widget_newsletter_name')),
 				array("{NewsLetterEmail}", $GLOBALS['COMMON']->l('widget_newsletter_email')),
 				array("{NewsLetterSubmit}", $GLOBALS['COMMON']->l('widget_newsletter_submit')),
+				array("{w}", "widget_NewsLetter"),
 			);	
 			return $array;
 		}

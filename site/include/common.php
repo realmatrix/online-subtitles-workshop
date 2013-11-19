@@ -154,9 +154,11 @@ class Common{
 		    $cwidget = trim($widget);
 			if($cwidget!=""){include_once "widgets/".$cwidget."/".$cwidget.".php";
 				$hooks = call_user_func('W'.$cwidget.'::'.$cwidget.'_hooks');
+				$found = 0;
 				for ($j=0; $j < count($hooks); $j++) {
-					if($GLOBALS['vars']['w']==$widget){call_user_func($cwidget.'::'.$hooks[$j][1], $args);}
+					if($GLOBALS['vars']['w']==$cwidget and $GLOBALS['vars']['h']==$hooks[$j][0]){call_user_func('W'.$cwidget.'::'.$hooks[$j][1], $args); $found++;}
 				}
+				if($GLOBALS['vars']['w']==$cwidget and $found<1){$GLOBALS['ERROR'][] = "function not found.";}
 			$render = call_user_func("W".$cwidget."::".$cwidget);
 			$content = self::render($render, $cwidget);
 			}		
