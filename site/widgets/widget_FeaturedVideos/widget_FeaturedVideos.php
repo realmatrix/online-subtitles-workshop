@@ -6,6 +6,13 @@
 			return self::widget_FeaturedVideos_render();
 		}
 		
+		function widget_FeaturedVideos_hooks(){
+			$array = array(
+				array("test", "test")
+			);
+			return $array;
+		}
+		
 		function widget_FeaturedVideos_options(){
 			$options = array(
 			"show"=>array("home",), //show widget on this pages only - leave blank to show on all pages

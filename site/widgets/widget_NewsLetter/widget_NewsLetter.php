@@ -5,6 +5,13 @@
 		function widget_NewsLetter(){
 			return self::widget_NewsLetter_render();
 		}
+		
+		function widget_NewsLetter_hooks(){
+			$array = array(
+				array("test", "test")
+			);
+			return $array;
+		}		
 	
 		function widget_NewsLetter_options(){
 			$options = array(

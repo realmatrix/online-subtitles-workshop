@@ -140,21 +140,6 @@ class Common{
 		    $cwidget = trim($widget[$i]);
 			if($cwidget!=""){
 			//echo checkWidgetOptions($cwidget);
-			/*
-			$data = "
-			<div id='SystemAjax_".$cwidget."'></div>
-			<script>
-			$.ajax({
-			    url: 'index.php?dataonly=yes&getwidget=".$cwidget."',
-			    cache: false,
-			    dataType: 'html',
-			    success: function(data) {
-			        $('#SystemAjax_".$cwidget."').html(data);
-			    }
-			});
-			</script>
-			";
-			 */
 			 $data = "<div id='SystemAjax_".$cwidget."'>".self::GetWidget($cwidget)."</div>";
 			if(!self::checkWidgetOptions($cwidget)){$data="";}
 			$content[] = array("{".$cwidget."}", $data);
@@ -168,6 +153,10 @@ class Common{
 	function GetWidget($widget){
 		    $cwidget = trim($widget);
 			if($cwidget!=""){include_once "widgets/".$cwidget."/".$cwidget.".php";
+				$hooks = call_user_func('W'.$cwidget.'::'.$cwidget.'_hooks');
+				for ($j=0; $j < count($hooks); $j++) {
+					if($GLOBALS['vars']['w']==$widget){call_user_func($cwidget.'::'.$hooks[$j][1], $args);}
+				}
 			$render = call_user_func("W".$cwidget."::".$cwidget);
 			$content = self::render($render, $cwidget);
 			}		

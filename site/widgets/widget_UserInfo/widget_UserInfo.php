@@ -5,6 +5,13 @@
 		function widget_UserInfo(){
 			return self::widget_UserInfo_render();
 		}
+		
+		function widget_UserInfo_hooks(){
+			$array = array(
+				array("test", "test")
+			);
+			return $array;
+		}
 	
 		function widget_UserInfo_options(){
 			$options = array(

@@ -5,6 +5,13 @@
 		function widget_ThumbnailsGallery(){
 			return self::widget_ThumbnailsGallery_render();
 		}
+		
+		function widget_ThumbnailsGallery_hooks(){
+			$array = array(
+				array("test", "test")
+			);
+			return $array;
+		}
 	
 		function widget_ThumbnailsGallery_options(){
 			$options = array(

@@ -5,6 +5,13 @@
 		function widget_QuickAccess(){
 			return self::widget_QuickAccess_render();
 		}
+		
+		function widget_QuickAccess_hooks(){
+			$array = array(
+				array("test", "test")
+			);
+			return $array;
+		}
 	
 		function widget_QuickAccess_options(){
 			$options = array(

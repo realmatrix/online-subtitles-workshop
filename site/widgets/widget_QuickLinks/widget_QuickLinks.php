@@ -5,6 +5,13 @@
 		function widget_QuickLinks(){
 			return self::widget_QuickLinks_render();
 		}
+		
+		function widget_QuickLinks_hooks(){
+			$array = array(
+				array("test", "test")
+			);
+			return $array;
+		}
 	
 		function widget_QuickLinks_options(){
 			$options = array(

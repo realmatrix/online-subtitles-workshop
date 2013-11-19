@@ -4,6 +4,13 @@
 		function widget_login(){
 			return self::widget_login_render();
 		}
+		
+		function widget_login_hooks(){
+			$array = array(
+				array("test", "test")
+			);
+			return $array;
+		}
 	
 		function widget_login_options(){
 			$options = array(

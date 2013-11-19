@@ -5,6 +5,13 @@
 		function widget_TeamChat(){
 			return self::widget_TeamChat_render();
 		}
+		
+		function widget_TeamChat_hooks(){
+			$array = array(
+				array("test", "test")
+			);
+			return $array;
+		}
 	
 		function widget_TeamChat_options(){
 			$options = array(

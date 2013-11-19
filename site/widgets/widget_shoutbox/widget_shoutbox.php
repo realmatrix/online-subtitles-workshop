@@ -5,6 +5,13 @@
 		function widget_shoutbox(){
 			return self::widget_shoutbox_render();
 		}
+		
+		function widget_shoutbox_hooks(){
+			$array = array(
+				array("test", "test")
+			);
+			return $array;
+		}
 	
 		function widget_shoutbox_options(){
 			$options = array(

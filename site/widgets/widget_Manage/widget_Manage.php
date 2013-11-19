@@ -5,6 +5,13 @@
 		function widget_Manage(){
 			return self::widget_Manage_render();
 		}
+		
+		function widget_Manage_hooks(){
+			$array = array(
+				array("test", "test")
+			);
+			return $array;
+		}
 	
 		function widget_Manage_options(){
 			$options = array(

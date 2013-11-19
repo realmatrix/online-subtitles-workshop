@@ -6,6 +6,13 @@
 			return self::widget_breadcrumbs_render();
 		}
 		
+		function widget_breadcrumbs_hooks(){
+			$array = array(
+				array("test", "test")
+			);
+			return $array;
+		}
+		
 		function widget_breadcrumbs_options(){
 			$options = array(
 			"show"=>array(), //show widget on this pages only - leave blank to show on all pages
