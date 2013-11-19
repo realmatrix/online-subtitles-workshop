@@ -8,7 +8,7 @@
 		
 		function widget_NewsLetter_hooks(){
 			$array = array(
-				array("test", "test")
+				array("add", "AddUser")
 			);
 			return $array;
 		}		
@@ -30,6 +30,19 @@
 				array("{w}", "widget_NewsLetter"),
 			);	
 			return $array;
+		}
+		
+		function AddUser(){
+			if(!filter_var($GLOBALS['vars']['email'], FILTER_VALIDATE_EMAIL)){
+				$GLOBALS['ERROR'][]="invalid email address.";
+				return false;
+			}
+			$args = array(
+				array(":name", $GLOBALS['vars']['name'], "str"),
+				array(":email", $GLOBALS['vars']['email'], "str"),
+			);
+			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `NewsLetter` (`name`, `email`) VALUES (:name, :email);", $args, $ExecState);
+			if($ExecState === TRUE){$GLOBALS['SUCCESS'][]="email added successfully.";}else{$GLOBALS['ERROR'][]=$ExecState;}
 		}
 		
 	}
