@@ -1,26 +1,26 @@
 			<div class="sortable row-fluid">
-				<a data-rel="tooltip" title="6 new members." class="well span3 top-block" href="#">
+				<a data-rel="tooltip" title="{TotalMembersTitle}" class="well span3 top-block" href="#">
 					<span class="icon32 icon-red icon-user"></span>
 					<div>Total Members</div>
 					<div>{TotalMembers}</div>
 					<span class="notification">6</span>
 				</a>
 
-				<a data-rel="tooltip" title="4 new pro members." class="well span3 top-block" href="#">
+				<a data-rel="tooltip" title="{TotalSubtitlesTitle}" class="well span3 top-block" href="#">
 					<span class="icon32 icon-color icon-document"></span>
 					<div>Total Subtitles</div>
 					<div>{TotalSubtitles}</div>
 					<span class="notification green">4</span>
 				</a>
 
-				<a data-rel="tooltip" title="$34 new sales." class="well span3 top-block" href="#">
+				<a data-rel="tooltip" title="{TotalVideosTitle}" class="well span3 top-block" href="#">
 					<span class="icon32 icon-color icon-comment-video"></span>
 					<div>Total Videos</div>
 					<div>{TotalVideos}</div>
 					<span class="notification yellow">$34</span>
 				</a>
 				
-				<a data-rel="tooltip" title="12 new messages." class="well span3 top-block" href="#">
+				<a data-rel="tooltip" title="{NewMessagesTitle}" class="well span3 top-block" href="#">
 					<span class="icon32 icon-color icon-envelope-closed"></span>
 					<div>Messages</div>
 					<div>{NewMessages}</div>
@@ -187,16 +187,16 @@
 							<ul class="dashboard-list">
 								<li>
 									<a href="#">
-										<img class="dashboard-avatar" alt="Usman" src="http://www.gravatar.com/avatar/f0ea51fa1e4fae92608d8affee12f67b.png?s=50"></a>
-										<strong>Name:</strong> <a href="#">Usman
+										<img class="dashboard-avatar" alt="Usman" src="http://www.gravatar.com/avatar/46056f772bde7c536e2086004e300a04.png?s=50"></a>
+										<strong>Name:</strong> <a href="#">Name 1
 									</a><br>
 									<strong>Since:</strong> 17/05/2012<br>
 									<strong>Status:</strong> <span class="label label-success">Approved</span>                                  
 								</li>
 								<li>
 									<a href="#">
-										<img class="dashboard-avatar" alt="Sheikh Heera" src="http://www.gravatar.com/avatar/3232415a0380253cfffe19163d04acab.png?s=50"></a>
-										<strong>Name:</strong> <a href="#">Sheikh Heera
+										<img class="dashboard-avatar" alt="Sheikh Heera" src="http://www.gravatar.com/avatar/46056f772bde7c536e2086004e300a04.png?s=50"></a>
+										<strong>Name:</strong> <a href="#">Name 2
 									</a><br>
 									<strong>Since:</strong> 17/05/2012<br>
 									<strong>Status:</strong> <span class="label label-warning">Pending</span>                                 
@@ -204,15 +204,15 @@
 								<li>
 									<a href="#">
 										<img class="dashboard-avatar" alt="Abdullah" src="http://www.gravatar.com/avatar/46056f772bde7c536e2086004e300a04.png?s=50"></a>
-										<strong>Name:</strong> <a href="#">Abdullah
+										<strong>Name:</strong> <a href="#">Name 3
 									</a><br>
 									<strong>Since:</strong> 25/05/2012<br>
 									<strong>Status:</strong> <span class="label label-important">Banned</span>                                  
 								</li>
 								<li>
 									<a href="#">
-										<img class="dashboard-avatar" alt="Saruar Ahmed" src="http://www.gravatar.com/avatar/564e1bb274c074dc4f6823af229d9dbb.png?s=50"></a>
-										<strong>Name:</strong> <a href="#">Saruar Ahmed
+										<img class="dashboard-avatar" alt="Saruar Ahmed" src="http://www.gravatar.com/avatar/46056f772bde7c536e2086004e300a04.png?s=50"></a>
+										<strong>Name:</strong> <a href="#">Name 4
 									</a><br>
 									<strong>Since:</strong> 17/05/2012<br>
 									<strong>Status:</strong> <span class="label label-info">Updates</span>                                  
