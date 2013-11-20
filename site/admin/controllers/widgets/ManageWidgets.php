@@ -23,12 +23,27 @@
 		}
 				
 		function ManageWidgets_content(){
+			$widgets = self::ListWidgets();
+			print_r($widgets);
 				$content = array
 				  (
 				  array("{title}", $GLOBALS['COMMON']->l("admin_widgets_ManageWidgets_title")),
 				 );
 			 
 		return $content;
+		}
+		
+		function ListWidgets(){
+			$res = array();
+			if ($handle = opendir('../widgets')) {
+			    while (false !== ($entry = readdir($handle))) {
+			        if ($entry != "." && $entry != "..") {
+			            $res[] = $entry;
+			        }
+			    }
+			    closedir($handle);
+			}
+			return $res;
 		}
 		
 	
