@@ -3,7 +3,7 @@
 	$AdminPage = $GLOBALS['vars']['page'];
 	
 	switch ($AdminPage) {
-    case ($AdminPage=="main"):
+    case ($AdminPage=="main" or $AdminPage=="widgets"):
 		//loading template
 		$GLOBALS['FinalPage'] = $GLOBALS['ACOMMON']->render($GLOBALS['TemplateHead'], "head");
 		$GLOBALS['FinalPage'] .= $GLOBALS['ACOMMON']->render($GLOBALS['TemplateHeader'], "header");

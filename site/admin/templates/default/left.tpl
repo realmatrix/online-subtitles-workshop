@@ -17,6 +17,7 @@
 						<li class="nav-header hidden-tablet">System Configuration</li>
 						<li><a class="ajax-link" href="#"><i class="icon-wrench"></i><span class="hidden-tablet"> System settings</span></a></li>
 						<li><a class="ajax-link" href="#"><i class="icon-cog"></i><span class="hidden-tablet"> System features</span></a></li>
+						<li><a class="ajax-link" href="index.php?page=widgets&sec=manage"><i class="icon-wrench"></i><span class="hidden-tablet"> Widgets</span></a></li>
 						<li><a class="ajax-link" href="#"><i class="icon-inbox"></i><span class="hidden-tablet"> Private message settings</span></a></li>
 						<li><a class="ajax-link" href="#"><i class="icon-edit"></i><span class="hidden-tablet"> Post settings</span></a></li>
 						<li><a class="ajax-link" href="#"><i class="icon-globe"></i><span class="hidden-tablet"> Feed settings</span></a></li>
