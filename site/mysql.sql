@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 19, 2013 at 04:48 AM
+-- Generation Time: Nov 21, 2013 at 03:57 AM
 -- Server version: 5.6.14-log
 -- PHP Version: 5.3.27
 
@@ -13,6 +13,19 @@ SET time_zone = "+00:00";
 --
 -- Database: `new`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `AdminWidgets`
+--
+
+CREATE TABLE IF NOT EXISTS `AdminWidgets` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `state` tinyint(4) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -358,7 +371,7 @@ CREATE TABLE IF NOT EXISTS `FailedLogins` (
 --
 
 INSERT INTO `FailedLogins` (`id`, `ip`, `tries`, `time`) VALUES
-(5, '127.0.0.1', 7, 1380208645);
+(5, '127.0.0.1', 8, 1385005879);
 
 -- --------------------------------------------------------
 
@@ -872,7 +885,7 @@ CREATE TABLE IF NOT EXISTS `NewsLetter` (
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
