@@ -40,6 +40,9 @@
 <input type="image" class="st-imgcontroler" src="templates/default2/tmp/Decrease_time.png" title="Decrease Time Shift" onclick="ShowElement('dts');"/>
 </div>
 
+<div class="at-controler">
+<input type="image" class="st-imgcontroler" style="width: 24px; height: 24px;" src="templates/default2/tmp/images/translate-ico.png" title="Auto Translate" onclick="ShowElement('at');"/>
+</div>
 
 <div style="clear: left;"></div>
 
@@ -87,18 +90,39 @@
 	</form>
 	</div>
 
+	<div id='at'>
+	<form method='get' action='index.php'>
+	<br />
+	<b>Auto Translate Subtitle:</b> 
+	<br />
+	from line <select name='from'><option value='1'>1</option><option value='2'>2</option></select>
+	to line <select name='to'><option value='1'>1</option><option value='2'>2</option></select>	
+	<input type='submit' value='translate' />
+	<input type='hidden' name='sid' value='{sid}'/>
+	<input type='hidden' name='cid' value='{cid}'/>
+	<input type='hidden' name='page' value='subtitle'/>
+	<input type='hidden' name='sec' value='edit'/>
+	<input type='hidden' name='ssec' value='EditorControls'/>
+	<input type='hidden' name='h' value='AutoTranslate'/>
+	</form>
+	</div>	
+
+
 <script>
 	document.getElementById("irt").style.display = 'none';
 	document.getElementById("its").style.display = 'none';
 	document.getElementById("dts").style.display = 'none';
+	document.getElementById("at").style.display = 'none';
 	
 	function ShowElement(id){
 	document.getElementById("irt").style.display = 'none';
 	document.getElementById("its").style.display = 'none';
 	document.getElementById("dts").style.display = 'none';
+	document.getElementById("at").style.display = 'none';
 		if(id=="irt"){document.getElementById("irt").style.display = 'block';}
 		if(id=="its"){document.getElementById("its").style.display = 'block';}
 		if(id=="dts"){document.getElementById("dts").style.display = 'block';}
+		if(id=="at"){document.getElementById("at").style.display = 'block';}
 	}
 </script>
 

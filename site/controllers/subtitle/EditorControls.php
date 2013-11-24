@@ -26,6 +26,8 @@
 				$content = array
 				  (
 				  array("{title}", $GLOBALS['COMMON']->l("subtitle_EditorControls_title")),
+				  array("{sid}", $GLOBALS['vars']['sid']),
+				  array("{cid}", $GLOBALS['vars']['cid']),
 				 );
 			 
 		return $content;
