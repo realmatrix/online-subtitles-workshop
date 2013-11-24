@@ -220,9 +220,11 @@ class Common{
 		if(self::checkSectionOptions($controller, $section, $message)){
 		include_once "controllers/".$controller."/".$section.".php";
 		$hooks = call_user_func('C'.$section.'::'.$section.'_hooks');
+		$found = 0;
 			for ($i=0; $i < count($hooks); $i++) {
-				if(self::CheckControllerHook($section, $hooks[$i][0], $args)===TRUE){call_user_func('C'.$section.'::'.$hooks[$i][1], $args);}
+				if(self::CheckControllerHook($section, $hooks[$i][0], $args)===TRUE){call_user_func('C'.$section.'::'.$hooks[$i][1], $args); $found++;}
 			}
+			if($args['ssec']==$section and $found==0){$GLOBALS['ERROR'][] = "function '".$args['h']."' not found in controllers/".$controller."/".$section.".php";}
 		$content = call_user_func('C'.$section.'::'.$section);
 		$options = 
 		$res = self::RenderView($content, $controller, $section);
@@ -230,7 +232,7 @@ class Common{
 		return $res;
 		}
 		else{
-			echo "<script>alert('".$message."')</script>";
+			//echo "<script>alert('".$message."');</script>";
 		} 
 	}
 
