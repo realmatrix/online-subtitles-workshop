@@ -103,7 +103,7 @@
 	<input type='hidden' name='page' value='subtitle'/>
 	<input type='hidden' name='sec' value='edit'/>
 	<input type='hidden' name='ssec' value='EditorControls'/>
-	<input type='hidden' name='h' value='AutoTranslate'/>
+	<input type='hidden' name='h' value='autotranslate'/>
 	</form>
 	</div>	
 
