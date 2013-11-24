@@ -4,6 +4,7 @@ var stopat = '';
 var startat = '';
 var currenttime = '';
 
+///////////////////////////////////////////////////
 function TimeToSecond(time){
 	var hms = time; 
 	var a = hms.split(':');
@@ -12,7 +13,9 @@ function TimeToSecond(time){
 	var seconds = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]); 
 	return seconds;
 }
+///////////////////////////////////////////////////
 
+///////////////////////////////////////////////////
 function rectime(sec) {
 	var hr = Math.floor(sec / 3600);
 	var min = Math.floor((sec - (hr * 3600))/60);
@@ -21,29 +24,26 @@ function rectime(sec) {
 	while (min.length < 2) {min = '0' + min;}
 	while (sec.length < 2) {sec = '0' + sec;}
 	hr = (hr)?':'+hr:'';
-	while (hr.length < 2) {hr = '0' + hr;}
-	
+	while (hr.length < 2) {hr = '0' + hr;}	
 	if(sec.substr(1,1) == '.') {sec = '0' + sec;}
-	if(sec.length > 6){sec = sec.substr(0,6)}
-
+	if(sec.length > 6){sec = sec.substr(0,6);}
 	return hr + ':' + min + ':' + sec;
 }
+///////////////////////////////////////////////////
 
+///////////////////////////////////////////////////
+//return current video position
  jwplayer('myElement').onTime(function() { 
-
  currenttime = jwplayer().getPosition();
- 
  currenttime = rectime(currenttime);
- 
  document.getElementById('lineinfo-current').innerHTML = currenttime;
-  
  if (jwplayer().getPosition() >= stopat && stopat != '')
  {
  jwplayer().pause();
  stopat = '';
  }
- 
- });
+  });
+ ///////////////////////////////////////////////////
  
 </script>
 

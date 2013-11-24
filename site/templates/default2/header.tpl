@@ -33,11 +33,11 @@ to content</A></P><A accessKey="t" id="top" name="top"></A>
   width="16" height="16">Board index</A></LI>
   <LI class="divider"></LI>
   <LI class="float-right"><A href="index.php"><IMG 
-  alt="" src="{TemplatePath}/tmp/images/key.png" 
-  width="16" height="16">Synchronizer</A></LI>
+  alt="" src="{TemplatePath}/tmp/images/download-ico.png" 
+  width="16" height="16">Downloads</A></LI>
   <LI class="divider float-right"></LI>
   <LI class="float-right"><A href="index.php"><IMG 
-  alt="" src="{TemplatePath}/tmp/images/add.png" 
+  alt="" src="{TemplatePath}/tmp/images/subtitle-ico.png" 
   width="16" height="16">Subtitles</A></LI>
   <LI class="divider float-right"></LI>
   <LI class="float-right"><A href="index.php?page=search&sec=advanced"><IMG 
@@ -45,11 +45,11 @@ to content</A></P><A accessKey="t" id="top" name="top"></A>
   width="16" height="16">Search</A></LI>
   <LI class="divider float-right"></LI>
   <LI class="float-right"><A href="index.php"><IMG 
-  alt="" src="{TemplatePath}/tmp/images/nav-members.png" 
+  alt="" src="{TemplatePath}/tmp/images/video-ico.png" 
   width="16" height="16">Videos</A></LI>
   <LI class="divider float-right"></LI>
   <LI class="float-right"><A href="index.php?page=forum&sec=forums"><IMG 
-  alt="" src="{TemplatePath}/tmp/images/search.png" 
+  alt="" src="{TemplatePath}/tmp/images/forum_ico.png" 
   width="16" height="16">Forums</A></LI>
   <LI class="divider float-right"></LI></UL></DIV><A name="start_here"></A>
   

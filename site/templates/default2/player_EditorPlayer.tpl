@@ -34,6 +34,7 @@
 	
 	<script type="text/javascript">
 	    jwplayer("myElement").setup({
+	    flashplayer: 'apps/jwplayer/jwplayer.flash.swf',
 	    playlist: [{
 	        image: "uploads/thumbnails/video/{VideoImage}",
 	        file: "{VideoUrl}",
@@ -41,7 +42,13 @@
 	        description: "{VideoDescription}"
 	    }],
 	        height: "400",
-	        width: "100%",    
+	        width: "100%", 
+	        controlbar: 'bottom',
+   plugins: {
+     'captions-2': {
+       back: false,
+       file: 'index.php?page=query&sec=subtitle&ssec=QuerySubtitle&h=loadsubtitle&sid={sid}&cid={cid}&ext=.vtt'
+     }},   
 	    tracks: [{ 
             file: "index.php?page=query&sec=subtitle&ssec=QuerySubtitle&h=loadsubtitle&sid={sid}&cid={cid}&ext=.vtt", 
             label: "{SubtitleLanguage}",
@@ -51,6 +58,8 @@
         ],        
 	    });
 	</script>
+	
+
 
 
 
