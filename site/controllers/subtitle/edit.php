@@ -10,6 +10,7 @@
 				array("subtitle", "LineInfo", $GLOBALS['vars'], self::show()),
 				array("subtitle", "SubtitleEditor", $GLOBALS['vars'], self::show()),
 				array("subtitle", "EditorControls", $GLOBALS['vars'], self::show()),
+				array("subtitle", "EditorInfo", $GLOBALS['vars'], self::show()),
 			);
 			return $array;
 		}
