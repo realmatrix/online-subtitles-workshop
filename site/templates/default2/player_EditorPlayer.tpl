@@ -17,12 +17,11 @@
 
 
 <!-- editor player -->
-<div id="subtitleeditor" style="width: 99%;">
+<div id="subtitleeditor" style="width: 100%;">
 	
 
 
 	<script type="text/javascript" src="apps/jwplayer/jwplayer.js"></script>
-	<script type="text/javascript">jwplayer.key="Xa0+lctKi2ueLhuTyGOzLSUPiglowRgViyyr/w==";</script>
 	
 	<div id="myElement">Loading the player...</div>
 	
@@ -32,33 +31,28 @@
 		}
 	</style>
 	
-	<script type="text/javascript">
-	    jwplayer("myElement").setup({
-	    flashplayer: 'apps/jwplayer/jwplayer.flash.swf',
-	    playlist: [{
-	        image: "uploads/thumbnails/video/{VideoImage}",
-	        file: "{VideoUrl}",
-	        title: "{VideoTitle}",
-	        description: "{VideoDescription}"
-	    }],
-	        height: "400",
-	        width: "100%", 
-	        controlbar: 'bottom',
-   plugins: {
-     'captions-2': {
-       back: false,
-       file: 'index.php?page=query&sec=subtitle&ssec=QuerySubtitle&h=loadsubtitle&sid={sid}&cid={cid}&ext=.vtt'
-     }},   
-	    tracks: [{ 
-            file: "index.php?page=query&sec=subtitle&ssec=QuerySubtitle&h=loadsubtitle&sid={sid}&cid={cid}&ext=.vtt", 
-            label: "{SubtitleLanguage}",
-            kind: "captions",
-            "default": true, 
-        },
-        ],        
-	    });
-	</script>
-	
+
+<script type='text/javascript'>
+	jwplayer('myElement').setup({
+	flashplayer: 'apps/jwplayer/player.swf',
+	image: 'uploads/thumbnails/video/{VideoImage}',
+	file: '{VideoUrl}',
+	title: '{VideoTitle}',
+	description: '{VideoDescription}',
+	height: 400,
+	width: '100%',
+	controlbar: 'bottom',
+	   plugins: {
+	     'captions-2': {
+	       back: false,
+	       file: 'index.php?page=query&sec=subtitle&ssec=QuerySubtitle&h=loadsubtitle&sid={sid}&cid={cid}&ext=.vtt',
+	       label: "{SubtitleLanguage}",
+	   }}	 
+	});
+</script>
+
+
+
 
 
 
