@@ -5,12 +5,16 @@ var startat = '';
 var currenttime = '';
 
 ///////////////////////////////////////////////////
-function TimeToSecond(time){
+function TimeToSecond(time, pos){
 	var hms = time; 
 	var a = hms.split(':');
-	var sec = Math.ceil(a[2]);
+	var sec = a[2];
+	var sec = sec.replace(",", ".");
 	alert(sec);
-	var seconds = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]); 
+	if(pos==1){sec = Math.ceil(sec);}
+	if(pos==0){sec = Math.floor(sec);}
+	alert(sec);
+	var seconds = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (sec); 
 	return seconds;
 }
 ///////////////////////////////////////////////////

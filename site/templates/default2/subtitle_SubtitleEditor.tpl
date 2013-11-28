@@ -44,11 +44,11 @@
 	}
 	
 	function ShowInfo(LineNumber){
-		alert(TimeToSecond(document.getElementById("pstart"+LineNumber).innerHTML));
+		alert(TimeToSecond(document.getElementById("pstart"+LineNumber).innerHTML, 0));
 		document.getElementById("lineinfo-subtitle").innerHTML=document.getElementById("ptrans"+LineNumber).innerHTML;
 		document.getElementById("lineinfo-start").innerHTML=document.getElementById("pstart"+LineNumber).innerHTML;
 		document.getElementById("lineinfo-stop").innerHTML=document.getElementById("pend"+LineNumber).innerHTML;
-		jwplayer().seek(TimeToSecond(document.getElementById("pstart"+LineNumber).innerHTML));
+		jwplayer().seek(TimeToSecond(document.getElementById("pstart"+LineNumber).innerHTML, 0));
 	}
 </script>
 
