@@ -128,10 +128,15 @@
 	<form method='get' action='index.php'>
 	<br />
 	<b>Add New Line:</b> 
-	<br />
-	from line <select name='from'><option value='1'>1</option><option value='2'>2</option></select>
-	to line <select name='to'><option value='1'>1</option><option value='2'>2</option></select>	
-	<input type='submit' value='add' />
+	<br /><br />
+	select option <select name='option'>
+		<option value='1'>end of file</option>
+		<option value='2'>begining of file</option>
+		<option value='1'>after line:</option>
+		<option value='1'>before line:</option>
+	</select>
+	select line if required <select name='line'><option value=''></option>{AddLineOptions}</select>	
+	<input type='submit' value='Add Line' />
 	<input type='hidden' name='sid' value='{sid}'/>
 	<input type='hidden' name='cid' value='{cid}'/>
 	<input type='hidden' name='page' value='subtitle'/>
@@ -146,15 +151,14 @@
 	<br />
 	<b>Delete Line:</b> 
 	<br />
-	from line <select name='from'><option value='1'>1</option><option value='2'>2</option></select>
-	to line <select name='to'><option value='1'>1</option><option value='2'>2</option></select>	
+	select line to delete <select name='line'><option value=''></option>{DeleteOptions}</select>	
 	<input type='submit' value='delete' />
 	<input type='hidden' name='sid' value='{sid}'/>
 	<input type='hidden' name='cid' value='{cid}'/>
 	<input type='hidden' name='page' value='subtitle'/>
 	<input type='hidden' name='sec' value='edit'/>
 	<input type='hidden' name='ssec' value='EditorControls'/>
-	<input type='hidden' name='h' value='autotranslate'/>
+	<input type='hidden' name='h' value='deleteline'/>
 	</form>
 	</div>
 

@@ -10,6 +10,7 @@
 			$array = array(
 				array("autotranslate", "AutoTranslate"),
 				array("updatedone", "UpdateLineState"),
+				array("deleteline", "DeleteLine"),
 			);
 			return $array;
 		}
@@ -30,6 +31,8 @@
 				  array("{sid}", $GLOBALS['vars']['sid']),
 				  array("{cid}", $GLOBALS['vars']['cid']),
 				  array("{DoneOptions}", self::LineSelectOptions()),
+				  array("{DeleteOptions}", self::LineSelectOptions()),
+				  array("{AddLineOptions}", self::LineSelectOptions()),
 				 );
 			 
 		return $content;
@@ -101,6 +104,17 @@
 				array(":value", $value, "str"),
 			);
 			$res = $GLOBALS['COMMON']->db_query("UPDATE `SubtitlesContent` SET `done` = :value WHERE `sid` = :sid and `cid` = :cid and `line` BETWEEN :from AND :to;", $args);
+		}
+		
+		function DeleteLine(){
+			if($GLOBALS['vars']['line']==""){$GLOBALS['ERROR'][]="select line to delete";}
+			if(count($GLOBALS['ERROR'])>0){return FALSE;}
+			$args = array(
+				array(":sid", $GLOBALS['vars']['sid'], "str"),
+				array(":cid", $GLOBALS['vars']['cid'], "str"),
+				array(":line", $GLOBALS['vars']['line'], "str"),
+			);
+			$res = $GLOBALS['COMMON']->db_query("DELETE FROM `SubtitlesContent` WHERE `sid` = :sid and `cid` = :cid and `line` = :line", $args);
 		}
 		
 
