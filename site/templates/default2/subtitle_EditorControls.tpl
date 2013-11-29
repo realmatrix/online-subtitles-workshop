@@ -161,17 +161,34 @@
 	<div id='done'>
 	<form method='get' action='index.php'>
 	<br />
-	<b>Mark Line As Done:</b> 
+	<b>Mark Line(s) As Done:</b> 
 	<br />
-	from line <select name='from'><option value='1'>1</option><option value='2'>2</option></select>
-	to line <select name='to'><option value='1'>1</option><option value='2'>2</option></select>	
-	<input type='submit' value='delete' />
+	from line <select name='from'><option value=''></option><option value='1'>{DoneOptions}</option></select>
+	to line <select name='to'><option value=''></option><option value='1'>{DoneOptions}</option></select>	
+	<input type='submit' value='Done' />
 	<input type='hidden' name='sid' value='{sid}'/>
 	<input type='hidden' name='cid' value='{cid}'/>
 	<input type='hidden' name='page' value='subtitle'/>
 	<input type='hidden' name='sec' value='edit'/>
 	<input type='hidden' name='ssec' value='EditorControls'/>
-	<input type='hidden' name='h' value='autotranslate'/>
+	<input type='hidden' name='h' value='updatedone'/>
+	<input type="hidden" name="state" value="done"/>
+	</form>
+	
+	<form method='get' action='index.php'>
+	<br />
+	<b>Mark Line(s) As NOT Done:</b> 
+	<br />
+	from line <select name='from'><option value=''></option><option value='1'>{DoneOptions}</option></select>
+	to line <select name='to'><option value=''></option><option value='1'>{DoneOptions}</option></select>	
+	<input type='submit' value='Not Done' />
+	<input type='hidden' name='sid' value='{sid}'/>
+	<input type='hidden' name='cid' value='{cid}'/>
+	<input type='hidden' name='page' value='subtitle'/>
+	<input type='hidden' name='sec' value='edit'/>
+	<input type='hidden' name='ssec' value='EditorControls'/>
+	<input type='hidden' name='h' value='updatedone'/>
+	<input type="hidden" name="state" value="notdone"/>
 	</form>
 	</div>
 	
