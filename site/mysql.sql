@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.7
+-- version 4.0.9
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 24, 2013 at 11:12 AM
+-- Generation Time: Nov 29, 2013 at 08:41 AM
 -- Server version: 5.6.14-log
 -- PHP Version: 5.3.27
 
@@ -900,14 +900,14 @@ CREATE TABLE IF NOT EXISTS `OnlineUsers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1093 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1124 ;
 
 --
 -- Dumping data for table `OnlineUsers`
 --
 
 INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(1092, 'tqvhb0qvttnjd86nobdsam9i73', 1385290788, '');
+(1123, 'nch620u0pal3eb7c04c44i4572', 1385713937, '');
 
 -- --------------------------------------------------------
 
@@ -1020,6 +1020,8 @@ CREATE TABLE IF NOT EXISTS `SubtitlesContent` (
   `start` varchar(12) CHARACTER SET latin1 NOT NULL,
   `end` varchar(12) CHARACTER SET latin1 NOT NULL,
   `text` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `checked` int(11) NOT NULL DEFAULT '0' COMMENT '0=>not checked  1=>accepteed  2=>refused',
+  `done` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'mark line as finished',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=21 ;
 
@@ -1027,27 +1029,27 @@ CREATE TABLE IF NOT EXISTS `SubtitlesContent` (
 -- Dumping data for table `SubtitlesContent`
 --
 
-INSERT INTO `SubtitlesContent` (`id`, `sid`, `uid`, `cid`, `line`, `start`, `end`, `text`) VALUES
-(1, 1, 18, 1, 1, '00:01:27,520', '00:01:28,987', '- Hi.\r\n- Hi.\r\n'),
-(2, 1, 18, 1, 2, '00:01:30,123', '00:01:31,156', 'How many?\r\n'),
-(3, 1, 18, 1, 3, '00:01:32,125', '00:01:33,525', 'Two.\r\n'),
-(4, 1, 18, 1, 4, '00:02:01,954', '00:02:06,792', 'Listen, I wanted to get a safe deposit box.\r\nCan you do that for me?\r\n'),
-(5, 1, 18, 1, 5, '00:02:14,567', '00:02:16,868', 'Okay.\r\nYour box will be available\r\n'),
-(6, 1, 18, 1, 6, '00:02:16,870', '00:02:18,637', 'any time from\r\nan hour after opening\r\n'),
-(7, 1, 18, 1, 7, '00:02:18,639', '00:02:21,173', 'to 30 minutes before close.\r\nThis is your key.\r\n'),
-(8, 1, 18, 1, 8, '00:02:21,175', '00:02:22,241', 'Thank you.\r\n'),
-(9, 1, 18, 1, 9, '00:02:22,243', '00:02:24,676', 'Oh, um, also, if you open\r\na checking account,\r\n'),
-(10, 1, 18, 1, 10, '00:02:24,678', '00:02:27,679', 'we''ll give you 5% off the box\r\nalong with free overdraft protection.\r\n'),
-(11, 1, 18, 1, 11, '00:02:27,681', '00:02:29,981', 'Oh, here I was hopin''\r\nfor a free toaster.\r\n'),
-(12, 1, 18, 1, 12, '00:02:31,985', '00:02:34,186', 'Why would a bank\r\ngive out free toasters?\r\n'),
-(13, 1, 18, 1, 13, '00:02:36,122', '00:02:37,522', 'Hello, Ma.\r\n'),
-(14, 1, 18, 1, 14, '00:02:37,524', '00:02:39,491', 'I''m ordering you\r\nthe French toast.\r\n'),
-(15, 1, 18, 1, 15, '00:02:39,493', '00:02:42,227', '- No, thank you.\r\n<i>- Our very patient waitress, Maggie,</i>\r\n'),
-(16, 1, 18, 1, 16, '00:02:42,229', '00:02:43,695', '<i>well, at least it says</i>\r\n<i>Maggie on her name tag,</i>\r\n'),
-(17, 1, 18, 1, 17, '00:02:43,697', '00:02:44,996', '<i>has asked me\r\nto order four times.</i>\r\n'),
-(18, 1, 18, 1, 18, '00:02:44,998', '00:02:46,698', 'If I don''t order at this point,\r\nit''s just rude.\r\n'),
-(19, 1, 18, 1, 19, '00:02:46,700', '00:02:48,166', '- I can come back.\r\n- No, it''s okay.\r\n'),
-(20, 1, 18, 1, 20, '00:02:48,168', '00:02:49,768', 'You know what?\r\nI''m making an executive decision.\r\n');
+INSERT INTO `SubtitlesContent` (`id`, `sid`, `uid`, `cid`, `line`, `start`, `end`, `text`, `checked`, `done`) VALUES
+(1, 1, 18, 1, 1, '00:01:27,520', '00:01:28,987', '- Hi.\r\n- Hi.\r\n', 0, 0),
+(2, 1, 18, 1, 2, '00:01:30,123', '00:01:31,156', 'How many?\r\n', 0, 0),
+(3, 1, 18, 1, 3, '00:01:32,125', '00:01:33,525', 'Two.\r\n', 0, 0),
+(4, 1, 18, 1, 4, '00:02:01,954', '00:02:06,792', 'Listen, I wanted to get a safe deposit box.\r\nCan you do that for me?\r\n', 0, 0),
+(5, 1, 18, 1, 5, '00:02:14,567', '00:02:16,868', 'Okay.\r\nYour box will be available\r\n', 0, 0),
+(6, 1, 18, 1, 6, '00:02:16,870', '00:02:18,637', 'any time from\r\nan hour after opening\r\n', 0, 0),
+(7, 1, 18, 1, 7, '00:02:18,639', '00:02:21,173', 'to 30 minutes before close.\r\nThis is your key.\r\n', 0, 0),
+(8, 1, 18, 1, 8, '00:02:21,175', '00:02:22,241', 'Thank you.\r\n', 0, 0),
+(9, 1, 18, 1, 9, '00:02:22,243', '00:02:24,676', 'Oh, um, also, if you open\r\na checking account,\r\n', 0, 0),
+(10, 1, 18, 1, 10, '00:02:24,678', '00:02:27,679', 'we''ll give you 5% off the box\r\nalong with free overdraft protection.\r\n', 0, 0),
+(11, 1, 18, 1, 11, '00:02:27,681', '00:02:29,981', 'Oh, here I was hopin''\r\nfor a free toaster.\r\n', 0, 0),
+(12, 1, 18, 1, 12, '00:02:31,985', '00:02:34,186', 'Why would a bank\r\ngive out free toasters?\r\n', 0, 0),
+(13, 1, 18, 1, 13, '00:02:36,122', '00:02:37,522', 'Hello, Ma.\r\n', 0, 0),
+(14, 1, 18, 1, 14, '00:02:37,524', '00:02:39,491', 'I''m ordering you\r\nthe French toast.\r\n', 0, 0),
+(15, 1, 18, 1, 15, '00:02:39,493', '00:02:42,227', '- No, thank you.\r\n<i>- Our very patient waitress, Maggie,</i>\r\n', 0, 0),
+(16, 1, 18, 1, 16, '00:02:42,229', '00:02:43,695', '<i>well, at least it says</i>\r\n<i>Maggie on her name tag,</i>\r\n', 0, 0),
+(17, 1, 18, 1, 17, '00:02:43,697', '00:02:44,996', '<i>has asked me\r\nto order four times.</i>\r\n', 0, 0),
+(18, 1, 18, 1, 18, '00:02:44,998', '00:02:46,698', 'If I don''t order at this point,\r\nit''s just rude.\r\n', 0, 0),
+(19, 1, 18, 1, 19, '00:02:46,700', '00:02:48,166', '- I can come back.\r\n- No, it''s okay.\r\n', 0, 0),
+(20, 1, 18, 1, 20, '00:02:48,168', '00:02:49,768', 'You know what?\r\nI''m making an executive decision.\r\n', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1129,6 +1131,28 @@ CREATE TABLE IF NOT EXISTS `TeamChat` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `TeamMembers`
+--
+
+CREATE TABLE IF NOT EXISTS `TeamMembers` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tid` int(11) NOT NULL,
+  `uid` int(11) NOT NULL,
+  `state` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `tid` (`tid`,`uid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `TeamMembers`
+--
+
+INSERT INTO `TeamMembers` (`id`, `tid`, `uid`, `state`) VALUES
+(5, 4, 18, 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `TeamPermissions`
 --
 
@@ -1181,28 +1205,6 @@ CREATE TABLE IF NOT EXISTS `TeamSubtitles` (
   `sid` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `TeamUsers`
---
-
-CREATE TABLE IF NOT EXISTS `TeamUsers` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `tid` int(11) NOT NULL,
-  `uid` int(11) NOT NULL,
-  `state` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `tid` (`tid`,`uid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
-
---
--- Dumping data for table `TeamUsers`
---
-
-INSERT INTO `TeamUsers` (`id`, `tid`, `uid`, `state`) VALUES
-(5, 4, 18, 1);
 
 -- --------------------------------------------------------
 
@@ -1271,7 +1273,7 @@ CREATE TABLE IF NOT EXISTS `Users` (
 --
 
 INSERT INTO `Users` (`id`, `username`, `password`, `email`, `BirthYear`, `group`, `key`, `LastLogin`, `KeyTime`) VALUES
-(18, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.test', 2009, 1, 'AhCTcRntmPlGh3w6GQkRM4Mwi4jbsG', 1385284428, 1380204111),
+(18, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.test', 2009, 1, 'AhCTcRntmPlGh3w6GQkRM4Mwi4jbsG', 1385706058, 1380204111),
 (19, 'ghfghh', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'dsd@sd.sd', 2006, 3, 'UsYf1q4DEFt9einFLTvvGz5wZUQ48Z', 0, 1380204112),
 (20, 'wejhg', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'aaa@aaa.aaa', 1919, 3, 'ZZ5rfBjjPMNfrQZilES4cxUFhm4Fgs', 0, 1380204113),
 (21, 't567567567', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'tryrt@erttr.rrt', 1917, 3, 'PboE8NoktBriObjUCFb0RBMX07lz2N', 0, 1380204114),
