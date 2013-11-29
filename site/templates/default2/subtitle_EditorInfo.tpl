@@ -1,6 +1,6 @@
 <style>
 .col1{
-	width: 100px;
+	width: 120px;
 }
 .col2{
 	text-align:left;
@@ -9,7 +9,7 @@
 
 width:100%;
 height:16px;
-margin:0 auto 20px auto;
+margin:0 auto 5px auto;
 padding:0px;
 
 background:#cfcfcf;
@@ -165,29 +165,29 @@ h3{
        		<td>{FinishedLines}</td>
        	</tr>
        	<tr>
+       		<td>Checked Lines:</td>
+       		<td>{CheckedLines}</td>
+       	</tr>   
+       	<tr>
+       		<td>Team Members:</td>
+       		<td>{TeamMembers}</td>
+       	</tr>   
+       	<tr>
        		<td>Finished Progress:</td>
        		<td>
        		    <div class="progressbar progressbar-green">
 			        <div class="progressbar-inner" style="text-align: center; width: {FinishedProgress}%;">{FinishedProgress}%</div>
 			    </div>
        		</td>
-       	</tr>
-       	<tr>
-       		<td>Checked Lines:</td>
-       		<td>{CheckedLines}</td>
-       	</tr>
+       	</tr> 	
        	<tr>
        		<td>Checked Progress:</td>
        		<td>
        		    <div class="progressbar progressbar-green">
-			        <div class="progressbar-inner" style="text-align: center; width: CheckedProgress}%;">{CheckedProgress}%</div>
+			        <div class="progressbar-inner" style="text-align: center; width: {CheckedProgress}%;">{CheckedProgress}%</div>
 			    </div>	
        		</td>
-       	</tr>   
-       	<tr>
-       		<td>Team Members:</td>
-       		<td>{TeamMembers}</td>
-       	</tr>    	
+       	</tr>
        </table>
        
  <!--      

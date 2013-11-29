@@ -24,13 +24,20 @@
 				
 		function EditorInfo_content(){
 			$SubtitleContent = self::GetSubtitleContent();
+			$CheckedLines = self::GetChecked();
+			$FinishedLines = self::GetFinished();
+			$TeamMembers = self::GetTeamCount();
+			$FinishedProgress = (count($FinishedLines)*100)/count($SubtitleContent);
+			$CheckedProgress = (count($CheckedLines)*100)/count($SubtitleContent);
 				$content = array
 				  (
 				  array("{title}", $GLOBALS['COMMON']->l("subtitle_EditorInfo_title")),
 				  array("{TotalLines}", count($SubtitleContent)),
-				  array("{CheckedLines}", count(self::GetChecked())),
-				  array("{FinishedLines}", count(self::GetFinished())),
-				  array("{TeamMembers}", count(self::GetTeamCount())),
+				  array("{CheckedLines}", count($CheckedLines)),
+				  array("{FinishedLines}", count($FinishedLines)),
+				  array("{TeamMembers}", count($TeamMembers)),
+				  array("{FinishedProgress}", $FinishedProgress),
+				  array("{CheckedProgress}", $CheckedProgress),
 				 );
 			 
 		return $content;
