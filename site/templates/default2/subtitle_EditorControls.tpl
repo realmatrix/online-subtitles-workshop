@@ -4,6 +4,8 @@
 	}
 	.st-imgcontroler{
 		float: left;
+		width: 24px;
+		height: 24px;
 	}
 </style>
 
@@ -44,19 +46,19 @@
 </div>
 
 <div class="at-controler">
-<input type="image" class="st-imgcontroler" style="width: 24px; height: 24px;" src="templates/default2/tmp/images/translate-ico.png" title="Auto Translate" onclick="ShowElement('at');"/>
+<input type="image" class="st-imgcontroler" src="templates/default2/tmp/images/translate-ico.png" title="Auto Translate" onclick="ShowElement('at');"/>
 </div>
 
 <div class="st-controler">
-<input type="image" class="st-imgcontroler" style="width: 24px; height: 24px;" src="templates/default2/tmp/add.png" title="Add New Line" onclick="ShowElement('al');"/>
+<input type="image" class="st-imgcontroler" src="templates/default2/tmp/add.png" title="Add New Line" onclick="ShowElement('al');"/>
 </div>
 
 <div class="st-controler">
-<input type="image" class="st-imgcontroler" style="width: 24px; height: 24px;" src="templates/default2/tmp/delete.png" title="Delete Line" onclick="ShowElement('dl');"/>
+<input type="image" class="st-imgcontroler" src="templates/default2/tmp/delete.png" title="Delete Line" onclick="ShowElement('dl');"/>
 </div>
 
 <div class="st-controler">
-<input type="image" class="st-imgcontroler" style="width: 24px; height: 24px;" src="templates/default2/tmp/done.png" title="Done" onclick="ShowElement('done');"/>
+<input type="image" class="st-imgcontroler" src="templates/default2/tmp/done.png" title="Done" onclick="ShowElement('done');"/>
 </div>
 
 <div style="clear: left;"></div>
