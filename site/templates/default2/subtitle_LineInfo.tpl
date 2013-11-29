@@ -10,10 +10,10 @@ function TimeToSecond(time, pos){
 	var a = hms.split(':');
 	var sec = a[2];
 	var sec = sec.replace(",", ".");
-	alert(sec);
+	//alert(sec);
 	if(pos==1){sec = Math.ceil(sec);}
 	if(pos==0){sec = Math.floor(sec);}
-	alert(sec);
+	//alert(sec);
 	var seconds = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (sec); 
 	return seconds;
 }
