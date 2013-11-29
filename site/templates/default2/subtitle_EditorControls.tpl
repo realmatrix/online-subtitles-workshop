@@ -55,6 +55,10 @@
 <input type="image" class="st-imgcontroler" style="width: 24px; height: 24px;" src="templates/default2/tmp/delete.png" title="Delete Line" onclick="ShowElement('dl');"/>
 </div>
 
+<div class="st-controler">
+<input type="image" class="st-imgcontroler" style="width: 24px; height: 24px;" src="templates/default2/tmp/done.png" title="Done" onclick="ShowElement('done');"/>
+</div>
+
 <div style="clear: left;"></div>
 
 	<div id='irt'>
@@ -152,7 +156,23 @@
 	</form>
 	</div>
 
-
+	<div id='done'>
+	<form method='get' action='index.php'>
+	<br />
+	<b>Mark Line As Done:</b> 
+	<br />
+	from line <select name='from'><option value='1'>1</option><option value='2'>2</option></select>
+	to line <select name='to'><option value='1'>1</option><option value='2'>2</option></select>	
+	<input type='submit' value='delete' />
+	<input type='hidden' name='sid' value='{sid}'/>
+	<input type='hidden' name='cid' value='{cid}'/>
+	<input type='hidden' name='page' value='subtitle'/>
+	<input type='hidden' name='sec' value='edit'/>
+	<input type='hidden' name='ssec' value='EditorControls'/>
+	<input type='hidden' name='h' value='autotranslate'/>
+	</form>
+	</div>
+	
 <script>
 	document.getElementById("irt").style.display = 'none';
 	document.getElementById("its").style.display = 'none';
@@ -160,6 +180,7 @@
 	document.getElementById("at").style.display = 'none';
 	document.getElementById("al").style.display = 'none';
 	document.getElementById("dl").style.display = 'none';
+	document.getElementById("done").style.display = 'none';
 	
 	function ShowElement(id){
 	document.getElementById("irt").style.display = 'none';
@@ -168,12 +189,14 @@
 	document.getElementById("at").style.display = 'none';
 	document.getElementById("al").style.display = 'none';
 	document.getElementById("dl").style.display = 'none';
+	document.getElementById("done").style.display = 'none';
 		if(id=="irt"){document.getElementById("irt").style.display = 'block';}
 		if(id=="its"){document.getElementById("its").style.display = 'block';}
 		if(id=="dts"){document.getElementById("dts").style.display = 'block';}
 		if(id=="at"){document.getElementById("at").style.display = 'block';}
 		if(id=="al"){document.getElementById("al").style.display = 'block';}
 		if(id=="dl"){document.getElementById("dl").style.display = 'block';}
+		if(id=="done"){document.getElementById("done").style.display = 'block';}
 	}
 </script>
 
