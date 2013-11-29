@@ -30,6 +30,7 @@
 				  array("{TotalLines}", count($SubtitleContent)),
 				  array("{CheckedLines}", count(self::GetChecked())),
 				  array("{FinishedLines}", count(self::GetFinished())),
+				  array("{TeamMembers}", count(self::GetTeamCount())),
 				 );
 			 
 		return $content;
@@ -60,7 +61,18 @@
 			);
 			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `SubtitlesContent` WHERE `sid` = :sid and `cid` = :cid and `done` = 1", $args);
 			return $res;
-		}		
+		}	
+		
+		function GetTeamCount(){
+			$args = array(
+				array(":sid", $GLOBALS['vars']['sid'], "str"),
+			);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `TeamSubtitles` WHERE `sid` = :sid", $args);
+			if(count($res)<1){return array();}
+			$TeamID = $res[0]['tid'];
+			$res = $GLOBALS['COMMON']->GetTeamMembers($TeamID);
+			return $res;		
+		}	
 
 	
 			

@@ -650,7 +650,7 @@ class Common{
 		$args = array(
 			array(":tid", $tid, "str"),
 		);
-		$res = self::db_query("SELECT * FROM `TeamUsers` WHERE `tid`=:tid", $args);
+		$res = self::db_query("SELECT * FROM `TeamMembers` WHERE `tid`=:tid", $args);
 		return $res;
 	}
 

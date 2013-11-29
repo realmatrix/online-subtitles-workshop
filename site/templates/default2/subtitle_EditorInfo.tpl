@@ -7,7 +7,7 @@
 }
 .progressbar{
 
-width:600px;
+width:100%;
 height:16px;
 margin:0 auto 20px auto;
 padding:0px;
@@ -28,7 +28,7 @@ box-shadow:inset 0px 2px 3px #bbb;
 }
 
 .progressbar-inner{
-    width:77%; /* Change to actual percentage */
+    /*width:77%;*/ /* Change to actual percentage */
     height:100%;
     background:#999;
     
@@ -161,18 +161,36 @@ h3{
        		<td class="col2">{TotalLines}</td>
        	</tr>
        	<tr>
-       		<td>Checked Lines:</td>
-       		<td>{CheckedLines}</td>
-       	</tr>   
-       	<tr>
        		<td>Finished Lines:</td>
        		<td>{FinishedLines}</td>
        	</tr>
+       	<tr>
+       		<td>Finished Progress:</td>
+       		<td>
+       		    <div class="progressbar progressbar-green">
+			        <div class="progressbar-inner" style="text-align: center; width: {FinishedProgress}%;">{FinishedProgress}%</div>
+			    </div>
+       		</td>
+       	</tr>
+       	<tr>
+       		<td>Checked Lines:</td>
+       		<td>{CheckedLines}</td>
+       	</tr>
+       	<tr>
+       		<td>Checked Progress:</td>
+       		<td>
+       		    <div class="progressbar progressbar-green">
+			        <div class="progressbar-inner" style="text-align: center; width: CheckedProgress}%;">{CheckedProgress}%</div>
+			    </div>	
+       		</td>
+       	</tr>   
        	<tr>
        		<td>Team Members:</td>
        		<td>{TeamMembers}</td>
        	</tr>    	
        </table>
+       
+ <!--      
     <div class="progressbar progressbar-green">
         <div class="progressbar-inner" style="text-align: center;">100%</div>
     </div>
@@ -188,7 +206,7 @@ h3{
     <div class="progressbar progressbar-red">
         <div class="progressbar-inner"></div>
     </div>
-   
+-->
 
 
 
