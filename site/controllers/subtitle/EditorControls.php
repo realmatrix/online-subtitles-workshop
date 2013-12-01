@@ -116,6 +116,7 @@
 				array(":line", $GLOBALS['vars']['line'], "str"),
 			);
 			$res = $GLOBALS['COMMON']->db_query("DELETE FROM `SubtitlesContent` WHERE `sid` = :sid and `cid` = :cid and `line` = :line", $args, $ExecState);
+			self::ArrangeLines();
 			if($ExecState===TRUE){$GLOBALS['SUCCESS'][]="Line deleted successfully.";}else{$GLOBALS['ERROR'][]="Failed to delete line.";}
 		}
 		
@@ -142,7 +143,7 @@
 			);
 			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `SubtitlesContent` (`sid`, `uid`, `cid`, `line`, `start`, `end`, `text`, `checked`, `done`) VALUES (:sid, :uid, :cid, :line, :start, :end, :text, '0', '0');", $args, $ExecState);
 			self::ArrangeLines();
-			if($ExecState===TRUE){$GLOBALS['SUCCESS'][]="New line successfully.";}else{$GLOBALS['ERROR'][]="failed to add new line.";}
+			if($ExecState===TRUE){$GLOBALS['SUCCESS'][]="New line added successfully.";}else{$GLOBALS['ERROR'][]="failed to add new line.";}
 		}
 		
 		function ChangeTiming($time, $value){
