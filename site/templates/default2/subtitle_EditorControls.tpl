@@ -132,8 +132,8 @@
 	select option <select name='option'>
 		<option value='1'>end of file</option>
 		<option value='2'>begining of file</option>
-		<option value='1'>after line:</option>
-		<option value='1'>before line:</option>
+		<option value='3'>after line:</option>
+		<option value='4'>before line:</option>
 	</select>
 	select line if required <select name='line'><option value=''></option>{AddLineOptions}</select>	
 	<input type='submit' value='Add Line' />
@@ -142,7 +142,7 @@
 	<input type='hidden' name='page' value='subtitle'/>
 	<input type='hidden' name='sec' value='edit'/>
 	<input type='hidden' name='ssec' value='EditorControls'/>
-	<input type='hidden' name='h' value='autotranslate'/>
+	<input type='hidden' name='h' value='addline'/>
 	</form>
 	</div>
 	

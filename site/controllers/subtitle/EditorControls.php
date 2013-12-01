@@ -11,6 +11,7 @@
 				array("autotranslate", "AutoTranslate"),
 				array("updatedone", "UpdateLineState"),
 				array("deleteline", "DeleteLine"),
+				array("addline", "AddLine"),
 			);
 			return $array;
 		}
@@ -114,8 +115,69 @@
 				array(":cid", $GLOBALS['vars']['cid'], "str"),
 				array(":line", $GLOBALS['vars']['line'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("DELETE FROM `SubtitlesContent` WHERE `sid` = :sid and `cid` = :cid and `line` = :line", $args);
+			$res = $GLOBALS['COMMON']->db_query("DELETE FROM `SubtitlesContent` WHERE `sid` = :sid and `cid` = :cid and `line` = :line", $args, $ExecState);
+			if($ExecState===TRUE){$GLOBALS['SUCCESS'][]="Line deleted successfully.";}else{$GLOBALS['ERROR'][]="Failed to delete line.";}
 		}
+		
+		function AddLine(){
+			$AllLines = self::GetAllLines();
+			$LastLine = end($AllLines);
+			if($GLOBALS['vars']['option']==1){
+				$start=self::ChangeTiming($LastLine['end'], 1); 
+				$end=self::ChangeTiming($LastLine['end'], 2);
+				}
+			if($GLOBALS['vars']['option']==2){
+				$start=self::ChangeTiming($AllLines[0]['start'], -2); 
+				$end=self::ChangeTiming($AllLines[0]['start'], -1);
+				}
+			//if($GLOBALS['vars']['option']==3 or $GLOBALS['vars']['option']==4){self::GetLineInfo(1);}
+			$args = array(
+				array(":sid", $GLOBALS['vars']['sid'], "str"),
+				array(":uid", $_SESSION['id'], "str"),
+				array(":cid", $GLOBALS['vars']['cid'], "str"),
+				array(":line", "0", "str"),
+				array(":start", $start, "str"),
+				array(":end", $end, "str"),
+				array(":text", "new line", "str"),
+			);
+			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `SubtitlesContent` (`sid`, `uid`, `cid`, `line`, `start`, `end`, `text`, `checked`, `done`) VALUES (:sid, :uid, :cid, :line, :start, :end, :text, '0', '0');", $args, $ExecState);
+			self::ArrangeLines();
+			if($ExecState===TRUE){$GLOBALS['SUCCESS'][]="New line successfully.";}else{$GLOBALS['ERROR'][]="failed to add new line.";}
+		}
+		
+		function ChangeTiming($time, $value){
+			$t = explode(":", $time);
+			$h = $t[0];
+			$m = $t[1];
+			$sm = explode(",", $t[2]);
+			$s = $sm[0];
+			$ms = $sm[1];
+			$ms = $ms + $value;
+			if($ms>999){$ms = $ms-999; $s = $s+1;}
+			if($s>60){$s = $s-60; $m = $m+1;}
+			if($m>60){$m = $m+60; $h = $h+1;}
+			if($ms<0){$ms = 1000-$ms; $s = $s-1;}
+			if($s<0){$s = 60-$s; $m = $m-1;}
+			if($m<0){$m = 60-$m; $h = $h-1;}			
+			$time = $h.":".$m.":".$s.",".$ms;
+			return $time;
+		}
+		
+	function ArrangeLines(){
+		$args = array(
+			array(":sid", $GLOBALS['vars']['sid'], "str"),
+			array("cid", $GLOBALS['vars']['cid'], "str"),
+		);
+		$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `SubtitlesContent` WHERE `sid` = :sid and `cid` = :cid ORDER BY start ASC", $args);
+		for ($i=0; $i < count($res); $i++) {
+			$LineNumber = $i + 1; 
+			$args = array(
+				array(":id", $res[$i]['id'], "str"),
+				array(":line", $LineNumber, "str"),
+			);
+			$GLOBALS['COMMON']->db_query("UPDATE `SubtitlesContent` SET `line` = :line WHERE `id` = :id ;", $args);
+		}
+	}
 		
 
 	
