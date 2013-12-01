@@ -121,6 +121,10 @@
 		}
 		
 		function AddLine(){
+			if(($GLOBALS['vars'][option]==3 or $GLOBALS['vars'][option]==4) and $GLOBALS['vars']['line']==""){
+				$GLOBALS['ERROR'][]="select line.";
+				return false;
+			}
 			$AllLines = self::GetAllLines();
 			$LastLine = end($AllLines);
 			if($GLOBALS['vars']['option']==1){
@@ -131,7 +135,16 @@
 				$start=self::ChangeTiming($AllLines[0]['start'], -2); 
 				$end=self::ChangeTiming($AllLines[0]['start'], -1);
 				}
-			//if($GLOBALS['vars']['option']==3 or $GLOBALS['vars']['option']==4){self::GetLineInfo(1);}
+			if($GLOBALS['vars']['option']==3){
+				$line = self::GetLine($GLOBALS['vars']['line']);
+				$start=self::ChangeTiming($line[0]['end'], 1); 
+				$end=self::ChangeTiming($line[0]['end'], 2);
+			}
+			if($GLOBALS['vars']['option']==4){
+				$line = self::GetLine($GLOBALS['vars']['line']);
+				$start=self::ChangeTiming($line[0]['start'], -2); 
+				$end=self::ChangeTiming($line[0]['start'], -1);
+			}
 			$args = array(
 				array(":sid", $GLOBALS['vars']['sid'], "str"),
 				array(":uid", $_SESSION['id'], "str"),
@@ -178,6 +191,16 @@
 			);
 			$GLOBALS['COMMON']->db_query("UPDATE `SubtitlesContent` SET `line` = :line WHERE `id` = :id ;", $args);
 		}
+	}
+	
+	function GetLine($line){
+		$args = array(
+			array(":sid", $GLOBALS['vars']['sid'], "str"),
+			array(":cid", $GLOBALS['vars']['cid'], "str"),
+			array(":line", $line, "str"),
+		);
+		$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `SubtitlesContent` WHERE `sid` = :sid and `cid` = :cid and `line` = :line", $args);
+		return $res;
 	}
 		
 
