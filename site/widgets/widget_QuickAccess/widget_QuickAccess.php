@@ -39,7 +39,7 @@
 		
 		function GetUserVideos(){
 			$args = array(
-				array("uid", $_SESSION['id'], "str")
+				array(":uid", $_SESSION['id'], "str")
 			);
 			$videos = $GLOBALS['COMMON']->db_query("SELECT * FROM Videos WHERE uid = :uid", $args);
 			$res = "";
@@ -51,7 +51,7 @@
 		
 		function GetUserSubtitles(){
 			$args = array(
-				array("uid", $_SESSION['id'], "str")
+				array(":uid", $_SESSION['id'], "str")
 			);
 			$subtitles = $GLOBALS['COMMON']->db_query("SELECT * FROM subtitles WHERE uid = :uid", $args);
 			$res = "";
