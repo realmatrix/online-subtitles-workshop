@@ -112,8 +112,8 @@
 	<br />
 	<b>Auto Translate Subtitle:</b> 
 	<br />
-	from line <select name='from'><option value='1'>1</option><option value='2'>2</option></select>
-	to line <select name='to'><option value='1'>1</option><option value='2'>2</option></select>	
+	from line <select name='from'><option value=''></option>{TranslateOptions}</select>
+	to line <select name='to'><option value=''></option>{TranslateOptions}</select>	
 	<input type='submit' value='translate' />
 	<input type='hidden' name='sid' value='{sid}'/>
 	<input type='hidden' name='cid' value='{cid}'/>

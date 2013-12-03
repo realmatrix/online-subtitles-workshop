@@ -34,6 +34,7 @@
 				  array("{DoneOptions}", self::LineSelectOptions()),
 				  array("{DeleteOptions}", self::LineSelectOptions()),
 				  array("{AddLineOptions}", self::LineSelectOptions()),
+				  array("{TranslateOptions}", self::LineSelectOptions()),
 				 );
 			 
 		return $content;
@@ -69,6 +70,8 @@
 			$to = $GLOBALS['COMMON']->GetLanguageById($to);
 			$to = $to[0]['iso639code'];
 			$lines = self::GetLines();
+			self::AddToTranslateQueue($lines);
+			/*
 			for ($i=0; $i < count($lines); $i++) {
 				$text = $lines[$i]['text'];
 				//$text = str_replace(array("\r\n","\r","\n"),"<*>", $text);
@@ -79,6 +82,7 @@
 			//print_r($lines);
 			$translation = file_get_contents("http://glosbe.com/gapi/translate?from=".$from."&dest=".$to."&format=json&phrase=ماذا&pretty=true");
 			//echo $translation;
+			 */
 		}
 		
 		function LineSelectOptions(){
@@ -201,6 +205,22 @@
 		);
 		$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `SubtitlesContent` WHERE `sid` = :sid and `cid` = :cid and `line` = :line", $args);
 		return $res;
+	}
+	
+	function AddToTranslateQueue($lines){
+			for ($i=0; $i < count($lines); $i++) {
+				$text = $content[$i]->{'text'};
+				//$text = str_replace("\r\n", "<br />", $text) ;
+					$args[1][] = array(
+					array(":sid".$i, $lines[$i]['sid'], "str"),
+					array(":cid".$i, $lines[$i]['cid'], ),
+					array(":lid".$i, $lines[$i]['id'], "str"),
+				);
+					if($i!=count($lines)-1){$args[0][] = "(:sid".$i.", :cid".$i.", :lid".$i."),";}else{$args[0][]="(:sid".$i.", :cid".$i.", :lid".$i.")";}
+			}
+			//print_r($args);
+			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `TranslationQueue` (`sid`, `cid`, `lid`) VALUES ", $args, $ExecState, TRUE);
+			if($ExecState===TRUE){$GLOBALS['SUCCESS'][]= count($lines)." lines added to translate successfully.";}else{$GLOBALS['ERROR'][]="failed to add lines to translate queue.";}	
 	}
 		
 

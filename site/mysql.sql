@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 29, 2013 at 12:32 PM
+-- Generation Time: Dec 03, 2013 at 09:30 AM
 -- Server version: 5.6.14-log
 -- PHP Version: 5.3.27
 
@@ -900,14 +900,14 @@ CREATE TABLE IF NOT EXISTS `OnlineUsers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1129 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1140 ;
 
 --
 -- Dumping data for table `OnlineUsers`
 --
 
 INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(1128, 'pj723ajdgd8fd1o6r70qttipe4', 1385727942, '');
+(1139, 'j1rfif7khm36eu7v7pdotmi2h6', 1386062194, '');
 
 -- --------------------------------------------------------
 
@@ -1030,16 +1030,16 @@ CREATE TABLE IF NOT EXISTS `SubtitlesContent` (
 --
 
 INSERT INTO `SubtitlesContent` (`id`, `sid`, `uid`, `cid`, `line`, `start`, `end`, `text`, `checked`, `done`) VALUES
-(1, 1, 18, 1, 1, '00:01:27,520', '00:01:28,987', '- Hi.\r\n- Hi.\r\n', 0, 1),
-(2, 1, 18, 1, 2, '00:01:30,123', '00:01:31,156', 'How many?\r\n', 0, 1),
-(3, 1, 18, 1, 3, '00:01:32,125', '00:01:33,525', 'Two.\r\n', 0, 1),
-(4, 1, 18, 1, 4, '00:02:01,954', '00:02:06,792', 'Listen, I wanted to get a safe deposit box.\r\nCan you do that for me?\r\n', 0, 1),
-(5, 1, 18, 1, 5, '00:02:14,567', '00:02:16,868', 'Okay.\r\nYour box will be available\r\n', 0, 1),
-(6, 1, 18, 1, 6, '00:02:16,870', '00:02:18,637', 'any time from\r\nan hour after opening\r\n', 0, 1),
-(7, 1, 18, 1, 7, '00:02:18,639', '00:02:21,173', 'to 30 minutes before close.\r\nThis is your key.\r\n', 0, 1),
-(8, 1, 18, 1, 8, '00:02:21,175', '00:02:22,241', 'Thank you.\r\n', 0, 1),
-(9, 1, 18, 1, 9, '00:02:22,243', '00:02:24,676', 'Oh, um, also, if you open\r\na checking account,\r\n', 0, 1),
-(10, 1, 18, 1, 10, '00:02:24,678', '00:02:27,679', 'we''ll give you 5% off the box\r\nalong with free overdraft protection.\r\n', 0, 1),
+(1, 1, 18, 1, 1, '00:01:27,520', '00:01:28,987', '- Hi.\r\n- Hi.\r\n', 0, 0),
+(2, 1, 18, 1, 2, '00:01:30,123', '00:01:31,156', 'How many?\r\n', 0, 0),
+(3, 1, 18, 1, 3, '00:01:32,125', '00:01:33,525', 'Two.\r\n', 0, 0),
+(4, 1, 18, 1, 4, '00:02:01,954', '00:02:06,792', 'Listen, I wanted to get a safe deposit box.\r\nCan you do that for me?\r\n', 0, 0),
+(5, 1, 18, 1, 5, '00:02:14,567', '00:02:16,868', 'Okay.\r\nYour box will be available\r\n', 0, 0),
+(6, 1, 18, 1, 6, '00:02:16,870', '00:02:18,637', 'any time from\r\nan hour after opening\r\n', 0, 0),
+(7, 1, 18, 1, 7, '00:02:18,639', '00:02:21,173', 'to 30 minutes before close.\r\nThis is your key.\r\n', 0, 0),
+(8, 1, 18, 1, 8, '00:02:21,175', '00:02:22,241', 'Thank you.\r\n', 0, 0),
+(9, 1, 18, 1, 9, '00:02:22,243', '00:02:24,676', 'Oh, um, also, if you open\r\na checking account,\r\n', 0, 0),
+(10, 1, 18, 1, 10, '00:02:24,678', '00:02:27,679', 'we''ll give you 5% off the box\r\nalong with free overdraft protection.\r\n', 0, 0),
 (11, 1, 18, 1, 11, '00:02:27,681', '00:02:29,981', 'Oh, here I was hopin''\r\nfor a free toaster.\r\n', 0, 0),
 (12, 1, 18, 1, 12, '00:02:31,985', '00:02:34,186', 'Why would a bank\r\ngive out free toasters?\r\n', 0, 0),
 (13, 1, 18, 1, 13, '00:02:36,122', '00:02:37,522', 'Hello, Ma.\r\n', 0, 0),
@@ -1267,6 +1267,28 @@ INSERT INTO `Transcriptions` (`id`, `sid`, `cid`, `uid`, `lid`, `text`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `TranslationQueue`
+--
+
+CREATE TABLE IF NOT EXISTS `TranslationQueue` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sid` int(11) NOT NULL,
+  `cid` int(11) NOT NULL,
+  `lid` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `sid` (`sid`,`cid`,`lid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `TranslationQueue`
+--
+
+INSERT INTO `TranslationQueue` (`id`, `sid`, `cid`, `lid`) VALUES
+(3, 1, 1, 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `Users`
 --
 
@@ -1289,7 +1311,7 @@ CREATE TABLE IF NOT EXISTS `Users` (
 --
 
 INSERT INTO `Users` (`id`, `username`, `password`, `email`, `BirthYear`, `group`, `key`, `LastLogin`, `KeyTime`) VALUES
-(18, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.test', 2009, 1, 'AhCTcRntmPlGh3w6GQkRM4Mwi4jbsG', 1385724733, 1380204111),
+(18, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.test', 2009, 1, 'AhCTcRntmPlGh3w6GQkRM4Mwi4jbsG', 1386061558, 1380204111),
 (19, 'ghfghh', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'dsd@sd.sd', 2006, 3, 'UsYf1q4DEFt9einFLTvvGz5wZUQ48Z', 0, 1380204112),
 (20, 'wejhg', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'aaa@aaa.aaa', 1919, 3, 'ZZ5rfBjjPMNfrQZilES4cxUFhm4Fgs', 0, 1380204113),
 (21, 't567567567', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'tryrt@erttr.rrt', 1917, 3, 'PboE8NoktBriObjUCFb0RBMX07lz2N', 0, 1380204114),
