@@ -1,0 +1,8 @@
+install instructions:
+1- upload source code to the server
+2- create a new mysql database
+3- edit "include/db.php" and add the database info
+4- import "mysql.sql" into the mysql database
+
+to run cron: 
+call this url from cron jobs http://(your domain name)/index.php?page=cron&sec=run&ssec=cron&h=runall 
