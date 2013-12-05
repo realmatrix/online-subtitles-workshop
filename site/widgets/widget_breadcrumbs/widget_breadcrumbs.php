@@ -33,7 +33,10 @@
 		}
 		
 		function GetBreadCrumbs(){
-			if(!isset($GLOBALS['BreadCrumbs'])){$GLOBALS['ERROR'][] = "GLOBALS['BreadCrumbs'] not foun inside 'set' function.";}
+			if(!isset($GLOBALS['BreadCrumbs'])){
+				$GLOBALS['ERROR'][] = "GLOBALS['BreadCrumbs'] not found inside 'set' function.";
+				$GLOBALS['ERROR'][] = "BUG URL-> <b>".$GLOBALS['COMMON']->CurrentPageUrl()."</b>";
+			}
 			$res = "";
 			for ($i=0; $i < count($GLOBALS['BreadCrumbs']); $i++) { 
 				$res.="<a class='BreadCrumbs' href='index.php?".$GLOBALS['BreadCrumbs'][$i][1]."'>".$GLOBALS['BreadCrumbs'][$i][0]."</a>";

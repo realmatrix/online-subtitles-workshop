@@ -8,6 +8,15 @@
 			);
 			return $array;
 		}	
+		
+		function profile_set(){
+			$GLOBALS['vars']['PageTitle'] = "User Profile";
+			$GLOBALS['vars']['PageDesc'] = $GLOBALS['config']['site_description'];
+			$GLOBALS['BreadCrumbs'] = array(
+				array("user", "page=user&sec=profile&u=".$GLOBALS['vars']['u']),
+				array("profile", "page=user&sec=profile&u=".$GLOBALS['vars']['u']),
+			);
+		}
 			
 	}
 
