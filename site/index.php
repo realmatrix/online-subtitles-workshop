@@ -32,7 +32,7 @@
 	
 	include "router.php";
 	
-	if($GLOBALS['COMMON']->GetOption("run_cron_onload")=="1"){$GLOBALS['COMMON']->RunCron();}
+	if($GLOBALS['COMMON']->GetOption("run_cron_onload")=="1"){$GLOBALS['COMMON']->RunCronFunction('RunAll');}
 		
 	unset($GLOBALS);
 	

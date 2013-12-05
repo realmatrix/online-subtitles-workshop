@@ -820,26 +820,10 @@ class Common{
 	}
 	
 	
-	function RunCron(){
-		$url = "http://".$_SERVER[HTTP_HOST].$_SERVER[REQUEST_URI];
-		$url = explode("/index.php", $url);
-		$url = $url[0];
-		$url = rtrim($url, "/");
-		//echo $url;
-		$cron = file_get_contents($url."/index.php??page=query&sec=client&ssec=QueryClient&h=runall");
-	}
-
-
-	function CurrentPageUrl() {
-	 $pageURL = 'http';
-	 if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
-	 $pageURL .= "://";
-	 if ($_SERVER["SERVER_PORT"] != "80") {
-	  $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
-	 } else {
-	  $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
-	 }
-	 return $pageURL;
+	function RunCronFunction($function){
+		require_once("controllers/cron/cron.php");
+		$res = call_user_func('Ccron::'.$function);
+		return $res;
 	}
 
 
