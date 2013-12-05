@@ -6,12 +6,18 @@
 	.BreadCrumbs:before{
 		content: ' > ';
 	}
+	.BreadCrumbs:hover{
+		text-decoration:none;
+	}
 	.BreadCrumbs{
 		text-transform:capitalize;
+	}
+	.BcHome:hover{
+		text-decoration:none;
 	}
 </style>
 
 <div id="breadcrumbs">
-	<a href="index.php">Home</a>
+	<a class="BcHome" href="index.php">Home</a>
 	{BreadCrumbs}
 </div>

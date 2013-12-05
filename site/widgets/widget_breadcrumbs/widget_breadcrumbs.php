@@ -36,7 +36,7 @@
 			if(!isset($GLOBALS['BreadCrumbs'])){$GLOBALS['ERROR'][] = "GLOBALS['BreadCrumbs'] not foun inside 'set' function.";}
 			$res = "";
 			for ($i=0; $i < count($GLOBALS['BreadCrumbs']); $i++) { 
-				$res.="<a class='BreadCrumbs' href='".$GLOBALS['BreadCrumbs'][$i][1]."'>".$GLOBALS['BreadCrumbs'][$i][0]."</a>";
+				$res.="<a class='BreadCrumbs' href='index.php?".$GLOBALS['BreadCrumbs'][$i][1]."'>".$GLOBALS['BreadCrumbs'][$i][0]."</a>";
 			}
 			return $res;
 		}
