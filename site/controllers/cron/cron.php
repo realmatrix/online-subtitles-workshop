@@ -36,7 +36,7 @@
 		
 		function RunAll(){
 			self::UpdateUserKeys();
-			echo "done";
+			self::AutoTranslation();
 		}
 		
 		function ClearLoginBan(){
@@ -45,6 +45,18 @@
 		
 		function UpdateUserKeys(){
 			$GLOBALS['COMMON']->UpdateUsersKeys();
+		}
+		
+		function AutoTranslation(){
+			$lines = $GLOBALS['COMMON']->db_query("SELECT * FROM `TranslationQueue` order by `id` ASC limit 10", array());
+				for ($i=0; $i < count($lines); $i++) { 
+					$args = array(
+						array(":sid", $lines[$i]['sid'], "str"),
+						array(":cid", $lines[$i]['cid'], "str"),
+						array(":lid", $lines[$i]['lid'], "str"),
+					);
+				$LineInfo = $GLOBALS['COMMON']->db_query("SELECT * FROM `SubtitlesContent` WHERE `sid` = :sid and `cid` = :cid and `id` = :lid ", $args);
+				}
 		}
 		
 

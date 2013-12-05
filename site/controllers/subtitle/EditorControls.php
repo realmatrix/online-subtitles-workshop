@@ -70,7 +70,7 @@
 			$to = $GLOBALS['COMMON']->GetLanguageById($to);
 			$to = $to[0]['iso639code'];
 			$lines = self::GetLines();
-			self::AddToTranslateQueue($lines);
+			self::AddToTranslateQueue($lines, $from, $to);
 			/*
 			for ($i=0; $i < count($lines); $i++) {
 				$text = $lines[$i]['text'];
@@ -207,7 +207,7 @@
 		return $res;
 	}
 	
-	function AddToTranslateQueue($lines){
+	function AddToTranslateQueue($lines, $from, $to){
 			for ($i=0; $i < count($lines); $i++) {
 				$text = $content[$i]->{'text'};
 				//$text = str_replace("\r\n", "<br />", $text) ;
@@ -215,11 +215,14 @@
 					array(":sid".$i, $lines[$i]['sid'], "str"),
 					array(":cid".$i, $lines[$i]['cid'], ),
 					array(":lid".$i, $lines[$i]['id'], "str"),
+					array(":from".$i, $from, "str"),
+					array(":to".$i, $to, "str"),
+					array(":text".$i, $lines[$i]['text'], "str"),
 				);
-					if($i!=count($lines)-1){$args[0][] = "(:sid".$i.", :cid".$i.", :lid".$i."),";}else{$args[0][]="(:sid".$i.", :cid".$i.", :lid".$i.")";}
+					if($i!=count($lines)-1){$args[0][] = "(:sid".$i.", :cid".$i.", :lid".$i.", :from".$i.", :to".$i.", :text".$i."),";}else{$args[0][]="(:sid".$i.", :cid".$i.", :lid".$i.", :from".$i.", :to".$i.", :text".$i.")";}
 			}
 			//print_r($args);
-			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `TranslationQueue` (`sid`, `cid`, `lid`) VALUES ", $args, $ExecState, TRUE);
+			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `TranslationQueue` (`sid`, `cid`, `lid`, `from`, `to`, `text`) VALUES ", $args, $ExecState, TRUE);
 			if($ExecState===TRUE){$GLOBALS['SUCCESS'][]= count($lines)." lines added to translate successfully.";}else{$GLOBALS['ERROR'][]="failed to add lines to translate queue.";}	
 	}
 		
