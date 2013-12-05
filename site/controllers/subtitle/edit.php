@@ -18,6 +18,10 @@
 		function edit_set(){
 			$GLOBALS['vars']['PageTitle'] = "Edit Subtitle";
 			$GLOBALS['vars']['PageDesc'] = $GLOBALS['config']['site_description'];
+			$GLOBALS['BreadCrumbs'] = array(
+				array("my subtitles", ""),
+				array("subtitle editor", ""),
+			);
 		}
 		
 		function show(){

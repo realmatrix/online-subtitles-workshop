@@ -223,7 +223,7 @@
 			}
 			//print_r($args);
 			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `TranslationQueue` (`sid`, `cid`, `lid`, `from`, `to`, `text`) VALUES ", $args, $ExecState, TRUE);
-			if($ExecState===TRUE){$GLOBALS['SUCCESS'][]= count($lines)." lines added to translate successfully.";}else{$GLOBALS['ERROR'][]="failed to add lines to translate queue.";}	
+			if($ExecState===TRUE){$GLOBALS['SUCCESS'][]= count($lines)." lines added to translate queue successfully.";}else{$GLOBALS['ERROR'][]="failed to add lines to translate queue.";}	
 	}
 		
 
