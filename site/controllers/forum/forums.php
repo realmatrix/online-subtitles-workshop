@@ -14,9 +14,8 @@
 			$GLOBALS['vars']['PageTitle'] = "Forums";
 			$GLOBALS['vars']['PageDesc'] = $GLOBALS['config']['site_description'];
 			$GLOBALS['BreadCrumbs'] = array(
-				array("test 1", "page=a&sec=b"),
-				array("test 2", "page=c&sec=d"),
-				array("test 3", "page=e&sec=f"),
+				array("forums", "page=forum&sec=forums"),
+				array("categories", "page=forum&sec=forums"),
 			);
 			
 		}
