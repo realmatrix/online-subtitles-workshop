@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 03, 2013 at 09:30 AM
+-- Generation Time: Dec 06, 2013 at 05:38 PM
 -- Server version: 5.6.14-log
 -- PHP Version: 5.3.27
 
@@ -900,14 +900,14 @@ CREATE TABLE IF NOT EXISTS `OnlineUsers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1140 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1160 ;
 
 --
 -- Dumping data for table `OnlineUsers`
 --
 
 INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(1139, 'j1rfif7khm36eu7v7pdotmi2h6', 1386062194, '');
+(1159, 'mvheeqagi7bm1qq0dlt8347of2', 1386328310, 'test');
 
 -- --------------------------------------------------------
 
@@ -954,7 +954,7 @@ CREATE TABLE IF NOT EXISTS `Settings` (
 --
 
 INSERT INTO `Settings` (`id`, `name`, `value`) VALUES
-(1, 'run_cron_onload', '0');
+(1, 'run_cron_onload', '1');
 
 -- --------------------------------------------------------
 
@@ -1275,16 +1275,28 @@ CREATE TABLE IF NOT EXISTS `TranslationQueue` (
   `sid` int(11) NOT NULL,
   `cid` int(11) NOT NULL,
   `lid` int(11) NOT NULL,
+  `from` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `to` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `text` text COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `sid` (`sid`,`cid`,`lid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=14 ;
 
 --
 -- Dumping data for table `TranslationQueue`
 --
 
-INSERT INTO `TranslationQueue` (`id`, `sid`, `cid`, `lid`) VALUES
-(3, 1, 1, 1);
+INSERT INTO `TranslationQueue` (`id`, `sid`, `cid`, `lid`, `from`, `to`, `text`) VALUES
+(4, 1, 1, 1, 'en', 'en', '- Hi.\r\n- Hi.\r\n'),
+(5, 1, 1, 2, 'en', 'en', 'How many?\r\n'),
+(6, 1, 1, 3, 'en', 'en', 'Two.\r\n'),
+(7, 1, 1, 4, 'en', 'en', 'Listen, I wanted to get a safe deposit box.\r\nCan you do that for me?\r\n'),
+(8, 1, 1, 5, 'en', 'en', 'Okay.\r\nYour box will be available\r\n'),
+(9, 1, 1, 6, 'en', 'en', 'any time from\r\nan hour after opening\r\n'),
+(10, 1, 1, 7, 'en', 'en', 'to 30 minutes before close.\r\nThis is your key.\r\n'),
+(11, 1, 1, 8, 'en', 'en', 'Thank you.\r\n'),
+(12, 1, 1, 9, 'en', 'en', 'Oh, um, also, if you open\r\na checking account,\r\n'),
+(13, 1, 1, 10, 'en', 'en', 'we''ll give you 5% off the box\r\nalong with free overdraft protection.\r\n');
 
 -- --------------------------------------------------------
 
@@ -1311,26 +1323,26 @@ CREATE TABLE IF NOT EXISTS `Users` (
 --
 
 INSERT INTO `Users` (`id`, `username`, `password`, `email`, `BirthYear`, `group`, `key`, `LastLogin`, `KeyTime`) VALUES
-(18, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.test', 2009, 1, 'AhCTcRntmPlGh3w6GQkRM4Mwi4jbsG', 1386061558, 1380204111),
-(19, 'ghfghh', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'dsd@sd.sd', 2006, 3, 'UsYf1q4DEFt9einFLTvvGz5wZUQ48Z', 0, 1380204112),
-(20, 'wejhg', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'aaa@aaa.aaa', 1919, 3, 'ZZ5rfBjjPMNfrQZilES4cxUFhm4Fgs', 0, 1380204113),
-(21, 't567567567', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'tryrt@erttr.rrt', 1917, 3, 'PboE8NoktBriObjUCFb0RBMX07lz2N', 0, 1380204114),
-(22, 'test2', '109f4b3c50d7b0df729d299bc6f8e9ef9066971f', 'test2@test2.com', 2010, 3, 'zcoJGI4woqwfWbIv2l8pTKJweJZXh9', 0, 1380204115),
-(23, 'test3', '3ebfa301dc59196f18593c45e519287a23297589', 'test3@test3.com', 2003, 3, 'RjJkPFP8RCiTqhksudEavwuRtOzTQb', 0, 1380204116),
-(24, 'test4', '1ff2b3704aede04eecb51e50ca698efd50a1379b', 'test4@test4.com', 2002, 3, '56zcMP9YRVx63JdGz68h8mL1Xl5uLq', 0, 1380204117),
-(25, 'test5', '911ddc3b8f9a13b5499b6bc4638a2b4f3f68bf23', 'test5@test5.com', 2001, 3, 'zLMrasHIlFL66XHXSsH7EJuVTTidAw', 0, 1380204118),
-(26, 'test6', 'a66df261120b6c2311c6ef0b1bab4e583afcbcc0', 'test6@test6.com', 2005, 3, 'QlaJk8C6vYqIyEwbdypBHv3yJRU8wr', 0, 1380204119),
-(27, 'test7', 'ea3243132d653b39025a944e70f3ecdf70ee3994', 'test7@test7.com', 2002, 3, 'WWNCD4MdX6aBm9cAPNBwP8zhkKPaNL', 0, 1380204120),
-(28, 'test8', 'd03f9d34194393019e6d12d7c942827ebd694443', 'test8@test8.com', 1999, 3, 'C3bJChZM5GauIBbXJS0MRS72jqtkOR', 0, 1380204244),
-(29, 'test9', '53d525836cc96d089a5a4218b464fda532f7debe', 'test9@test9.com', 2001, 3, 'xKA3iUkjdSgvff8YS88y480BhjWWuh', 0, 1380204245),
-(30, 'test10', '168f4029f416ee06565f12e697dfc1534ae69d32', 'test10@test10.com', 2002, 3, 'FVb7qpirUJjkkIdoqJrHqBZR1HjXrP', 0, 1380204246),
-(31, 'test11', '100c4e57374fc998e57164d4c0453bd3a4876a58', 'test11@test11.com', 2004, 3, 'oBpnGR89ammviagi2TBRTDz2NXUaeZ', 0, 1380204247),
-(32, 'test12', '4ff1a33e188b7b86123d6e3be2722a23514a83b4', 'test12@test12.com', 1999, 3, 'O6ai1b4ZJgUEGF8o5fKMEmdWBPtrF0', 0, 1380204248),
-(33, 'test13', 'd804cd9cc0c42b0652bab002f67858ab803c40c6', 'test13@test13.com', 2005, 3, '1o4KOnvnkucKwkScRYLAl3zepCv01i', 0, 1380204249),
-(34, 'test14', 'd79336a97da7d284c0fe15497d2fa944d1f2abb1', 'test14@test14.com', 2003, 3, 'jeGabLkORWsmxB0mX6tWkiNGmutGiy', 0, 1380204250),
-(35, 'test15', '61bb70fa60368f069e62d601c357d203700ab2d2', 'test15@test15.com', 2000, 3, 'swPPdjb9JD5SsBLQnMUoWhLn8H27q7', 0, 1380204251),
-(36, 'test16', '1fbefee9cfb86926757519357e077fd6a21aef0f', 'test16@test16.com', 1998, 3, 'WtL8dNDQ3V0QccldRsCzJ3iZ4Pl5A7', 0, 1380204253),
-(37, 'test17', '08a25c0f270b29aeba650e6b2d1a9947a778c5da', 'test17@test17.com', 1996, 3, 'eVtMW6t9VKO49pbT6dPrJJr5w5gEqQ', 0, 1380204254);
+(18, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.test', 2009, 1, 'ucKU1EHa5OeeDf3ra3oDDQYauIZTJe', 1386328310, 1386261950),
+(19, 'ghfghh', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'dsd@sd.sd', 2006, 3, 'b7OvLIH8s1SctSijxDqyR8fwaIdiGd', 0, 1386261950),
+(20, 'wejhg', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'aaa@aaa.aaa', 1919, 3, 'ju6Z0bGTgZ6fxZBTOLTcyqcZJyfCOg', 0, 1386261951),
+(21, 't567567567', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'tryrt@erttr.rrt', 1917, 3, 'fVM8Uf4fsrGdCQ48BidA88zFqe6YcU', 0, 1386261951),
+(22, 'test2', '109f4b3c50d7b0df729d299bc6f8e9ef9066971f', 'test2@test2.com', 2010, 3, 'iBG078zS1G7mZP0OuFt3uMesriwQlL', 0, 1386261951),
+(23, 'test3', '3ebfa301dc59196f18593c45e519287a23297589', 'test3@test3.com', 2003, 3, '1yEjZskw7SQuDFaNg9MyecDmd9chuP', 0, 1386261951),
+(24, 'test4', '1ff2b3704aede04eecb51e50ca698efd50a1379b', 'test4@test4.com', 2002, 3, 'sWJBSpbiphxgxF3ld9pSWQQIEj5dPE', 0, 1386261951),
+(25, 'test5', '911ddc3b8f9a13b5499b6bc4638a2b4f3f68bf23', 'test5@test5.com', 2001, 3, 'kbstj0YReumqQ06eko9TqYYulCyDOE', 0, 1386261951),
+(26, 'test6', 'a66df261120b6c2311c6ef0b1bab4e583afcbcc0', 'test6@test6.com', 2005, 3, 'lo2VjoLNWHa4cV08yauOXZjrTwISkk', 0, 1386261951),
+(27, 'test7', 'ea3243132d653b39025a944e70f3ecdf70ee3994', 'test7@test7.com', 2002, 3, 'qtIwD23G5WNVZ2UO3DRtvCDt4iGVYw', 0, 1386261951),
+(28, 'test8', 'd03f9d34194393019e6d12d7c942827ebd694443', 'test8@test8.com', 1999, 3, '2BXxMTSozoSylFGmAPuEgs1MQFwAj2', 0, 1386267007),
+(29, 'test9', '53d525836cc96d089a5a4218b464fda532f7debe', 'test9@test9.com', 2001, 3, 'Gp6EJ6d7oZ6xSWKuUiA4HTDSZ3k0XF', 0, 1386267007),
+(30, 'test10', '168f4029f416ee06565f12e697dfc1534ae69d32', 'test10@test10.com', 2002, 3, 'D2m235o1wJMYw4LI0G1CtHNvSFOIGI', 0, 1386267007),
+(31, 'test11', '100c4e57374fc998e57164d4c0453bd3a4876a58', 'test11@test11.com', 2004, 3, 'g7RqU2STVjHI3jOYvRag0ieGLuZQvK', 0, 1386267007),
+(32, 'test12', '4ff1a33e188b7b86123d6e3be2722a23514a83b4', 'test12@test12.com', 1999, 3, 'UOsWWbkpz4kZK4b2Yf8nbdRmR3BQZn', 0, 1386267007),
+(33, 'test13', 'd804cd9cc0c42b0652bab002f67858ab803c40c6', 'test13@test13.com', 2005, 3, '5a0hw9TkCa8DB2GNc80TDg5xBOnOkA', 0, 1386267007),
+(34, 'test14', 'd79336a97da7d284c0fe15497d2fa944d1f2abb1', 'test14@test14.com', 2003, 3, 'QixWY7sJJQNizzLtuT6BVV0xRecCKV', 0, 1386267007),
+(35, 'test15', '61bb70fa60368f069e62d601c357d203700ab2d2', 'test15@test15.com', 2000, 3, 'VHAAR6PkgGrIPNTSNganRsIkfbvjGO', 0, 1386267007),
+(36, 'test16', '1fbefee9cfb86926757519357e077fd6a21aef0f', 'test16@test16.com', 1998, 3, '0qobcg4DyUX11ZLF5yHrIevFn6nc1K', 0, 1386267007),
+(37, 'test17', '08a25c0f270b29aeba650e6b2d1a9947a778c5da', 'test17@test17.com', 1996, 3, '2n8iJ3Hi9y9SwJuCyVaCtZ9s0gUfnB', 0, 1386267007);
 
 -- --------------------------------------------------------
 
