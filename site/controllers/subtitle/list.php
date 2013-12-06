@@ -12,6 +12,9 @@
 		function list_set(){
 			$GLOBALS['vars']['PageTitle'] = "My Subtitles";
 			$GLOBALS['vars']['PageDesc'] = $GLOBALS['config']['site_description'];
+			$GLOBALS['BreadCrumbs'] = array(
+				array("my subtitles", "page=subtitle&sec=list"),
+			);
 		}	
 			
 	}

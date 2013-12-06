@@ -158,7 +158,10 @@ class Common{
 				for ($j=0; $j < count($hooks); $j++) {
 					if($GLOBALS['vars']['w']==$cwidget and $GLOBALS['vars']['h']==$hooks[$j][0]){call_user_func('W'.$cwidget.'::'.$hooks[$j][1], $args); $found++;}
 				}
-				if($GLOBALS['vars']['w']==$cwidget and $found<1){$GLOBALS['ERROR'][] = "function not found.";}
+				if($GLOBALS['vars']['w']==$cwidget and $found<1){
+					$GLOBALS['ERROR'][] = "function not found.";
+					$GLOBALS['ERROR'][] = "BUG URL-> <b>".self::CurrentPageUrl()."</b>";
+				}
 			$render = call_user_func("W".$cwidget."::".$cwidget);
 			$content = self::render($render, $cwidget);
 			}		
@@ -224,7 +227,10 @@ class Common{
 			for ($i=0; $i < count($hooks); $i++) {
 				if(self::CheckControllerHook($section, $hooks[$i][0], $args)===TRUE){call_user_func('C'.$section.'::'.$hooks[$i][1], $args); $found++;}
 			}
-			if($args['ssec']==$section and $found==0){$GLOBALS['ERROR'][] = "function '".$args['h']."' not found in controllers/".$controller."/".$section.".php";}
+			if($args['ssec']==$section and $found==0){
+				$GLOBALS['ERROR'][] = "function '".$args['h']."' not found in controllers/".$controller."/".$section.".php";
+				$GLOBALS['ERROR'][] = "BUG URL-> <b>".self::CurrentPageUrl()."</b>";
+			}
 		$content = call_user_func('C'.$section.'::'.$section);
 		$options = 
 		$res = self::RenderView($content, $controller, $section);
@@ -620,7 +626,10 @@ class Common{
 
 
 	function l($key){
-		if(!array_key_exists($key, $GLOBALS['l'])){$GLOBALS['ERROR'][]="language key '".$key."' not found";}
+		if(!array_key_exists($key, $GLOBALS['l'])){
+			$GLOBALS['ERROR'][]="language key '".$key."' not found";
+			$GLOBALS['ERROR'][] = "BUG URL-> <b>".self::CurrentPageUrl()."</b>";
+		}
 		$res = $GLOBALS['l'][$key];
 		return $res;
 	}

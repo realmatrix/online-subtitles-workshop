@@ -19,8 +19,8 @@
 			$GLOBALS['vars']['PageTitle'] = "Edit Subtitle";
 			$GLOBALS['vars']['PageDesc'] = $GLOBALS['config']['site_description'];
 			$GLOBALS['BreadCrumbs'] = array(
-				array("my subtitles", ""),
-				array("subtitle editor", ""),
+				array("my subtitles", "page=subtitle&sec=list"),
+				array("subtitle editor", "page=subtitle&sec=list&sid=".$GLOBALS['vars']['sid']."&cid=".$GLOBALS['vars']['cid']),
 			);
 		}
 		
