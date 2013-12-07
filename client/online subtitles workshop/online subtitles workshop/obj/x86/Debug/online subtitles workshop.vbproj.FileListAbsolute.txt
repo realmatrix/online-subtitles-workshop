@@ -9,3 +9,8 @@ C:\Program Files\Ampps\www\new\trunk\client\online subtitles workshop\online sub
 C:\Program Files\Ampps\www\new\trunk\client\online subtitles workshop\online subtitles workshop\obj\x86\Debug\online subtitles workshop.pdb
 C:\Program Files\Ampps\www\new\trunk\client\online subtitles workshop\online subtitles workshop\obj\x86\Debug\online_subtitles_workshop.login.resources
 C:\Program Files\Ampps\www\new\trunk\client\online subtitles workshop\online subtitles workshop\obj\x86\Debug\online_subtitles_workshop.editor.resources
+C:\Program Files\Ampps\www\new\trunk\client\online subtitles workshop\online subtitles workshop\bin\Debug\Interop.WMPLib.dll
+C:\Program Files\Ampps\www\new\trunk\client\online subtitles workshop\online subtitles workshop\bin\Debug\AxInterop.WMPLib.dll
+C:\Program Files\Ampps\www\new\trunk\client\online subtitles workshop\online subtitles workshop\obj\x86\Debug\Interop.WMPLib.dll
+C:\Program Files\Ampps\www\new\trunk\client\online subtitles workshop\online subtitles workshop\obj\x86\Debug\AxInterop.WMPLib.dll
+C:\Program Files\Ampps\www\new\trunk\client\online subtitles workshop\online subtitles workshop\obj\x86\Debug\online subtitles workshop.vbproj.ResolveComReference.cache
