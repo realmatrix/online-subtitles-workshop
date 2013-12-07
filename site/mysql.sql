@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 06, 2013 at 05:38 PM
+-- Generation Time: Dec 07, 2013 at 05:58 PM
 -- Server version: 5.6.14-log
 -- PHP Version: 5.3.27
 
@@ -900,14 +900,14 @@ CREATE TABLE IF NOT EXISTS `OnlineUsers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1160 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1162 ;
 
 --
 -- Dumping data for table `OnlineUsers`
 --
 
 INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(1159, 'mvheeqagi7bm1qq0dlt8347of2', 1386328310, 'test');
+(1161, '8vr7beh5nje7u205cmkt0oudv4', 1386425527, '');
 
 -- --------------------------------------------------------
 
@@ -1323,26 +1323,26 @@ CREATE TABLE IF NOT EXISTS `Users` (
 --
 
 INSERT INTO `Users` (`id`, `username`, `password`, `email`, `BirthYear`, `group`, `key`, `LastLogin`, `KeyTime`) VALUES
-(18, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.test', 2009, 1, 'ucKU1EHa5OeeDf3ra3oDDQYauIZTJe', 1386328310, 1386261950),
-(19, 'ghfghh', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'dsd@sd.sd', 2006, 3, 'b7OvLIH8s1SctSijxDqyR8fwaIdiGd', 0, 1386261950),
-(20, 'wejhg', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'aaa@aaa.aaa', 1919, 3, 'ju6Z0bGTgZ6fxZBTOLTcyqcZJyfCOg', 0, 1386261951),
-(21, 't567567567', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'tryrt@erttr.rrt', 1917, 3, 'fVM8Uf4fsrGdCQ48BidA88zFqe6YcU', 0, 1386261951),
-(22, 'test2', '109f4b3c50d7b0df729d299bc6f8e9ef9066971f', 'test2@test2.com', 2010, 3, 'iBG078zS1G7mZP0OuFt3uMesriwQlL', 0, 1386261951),
-(23, 'test3', '3ebfa301dc59196f18593c45e519287a23297589', 'test3@test3.com', 2003, 3, '1yEjZskw7SQuDFaNg9MyecDmd9chuP', 0, 1386261951),
-(24, 'test4', '1ff2b3704aede04eecb51e50ca698efd50a1379b', 'test4@test4.com', 2002, 3, 'sWJBSpbiphxgxF3ld9pSWQQIEj5dPE', 0, 1386261951),
-(25, 'test5', '911ddc3b8f9a13b5499b6bc4638a2b4f3f68bf23', 'test5@test5.com', 2001, 3, 'kbstj0YReumqQ06eko9TqYYulCyDOE', 0, 1386261951),
-(26, 'test6', 'a66df261120b6c2311c6ef0b1bab4e583afcbcc0', 'test6@test6.com', 2005, 3, 'lo2VjoLNWHa4cV08yauOXZjrTwISkk', 0, 1386261951),
-(27, 'test7', 'ea3243132d653b39025a944e70f3ecdf70ee3994', 'test7@test7.com', 2002, 3, 'qtIwD23G5WNVZ2UO3DRtvCDt4iGVYw', 0, 1386261951),
-(28, 'test8', 'd03f9d34194393019e6d12d7c942827ebd694443', 'test8@test8.com', 1999, 3, '2BXxMTSozoSylFGmAPuEgs1MQFwAj2', 0, 1386267007),
-(29, 'test9', '53d525836cc96d089a5a4218b464fda532f7debe', 'test9@test9.com', 2001, 3, 'Gp6EJ6d7oZ6xSWKuUiA4HTDSZ3k0XF', 0, 1386267007),
-(30, 'test10', '168f4029f416ee06565f12e697dfc1534ae69d32', 'test10@test10.com', 2002, 3, 'D2m235o1wJMYw4LI0G1CtHNvSFOIGI', 0, 1386267007),
-(31, 'test11', '100c4e57374fc998e57164d4c0453bd3a4876a58', 'test11@test11.com', 2004, 3, 'g7RqU2STVjHI3jOYvRag0ieGLuZQvK', 0, 1386267007),
-(32, 'test12', '4ff1a33e188b7b86123d6e3be2722a23514a83b4', 'test12@test12.com', 1999, 3, 'UOsWWbkpz4kZK4b2Yf8nbdRmR3BQZn', 0, 1386267007),
-(33, 'test13', 'd804cd9cc0c42b0652bab002f67858ab803c40c6', 'test13@test13.com', 2005, 3, '5a0hw9TkCa8DB2GNc80TDg5xBOnOkA', 0, 1386267007),
-(34, 'test14', 'd79336a97da7d284c0fe15497d2fa944d1f2abb1', 'test14@test14.com', 2003, 3, 'QixWY7sJJQNizzLtuT6BVV0xRecCKV', 0, 1386267007),
-(35, 'test15', '61bb70fa60368f069e62d601c357d203700ab2d2', 'test15@test15.com', 2000, 3, 'VHAAR6PkgGrIPNTSNganRsIkfbvjGO', 0, 1386267007),
-(36, 'test16', '1fbefee9cfb86926757519357e077fd6a21aef0f', 'test16@test16.com', 1998, 3, '0qobcg4DyUX11ZLF5yHrIevFn6nc1K', 0, 1386267007),
-(37, 'test17', '08a25c0f270b29aeba650e6b2d1a9947a778c5da', 'test17@test17.com', 1996, 3, '2n8iJ3Hi9y9SwJuCyVaCtZ9s0gUfnB', 0, 1386267007);
+(18, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.test', 2009, 1, '5UzrHJyfd7uKCF5gmtzDo8FeeKBRNS', 1386328310, 1386417785),
+(19, 'ghfghh', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'dsd@sd.sd', 2006, 3, '4UAEibzE02cXqksbgoNpJ4cfzH8LY8', 0, 1386417785),
+(20, 'wejhg', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'aaa@aaa.aaa', 1919, 3, 'zzFIYLTijWlc3aeha4jT7ILRSIkxVa', 0, 1386417785),
+(21, 't567567567', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'tryrt@erttr.rrt', 1917, 3, 'dMdE9UegmMVBxJMLVCKkeLjpF2rzYL', 0, 1386417785),
+(22, 'test2', '109f4b3c50d7b0df729d299bc6f8e9ef9066971f', 'test2@test2.com', 2010, 3, 'AWlNK6wtm8HDpECDnIukcX11nsrARO', 0, 1386417785),
+(23, 'test3', '3ebfa301dc59196f18593c45e519287a23297589', 'test3@test3.com', 2003, 3, 'um86lb8VKpmnUSM3zVQ3VpxYHEkT6v', 0, 1386417785),
+(24, 'test4', '1ff2b3704aede04eecb51e50ca698efd50a1379b', 'test4@test4.com', 2002, 3, 'apSkxCdXp7RJf00u1RoAcMeRKmeE9H', 0, 1386417785),
+(25, 'test5', '911ddc3b8f9a13b5499b6bc4638a2b4f3f68bf23', 'test5@test5.com', 2001, 3, 'DOlo8GPwY6yHQq0ZYt816CqRqGP7F2', 0, 1386417785),
+(26, 'test6', 'a66df261120b6c2311c6ef0b1bab4e583afcbcc0', 'test6@test6.com', 2005, 3, 'QS2uoKhpZNACADHuDmOQ8yF1wktTNg', 0, 1386417785),
+(27, 'test7', 'ea3243132d653b39025a944e70f3ecdf70ee3994', 'test7@test7.com', 2002, 3, 'XMprjxktiv2s5vtXqV96xzZt7Ovapt', 0, 1386417785),
+(28, 'test8', 'd03f9d34194393019e6d12d7c942827ebd694443', 'test8@test8.com', 1999, 3, 'rgIyXtszEd2lJjqtV753rt0E0JEoPI', 0, 1386425529),
+(29, 'test9', '53d525836cc96d089a5a4218b464fda532f7debe', 'test9@test9.com', 2001, 3, 'XRDNr8EO2Pz5e2EuYkzkKPzux6miMg', 0, 1386425529),
+(30, 'test10', '168f4029f416ee06565f12e697dfc1534ae69d32', 'test10@test10.com', 2002, 3, 'bAsUII26dwutnli5q2pz5ViYzSVVBe', 0, 1386425529),
+(31, 'test11', '100c4e57374fc998e57164d4c0453bd3a4876a58', 'test11@test11.com', 2004, 3, 'MvoPPjFZwrEBPu2Yew5XHatUHvrEc8', 0, 1386425529),
+(32, 'test12', '4ff1a33e188b7b86123d6e3be2722a23514a83b4', 'test12@test12.com', 1999, 3, 'IyF8ur37uER9X32RAY3kBgT9JfZpcN', 0, 1386425529),
+(33, 'test13', 'd804cd9cc0c42b0652bab002f67858ab803c40c6', 'test13@test13.com', 2005, 3, 'lHHeq8sqbhcG5f9S7D0lKw1VWvSY9G', 0, 1386425529),
+(34, 'test14', 'd79336a97da7d284c0fe15497d2fa944d1f2abb1', 'test14@test14.com', 2003, 3, 'OjnEyj3uiMaOM6bIc55Lj6k4iZReT4', 0, 1386425529),
+(35, 'test15', '61bb70fa60368f069e62d601c357d203700ab2d2', 'test15@test15.com', 2000, 3, 'ckjdgYhKyf1w2JeSay9FVhteL0spFk', 0, 1386425529),
+(36, 'test16', '1fbefee9cfb86926757519357e077fd6a21aef0f', 'test16@test16.com', 1998, 3, 'Mx6mGt2FTyWmBDM1y21LXDDawJ5juc', 0, 1386425529),
+(37, 'test17', '08a25c0f270b29aeba650e6b2d1a9947a778c5da', 'test17@test17.com', 1996, 3, 'lOyoTLW7GKnKcR47oHLzKlDXdqrChZ', 0, 1386425529);
 
 -- --------------------------------------------------------
 
