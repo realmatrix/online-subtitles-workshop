@@ -22,7 +22,6 @@
 
 
 	<script type="text/javascript" src="apps/jwplayer/jwplayer.js"></script>
-	<script type="text/javascript">jwplayer.key="Xa0+lctKi2ueLhuTyGOzLSUPiglowRgViyyr/w==";</script>
 	
 	<div id="myElement">Loading the player...</div>
 	
@@ -33,15 +32,18 @@
 	</style>
 	
 
-	<script type="text/javascript">
-	    jwplayer("myElement").setup({
-	        file: "{source}",
-	        title: "{vtitle}",
-	        image: "{thumb}",
-	        width: "100%;",
-	        height: "400",
-	    });
-	</script>
+<script type='text/javascript'>
+	jwplayer('myElement').setup({
+	flashplayer: 'apps/jwplayer/player.swf',
+	image: '{thumb}',
+	file: '{source}',
+	title: '{vtitle}',
+	description: '{VideoDescription}',
+	height: 400,
+	width: '100%',
+	controlbar: 'bottom',	 
+	});
+</script>
 
 
 

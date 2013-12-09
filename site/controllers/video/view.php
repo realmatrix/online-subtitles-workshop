@@ -18,6 +18,9 @@
 			$VideoInfo = self::GetVideoInfo();
 			$GLOBALS['vars']['PageTitle'] = $VideoInfo[0]['title'];
 			$GLOBALS['vars']['PageDesc'] = $VideoInfo[0]['synopsis'];
+			$GLOBALS['BreadCrumbs'] = array(
+				array("my videos", "page=video&sec=list")
+			);
 		}
 		
 		function Show(){
