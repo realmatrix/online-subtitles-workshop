@@ -13,6 +13,9 @@
 		function list_set(){
 			$GLOBALS['vars']['PageTitle'] = "Private Messages";
 			$GLOBALS['vars']['PageDesc'] = $GLOBALS['config']['site_description'];
+			$GLOBALS['BreadCrumbs'] = array(
+				array("messages", "page=message&sec=list"),
+			);
 		}
 			
 	}

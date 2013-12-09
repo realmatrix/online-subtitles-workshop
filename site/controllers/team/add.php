@@ -13,6 +13,10 @@
 		function add_set(){
 			$GLOBALS['vars']['PageTitle'] = "Add Team";
 			$GLOBALS['vars']['PageDesc'] = $GLOBALS['config']['site_description'];
+			$GLOBALS['BreadCrumbs'] = array(
+				array("manage teams", "page=team&sec=list"),
+				array("add team", "page=team&sec=add"),
+			);
 		}
 			
 	}
