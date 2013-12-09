@@ -70,14 +70,19 @@
 					$text = urlencode($lines[$i]['text']);
 					$content = file_get_contents("http://glosbe.com/gapi/translate?from=".$lines[$i]['from']."&dest=".$lines[$i]['to']."&format=json&phrase=".$text."&pretty=true");
 					$content = json_decode($content, true); 
-					$args = array(
-						array(":lid", $lines[$i]['lid'], "str"),
-						array(":sid", $lines[$i]['sid'], "str"),
-						array(":cid", $lines[$i]['cid'], "str"),
-						array(":text", $content['tuc'][0]['phrase']['text'], "str"),
-					);
-					$res = $GLOBALS['COMMON']->db_query("UPDATE `Transcriptions` SET `text` = :text WHERE `lid`=:lid and `sid`=:sid and `cid`=:cid ", $args, $ExecState);
-					if($ExecState===TRUE){self::state($lines[$i]['lid']." ok");}else{self::state($lines[$i]['lid']." failed");}
+					$translation = $content['tuc'][0]['phrase']['text'];
+						if($translation!=""){
+							$args = array(
+								array(":lid", $lines[$i]['lid'], "str"),
+								array(":sid", $lines[$i]['sid'], "str"),
+								array(":cid", $lines[$i]['cid'], "str"),
+								array(":text", $translation, "str"),
+							);
+							$res = $GLOBALS['COMMON']->db_query("UPDATE `Transcriptions` SET `text` = :text WHERE `lid`=:lid and `sid`=:sid and `cid`=:cid ", $args, $ExecState);
+							if($ExecState===TRUE){self::state($lines[$i]['lid']." ok");}else{self::state($lines[$i]['lid']." failed");}
+						}else{
+							self::state($lines[$i]['lid']." - null -"." ok");
+						}
 				}
 		}
 		

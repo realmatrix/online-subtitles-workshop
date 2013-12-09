@@ -5,4 +5,4 @@ install instructions:
 4- import "mysql.sql" into the mysql database
 
 to run cron: 
-call this url from cron jobs http://(your domain name)/index.php?page=cron&sec=run&ssec=cron&h=runall 
+call this url from cron jobs http://(your domain name)/index.php?page=cron&sec=run&ssec=cron&h=runall&report=1
