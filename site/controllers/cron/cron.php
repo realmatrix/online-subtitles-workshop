@@ -1,5 +1,8 @@
 <?php
 
+	ignore_user_abort(true);
+	set_time_limit(0);
+
 	class Ccron{
 		
 		private static $content = array();
@@ -29,7 +32,7 @@
 		function cron_content(){
 				$content = array
 				  (
-				  array("{content}", implode("<br>", self::$content)),
+				  array("{content}", self::report()),
 				 );
 			 
 		return $content;
@@ -37,6 +40,14 @@
 		
 		function state($message){
 			array_push(self::$content, $message);
+		}
+		
+		function report(){
+			if($GLOBALS['vars']['report']=="1"){
+				return implode("<br>", self::$content);
+			}else{
+				return "";
+			}
 		}
 		
 		function RunAll(){
