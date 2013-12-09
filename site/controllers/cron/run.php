@@ -8,6 +8,12 @@
 			);
 			return $array;
 		}	
+		
+		function run_set(){
+			$GLOBALS['vars']['PageTitle'] = "cron";
+			$GLOBALS['vars']['PageDesc'] = $GLOBALS['config']['site_description'];
+			$GLOBALS['BreadCrumbs'] = array();
+		}
 			
 	}
 
