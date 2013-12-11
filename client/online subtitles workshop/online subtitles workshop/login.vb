@@ -11,6 +11,7 @@ Public Class login
         response = GetData(url, Username)
         'If Response.Contains("Correct") Then
         MessageBox.Show(response)
+        Return True
     End Function
 
 
@@ -20,6 +21,18 @@ Public Class login
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        TxtUsername.Text = Trim(TxtUsername.Text)
+        TxtPassword.Text = Trim(TxtPassword.Text)
+        TxtUrl.Text = Trim(TxtUrl.Text)
+
+        If TxtUrl.Text.Substring(0, 7) <> "http://" Then
+            TxtUrl.Text = "http://" & TxtUrl.Text
+        End If
+
+        If TxtUrl.Text.Substring(TxtUrl.Text.Length - 1) <> "/" Then
+            TxtUrl.Text = TxtUrl.Text & "/"
+        End If
+
         If TxtUsername.TextLength = 0 Then
             MessageBox.Show("enter username")
             Return
@@ -28,15 +41,15 @@ Public Class login
             MessageBox.Show("enter password")
             Return
         End If
-        If TxtUrl.TextLength = 0 Then
+        If TxtUrl.Text = "" Then
             MessageBox.Show("enter url")
             Return
         End If
 
         Try
             Dim query As String = "page=query&sec=client&ssec=QueryClient&h=login&u=" & TxtUsername.Text & "&p=" & TxtPassword.Text
-            MessageBox.Show(GetData("http://localhost/new/trunk/site" & "/index.php?", query).ToString)
-            'MessageBox.Show(GetData("http://localhost/new/trunk/site" & "/index.php?", "page=cron&sec=run&ssec=cron&h=runall").ToString)
+            MessageBox.Show(GetData(TxtUrl.Text & "index.php?", query).ToString)
+            'MessageBox.Show(GetData(TxtUrl.Text & "/index.php?", "page=cron&sec=run&ssec=cron&h=runall").ToString)
         Catch ex As Exception
             MessageBox.Show("login failed" & ex.Message)
         End Try

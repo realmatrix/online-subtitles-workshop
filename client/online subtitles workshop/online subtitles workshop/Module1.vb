@@ -31,5 +31,6 @@ Module Module1
                     End If
             End Select
         End While
+        Return True
     End Function
 End Module

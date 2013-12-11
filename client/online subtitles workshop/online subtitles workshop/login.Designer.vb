@@ -26,9 +26,10 @@ Partial Class login
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.TxtUrl = New System.Windows.Forms.TextBox()
         Me.TxtUsername = New System.Windows.Forms.TextBox()
         Me.TxtPassword = New System.Windows.Forms.TextBox()
+        Me.TxtUrl = New System.Windows.Forms.ComboBox()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.SuspendLayout()
         '
         'Label1
@@ -54,26 +55,18 @@ Partial Class login
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(3, 17)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(32, 13)
+        Me.Label3.Size = New System.Drawing.Size(30, 13)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "URL:"
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(172, 92)
+        Me.Button1.Location = New System.Drawing.Point(172, 111)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 3
         Me.Button1.Text = "Login"
         Me.Button1.UseVisualStyleBackColor = True
-        '
-        'TxtUrl
-        '
-        Me.TxtUrl.Location = New System.Drawing.Point(59, 14)
-        Me.TxtUrl.Name = "TxtUrl"
-        Me.TxtUrl.Size = New System.Drawing.Size(354, 20)
-        Me.TxtUrl.TabIndex = 4
-        Me.TxtUrl.Text = "http://"
         '
         'TxtUsername
         '
@@ -90,21 +83,41 @@ Partial Class login
         Me.TxtPassword.Size = New System.Drawing.Size(354, 20)
         Me.TxtPassword.TabIndex = 6
         '
-        'Form1
+        'TxtUrl
+        '
+        Me.TxtUrl.FormattingEnabled = True
+        Me.TxtUrl.Location = New System.Drawing.Point(59, 13)
+        Me.TxtUrl.Name = "TxtUrl"
+        Me.TxtUrl.Size = New System.Drawing.Size(354, 21)
+        Me.TxtUrl.TabIndex = 7
+        Me.TxtUrl.Text = "http://localhost/new/trunk/site"
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(59, 92)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(73, 17)
+        Me.CheckBox1.TabIndex = 8
+        Me.CheckBox1.Text = "auto login"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(419, 124)
+        Me.ClientSize = New System.Drawing.Size(419, 146)
+        Me.Controls.Add(Me.CheckBox1)
+        Me.Controls.Add(Me.TxtUrl)
         Me.Controls.Add(Me.TxtPassword)
         Me.Controls.Add(Me.TxtUsername)
-        Me.Controls.Add(Me.TxtUrl)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
-        Me.Name = "Form1"
+        Me.Name = "login"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Online Subtitles Workshop - Login"
         Me.TopMost = True
@@ -116,8 +129,9 @@ Partial Class login
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents TxtUrl As System.Windows.Forms.TextBox
     Friend WithEvents TxtUsername As System.Windows.Forms.TextBox
     Friend WithEvents TxtPassword As System.Windows.Forms.TextBox
+    Friend WithEvents TxtUrl As System.Windows.Forms.ComboBox
+    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
 
 End Class
