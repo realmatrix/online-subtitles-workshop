@@ -36,14 +36,14 @@ Partial Class editor
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.AxWindowsMediaPlayer1 = New AxWMPLib.AxWindowsMediaPlayer()
         Me.col1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.player = New AxWMPLib.AxWindowsMediaPlayer()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.AxWindowsMediaPlayer1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.player, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -139,15 +139,6 @@ Partial Class editor
         Me.DataGridView1.Size = New System.Drawing.Size(819, 248)
         Me.DataGridView1.TabIndex = 3
         '
-        'AxWindowsMediaPlayer1
-        '
-        Me.AxWindowsMediaPlayer1.Enabled = True
-        Me.AxWindowsMediaPlayer1.Location = New System.Drawing.Point(12, 52)
-        Me.AxWindowsMediaPlayer1.Name = "AxWindowsMediaPlayer1"
-        Me.AxWindowsMediaPlayer1.OcxState = CType(resources.GetObject("AxWindowsMediaPlayer1.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AxWindowsMediaPlayer1.Size = New System.Drawing.Size(354, 191)
-        Me.AxWindowsMediaPlayer1.TabIndex = 4
-        '
         'col1
         '
         Me.col1.HeaderText = "#"
@@ -171,12 +162,23 @@ Partial Class editor
         Me.col4.HeaderText = "Text"
         Me.col4.Name = "col4"
         '
+        'player
+        '
+        Me.player.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.player.Enabled = True
+        Me.player.Location = New System.Drawing.Point(0, 52)
+        Me.player.Name = "player"
+        Me.player.OcxState = CType(resources.GetObject("player.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.player.Size = New System.Drawing.Size(819, 276)
+        Me.player.TabIndex = 4
+        '
         'editor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(819, 626)
-        Me.Controls.Add(Me.AxWindowsMediaPlayer1)
+        Me.Controls.Add(Me.player)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.StatusStrip1)
@@ -187,7 +189,7 @@ Partial Class editor
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.AxWindowsMediaPlayer1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.player, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -205,7 +207,7 @@ Partial Class editor
     Friend WithEvents OpenToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStrip1 As System.Windows.Forms.ToolStrip
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
-    Friend WithEvents AxWindowsMediaPlayer1 As AxWMPLib.AxWindowsMediaPlayer
+    Friend WithEvents player As AxWMPLib.AxWindowsMediaPlayer
     Friend WithEvents col1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col3 As System.Windows.Forms.DataGridViewTextBoxColumn

@@ -2,7 +2,14 @@
 Public Class login
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        GroupBox2.Visible = False
+        GroupBox2.Width = GroupBox1.Width
+        GroupBox2.Height = GroupBox1.Height
+        GroupBox2.Location = GroupBox1.Location
 
+        If My.Settings.automatic_login = True Then
+
+        End If
     End Sub
 
     Function AuthUser(ByVal url As String, ByVal Username As String, ByVal Password As String) As Boolean
@@ -14,13 +21,31 @@ Public Class login
         Return True
     End Function
 
-
-    Private Sub TextBox2_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TxtUsername.TextChanged
+    Private Sub TextBox2_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
         TxtUsername.Text = TxtUsername.Text.Replace(" ", "")
         TxtUsername.Select(TxtUsername.Text.Length, 0)
     End Sub
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+
+    Private Sub ChkAutoLogin_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        My.Settings.automatic_login = ChkAutoLogin.CheckState
+        MessageBox.Show(ChkAutoLogin.Checked)
+
+    End Sub
+
+    Function ValidateLogin()
+        If TxtUsername.TextLength = 0 Or TxtPassword.TextLength = 0 Or TxtUrl.Text = "" Then
+            Return False
+        Else
+            Return True
+        End If
+    End Function
+
+    Private Sub GroupBox1_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GroupBox1.Enter
+
+    End Sub
+
+    Private Sub btnlogin_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnlogin.Click
         TxtUsername.Text = Trim(TxtUsername.Text)
         TxtPassword.Text = Trim(TxtPassword.Text)
         TxtUrl.Text = Trim(TxtUrl.Text)

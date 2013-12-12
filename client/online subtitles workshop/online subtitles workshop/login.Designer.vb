@@ -22,116 +22,160 @@ Partial Class login
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.TxtUsername = New System.Windows.Forms.TextBox()
-        Me.TxtPassword = New System.Windows.Forms.TextBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.ChkAutoLogin = New System.Windows.Forms.CheckBox()
         Me.TxtUrl = New System.Windows.Forms.ComboBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.TxtPassword = New System.Windows.Forms.TextBox()
+        Me.TxtUsername = New System.Windows.Forms.TextBox()
+        Me.btnlogin = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.lblstate = New System.Windows.Forms.Label()
+        Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Label1
+        'GroupBox1
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(3, 40)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(55, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Username"
+        Me.GroupBox1.Controls.Add(Me.ChkAutoLogin)
+        Me.GroupBox1.Controls.Add(Me.TxtUrl)
+        Me.GroupBox1.Controls.Add(Me.TxtPassword)
+        Me.GroupBox1.Controls.Add(Me.TxtUsername)
+        Me.GroupBox1.Controls.Add(Me.btnlogin)
+        Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Location = New System.Drawing.Point(6, 2)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(427, 143)
+        Me.GroupBox1.TabIndex = 0
+        Me.GroupBox1.TabStop = False
         '
-        'Label2
+        'ChkAutoLogin
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(3, 69)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(53, 13)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Password"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(3, 17)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(30, 13)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "URL:"
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(172, 111)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 3
-        Me.Button1.Text = "Login"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'TxtUsername
-        '
-        Me.TxtUsername.Location = New System.Drawing.Point(59, 40)
-        Me.TxtUsername.Name = "TxtUsername"
-        Me.TxtUsername.Size = New System.Drawing.Size(354, 20)
-        Me.TxtUsername.TabIndex = 5
-        '
-        'TxtPassword
-        '
-        Me.TxtPassword.Location = New System.Drawing.Point(59, 66)
-        Me.TxtPassword.Name = "TxtPassword"
-        Me.TxtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TxtPassword.Size = New System.Drawing.Size(354, 20)
-        Me.TxtPassword.TabIndex = 6
+        Me.ChkAutoLogin.AutoSize = True
+        Me.ChkAutoLogin.Checked = True
+        Me.ChkAutoLogin.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.ChkAutoLogin.Location = New System.Drawing.Point(64, 93)
+        Me.ChkAutoLogin.Name = "ChkAutoLogin"
+        Me.ChkAutoLogin.Size = New System.Drawing.Size(99, 17)
+        Me.ChkAutoLogin.TabIndex = 16
+        Me.ChkAutoLogin.Text = "Automatic login"
+        Me.ChkAutoLogin.UseVisualStyleBackColor = True
         '
         'TxtUrl
         '
         Me.TxtUrl.FormattingEnabled = True
-        Me.TxtUrl.Location = New System.Drawing.Point(59, 13)
+        Me.TxtUrl.Location = New System.Drawing.Point(64, 14)
         Me.TxtUrl.Name = "TxtUrl"
         Me.TxtUrl.Size = New System.Drawing.Size(354, 21)
-        Me.TxtUrl.TabIndex = 7
+        Me.TxtUrl.TabIndex = 15
         Me.TxtUrl.Text = "http://localhost/new/trunk/site"
         '
-        'CheckBox1
+        'TxtPassword
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(59, 92)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(73, 17)
-        Me.CheckBox1.TabIndex = 8
-        Me.CheckBox1.Text = "auto login"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.TxtPassword.Location = New System.Drawing.Point(64, 67)
+        Me.TxtPassword.Name = "TxtPassword"
+        Me.TxtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.TxtPassword.Size = New System.Drawing.Size(354, 20)
+        Me.TxtPassword.TabIndex = 14
+        Me.TxtPassword.Text = "test"
+        '
+        'TxtUsername
+        '
+        Me.TxtUsername.Location = New System.Drawing.Point(64, 41)
+        Me.TxtUsername.Name = "TxtUsername"
+        Me.TxtUsername.Size = New System.Drawing.Size(354, 20)
+        Me.TxtUsername.TabIndex = 13
+        Me.TxtUsername.Text = "test"
+        '
+        'btnlogin
+        '
+        Me.btnlogin.Location = New System.Drawing.Point(177, 112)
+        Me.btnlogin.Name = "btnlogin"
+        Me.btnlogin.Size = New System.Drawing.Size(75, 23)
+        Me.btnlogin.TabIndex = 12
+        Me.btnlogin.Text = "Login"
+        Me.btnlogin.UseVisualStyleBackColor = True
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(8, 18)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(30, 13)
+        Me.Label3.TabIndex = 11
+        Me.Label3.Text = "URL:"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(8, 70)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(53, 13)
+        Me.Label2.TabIndex = 10
+        Me.Label2.Text = "Password"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(8, 41)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(55, 13)
+        Me.Label1.TabIndex = 9
+        Me.Label1.Text = "Username"
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.lblstate)
+        Me.GroupBox2.Location = New System.Drawing.Point(6, 151)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(427, 100)
+        Me.GroupBox2.TabIndex = 1
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Visible = False
+        '
+        'lblstate
+        '
+        Me.lblstate.AutoSize = True
+        Me.lblstate.Location = New System.Drawing.Point(8, 42)
+        Me.lblstate.Name = "lblstate"
+        Me.lblstate.Size = New System.Drawing.Size(89, 13)
+        Me.lblstate.TabIndex = 0
+        Me.lblstate.Text = "Connecting to ..."
         '
         'login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(419, 146)
-        Me.Controls.Add(Me.CheckBox1)
-        Me.Controls.Add(Me.TxtUrl)
-        Me.Controls.Add(Me.TxtPassword)
-        Me.Controls.Add(Me.TxtUsername)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
+        Me.ClientSize = New System.Drawing.Size(440, 151)
+        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.Name = "login"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Online Subtitles Workshop - Login"
         Me.TopMost = True
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents TxtUsername As System.Windows.Forms.TextBox
-    Friend WithEvents TxtPassword As System.Windows.Forms.TextBox
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents ChkAutoLogin As System.Windows.Forms.CheckBox
     Friend WithEvents TxtUrl As System.Windows.Forms.ComboBox
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
+    Friend WithEvents TxtPassword As System.Windows.Forms.TextBox
+    Friend WithEvents TxtUsername As System.Windows.Forms.TextBox
+    Friend WithEvents btnlogin As System.Windows.Forms.Button
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents lblstate As System.Windows.Forms.Label
 
 End Class
