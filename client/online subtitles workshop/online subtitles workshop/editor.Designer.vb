@@ -25,7 +25,6 @@ Partial Class editor
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(editor))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.OpenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SubtitleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TimingToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -34,16 +33,39 @@ Partial Class editor
         Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.col1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.player = New AxWMPLib.AxWindowsMediaPlayer()
+        Me.lblsubtitle = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtsubtitle = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.txtfrom0 = New System.Windows.Forms.NumericUpDown()
+        Me.txtfrom1 = New System.Windows.Forms.NumericUpDown()
+        Me.txtfrom2 = New System.Windows.Forms.NumericUpDown()
+        Me.txtfrom3 = New System.Windows.Forms.NumericUpDown()
+        Me.txtto3 = New System.Windows.Forms.NumericUpDown()
+        Me.txtto2 = New System.Windows.Forms.NumericUpDown()
+        Me.txtto1 = New System.Windows.Forms.NumericUpDown()
+        Me.txtto0 = New System.Windows.Forms.NumericUpDown()
+        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.player, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
+        CType(Me.txtfrom0, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtfrom1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtfrom2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtfrom3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtto3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtto2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtto1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtto0, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -57,16 +79,10 @@ Partial Class editor
         '
         'FileToolStripMenuItem
         '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpenToolStripMenuItem})
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem.Text = "&File"
-        '
-        'OpenToolStripMenuItem
-        '
-        Me.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem"
-        Me.OpenToolStripMenuItem.Size = New System.Drawing.Size(103, 22)
-        Me.OpenToolStripMenuItem.Text = "Open"
         '
         'EditToolStripMenuItem
         '
@@ -112,19 +128,11 @@ Partial Class editor
         '
         'StatusStrip1
         '
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 604)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 720)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(819, 22)
         Me.StatusStrip1.TabIndex = 1
         Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'ToolStrip1
-        '
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 24)
-        Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(819, 25)
-        Me.ToolStrip1.TabIndex = 2
-        Me.ToolStrip1.Text = "ToolStrip1"
         '
         'DataGridView1
         '
@@ -134,9 +142,9 @@ Partial Class editor
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col1, Me.col2, Me.col3, Me.col4})
-        Me.DataGridView1.Location = New System.Drawing.Point(0, 353)
+        Me.DataGridView1.Location = New System.Drawing.Point(0, 329)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(819, 248)
+        Me.DataGridView1.Size = New System.Drawing.Size(819, 287)
         Me.DataGridView1.TabIndex = 3
         '
         'col1
@@ -167,20 +175,156 @@ Partial Class editor
         Me.player.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.player.Enabled = True
-        Me.player.Location = New System.Drawing.Point(0, 52)
+        Me.player.Location = New System.Drawing.Point(0, 111)
         Me.player.Name = "player"
         Me.player.OcxState = CType(resources.GetObject("player.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.player.Size = New System.Drawing.Size(819, 276)
+        Me.player.Size = New System.Drawing.Size(819, 217)
         Me.player.TabIndex = 4
+        '
+        'lblsubtitle
+        '
+        Me.lblsubtitle.Location = New System.Drawing.Point(12, 265)
+        Me.lblsubtitle.Name = "lblsubtitle"
+        Me.lblsubtitle.Size = New System.Drawing.Size(795, 51)
+        Me.lblsubtitle.TabIndex = 5
+        Me.lblsubtitle.Text = "Label1"
+        Me.lblsubtitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.txtto3)
+        Me.GroupBox1.Controls.Add(Me.txtto2)
+        Me.GroupBox1.Controls.Add(Me.txtto1)
+        Me.GroupBox1.Controls.Add(Me.txtto0)
+        Me.GroupBox1.Controls.Add(Me.txtfrom3)
+        Me.GroupBox1.Controls.Add(Me.txtfrom2)
+        Me.GroupBox1.Controls.Add(Me.txtfrom1)
+        Me.GroupBox1.Controls.Add(Me.txtfrom0)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.txtsubtitle)
+        Me.GroupBox1.Location = New System.Drawing.Point(4, 616)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(810, 101)
+        Me.GroupBox1.TabIndex = 6
+        Me.GroupBox1.TabStop = False
+        '
+        'txtsubtitle
+        '
+        Me.txtsubtitle.Location = New System.Drawing.Point(142, 13)
+        Me.txtsubtitle.Multiline = True
+        Me.txtsubtitle.Name = "txtsubtitle"
+        Me.txtsubtitle.Size = New System.Drawing.Size(661, 81)
+        Me.txtsubtitle.TabIndex = 7
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(3, 14)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(35, 13)
+        Me.Label1.TabIndex = 10
+        Me.Label1.Text = "From:"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(3, 56)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(23, 13)
+        Me.Label2.TabIndex = 11
+        Me.Label2.Text = "To:"
+        '
+        'ToolStrip1
+        '
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 24)
+        Me.ToolStrip1.Name = "ToolStrip1"
+        Me.ToolStrip1.Size = New System.Drawing.Size(819, 25)
+        Me.ToolStrip1.TabIndex = 13
+        Me.ToolStrip1.Text = "ToolStrip1"
+        '
+        'txtfrom0
+        '
+        Me.txtfrom0.Location = New System.Drawing.Point(6, 32)
+        Me.txtfrom0.Name = "txtfrom0"
+        Me.txtfrom0.Size = New System.Drawing.Size(32, 20)
+        Me.txtfrom0.TabIndex = 12
+        Me.txtfrom0.Value = New Decimal(New Integer() {11, 0, 0, 0})
+        '
+        'txtfrom1
+        '
+        Me.txtfrom1.Location = New System.Drawing.Point(37, 32)
+        Me.txtfrom1.Name = "txtfrom1"
+        Me.txtfrom1.Size = New System.Drawing.Size(32, 20)
+        Me.txtfrom1.TabIndex = 13
+        Me.txtfrom1.Value = New Decimal(New Integer() {11, 0, 0, 0})
+        '
+        'txtfrom2
+        '
+        Me.txtfrom2.Location = New System.Drawing.Point(68, 32)
+        Me.txtfrom2.Name = "txtfrom2"
+        Me.txtfrom2.Size = New System.Drawing.Size(32, 20)
+        Me.txtfrom2.TabIndex = 14
+        Me.txtfrom2.Value = New Decimal(New Integer() {11, 0, 0, 0})
+        '
+        'txtfrom3
+        '
+        Me.txtfrom3.Location = New System.Drawing.Point(99, 32)
+        Me.txtfrom3.Maximum = New Decimal(New Integer() {10000, 0, 0, 0})
+        Me.txtfrom3.Name = "txtfrom3"
+        Me.txtfrom3.Size = New System.Drawing.Size(37, 20)
+        Me.txtfrom3.TabIndex = 15
+        Me.txtfrom3.Value = New Decimal(New Integer() {111, 0, 0, 0})
+        '
+        'txtto3
+        '
+        Me.txtto3.Location = New System.Drawing.Point(99, 74)
+        Me.txtto3.Maximum = New Decimal(New Integer() {10000, 0, 0, 0})
+        Me.txtto3.Name = "txtto3"
+        Me.txtto3.Size = New System.Drawing.Size(37, 20)
+        Me.txtto3.TabIndex = 19
+        Me.txtto3.Value = New Decimal(New Integer() {111, 0, 0, 0})
+        '
+        'txtto2
+        '
+        Me.txtto2.Location = New System.Drawing.Point(68, 74)
+        Me.txtto2.Name = "txtto2"
+        Me.txtto2.Size = New System.Drawing.Size(32, 20)
+        Me.txtto2.TabIndex = 18
+        Me.txtto2.Value = New Decimal(New Integer() {11, 0, 0, 0})
+        '
+        'txtto1
+        '
+        Me.txtto1.Location = New System.Drawing.Point(37, 74)
+        Me.txtto1.Name = "txtto1"
+        Me.txtto1.Size = New System.Drawing.Size(32, 20)
+        Me.txtto1.TabIndex = 17
+        Me.txtto1.Value = New Decimal(New Integer() {11, 0, 0, 0})
+        '
+        'txtto0
+        '
+        Me.txtto0.Location = New System.Drawing.Point(6, 74)
+        Me.txtto0.Name = "txtto0"
+        Me.txtto0.Size = New System.Drawing.Size(32, 20)
+        Me.txtto0.TabIndex = 16
+        Me.txtto0.Value = New Decimal(New Integer() {11, 0, 0, 0})
+        '
+        'ExitToolStripMenuItem
+        '
+        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'editor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(819, 626)
+        Me.ClientSize = New System.Drawing.Size(819, 742)
+        Me.Controls.Add(Me.ToolStrip1)
+        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.lblsubtitle)
         Me.Controls.Add(Me.player)
         Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
@@ -190,6 +334,16 @@ Partial Class editor
         Me.MenuStrip1.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.player, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        CType(Me.txtfrom0, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtfrom1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtfrom2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtfrom3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtto3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtto2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtto1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtto0, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -204,12 +358,25 @@ Partial Class editor
     Friend WithEvents AudioToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ViewToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents HelpToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents OpenToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStrip1 As System.Windows.Forms.ToolStrip
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
     Friend WithEvents player As AxWMPLib.AxWindowsMediaPlayer
     Friend WithEvents col1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col3 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col4 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents lblsubtitle As System.Windows.Forms.Label
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents txtsubtitle As System.Windows.Forms.TextBox
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents txtfrom2 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents txtfrom1 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents txtfrom0 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents ToolStrip1 As System.Windows.Forms.ToolStrip
+    Friend WithEvents txtto3 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents txtto2 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents txtto1 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents txtto0 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents txtfrom3 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents ExitToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

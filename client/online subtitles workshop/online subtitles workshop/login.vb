@@ -54,8 +54,9 @@ Public Class login
             TxtUrl.Text = "http://" & TxtUrl.Text
         End If
 
-        If TxtUrl.Text.Substring(TxtUrl.Text.Length - 1) <> "/" Then
-            TxtUrl.Text = TxtUrl.Text & "/"
+        If TxtUrl.Text.Substring(TxtUrl.Text.Length - 1) = "/" Then
+            'TxtUrl.Text = TxtUrl.Text & "/"
+            TxtUrl.Text = TxtUrl.Text.Remove(TxtUrl.Text.Length - 1)
         End If
 
         If TxtUsername.TextLength = 0 Then
@@ -82,7 +83,7 @@ Public Class login
             Me.Visible = False
         Catch ex As Exception
             ShowBox(1)
-            MessageBox.Show("login failed" & ex.Message)
+            MessageBox.Show("login failed" & vbCrLf & ex.Message)
         End Try
     End Sub
 
@@ -95,5 +96,6 @@ Public Class login
             GroupBox2.Visible = True
             GroupBox1.Visible = False
         End If
+        Return True
     End Function
 End Class
