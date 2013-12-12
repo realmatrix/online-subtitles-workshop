@@ -72,11 +72,28 @@ Public Class login
         End If
 
         Try
+            lblstate.Text = "Connecting to " & TxtUrl.Text & " ..."
+            ShowBox(2)
+            Application.DoEvents()
             Dim query As String = "page=query&sec=client&ssec=QueryClient&h=login&u=" & TxtUsername.Text & "&p=" & TxtPassword.Text
             MessageBox.Show(GetData(TxtUrl.Text & "index.php?", query).ToString)
             'MessageBox.Show(GetData(TxtUrl.Text & "/index.php?", "page=cron&sec=run&ssec=cron&h=runall").ToString)
+            editor.Visible = True
+            Me.Visible = False
         Catch ex As Exception
+            ShowBox(1)
             MessageBox.Show("login failed" & ex.Message)
         End Try
     End Sub
+
+    Function ShowBox(ByVal box As Integer)
+        If box = 1 Then
+            GroupBox1.Visible = True
+            GroupBox2.Visible = False
+        End If
+        If box = 2 Then
+            GroupBox2.Visible = True
+            GroupBox1.Visible = False
+        End If
+    End Function
 End Class

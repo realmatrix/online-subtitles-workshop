@@ -130,27 +130,30 @@ Partial Class login
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.lblstate)
-        Me.GroupBox2.Location = New System.Drawing.Point(6, 151)
+        Me.GroupBox2.Location = New System.Drawing.Point(6, 164)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(427, 100)
+        Me.GroupBox2.Size = New System.Drawing.Size(427, 140)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Visible = False
         '
         'lblstate
         '
-        Me.lblstate.AutoSize = True
-        Me.lblstate.Location = New System.Drawing.Point(8, 42)
+        Me.lblstate.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblstate.Location = New System.Drawing.Point(0, 63)
         Me.lblstate.Name = "lblstate"
-        Me.lblstate.Size = New System.Drawing.Size(89, 13)
+        Me.lblstate.Size = New System.Drawing.Size(427, 13)
         Me.lblstate.TabIndex = 0
         Me.lblstate.Text = "Connecting to ..."
+        Me.lblstate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(440, 151)
+        Me.ClientSize = New System.Drawing.Size(440, 152)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -162,7 +165,6 @@ Partial Class login
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
