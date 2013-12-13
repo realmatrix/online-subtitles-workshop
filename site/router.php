@@ -103,7 +103,7 @@ if ( $do_gzip_compress )
      //
      // Borrowed from php.net!
      //
-     echo "gzip compress is running - message from router.php";
+     //echo "gzip compress is running - message from router.php";
      $gzip_contents = ob_get_contents();
      ob_end_clean();
 
