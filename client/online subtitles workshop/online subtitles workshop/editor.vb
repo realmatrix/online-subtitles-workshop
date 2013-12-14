@@ -25,4 +25,14 @@
     Private Sub ExitToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ExitToolStripMenuItem.Click
         End
     End Sub
+
+    Private Sub DataGridView1_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
+    End Sub
+End Class
+
+Public Class GlobalVariables
+    Public Shared UserName As String = ""
+    Public Shared UserKey As String = ""
+    Public Shared UserID As Integer = ""
 End Class
