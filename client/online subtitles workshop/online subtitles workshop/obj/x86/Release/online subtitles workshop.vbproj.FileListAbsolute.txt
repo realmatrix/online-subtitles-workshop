@@ -8,3 +8,21 @@ C:\Program Files\Ampps\www\new\trunk\client\online subtitles workshop\online sub
 C:\Program Files\Ampps\www\new\trunk\client\online subtitles workshop\online subtitles workshop\obj\x86\Release\online subtitles workshop.exe
 C:\Program Files\Ampps\www\new\trunk\client\online subtitles workshop\online subtitles workshop\obj\x86\Release\online subtitles workshop.xml
 C:\Program Files\Ampps\www\new\trunk\client\online subtitles workshop\online subtitles workshop\obj\x86\Release\online subtitles workshop.pdb
+C:\zpanel\hostdata\new\public_html\new_com\client\online subtitles workshop\online subtitles workshop\bin\Release\online subtitles workshop.exe.config
+C:\zpanel\hostdata\new\public_html\new_com\client\online subtitles workshop\online subtitles workshop\bin\Release\online subtitles workshop.exe
+C:\zpanel\hostdata\new\public_html\new_com\client\online subtitles workshop\online subtitles workshop\bin\Release\online subtitles workshop.pdb
+C:\zpanel\hostdata\new\public_html\new_com\client\online subtitles workshop\online subtitles workshop\bin\Release\online subtitles workshop.xml
+C:\zpanel\hostdata\new\public_html\new_com\client\online subtitles workshop\online subtitles workshop\bin\Release\Interop.WMPLib.dll
+C:\zpanel\hostdata\new\public_html\new_com\client\online subtitles workshop\online subtitles workshop\bin\Release\AxInterop.WMPLib.dll
+C:\zpanel\hostdata\new\public_html\new_com\client\online subtitles workshop\online subtitles workshop\obj\x86\Release\ResolveAssemblyReference.cache
+C:\zpanel\hostdata\new\public_html\new_com\client\online subtitles workshop\online subtitles workshop\obj\x86\Release\Interop.WMPLib.dll
+C:\zpanel\hostdata\new\public_html\new_com\client\online subtitles workshop\online subtitles workshop\obj\x86\Release\AxInterop.WMPLib.dll
+C:\zpanel\hostdata\new\public_html\new_com\client\online subtitles workshop\online subtitles workshop\obj\x86\Release\online subtitles workshop.vbproj.ResolveComReference.cache
+C:\zpanel\hostdata\new\public_html\new_com\client\online subtitles workshop\online subtitles workshop\obj\x86\Release\online_subtitles_workshop.editor.resources
+C:\zpanel\hostdata\new\public_html\new_com\client\online subtitles workshop\online subtitles workshop\obj\x86\Release\online_subtitles_workshop.login.resources
+C:\zpanel\hostdata\new\public_html\new_com\client\online subtitles workshop\online subtitles workshop\obj\x86\Release\online_subtitles_workshop.Resources.resources
+C:\zpanel\hostdata\new\public_html\new_com\client\online subtitles workshop\online subtitles workshop\obj\x86\Release\GenerateResource.read.1.tlog
+C:\zpanel\hostdata\new\public_html\new_com\client\online subtitles workshop\online subtitles workshop\obj\x86\Release\GenerateResource.write.1.tlog
+C:\zpanel\hostdata\new\public_html\new_com\client\online subtitles workshop\online subtitles workshop\obj\x86\Release\online subtitles workshop.exe
+C:\zpanel\hostdata\new\public_html\new_com\client\online subtitles workshop\online subtitles workshop\obj\x86\Release\online subtitles workshop.xml
+C:\zpanel\hostdata\new\public_html\new_com\client\online subtitles workshop\online subtitles workshop\obj\x86\Release\online subtitles workshop.pdb

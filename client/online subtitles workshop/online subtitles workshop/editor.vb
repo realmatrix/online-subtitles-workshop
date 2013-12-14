@@ -1,7 +1,7 @@
 ﻿Public Class editor
 
     Private Sub editor_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
+        player.uiMode = "none"
     End Sub
 
     Private Sub txtsubtitle_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtsubtitle.TextChanged
@@ -27,6 +27,10 @@
     End Sub
 
     Private Sub DataGridView1_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
+    End Sub
+
+    Private Sub player_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles player.Enter
 
     End Sub
 End Class
