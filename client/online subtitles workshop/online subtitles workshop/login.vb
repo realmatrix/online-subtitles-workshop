@@ -8,7 +8,8 @@ Public Class login
         GroupBox2.Location = GroupBox1.Location
 
         If My.Settings.automatic_login = True Then
-
+            Application.DoEvents()
+            login()
         End If
     End Sub
 
@@ -46,6 +47,11 @@ Public Class login
     End Sub
 
     Private Sub btnlogin_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnlogin.Click
+        login()
+    End Sub
+
+    Function login()
+        Application.DoEvents()
         TxtUsername.Text = Trim(TxtUsername.Text)
         TxtPassword.Text = Trim(TxtPassword.Text)
         TxtUrl.Text = Trim(TxtUrl.Text)
@@ -61,15 +67,15 @@ Public Class login
 
         If TxtUsername.TextLength = 0 Then
             MessageBox.Show("enter username")
-            Return
+            Return False
         End If
         If TxtPassword.TextLength = 0 Then
             MessageBox.Show("enter password")
-            Return
+            Return False
         End If
         If TxtUrl.Text = "" Then
             MessageBox.Show("enter url")
-            Return
+            Return False
         End If
 
         Try
@@ -85,7 +91,8 @@ Public Class login
             ShowBox(1)
             MessageBox.Show("login failed" & vbCrLf & ex.Message)
         End Try
-    End Sub
+        Return True
+    End Function
 
     Function ShowBox(ByVal box As Integer)
         If box = 1 Then

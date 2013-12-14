@@ -72,7 +72,7 @@ Partial Class login
         Me.TxtUrl.Name = "TxtUrl"
         Me.TxtUrl.Size = New System.Drawing.Size(354, 21)
         Me.TxtUrl.TabIndex = 15
-        Me.TxtUrl.Text = "http://new.com"
+        Me.TxtUrl.Text = "http://site.com"
         '
         'TxtPassword
         '
