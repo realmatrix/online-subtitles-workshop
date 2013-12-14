@@ -2,8 +2,10 @@
 
 	session_start();
 	
+	error_reporting(E_ERROR | E_WARNING | E_PARSE);
+	
 	//ini_set('memory_limit', '256');
-
+	
 	$GLOBALS['LoadStart'] = microtime(true);
 		
 	include "include/db.php";
