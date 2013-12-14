@@ -27,8 +27,8 @@
 			$CheckedLines = self::GetChecked();
 			$FinishedLines = self::GetFinished();
 			$TeamMembers = self::GetTeamCount();
-			$FinishedProgress = (count($FinishedLines)*100)/count($SubtitleContent);
-			$CheckedProgress = (count($CheckedLines)*100)/count($SubtitleContent);
+			$FinishedProgress = floor((count($FinishedLines)*100)/count($SubtitleContent));
+			$CheckedProgress = floor((count($CheckedLines)*100)/count($SubtitleContent));
 				$content = array
 				  (
 				  array("{title}", $GLOBALS['COMMON']->l("subtitle_EditorInfo_title")),

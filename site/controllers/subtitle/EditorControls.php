@@ -132,12 +132,24 @@
 			$AllLines = self::GetAllLines();
 			$LastLine = end($AllLines);
 			if($GLOBALS['vars']['option']==1){
-				$start=self::ChangeTiming($LastLine['end'], 1); 
-				$end=self::ChangeTiming($LastLine['end'], 2);
+				if(count($AllLines)>0){
+					$start=self::ChangeTiming($LastLine['end'], 1); 
+					$end=self::ChangeTiming($LastLine['end'], 2);
+				}
+				else{
+					$start=self::ChangeTiming("00.00.00,000", 1); 
+					$end=self::ChangeTiming("00.00.00,000", 2);
+				}
 				}
 			if($GLOBALS['vars']['option']==2){
-				$start=self::ChangeTiming($AllLines[0]['start'], -2); 
-				$end=self::ChangeTiming($AllLines[0]['start'], -1);
+				if(count($AllLines)>0){
+					$start=self::ChangeTiming($AllLines[0]['start'], -2); 
+					$end=self::ChangeTiming($AllLines[0]['start'], -1);
+				}
+				else{
+					$start=self::ChangeTiming("00.00.00,000", 1); 
+					$end=self::ChangeTiming("00.00.00,000", 2);
+				}
 				}
 			if($GLOBALS['vars']['option']==3){
 				$line = self::GetLine($GLOBALS['vars']['line']);
