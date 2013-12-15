@@ -20,6 +20,31 @@ var interval = setInterval(GetChat,10000);
 		 xmlhttp.open("GET", str, false);
 		 xmlhttp.send();
 	}
+	
+	function SendMessage(){
+		var content = document.getElementById('teamchat-textarea').value;
+		var text = encodeURIComponent(content.textContent);
+		var str = "index.php?page=query&sec=team&ssec=QueryTeam&h=set&sid="+{sid}+"&text="+text;	
+		if (window.XMLHttpRequest)
+		   {
+		   xmlhttp=new XMLHttpRequest();
+		   }
+		 else
+		   {
+		   xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		   }
+		 xmlhttp.onreadystatechange=function()
+		   {
+		   if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		     {
+		     // document.getElementById('teamchat-messages').innerHTML=xmlhttp.responseText;
+		     }
+		   }
+		 xmlhttp.open("GET", str, false);
+		 xmlhttp.send();
+		 document.getElementById('teamchat-textarea').value = "";
+	}
+	GetChat(); 
 </script>
 <style>
 	#teamchat-messages{
@@ -57,7 +82,7 @@ var interval = setInterval(GetChat,10000);
 	<div id='teamchat-messages'></div>
 	<form>
 		<textarea id='teamchat-textarea'></textarea>
-		<div style="width: 100%; text-align: right;"><input type="submit" value="Send"/></div>
+		<div style="width: 100%; text-align: right;"><input type="submit" value="Send" onclick="SendMessage(); return false;"/></div>
 	</form>
 </div>
 
