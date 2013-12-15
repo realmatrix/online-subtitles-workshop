@@ -1,3 +1,27 @@
+<script>
+var interval = setInterval(GetChat,10000);
+	function GetChat(sid) {
+		var str = "index.php?page=query&sec=team&ssec=QueryTeam&h=get&sid="+sid;	
+		if (window.XMLHttpRequest)
+		   {
+		   xmlhttp=new XMLHttpRequest();
+		   }
+		 else
+		   {
+		   xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		   }
+		 xmlhttp.onreadystatechange=function()
+		   {
+		   if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		     {
+		     document.getElementById(pid).innerHTML=xmlhttp.responseText;
+		     }
+		   }
+		 xmlhttp.open("GET", str, false);
+		 xmlhttp.send();
+
+	}
+</script>
 <style>
 	#teamchat-messages{
 		width: 100%;

@@ -83,7 +83,7 @@
 		$GLOBALS['FinalPage'] = $GLOBALS['COMMON']->render($GLOBALS['TemplateLogout'], "logout");
 		echo $GLOBALS['FinalPage'];
         break;
-    case $GLOBALS['vars']['page']=="query" or $SystemPage=="cron":
+    case $GLOBALS['vars']['page']=="query" or $GLOBALS['vars']['page']=="cron":
 		echo $GLOBALS['SystemContent'];
         break;
     default:
