@@ -1,26 +1,26 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.9
+-- version 3.5.8.1
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 07, 2013 at 05:58 PM
--- Server version: 5.6.14-log
--- PHP Version: 5.3.27
+-- Generation Time: Dec 15, 2013 at 06:15 PM
+-- Server version: 5.5.29
+-- PHP Version: 5.3.20
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- Database: `new`
+-- Database: `new_test`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `AdminWidgets`
+-- Table structure for table `adminwidgets`
 --
 
-CREATE TABLE IF NOT EXISTS `AdminWidgets` (
+CREATE TABLE IF NOT EXISTS `adminwidgets` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `state` tinyint(4) NOT NULL DEFAULT '0',
@@ -30,20 +30,20 @@ CREATE TABLE IF NOT EXISTS `AdminWidgets` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `CDS`
+-- Table structure for table `cds`
 --
 
-CREATE TABLE IF NOT EXISTS `CDS` (
+CREATE TABLE IF NOT EXISTS `cds` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `cd` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=32 ;
 
 --
--- Dumping data for table `CDS`
+-- Dumping data for table `cds`
 --
 
-INSERT INTO `CDS` (`id`, `cd`) VALUES
+INSERT INTO `cds` (`id`, `cd`) VALUES
 (1, 1),
 (2, 2),
 (3, 3),
@@ -79,10 +79,10 @@ INSERT INTO `CDS` (`id`, `cd`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Countries`
+-- Table structure for table `countries`
 --
 
-CREATE TABLE IF NOT EXISTS `Countries` (
+CREATE TABLE IF NOT EXISTS `countries` (
   `id` int(5) NOT NULL AUTO_INCREMENT,
   `iso2` char(2) DEFAULT NULL,
   `short_name` varchar(80) NOT NULL DEFAULT '',
@@ -96,10 +96,10 @@ CREATE TABLE IF NOT EXISTS `Countries` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=251 ;
 
 --
--- Dumping data for table `Countries`
+-- Dumping data for table `countries`
 --
 
-INSERT INTO `Countries` (`id`, `iso2`, `short_name`, `long_name`, `iso3`, `numcode`, `un_member`, `calling_code`, `cctld`) VALUES
+INSERT INTO `countries` (`id`, `iso2`, `short_name`, `long_name`, `iso3`, `numcode`, `un_member`, `calling_code`, `cctld`) VALUES
 (1, 'AF', 'Afghanistan', 'Islamic Republic of Afghanistan', 'AFG', '004', 'yes', '93', '.af'),
 (2, 'AX', 'Aland Islands', '&Aring;land Islands', 'ALA', '248', 'no', '358', '.ax'),
 (3, 'AL', 'Albania', 'Republic of Albania', 'ALB', '008', 'yes', '355', '.al'),
@@ -354,10 +354,10 @@ INSERT INTO `Countries` (`id`, `iso2`, `short_name`, `long_name`, `iso3`, `numco
 -- --------------------------------------------------------
 
 --
--- Table structure for table `FailedLogins`
+-- Table structure for table `failedlogins`
 --
 
-CREATE TABLE IF NOT EXISTS `FailedLogins` (
+CREATE TABLE IF NOT EXISTS `failedlogins` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `ip` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `tries` int(11) NOT NULL,
@@ -367,19 +367,19 @@ CREATE TABLE IF NOT EXISTS `FailedLogins` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
 
 --
--- Dumping data for table `FailedLogins`
+-- Dumping data for table `failedlogins`
 --
 
-INSERT INTO `FailedLogins` (`id`, `ip`, `tries`, `time`) VALUES
+INSERT INTO `failedlogins` (`id`, `ip`, `tries`, `time`) VALUES
 (5, '127.0.0.1', 8, 1385005879);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Faq`
+-- Table structure for table `faq`
 --
 
-CREATE TABLE IF NOT EXISTS `Faq` (
+CREATE TABLE IF NOT EXISTS `faq` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `q` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `a` text COLLATE utf8_unicode_ci NOT NULL,
@@ -387,10 +387,10 @@ CREATE TABLE IF NOT EXISTS `Faq` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
 
 --
--- Dumping data for table `Faq`
+-- Dumping data for table `faq`
 --
 
-INSERT INTO `Faq` (`id`, `q`, `a`) VALUES
+INSERT INTO `faq` (`id`, `q`, `a`) VALUES
 (1, 'How to create new account', 'dfjhb sdofijhdsoifh dsoifh sdoiufhdsoiufh'),
 (2, 'How to add new video', ''),
 (3, 'How to add new subtitle', ''),
@@ -400,20 +400,20 @@ INSERT INTO `Faq` (`id`, `q`, `a`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Formats`
+-- Table structure for table `formats`
 --
 
-CREATE TABLE IF NOT EXISTS `Formats` (
+CREATE TABLE IF NOT EXISTS `formats` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `format` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
--- Dumping data for table `Formats`
+-- Dumping data for table `formats`
 --
 
-INSERT INTO `Formats` (`id`, `format`) VALUES
+INSERT INTO `formats` (`id`, `format`) VALUES
 (1, 'DVDRip AVI'),
 (2, 'WEBRIP MP4'),
 (3, 'WEBRIP AVI'),
@@ -429,10 +429,10 @@ INSERT INTO `Formats` (`id`, `format`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ForumCategories`
+-- Table structure for table `forumcategories`
 --
 
-CREATE TABLE IF NOT EXISTS `ForumCategories` (
+CREATE TABLE IF NOT EXISTS `forumcategories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
@@ -440,10 +440,10 @@ CREATE TABLE IF NOT EXISTS `ForumCategories` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
--- Dumping data for table `ForumCategories`
+-- Dumping data for table `forumcategories`
 --
 
-INSERT INTO `ForumCategories` (`id`, `title`, `description`) VALUES
+INSERT INTO `forumcategories` (`id`, `title`, `description`) VALUES
 (1, 'test cat 1', 'jhvb kjhgkjgh kjhg kjhg kjhgkjgh'),
 (2, 'test cat 2', 'kg lkg lkjg lkjh lkhlkjhlkhpiojh'),
 (3, 'test cat 3', 'kljgh lkhkkl;jhopijhiopjojhkljh kljhjklgh'),
@@ -458,10 +458,10 @@ INSERT INTO `ForumCategories` (`id`, `title`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ForumReplies`
+-- Table structure for table `forumreplies`
 --
 
-CREATE TABLE IF NOT EXISTS `ForumReplies` (
+CREATE TABLE IF NOT EXISTS `forumreplies` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `tid` int(11) NOT NULL,
   `uid` int(11) NOT NULL,
@@ -473,10 +473,10 @@ CREATE TABLE IF NOT EXISTS `ForumReplies` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Forums`
+-- Table structure for table `forums`
 --
 
-CREATE TABLE IF NOT EXISTS `Forums` (
+CREATE TABLE IF NOT EXISTS `forums` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
@@ -485,20 +485,20 @@ CREATE TABLE IF NOT EXISTS `Forums` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
--- Dumping data for table `Forums`
+-- Dumping data for table `forums`
 --
 
-INSERT INTO `Forums` (`id`, `title`, `description`, `category`) VALUES
+INSERT INTO `forums` (`id`, `title`, `description`, `category`) VALUES
 (1, 'test forum 1', 'test desc 1', 1),
 (2, 'test forum 2', 'test desc 2', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ForumThreads`
+-- Table structure for table `forumthreads`
 --
 
-CREATE TABLE IF NOT EXISTS `ForumThreads` (
+CREATE TABLE IF NOT EXISTS `forumthreads` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `forum` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
@@ -509,30 +509,30 @@ CREATE TABLE IF NOT EXISTS `ForumThreads` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
--- Dumping data for table `ForumThreads`
+-- Dumping data for table `forumthreads`
 --
 
-INSERT INTO `ForumThreads` (`id`, `forum`, `title`, `content`, `uid`, `time`) VALUES
+INSERT INTO `forumthreads` (`id`, `forum`, `title`, `content`, `uid`, `time`) VALUES
 (1, 1, 'test thread title 1', 'test content 1', 18, '2013-07-10 00:00:00'),
 (2, 1, 'test title 2', 'test content 2', 18, '2013-07-25 00:00:00');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Genres`
+-- Table structure for table `genres`
 --
 
-CREATE TABLE IF NOT EXISTS `Genres` (
+CREATE TABLE IF NOT EXISTS `genres` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `genre` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=27 ;
 
 --
--- Dumping data for table `Genres`
+-- Dumping data for table `genres`
 --
 
-INSERT INTO `Genres` (`id`, `genre`) VALUES
+INSERT INTO `genres` (`id`, `genre`) VALUES
 (1, 'Action'),
 (2, 'Adventure'),
 (3, 'Animation'),
@@ -563,20 +563,20 @@ INSERT INTO `Genres` (`id`, `genre`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Groups`
+-- Table structure for table `groups`
 --
 
-CREATE TABLE IF NOT EXISTS `Groups` (
+CREATE TABLE IF NOT EXISTS `groups` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `group` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
--- Dumping data for table `Groups`
+-- Dumping data for table `groups`
 --
 
-INSERT INTO `Groups` (`id`, `group`) VALUES
+INSERT INTO `groups` (`id`, `group`) VALUES
 (1, 'admin'),
 (2, 'moderator'),
 (3, 'user'),
@@ -588,10 +588,10 @@ INSERT INTO `Groups` (`id`, `group`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Language`
+-- Table structure for table `language`
 --
 
-CREATE TABLE IF NOT EXISTS `Language` (
+CREATE TABLE IF NOT EXISTS `language` (
   `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
   `language` varchar(50) NOT NULL,
   `iso639code` varchar(2) NOT NULL,
@@ -600,10 +600,10 @@ CREATE TABLE IF NOT EXISTS `Language` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=53 ;
 
 --
--- Dumping data for table `Language`
+-- Dumping data for table `language`
 --
 
-INSERT INTO `Language` (`id`, `language`, `iso639code`, `status`) VALUES
+INSERT INTO `language` (`id`, `language`, `iso639code`, `status`) VALUES
 (1, 'Alemannisch', 'al', 0),
 (2, 'Ænglisc', 'an', 0),
 (3, 'العربية', 'ar', 0),
@@ -660,10 +660,10 @@ INSERT INTO `Language` (`id`, `language`, `iso639code`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Lang_English`
+-- Table structure for table `lang_english`
 --
 
-CREATE TABLE IF NOT EXISTS `Lang_English` (
+CREATE TABLE IF NOT EXISTS `lang_english` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `key` varchar(255) NOT NULL,
   `text` text NOT NULL,
@@ -673,10 +673,10 @@ CREATE TABLE IF NOT EXISTS `Lang_English` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=204 ;
 
 --
--- Dumping data for table `Lang_English`
+-- Dumping data for table `lang_english`
 --
 
-INSERT INTO `Lang_English` (`id`, `key`, `text`) VALUES
+INSERT INTO `lang_english` (`id`, `key`, `text`) VALUES
 (3, 'register_username', 'User Name'),
 (4, 'register_password', 'Password'),
 (5, 'register_password2', 'Password again'),
@@ -877,10 +877,10 @@ INSERT INTO `Lang_English` (`id`, `key`, `text`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `NewsLetter`
+-- Table structure for table `newsletter`
 --
 
-CREATE TABLE IF NOT EXISTS `NewsLetter` (
+CREATE TABLE IF NOT EXISTS `newsletter` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -891,31 +891,31 @@ CREATE TABLE IF NOT EXISTS `NewsLetter` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `OnlineUsers`
+-- Table structure for table `onlineusers`
 --
 
-CREATE TABLE IF NOT EXISTS `OnlineUsers` (
+CREATE TABLE IF NOT EXISTS `onlineusers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `session` varchar(100) NOT NULL,
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1162 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1180 ;
 
 --
--- Dumping data for table `OnlineUsers`
+-- Dumping data for table `onlineusers`
 --
 
-INSERT INTO `OnlineUsers` (`id`, `session`, `time`, `username`) VALUES
-(1161, '8vr7beh5nje7u205cmkt0oudv4', 1386425527, '');
+INSERT INTO `onlineusers` (`id`, `session`, `time`, `username`) VALUES
+(1179, 'aia0grna6ea5te9habag2uhe46', 1387130788, '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `PrivateMessages`
+-- Table structure for table `privatemessages`
 --
 
-CREATE TABLE IF NOT EXISTS `PrivateMessages` (
+CREATE TABLE IF NOT EXISTS `privatemessages` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `from` int(11) NOT NULL,
   `to` int(11) NOT NULL,
@@ -927,10 +927,10 @@ CREATE TABLE IF NOT EXISTS `PrivateMessages` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=10 ;
 
 --
--- Dumping data for table `PrivateMessages`
+-- Dumping data for table `privatemessages`
 --
 
-INSERT INTO `PrivateMessages` (`id`, `from`, `to`, `subject`, `message`, `date`, `opened`) VALUES
+INSERT INTO `privatemessages` (`id`, `from`, `to`, `subject`, `message`, `date`, `opened`) VALUES
 (6, 18, 18, 'test subject', 'test message', '2013-07-10 08:16:46', 0),
 (7, 18, 18, 'this is test subject 2', 'sdfg ;ksjhf ;sldkf ;slkjdf sdl;kfjowiqjef;sdlkjf ;lkjfi\n\nsdflkj sd;lkfj sd;lkfjoiwejfioewjrfkldjf;lsdkjf;lskjdf;lksdjfiowwjeoioij   ijerfl;ksdjf ;lskdf\n\n\nwer ;lkjksdflksdjf oisjdfoiwerjfowe4jrwejrpewokrpeowkrew \n\nwef; ljsdlfkjds;lkfj sodifj oiwejfoweijrf\nwero ijewroiwer powieuropeiwuroiweur\n\nweroijwe oruweoirueowirueiowru', '2013-07-10 22:06:48', 0),
 (9, 18, 18, 'test reply subject', 'test reply message', '2013-07-10 23:08:23', 0);
@@ -938,10 +938,10 @@ INSERT INTO `PrivateMessages` (`id`, `from`, `to`, `subject`, `message`, `date`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Settings`
+-- Table structure for table `settings`
 --
 
-CREATE TABLE IF NOT EXISTS `Settings` (
+CREATE TABLE IF NOT EXISTS `settings` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `value` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -950,19 +950,19 @@ CREATE TABLE IF NOT EXISTS `Settings` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
 
 --
--- Dumping data for table `Settings`
+-- Dumping data for table `settings`
 --
 
-INSERT INTO `Settings` (`id`, `name`, `value`) VALUES
+INSERT INTO `settings` (`id`, `name`, `value`) VALUES
 (1, 'run_cron_onload', '1');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `SubtitleCDS`
+-- Table structure for table `subtitlecds`
 --
 
-CREATE TABLE IF NOT EXISTS `SubtitleCDS` (
+CREATE TABLE IF NOT EXISTS `subtitlecds` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `sid` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
@@ -970,19 +970,19 @@ CREATE TABLE IF NOT EXISTS `SubtitleCDS` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
--- Dumping data for table `SubtitleCDS`
+-- Dumping data for table `subtitlecds`
 --
 
-INSERT INTO `SubtitleCDS` (`id`, `sid`, `title`) VALUES
+INSERT INTO `subtitlecds` (`id`, `sid`, `title`) VALUES
 (1, 1, 'CD 1');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Subtitles`
+-- Table structure for table `subtitles`
 --
 
-CREATE TABLE IF NOT EXISTS `Subtitles` (
+CREATE TABLE IF NOT EXISTS `subtitles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `fps_sec` int(11) NOT NULL,
   `fps_mil_sec` int(11) NOT NULL,
@@ -999,19 +999,19 @@ CREATE TABLE IF NOT EXISTS `Subtitles` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
--- Dumping data for table `Subtitles`
+-- Dumping data for table `subtitles`
 --
 
-INSERT INTO `Subtitles` (`id`, `fps_sec`, `fps_mil_sec`, `release_name`, `version`, `language`, `format`, `cds`, `vid`, `country`, `uid`, `key`) VALUES
+INSERT INTO `subtitles` (`id`, `fps_sec`, `fps_mil_sec`, `release_name`, `version`, `language`, `format`, `cds`, `vid`, `country`, `uid`, `key`) VALUES
 (1, 8, 6, '2 guns test', '2 guns test version', 14, 2, 1, 21, 236, 18, '181383757068RiPGE');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `SubtitlesContent`
+-- Table structure for table `subtitlescontent`
 --
 
-CREATE TABLE IF NOT EXISTS `SubtitlesContent` (
+CREATE TABLE IF NOT EXISTS `subtitlescontent` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `sid` int(11) NOT NULL,
   `uid` int(11) NOT NULL,
@@ -1026,10 +1026,10 @@ CREATE TABLE IF NOT EXISTS `SubtitlesContent` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=21 ;
 
 --
--- Dumping data for table `SubtitlesContent`
+-- Dumping data for table `subtitlescontent`
 --
 
-INSERT INTO `SubtitlesContent` (`id`, `sid`, `uid`, `cid`, `line`, `start`, `end`, `text`, `checked`, `done`) VALUES
+INSERT INTO `subtitlescontent` (`id`, `sid`, `uid`, `cid`, `line`, `start`, `end`, `text`, `checked`, `done`) VALUES
 (1, 1, 18, 1, 1, '00:01:27,520', '00:01:28,987', '- Hi.\r\n- Hi.\r\n', 0, 0),
 (2, 1, 18, 1, 2, '00:01:30,123', '00:01:31,156', 'How many?\r\n', 0, 0),
 (3, 1, 18, 1, 3, '00:01:32,125', '00:01:33,525', 'Two.\r\n', 0, 0),
@@ -1054,10 +1054,31 @@ INSERT INTO `SubtitlesContent` (`id`, `sid`, `uid`, `cid`, `line`, `start`, `end
 -- --------------------------------------------------------
 
 --
--- Table structure for table `SystemRouter`
+-- Table structure for table `systemcron`
 --
 
-CREATE TABLE IF NOT EXISTS `SystemRouter` (
+CREATE TABLE IF NOT EXISTS `systemcron` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `job` varchar(255) NOT NULL,
+  `frequancy` int(11) NOT NULL,
+  `last_run` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `systemcron`
+--
+
+INSERT INTO `systemcron` (`id`, `job`, `frequancy`, `last_run`) VALUES
+(1, 'AutoTranslation', 300, 1387131230);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `systemrouter`
+--
+
+CREATE TABLE IF NOT EXISTS `systemrouter` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `head` tinyint(1) NOT NULL,
   `header` tinyint(1) NOT NULL,
@@ -1075,10 +1096,10 @@ CREATE TABLE IF NOT EXISTS `SystemRouter` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=35 ;
 
 --
--- Dumping data for table `SystemRouter`
+-- Dumping data for table `systemrouter`
 --
 
-INSERT INTO `SystemRouter` (`id`, `head`, `header`, `left`, `body`, `right`, `footer`, `dataonly`, `controller`, `widget`, `page`, `sec`) VALUES
+INSERT INTO `systemrouter` (`id`, `head`, `header`, `left`, `body`, `right`, `footer`, `dataonly`, `controller`, `widget`, `page`, `sec`) VALUES
 (1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'home', ''),
 (2, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'video', ''),
 (3, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'team', ''),
@@ -1115,10 +1136,10 @@ INSERT INTO `SystemRouter` (`id`, `head`, `header`, `left`, `body`, `right`, `fo
 -- --------------------------------------------------------
 
 --
--- Table structure for table `TeamChat`
+-- Table structure for table `teamchat`
 --
 
-CREATE TABLE IF NOT EXISTS `TeamChat` (
+CREATE TABLE IF NOT EXISTS `teamchat` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `date` datetime NOT NULL,
   `uid` int(11) NOT NULL,
@@ -1131,10 +1152,10 @@ CREATE TABLE IF NOT EXISTS `TeamChat` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `TeamMembers`
+-- Table structure for table `teammembers`
 --
 
-CREATE TABLE IF NOT EXISTS `TeamMembers` (
+CREATE TABLE IF NOT EXISTS `teammembers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `tid` int(11) NOT NULL,
   `uid` int(11) NOT NULL,
@@ -1144,19 +1165,19 @@ CREATE TABLE IF NOT EXISTS `TeamMembers` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
 
 --
--- Dumping data for table `TeamMembers`
+-- Dumping data for table `teammembers`
 --
 
-INSERT INTO `TeamMembers` (`id`, `tid`, `uid`, `state`) VALUES
+INSERT INTO `teammembers` (`id`, `tid`, `uid`, `state`) VALUES
 (5, 4, 18, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `TeamPermissions`
+-- Table structure for table `teampermissions`
 --
 
-CREATE TABLE IF NOT EXISTS `TeamPermissions` (
+CREATE TABLE IF NOT EXISTS `teampermissions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `uid` int(11) NOT NULL,
   `sid` int(11) NOT NULL,
@@ -1168,10 +1189,10 @@ CREATE TABLE IF NOT EXISTS `TeamPermissions` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Teams`
+-- Table structure for table `teams`
 --
 
-CREATE TABLE IF NOT EXISTS `Teams` (
+CREATE TABLE IF NOT EXISTS `teams` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `owner` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
@@ -1181,10 +1202,10 @@ CREATE TABLE IF NOT EXISTS `Teams` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
--- Dumping data for table `Teams`
+-- Dumping data for table `teams`
 --
 
-INSERT INTO `Teams` (`id`, `owner`, `title`, `created`) VALUES
+INSERT INTO `teams` (`id`, `owner`, `title`, `created`) VALUES
 (4, 18, 'team 1', '2013-06-27 21:33:19'),
 (5, 18, 'team 2', '2013-06-27 21:34:15'),
 (6, 18, 'team 3', '2013-06-27 21:34:39'),
@@ -1196,10 +1217,10 @@ INSERT INTO `Teams` (`id`, `owner`, `title`, `created`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `TeamSubtitles`
+-- Table structure for table `teamsubtitles`
 --
 
-CREATE TABLE IF NOT EXISTS `TeamSubtitles` (
+CREATE TABLE IF NOT EXISTS `teamsubtitles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `tid` int(11) NOT NULL,
   `sid` int(11) NOT NULL,
@@ -1209,10 +1230,10 @@ CREATE TABLE IF NOT EXISTS `TeamSubtitles` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Thumbnails`
+-- Table structure for table `thumbnails`
 --
 
-CREATE TABLE IF NOT EXISTS `Thumbnails` (
+CREATE TABLE IF NOT EXISTS `thumbnails` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `vid` int(11) NOT NULL,
   `thumbnail` int(11) NOT NULL,
@@ -1222,10 +1243,10 @@ CREATE TABLE IF NOT EXISTS `Thumbnails` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Transcriptions`
+-- Table structure for table `transcriptions`
 --
 
-CREATE TABLE IF NOT EXISTS `Transcriptions` (
+CREATE TABLE IF NOT EXISTS `transcriptions` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `sid` int(11) NOT NULL,
   `cid` int(11) NOT NULL,
@@ -1236,10 +1257,10 @@ CREATE TABLE IF NOT EXISTS `Transcriptions` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=26 ;
 
 --
--- Dumping data for table `Transcriptions`
+-- Dumping data for table `transcriptions`
 --
 
-INSERT INTO `Transcriptions` (`id`, `sid`, `cid`, `uid`, `lid`, `text`) VALUES
+INSERT INTO `transcriptions` (`id`, `sid`, `cid`, `uid`, `lid`, `text`) VALUES
 (3, 52, 10, 18, 8971, 'test'),
 (4, 52, 10, 18, 8972, 'test'),
 (5, 52, 10, 18, 8973, 'test'),
@@ -1267,10 +1288,10 @@ INSERT INTO `Transcriptions` (`id`, `sid`, `cid`, `uid`, `lid`, `text`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `TranslationQueue`
+-- Table structure for table `translationqueue`
 --
 
-CREATE TABLE IF NOT EXISTS `TranslationQueue` (
+CREATE TABLE IF NOT EXISTS `translationqueue` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `sid` int(11) NOT NULL,
   `cid` int(11) NOT NULL,
@@ -1283,10 +1304,10 @@ CREATE TABLE IF NOT EXISTS `TranslationQueue` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=14 ;
 
 --
--- Dumping data for table `TranslationQueue`
+-- Dumping data for table `translationqueue`
 --
 
-INSERT INTO `TranslationQueue` (`id`, `sid`, `cid`, `lid`, `from`, `to`, `text`) VALUES
+INSERT INTO `translationqueue` (`id`, `sid`, `cid`, `lid`, `from`, `to`, `text`) VALUES
 (4, 1, 1, 1, 'en', 'en', '- Hi.\r\n- Hi.\r\n'),
 (5, 1, 1, 2, 'en', 'en', 'How many?\r\n'),
 (6, 1, 1, 3, 'en', 'en', 'Two.\r\n'),
@@ -1301,10 +1322,10 @@ INSERT INTO `TranslationQueue` (`id`, `sid`, `cid`, `lid`, `from`, `to`, `text`)
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Users`
+-- Table structure for table `users`
 --
 
-CREATE TABLE IF NOT EXISTS `Users` (
+CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -1319,48 +1340,48 @@ CREATE TABLE IF NOT EXISTS `Users` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=38 ;
 
 --
--- Dumping data for table `Users`
+-- Dumping data for table `users`
 --
 
-INSERT INTO `Users` (`id`, `username`, `password`, `email`, `BirthYear`, `group`, `key`, `LastLogin`, `KeyTime`) VALUES
-(18, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.test', 2009, 1, '5UzrHJyfd7uKCF5gmtzDo8FeeKBRNS', 1386328310, 1386417785),
-(19, 'ghfghh', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'dsd@sd.sd', 2006, 3, '4UAEibzE02cXqksbgoNpJ4cfzH8LY8', 0, 1386417785),
-(20, 'wejhg', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'aaa@aaa.aaa', 1919, 3, 'zzFIYLTijWlc3aeha4jT7ILRSIkxVa', 0, 1386417785),
-(21, 't567567567', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'tryrt@erttr.rrt', 1917, 3, 'dMdE9UegmMVBxJMLVCKkeLjpF2rzYL', 0, 1386417785),
-(22, 'test2', '109f4b3c50d7b0df729d299bc6f8e9ef9066971f', 'test2@test2.com', 2010, 3, 'AWlNK6wtm8HDpECDnIukcX11nsrARO', 0, 1386417785),
-(23, 'test3', '3ebfa301dc59196f18593c45e519287a23297589', 'test3@test3.com', 2003, 3, 'um86lb8VKpmnUSM3zVQ3VpxYHEkT6v', 0, 1386417785),
-(24, 'test4', '1ff2b3704aede04eecb51e50ca698efd50a1379b', 'test4@test4.com', 2002, 3, 'apSkxCdXp7RJf00u1RoAcMeRKmeE9H', 0, 1386417785),
-(25, 'test5', '911ddc3b8f9a13b5499b6bc4638a2b4f3f68bf23', 'test5@test5.com', 2001, 3, 'DOlo8GPwY6yHQq0ZYt816CqRqGP7F2', 0, 1386417785),
-(26, 'test6', 'a66df261120b6c2311c6ef0b1bab4e583afcbcc0', 'test6@test6.com', 2005, 3, 'QS2uoKhpZNACADHuDmOQ8yF1wktTNg', 0, 1386417785),
-(27, 'test7', 'ea3243132d653b39025a944e70f3ecdf70ee3994', 'test7@test7.com', 2002, 3, 'XMprjxktiv2s5vtXqV96xzZt7Ovapt', 0, 1386417785),
-(28, 'test8', 'd03f9d34194393019e6d12d7c942827ebd694443', 'test8@test8.com', 1999, 3, 'rgIyXtszEd2lJjqtV753rt0E0JEoPI', 0, 1386425529),
-(29, 'test9', '53d525836cc96d089a5a4218b464fda532f7debe', 'test9@test9.com', 2001, 3, 'XRDNr8EO2Pz5e2EuYkzkKPzux6miMg', 0, 1386425529),
-(30, 'test10', '168f4029f416ee06565f12e697dfc1534ae69d32', 'test10@test10.com', 2002, 3, 'bAsUII26dwutnli5q2pz5ViYzSVVBe', 0, 1386425529),
-(31, 'test11', '100c4e57374fc998e57164d4c0453bd3a4876a58', 'test11@test11.com', 2004, 3, 'MvoPPjFZwrEBPu2Yew5XHatUHvrEc8', 0, 1386425529),
-(32, 'test12', '4ff1a33e188b7b86123d6e3be2722a23514a83b4', 'test12@test12.com', 1999, 3, 'IyF8ur37uER9X32RAY3kBgT9JfZpcN', 0, 1386425529),
-(33, 'test13', 'd804cd9cc0c42b0652bab002f67858ab803c40c6', 'test13@test13.com', 2005, 3, 'lHHeq8sqbhcG5f9S7D0lKw1VWvSY9G', 0, 1386425529),
-(34, 'test14', 'd79336a97da7d284c0fe15497d2fa944d1f2abb1', 'test14@test14.com', 2003, 3, 'OjnEyj3uiMaOM6bIc55Lj6k4iZReT4', 0, 1386425529),
-(35, 'test15', '61bb70fa60368f069e62d601c357d203700ab2d2', 'test15@test15.com', 2000, 3, 'ckjdgYhKyf1w2JeSay9FVhteL0spFk', 0, 1386425529),
-(36, 'test16', '1fbefee9cfb86926757519357e077fd6a21aef0f', 'test16@test16.com', 1998, 3, 'Mx6mGt2FTyWmBDM1y21LXDDawJ5juc', 0, 1386425529),
-(37, 'test17', '08a25c0f270b29aeba650e6b2d1a9947a778c5da', 'test17@test17.com', 1996, 3, 'lOyoTLW7GKnKcR47oHLzKlDXdqrChZ', 0, 1386425529);
+INSERT INTO `users` (`id`, `username`, `password`, `email`, `BirthYear`, `group`, `key`, `LastLogin`, `KeyTime`) VALUES
+(18, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.test', 2009, 1, 'yjKp1fGsLLiB6r4JUIE6lGbihSUBeI', 1387123863, 1387123351),
+(19, 'ghfghh', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'dsd@sd.sd', 2006, 3, 'SG6Egg5d3QoikJptAlp512xa1apEps', 0, 1387123351),
+(20, 'wejhg', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'aaa@aaa.aaa', 1919, 3, '0cGtkV7fNhLtQDxtJ0fDATkMIzFm9v', 0, 1387123351),
+(21, 't567567567', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'tryrt@erttr.rrt', 1917, 3, '4PN90r51WnffQFpxHlelge8nb1TEnn', 0, 1387123351),
+(22, 'test2', '109f4b3c50d7b0df729d299bc6f8e9ef9066971f', 'test2@test2.com', 2010, 3, 'FRJEgwOcXHwCeRKKUYhLVuquJ5yPkV', 0, 1387123351),
+(23, 'test3', '3ebfa301dc59196f18593c45e519287a23297589', 'test3@test3.com', 2003, 3, 'yJDiA1MGksn40HPdgVzJzQgxHaI7cs', 0, 1387123351),
+(24, 'test4', '1ff2b3704aede04eecb51e50ca698efd50a1379b', 'test4@test4.com', 2002, 3, 'siST0MzcIIFU300qwQGuZ0ZccEPZcu', 0, 1387123351),
+(25, 'test5', '911ddc3b8f9a13b5499b6bc4638a2b4f3f68bf23', 'test5@test5.com', 2001, 3, 'nI1D5tCH8QLWm2RQG7s4ctroPyKJ1B', 0, 1387123351),
+(26, 'test6', 'a66df261120b6c2311c6ef0b1bab4e583afcbcc0', 'test6@test6.com', 2005, 3, 'fplthnQ8mvZbdd3dEMcfyWOdX9QJtH', 0, 1387123351),
+(27, 'test7', 'ea3243132d653b39025a944e70f3ecdf70ee3994', 'test7@test7.com', 2002, 3, 'kL9uNaCqzE5PwWXYjhzYa6GOrylRSl', 0, 1387123351),
+(28, 'test8', 'd03f9d34194393019e6d12d7c942827ebd694443', 'test8@test8.com', 1999, 3, '4vbgLBMbCjyXTFCaxmUVnfhyRhMkxT', 0, 1387123360),
+(29, 'test9', '53d525836cc96d089a5a4218b464fda532f7debe', 'test9@test9.com', 2001, 3, '9qXmBM4R8eJNLc0j2FTHWiWiDaXt3A', 0, 1387123360),
+(30, 'test10', '168f4029f416ee06565f12e697dfc1534ae69d32', 'test10@test10.com', 2002, 3, 'EVcHJfpQEiMUhh3BtjtdPT9XZ3Dfyh', 0, 1387123360),
+(31, 'test11', '100c4e57374fc998e57164d4c0453bd3a4876a58', 'test11@test11.com', 2004, 3, 'lyL3uVWurxsK5ttZMHjS2qcAhNQ6rW', 0, 1387123360),
+(32, 'test12', '4ff1a33e188b7b86123d6e3be2722a23514a83b4', 'test12@test12.com', 1999, 3, 'A89IKqIrF4Q8awEAuBFp3GDVQmPEdj', 0, 1387123360),
+(33, 'test13', 'd804cd9cc0c42b0652bab002f67858ab803c40c6', 'test13@test13.com', 2005, 3, 'pR0M4sGJoVpqMQMnc3wKu1t3ZzOdxA', 0, 1387123360),
+(34, 'test14', 'd79336a97da7d284c0fe15497d2fa944d1f2abb1', 'test14@test14.com', 2003, 3, 'KZIdBStKCjpvZw17p4tCq4z3H3NeKx', 0, 1387123361),
+(35, 'test15', '61bb70fa60368f069e62d601c357d203700ab2d2', 'test15@test15.com', 2000, 3, 'L34YfHPjK45n9YFec9P10foIyGM11G', 0, 1387123361),
+(36, 'test16', '1fbefee9cfb86926757519357e077fd6a21aef0f', 'test16@test16.com', 1998, 3, 'a66eNq1rN6wUkJRWVUMSZSTV0jqv9A', 0, 1387123361),
+(37, 'test17', '08a25c0f270b29aeba650e6b2d1a9947a778c5da', 'test17@test17.com', 1996, 3, '4PiwG32lBsYo4zhYhMYttjYYt2hthS', 0, 1387123361);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `VideoCategory`
+-- Table structure for table `videocategory`
 --
 
-CREATE TABLE IF NOT EXISTS `VideoCategory` (
+CREATE TABLE IF NOT EXISTS `videocategory` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `category` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
 
 --
--- Dumping data for table `VideoCategory`
+-- Dumping data for table `videocategory`
 --
 
-INSERT INTO `VideoCategory` (`id`, `category`) VALUES
+INSERT INTO `videocategory` (`id`, `category`) VALUES
 (1, 'Activism & Non Profits'),
 (2, 'Animation & Motion Graphics'),
 (3, 'Art'),
@@ -1383,10 +1404,10 @@ INSERT INTO `VideoCategory` (`id`, `category`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Videos`
+-- Table structure for table `videos`
 --
 
-CREATE TABLE IF NOT EXISTS `Videos` (
+CREATE TABLE IF NOT EXISTS `videos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `uid` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
@@ -1413,10 +1434,10 @@ CREATE TABLE IF NOT EXISTS `Videos` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=39 ;
 
 --
--- Dumping data for table `Videos`
+-- Dumping data for table `videos`
 --
 
-INSERT INTO `Videos` (`id`, `uid`, `title`, `other_title`, `type`, `category`, `language`, `country`, `genres`, `release_date`, `casting`, `director`, `length`, `tags`, `synopsis`, `thumbnail`, `image`, `source`, `year`, `url`, `public`, `featured`) VALUES
+INSERT INTO `videos` (`id`, `uid`, `title`, `other_title`, `type`, `category`, `language`, `country`, `genres`, `release_date`, `casting`, `director`, `length`, `tags`, `synopsis`, `thumbnail`, `image`, `source`, `year`, `url`, `public`, `featured`) VALUES
 (15, 18, '300: Rise of an Empire', '300: Rise of an Empire', 1, 10, 14, 236, '25', '2013-07-09', 'Lena Headey, Eva Green, Rodrigo Santoro', 'Noam Murro', 90, '300, Rise, Empire', 'The Greek general Themistocles battles an invading army of Persians under the mortal-turned-god, Xerxes.', '15_1813775109260FC1S.jpg', '', 'http://www.youtube.com/watch?v=2zqy21Z29ps', 0, '', 1, 1),
 (16, 18, 'Riddick (2013)', 'Riddick', 1, 10, 14, 236, '1,21,24', '2013-09-06', 'Vin Diesel, Karl Urban, Katee Sackhoff', 'David Twohy', 90, 'Riddick', 'Left for dead on a sun-scorched planet, Riddick finds himself up against an alien race of predators. Activating an emergency beacon alerts two ships: one carrying a new breed of mercenary, the other captained by a man from Riddick''s past.', '16_181379538810wvn1x.jpg', '', 'http://www.youtube.com/watch?v=zH3O-CeZckE', 0, '', 1, 1),
 (17, 18, 'Thor: The Dark World', 'Thor 2013', 1, 10, 14, 236, '1,2,10', '2013-11-08', 'Chris Hemsworth, Natalie Portman, Christopher Eccleston', 'Alan Taylor', 100, 'Thor, 2013, Dark, World', 'Faced with an enemy that even Odin and Asgard cannot withstand, Thor must embark on his most perilous and personal journey yet, one that will reunite him with Jane Foster and force him to sacrifice everything to save us all.', '17_181379539607ivkN3.jpg', '', 'http://www.youtube.com/watch?v=npvJ9FTgZbM', 0, '', 1, 1),
@@ -1445,20 +1466,20 @@ INSERT INTO `Videos` (`id`, `uid`, `title`, `other_title`, `type`, `category`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `VideoType`
+-- Table structure for table `videotype`
 --
 
-CREATE TABLE IF NOT EXISTS `VideoType` (
+CREATE TABLE IF NOT EXISTS `videotype` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
--- Dumping data for table `VideoType`
+-- Dumping data for table `videotype`
 --
 
-INSERT INTO `VideoType` (`id`, `type`) VALUES
+INSERT INTO `videotype` (`id`, `type`) VALUES
 (1, 'movie'),
 (2, 'tv show'),
 (3, 'anime');

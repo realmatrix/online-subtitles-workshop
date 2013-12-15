@@ -13,9 +13,9 @@
 	
 		function cron_hooks(){
 			$array = array(
-				array("runall", "RunAll"),
-				array("userkeys", "UpdateUserKeys"),
-				array("translate", "AutoTranslation"),
+				array("runall", "RunJob(RunAll)"),
+				array("userkeys", "RunJob(UpdateUserKeys)"),
+				array("translate", "RunJob(AutoTranslation)"),
 			);
 			return $array;
 		}
@@ -50,9 +50,24 @@
 			}
 		}
 		
+		function RunJob($job){
+			$args = array(
+				array(":job", $job, "str"),
+			);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `SystemCron` WHERE `job` = :job", $args);
+			if($GLOBALS['COMMON']->GetMicroTime() - $res[0]['last_run']>$res[0]['frequancy']){
+				$args = array(
+					array(":time", $GLOBALS['COMMON']->GetMicroTime(), ""),
+					array(":job", $job, "str"),
+				);
+				$GLOBALS['COMMON']->db_query("UPDATE `systemcron` SET `last_run` = :time WHERE `job` = :job", $args);
+				self::$job();
+			}
+		}
+		
 		function RunAll(){
-			self::UpdateUserKeys();
-			self::AutoTranslation();
+			self::RunJob('UpdateUserKeys');
+			self::RunJob('AutoTranslation');
 		}
 		
 		function ClearLoginBan(){
