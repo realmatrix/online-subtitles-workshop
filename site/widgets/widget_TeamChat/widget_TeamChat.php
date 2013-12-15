@@ -24,7 +24,7 @@
 		
 		function widget_TeamChat_render(){
 			$array = array(
-				array("{test}", "test"),
+				array("{sid}", $GLOBALS['vars']['sid']),
 			);
 			return $array;
 		}	
