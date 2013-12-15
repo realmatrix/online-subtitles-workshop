@@ -1,8 +1,8 @@
 <?php
 
-	session_start();
-	
 	error_reporting(E_ERROR | E_WARNING | E_PARSE);
+	
+	session_start();
 	
 	//ini_set('memory_limit', '256');
 	

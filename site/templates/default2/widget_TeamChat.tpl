@@ -14,12 +14,11 @@ var interval = setInterval(GetChat,10000);
 		   {
 		   if (xmlhttp.readyState==4 && xmlhttp.status==200)
 		     {
-		     document.getElementById(teamchat-messages).innerHTML=xmlhttp.responseText;
+		     document.getElementById('teamchat-messages').innerHTML=xmlhttp.responseText;
 		     }
 		   }
 		 xmlhttp.open("GET", str, false);
 		 xmlhttp.send();
-
 	}
 </script>
 <style>

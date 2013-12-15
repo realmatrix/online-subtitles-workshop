@@ -27,12 +27,15 @@
 		function QueryTeam_content(){
 				$content = array
 				  (
-				  array("{query}", nl2br(self::$query)), 
+				  array("{query}", self::$query), 
 				 );
 			 
 		return $content;
 		}
 		
+		function GetChat(){
+			self::$query = "aaaaaaaaaaaaaa";
+		}
 
 
 	
