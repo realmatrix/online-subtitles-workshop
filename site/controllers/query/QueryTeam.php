@@ -41,7 +41,7 @@
 			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `TeamChat` WHERE `sid` = :sid", $params);
 			$chat = "";
 			for ($i=0; $i < count($res); $i++) { 
-				$chat.="<div>";
+				$chat.="<div class='chat-line-container'>";
 				$chat.="<div class='chat-username'>".$res[$i]['username']."</div>";
 				$chat.="<div class='chat-date'>".$res[$i]['date']."</div>";
 				$chat.="<div class='chat-text'>".$res[$i]['text']."</div>";

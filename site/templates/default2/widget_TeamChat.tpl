@@ -74,9 +74,11 @@ var interval = setInterval(GetChat,10000);
 	}
 	.chat-username{
 		float:left;
+		font-weight: bold;
 	}
 	.chat-date{
 		float:right;
+		font-weight: bold;
 	}
 	.chat-text{
 		clear: both;
@@ -88,6 +90,11 @@ var interval = setInterval(GetChat,10000);
 	}
 	#div-submit{
 		float:right
+	}
+	.chat-line-container{
+		border-bottom-width:1px;
+		border-bottom-color:black;
+		border-bottom-style: solid;
 	}
 </style>
 <DIV class="catglow" style="width:100%;">
