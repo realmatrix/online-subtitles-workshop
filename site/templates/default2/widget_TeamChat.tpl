@@ -19,11 +19,13 @@ var interval = setInterval(GetChat,10000);
 		   }
 		 xmlhttp.open("GET", str, false);
 		 xmlhttp.send();
+		 scroll();
 	}
 	
 	function SendMessage(){
+		document.getElementById('send-state').innerHTML = "sending...";
 		var content = document.getElementById('teamchat-textarea').value;
-		var text = encodeURIComponent(content.textContent);
+		var text = encodeURIComponent(content);
 		var str = "index.php?page=query&sec=team&ssec=QueryTeam&h=set&sid="+{sid}+"&text="+text;	
 		if (window.XMLHttpRequest)
 		   {
@@ -43,7 +45,15 @@ var interval = setInterval(GetChat,10000);
 		 xmlhttp.open("GET", str, false);
 		 xmlhttp.send();
 		 document.getElementById('teamchat-textarea').value = "";
+		 document.getElementById('send-state').innerHTML = "";
+		 scroll();
 	}
+	
+	function scroll(){
+		var objDiv = document.getElementById("teamchat-messages");
+		objDiv.scrollTop = objDiv.scrollHeight;
+	}
+	
 	GetChat(); 
 </script>
 <style>
@@ -53,11 +63,31 @@ var interval = setInterval(GetChat,10000);
 		border-style: solid;
 		border-width: 1px;
 		overflow-x: hidden;
+		overflow-y: scroll;
 		margin-bottom: 5px;
 	}
 	#teamchat-textarea{
-		width: 95%;
+		width: 97%;
 		height: 40px;
+		padding-top:0PX;
+		vertical-align: top;
+	}
+	.chat-username{
+		float:left;
+	}
+	.chat-date{
+		float:right;
+	}
+	.chat-text{
+		clear: both;
+		width:auto;
+	}
+	#send-state{
+		float:left;
+		width:auto;
+	}
+	#div-submit{
+		float:right
 	}
 </style>
 <DIV class="catglow" style="width:100%;">
@@ -81,8 +111,11 @@ var interval = setInterval(GetChat,10000);
 <div id="widgt-teamchat">
 	<div id='teamchat-messages'></div>
 	<form>
-		<textarea id='teamchat-textarea'></textarea>
-		<div style="width: 100%; text-align: right;"><input type="submit" value="Send" onclick="SendMessage(); return false;"/></div>
+		<input type='text' id='teamchat-textarea' />
+		<div style="width: 100%;">
+		<div id='send-state'></div>
+		<div id='div-submit'><input type="submit" value="Send" onclick="SendMessage(); return false;"/></div>
+		</div>
 	</form>
 </div>
 
