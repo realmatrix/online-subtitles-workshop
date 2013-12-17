@@ -9,7 +9,8 @@
 	<script type='text/javascript' src='{TemplatePath}/files/apps/DataTables-1.9.4/media/js/jquery.dataTables.js'></script>
 	<script type='text/javascript' charset='utf-8' src='{TemplatePath}/files/apps/DataTables-1.9.4/extras/TableTools/media/js/ZeroClipboard.js'></script>
 	<script type='text/javascript' charset='utf-8' src='{TemplatePath}/files/apps/DataTables-1.9.4/extras/TableTools/media/js/TableTools.js'></script>
-	
+  <script src="{TemplatePath}/files/apps/EasyTabs/vendor/jquery.hashchange.min.js" type="text/javascript"></script>
+  <script src="{TemplatePath}/files/apps/EasyTabs/lib/jquery.easytabs.min.js" type="text/javascript"></script>	
 	<script>
 	function processFormGet(formId, divid) { 
 	//your validation code
