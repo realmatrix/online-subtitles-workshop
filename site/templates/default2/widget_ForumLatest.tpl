@@ -20,7 +20,7 @@
 <div id="tab-container" class='tab-container'>
  <ul class='etabs'>
    <li class='tab'><a href="#tabs1-html">Latest Topics</a></li>
-   <li class='tab'><a href="#tabs1-js">Latest Post</a></li>
+   <li class='tab'><a href="#tabs1-js">Latest Posts</a></li>
    <li class='tab'><a href="#tabs1-css">Top Topics</a></li>
  </ul>
  <div class='panel-container'>

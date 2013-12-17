@@ -27,6 +27,7 @@
 				//array("{LatestTopicsTitle}", $GLOBALS['COMMON']->l('widget_ForumLatest_LatestTopics')),
 				array("{LatestPost}", self::GetLatestReplies()),
 				array("{LatestTopic}", self::GetLatestThreads()),
+				array("{TopTopics}", self::GetTopThreads()),
 			);	
 			return $array;
 		}
@@ -53,6 +54,15 @@
 			$content = "";
 			for ($i=0; $i < count($res); $i++) { 
 				$content.="<div class='latest-threads'><a href='index.php?page=forum&sec=threads&fid=".$res[$i]['forum']."&tid=".$res[$i]['tid']."'>".$res[$i]['title']."</a></div>";
+			}
+			return $content;
+		}
+		
+		function GetTopThreads(){
+			$res = $GLOBALS['COMMON']->db_query("SELECT fid, tid, count(*) FROM forumreplies GROUP BY tid ORDER BY count(*) DESC LIMIT 10", array());
+			$content = "";
+			for ($i=0; $i < count($res); $i++) { 
+				$content.="<div class='top-threads'><a href='index.php?page=forum&sec=threads&fid=".$res[$i]['fid']."&tid=".$res[$i]['tid']."'>".self::GetThreadTitleByID($res[$i]['tid'])."</a></div>";
 			}
 			return $content;
 		}
