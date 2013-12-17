@@ -29,6 +29,10 @@
 			return $array;
 		}
 		
+		function GetLatestReplies(){
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `forumreplies` WHERE 1 order by `id` desc limit 10", array());
+		}
+		
 
 		
 	}
