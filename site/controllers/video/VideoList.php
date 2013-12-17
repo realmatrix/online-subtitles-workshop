@@ -45,9 +45,20 @@
 				$rows .= "<tr>"; 
 				$rows .= "<td>".$counter."</td>";
 				$rows .= "<td><a href='index.php?page=video&sec=view&vid=".$res[$i]['id']."'>".$res[$i]['title']."</a></td>";
+				$rows .= "<td>".$res[$i]['views']."</td>";
+				$rows .= "<td>".self::GetSubtitlesCount($res[$i]['id'])."</td>";
+				$rows .= "<td><a href='index.php?page=video&sec=edit&vid=".$res[$i]['vid']."'>Edit</a></td>";
 				$rows .= "</tr>";
 			}
 			return $rows;
+		}
+		
+		function GetSubtitlesCount($vid){
+			$params = array(
+				array(":vid", $vid, "str"),
+			);
+			$res = $GLOBALS['COMMON']->db_query("SELECT `id` FROM `subtitles` WHERE `vid` = :vid", $params);
+			return count($res);
 		}
 
 }

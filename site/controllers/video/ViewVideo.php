@@ -23,6 +23,7 @@
 		}
 				
 		function ViewVideo_content(){
+			self::UpdateViews();
 			$video = $GLOBALS['COMMON']->GetVideoInfo($GLOBALS['vars']['vid']);
 				$content = array
 				  (
@@ -67,6 +68,13 @@
 				$res =$genre[0]['genre'];
 			}
 			return $res;
+		}
+
+		function UpdateViews(){
+			$params = array(
+				array(":vid", $GLOBALS['vars']['vid']),
+			);
+			$res = $GLOBALS['COMMON']->db_query("UPDATE `videos` SET views = views + 1 WHERE id=:vid;", $params);
 		}
 
 }

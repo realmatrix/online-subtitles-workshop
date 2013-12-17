@@ -22,6 +22,9 @@
 		<thead>
 			<th>#</th>
 			<th>Title</th>
+			<th>Views</th>
+			<th>Subtitles</th>
+			<th>Edit</th>
 		</thead>
 		<tbody>
 		{TableRows}
