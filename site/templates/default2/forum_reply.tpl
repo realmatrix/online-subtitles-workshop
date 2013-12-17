@@ -23,8 +23,14 @@
 	<table style="width: 100%;">
 		<tr>
 			<form method='post' action='index.php'>
-				<textarea style='width:99%; height:100px;'></textarea>
+				<textarea style='width:99%; height:100px;' name='reply'></textarea>
 				<input style='float:right;' type='submit' name='submit' />
+				<input type='hidden' name='page' value='forum' />
+				<input type='hidden' name='sec' value='threads' />
+				<input type='hidden' name='ssec' value='reply' />
+				<input type='hidden' name='h' value='add' />
+				<input type='hidden' name='fid' value='{fid}' />
+				<input type='hidden' name='tid' value='{tid}' />
 			</form>
 		</tr>
 	</table>

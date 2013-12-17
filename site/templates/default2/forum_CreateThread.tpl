@@ -25,9 +25,15 @@
 			<form method='post' action='index.php'>
 			Title:<br />
 				<input style='width:100%;' type='text' name='title' />
-			Thread:<br />
-				<textarea style='width:99%; height:100px;'></textarea>
+			Content:<br />
+				<textarea style='width:99%; height:100px;' name='content'></textarea>
 				<input style='float:right;' type='submit' name='submit' />
+				<input type='hidden' name='page' value='forum' />
+				<input type='hidden' name='sec' value='threads' />
+				<input type='hidden' name='ssec' value='CreateThread' />
+				<input type='hidden' name='h' value='add' />
+				<input type='hidden' name='cat' value='{cat}' />
+				<input type='hidden' name='fid' value='{fid}' />
 			</form>
 		</tr>
 	</table>

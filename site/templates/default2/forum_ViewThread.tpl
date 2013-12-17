@@ -1,3 +1,18 @@
+<style>
+	.thread-reply{
+		width: 100%;
+	}
+	.reply-user{
+		float: left;
+	}
+	.reply-date{
+		float: right;
+	}
+	.reply-content{
+		clear: both;
+		width: 100%;
+	}
+</style>
 <DIV class="catglow">
 <DIV class="cathead-m">
 <DIV class="cathead-r">
@@ -22,7 +37,11 @@
 
 	<table style="width: 100%;">
 		<tr>
-			
+			<b>{ThreadTitle}</b>
+			<br /><br />
+			{ThreadContent}
+			<br /><br />
+			{replies}
 		</tr>
 	</table>
 
