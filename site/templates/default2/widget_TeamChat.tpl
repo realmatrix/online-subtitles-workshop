@@ -74,15 +74,17 @@ var interval = setInterval(GetChat,10000);
 	}
 	.chat-username{
 		float:left;
+		text-decoration:underline;
 		font-weight: bold;
 	}
 	.chat-date{
 		float:right;
-		font-weight: bold;
+		font-size: 9px;
 	}
 	.chat-text{
 		clear: both;
 		width:auto;
+		color: blue;
 	}
 	#send-state{
 		float:left;
