@@ -15,7 +15,7 @@
 	
 		function widget_LatestVideosByCategory_options(){
 			$options = array(
-			"show"=>array(), //show widget on this pages only - leave blank to show on all pages
+			"show"=>array("home"), //show widget on this pages only - leave blank to show on all pages
 			"hide"=>array(), // hide widget on this pages
 			"loggedin"=>"", // show widget if user loggen in options "yes" for logged in only "no" for not logged in "" for both states
 			);
@@ -25,9 +25,57 @@
 		function widget_LatestVideosByCategory_render(){
 			$array = array(
 				//array("{AddVideo}", $GLOBALS['COMMON']->l('widget_LatestVideosByCategory_addvideo')),
+				array("{AllVideos}", self::GetAll()),
+				array("{Movies}", self::GetMovies()),
+				array("{TvShows}", self::GetTV()),
+				array("{Trailers}", self::GetTrailers()),
 			);
 			return $array;
 		}	
+		
+		function GetAll(){
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `videos` order by `id` desc limit 10", array());
+			$content = "";
+			for ($i=0; $i < count($res); $i++) { 
+				$content.="<div class='widget-latestvideos-all'>";
+				$content.="<a href='index.php?page=video&sec=view&vid=".$res[$i]['id']."'>".$res[$i]['title']."</a>";
+				$content.="</div>";
+			}
+			return $content;
+		}
+		
+		function GetMovies(){
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `videos` where `type` = 1 order by `id` desc limit 10", array());
+			$content = "";
+			for ($i=0; $i < count($res); $i++) { 
+				$content.="<div class='widget-latestvideos-movies'>";
+				$content.="<a href='index.php?page=video&sec=view&vid=".$res[$i]['id']."'>".$res[$i]['title']."</a>";
+				$content.="</div>";
+			}
+			return $content;
+		}
+		
+		function GetTV(){
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `videos` where `type` = 2 order by `id` desc limit 10", array());
+			$content = "";
+			for ($i=0; $i < count($res); $i++) { 
+				$content.="<div class='widget-latestvideos-tv'>";
+				$content.="<a href='index.php?page=video&sec=view&vid=".$res[$i]['id']."'>".$res[$i]['title']."</a>";
+				$content.="</div>";
+			}
+			return $content;
+		}
+		
+		function GetTrailers(){
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `videos` where `type` = 4 order by `id` desc limit 10", array());
+			$content = "";
+			for ($i=0; $i < count($res); $i++) { 
+				$content.="<div class='widget-latestvideos-trailer'>";
+				$content.="<a href='index.php?page=video&sec=view&vid=".$res[$i]['id']."'>".$res[$i]['title']."</a>";
+				$content.="</div>";
+			}
+			return $content;
+		}
 		
 	}
 
