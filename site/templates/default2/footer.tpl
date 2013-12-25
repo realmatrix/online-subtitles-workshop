@@ -33,7 +33,7 @@
 <DIV class="cathead-r">
 <DIV class="cathead-l">            	Information            </DIV></DIV></DIV>
 <DIV class="collapsethis">
-<DIV style='background-image: url("./styles/absolution_14665/theme/images/who-is-online.png");' 
+<DIV style='background-image: url("{TemplatePath}/tmp/images/who-is-online.png");' 
 class="statspanel">                In total there are <STRONG>{TotalOnline}</STRONG> users 
 online :: {OnlineRegistered} registered, {OnlineHidden} hidden and {OnlineGuests} guests <!--(based on users active over the past 5 minutes)--><!--<br />Most users ever online was <strong>95</strong> on Fri May 29, 2009 9:31 pm--><BR><BR>Registered 
 users: {TotalRegistered} registered users<BR><BR><STRONG>Legend: <A style="color: rgb(170, 0, 0);" 
@@ -41,7 +41,7 @@ href="https://www.phpbb.com/styles/demo/3.0/board/memberlist.php?style=875&amp;m
 <A style="color: rgb(0, 170, 0);" href="https://www.phpbb.com/styles/demo/3.0/board/memberlist.php?style=875&amp;mode=group&amp;g=4&amp;sid=7ec0d899c761409bea8aeccee37ca464">Global 
 moderators</A>, <A style="color: rgb(204, 51, 204);" href="https://www.phpbb.com/styles/demo/3.0/board/memberlist.php?style=875&amp;mode=group&amp;g=7&amp;sid=7ec0d899c761409bea8aeccee37ca464">Just 
 a group</A></STRONG><BR></DIV>
-<DIV style='background-image: url("./styles/absolution_14665/theme/images/statistics.png");' 
+<DIV style='background-image: url("{TemplatePath}/tmp/images/statistics.png");' 
 class="statspanel">            	Total videos <STRONG>{TotalVideos}</STRONG> • Total subtitles 
 <STRONG>{TotalSubtitles}</STRONG> • Total members <STRONG>{TotalUsers}</STRONG> • Our newest member 
 <STRONG><A href="#">{LatestUser}</A></STRONG>
