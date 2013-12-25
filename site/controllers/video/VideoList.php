@@ -47,7 +47,7 @@
 				$rows .= "<td><a href='index.php?page=video&sec=view&vid=".$res[$i]['id']."'>".$res[$i]['title']."</a></td>";
 				$rows .= "<td>".$res[$i]['views']."</td>";
 				$rows .= "<td>".self::GetSubtitlesCount($res[$i]['id'])."</td>";
-				$rows .= "<td><a href='index.php?page=video&sec=edit&vid=".$res[$i]['vid']."'>Edit</a></td>";
+				$rows .= "<td><a href='index.php?page=video&sec=edit&vid=".$res[$i]['id']."'>Edit</a></td>";
 				$rows .= "</tr>";
 			}
 			return $rows;

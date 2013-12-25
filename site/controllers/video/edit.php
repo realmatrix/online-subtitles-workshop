@@ -1,20 +1,20 @@
 <?php
 
-	class Cadd{
+	class Cedit{
 			
-		function add_sections(){
+		function edit_sections(){
 			$array = array(
-				array("video", "AddVideo", $GLOBALS['vars'], TRUE),
+				array("video", "EditVideo", $GLOBALS['vars'], TRUE),
 			);
 			return $array;
 		}
 		
-		function add_set(){
-			$GLOBALS['vars']['PageTitle'] = "Add Video";
+		function edit_set(){
+			$GLOBALS['vars']['PageTitle'] = "edit Video";
 			$GLOBALS['vars']['PageDesc'] = $GLOBALS['config']['site_description'];
 			$GLOBALS['BreadCrumbs'] = array(
 				array("video", "page=video&sec=list"),
-				array("add new video", "page=video&sec=add"),
+				array("edit", "page=video&sec=edit"),
 			);
 		}
 		
