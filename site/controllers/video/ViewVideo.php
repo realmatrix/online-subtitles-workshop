@@ -8,7 +8,7 @@
 	
 		function ViewVideo_hooks(){
 			$array = array(
-				array("test", "test"),
+				array("rate", "RateVideo"),
 			);
 			return $array;
 		}
@@ -43,6 +43,8 @@
 				  array("{Director}", $GLOBALS['COMMON']->l('video_ViewVideo_Director')),
 				  array("{Length}", $GLOBALS['COMMON']->l('video_ViewVideo_Length')),
 				  array("{thumbnail}", $video[0]['thumbnail']),
+				  array("{rate}", self::GetRate()),
+				  array("{vid}", $GLOBALS['vars']['vid']),
 				 );
 			 
 		return $content;
@@ -75,6 +77,19 @@
 				array(":vid", $GLOBALS['vars']['vid']),
 			);
 			$res = $GLOBALS['COMMON']->db_query("UPDATE `videos` SET views = views + 1 WHERE id=:vid;", $params);
+		}
+		
+		function GetRate(){
+			$params = array(
+				array(":uid", $_SESSION['id'], "str"),
+				array(":vid", $GLOBALS['vars']['vid']),
+			);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `VideoRates` WHERE `uid` = :uid and `vid` = :vid", $params);
+			if(count($res)>0){return $res[0]['rate'];}else{return 0;}
+		}
+		
+		function RateVideo(){
+			
 		}
 
 }
