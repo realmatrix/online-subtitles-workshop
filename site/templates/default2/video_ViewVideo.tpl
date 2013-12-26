@@ -2,8 +2,17 @@
 var thumbimg = document.getElementById("imgvideothumbnail");
 thumbimg.onerror = function () { 
     this.style.display = "none";
+    
+    function hover(id){
+    	
+    }
+    
+    function click(id){
+    	
+    }
 }
 </script>
+
 <style>
 	.table-viewvideo{
 		width: 100%;
@@ -79,16 +88,11 @@ thumbimg.onerror = function () {
 			<td colspan="2">
 				<div style='float:left;'>
 					<ul class='video-rate'>
-						<li class='video-rate-li'><img src='templates/default2/tmp/images/star_empty.png' id='vr-star1' /></li>
-						<li class='video-rate-li'><img src='templates/default2/tmp/images/star_empty.png' id='vr-star2' /></li>
-						<li class='video-rate-li'><img src='templates/default2/tmp/images/star_empty.png' id='vr-star3' /></li>
-						<li class='video-rate-li'><img src='templates/default2/tmp/images/star_empty.png' id='vr-star4' /></li>
-						<li class='video-rate-li'><img src='templates/default2/tmp/images/star_empty.png' id='vr-star5' /></li>
-						<li class='video-rate-li'><img src='templates/default2/tmp/images/star_empty.png' id='vr-star6' /></li>
-						<li class='video-rate-li'><img src='templates/default2/tmp/images/star_empty.png' id='vr-star7' /></li>
-						<li class='video-rate-li'><img src='templates/default2/tmp/images/star_empty.png' id='vr-star8' /></li>
-						<li class='video-rate-li'><img src='templates/default2/tmp/images/star_empty.png' id='vr-star9' /></li>
-						<li class='video-rate-li'><img src='templates/default2/tmp/images/star_empty.png' id='vr-star10' /></li>
+						<li class='video-rate-li'><img src='templates/default2/tmp/images/star_empty.png' id='vr-star1' onmouseover="hover(1);" onclick="click(1);" /></li>
+						<li class='video-rate-li'><img src='templates/default2/tmp/images/star_empty.png' id='vr-star2' onmouseover="hover(2);" onclick="click(2);" /></li>
+						<li class='video-rate-li'><img src='templates/default2/tmp/images/star_empty.png' id='vr-star3' onmouseover="hover(3);" onclick="click(3);" /></li>
+						<li class='video-rate-li'><img src='templates/default2/tmp/images/star_empty.png' id='vr-star4' onmouseover="hover(4);" onclick="click(4);" /></li>
+						<li class='video-rate-li'><img src='templates/default2/tmp/images/star_empty.png' id='vr-star5' onmouseover="hover(5);" onclick="click(5);" /></li>
 					</ul>
 				</div>
 				<div style='float:right'>
