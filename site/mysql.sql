@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 20, 2013 at 10:04 PM
+-- Generation Time: Dec 26, 2013 at 12:35 AM
 -- Server version: 5.5.29
 -- PHP Version: 5.3.20
 
@@ -689,7 +689,7 @@ CREATE TABLE IF NOT EXISTS `lang_english` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `key` (`key`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=206 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=222 ;
 
 --
 -- Dumping data for table `lang_english`
@@ -893,7 +893,23 @@ INSERT INTO `lang_english` (`id`, `key`, `text`) VALUES
 (202, 'message_LineInfo_title', 'Line Info'),
 (203, 'subtitle_EditorInfo_title', 'Subtitle Info'),
 (204, 'forum_reply_title', 'Reply'),
-(205, 'forum_CreateThread_title', 'New Thread');
+(205, 'forum_CreateThread_title', 'New Thread'),
+(206, 'video_EditVideo_title', 'Edit Video Information'),
+(207, 'video_EditVideo_NewVideoType', 'Video Type'),
+(208, 'video_EditVideo_Category', 'Category'),
+(209, 'video_EditVideo_Language', 'Language'),
+(210, 'video_EditVideo_Original_Title', 'Title'),
+(211, 'video_EditVideo_OtherTitle', 'Other Title'),
+(212, 'video_EditVideo_Country', 'Country'),
+(213, 'video_EditVideo_Genres', 'Genres'),
+(214, 'video_EditVideo_ReleaseDate', 'Release Date'),
+(215, 'video_EditVideo_Casting', 'Casting'),
+(216, 'video_EditVideo_Director', 'Director'),
+(217, 'video_EditVideo_Length', 'Length'),
+(218, 'video_EditVideo_Synopsis', 'Synopsis'),
+(219, 'video_EditVideo_Tags', 'Tags'),
+(220, 'video_EditVideo_Submit', 'Edit'),
+(221, 'video_EditVideo_VideoUrl', 'Video Url');
 
 -- --------------------------------------------------------
 
@@ -921,14 +937,14 @@ CREATE TABLE IF NOT EXISTS `onlineusers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1252 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1278 ;
 
 --
 -- Dumping data for table `onlineusers`
 --
 
 INSERT INTO `onlineusers` (`id`, `session`, `time`, `username`) VALUES
-(1251, '2i0645h0g73im1rtgh5k07ks77', 1387576930, '');
+(1277, 'to878s0sf0p7fnm7k9ekhb6975', 1388017852, 'test');
 
 -- --------------------------------------------------------
 
@@ -1091,7 +1107,7 @@ CREATE TABLE IF NOT EXISTS `systemcron` (
 --
 
 INSERT INTO `systemcron` (`id`, `job`, `frequancy`, `last_run`) VALUES
-(1, 'AutoTranslation', 300, 1387576780);
+(1, 'AutoTranslation', 300, 1388017798);
 
 -- --------------------------------------------------------
 
@@ -1114,7 +1130,7 @@ CREATE TABLE IF NOT EXISTS `systemrouter` (
   `sec` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `page` (`page`,`sec`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=35 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=36 ;
 
 --
 -- Dumping data for table `systemrouter`
@@ -1152,7 +1168,8 @@ INSERT INTO `systemrouter` (`id`, `head`, `header`, `left`, `body`, `right`, `fo
 (31, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'faq', 'list'),
 (32, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'info', ''),
 (33, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'user', 'profile'),
-(34, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'user', 'cp');
+(34, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'user', 'cp'),
+(35, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'video', 'edit');
 
 -- --------------------------------------------------------
 
@@ -1374,26 +1391,26 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `BirthYear`, `group`, `key`, `LastLogin`, `KeyTime`) VALUES
-(18, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.test', 2009, 1, '0lrQI1aIJrmLTDJBfRAeSjwZL3U990', 1387572995, 1387572805),
-(19, 'ghfghh', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'dsd@sd.sd', 2006, 3, '4DYczCRd4VNmjf3d08JF6lJuj0kESE', 0, 1387572805),
-(20, 'wejhg', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'aaa@aaa.aaa', 1919, 3, 'H2jw0NAyuN7oKm9MkD1uLiN9POwnmh', 0, 1387572805),
-(21, 't567567567', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'tryrt@erttr.rrt', 1917, 3, 'UiWg62UNVfxygS0F3MG81Bq1RCMyVY', 0, 1387572805),
-(22, 'test2', '109f4b3c50d7b0df729d299bc6f8e9ef9066971f', 'test2@test2.com', 2010, 3, '27Tgz8STsHevefo9kQhKj1J5LpBUWn', 0, 1387572805),
-(23, 'test3', '3ebfa301dc59196f18593c45e519287a23297589', 'test3@test3.com', 2003, 3, 'xdprirbU8xOUCALcgRhAJPjad6ZpBK', 0, 1387572805),
-(24, 'test4', '1ff2b3704aede04eecb51e50ca698efd50a1379b', 'test4@test4.com', 2002, 3, 'zyQjx6UOPkMion0hY7lRQcqoYUXBb5', 0, 1387572805),
-(25, 'test5', '911ddc3b8f9a13b5499b6bc4638a2b4f3f68bf23', 'test5@test5.com', 2001, 3, 'NDf4aBQMwZtcshTtxt0vr7pw3A9yTq', 0, 1387572805),
-(26, 'test6', 'a66df261120b6c2311c6ef0b1bab4e583afcbcc0', 'test6@test6.com', 2005, 3, 'DvCj8yd4GUrEuvXoQGzuEZhv4ZamZ0', 0, 1387572805),
-(27, 'test7', 'ea3243132d653b39025a944e70f3ecdf70ee3994', 'test7@test7.com', 2002, 3, 'pfstxMa8nO4Ix4SdZ5BhgkTCJLaDnI', 0, 1387572806),
-(28, 'test8', 'd03f9d34194393019e6d12d7c942827ebd694443', 'test8@test8.com', 1999, 3, 'xPXLJTMYbAIPbVjMAtUjtvLCBYabfR', 0, 1387572996),
-(29, 'test9', '53d525836cc96d089a5a4218b464fda532f7debe', 'test9@test9.com', 2001, 3, 'FS4DgzXaNfj0sqLHjj32wP0Yrji86X', 0, 1387572996),
-(30, 'test10', '168f4029f416ee06565f12e697dfc1534ae69d32', 'test10@test10.com', 2002, 3, '91zsiAqbxqDVVA21Pqh4e1AScxLZNR', 0, 1387572996),
-(31, 'test11', '100c4e57374fc998e57164d4c0453bd3a4876a58', 'test11@test11.com', 2004, 3, 'bqVoyi8lfx4EnDgm9HFnJPUVt5RyQp', 0, 1387572996),
-(32, 'test12', '4ff1a33e188b7b86123d6e3be2722a23514a83b4', 'test12@test12.com', 1999, 3, 'MKDgm4LQrEeMD6MZgniGm60Pe3D8WA', 0, 1387572996),
-(33, 'test13', 'd804cd9cc0c42b0652bab002f67858ab803c40c6', 'test13@test13.com', 2005, 3, 'AMiAmAzvzIqPi3ZQKk0tt0RmDlSIkv', 0, 1387572996),
-(34, 'test14', 'd79336a97da7d284c0fe15497d2fa944d1f2abb1', 'test14@test14.com', 2003, 3, '4Cmrx78sIEiZZBs8InS5oySIx9BD6a', 0, 1387572996),
-(35, 'test15', '61bb70fa60368f069e62d601c357d203700ab2d2', 'test15@test15.com', 2000, 3, 'DgBlJ03vDV9Nf9xpCOsMlVVOebwcRe', 0, 1387572996),
-(36, 'test16', '1fbefee9cfb86926757519357e077fd6a21aef0f', 'test16@test16.com', 1998, 3, '9xA7SWCncMxsQvQgPuPoSkBWXJqLmx', 0, 1387572996),
-(37, 'test17', '08a25c0f270b29aeba650e6b2d1a9947a778c5da', 'test17@test17.com', 1996, 3, '9wIGAwewpsBer2qnSxXaNTCEAC16eJ', 0, 1387572996);
+(18, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.test', 2009, 1, 'QSnoS1hxQzxYadUJKmrT32mIyV3MZy', 1388017852, 1387999026),
+(19, 'ghfghh', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'dsd@sd.sd', 2006, 3, 'Kd4DNDoqW5bU5vb0RTBO6OBFk0tYAT', 0, 1387999026),
+(20, 'wejhg', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'aaa@aaa.aaa', 1919, 3, 'vKJqMYxRzwyrXqikF9NVICLUNbHidS', 0, 1387999026),
+(21, 't567567567', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'tryrt@erttr.rrt', 1917, 3, 'FkCwFNdUf64TRg8TP7kIm1GMMIkdH9', 0, 1387999026),
+(22, 'test2', '109f4b3c50d7b0df729d299bc6f8e9ef9066971f', 'test2@test2.com', 2010, 3, '0a77UM4ns8ec86oqQJ21T55rcoFQ4B', 0, 1387999026),
+(23, 'test3', '3ebfa301dc59196f18593c45e519287a23297589', 'test3@test3.com', 2003, 3, 'ar9Zuz2KDSPMWD3oiUHRd7PBsp4frB', 0, 1387999026),
+(24, 'test4', '1ff2b3704aede04eecb51e50ca698efd50a1379b', 'test4@test4.com', 2002, 3, '3ogipiL7au3po2VWFm1qelE7Z6dDvH', 0, 1387999026),
+(25, 'test5', '911ddc3b8f9a13b5499b6bc4638a2b4f3f68bf23', 'test5@test5.com', 2001, 3, 'KTpihWpaCcRLeVOXycmxQlyc5mvAd5', 0, 1387999026),
+(26, 'test6', 'a66df261120b6c2311c6ef0b1bab4e583afcbcc0', 'test6@test6.com', 2005, 3, 'EGjxIE73OTewzxnw9J4dQylS7Iyhj3', 0, 1387999026),
+(27, 'test7', 'ea3243132d653b39025a944e70f3ecdf70ee3994', 'test7@test7.com', 2002, 3, '5EmDGpaqOPombrmdqMRSNIPeS4oifi', 0, 1387999027),
+(28, 'test8', 'd03f9d34194393019e6d12d7c942827ebd694443', 'test8@test8.com', 1999, 3, 'wsR9qXvtMRAlKwABtVw0Bmq3Id3TbR', 0, 1387999309),
+(29, 'test9', '53d525836cc96d089a5a4218b464fda532f7debe', 'test9@test9.com', 2001, 3, 'FbntlupxqYM32ZCrGccl2ypl8AqAes', 0, 1387999309),
+(30, 'test10', '168f4029f416ee06565f12e697dfc1534ae69d32', 'test10@test10.com', 2002, 3, 'CCh7xdGuk9pKGksq7fEHzfcRdPclLF', 0, 1387999309),
+(31, 'test11', '100c4e57374fc998e57164d4c0453bd3a4876a58', 'test11@test11.com', 2004, 3, 'KYnRLDvi4qbIwgjxjzGtHNP9mwnCwQ', 0, 1387999309),
+(32, 'test12', '4ff1a33e188b7b86123d6e3be2722a23514a83b4', 'test12@test12.com', 1999, 3, '7FwRzu732tvVlqtFmTUzAH6ttOSQU3', 0, 1387999309),
+(33, 'test13', 'd804cd9cc0c42b0652bab002f67858ab803c40c6', 'test13@test13.com', 2005, 3, 'xHFGubO4Z7bk3BGG0X8exDvz2utnsN', 0, 1387999309),
+(34, 'test14', 'd79336a97da7d284c0fe15497d2fa944d1f2abb1', 'test14@test14.com', 2003, 3, 'UG5n4hLhbRPdhhk65dF1nWdb1II56I', 0, 1387999309),
+(35, 'test15', '61bb70fa60368f069e62d601c357d203700ab2d2', 'test15@test15.com', 2000, 3, 'WlXkSGMY3JmzT6CFOibKU9ll73g2jV', 0, 1387999309),
+(36, 'test16', '1fbefee9cfb86926757519357e077fd6a21aef0f', 'test16@test16.com', 1998, 3, 'HcTDFMHDa88QoO1V69YARvqSrakAdb', 0, 1387999309),
+(37, 'test17', '08a25c0f270b29aeba650e6b2d1a9947a778c5da', 'test17@test17.com', 1996, 3, 'xXBE1rWRzM6D1uPAC0GsKanOWWrJ0T', 0, 1387999309);
 
 -- --------------------------------------------------------
 

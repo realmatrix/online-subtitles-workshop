@@ -151,23 +151,23 @@
 			return $res;	
 		}
 		
-		function EditVideo($args){
-			if(is_array($args['genres'])){$args['genres'] = implode(",", $args['genres']);}
-			if($args['VideoType']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_EditVideo_SelectVideoType');}
-			if($args['VideoCategory']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_EditVideo_SelectVideoCategory');}
-			if($args['VideoLanguage']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_EditVideo_SelectVideoLanguage');}
-			if($args['VideoTitle']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_EditVideo_EnterVideoTitle');}
-			if($args['VideoOtherTitle']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_EditVideo_EnterVideoOtherTitle');}
-			if($args['country']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_EditVideo_SelectCountry');}
-			if($args['genres']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_EditVideo_SelectGenres');}
-			if($args['rd-month']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_EditVideo_SelectREleaseMonth');}
-			if($args['rd-day']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_EditVideo_SelectReleaseDay');}
-			if($args['rd-year']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_EditVideo_SelectReleaseYear');}			
-			if($args['casting']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_EditVideo_EnterCast');}
-			if($args['director']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_EditVideo_EnterDirector');}
-			if($args['length']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_EditVideo_SelectVideoLength');}
-			if($args['tags']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_EditVideo_EnterVideoTags');}			
-			if($args['synopsis']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_EditVideo_EnterVideoSynopsis');}
+		function EditVideo(){
+			if(is_array($GLOBALS['vars']['genres'])){$args['genres'] = implode(",", $GLOBALS['vars']['genres']);}
+			if($GLOBALS['vars']['VideoType']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_EditVideo_SelectVideoType');}
+			if($GLOBALS['vars']['VideoCategory']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_EditVideo_SelectVideoCategory');}
+			if($GLOBALS['vars']['VideoLanguage']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_EditVideo_SelectVideoLanguage');}
+			if($GLOBALS['vars']['VideoTitle']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_EditVideo_EnterVideoTitle');}
+			if($GLOBALS['vars']['VideoOtherTitle']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_EditVideo_EnterVideoOtherTitle');}
+			if($GLOBALS['vars']['country']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_EditVideo_SelectCountry');}
+			if($GLOBALS['vars']['genres']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_EditVideo_SelectGenres');}
+			if($GLOBALS['vars']['rd-month']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_EditVideo_SelectREleaseMonth');}
+			if($GLOBALS['vars']['rd-day']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_EditVideo_SelectReleaseDay');}
+			if($GLOBALS['vars']['rd-year']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_EditVideo_SelectReleaseYear');}			
+			if($GLOBALS['vars']['casting']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_EditVideo_EnterCast');}
+			if($GLOBALS['vars']['director']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_EditVideo_EnterDirector');}
+			if($GLOBALS['vars']['length']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_EditVideo_SelectVideoLength');}
+			if($GLOBALS['vars']['tags']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_EditVideo_EnterVideoTags');}			
+			if($GLOBALS['vars']['synopsis']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_EditVideo_EnterVideoSynopsis');}
 			if($GLOBALS['vars']['VideoUrl']!="" and !filter_var($GLOBALS['vars']['VideoUrl'], FILTER_VALIDATE_URL)){$ERROR[]="invalid url";}		
 			if(count($ERROR)>0){$GLOBALS['ERROR'] = $ERROR; return FALSE;}
 			
@@ -176,23 +176,23 @@
 			$params = array(
 			array(":vid", $GLOBALS['vars']['vid'], "str"),
 			array(":uid", $_SESSION['id'], "str"),
-			array(":title", trim($args['VideoTitle']), "str"),
-			array(":other_title", trim($args['VideoOtherTitle']), "str"),
-			array(":type", $args['VideoType'], "str"),
-			array(":category", $args['VideoCategory'], "str"),
-			array(":language", $args['VideoLanguage'], "str"),
-			array(":country", $args['country'], "str"),
-			array(":genres", $args['genres'], "str"),
-			array(":releasedate", $args['rd-year']."-".$args['rd-month']."-".$args['rd-day'], "str"),
-			array(":casting", trim($args['casting']), "str"),
-			array(":director", trim($args['director']), "str"),
-			array(":length", $args['length'], "str"),
-			array(":tags", trim($args['tags']), "str"),
-			array(":synopsis", trim($args['synopsis']), "str"),
-			array(":source", trim($args['VideoUrl']), "str"),
+			array(":title", trim($GLOBALS['vars']['VideoTitle']), "str"),
+			array(":other_title", trim($GLOBALS['vars']['VideoOtherTitle']), "str"),
+			array(":type", $GLOBALS['vars']['VideoType'], "str"),
+			array(":category", $GLOBALS['vars']['VideoCategory'], "str"),
+			array(":language", $GLOBALS['vars']['VideoLanguage'], "str"),
+			array(":country", $GLOBALS['vars']['country'], "str"),
+			array(":genres", $GLOBALS['vars']['genres'], "str"),
+			array(":releasedate", $GLOBALS['vars']['rd-year']."-".$GLOBALS['vars']['rd-month']."-".$GLOBALS['vars']['rd-day'], "str"),
+			array(":casting", trim($GLOBALS['vars']['casting']), "str"),
+			array(":director", trim($GLOBALS['vars']['director']), "str"),
+			array(":length", $GLOBALS['vars']['length'], "str"),
+			array(":tags", trim($GLOBALS['vars']['tags']), "str"),
+			array(":synopsis", trim($GLOBALS['vars']['synopsis']), "str"),
+			array(":source", trim($GLOBALS['vars']['VideoUrl']), "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("UPDATE `videos` SET `title`=:title,`other_title`=:other_title,`type`=:type,`category`=:category,`language`=:language,`country`=:country,`genres`=:genres,`release_date`=:releasedate,`casting`=:casting,`director`=:director,`length`=:length,`tags`=:tags,`synopsis`=:synopsis,`source`=:source WHERE `id` = :vid", $params);			
-			$GLOBALS['SUCCESS'][] = "video '".$args['VideoTitle']."' updated successfully";
+			$res = $GLOBALS['COMMON']->db_query("UPDATE `videos` SET `title`=:title,`other_title`=:other_title,`type`=:type,`category`=:category,`language`=:language,`country`=:country,`genres`=:genres,`release_date`=:releasedate,`casting`=:casting,`director`=:director,`length`=:length,`tags`=:tags,`synopsis`=:synopsis,`source`=:source WHERE `id` = :vid", $params, $ExecState);			
+			if($ExecState===TRUE){"video updated successfully.";}else{$GLOBALS['ERROR'][]="failed to update video.";}
 			return TRUE;
 		}
 		
