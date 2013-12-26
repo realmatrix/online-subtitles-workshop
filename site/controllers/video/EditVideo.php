@@ -8,7 +8,7 @@
 	
 		function EditVideo_hooks(){
 			$array = array(
-				array("SubmitVideo", "SubmitVideo"),
+				array("editvideo", "EditVideo"),
 			);
 			return $array;
 		}
@@ -28,6 +28,7 @@
 			$Genres = explode(",", $VideoInformation[0]['genres']);
 				$content = array
 				  (
+				  array("{vid}", $GLOBALS['vars']['vid']),
 				  array("{VideoType}", self::types($VideoInformation[0]['type'])),
 				  array("{VideoCategory}", self::categories($VideoInformation[0]['category'])),
 				  array("{VideoLanguage}", self::languages($VideoInformation[0]['language'])),
@@ -150,7 +151,7 @@
 			return $res;	
 		}
 		
-		function SubmitVideo($args){
+		function EditVideo($args){
 			if(is_array($args['genres'])){$args['genres'] = implode(",", $args['genres']);}
 			if($args['VideoType']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_EditVideo_SelectVideoType');}
 			if($args['VideoCategory']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_EditVideo_SelectVideoCategory');}
@@ -173,6 +174,7 @@
 			//$genres = implode(",", $_POST['genres']);
 			
 			$params = array(
+			array(":vid", $GLOBALS['vars']['vid'], "str"),
 			array(":uid", $_SESSION['id'], "str"),
 			array(":title", trim($args['VideoTitle']), "str"),
 			array(":other_title", trim($args['VideoOtherTitle']), "str"),
@@ -189,24 +191,8 @@
 			array(":synopsis", trim($args['synopsis']), "str"),
 			array(":source", trim($args['VideoUrl']), "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `Videos` (`uid`, `title`, `other_title`, `type`, `category`, `language`, `country`, `genres`, `release_date`, `casting`, `director`, `length`, `tags`, `synopsis`, `source`) VALUES (:uid, :title, :other_title, :type, :category, :language, :country, :genres, :releasedate, :casting, :director, :length, :tags, :synopsis, :source )", $params);			
-			$GLOBALS['SUCCESS'][] = "video '".$args['VideoTitle']."' added successfully";
-			$GLOBALS['vars']['VideoTitle'] = "";
-			$GLOBALS['vars']['VideoOtherTitle'] = "";
-			$GLOBALS['vars']['VideoType'] = "";
-			$GLOBALS['vars']['VideoCategory'] = "";
-			$GLOBALS['vars']['VideoLanguage'] = "";
-			$GLOBALS['vars']['country'] = "";
-			$GLOBALS['vars']['genres'] = "";
-			$GLOBALS['vars']['rd-year'] = "";
-			$GLOBALS['vars']['rd-month'] = "";
-			$GLOBALS['vars']['rd-day'] = "";
-			$GLOBALS['vars']['casting'] = "";
-			$GLOBALS['vars']['director'] = "";
-			$GLOBALS['vars']['length'] = "";
-			$GLOBALS['vars']['tags'] = "";
-			$GLOBALS['vars']['synopsis'] = "";
-			$GLOBALS['vars']['VideoUrl'] = "";
+			$res = $GLOBALS['COMMON']->db_query("UPDATE `videos` SET `title`=:title,`other_title`=:other_title,`type`=:type,`category`=:category,`language`=:language,`country`=:country,`genres`=:genres,`release_date`=:releasedate,`casting`=:casting,`director`=:director,`length`=:length,`tags`=:tags,`synopsis`=:synopsis,`source`=:source WHERE `id` = :vid", $params);			
+			$GLOBALS['SUCCESS'][] = "video '".$args['VideoTitle']."' updated successfully";
 			return TRUE;
 		}
 		

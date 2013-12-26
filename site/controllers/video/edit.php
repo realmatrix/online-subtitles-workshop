@@ -14,7 +14,7 @@
 			$GLOBALS['vars']['PageDesc'] = $GLOBALS['config']['site_description'];
 			$GLOBALS['BreadCrumbs'] = array(
 				array("video", "page=video&sec=list"),
-				array("edit", "page=video&sec=edit"),
+				array("edit", "page=video&sec=edit&vid=".$GLOBALS['vars']['vid']),
 			);
 		}
 		

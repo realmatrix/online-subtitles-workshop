@@ -105,11 +105,11 @@
 	<!-- <input type="hidden" name="dataonly" value="yes" /> --> <!-- uncomment if using ajax -->
 	<!-- <input type="hidden" name="getcontroller" value="video" /> --> <!-- uncomment if using ajax -->
 	<!-- <input type="hidden" name="getsection" value="AddVideo" /> --> <!-- uncomment if using ajax -->
-	<input type="hidden" name="page" value="{page}" /> <!-- comment if using ajax -->
-	<input type="hidden" name="sec" value="{sec}" /> <!-- comment if using ajax -->
-	<input type="hidden" name="ssec" value="AddVideo" />
-	<input type="hidden" name="h" value="SubmitVideo" />
-
+	<input type="hidden" name="page" value="video" /> <!-- comment if using ajax -->
+	<input type="hidden" name="sec" value="edit" /> <!-- comment if using ajax -->
+	<input type="hidden" name="ssec" value="EditVideo" />
+	<input type="hidden" name="h" value="editvideo" />
+	<input type= "hidden" name="vid" value="{vid}" />
 	<br /><br />
 	<div style="width:100%; text-align: center;">
 		<input type="submit" value="{Submit}" />
