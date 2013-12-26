@@ -23,6 +23,12 @@
 		padding-left: 1px;
 		text-overflow: ellipsis;
 	}
+	
+	.latest-threads-cell a {
+		text-decoration: none;
+		padding-left: 1px;
+		padding-right: 1px;
+	}
   </style>
 
 
