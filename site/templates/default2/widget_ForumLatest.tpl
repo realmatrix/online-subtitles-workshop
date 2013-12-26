@@ -20,7 +20,6 @@
 		line-height: 30px;
 		margin-left: 2px;
 		margin-bottom: 2px;
-		padding-left: 1px;
 		text-overflow: ellipsis;
 	}
 	

@@ -22,6 +22,7 @@
 		margin-bottom: 2px;
 		text-overflow: ellipsis;
 	}
+	
 	.widget-latestvideos-all-cell a {
 		text-decoration: none;
 		padding-left: 1px;
