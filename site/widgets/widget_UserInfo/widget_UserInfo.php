@@ -41,7 +41,7 @@
 			$args = array(
 				array(":uid", $_SESSION['id'], "str")
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Videos` WHERE `uid` = :uid ", $args);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `videos` WHERE `uid` = :uid ", $args);
 			return count($res);
 		}
 		
@@ -49,7 +49,7 @@
 			$args = array(
 				array(":uid", $_SESSION['id'], "str")
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Subtitles` WHERE `uid` = :uid ", $args);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitles` WHERE `uid` = :uid ", $args);
 			return count($res);
 		}
 
@@ -57,7 +57,7 @@
 			$args = array(
 				array(":uid", $_SESSION['id'], "str")
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `PrivateMessages` WHERE `to` = :uid ", $args);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `privatemessages` WHERE `to` = :uid ", $args);
 			return count($res);
 		}
 		
@@ -65,7 +65,7 @@
 			$args = array(
 				array(":uid", $_SESSION['id'], "str")
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `TeamUsers` WHERE `uid` = :uid AND `state` = 0", $args);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `teamusers` WHERE `uid` = :uid AND `state` = 0", $args);
 			return count($res);
 		}
 		
@@ -73,7 +73,7 @@
 			$args = array(
 				array(":uid", $_SESSION['id'], "str")
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `TeamUsers` WHERE `uid` = :uid AND `state` = 1", $args);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `teamusers` WHERE `uid` = :uid AND `state` = 1", $args);
 			return count($res);
 		}
 
@@ -81,7 +81,7 @@
 			$args = array(
 				array(":uid", $_SESSION['id'], "str")
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Teams` WHERE `owner` = :uid", $args);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `teams` WHERE `owner` = :uid", $args);
 			return count($res);
 		}
 		

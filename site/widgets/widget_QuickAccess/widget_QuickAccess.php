@@ -41,7 +41,7 @@
 			$args = array(
 				array(":uid", $_SESSION['id'], "str")
 			);
-			$videos = $GLOBALS['COMMON']->db_query("SELECT * FROM Videos WHERE uid = :uid", $args);
+			$videos = $GLOBALS['COMMON']->db_query("SELECT * FROM videos WHERE uid = :uid", $args);
 			$res = "";
 			for ($i=0; $i < count($videos) ; $i++) { 
 				$res .= "<option value='".$videos[$i]['id']."'>".$videos[$i]['title']."</option>";

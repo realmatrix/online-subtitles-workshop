@@ -41,7 +41,7 @@
 				array(":name", $GLOBALS['vars']['name'], "str"),
 				array(":email", $GLOBALS['vars']['email'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `NewsLetter` (`name`, `email`) VALUES (:name, :email);", $args, $ExecState);
+			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `newsletter` (`name`, `email`) VALUES (:name, :email);", $args, $ExecState);
 			if($ExecState === TRUE){$GLOBALS['SUCCESS'][]="email added successfully.";}else{$GLOBALS['ERROR'][]=$ExecState;}
 		}
 		
