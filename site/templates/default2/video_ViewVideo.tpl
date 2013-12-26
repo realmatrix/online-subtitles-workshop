@@ -113,7 +113,9 @@ thumbimg.onerror = function () {
 					</ul>
 				</div>
 				<div style='float:right'>
-			<img src='templates/default2/tmp/images/favorites-add.png' alt='add to favourites'/>
+				<a href='index.php?page=video&sec=view&vid={vid}&ssec=ViewVideo&h=fav'>
+				<img src='templates/default2/tmp/images/favorites-add.png' alt='add to favourites'/>
+				</a>
 				</div>
 			</td>
 		</tr>

@@ -9,6 +9,7 @@
 		function ViewVideo_hooks(){
 			$array = array(
 				array("rate", "RateVideo"),
+				array("fav", "AddToFavourites"),
 			);
 			return $array;
 		}
@@ -110,6 +111,19 @@
 				);
 				$res= $GLOBALS['COMMON']->db_query("INSERT INTO `videorates`(`uid`, `vid`, `rate`) VALUES (:uid,:vid,:rate)", $params);
 			}
+		}
+		
+		function AddToFavourites(){
+			if(!isset($_SESSION['id']) or $_SESSION['id']==""){return false;}
+			$params = array(
+				array(":uid", $_SESSION['id'], "str"),
+				array(":vid", $GLOBALS['vars']['vid'], "str"),
+			);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `favouritevideos` WHERE `uid` = :uid and `vid` = :vid", $params);
+			if(count($res)<1){
+				$res= $GLOBALS['COMMON']->db_query("INSERT INTO `favouritevideos`(`uid`, `vid`) VALUES (:uid,:vid)", $params, $ExecState);
+				if($ExecState===TRUE){$GLOBALS['SUCCESS'][]="video added successfully to favourites.";}else{$GLOBALS['ERROR'][]="Failed to add video to favourites.";}
+			}				
 		}
 
 }
