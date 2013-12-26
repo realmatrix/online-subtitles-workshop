@@ -68,6 +68,27 @@ thumbimg.onerror = function () {
 			<td>{Length}</td>
 			<td>{VideoLength} Minutes</td>	
 		</tr>
+		<tr>
+			<td colspan="2">
+				<div style='float:left;'>
+				<form method='post' action='index.php'>
+					<input type='radio' name='video-rate' value='1' />
+					<input type='radio' name='video-rate' value='2' />
+					<input type='radio' name='video-rate' value='3' />
+					<input type='radio' name='video-rate' value='4' />
+					<input type='radio' name='video-rate' value='5' />
+					<input type='radio' name='video-rate' value='6' />
+					<input type='radio' name='video-rate' value='7' />
+					<input type='radio' name='video-rate' value='8' />
+					<input type='radio' name='video-rate' value='9' />
+					<input type='radio' name='video-rate' value='10' />
+				</form>
+				</div>
+				<div style='float:right'>
+			<img src='templates/default2/tmp/images/favorites-add.png' alt='add to favourites'/>
+				</div>
+			</td>
+		</tr>
 	</table>
 
 
