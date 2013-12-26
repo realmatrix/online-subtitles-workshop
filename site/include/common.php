@@ -22,7 +22,22 @@ class Common{
 		}
 	}
 	
+	function GetEnabledWidgets(){
+		$res = self::db_query("SELECT `name` FROM `adminwidgets` WHERE `state` = 1", array());
+		for ($i=0; $i < count($res); $i++) { 
+			$Widgets[] = $res[$i]['name'];
+		}
+		$WidgetNames = implode(",", $Widgets);
+		return $WidgetNames;
+	}
 	
+	function HideDisabledWidgets(){
+		$res = self::db_query("SELECT `name` FROM `adminwidgets` WHERE `state` = 0", array());
+		for ($i=0; $i < count($res); $i++) { 
+			$Widgets[] = array("{".$res[$i]['name']."}", "");
+		}
+		return $Widgets;
+	}	
 	
 	function Route($res){
 		$content = "";
@@ -135,7 +150,7 @@ class Common{
 
 	function LoadWidgets(){
 		$widgets = $GLOBALS['config']['widgets'];
-		$widget = explode(",",$widgets);
+		$widget = explode(",", $widgets);
 		for ($i = 0; $i <= count($widget)-1; $i++) {
 		    $cwidget = trim($widget[$i]);
 			if($cwidget!=""){

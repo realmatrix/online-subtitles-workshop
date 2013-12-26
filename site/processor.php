@@ -100,6 +100,7 @@
 	);
 
 	$GLOBALS['TemplatesCommon'] = array_merge($GLOBALS['TemplatesCommon'],$GLOBALS['SystemWidgets']);
+	$GLOBALS['TemplatesCommon'] = array_merge($GLOBALS['TemplatesCommon'],$GLOBALS['COMMON']->HideDisabledWidgets());
 	
 	$GLOBALS['TemplateHeader'] = array_merge($GLOBALS['TemplateHeader'], $GLOBALS['TemplatesCommon']);
 	$GLOBALS['TemplateHead'] = array_merge($GLOBALS['TemplateHead'], $GLOBALS['TemplatesCommon']);

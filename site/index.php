@@ -18,6 +18,8 @@
 	
 	$GLOBALS['COMMON'] = new Common();
 
+	$GLOBALS['config']['widgets'] = $GLOBALS['COMMON']->GetEnabledWidgets();
+
 	include "include/OnlineUsers.php";
 	
 	if($_GET['act']=='logout'){
