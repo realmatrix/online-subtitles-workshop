@@ -128,3 +128,6 @@ thumbimg.onerror = function () {
 </DIV>
 </div>
 <br>
+<script>
+	StarDefault({rate}, 10);
+</script>

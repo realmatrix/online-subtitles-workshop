@@ -82,14 +82,34 @@
 		function GetRate(){
 			$params = array(
 				array(":uid", $_SESSION['id'], "str"),
-				array(":vid", $GLOBALS['vars']['vid']),
+				array(":vid", $GLOBALS['vars']['vid'], "str"),
 			);
 			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `VideoRates` WHERE `uid` = :uid and `vid` = :vid", $params);
 			if(count($res)>0){return $res[0]['rate'];}else{return 0;}
 		}
 		
 		function RateVideo(){
-			
+			if(!isset($_SESSION['id']) or $_SESSION['id']==""){return false;}
+			$params = array(
+				array(":uid", $_SESSION['id'], "str"),
+				array(":vid", $GLOBALS['vars']['vid'], "str"),
+			);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `VideoRates` WHERE `uid` = :uid and `vid` = :vid", $params);
+			if(count($res)>0){
+				$params = array(
+					array(":uid", $_SESSION['id'], "str"),
+					array(":vid", $GLOBALS['vars']['vid'], "str"),
+					array(":rate", $GLOBALS['vars']['val'], "str")
+				);
+				$res= $GLOBALS['COMMON']->db_query("UPDATE `videorates` SET `rate`=:rate WHERE `uid` = :uid and `vid` = :vid", $params);
+			}else{
+				$params = array(
+					array(":uid", $_SESSION['id'], "str"),
+					array(":vid", $GLOBALS['vars']['vid'], "str"),
+					array(":rate", $GLOBALS['vars']['val'], "str")
+				);
+				$res= $GLOBALS['COMMON']->db_query("INSERT INTO `videorates`(`uid`, `vid`, `rate`) VALUES (:uid,:vid,:rate)", $params);
+			}
 		}
 
 }
