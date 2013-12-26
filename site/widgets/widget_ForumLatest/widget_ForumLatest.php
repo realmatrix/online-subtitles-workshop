@@ -53,7 +53,11 @@
 			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `forumthreads` order by `id` desc limit 10", array());
 			$content = "";
 			for ($i=0; $i < count($res); $i++) { 
-				$content.="<div class='latest-threads'><a href='index.php?page=forum&sec=threads&fid=".$res[$i]['forum']."&tid=".$res[$i]['tid']."'>".$res[$i]['title']."</a></div>";
+				$content.="<div class='latest-threads'>";
+				$content.="<div class='latest-threads-cell'>";
+				$content.="<a href='index.php?page=forum&sec=threads&fid=".$res[$i]['forum']."&tid=".$res[$i]['tid']."'>".$res[$i]['title']."</a>";
+				$content.="</div>";
+				$content.="</div>";
 			}
 			return $content;
 		}

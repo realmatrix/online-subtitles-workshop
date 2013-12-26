@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 26, 2013 at 02:54 AM
+-- Generation Time: Dec 26, 2013 at 04:01 AM
 -- Server version: 5.5.29
 -- PHP Version: 5.3.20
 
@@ -542,7 +542,7 @@ CREATE TABLE IF NOT EXISTS `forumthreads` (
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `cat` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `forumthreads`
@@ -555,7 +555,10 @@ INSERT INTO `forumthreads` (`id`, `forum`, `title`, `content`, `uid`, `time`, `c
 (4, 1, '2', '3', 4, '2013-12-17 17:02:15', 5),
 (5, 0, ':title', ':content', 0, '2013-12-17 17:03:04', 0),
 (6, 1, 'aaaaaaaaaa', 'bbbbbbbbbbbbb', 18, '2013-12-17 17:03:51', 1),
-(7, 1, 'dgik f;lgdflgjkdfgjk', 'dsfhsdlkfhdslkfjh sdlkfh sdlkjfh sdlkfh iouertueriwt skjfh lksdfhouiwertyth rt \r\nfdsg fdsgh fklghdfiougyhe rkthrkl hdflkgh iouertgkl erjtger\r\ngertg lkfgdfoigy eiorhgerlkg kljhviuohiopertger\r\nter toijboipgbjl;kj;lekrjerlkjt\r\nertgopegjkopijrtg', 18, '2013-12-17 17:07:37', 0);
+(7, 1, 'dgik f;lgdflgjkdfgjk', 'dsfhsdlkfhdslkfjh sdlkfh sdlkjfh sdlkfh iouertueriwt skjfh lksdfhouiwertyth rt \r\nfdsg fdsgh fklghdfiougyhe rkthrkl hdflkgh iouertgkl erjtger\r\ngertg lkfgdfoigy eiorhgerlkg kljhviuohiopertger\r\nter toijboipgbjl;kj;lekrjerlkjt\r\nertgopegjkopijrtg', 18, '2013-12-17 17:07:37', 0),
+(8, 1, 'new thread', 'test content', 18, '2013-12-26 03:56:43', 1),
+(9, 2, 'dkjhdfklghj', 'df dfgklh dfglkdfjhg iuoerthskljdfhdl kjfhdjksfh', 18, '2013-12-26 03:58:07', 1),
+(10, 2, 'dflisdfiopjsdflkjds', 'sdhdlskjfh slkdfjhsdf', 18, '2013-12-26 03:58:21', 1);
 
 -- --------------------------------------------------------
 
@@ -959,14 +962,14 @@ CREATE TABLE IF NOT EXISTS `onlineusers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1285 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1291 ;
 
 --
 -- Dumping data for table `onlineusers`
 --
 
 INSERT INTO `onlineusers` (`id`, `session`, `time`, `username`) VALUES
-(1284, 'ca366mp486c03ns5ntie7uq515', 1388025924, '');
+(1290, 'ca366mp486c03ns5ntie7uq515', 1388030270, '');
 
 -- --------------------------------------------------------
 
@@ -1129,7 +1132,7 @@ CREATE TABLE IF NOT EXISTS `systemcron` (
 --
 
 INSERT INTO `systemcron` (`id`, `job`, `frequancy`, `last_run`) VALUES
-(1, 'AutoTranslation', 300, 1388026445);
+(1, 'AutoTranslation', 300, 1388030454);
 
 -- --------------------------------------------------------
 

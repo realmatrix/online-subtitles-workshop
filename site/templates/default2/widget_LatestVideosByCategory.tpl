@@ -8,7 +8,21 @@
     .tab a.active { /*font-weight: bold;*/ color: #F88017;}
     .tab-container .panel-container { background: #fff; border: solid #666 1px; padding: 10px; -moz-border-radius: 0 4px 4px 4px; -webkit-border-radius: 0 4px 4px 4px; border-color: rgb(215, 229, 242) rgb(215, 229, 242);}
     .panel-container { margin-bottom: 0px; }
-    .tab-containr-wrap{margin-bottom: 10px; padding: 5px; background: rgb(255, 255, 255); border-width: 1px; border-style: solid; border-color: rgb(215, 229, 242) rgb(215, 229, 242);}
+    .tab-containr-wrap{background-color: #EBF4FC; margin-bottom: 10px; padding: 5px; border-width: 1px; border-style: solid; border-color: rgb(215, 229, 242) rgb(215, 229, 242);}
+
+	.widget-latestvideos-all-cell{
+		width: 49.2%;
+		float:left;
+		border-style: solid;
+		border-width: 1px;
+		border-color: rgb(215, 229, 242) rgb(215, 229, 242);
+		height: 30px;
+		line-height: 30px;
+		margin-left: 2px;
+		margin-bottom: 2px;
+		padding-left: 1px;
+		text-overflow: ellipsis;
+	}
   </style>
 
   <script type="text/javascript">
@@ -32,6 +46,7 @@
 
   <div id="tabs4-a">
 	{AllVideos}
+	<div style='clear:left;'></div>
   </div>
   <div id="tabs4-b">
 	{Movies}

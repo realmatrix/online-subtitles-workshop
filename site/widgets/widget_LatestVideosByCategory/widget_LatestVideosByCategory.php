@@ -38,7 +38,7 @@
 			$content = "";
 			for ($i=0; $i < count($res); $i++) { 
 				$content.="<div class='widget-latestvideos-all'>";
-				$content.="<a href='index.php?page=video&sec=view&vid=".$res[$i]['id']."'>".$res[$i]['title']."</a>";
+				$content.="<div class='widget-latestvideos-all-cell'><a href='index.php?page=video&sec=view&vid=".$res[$i]['id']."'>".$res[$i]['title']."</a></div>";
 				$content.="</div>";
 			}
 			return $content;
