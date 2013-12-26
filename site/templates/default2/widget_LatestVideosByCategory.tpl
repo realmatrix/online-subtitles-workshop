@@ -11,7 +11,7 @@
     .tab-containr-wrap{background-color: #EBF4FC; margin-bottom: 10px; padding: 5px; border-width: 1px; border-style: solid; border-color: rgb(215, 229, 242) rgb(215, 229, 242);}
 
 	.widget-latestvideos-all-cell{
-		width: 49.2%;
+		width: 49.5%;
 		float:left;
 		border-style: solid;
 		border-width: 1px;
