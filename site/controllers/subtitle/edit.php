@@ -4,6 +4,7 @@
 			
 		function edit_sections(){
 			$array = array(
+				array("subtitle", "ViewSubtitle", $GLOBALS['vars'], true),
 				array("subtitle", "SubtitleCDS", $GLOBALS['vars'], TRUE),
 				array("team", "DownloadSubtitle", $GLOBALS['vars'], self::CheckDownload()),
 				array("subtitle", "EditorControls", $GLOBALS['vars'], self::show()),
