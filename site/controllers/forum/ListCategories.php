@@ -33,7 +33,7 @@
 		}
 		
 		function GetCategories(){
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `ForumCategories`", array());
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `forumcategories`", array());
 			$rows = "";
 			for ($i=0; $i < count($res); $i++) { 
 				$rows .= "<tr>";

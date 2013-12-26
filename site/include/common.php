@@ -12,9 +12,9 @@ class Common{
 				array(":sec", $sec, "str"),
 				array(":dataonly", $dataonly, "str"),
 			);
-			$res = self::db_query("SELECT * FROM `SystemRouter` WHERE `page`=:page and `sec`=:sec and `dataonly`=:dataonly", $args);
+			$res = self::db_query("SELECT * FROM `systemrouter` WHERE `page`=:page and `sec`=:sec and `dataonly`=:dataonly", $args);
 			if(count($res)<1){
-				$res = self::db_query("SELECT * FROM `SystemRouter` WHERE `page`=:page and `dataonly`=:dataonly", $args);
+				$res = self::db_query("SELECT * FROM `systemrouter` WHERE `page`=:page and `dataonly`=:dataonly", $args);
 				print_r($res);
 			}			
 		$route = self::Route($res);
@@ -401,7 +401,7 @@ class Common{
 
 	function GetVideoTypes(){
 		$params = array();
-	 	$result = self::db_query("SELECT * FROM VideoType", $params);
+	 	$result = self::db_query("SELECT * FROM videotype", $params);
 		return $result;
 	}
 
@@ -409,7 +409,7 @@ class Common{
 
 	function GetVideoCategories(){
 		$params = array();
-	 	$result = self::db_query("SELECT * FROM VideoCategory", $params);
+	 	$result = self::db_query("SELECT * FROM videocategory", $params);
 		return $result;
 	}
 
@@ -417,7 +417,7 @@ class Common{
 
 	function GetLanguages(){
 		$params = array();
-	 	$result = self::db_query("SELECT * FROM Language", $params);
+	 	$result = self::db_query("SELECT * FROM language", $params);
 		return $result;
 	}
 
@@ -425,7 +425,7 @@ class Common{
 
 	function GetCds(){
 		$params = array();
-	 	$result = self::db_query("SELECT * FROM CDS", $params);
+	 	$result = self::db_query("SELECT * FROM cds", $params);
 		return $result;
 	}
 	
@@ -435,7 +435,7 @@ class Common{
 		$params = array(
 			array(":id", $id, "str")
 		);
-	 	$result = self::db_query("SELECT * FROM CDS where id = :id", $params);
+	 	$result = self::db_query("SELECT * FROM cds where id = :id", $params);
 		return $result;
 	}
 
@@ -443,7 +443,7 @@ class Common{
 
 	function GetFormats(){
 		$params = array();
-	 	$result = self::db_query("SELECT * FROM Formats", $params);
+	 	$result = self::db_query("SELECT * FROM formats", $params);
 		return $result;
 	}
 
@@ -451,7 +451,7 @@ class Common{
 
 	function GetCountries(){
 		$params = array();
-	 	$result = self::db_query("SELECT * FROM Countries", $params);
+	 	$result = self::db_query("SELECT * FROM countries", $params);
 		return $result;
 	}
 
@@ -459,7 +459,7 @@ class Common{
 
 	function GetGenres(){
 		$params = array();
-	 	$result = self::db_query("SELECT * FROM Genres", $params);
+	 	$result = self::db_query("SELECT * FROM genres", $params);
 		return $result;
 	}
 
@@ -469,7 +469,7 @@ class Common{
 		$params = array(
 			array(":id", $VideoID, "str"),
 		);
-	 	$result = self::db_query("SELECT * FROM `Videos` where `id`=:id ", $params);
+	 	$result = self::db_query("SELECT * FROM `videos` where `id`=:id ", $params);
 		return $result;
 	}
 
@@ -535,13 +535,13 @@ class Common{
 			$params = array(
 				array(":username", $username, "str"),
 			);
-			$res=self::db_query("SELECT * FROM Users WHERE username=:username", $params);
+			$res=self::db_query("SELECT * FROM users WHERE username=:username", $params);
 		}
 		if($id!=""){
 			$params = array(
 				array(":id", $id, "str"),
 			);
-			$res=self::db_query("SELECT * FROM Users WHERE id=:id", $params);
+			$res=self::db_query("SELECT * FROM users WHERE id=:id", $params);
 		}
 		return $res;
 	}
@@ -560,16 +560,16 @@ class Common{
 		$info['total'] = $total;
 		$info['OnlineHidden'] = 0;
 			$params = array();
-			$AllRegistered=self::db_query("SELECT * FROM Users", $params);
+			$AllRegistered=self::db_query("SELECT * FROM users", $params);
 		$info['TotalRegistered']= count($AllRegistered);
 			$params = array();
-			$LatestUser=self::db_query("SELECT * FROM Users ORDER BY id DESC LIMIT 1", $params);
+			$LatestUser=self::db_query("SELECT * FROM users ORDER BY id DESC LIMIT 1", $params);
 		$info['LatestUser']=$LatestUser[0]['username'];
 			$params = array();
-			$TotalVideos=self::db_query("SELECT id FROM Videos", $params);
+			$TotalVideos=self::db_query("SELECT id FROM videos", $params);
 		$info['TotalVideos']=count($TotalVideos);
 			$params = array();
-			$TotalSubtitles=self::db_query("SELECT id FROM Subtitles", $params);
+			$TotalSubtitles=self::db_query("SELECT id FROM subtitles", $params);
 		$info['TotalSubtitles']=count($TotalSubtitles);
 		return $info;
 	}
@@ -594,7 +594,7 @@ class Common{
 		$params = array(
 			array(":id", $id, "str")
 		);
-		$country=self::db_query("SELECT * FROM Countries where id=:id", $params);
+		$country=self::db_query("SELECT * FROM countries where id=:id", $params);
 		return $country;
 	}
 
@@ -604,7 +604,7 @@ class Common{
 		$params = array(
 			array(":id", $id, "str")
 		);
-		$genre=self::db_query("SELECT * FROM Genres where id=:id", $params);
+		$genre=self::db_query("SELECT * FROM genres where id=:id", $params);
 		return $genre;
 	}
 
@@ -614,7 +614,7 @@ class Common{
 		$params = array(
 			array(":id", $id, "str")
 		);
-		$language = self::db_query("SELECT * FROM Language where id=:id", $params);
+		$language = self::db_query("SELECT * FROM language where id=:id", $params);
 		return $language;
 	}
 
@@ -624,13 +624,13 @@ class Common{
 		$params = array(
 			array(":id", $id, "str")
 		);
-		$genre=self::db_query("SELECT * FROM Formats where id=:id", $params);
+		$genre=self::db_query("SELECT * FROM formats where id=:id", $params);
 		return $genre;
 	}
 
 
 	function GetLanguage($lang){
-		$result = self::db_query("select * from `Lang_".$lang."` ", $params);
+		$result = self::db_query("select * from `lang_".$lang."` ", $params);
 		$res = array();
 		for ($i=0; $i < count($result); $i++) { 
 			$res[$result[$i]['key']]=$result[$i]['text'];
@@ -663,7 +663,7 @@ class Common{
 		$args = array(
 			array(":uid", $uid, "str"),
 		);
-		$res = self::db_query("SELECT * FROM `Teams` WHERE `owner`=:uid ", $args);
+		$res = self::db_query("SELECT * FROM `teams` WHERE `owner`=:uid ", $args);
 		return $res;
 	}
 	
@@ -674,7 +674,7 @@ class Common{
 		$args = array(
 			array(":tid", $tid, "str"),
 		);
-		$res = self::db_query("SELECT * FROM `TeamMembers` WHERE `tid`=:tid", $args);
+		$res = self::db_query("SELECT * FROM `teammembers` WHERE `tid`=:tid", $args);
 		return $res;
 	}
 
@@ -685,7 +685,7 @@ class Common{
 		$args = array(
 			array(":tid", $tid, "str"),
 		);
-		$res = self::db_query("SELECT * FROM `Teams` WHERE `id`=:tid", $args);
+		$res = self::db_query("SELECT * FROM `teams` WHERE `id`=:tid", $args);
 		return $res;
 	}
 	
@@ -696,7 +696,7 @@ class Common{
 		$args = array(
 			array(":tid", $tid, "str"),
 		);
-		$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `TeamSubtitles` WHERE `tid`=:tid", $args);
+		$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `teamsubtitles` WHERE `tid`=:tid", $args);
 		return $res;
 	}
 	
@@ -707,7 +707,7 @@ class Common{
 		$args = array(
 			array(":uid", $uid, "str")
 		);
-		$res = self::db_query("SELECT * FROM `Subtitles` WHERE `uid`=:uid", $args);
+		$res = self::db_query("SELECT * FROM `subtitles` WHERE `uid`=:uid", $args);
 		return $res;
 	}
 	
@@ -718,7 +718,7 @@ class Common{
 		$args = array(
 			array(":sid", $sid, "str"),
 		);
-		$res = self::db_query("SELECT * FROM `Subtitles` WHERE `id` = :sid", $args);
+		$res = self::db_query("SELECT * FROM `subtitles` WHERE `id` = :sid", $args);
 		return $res;
 	}
 	
@@ -729,7 +729,7 @@ class Common{
 		$args = array(
 			array(":sid", $sid, "str")
 		);
-		$res = self::db_query("SELECT * FROM `SubtitleCDS` WHERE `sid`=:sid", $args);
+		$res = self::db_query("SELECT * FROM `subtitlecds` WHERE `sid`=:sid", $args);
 		return $res;
 	}
 	
@@ -762,13 +762,13 @@ class Common{
 			array(":sid", $sid, "str"),
 			array("cid", $cid, "str"),
 		);
-		$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `SubtitlesContent` WHERE `sid` = :sid and `cid` = :cid ORDER BY start ASC", $args);
+		$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitlescontent` WHERE `sid` = :sid and `cid` = :cid ORDER BY start ASC", $args);
 		for ($i=0; $i < count($res); $i++) { 
 			$args = array(
 				array(":id", $res[$i]['id'], "str"),
 				array(":start", $res[$i]['start'], "str"),
 			);
-			$GLOBALS['COMMON']->db_query("UPDATE `SubtitlesContent` SET `start` = :start WHERE `id` = :id ;", $args);
+			$GLOBALS['COMMON']->db_query("UPDATE `subtitlescontent` SET `start` = :start WHERE `id` = :id ;", $args);
 		}
 	}
 	
@@ -786,7 +786,7 @@ class Common{
 		$args = array(
 			array(":name", $name, "str"),
 		);
-		$res = self::db_query("SELECT * FROM `Settings` WHERE `name` = :name", $args);
+		$res = self::db_query("SELECT * FROM `settings` WHERE `name` = :name", $args);
 		return $res[0]['value'];
 	}
 
@@ -795,16 +795,16 @@ class Common{
 		$args = array(
 			array(":ip", $_SERVER['REMOTE_ADDR'], "str"),
 		);
-		$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `FailedLogins` WHERE `ip` = :ip", $args);
+		$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `failedlogins` WHERE `ip` = :ip", $args);
 		$args = array(
 			array(":ip", $_SERVER['REMOTE_ADDR'], "str"),
 			array(":time", self::GetMicroTime(), "str"),
 		);
 		if(count($res)>0){
-			$res = $GLOBALS['COMMON']->db_query("UPDATE  `FailedLogins` SET  `tries` =  tries+1,`time` =  :time WHERE  `ip` =:ip", $args);
+			$res = $GLOBALS['COMMON']->db_query("UPDATE  `failedlogins` SET  `tries` =  tries+1,`time` =  :time WHERE  `ip` =:ip", $args);
 		}
 		else{
-			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `FailedLogins` (`ip` ,`tries` ,`time`)VALUES(:ip, 1, :time)", $args);
+			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `failedlogins` (`ip` ,`tries` ,`time`)VALUES(:ip, 1, :time)", $args);
 		}
 	}
 	
@@ -813,7 +813,7 @@ class Common{
 		$args = array(
 			array(":ip", $_SERVER['REMOTE_ADDR'], "str"),
 		);
-		$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `FailedLogins` WHERE `ip` = :ip", $args);
+		$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `failedlogins` WHERE `ip` = :ip", $args);
 		if($res[0]['tries']>5){return TRUE;}else{return FALSE;}
 	}
 	
@@ -824,7 +824,7 @@ class Common{
 		$args = array(
 			array(":time", $time, "str"),
 		);
-		$res = $GLOBALS['COMMON']->db_query("DELETE FROM `FailedLogins` WHERE `time` < :time", $args);
+		$res = $GLOBALS['COMMON']->db_query("DELETE FROM `failedlogins` WHERE `time` < :time", $args);
 	}
 	
 	
@@ -832,14 +832,14 @@ class Common{
 		$args = array(
 			array(":KeyTime", $GLOBALS['COMMON']->GetMicroTime()-86400, "str"),
 		);
-		$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Users` WHERE `KeyTime`< :KeyTime limit 10", $args);
+		$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `users` WHERE `KeyTime`< :KeyTime limit 10", $args);
 		for ($i=0; $i < count($res); $i++) {
 			$args = array(
 				array(":id", $res[$i]['id']),
 				array(":key", self::GenRandomStr(30), "str"),
 				array(":KeyTime", self::GetMicroTime(), "str"),
 			); 
-			$GLOBALS['COMMON']->db_query("UPDATE `Users` SET  `key` =  :key, `KeyTime` =  :KeyTime WHERE `id` = :id", $args);
+			$GLOBALS['COMMON']->db_query("UPDATE `users` SET  `key` =  :key, `KeyTime` =  :KeyTime WHERE `id` = :id", $args);
 		}
 	}
 	

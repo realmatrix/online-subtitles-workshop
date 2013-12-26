@@ -31,14 +31,14 @@ class Onlineusers{
 		$params = array(
 			array(":session", $session, "str")
 		);
-		$result=$GLOBALS['COMMON']->db_query("SELECT * FROM OnlineUsers WHERE session=:session", $params);
+		$result=$GLOBALS['COMMON']->db_query("SELECT * FROM onlineusers WHERE session=:session", $params);
 		if(count($result)=="0"){
 			$params = array(
 				array(":session", $session, "str"),
 				array(":time", $time, "str"),
 				array(":username", $username, "str")
 			);	
-		 $result1=$GLOBALS['COMMON']->db_query("INSERT INTO OnlineUsers(session, time, username)VALUES(:session, :time, :username)", $params);
+		 $result1=$GLOBALS['COMMON']->db_query("INSERT INTO onlineusers(session, time, username)VALUES(:session, :time, :username)", $params);
 		 }
 		 else {
 		 	$params = array(
@@ -46,7 +46,7 @@ class Onlineusers{
 				array(":time", $time, "str"),
 				array(":username", $username, "str")
 			);
-		 $result2=$GLOBALS['COMMON']->db_query("UPDATE OnlineUsers SET time=:time, username=:username WHERE session = :session", $params);
+		 $result2=$GLOBALS['COMMON']->db_query("UPDATE onlineusers SET time=:time, username=:username WHERE session = :session", $params);
 		 }
 	}
 ////////////////////////////////////////////
@@ -57,7 +57,7 @@ class Onlineusers{
 		$params = array(
 			array(":session", $session, "str")
 		);
-		$result = $GLOBALS['COMMON']->db_query("DELETE FROM OnlineUsers WHERE session =:session", $params);
+		$result = $GLOBALS['COMMON']->db_query("DELETE FROM onlineusers WHERE session =:session", $params);
 	}
 ////////////////////////////////////////////
 
@@ -68,7 +68,7 @@ class Onlineusers{
 		$params = array(
 		array(":time",$time_check,"str")
 		);
- 		$result=$GLOBALS['COMMON']->db_query("DELETE FROM OnlineUsers WHERE time<:time",$params);
+ 		$result=$GLOBALS['COMMON']->db_query("DELETE FROM onlineusers WHERE time<:time",$params);
 	}
 ////////////////////////////////////////////
 
@@ -79,13 +79,13 @@ class Onlineusers{
 		$params = array(
 		array(":session", $session, "str")
 		);
-		$result=$GLOBALS['COMMON']->db_query("SELECT * FROM OnlineUsers WHERE session=:session", $params);
+		$result=$GLOBALS['COMMON']->db_query("SELECT * FROM onlineusers WHERE session=:session", $params);
 		if(count($result)=="0" and $session!=""){
 		$params = array(
 			array(":session", $session, "str"),
 			array(":time", $time, "str")
 		);	
-		 $result1=$GLOBALS['COMMON']->db_query("INSERT INTO OnlineUsers(session, time)VALUES(:session, :time)", $params);
+		 $result1=$GLOBALS['COMMON']->db_query("INSERT INTO onlineusers(session, time)VALUES(:session, :time)", $params);
 		 }
 	}
 ////////////////////////////////////////////
@@ -96,7 +96,7 @@ class Onlineusers{
 		$params = array(
 			array(":username", "", "str")
 		);
-		$result = $GLOBALS['COMMON']->db_query("SELECT * FROM OnlineUsers WHERE username=:username", $params);
+		$result = $GLOBALS['COMMON']->db_query("SELECT * FROM onlineusers WHERE username=:username", $params);
 		foreach($result as $row){
 			$user[] = $row['username'];
 		}
@@ -112,7 +112,7 @@ class Onlineusers{
 		$params = array(
 			array(":username", "", "str")
 		);
-		$result = $GLOBALS['COMMON']->db_query("SELECT * FROM OnlineUsers WHERE username<>:username", $params);
+		$result = $GLOBALS['COMMON']->db_query("SELECT * FROM onlineusers WHERE username<>:username", $params);
 		foreach($result as $row){
 			$user[] = $row['username'];
 		}

@@ -38,7 +38,7 @@
 			$params = array(
 				array("sid", $GLOBALS['vars']['sid']),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `TeamChat` WHERE `sid` = :sid", $params);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `teamchat` WHERE `sid` = :sid", $params);
 			$chat = "";
 			for ($i=0; $i < count($res); $i++) { 
 				$chat.="<div class='chat-line-container'>";
@@ -58,7 +58,7 @@
 				array(":sid", $GLOBALS['vars']['sid'], "str"),
 				array(":date", date('Y-m-d H:i:s'), "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `TeamChat`(`date`, `uid`, `text`, `sid`, `username`) VALUES (:date, :uid, :text, :sid, :username);", $params, $ExecState);
+			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `teamchat`(`date`, `uid`, `text`, `sid`, `username`) VALUES (:date, :uid, :text, :sid, :username);", $params, $ExecState);
 			//if($ExecState===TRUE){echo "success";}else{echo "failed";}
 			//echo $res;
 		}

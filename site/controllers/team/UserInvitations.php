@@ -41,7 +41,7 @@
 			$args = array(
 				array(":uid", $_SESSION['id'], "str"),
 			);
-			$invitations = $GLOBALS['COMMON']->db_query("SELECT * FROM `TeamUsers` WHERE `uid` = :uid", $args);
+			$invitations = $GLOBALS['COMMON']->db_query("SELECT * FROM `teamusers` WHERE `uid` = :uid", $args);
 			$res = "";
 			for ($i=0; $i < count($invitations); $i++) {
 				$count = $i + 1; 
@@ -63,7 +63,7 @@
 			$args = array(
 				array(":tid", $tid, "str"),
 			);
-			$TeamInfo = $GLOBALS['COMMON']->db_query("SELECT * FROM `Teams` WHERE `id` = :tid", $args);
+			$TeamInfo = $GLOBALS['COMMON']->db_query("SELECT * FROM `teams` WHERE `id` = :tid", $args);
 			return $TeamInfo[0];
 		}
 		
@@ -79,7 +79,7 @@
 				array(":uid", $_SESSION['id'], "str"),
 				array(":tid", $GLOBALS['vars']['tid'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("UPDATE `TeamUsers` SET `state` = '1' WHERE `uid` =:uid AND `tid` =:tid;", $args, $state);
+			$res = $GLOBALS['COMMON']->db_query("UPDATE `teamusers` SET `state` = '1' WHERE `uid` =:uid AND `tid` =:tid;", $args, $state);
 			if($state===TRUE){$GLOBALS['SUCCESS'][]="Invitation state updated successfully.";}else{$GLOBALS['ERROR'][]="Invitation state update failed.";}
 		}
 		
@@ -88,7 +88,7 @@
 				array(":uid", $_SESSION['id'], "str"),
 				array(":tid", $GLOBALS['vars']['tid'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("UPDATE `TeamUsers` SET `state` = '-1' WHERE `uid` =:uid AND `tid` =:tid;", $args, $state);
+			$res = $GLOBALS['COMMON']->db_query("UPDATE `teamusers` SET `state` = '-1' WHERE `uid` =:uid AND `tid` =:tid;", $args, $state);
 			if($state===TRUE){$GLOBALS['SUCCESS'][]="Invitation state updated successfully.";}else{$GLOBALS['ERROR'][]="Invitation state update failed.";}
 		}
 		

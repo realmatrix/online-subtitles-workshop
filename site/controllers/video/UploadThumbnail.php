@@ -57,7 +57,7 @@
 				array(":id", $GLOBALS['vars']['vid'], "str"),
 				array(":key", $key, "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("UPDATE `Videos` SET `thumbnail` = :key WHERE `id` = :id ", $args, $ExecState);
+			$res = $GLOBALS['COMMON']->db_query("UPDATE `videos` SET `thumbnail` = :key WHERE `id` = :id ", $args, $ExecState);
 			if($ExecState===TRUE){$GLOBALS['SUCCESS'][]="thumbnail uploaded successfully.";}else{$GLOBALS['ERROR'][]="uploading thumbnail failed.";}	
 			
 		}

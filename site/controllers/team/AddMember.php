@@ -44,7 +44,7 @@
 				array(":tid", $GLOBALS['vars']['tid'], "str"),
 				array(":uid", $uid[0]['id'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `TeamUsers` (`tid`, `uid`) VALUES (:tid, :uid);", $args);
+			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `teamusers` (`tid`, `uid`) VALUES (:tid, :uid);", $args);
 		}
 		
 	

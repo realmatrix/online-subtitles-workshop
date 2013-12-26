@@ -48,7 +48,7 @@
 				array(":sid", $GLOBALS['vars']['sid'], "str"),
 				array(":cid", $GLOBALS['vars']['cid'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `SubtitlesContent` WHERE `sid` = :sid and `cid` = :cid", $args);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitlescontent` WHERE `sid` = :sid and `cid` = :cid", $args);
 			return $res;
 		}
 
@@ -57,7 +57,7 @@
 				array(":sid", $GLOBALS['vars']['sid'], "str"),
 				array(":cid", $GLOBALS['vars']['cid'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `SubtitlesContent` WHERE `sid` = :sid and `cid` = :cid and `checked` <> 0", $args);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitlescontent` WHERE `sid` = :sid and `cid` = :cid and `checked` <> 0", $args);
 			return $res;
 		}		
 
@@ -66,7 +66,7 @@
 				array(":sid", $GLOBALS['vars']['sid'], "str"),
 				array(":cid", $GLOBALS['vars']['cid'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `SubtitlesContent` WHERE `sid` = :sid and `cid` = :cid and `done` = 1", $args);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitlescontent` WHERE `sid` = :sid and `cid` = :cid and `done` = 1", $args);
 			return $res;
 		}	
 		
@@ -74,7 +74,7 @@
 			$args = array(
 				array(":sid", $GLOBALS['vars']['sid'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `TeamSubtitles` WHERE `sid` = :sid", $args);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `teamsubtitles` WHERE `sid` = :sid", $args);
 			if(count($res)<1){return array();}
 			$TeamID = $res[0]['tid'];
 			$res = $GLOBALS['COMMON']->GetTeamMembers($TeamID);

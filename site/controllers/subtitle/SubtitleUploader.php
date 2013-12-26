@@ -95,7 +95,7 @@
 					if($i!=count($content)-1){$args[0][] = "(:sid".$i.", :uid".$i.", :cid".$i.", :line".$i.", :start".$i.", :end".$i.", :text".$i."),";}else{$args[0][]="(:sid".$i.", :uid".$i.", :cid".$i.", :line".$i.", :start".$i.", :end".$i.", :text".$i.")";}
 			}
 			//print_r($args);
-			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `SubtitlesContent` (`sid`, `uid`, `cid`, `line`, `start`, `end`, `text`) VALUES ", $args, $ExecState, TRUE);
+			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `subtitlescontent` (`sid`, `uid`, `cid`, `line`, `start`, `end`, `text`) VALUES ", $args, $ExecState, TRUE);
 			if($ExecState===TRUE){$GLOBALS['SUCCESS'][]="Subtitle uploaded successfully.";}else{$GLOBALS['ERROR'][]="uploading subtitle failed.";}	
 			
 		}

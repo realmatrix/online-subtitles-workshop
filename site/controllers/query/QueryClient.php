@@ -40,7 +40,7 @@
 				array(":username", $GLOBALS['vars']['u'], "str"),
 				array(":password", sha1($GLOBALS['vars']['p']), "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM Users WHERE username=:username and password=:password limit 1", $args);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM users WHERE username=:username and password=:password limit 1", $args);
 			if(count($res)>0){
 				$array = array(
 					array("key" => $res[0]['key']),

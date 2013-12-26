@@ -36,7 +36,7 @@
 			$args = array(
 				array(":cat", $GLOBALS['vars']['cat'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Forums` WHERE `category` = :cat", $args);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `forums` WHERE `category` = :cat", $args);
 			$rows = "";
 			for ($i=0; $i < count($res); $i++) { 
 				$rows .= "<tr>";

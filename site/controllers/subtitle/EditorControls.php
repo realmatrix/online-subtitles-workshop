@@ -47,7 +47,7 @@
 				array(":from", $GLOBALS['vars']['from'], "str"),
 				array(":to", $GLOBALS['vars']['to'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `SubtitlesContent` WHERE `sid` = :sid and `cid` = :cid and line between :from and :to", $args);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitlescontent` WHERE `sid` = :sid and `cid` = :cid and line between :from and :to", $args);
 			return $res;
 		}
 
@@ -56,7 +56,7 @@
 				array(":sid", $GLOBALS['vars']['sid'], "str"),
 				array(":cid", $GLOBALS['vars']['cid'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `SubtitlesContent` WHERE `sid` = :sid and `cid` = :cid ORDER BY line ASC", $args);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitlescontent` WHERE `sid` = :sid and `cid` = :cid ORDER BY line ASC", $args);
 			return $res;
 		}
 				
@@ -108,7 +108,7 @@
 				array(":to", $GLOBALS['vars']['to'], "str"),
 				array(":value", $value, "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("UPDATE `SubtitlesContent` SET `done` = :value WHERE `sid` = :sid and `cid` = :cid and `line` BETWEEN :from AND :to;", $args);
+			$res = $GLOBALS['COMMON']->db_query("UPDATE `subtitlescontent` SET `done` = :value WHERE `sid` = :sid and `cid` = :cid and `line` BETWEEN :from AND :to;", $args);
 		}
 		
 		function DeleteLine(){
@@ -119,7 +119,7 @@
 				array(":cid", $GLOBALS['vars']['cid'], "str"),
 				array(":line", $GLOBALS['vars']['line'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("DELETE FROM `SubtitlesContent` WHERE `sid` = :sid and `cid` = :cid and `line` = :line", $args, $ExecState);
+			$res = $GLOBALS['COMMON']->db_query("DELETE FROM `subtitlescontent` WHERE `sid` = :sid and `cid` = :cid and `line` = :line", $args, $ExecState);
 			self::ArrangeLines();
 			if($ExecState===TRUE){$GLOBALS['SUCCESS'][]="Line deleted successfully.";}else{$GLOBALS['ERROR'][]="Failed to delete line.";}
 		}
@@ -170,7 +170,7 @@
 				array(":end", $end, "str"),
 				array(":text", "new line", "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `SubtitlesContent` (`sid`, `uid`, `cid`, `line`, `start`, `end`, `text`, `checked`, `done`) VALUES (:sid, :uid, :cid, :line, :start, :end, :text, '0', '0');", $args, $ExecState);
+			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `subtitlescontent` (`sid`, `uid`, `cid`, `line`, `start`, `end`, `text`, `checked`, `done`) VALUES (:sid, :uid, :cid, :line, :start, :end, :text, '0', '0');", $args, $ExecState);
 			self::ArrangeLines();
 			if($ExecState===TRUE){$GLOBALS['SUCCESS'][]="New line added successfully.";}else{$GLOBALS['ERROR'][]="failed to add new line.";}
 		}
@@ -198,7 +198,7 @@
 			array(":sid", $GLOBALS['vars']['sid'], "str"),
 			array("cid", $GLOBALS['vars']['cid'], "str"),
 		);
-		$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `SubtitlesContent` WHERE `sid` = :sid and `cid` = :cid ORDER BY start ASC", $args);
+		$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitlescontent` WHERE `sid` = :sid and `cid` = :cid ORDER BY start ASC", $args);
 		for ($i=0; $i < count($res); $i++) {
 			$LineNumber = $i + 1; 
 			$args = array(

@@ -48,7 +48,7 @@
 				array(":message", $GLOBALS['vars']['message'], "str"),
 				array(":date", date("Y-m-d H:i:s"), "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `PrivateMessages` (`from`, `to`, `subject`, `message`, `date`) VALUES (:from, :to, :subject, :message, :date);", $args, $ExecState);
+			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `privatemessages` (`from`, `to`, `subject`, `message`, `date`) VALUES (:from, :to, :subject, :message, :date);", $args, $ExecState);
 			if($ExecState===TRUE){$GLOBALS['SUCCESS'][]="Message sent.";}else{$GLOBALS['ERROR'][]="Message send failed.";}
 		}
 

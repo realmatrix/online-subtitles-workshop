@@ -45,7 +45,7 @@
 				array(":lid", $GLOBALS['vars']['lid'], "str"),
 				array(":uid", $_SESSION['id'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Transcriptions` WHERE `lid` = :lid AND `uid` = :uid", $args);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `transcriptions` WHERE `lid` = :lid AND `uid` = :uid", $args);
 			//if($GLOBALS['vars']['type']=="text"){$GLOBALS['vars']['type'] = "TranscribedText";}
 			self::$query = $res[0][$GLOBALS['vars']['type']];
 		}
@@ -61,7 +61,7 @@
 				array(":lid", $GLOBALS['vars']['lid'], "str"),
 				array(":start", $GLOBALS['vars']['content'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("UPDATE `SubtitlesContent` SET `start` = :start WHERE `id` = :lid ;", $args);
+			$res = $GLOBALS['COMMON']->db_query("UPDATE `subtitlescontent` SET `start` = :start WHERE `id` = :lid ;", $args);
 		}
 		
 		function UpdateEnd(){
@@ -75,7 +75,7 @@
 				array(":lid", $GLOBALS['vars']['lid'], "str"),
 				array(":end", $GLOBALS['vars']['content'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("UPDATE `SubtitlesContent` SET `end` = :end WHERE `id` = :lid ;", $args);
+			$res = $GLOBALS['COMMON']->db_query("UPDATE `subtitlescontent` SET `end` = :end WHERE `id` = :lid ;", $args);
 		}
 		
 		function UpdateText(){
@@ -86,7 +86,7 @@
 				array(":lid", $GLOBALS['vars']['lid'], "str"),
 				array(":uid", $_SESSION['id'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Transcriptions` WHERE `sid` = :sid AND `cid` = :cid AND `uid` = :uid AND `lid` = :lid", $args);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `transcriptions` WHERE `sid` = :sid AND `cid` = :cid AND `uid` = :uid AND `lid` = :lid", $args);
 			if(count($res)>0){
 			$args = array(
 				array(":sid", $GLOBALS['vars']['sid'], "str"),
@@ -95,7 +95,7 @@
 				array(":text", $GLOBALS['vars']['content'], "str"),
 				array(":uid", $_SESSION['id'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("UPDATE `Transcriptions` SET `text` = :text WHERE `sid` = :sid AND `cid` = :cid AND `lid` = :lid AND `uid` = :uid", $args);
+			$res = $GLOBALS['COMMON']->db_query("UPDATE `transcriptions` SET `text` = :text WHERE `sid` = :sid AND `cid` = :cid AND `lid` = :lid AND `uid` = :uid", $args);
 			}
 			else {
 				$args = array(
@@ -105,7 +105,7 @@
 					array(":text", $GLOBALS['vars']['content'], "str"),
 					array(":uid", $_SESSION['id'], "str"),
 				);
-				$res = $GLOBALS['COMMON']->db_query("INSERT INTO `Transcriptions` (`sid` ,`cid` ,`uid` ,`lid` ,`text`) VALUES (:sid, :cid, :uid, :lid, :text)", $args);
+				$res = $GLOBALS['COMMON']->db_query("INSERT INTO `transcriptions` (`sid` ,`cid` ,`uid` ,`lid` ,`text`) VALUES (:sid, :cid, :uid, :lid, :text)", $args);
 			}
 		}
 		
@@ -116,7 +116,7 @@
 				array(":uid", $_SESSION['id'], "str"),
 				array(":sid", $GLOBALS['vars']['sid'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Subtitles` WHERE `uid` = :uid and `id` = :sid", $args);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitles` WHERE `uid` = :uid and `id` = :sid", $args);
 			if(count($res)>0){$Permission = TRUE;}
 			//checking team
 			
@@ -146,7 +146,7 @@
 				array(":sid", $GLOBALS['vars']['sid'], "str"),
 				array(":cid", $GLOBALS['vars']['cid'], "str"),
 			);
-			$subtitle = $GLOBALS['COMMON']->db_query("SELECT * FROM `SubtitlesContent` WHERE sid = :sid and cid = :cid ORDER BY line ASC", $args);
+			$subtitle = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitlescontent` WHERE sid = :sid and cid = :cid ORDER BY line ASC", $args);
 			echo "WEBVTT\r\n\r\n";
 			for ($i=0; $i < count($subtitle); $i++) { 
 				//echo $subtitle[$i]['line']."\r\n";

@@ -186,7 +186,7 @@
 			array(":synopsis", trim($args['synopsis']), "str"),
 			array(":source", trim($args['VideoUrl']), "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `Videos` (`uid`, `title`, `other_title`, `type`, `category`, `language`, `country`, `genres`, `release_date`, `casting`, `director`, `length`, `tags`, `synopsis`, `source`) VALUES (:uid, :title, :other_title, :type, :category, :language, :country, :genres, :releasedate, :casting, :director, :length, :tags, :synopsis, :source )", $params);			
+			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `videos` (`uid`, `title`, `other_title`, `type`, `category`, `language`, `country`, `genres`, `release_date`, `casting`, `director`, `length`, `tags`, `synopsis`, `source`) VALUES (:uid, :title, :other_title, :type, :category, :language, :country, :genres, :releasedate, :casting, :director, :length, :tags, :synopsis, :source )", $params);			
 			$GLOBALS['SUCCESS'][] = "video '".$args['VideoTitle']."' added successfully";
 			$GLOBALS['vars']['VideoTitle'] = "";
 			$GLOBALS['vars']['VideoOtherTitle'] = "";

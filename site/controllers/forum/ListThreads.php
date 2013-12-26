@@ -36,7 +36,7 @@
 			$args = array(
 				array(":fid", $GLOBALS['vars']['fid']),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `ForumThreads` WHERE `forum` = :fid", $args);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `forumthreads` WHERE `forum` = :fid", $args);
 			$rows = "";
 			for ($i=0; $i < count($res); $i++) { 
 				$rows .= "<tr>";

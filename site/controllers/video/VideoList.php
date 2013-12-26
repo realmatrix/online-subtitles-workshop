@@ -37,7 +37,7 @@
 			$args = array(
 				array(":uid", $_SESSION['id'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Videos` WHERE `uid` = :uid", $args);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `videos` WHERE `uid` = :uid", $args);
 			$rows = "";
 			$counter = 0;
 			for ($i=0; $i < count($res); $i++) {

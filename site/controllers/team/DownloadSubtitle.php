@@ -48,13 +48,13 @@
 				array(":sid", $GLOBALS['vars']['sid'], "str"),
 				array(":cid", $GLOBALS['vars']['cid'], "str"),
 			);
-			$SubtitleContent = $GLOBALS['COMMON']->db_query("SELECT * FROM `SubtitlesContent` WHERE `sid` = :sid AND `cid` = :cid ", $args);
+			$SubtitleContent = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitlescontent` WHERE `sid` = :sid AND `cid` = :cid ", $args);
 			$args = array(
 				array(":sid", $GLOBALS['vars']['sid'], "str"),
 				array(":cid", $GLOBALS['vars']['cid'], "str"),
 				array(":uid", $_SESSION['id'], "str"),
 			);
-			$UserLines = $GLOBALS['COMMON']->db_query("SELECT * FROM `Transcriptions` WHERE `sid` = :sid AND `cid` = :cid AND `uid` = :uid ", $args);
+			$UserLines = $GLOBALS['COMMON']->db_query("SELECT * FROM `transcriptions` WHERE `sid` = :sid AND `cid` = :cid AND `uid` = :uid ", $args);
 			//echo count($UserLines);
 			$UserTranscriptions = array();
 			for ($i=0; $i < count($UserLines); $i++) {
@@ -74,7 +74,7 @@
 				array(":sid", $GLOBALS['vars']['sid'], "str"),
 				array(":cid", $GLOBALS['vars']['cid'], "str"),
 			);
-			$SubtitleContent = $GLOBALS['COMMON']->db_query("SELECT * FROM `SubtitlesContent` WHERE `sid` = :sid AND `cid` = :cid ", $args);
+			$SubtitleContent = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitlescontent` WHERE `sid` = :sid AND `cid` = :cid ", $args);
 			$res = "";
 			for ($i=0; $i < count($SubtitleContent); $i++) { 
 				$res.=$SubtitleContent[$i]['line']."\r\n";

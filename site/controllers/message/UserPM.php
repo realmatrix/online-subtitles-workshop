@@ -41,7 +41,7 @@
 			$args = array(
 				array(":to", $_SESSION['id'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `PrivateMessages` WHERE `to` = :to", $args);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `privatemessages` WHERE `to` = :to", $args);
 			$rows = "";
 			$counter = 0;
 			for ($i=0; $i < count($res); $i++) {

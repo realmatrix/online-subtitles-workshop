@@ -36,7 +36,7 @@
 			$args = array(
 				array(":uid", $_SESSION['id'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Teams` WHERE `owner` = :uid", $args);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `teams` WHERE `owner` = :uid", $args);
 			$rows = "";
 			$counter = 0;
 			for ($i=0; $i < count($res); $i++) { 

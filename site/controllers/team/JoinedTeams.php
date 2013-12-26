@@ -36,7 +36,7 @@
 			$args = array(
 				array(":uid", $_SESSION['id'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `TeamUsers` WHERE `uid` = :uid AND `state` = 1", $args);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `teamusers` WHERE `uid` = :uid AND `state` = 1", $args);
 			$teams = "";
 			for ($i=0; $i < count($res); $i++) {
 				$TeamInfo = self::GetTeamInfo($res[$i]['tid']);
@@ -57,7 +57,7 @@
 			$args = array(
 				array(":tid", $tid, "str"),
 			);
-			$TeamInfo = $GLOBALS['COMMON']->db_query("SELECT * FROM `Teams` WHERE `id` = :tid", $args);
+			$TeamInfo = $GLOBALS['COMMON']->db_query("SELECT * FROM `teams` WHERE `id` = :tid", $args);
 			return $TeamInfo[0];
 		}
 		
@@ -65,7 +65,7 @@
 			$args = array(
 				array(":tid", $tid, "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `TeamUsers` WHERE `tid` = :tid", $args);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `teamusers` WHERE `tid` = :tid", $args);
 			return count($res);
 		}
 		
@@ -73,7 +73,7 @@
 			$args = array(
 				array(":tid", $tid, "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `TeamSubtitles` WHERE `tid` = :tid", $args);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `teamsubtitles` WHERE `tid` = :tid", $args);
 			return count($res);
 		}
 

@@ -26,7 +26,7 @@
 			$args = array(
 				array(":mid", $GLOBALS['vars']['mid'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `PrivateMessages` WHERE `id` = :mid", $args);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `privatemessages` WHERE `id` = :mid", $args);
 			$SenderInfo = $GLOBALS['COMMON']->GetUserInfo("", $res[0]['from']);
 			$from = $SenderInfo[0]['username'];
 				$content = array

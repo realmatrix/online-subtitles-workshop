@@ -34,7 +34,7 @@
 		
 		function ListQuestions(){
 			$args = array();
-			$questions = $GLOBALS['COMMON']->db_query("SELECT * FROM Faq", $args);
+			$questions = $GLOBALS['COMMON']->db_query("SELECT * FROM faq", $args);
 			$res = "<ul>";
 			for ($i=0; $i < count($questions); $i++) { 
 				$res .= "<li><a href='index.php?page=faq&sec=list&qid=".$questions[$i]['id']."'>".$questions[$i]['q']."</a></li>";

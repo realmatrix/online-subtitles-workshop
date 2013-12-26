@@ -36,7 +36,7 @@
 			$args = array(
 				array(":tid", $GLOBALS['vars']['tid'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `TeamUsers` WHERE `tid` = :tid", $args);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `teamusers` WHERE `tid` = :tid", $args);
 			$team = "";
 			for ($i=0; $i < count($res); $i++) {
 				$username = $GLOBALS['COMMON']->GetUserInfo("", $res[$i]['uid']);

@@ -111,17 +111,17 @@
 				array(":key", $key, "str"),
 			);
 			//creating subtitle
-			$res=$GLOBALS['COMMON']->db_query("INSERT INTO `Subtitles` (`fps_sec`, `fps_mil_sec`, `release_name`, `version`, `language`, `format`, `cds`, `vid`, `country`, `uid`, `key`) VALUES (:fpssec, :fpsmilsec, :releasename, :version, :language, :format, :cds, :vid, :country, :uid, :key);", $params, $ExecState);
+			$res=$GLOBALS['COMMON']->db_query("INSERT INTO `subtitles` (`fps_sec`, `fps_mil_sec`, `release_name`, `version`, `language`, `format`, `cds`, `vid`, `country`, `uid`, `key`) VALUES (:fpssec, :fpsmilsec, :releasename, :version, :language, :format, :cds, :vid, :country, :uid, :key);", $params, $ExecState);
 			if($ExecState === TRUE){$GLOBALS['SUCCESS'][]="Subtitle '".$GLOBALS['vars']['ReleaseName']."' Added Successfully";} else {$GLOBALS['ERROR'][]="Adding Subtitle '".$GLOBALS['vars']['ReleaseName']."' Failed";}
 			//creating cds
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Subtitles` WHERE `key` = :key", array(array(":key", $key, "str")));
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitles` WHERE `key` = :key", array(array(":key", $key, "str")));
 			$values = "";
 			for ($i=0; $i < self::GetCD($res[0]['cds']); $i++) {
 				$counter = $i + 1; 
 				if($i==self::GetCD($res[0]['cds'])-1){$values .= "('".$res[0]['id']."', 'CD ".$counter."')";}else{$values .= "('".$res[0]['id']."', 'CD ".$counter."'),";}
 			}
 			$args = array();
-			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `SubtitleCDS` (`sid`, `title`) VALUES ".$values.";", $args, $ExecState);
+			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `subtitlecds` (`sid`, `title`) VALUES ".$values.";", $args, $ExecState);
 			if($ExecState === TRUE){} else {$GLOBALS['ERROR'][]="Creating subtitle '".$GLOBALS['vars']['ReleaseName']."' CDS Failed";}
 		}
 	

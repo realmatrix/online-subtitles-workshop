@@ -30,7 +30,7 @@
 				array(":username", $Username, "str"),
 				array(":password", $Password, "str")
 			);
-		 	$result = $GLOBALS['COMMON']->db_query("SELECT * FROM Users WHERE username=:username and password=:password", $params);
+		 	$result = $GLOBALS['COMMON']->db_query("SELECT * FROM users WHERE username=:username and password=:password", $params);
 		 	if(count($result)>0)
  			{
  			 $args = array(
@@ -38,7 +38,7 @@
 			 	array(":time", $GLOBALS['COMMON']->GetMicroTime(), "str"),
 			 );
    			 $GLOBALS['COMMON']->login($Username);
-			 $res = $GLOBALS['COMMON']->db_query("UPDATE `Users` SET `LastLogin` = :time WHERE `username` =:username;", $args);
+			 $res = $GLOBALS['COMMON']->db_query("UPDATE `users` SET `LastLogin` = :time WHERE `username` =:username;", $args);
 			 Onlineusers::AddOnlineUser();
 			 header( 'Location: index.php' ) ;
  			 $GLOBALS['SUCCESS'][] = $GLOBALS['COMMON']->l('login_successfull').'<script type="text/javascript">$("#login").empty();setTimeout(function(){ window.location = "index.php"; }, 5000);</script>';

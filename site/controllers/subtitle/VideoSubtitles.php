@@ -37,7 +37,7 @@
 			$params=array(
 				array(":vid", $GLOBALS['vars']['vid'], "str"),
 			);
-			$res=$GLOBALS['COMMON']->db_query("select * from Subtitles where vid=:vid", $params);
+			$res=$GLOBALS['COMMON']->db_query("select * from subtitles where vid=:vid", $params);
 			return $res;
 		}
 		

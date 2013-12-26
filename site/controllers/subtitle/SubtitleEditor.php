@@ -45,7 +45,7 @@
 				array(":sid", $GLOBALS['vars']['sid'], "str"),
 				array(":cid", $GLOBALS['vars']['cid'], "str"),
 			);
-			$AllLines = $GLOBALS['COMMON']->db_query("SELECT * FROM `SubtitlesContent` WHERE `sid` = :sid and `cid` = :cid ORDER BY start ASC", $args);
+			$AllLines = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitlescontent` WHERE `sid` = :sid and `cid` = :cid ORDER BY start ASC", $args);
 			$AllUserTranscbtions = self::GetUserTranscriptins();
 			$UserTranscribtions = array();
 			for ($i=0; $i < count($AllUserTranscbtions); $i++) {
@@ -132,7 +132,7 @@
 				array(":cid", $GLOBALS['vars']['cid'], "str"),
 				array(":uid", $_SESSION['id'], "str"),
 			);
-			$TranscibedLines = $GLOBALS['COMMON']->db_query("SELECT * FROM `Transcriptions` WHERE `sid` =:sid AND `cid` =:cid AND `uid` =:uid ", $args);
+			$TranscibedLines = $GLOBALS['COMMON']->db_query("SELECT * FROM `transcriptions` WHERE `sid` =:sid AND `cid` =:cid AND `uid` =:uid ", $args);
 			return $TranscibedLines;
 		}	
 

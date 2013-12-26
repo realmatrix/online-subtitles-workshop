@@ -37,7 +37,7 @@
 			$args = array(
 				array(":id", $GLOBALS['vars']['vid'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Videos` WHERE `id` = :id", $args);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `videos` WHERE `id` = :id", $args);
 			if($res[0]['source']!=""){return TRUE;}else{return FALSE;}
 		}
 		
@@ -46,7 +46,7 @@
 			$args = array(
 				array(":id", $GLOBALS['vars']['vid'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Videos` WHERE `id` = :id", $args);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `videos` WHERE `id` = :id", $args);
 			if($res[0]['thumbnail']!=""){return TRUE;}else{return FALSE;}
 			}
 		}
@@ -55,7 +55,7 @@
 			$args = array(
 				array("vid", $GLOBALS['vars']['vid'], "str")
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM Videos WHERE id = :vid", $args);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM videos WHERE id = :vid", $args);
 			return $res;
 		}	
 			

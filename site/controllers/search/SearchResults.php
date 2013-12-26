@@ -38,7 +38,7 @@
 			$args = array(
 				array(":title", "%".$GLOBALS['vars']['VideoTitle']."%", "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Videos` WHERE `title` like :title", $args);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `videos` WHERE `title` like :title", $args);
 			$trows = "";
 			for ($i=0; $i < count($res); $i++) { 
 				$trows .= "<tr>";
