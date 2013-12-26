@@ -8,7 +8,7 @@
 	
 		function EditVideo_hooks(){
 			$array = array(
-				array("editvideo", "EditVideo"),
+				array("editvideo", "Edit"),
 			);
 			return $array;
 		}
@@ -28,7 +28,6 @@
 			$Genres = explode(",", $VideoInformation[0]['genres']);
 				$content = array
 				  (
-				  array("{vid}", $GLOBALS['vars']['vid']),
 				  array("{VideoType}", self::types($VideoInformation[0]['type'])),
 				  array("{VideoCategory}", self::categories($VideoInformation[0]['category'])),
 				  array("{VideoLanguage}", self::languages($VideoInformation[0]['language'])),
@@ -63,6 +62,7 @@
 				  array("{VideoGenres}", self::genres($Genres)),
 				  array("{page}", $GLOBALS['vars']['page']),
 				  array("{sec}", $GLOBALS['vars']['sec']),
+				  array("{vid}", $GLOBALS['vars']['vid']),
 				 );
 			 
 		return $content;
@@ -151,7 +151,7 @@
 			return $res;	
 		}
 		
-		function EditVideo(){
+		function Edit(){
 			if(is_array($GLOBALS['vars']['genres'])){$args['genres'] = implode(",", $GLOBALS['vars']['genres']);}
 			if($GLOBALS['vars']['VideoType']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_EditVideo_SelectVideoType');}
 			if($GLOBALS['vars']['VideoCategory']==""){$ERROR[]=$GLOBALS['COMMON']->l('video_EditVideo_SelectVideoCategory');}
@@ -174,15 +174,14 @@
 			//$genres = implode(",", $_POST['genres']);
 			
 			$params = array(
-			array(":vid", $GLOBALS['vars']['vid'], "str"),
-			array(":uid", $_SESSION['id'], "str"),
+			array(":vid", trim($GLOBALS['vars']['vid']), "str"),
 			array(":title", trim($GLOBALS['vars']['VideoTitle']), "str"),
 			array(":other_title", trim($GLOBALS['vars']['VideoOtherTitle']), "str"),
 			array(":type", $GLOBALS['vars']['VideoType'], "str"),
 			array(":category", $GLOBALS['vars']['VideoCategory'], "str"),
 			array(":language", $GLOBALS['vars']['VideoLanguage'], "str"),
 			array(":country", $GLOBALS['vars']['country'], "str"),
-			array(":genres", $GLOBALS['vars']['genres'], "str"),
+			array(":genres", implode(",", $GLOBALS['vars']['genres']), "str"),
 			array(":releasedate", $GLOBALS['vars']['rd-year']."-".$GLOBALS['vars']['rd-month']."-".$GLOBALS['vars']['rd-day'], "str"),
 			array(":casting", trim($GLOBALS['vars']['casting']), "str"),
 			array(":director", trim($GLOBALS['vars']['director']), "str"),
@@ -191,8 +190,10 @@
 			array(":synopsis", trim($GLOBALS['vars']['synopsis']), "str"),
 			array(":source", trim($GLOBALS['vars']['VideoUrl']), "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("UPDATE `videos` SET `title`=:title,`other_title`=:other_title,`type`=:type,`category`=:category,`language`=:language,`country`=:country,`genres`=:genres,`release_date`=:releasedate,`casting`=:casting,`director`=:director,`length`=:length,`tags`=:tags,`synopsis`=:synopsis,`source`=:source WHERE `id` = :vid", $params, $ExecState);			
-			if($ExecState===TRUE){"video updated successfully.";}else{$GLOBALS['ERROR'][]="failed to update video.";}
+			$res = $GLOBALS['COMMON']->db_query("UPDATE `videos` SET `title`=:title,`other_title`=:other_title,`type`=:type,`category`=:category,
+			`language`=:language,`country`=:country,`genres`=:genres,`release_date`=:releasedate,`casting`=:casting,`director`=:director,
+			`length`=:length,`tags`=:tags,`synopsis`=:synopsis,`source`=:source WHERE `id` = :vid", $params, $ExecState);			
+			if($ExecState===TRUE){$GLOBALS['SUCCESS'][]="video updated successfully.";}else{$GLOBALS['ERROR'][]="failed to update video.";}
 			return TRUE;
 		}
 		
