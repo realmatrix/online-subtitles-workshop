@@ -17,6 +17,13 @@ thumbimg.onerror = function () {
 		max-height: 100%;
 		max-width: 100%;
 	}
+	.video-rate-li{
+		display:inline-block;
+		width: 32px;
+		height: 32px;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+	}
 </style>
 
 
@@ -71,18 +78,18 @@ thumbimg.onerror = function () {
 		<tr>
 			<td colspan="2">
 				<div style='float:left;'>
-				<form method='post' action='index.php'>
-					<input type='radio' name='video-rate' value='1' />
-					<input type='radio' name='video-rate' value='2' />
-					<input type='radio' name='video-rate' value='3' />
-					<input type='radio' name='video-rate' value='4' />
-					<input type='radio' name='video-rate' value='5' />
-					<input type='radio' name='video-rate' value='6' />
-					<input type='radio' name='video-rate' value='7' />
-					<input type='radio' name='video-rate' value='8' />
-					<input type='radio' name='video-rate' value='9' />
-					<input type='radio' name='video-rate' value='10' />
-				</form>
+					<ul class='video-rate'>
+						<li class='video-rate-li'><img src='templates/default2/tmp/images/star_empty.png' id='vr-star1' /></li>
+						<li class='video-rate-li'><img src='templates/default2/tmp/images/star_empty.png' id='vr-star2' /></li>
+						<li class='video-rate-li'><img src='templates/default2/tmp/images/star_empty.png' id='vr-star3' /></li>
+						<li class='video-rate-li'><img src='templates/default2/tmp/images/star_empty.png' id='vr-star4' /></li>
+						<li class='video-rate-li'><img src='templates/default2/tmp/images/star_empty.png' id='vr-star5' /></li>
+						<li class='video-rate-li'><img src='templates/default2/tmp/images/star_empty.png' id='vr-star6' /></li>
+						<li class='video-rate-li'><img src='templates/default2/tmp/images/star_empty.png' id='vr-star7' /></li>
+						<li class='video-rate-li'><img src='templates/default2/tmp/images/star_empty.png' id='vr-star8' /></li>
+						<li class='video-rate-li'><img src='templates/default2/tmp/images/star_empty.png' id='vr-star9' /></li>
+						<li class='video-rate-li'><img src='templates/default2/tmp/images/star_empty.png' id='vr-star10' /></li>
+					</ul>
 				</div>
 				<div style='float:right'>
 			<img src='templates/default2/tmp/images/favorites-add.png' alt='add to favourites'/>
