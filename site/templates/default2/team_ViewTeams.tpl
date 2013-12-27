@@ -114,7 +114,6 @@ table.SystemTable {
 			<th>Team</th>
 			<th>members</th>
 			<th>manage</th>
-			<th>edit</th>
 			<th>delete</th>
 		</tr>
 	</thead>
@@ -124,7 +123,6 @@ table.SystemTable {
 			<th>Team</th>
 			<th>members</th>
 			<th>manage</th>
-			<th>edit</th>
 			<th>delete</th>
 		</tr>
 	</tfoot>
