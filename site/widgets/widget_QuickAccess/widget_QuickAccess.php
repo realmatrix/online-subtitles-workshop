@@ -33,6 +33,7 @@
 				array("{CVideos}", self::GetUserVideos()),
 				array("{CSubtitles}", self::GetUserSubtitles()),
 				array("{CMSubtitles}", self::GetUserSubtitles()),
+				array("{CFavouriteVideos}", self::GetUserFavouriteVideos()),
 			);	
 			return $array;
 		}
@@ -61,7 +62,15 @@
 			return $res;
 		}
 		
-
+		function GetUserFavouriteVideos(){
+			$favourites = $GLOBALS['COMMON']->GetUserFavouriteVideos();
+			$res = "";
+			for ($i=0; $i < count($favourites) ; $i++) {
+				$VideoInfo = $GLOBALS['COMMON']->GetVideoInfo($favourites[$i]['vid']); 
+				$res .= "<option value='".$VideoInfo[0]['id']."'>".$VideoInfo[0]['title']."</option>";
+			}
+			return $res;
+		}
 		
 		
 		

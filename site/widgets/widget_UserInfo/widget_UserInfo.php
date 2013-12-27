@@ -33,6 +33,7 @@
 				array("{JoinedTeams}", self::JoinedTeams()),
 				array("{CreatedTeams}", self::CreatedTeams()),
 				array("{u}", $_SESSION['username']),
+				array("{FavouriteVideos}", self::FavouriteVideos()),
 			);
 			return $array;
 		}
@@ -85,7 +86,10 @@
 			return count($res);
 		}
 		
-						
+		function FavouriteVideos(){
+			$favourites = $GLOBALS['COMMON']->GetUserFavouriteVideos();
+			return count($favourites);
+		}
 		
 	}
 

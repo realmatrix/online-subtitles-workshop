@@ -77,9 +77,10 @@
 			<form method="get" action="index.php">
 			<select class="QuickAccessSelect" name="vid" onchange="this.form.submit()">
 			<option value="">select video to open</option>
+			{CFavouriteVideos}
 			</select>
-			<input type="hidden" name="page" value="" />
-			<input type="hidden" name="sec" value="" />
+			<input type="hidden" name="page" value="video" />
+			<input type="hidden" name="sec" value="view" />
 			</form>			
 
 

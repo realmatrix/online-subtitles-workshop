@@ -5,8 +5,8 @@
 		function view_sections(){
 			$array = array(
 				array("video", "UploadThumbnail", $GLOBALS['vars'], self::Show()),
-				array("player", "ViewPlayer", $GLOBALS['vars'], self::CheckVideoSource()),
 				array("video", "ViewVideo", $GLOBALS['vars'], TRUE),
+				array("player", "ViewPlayer", $GLOBALS['vars'], self::CheckVideoSource()),
 				array("video", "VideoSynopsis", $GLOBALS['vars'], TRUE),
 				array("subtitle", "VideoSubtitles", $GLOBALS['vars'], TRUE),
 				array("subtitle", "AddSubtitle", $GLOBALS['vars'], $GLOBALS['COMMON']->IsLoggedin()),

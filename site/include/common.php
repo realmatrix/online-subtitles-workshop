@@ -862,7 +862,13 @@ class Common{
 		return $res;
 	}
 
-
+	function GetUserFavouriteVideos(){
+		$args = array(
+			array(":uid", $_SESSION['id'], "str"),
+		);
+		$res = self::db_query("SELECT * FROM `favouritevideos` WHERE `uid` = :uid", $args);
+		return $res;
+	}
 	
 }
 ?>
