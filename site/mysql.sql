@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 27, 2013 at 03:22 AM
+-- Generation Time: Dec 27, 2013 at 07:30 AM
 -- Server version: 5.5.29
 -- PHP Version: 5.3.20
 
@@ -982,14 +982,14 @@ CREATE TABLE IF NOT EXISTS `onlineusers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1321 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1328 ;
 
 --
 -- Dumping data for table `onlineusers`
 --
 
 INSERT INTO `onlineusers` (`id`, `session`, `time`, `username`) VALUES
-(1320, '675imausfdjed1l5susa9o6s86', 1388114038, '');
+(1327, '675imausfdjed1l5susa9o6s86', 1388129302, '');
 
 -- --------------------------------------------------------
 
@@ -1169,7 +1169,7 @@ CREATE TABLE IF NOT EXISTS `systemcron` (
 --
 
 INSERT INTO `systemcron` (`id`, `job`, `frequancy`, `last_run`) VALUES
-(1, 'AutoTranslation', 300, 1388114346);
+(1, 'AutoTranslation', 300, 1388129083);
 
 -- --------------------------------------------------------
 
@@ -1276,14 +1276,17 @@ CREATE TABLE IF NOT EXISTS `teammembers` (
   `editlines` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `tid` (`tid`,`uid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=14 ;
 
 --
 -- Dumping data for table `teammembers`
 --
 
 INSERT INTO `teammembers` (`id`, `tid`, `uid`, `state`, `addlines`, `deletelines`, `checklines`, `editlines`) VALUES
-(5, 4, 18, 1, 0, 0, 0, 0);
+(5, 4, 18, 1, 0, 0, 0, 0),
+(6, 4, 22, 1, 1, 1, 1, 1),
+(7, 4, 23, 1, 1, 1, 1, 1),
+(8, 4, 24, 1, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
