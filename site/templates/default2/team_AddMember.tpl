@@ -1,3 +1,8 @@
+<style>
+	.div-chk-add-teammember{
+		margin-top: 20px;
+	}
+</style>
 <DIV class="catglow" style="width:100%;">
 <DIV class="cathead-m">
 <DIV class="cathead-r">
@@ -18,9 +23,18 @@
 
 <div id="div-addteammember" style="width: 99%;">
 	<form method="post" action="index.php">
-		<label for="teammember">{username}</label>
-		<input type="text" name="tusername" style="width: 100%"/>
-		<input type="submit" value="{submit}" />
+		<label>{username}
+		<br />
+		<input type="text" name="tusername" style="width: 50%"/>
+		</label>
+		<div class='div-chk-add-teammember'>
+		permissions:<br />
+		<label><input type="checkbox" name="permissions[]" value="1"> Add Lines</label>
+		<label><input type="checkbox" name="permissions[]" value="2"> Delete Lines</label>
+		<label><input type="checkbox" name="permissions[]" value="3"> Edit Lines</label>
+		<label><input type="checkbox" name="permissions[]" value="4"> Check Lines</label>
+		</div>
+		<input type="submit" style='float:right;' value="{submit}" />
 		<input type="hidden" name="tid" value="{tid}" />
 	<!-- <input type="hidden" name="dataonly" value="yes"/> --> <!-- uncomment if using ajax -->
 	<!-- <input type="hidden" name="getcontroller" value="team"/> --> <!-- uncomment if using ajax -->

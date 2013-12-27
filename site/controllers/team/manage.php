@@ -10,6 +10,14 @@
 			);
 			return $array;
 		}	
+		
+		function manage_set(){
+			$GLOBALS['vars']['PageTitle'] = "Manage Team";
+			$GLOBALS['vars']['PageDesc'] = $GLOBALS['config']['site_description'];
+			$GLOBALS['BreadCrumbs'] = array(
+				array("manage teams", "page=team&sec=list"),
+			);
+		}
 			
 	}
 
