@@ -60,31 +60,41 @@ var interval = setInterval(GetChat,10000);
 	#teamchat-messages{
 		width: 100%;
 		height: 200px;
-		border-style: solid;
 		border-width: 1px;
 		overflow-x: hidden;
 		overflow-y: scroll;
 		margin-bottom: 5px;
+		border-style: dashed;
+		border-color: rgb(215, 229, 242) rgb(215, 229, 242);
 	}
 	#teamchat-textarea{
-		width: 97%;
-		height: 40px;
+		width: 95%;
 		padding-top:0PX;
 		vertical-align: top;
+		border-width: 1px;
+		border-style: dashed; 
+		border-color: rgb(215, 229, 242) rgb(215, 229, 242);
+		resize: none;
 	}
 	.chat-username{
-		float:left;
 		text-decoration:underline;
 		font-weight: bold;
+		color: blue;
+		display: block-inline;
 	}
-	.chat-date{
-		float:right;
-		font-size: 9px;
+	.chat-username:after {
+	    content: ":";
 	}
 	.chat-text{
-		clear: both;
-		width:auto;
-		color: blue;
+		color: black;
+		display: block-inline;
+	}
+	.chat-text:before{
+		content: " ";
+	}
+	.chat-date{
+		font-size: 9px;
+		margin-top: 1px;
 	}
 	#send-state{
 		float:left;
@@ -94,9 +104,13 @@ var interval = setInterval(GetChat,10000);
 		float:right
 	}
 	.chat-line-container{
-		border-bottom-width:1px;
-		border-bottom-color:black;
-		border-bottom-style: solid;
+		width: 95%;
+		border-width:1px;
+		border-color: rgb(215, 229, 242) rgb(215, 229, 242);
+		border-style: solid;
+		margin: 0 auto;
+		margin-top: 2px;
+		margin-bottom: 2px; 
 	}
 </style>
 <DIV class="catglow" style="width:100%;">
@@ -120,10 +134,10 @@ var interval = setInterval(GetChat,10000);
 <div id="widgt-teamchat">
 	<div id='teamchat-messages'></div>
 	<form>
-		<input type='text' id='teamchat-textarea' />
+		<textarea id='teamchat-textarea' rows="2" onkeydown="if (event.keyCode == 13) { SendMessage(); return false; }"></textarea>
 		<div style="width: 100%;">
 		<div id='send-state'></div>
-		<div id='div-submit'><input type="submit" value="Send" onclick="SendMessage(); return false;"/></div>
+		<!--<div id='div-submit'><input type="submit" value="Send" onclick="SendMessage(); return false;"/></div>-->
 		</div>
 	</form>
 </div>
