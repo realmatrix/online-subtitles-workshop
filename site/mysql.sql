@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 26, 2013 at 11:54 PM
+-- Generation Time: Dec 27, 2013 at 03:22 AM
 -- Server version: 5.5.29
 -- PHP Version: 5.3.20
 
@@ -982,14 +982,14 @@ CREATE TABLE IF NOT EXISTS `onlineusers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1316 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1321 ;
 
 --
 -- Dumping data for table `onlineusers`
 --
 
 INSERT INTO `onlineusers` (`id`, `session`, `time`, `username`) VALUES
-(1315, '675imausfdjed1l5susa9o6s86', 1388101432, 'test');
+(1320, '675imausfdjed1l5susa9o6s86', 1388114038, '');
 
 -- --------------------------------------------------------
 
@@ -1057,6 +1057,23 @@ CREATE TABLE IF NOT EXISTS `subtitlecds` (
 
 INSERT INTO `subtitlecds` (`id`, `sid`, `title`) VALUES
 (1, 1, 'CD 1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subtitlepermissions`
+--
+
+CREATE TABLE IF NOT EXISTS `subtitlepermissions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) NOT NULL,
+  `sid` int(11) NOT NULL,
+  `addlines` int(11) NOT NULL DEFAULT '0',
+  `deletelines` int(11) NOT NULL DEFAULT '0',
+  `checklines` int(11) NOT NULL DEFAULT '0',
+  `editlines` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=8 ;
 
 -- --------------------------------------------------------
 
@@ -1152,7 +1169,7 @@ CREATE TABLE IF NOT EXISTS `systemcron` (
 --
 
 INSERT INTO `systemcron` (`id`, `job`, `frequancy`, `last_run`) VALUES
-(1, 'AutoTranslation', 300, 1388101433);
+(1, 'AutoTranslation', 300, 1388114346);
 
 -- --------------------------------------------------------
 
@@ -1253,6 +1270,10 @@ CREATE TABLE IF NOT EXISTS `teammembers` (
   `tid` int(11) NOT NULL,
   `uid` int(11) NOT NULL,
   `state` int(11) NOT NULL,
+  `addlines` int(11) NOT NULL DEFAULT '0',
+  `deletelines` int(11) NOT NULL DEFAULT '0',
+  `checklines` int(11) NOT NULL DEFAULT '0',
+  `editlines` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `tid` (`tid`,`uid`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
@@ -1261,23 +1282,8 @@ CREATE TABLE IF NOT EXISTS `teammembers` (
 -- Dumping data for table `teammembers`
 --
 
-INSERT INTO `teammembers` (`id`, `tid`, `uid`, `state`) VALUES
-(5, 4, 18, 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `teampermissions`
---
-
-CREATE TABLE IF NOT EXISTS `teampermissions` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `uid` int(11) NOT NULL,
-  `sid` int(11) NOT NULL,
-  `cid` int(11) NOT NULL,
-  `permissions` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+INSERT INTO `teammembers` (`id`, `tid`, `uid`, `state`, `addlines`, `deletelines`, `checklines`, `editlines`) VALUES
+(5, 4, 18, 1, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1565,7 +1571,7 @@ INSERT INTO `videos` (`id`, `uid`, `title`, `other_title`, `type`, `category`, `
 (24, 18, 'Homeland Season 3', 'Homeland', 2, 10, 14, 236, '8,17,24', '2013-10-02', 'Claire Danes, Damian Lewis, Morena Baccarin', '.', 45, 'Homeland, Season 3', 'When Marine Nicolas Brody is hailed as a hero after he returns home from eight years of captivity in Iraq, intelligence officer Carrie Mathison is the only one who suspects that he may have been "turned".', '24_181379614725AJrot.jpg', '', 'http://www.youtube.com/watch?v=iXOUIsu-E0Q', 0, '', 1, 1, 0),
 (25, 18, 'The Hobbit: An Unexpected Journey (2012)', 'The Hobbit', 1, 10, 14, 236, '2,10', '2012-12-14', 'Martin Freeman, Ian McKellen, Richard Armitage', 'Peter Jackson', 120, 'Hobbit, Unexpected, Journey, 2012', 'A younger and more reluctant Hobbit, Bilbo Baggins, sets out on an "unexpected journey" to the Lonely Mountain with a spirited group of Dwarves to reclaim their stolen mountain home from a dragon named Smaug.', '25_181379616244XC1g0.jpg', '', 'http://www.youtube.com/watch?v=fnaojlfdUbs', 0, '', 1, 1, 0),
 (26, 18, 'Monsters University (2013)', 'Monsters University 2', 3, 10, 14, 236, '2,3,5,9,10', '2013-06-21', 'Billy Crystal, John Goodman, Steve Buscemi', 'Dan Scanlon', 90, 'Monsters, University, 2013', 'A look at the relationship between Mike and Sulley during their days at Monsters University -- when they weren''t necessarily the best of friends.', '26_181379616741NtRbG.jpg', '', 'http://www.youtube.com/watch?v=ODePHkWSg-U', 0, '', 1, 1, 1),
-(27, 18, 'Oblivion (I) (2013)', 'Oblivion', 1, 10, 14, 236, '1,2,17,21', '2013-04-19', 'Tom Cruise, Morgan Freeman, Andrea Riseborough', 'Joseph Kosinski', 90, 'Oblivion, 2013', 'A veteran assigned to extract Earth''s remaining resources begins to question what he knows about his mission and himself.', '27_181380022846LbWdk.jpg', '', 'http://www.youtube.com/watch?v=XmIIgE7eSak', 0, '', 1, 1, 4),
+(27, 18, 'Oblivion (I) (2013)', 'Oblivion', 1, 10, 14, 236, '1,2,17,21', '2013-04-19', 'Tom Cruise, Morgan Freeman, Andrea Riseborough', 'Joseph Kosinski', 90, 'Oblivion, 2013', 'A veteran assigned to extract Earth''s remaining resources begins to question what he knows about his mission and himself.', '27_181380022846LbWdk.jpg', '', 'http://www.youtube.com/watch?v=XmIIgE7eSak', 0, '', 1, 1, 11),
 (28, 18, 'Iron Man 3 (2013)', 'Iron Man', 1, 10, 14, 236, '1,2,21', '2013-05-03', 'Robert Downey Jr., Guy Pearce, Gwyneth Paltrow', 'Shane Black', 90, 'Iron Man, 2013', 'When Tony Stark''s world is torn apart by a formidable terrorist called the Mandarin, he starts an odyssey of rebuilding and retribution.', '28_1813800247974xTLD.jpg', '', 'http://www.youtube.com/watch?v=2CzoSeClcw0', 0, '', 1, 1, 0),
 (29, 18, 'Fast & Furious 6 (2013)', 'Fast & Furious 6', 1, 10, 14, 236, '1,6,24', '2013-05-24', 'Vin Diesel, Paul Walker, Dwayne Johnson', 'Justin Lin', 90, 'Fast, Furious, 2013', 'Hobbs has Dom and Brian reassemble their crew in order to take down a mastermind who commands an organization of mercenary drivers across 12 countries. Payment? Full pardons for them all.', '29_181380025557oniLF.jpg', '', 'http://www.youtube.com/watch?v=dKi5XoeTN0k', 0, '', 1, 1, 0),
 (30, 18, 'Red 2 (2013)', 'Red 2', 1, 10, 14, 236, '1,5,6,24', '2013-07-19', 'Jon Hoeber, Erich Hoeber, 2 more credits', 'Dean Parisot', 90, 'Red, 2013', 'Retired C.I.A. agent Frank Moses reunites his unlikely team of elite operatives for a global quest to track down a missing portable nuclear device.', '30_181380026531aqnhX.jpg', '', 'http://www.youtube.com/watch?v=ZfB8QwYBPxY', 0, '', 1, 1, 0),
