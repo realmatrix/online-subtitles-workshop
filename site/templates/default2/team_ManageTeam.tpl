@@ -18,7 +18,22 @@
 
 <div id="div-manageteam" style="width: 99%;">
 	<table id="tbale-manageteam" style="width: 100%;">
+	<thead>
+		<tr>
+			<td>user</td>
+			<td>send message</td>
+			<td>state</td>
+			<td>add</td>
+			<td>delete</td>
+			<td>edit</td>
+			<td>checker</td>
+			<td>edit user</td>
+			<td>remove user</td>
+		</tr>
+	</thead>
+	<tbody>
 		{TableRows}
+	</tbody>
 	</table>
 </div>
 

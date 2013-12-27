@@ -35,6 +35,10 @@
 		}
 		
 		function AddUser(){
+			if(isset($GLOBALS['vars']['add']) and $GLOBALS['vars']['add']=="yes"){$add="1";}else{$add="0";}
+			if(isset($GLOBALS['vars']['delete']) and $GLOBALS['vars']['delete']=="yes"){$delete="1";}else{$delete="0";}
+			if(isset($GLOBALS['vars']['edit']) and $GLOBALS['vars']['edit']=="yes"){$edit="1";}else{$edit="0";}
+			if(isset($GLOBALS['vars']['check']) and $GLOBALS['vars']['check']=="yes"){$check="1";}else{$check="0";}
 			if($GLOBALS['vars']['tusername']==""){
 				$GLOBALS[ERROR][]="username is required";
 				return FALSE;
@@ -43,8 +47,13 @@
 			$args = array(
 				array(":tid", $GLOBALS['vars']['tid'], "str"),
 				array(":uid", $uid[0]['id'], "str"),
+				array(":state", "1", "str"),
+				array(":add", $add, "str"),
+				array(":delete", $delete, "str"),
+				array(":edit", $edit, "str"),
+				array(":check", $check, "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `teamusers` (`tid`, `uid`) VALUES (:tid, :uid);", $args);
+			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `teammembers` (`tid`, `uid`, `state`, `addlines`, `deletelines`, `checklines`, `editlines`) VALUES (:tid, :uid, :state, :add, :delete, :check, :edit);", $args);
 		}
 		
 	

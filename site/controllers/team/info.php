@@ -9,6 +9,15 @@
 			);
 			return $array;
 		}	
+		
+		function list_set(){
+			$GLOBALS['vars']['PageTitle'] = "Team Information";
+			$GLOBALS['vars']['PageDesc'] = $GLOBALS['config']['site_description'];
+			$GLOBALS['BreadCrumbs'] = array(
+				array("my teams", "page=team&sec=list"),
+				array("Team Information", "page=team&sec=list"),
+			);
+		}
 			
 	}
 

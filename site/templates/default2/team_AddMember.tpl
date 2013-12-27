@@ -29,10 +29,10 @@
 		</label>
 		<div class='div-chk-add-teammember'>
 		permissions:<br />
-		<label><input type="checkbox" name="permissions[]" value="1"> Add Lines</label>
-		<label><input type="checkbox" name="permissions[]" value="2"> Delete Lines</label>
-		<label><input type="checkbox" name="permissions[]" value="3"> Edit Lines</label>
-		<label><input type="checkbox" name="permissions[]" value="4"> Check Lines</label>
+		<label><input type="checkbox" name="add" value="yes"> Add Lines</label>
+		<label><input type="checkbox" name="delete" value="yes"> Delete Lines</label>
+		<label><input type="checkbox" name="check" value="yes"> Edit Lines</label>
+		<label><input type="checkbox" name="edit" value="yes"> Check Lines</label>
 		</div>
 		<input type="submit" style='float:right;' value="{submit}" />
 		<input type="hidden" name="tid" value="{tid}" />

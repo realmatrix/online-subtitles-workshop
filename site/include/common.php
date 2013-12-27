@@ -545,6 +545,14 @@ class Common{
 		}
 		return $res;
 	}
+	
+	
+	
+	function GetUserName($id){
+		$UserInfo = self::GetUserInfo("", $id);
+		$username = $UserInfo[0]['username'];
+		return $username;
+	}
 
 
 
