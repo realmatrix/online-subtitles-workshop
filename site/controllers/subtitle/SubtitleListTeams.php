@@ -44,10 +44,10 @@
 				$rows.="<div class='subtitlelistteams-index'>".$index."</div>";
 				$rows.="<div class='subtitlelistteams-user'>".$res[$i]['uid']."</div>";
 				$rows.="<div class='subtitlelistteams-team'>Team</div>";
-				$rows.="<div class='subtitlelistteams-edit'>".$res[$i]['editlines']."</div>";
-				$rows.="<div class='subtitlelistteams-add'>".$res[$i]['addlines']."</div>";
-				$rows.="<div class='subtitlelistteams-delete'>".$res[$i]['deletelines']."</div>";
-				$rows.="<div class='subtitlelistteams-check'>".$res[$i]['checklines']."</div>";
+				$rows.="<div class='subtitlelistteams-edit'><a href=''><img class='subtitle-teams-state-".$res[$i]['editlines']."' /></a></div>";
+				$rows.="<div class='subtitlelistteams-add'><a href=''><img class='subtitle-teams-state-".$res[$i]['addlines']."' /></a></div>";
+				$rows.="<div class='subtitlelistteams-delete'><a href=''><img class='subtitle-teams-state-".$res[$i]['deletelines']."' /></a></div>";
+				$rows.="<div class='subtitlelistteams-check'><a href=''><img class='subtitle-teams-state-".$res[$i]['checklines']."' /></a></div>";
 				$rows.="<div class='subtitlelistteams-del'>Del</div>";
 				$rows.="</div>";
 			}

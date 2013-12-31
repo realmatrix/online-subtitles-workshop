@@ -19,11 +19,22 @@
 	padding-left: 1px;
 	padding-right: 1px;
 	width: 11.9%;
-	height: 100%;
+	height: 18px;
 	text-align: center;
+	vertical-align: middle;
 }
 .subtitlelistteams-user{
 	width: auto;
+}
+.subtitle-teams-state-0{
+	background-image: url(templates/default2/tmp/true.png);
+	width: 16px;
+	height: 16px;
+}
+.subtitle-teams-state-1{
+	background-image: url(templates/default2/tmp/false.png);
+	width: 16px;
+	height: 16px;
 }
 </style>
 
