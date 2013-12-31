@@ -26,9 +26,19 @@
 				$content = array
 				  (
 				  array("{title}", $GLOBALS['COMMON']->l("subtitle_SubtitleAddTeam_title")),
+				  array("{UserTeams}", self::UserTeams()),
 				 );
 			 
 		return $content;
+		}
+		
+		function UserTeams(){
+			$teams = $GLOBALS['COMMON']->GetUserTeams($_SESSION['id']);
+			$res = "";
+			for ($i=0; $i < count($teams); $i++) { 
+				$res .= "<option value='".$teams[$i]['id']."'>".$teams[$i]['title']."</option>";
+			}
+			return $res;
 		}
 	
 			

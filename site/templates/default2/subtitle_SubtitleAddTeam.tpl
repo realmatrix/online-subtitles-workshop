@@ -20,7 +20,14 @@
 <div id="subtitleaddteam" style="width: 99%;">
 
 
-	content here
+	<form method="post" action="index.php">
+		select team: 
+			<select name="tid">
+				<option value=""></option>
+				{UserTeams}
+			</select>
+			<input type="submit" value="add" />
+	</form>
 
 
 </div>

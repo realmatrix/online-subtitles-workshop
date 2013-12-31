@@ -14,6 +14,10 @@
 		function manage_set(){
 			$GLOBALS['vars']['PageTitle'] = "Manage Subtitle";
 			$GLOBALS['vars']['PageDesc'] = $GLOBALS['config']['site_description'];
+			$GLOBALS['BreadCrumbs'] = array(
+				array("subtitle", ""),
+				array("manage subtitle", ""),
+			);
 		}
 			
 	}
