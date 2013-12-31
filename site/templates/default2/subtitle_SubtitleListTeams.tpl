@@ -36,6 +36,11 @@
 	width: 16px;
 	height: 16px;
 }
+.subtitle-teams-del{
+	background-image: url(templates/default2/tmp/del.png);
+	width: 16px;
+	height: 16px;
+}
 </style>
 
 <DIV class="catglow">
