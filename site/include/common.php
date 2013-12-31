@@ -878,5 +878,14 @@ class Common{
 		return $res;
 	}
 	
+	function GetUserSubtitlePermisions($sid){
+		$args = array(
+			array(":uid", $GLOBALS['vars']['sid'], "str"),
+			array(":sid", $sid, "str"),
+		);
+		$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitlepermissions` WHERE `sid` = :sid and `uid` = :uid", $args);
+		return $res;
+	}
+	
 }
 ?>
