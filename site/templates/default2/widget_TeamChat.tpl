@@ -112,6 +112,9 @@ var interval = setInterval(GetChat,10000);
 		margin-top: 2px;
 		margin-bottom: 2px; 
 	}
+	#teamchat-toolbar img{
+		float: right;
+	}
 </style>
 <DIV class="catglow" style="width:100%;">
 <DIV class="cathead-m">
@@ -133,6 +136,9 @@ var interval = setInterval(GetChat,10000);
 
 <div id="widgt-teamchat">
 	<div id='teamchat-messages'></div>
+	<div id='teamchat-toolbar'>
+	<img src='templates/default2/tmp/icons/emotion_grin.png'>
+	</div>
 	<form>
 		<textarea id='teamchat-textarea' rows="2" onkeydown="if (event.keyCode == 13) { SendMessage(); return false; }"></textarea>
 		<div style="width: 100%;">
