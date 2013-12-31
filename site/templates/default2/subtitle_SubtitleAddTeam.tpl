@@ -27,6 +27,12 @@
 				{UserTeams}
 			</select>
 			<input type="submit" value="add" />
+			<input type="hidden" name="page" value="subtitle" />
+			<input type="hidden" name="sec" value="manage" />
+			<input type="hidden" name="ssec" value="SubtitleAddTeam" />
+			<input type="hidden" name="h" value="addteam" />
+			<input type="hidden" name="sid" value="{sid}" />
+			
 	</form>
 
 

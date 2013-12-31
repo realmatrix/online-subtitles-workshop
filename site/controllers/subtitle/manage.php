@@ -4,6 +4,7 @@
 			
 		function manage_sections(){
 			$array = array(
+				array("subtitle", "ViewSubtitle", $GLOBALS['vars'], true),
 				array("subtitle", "SubtitleListTeams", $GLOBALS['vars'], TRUE),
 				array("subtitle", "SubtitleAddTeam", $GLOBALS['vars'], TRUE),
 				array("subtitle", "SubtitleUploader", $GLOBALS['vars'], TRUE),
