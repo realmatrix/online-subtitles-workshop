@@ -19,7 +19,8 @@
 	padding-left: 1px;
 	padding-right: 1px;
 	width: 11.9%;
-	height: 18px;
+	min-height: 18px;
+	height: auto;
 	text-align: center;
 	vertical-align: middle;
 }

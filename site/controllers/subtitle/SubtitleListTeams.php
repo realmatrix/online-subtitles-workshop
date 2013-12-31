@@ -44,7 +44,7 @@
 				$rows.="<div class='subtitlelistteams-row'>";
 				$rows.="<div class='subtitlelistteams-index'>".$index."</div>";
 				$rows.="<div class='subtitlelistteams-user'>".$GLOBALS['COMMON']->GetUserName($res[$i]['uid'])."</div>";
-				$rows.="<div class='subtitlelistteams-team'>Team</div>";
+				$rows.="<div class='subtitlelistteams-team'>".self::GetTeamName($res[$i]['tid'])."</div>";
 				$rows.="<div class='subtitlelistteams-edit'><a href='index.php?page=subtitle&sec=manage&sid=".$res[$i]['sid']."&ssec=SubtitleListTeams&h=switch&uid=".$res[$i]['uid']."&t=edit'><img class='subtitle-teams-state-".$res[$i]['editlines']."' /></a></div>";
 				$rows.="<div class='subtitlelistteams-add'><a href='index.php?page=subtitle&sec=manage&sid=".$res[$i]['sid']."&ssec=SubtitleListTeams&h=switch&uid=".$res[$i]['uid']."&t=add'><img class='subtitle-teams-state-".$res[$i]['addlines']."' /></a></div>";
 				$rows.="<div class='subtitlelistteams-delete'><a href='index.php?page=subtitle&sec=manage&sid=".$res[$i]['sid']."&ssec=SubtitleListTeams&h=switch&uid=".$res[$i]['uid']."&t=del'><img class='subtitle-teams-state-".$res[$i]['deletelines']."' /></a></div>";
@@ -107,6 +107,11 @@
 				array(":uid", $GLOBALS['vars']['uid'], "str"),
 			);
 			$res = $GLOBALS['COMMON']->db_query("DELETE FROM `subtitlepermissions` WHERE `sid` = :sid and `uid` = :uid", $args);
+		}
+		
+		function GetTeamName($tid){
+			$TeamInfo = $GLOBALS['COMMON']->GetTeamInfo($tid);
+			return $TeamInfo[0]['title'];
 		}
 	
 			
