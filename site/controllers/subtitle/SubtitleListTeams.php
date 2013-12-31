@@ -42,7 +42,7 @@
 				$index = $i + 1; 
 				$rows.="<div class='subtitlelistteams-row'>";
 				$rows.="<div class='subtitlelistteams-index'>".$index."</div>";
-				$rows.="<div class='subtitlelistteams-user'>".$res[$i]['uid']."</div>";
+				$rows.="<div class='subtitlelistteams-user'>".$GLOBALS['COMMON']->GetUserName($res[$i]['uid'])."</div>";
 				$rows.="<div class='subtitlelistteams-team'>Team</div>";
 				$rows.="<div class='subtitlelistteams-edit'><a href='index.php?page=subtitle&sec=manage&sid=".$res[$i]['sid']."&ssec=SubtitleListTeams&h=switch&uid=".$res[$i]['uid']."&t=edit'><img class='subtitle-teams-state-".$res[$i]['editlines']."' /></a></div>";
 				$rows.="<div class='subtitlelistteams-add'><a href='index.php?page=subtitle&sec=manage&sid=".$res[$i]['sid']."&ssec=SubtitleListTeams&h=switch&uid=".$res[$i]['uid']."&t=add'><img class='subtitle-teams-state-".$res[$i]['addlines']."' /></a></div>";
