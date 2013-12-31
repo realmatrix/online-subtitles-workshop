@@ -56,9 +56,48 @@
 
 		function SwitchState(){
 			$args = array(
-			
+				array(":sid", $GLOBALS['vars']['sid'], "str"),
+				array(":uid", $GLOBALS['vars']['uid'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("", $args);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitlepermissions` WHERE `sid` = :sid and `uid` = :uid", $args);
+			if($GLOBALS['vars']['t']=="edit"){
+				$args = array(
+					array(":sid", $GLOBALS['vars']['sid'], "str"),
+					array(":uid", $GLOBALS['vars']['uid'], "str"),
+					array(":value", self::SwitchValue($res[0]['editlines'])),
+				);
+				$res = $GLOBALS['COMMON']->db_query("UPDATE `subtitlepermissions` SET `editlines`=:value WHERE `sid` = :sid and `uid` = :uid", $args);
+			}
+			if($GLOBALS['vars']['t']=="add"){
+				$args = array(
+					array(":sid", $GLOBALS['vars']['sid'], "str"),
+					array(":uid", $GLOBALS['vars']['uid'], "str"),
+					array(":value", self::SwitchValue($res[0]['addlines'])),
+				);
+				$res = $GLOBALS['COMMON']->db_query("UPDATE `subtitlepermissions` SET `addlines`=:value WHERE `sid` = :sid and `uid` = :uid", $args);
+			}
+			if($GLOBALS['vars']['t']=="del"){
+				$args = array(
+					array(":sid", $GLOBALS['vars']['sid'], "str"),
+					array(":uid", $GLOBALS['vars']['uid'], "str"),
+					array(":value", self::SwitchValue($res[0]['deletelines'])),
+				);
+				$res = $GLOBALS['COMMON']->db_query("UPDATE `subtitlepermissions` SET `deletelines`=:value WHERE `sid` = :sid and `uid` = :uid", $args);
+			}
+			if($GLOBALS['vars']['t']=="chk"){
+				$args = array(
+					array(":sid", $GLOBALS['vars']['sid'], "str"),
+					array(":uid", $GLOBALS['vars']['uid'], "str"),
+					array(":value", self::SwitchValue($res[0]['checklines'])),
+				);
+				$res = $GLOBALS['COMMON']->db_query("UPDATE `subtitlepermissions` SET `checklines`=:value WHERE `sid` = :sid and `uid` = :uid", $args);
+			}
+			
+		}
+		
+		function SwitchValue($value){
+			if($value==0){return 1;}
+			if($value==1){return 0;}
 		}
 	
 			
