@@ -9,6 +9,7 @@
 		function SubtitleListTeams_hooks(){
 			$array = array(
 				array("switch", "SwitchState"),
+				array("deluser", "RemoveUser"),
 			);
 			return $array;
 		}
@@ -48,7 +49,7 @@
 				$rows.="<div class='subtitlelistteams-add'><a href='index.php?page=subtitle&sec=manage&sid=".$res[$i]['sid']."&ssec=SubtitleListTeams&h=switch&uid=".$res[$i]['uid']."&t=add'><img class='subtitle-teams-state-".$res[$i]['addlines']."' /></a></div>";
 				$rows.="<div class='subtitlelistteams-delete'><a href='index.php?page=subtitle&sec=manage&sid=".$res[$i]['sid']."&ssec=SubtitleListTeams&h=switch&uid=".$res[$i]['uid']."&t=del'><img class='subtitle-teams-state-".$res[$i]['deletelines']."' /></a></div>";
 				$rows.="<div class='subtitlelistteams-check'><a href='index.php?page=subtitle&sec=manage&sid=".$res[$i]['sid']."&ssec=SubtitleListTeams&h=switch&uid=".$res[$i]['uid']."&t=chk'><img class='subtitle-teams-state-".$res[$i]['checklines']."' /></a></div>";
-				$rows.="<div class='subtitlelistteams-del'><a href=''><img class='subtitle-teams-del'/></a></div>";
+				$rows.="<div class='subtitlelistteams-del'><a href='index.php?page=subtitle&sec=manage&sid=".$res[$i]['sid']."&ssec=SubtitleListTeams&h=deluser&uid=".$res[$i]['uid']."'><img class='subtitle-teams-del'/></a></div>";
 				$rows.="</div>";
 			}
 			return $rows;
@@ -98,6 +99,14 @@
 		function SwitchValue($value){
 			if($value==0){return 1;}
 			if($value==1){return 0;}
+		}
+		
+		function RemoveUser(){
+			$args = array(
+				array(":sid", $GLOBALS['vars']['sid'], "str"),
+				array(":uid", $GLOBALS['vars']['uid'], "str"),
+			);
+			$res = $GLOBALS['COMMON']->db_query("DELETE FROM `subtitlepermissions` WHERE `sid` = :sid and `uid` = :uid", $args);
 		}
 	
 			
