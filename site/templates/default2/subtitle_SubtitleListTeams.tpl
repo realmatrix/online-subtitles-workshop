@@ -6,6 +6,7 @@
 }
 .subtitlelistteams-row{
 	width: 100%;
+	margin-left: 5px;
 	clear: left;
 }
 .subtitlelistteams-row div{
