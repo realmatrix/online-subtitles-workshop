@@ -112,67 +112,77 @@
 		}
 		
 		function DeleteLine(){
-			if($GLOBALS['vars']['line']==""){$GLOBALS['ERROR'][]="select line to delete";}
-			if(count($GLOBALS['ERROR'])>0){return FALSE;}
-			$args = array(
-				array(":sid", $GLOBALS['vars']['sid'], "str"),
-				array(":cid", $GLOBALS['vars']['cid'], "str"),
-				array(":line", $GLOBALS['vars']['line'], "str"),
-			);
-			$res = $GLOBALS['COMMON']->db_query("DELETE FROM `subtitlescontent` WHERE `sid` = :sid and `cid` = :cid and `line` = :line", $args, $ExecState);
-			self::ArrangeLines();
-			if($ExecState===TRUE){$GLOBALS['SUCCESS'][]="Line deleted successfully.";}else{$GLOBALS['ERROR'][]="Failed to delete line.";}
+			$permissions = $GLOBALS['COMMON']->GetUserSubtitlePermisions($GLOBALS['vars']['sid']);
+			if($permissions['owner']===TRUE or $permissions['delete']===TRUE){
+				if($GLOBALS['vars']['line']==""){$GLOBALS['ERROR'][]="select line to delete";}
+				if(count($GLOBALS['ERROR'])>0){return FALSE;}
+				$args = array(
+					array(":sid", $GLOBALS['vars']['sid'], "str"),
+					array(":cid", $GLOBALS['vars']['cid'], "str"),
+					array(":line", $GLOBALS['vars']['line'], "str"),
+				);
+				$res = $GLOBALS['COMMON']->db_query("DELETE FROM `subtitlescontent` WHERE `sid` = :sid and `cid` = :cid and `line` = :line", $args, $ExecState);
+				self::ArrangeLines();
+				if($ExecState===TRUE){$GLOBALS['SUCCESS'][]="Line deleted successfully.";}else{$GLOBALS['ERROR'][]="Failed to delete line.";}
+				}else{
+					$GLOBALS['ERROR'][] = "don't have permissions to delete lines contact subtitle owner to change permissions";
+				}
 		}
 		
 		function AddLine(){
-			if(($GLOBALS['vars'][option]==3 or $GLOBALS['vars'][option]==4) and $GLOBALS['vars']['line']==""){
-				$GLOBALS['ERROR'][]="select line.";
-				return false;
-			}
-			$AllLines = self::GetAllLines();
-			$LastLine = end($AllLines);
-			if($GLOBALS['vars']['option']==1){
-				if(count($AllLines)>0){
-					$start=self::ChangeTiming($LastLine['end'], 1); 
-					$end=self::ChangeTiming($LastLine['end'], 2);
+			$permissions = $GLOBALS['COMMON']->GetUserSubtitlePermisions($GLOBALS['vars']['sid']);
+			if($permissions['owner']===TRUE or $permissions['add']===TRUE){
+				if(($GLOBALS['vars'][option]==3 or $GLOBALS['vars'][option]==4) and $GLOBALS['vars']['line']==""){
+					$GLOBALS['ERROR'][]="select line.";
+					return false;
 				}
-				else{
-					$start=self::ChangeTiming("00.00.00,000", 1); 
-					$end=self::ChangeTiming("00.00.00,000", 2);
+				$AllLines = self::GetAllLines();
+				$LastLine = end($AllLines);
+				if($GLOBALS['vars']['option']==1){
+					if(count($AllLines)>0){
+						$start=self::ChangeTiming($LastLine['end'], 1); 
+						$end=self::ChangeTiming($LastLine['end'], 2);
+					}
+					else{
+						$start=self::ChangeTiming("00.00.00,000", 1); 
+						$end=self::ChangeTiming("00.00.00,000", 2);
+					}
+					}
+				if($GLOBALS['vars']['option']==2){
+					if(count($AllLines)>0){
+						$start=self::ChangeTiming($AllLines[0]['start'], -2); 
+						$end=self::ChangeTiming($AllLines[0]['start'], -1);
+					}
+					else{
+						$start=self::ChangeTiming("00.00.00,000", 1); 
+						$end=self::ChangeTiming("00.00.00,000", 2);
+					}
+					}
+				if($GLOBALS['vars']['option']==3){
+					$line = self::GetLine($GLOBALS['vars']['line']);
+					$start=self::ChangeTiming($line[0]['end'], 1); 
+					$end=self::ChangeTiming($line[0]['end'], 2);
 				}
+				if($GLOBALS['vars']['option']==4){
+					$line = self::GetLine($GLOBALS['vars']['line']);
+					$start=self::ChangeTiming($line[0]['start'], -2); 
+					$end=self::ChangeTiming($line[0]['start'], -1);
 				}
-			if($GLOBALS['vars']['option']==2){
-				if(count($AllLines)>0){
-					$start=self::ChangeTiming($AllLines[0]['start'], -2); 
-					$end=self::ChangeTiming($AllLines[0]['start'], -1);
+				$args = array(
+					array(":sid", $GLOBALS['vars']['sid'], "str"),
+					array(":uid", $_SESSION['id'], "str"),
+					array(":cid", $GLOBALS['vars']['cid'], "str"),
+					array(":line", "0", "str"),
+					array(":start", $start, "str"),
+					array(":end", $end, "str"),
+					array(":text", "new line", "str"),
+				);
+				$res = $GLOBALS['COMMON']->db_query("INSERT INTO `subtitlescontent` (`sid`, `uid`, `cid`, `line`, `start`, `end`, `text`, `checked`, `done`) VALUES (:sid, :uid, :cid, :line, :start, :end, :text, '0', '0');", $args, $ExecState);
+				self::ArrangeLines();
+				if($ExecState===TRUE){$GLOBALS['SUCCESS'][]="New line added successfully.";}else{$GLOBALS['ERROR'][]="failed to add new line.";}
+				}else{
+					$GLOBALS['ERROR'][] = "don't have permissions to add new lines contact subtitle owner to change permissions";
 				}
-				else{
-					$start=self::ChangeTiming("00.00.00,000", 1); 
-					$end=self::ChangeTiming("00.00.00,000", 2);
-				}
-				}
-			if($GLOBALS['vars']['option']==3){
-				$line = self::GetLine($GLOBALS['vars']['line']);
-				$start=self::ChangeTiming($line[0]['end'], 1); 
-				$end=self::ChangeTiming($line[0]['end'], 2);
-			}
-			if($GLOBALS['vars']['option']==4){
-				$line = self::GetLine($GLOBALS['vars']['line']);
-				$start=self::ChangeTiming($line[0]['start'], -2); 
-				$end=self::ChangeTiming($line[0]['start'], -1);
-			}
-			$args = array(
-				array(":sid", $GLOBALS['vars']['sid'], "str"),
-				array(":uid", $_SESSION['id'], "str"),
-				array(":cid", $GLOBALS['vars']['cid'], "str"),
-				array(":line", "0", "str"),
-				array(":start", $start, "str"),
-				array(":end", $end, "str"),
-				array(":text", "new line", "str"),
-			);
-			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `subtitlescontent` (`sid`, `uid`, `cid`, `line`, `start`, `end`, `text`, `checked`, `done`) VALUES (:sid, :uid, :cid, :line, :start, :end, :text, '0', '0');", $args, $ExecState);
-			self::ArrangeLines();
-			if($ExecState===TRUE){$GLOBALS['SUCCESS'][]="New line added successfully.";}else{$GLOBALS['ERROR'][]="failed to add new line.";}
 		}
 		
 		function ChangeTiming($time, $value){
