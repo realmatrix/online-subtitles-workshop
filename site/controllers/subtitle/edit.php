@@ -4,8 +4,8 @@
 			
 		function edit_sections(){
 			$array = array(
-				array("subtitle", "ViewSubtitle", $GLOBALS['vars'], true),
-				array("subtitle", "SubtitleCDS", $GLOBALS['vars'], TRUE),
+				array("subtitle", "ViewSubtitle", $GLOBALS['vars'], self::CheckPermission()),
+				array("subtitle", "SubtitleCDS", $GLOBALS['vars'], self::CheckPermission()),
 				array("team", "DownloadSubtitle", $GLOBALS['vars'], self::CheckDownload()),
 				array("subtitle", "EditorControls", $GLOBALS['vars'], self::show()),
 				array("player", "EditorPlayer", $GLOBALS['vars'], self::show()),
@@ -26,12 +26,26 @@
 		}
 		
 		function show(){
+			if(self::CheckPermission()===FALSE){return FALSE;}
 			if($GLOBALS['vars']['sid']=="" or $GLOBALS['vars']['cid']==""){return FALSE;}else{return TRUE;}
 		}
 		
 		function CheckDownload(){
+			if(self::CheckPermission()===FALSE){return FALSE;}
 			if($GLOBALS['vars']['dl']=="yes"){return TRUE;}	else {return FALSE;}
 		}	
+		
+		function CheckPermission(){
+			$res = FALSE;
+			if($GLOBALS['COMMON']->IsSubtitleOwner($GLOBALS['vars']['sid'])===TRUE){return TRUE;}
+			$args = array(
+				array(":sid", $GLOBALS['vars']['sid'], "str"),
+				array(":uid", $_SESSION['id'], "str"),
+			);
+			$permissions = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitlepermissions` WHERE `sid` = :sid and `uid` = :uid", $args);
+			if(count($permissions)>0){return TRUE;}
+			return $res;
+		}
 			
 	}
 
