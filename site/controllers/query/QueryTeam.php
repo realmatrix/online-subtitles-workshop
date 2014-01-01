@@ -57,6 +57,8 @@
 			$text = str_replace("[/i]", "</i>", $text);
 			$text = str_replace("[u]", "<u>", $text);
 			$text = str_replace("[/u]", "</u>", $text);
+			$text = str_replace("[s]", "<img class='teamchatsmile-", $text);
+			$text = str_replace("[/s]", "' >", $text);
 			return $text;
 		}
 		

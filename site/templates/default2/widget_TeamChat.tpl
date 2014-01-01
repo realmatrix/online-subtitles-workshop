@@ -70,6 +70,21 @@ var interval = setInterval(GetChat,10000);
 	function additalic(){
 		add("[i]", "[/i]");
 	}
+	
+	function showsmiles(){
+		if(document.getElementById("teamchat-smiles").style.display == 'none'){
+			document.getElementById("teamchat-smiles").style.display = 'block';
+			return true;
+		}
+		if(document.getElementById("teamchat-smiles").style.display == 'block'){
+			document.getElementById("teamchat-smiles").style.display = 'none';
+			return true;
+		}
+	}
+	
+	function addsmile(smile){
+		document.getElementById("teamchat-textarea").value = document.getElementById("teamchat-textarea").value + "[s]" + smile + "[/s]"
+	}
 </script>
 <style>
 	#teamchat-messages{
@@ -84,7 +99,6 @@ var interval = setInterval(GetChat,10000);
 	}
 	#teamchat-textarea{
 		width: 95%;
-		padding-top:0PX;
 		vertical-align: top;
 		border-width: 1px;
 		border-style: dashed; 
@@ -130,6 +144,10 @@ var interval = setInterval(GetChat,10000);
 	#teamchat-toolbar img{
 		float: right;
 	}
+	.teamchat-smiles{
+		width: 100%;
+	}
+	#teamchatsmile-smile{	background-image: url(templates/default2/tmp/smiles/emoticon_happy.png); width: 16px; height: 16px;}
 </style>
 <DIV class="catglow" style="width:100%;">
 <DIV class="cathead-m">
@@ -149,10 +167,16 @@ var interval = setInterval(GetChat,10000);
     <TD class="forumdetails"><SPAN class="forum-descriptions">
 
 
+	
 <div id="widgt-teamchat">
 	<div id='teamchat-messages'></div>
+	
+		<div id='teamchat-smiles' style="display:none;">
+			<img class='teamchatsmile-smile' onclick="addsmile('happy');">
+		</div>
+	
 	<div id='teamchat-toolbar'>
-	<img src='templates/default2/tmp/icons/emoticon_smile.png'>
+	<img src='templates/default2/tmp/icons/emoticon_smile.png' id='teamchat-smile-button' onclick="showsmiles();">
 	<img src='templates/default2/tmp/icons/text_underline.png' onclick="addunderline();">
 	<img src='templates/default2/tmp/icons/text_italic.png' onclick="additalic();">
 	<img src='templates/default2/tmp/icons/text_bold.png' onclick="addbold();">
