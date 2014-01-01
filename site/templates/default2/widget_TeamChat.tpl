@@ -55,6 +55,23 @@ var interval = setInterval(GetChat,10000);
 	}
 	
 	GetChat(); 
+	
+	function add(before, after){
+		var selectionText = document.getElementById("teamchat-textarea").value.substr(document.getElementById("teamchat-textarea").selectionStart, document.getElementById("teamchat-textarea").selectionEnd);
+		var start = document.getElementById("teamchat-textarea").value.substr(0, document.getElementById("teamchat-textarea").selectionStart);
+		var end = document.getElementById("teamchat-textarea").value.substr(document.getElementById("teamchat-textarea").selectionEnd, document.getElementById("teamchat-textarea").value.length);
+		document.getElementById("teamchat-textarea").value = start + before + selectionText + after + end;
+	}
+	
+	function addbold(){
+		add("[b]", "[/b]");
+	}
+	function addunderline(){
+		add("[u]", "[/u]");
+	}
+	function additalic(){
+		add("[i]", "[/i]");
+	}
 </script>
 <style>
 	#teamchat-messages{
@@ -138,9 +155,9 @@ var interval = setInterval(GetChat,10000);
 	<div id='teamchat-messages'></div>
 	<div id='teamchat-toolbar'>
 	<img src='templates/default2/tmp/icons/emoticon_smile.png'>
-	<img src='templates/default2/tmp/icons/text_underline.png'>
-	<img src='templates/default2/tmp/icons/text_italic.png'>
-	<img src='templates/default2/tmp/icons/text_bold.png'>
+	<img src='templates/default2/tmp/icons/text_underline.png' onclick="addunderline();">
+	<img src='templates/default2/tmp/icons/text_italic.png' onclick="additalic();">
+	<img src='templates/default2/tmp/icons/text_bold.png' onclick="addbold();">
 	</div>
 	<form>
 		<textarea id='teamchat-textarea' rows="2" onkeydown="if (event.keyCode == 13) { SendMessage(); return false; }"></textarea>

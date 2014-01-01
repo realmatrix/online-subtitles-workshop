@@ -43,11 +43,21 @@
 			for ($i=0; $i < count($res); $i++) { 
 				$chat.="<div class='chat-line-container'>";
 				$chat.="<div class='chat-name-message'><span class='chat-username'>".$res[$i]['username']."</span>";
-				$chat.="<span class='chat-text'>".$res[$i]['text']."</span></div>";
+				$chat.="<span class='chat-text'>".self::ReplaceTags($res[$i]['text'])."</span></div>";
 				$chat.="<div class='chat-date'>".date("D M j, h:i:sA", strtotime($res[$i]['date']))."</div>";
 				$chat.="</div>";
 			}
 			self::$query = $chat;
+		}
+		
+		function ReplaceTags($text){
+			$text = str_replace("[b]", "<b>", $text);
+			$text = str_replace("[/b]", "</b>", $text);
+			$text = str_replace("[i]", "<i>", $text);
+			$text = str_replace("[/i]", "</i>", $text);
+			$text = str_replace("[u]", "<u>", $text);
+			$text = str_replace("[/u]", "</u>", $text);
+			return $text;
 		}
 		
 		function SetChat(){
