@@ -54,8 +54,6 @@ var interval = setInterval(GetChat,10000);
 		objDiv.scrollTop = objDiv.scrollHeight;
 	}
 	
-	GetChat(); 
-	
 	function add(before, after){
 		var selectionText = document.getElementById("teamchat-textarea").value.substr(document.getElementById("teamchat-textarea").selectionStart, document.getElementById("teamchat-textarea").selectionEnd);
 		var start = document.getElementById("teamchat-textarea").value.substr(0, document.getElementById("teamchat-textarea").selectionStart);
@@ -178,4 +176,6 @@ var interval = setInterval(GetChat,10000);
 </div>
 <br>
 
-
+<script>
+	GetChat();
+</script>
