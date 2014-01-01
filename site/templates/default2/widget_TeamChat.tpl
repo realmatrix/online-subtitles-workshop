@@ -77,13 +77,13 @@ var interval = setInterval(GetChat,10000);
 		resize: none;
 	}
 	.chat-username{
-		text-decoration:underline;
+		text-decoration:none;
 		font-weight: bold;
-		color: blue;
+		color: #3C7D3E;
 		display: block-inline;
 	}
 	.chat-username:after {
-	    content: ":";
+	    content: "";
 	}
 	.chat-text{
 		color: black;
