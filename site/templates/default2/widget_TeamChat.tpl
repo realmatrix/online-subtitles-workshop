@@ -137,7 +137,10 @@ var interval = setInterval(GetChat,10000);
 <div id="widgt-teamchat">
 	<div id='teamchat-messages'></div>
 	<div id='teamchat-toolbar'>
-	<img src='templates/default2/tmp/icons/emotion_grin.png'>
+	<img src='templates/default2/tmp/icons/emoticon_smile.png'>
+	<img src='templates/default2/tmp/icons/text_underline.png'>
+	<img src='templates/default2/tmp/icons/text_italic.png'>
+	<img src='templates/default2/tmp/icons/text_bold.png'>
 	</div>
 	<form>
 		<textarea id='teamchat-textarea' rows="2" onkeydown="if (event.keyCode == 13) { SendMessage(); return false; }"></textarea>
