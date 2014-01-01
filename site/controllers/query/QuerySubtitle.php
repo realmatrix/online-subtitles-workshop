@@ -35,19 +35,22 @@
 		}
 		
 		function UpdateSubtitle(){
-			if($GLOBALS['vars']['type']!="start" and $GLOBALS['vars']['type']!="end" and $GLOBALS['vars']['type']!="text"){return FALSE;}
-			if($GLOBALS['vars']['sid']=="" or $GLOBALS['vars']['cid']=="" or $GLOBALS['vars']['lid']==""){return FALSE;}
-			if(!self::GetPermission()){return FALSE;}
-			if($GLOBALS['vars']['type']=="start"){self::UpdateStart();}
-			if($GLOBALS['vars']['type']=="end"){self::UpdateEnd();}
-			if($GLOBALS['vars']['type']=="text"){self::UpdateText();}
-			$args = array(
-				array(":lid", $GLOBALS['vars']['lid'], "str"),
-				array(":uid", $_SESSION['id'], "str"),
-			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `transcriptions` WHERE `lid` = :lid AND `uid` = :uid", $args);
-			//if($GLOBALS['vars']['type']=="text"){$GLOBALS['vars']['type'] = "TranscribedText";}
-			self::$query = $res[0][$GLOBALS['vars']['type']];
+			$permissions = $GLOBALS['COMMON']->GetUserSubtitlePermisions($GLOBALS['vars']['sid']);
+			if($permissions['owner']===TRUE or $permissions['edit']===TRUE){
+				if($GLOBALS['vars']['type']!="start" and $GLOBALS['vars']['type']!="end" and $GLOBALS['vars']['type']!="text"){return FALSE;}
+				if($GLOBALS['vars']['sid']=="" or $GLOBALS['vars']['cid']=="" or $GLOBALS['vars']['lid']==""){return FALSE;}
+				if(!self::GetPermission()){return FALSE;}
+				if($GLOBALS['vars']['type']=="start"){self::UpdateStart();}
+				if($GLOBALS['vars']['type']=="end"){self::UpdateEnd();}
+				if($GLOBALS['vars']['type']=="text"){self::UpdateText();}
+				$args = array(
+					array(":lid", $GLOBALS['vars']['lid'], "str"),
+					array(":uid", $_SESSION['id'], "str"),
+				);
+				$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `transcriptions` WHERE `lid` = :lid AND `uid` = :uid", $args);
+				//if($GLOBALS['vars']['type']=="text"){$GLOBALS['vars']['type'] = "TranscribedText";}
+				self::$query = $res[0][$GLOBALS['vars']['type']];
+			}
 		}
 		
 		function UpdateStart(){
