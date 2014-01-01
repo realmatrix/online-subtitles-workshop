@@ -878,6 +878,15 @@ class Common{
 		return $res;
 	}
 	
+	function IsSubtitleOwner($sid){
+		$UID = $_SESSION['id'];
+		$args = array(
+			array(":sid", $sid, "str"),
+		);
+		$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitles` WHERE `id` = :sid", $args);
+		if($res[0]['uid']===$UID){return TRUE;}else{return FALSE;}
+	}
+	
 	function GetUserSubtitlePermisions($sid){
 		$args = array(
 			array(":uid", $GLOBALS['vars']['sid'], "str"),
