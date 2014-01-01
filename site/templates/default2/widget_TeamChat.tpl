@@ -147,7 +147,11 @@ var interval = setInterval(GetChat,10000);
 	.teamchat-smiles{
 		width: 100%;
 	}
-	#teamchatsmile-smile{	background-image: url(templates/default2/tmp/smiles/emoticon_happy.png); width: 16px; height: 16px;}
+	.teamchat-smiles img{
+		width: 16px;
+		height: 16px;
+	}
+	#teamchatsmile-smile{background-image: url(templates/default2/tmp/smiles/emoticon_smile.png);}
 </style>
 <DIV class="catglow" style="width:100%;">
 <DIV class="cathead-m">
@@ -172,7 +176,14 @@ var interval = setInterval(GetChat,10000);
 	<div id='teamchat-messages'></div>
 	
 		<div id='teamchat-smiles' style="display:none;">
-			<img class='teamchatsmile-smile' onclick="addsmile('happy');">
+			<img class='teamchatsmile-smile' onclick="addsmile('smile');">
+			<img class='teamchatsmile-evilgrin' onclick="addsmile('evilgrin');">
+			<img class='teamchatsmile-grin' onclick="addsmile('grin');">
+			<img class='teamchatsmile-happy' onclick="addsmile('happy');">
+			<img class='teamchatsmile-surprised' onclick="addsmile('surprised');">
+			<img class='teamchatsmile-tongue' onclick="addsmile('tonge');">
+			<img class='teamchatsmile-waii' onclick="addsmile('waii');">
+			<img class='teamchatsmile-wink' onclick="addsmile('wink');">
 		</div>
 	
 	<div id='teamchat-toolbar'>
