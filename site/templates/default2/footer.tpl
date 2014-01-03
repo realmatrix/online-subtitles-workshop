@@ -58,6 +58,7 @@ class="statspanel">            	Total videos <STRONG>{TotalVideos}</STRONG> • 
 Absolution design by <A href="http://www.christianbullock.com/">Christian
 Bullock</A> modified by <a href="#">RealMatrix</a>.     <!-- Please do not remove the above credit line. This style is free, and attribution such as this helps to keep it in development. Thanks --><BR>Powered 
 by <A href="#">Online Subtitles Workshop</A>  
+<br /> <a href="index.php?page=sitemap&sec=sitemap">Sitemap</a> <a href="index.php?page=sitemap&sec=xhtml">XHTML</a> <a href="index.php?page=sitemap&sec=rss">RSS</a> <a href="index.php?page=sitemap&sec=wap2">WAP2</a>
 <br />generated in {LoadTime} seconds  
 </DIV></DIV><!-- /noise -->
 <SCRIPT type="text/javascript">
