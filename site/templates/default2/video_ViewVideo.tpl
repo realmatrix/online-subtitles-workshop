@@ -45,6 +45,44 @@ thumbimg.onerror = function () {
 		margin: 0 0 0 0;
 		padding: 0 0 0 0;
 	}
+	#viewvideo-infocontainer{
+		width: 100%;
+	}
+	.viewvidieo-infocontainer-row{
+		width: 100%;
+		height: 32px;
+		clear: both;
+		display: table;
+		margin-bottom: 2px;
+	}
+	
+	.viewvidieo-infocontainer-row div{
+		border-width: 1px;
+		border-style: solid;
+		border-color: #DFE8EE;
+		height: 32px;
+		vertical-align: middle;
+		display: table-cell;
+		line-height: 32px;
+		padding-left: 2px;
+		padding-right: 2px;
+	}
+
+	.viewvideo-infocontainer-left{
+		float: left;
+		width: 27%;
+		font-weight: bold;
+		background-color: #F5FBFE;
+		margin-right: 2px;
+	}
+	.viewvideo-infocontainer-right{
+		float: right;
+		width: 70%;
+	}
+	.viewvidieo-infocontainer-raterow{
+		margin-top: 4px;
+		padding-left: 2px;
+	}
 </style>
 
 
@@ -67,37 +105,36 @@ thumbimg.onerror = function () {
     <TD class="forumdetails" style="width: 100%;"><SPAN class="forum-descriptions">
 
 
-	<table class='table-viewvideo'>
-		<tr>
-			<td style="width: 30%;">{OtherTitle}</td>
-			<td style="width: 70%;">{VideoOtherTitle}</td>	
-		</tr>
-		<tr>
-			<td>{Country}</td>
-			<td>{VideoCountry}</td>	
-		</tr>
-		<tr>
-			<td>{Genre}</td>
-			<td>{VideoGenre}</td>	
-		</tr>
-		<tr>
-			<td>{ReleaseDate}</td>
-			<td>{VideoReleaseDate}</td>	
-		</tr>
-		<tr>
-			<td>{Casting}</td>
-			<td>{VideoCasting}</td>	
-		</tr>
-		<tr>
-			<td>{Director}</td>
-			<td>{VideoDirector}</td>	
-		</tr>
-		<tr>
-			<td>{Length}</td>
-			<td>{VideoLength} Minutes</td>	
-		</tr>
-		<tr>
-			<td colspan="2">
+<div id='viewvideo-infocontainer'>
+	<div class='viewvidieo-infocontainer-row'>
+		<div class='viewvideo-infocontainer-left'>{OtherTitle}</div>
+		<div class='viewvideo-infocontainer-right'>{VideoOtherTitle}</div>
+	</div>
+	<div class='viewvidieo-infocontainer-row'>
+		<div class='viewvideo-infocontainer-left'>{Country}</div>
+		<div class='viewvideo-infocontainer-right'>{VideoCountry}</div>
+	</div>
+	<div class='viewvidieo-infocontainer-row'>
+		<div class='viewvideo-infocontainer-left'>{Genre}</div>
+		<div class='viewvideo-infocontainer-right'>{VideoGenre}</div>
+	</div>
+	<div class='viewvidieo-infocontainer-row'>
+		<div class='viewvideo-infocontainer-left'>{ReleaseDate}</div>
+		<div class='viewvideo-infocontainer-right'>{VideoReleaseDate}</div>
+	</div>
+	<div class='viewvidieo-infocontainer-row'>
+		<div class='viewvideo-infocontainer-left'>{Casting}</div>
+		<div class='viewvideo-infocontainer-right'>{VideoCasting}</div>
+	</div>
+	<div class='viewvidieo-infocontainer-row'>
+		<div class='viewvideo-infocontainer-left'>{Director}</div>
+		<div class='viewvideo-infocontainer-right'>{VideoDirector}</div>
+	</div>
+	<div class='viewvidieo-infocontainer-row'>
+		<div class='viewvideo-infocontainer-left'>{Length}</div>
+		<div class='viewvideo-infocontainer-right'>{VideoLength} Minutes</div>
+	</div>
+	<div class='viewvidieo-infocontainer-raterow'>
 				<div style='float:left;'>
 					<ul class='video-rate'>
 						   <li class='video-rate-li'><a href="index.php?page=video&sec=view&vid={vid}&ssec=ViewVideo&h=rate&val=1"><img src='templates/default2/tmp/images/star_empty.png' id='vr-star1' onmouseover="StarHover(1, 10);" onmouseout="StarDefault({rate}, 10);" /></a></li><!--
@@ -117,9 +154,12 @@ thumbimg.onerror = function () {
 				<img src='templates/default2/tmp/images/favorites-add.png' alt='add to favourites'/>
 				</a>
 				</div>
-			</td>
-		</tr>
-	</table>
+	</div>
+</div>
+
+
+
+
 
 
 </td>
