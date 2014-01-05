@@ -1,9 +1,41 @@
 <style>
-	.tableleft{
-		width: 20%;
+	#viewsubtitle-infocontainer{
+		width: 100%;
 	}
-	.tableright{
-		width: 80%;
+	.viewsubtitle-infocontainer-row{
+		width: 100%;
+		height: 32px;
+		clear: both;
+		display: table;
+		margin-bottom: 2px;
+	}
+	
+	.viewsubtitle-infocontainer-row div{
+		border-width: 1px;
+		border-style: solid;
+		border-color: #DFE8EE;
+		height: 32px;
+		vertical-align: middle;
+		display: table-cell;
+		line-height: 32px;
+		padding-left: 2px;
+		padding-right: 2px;
+	}
+
+	.viewsubtitle-infocontainer-left{
+		float: left;
+		width: 23%;
+		font-weight: bold;
+		background-color: #F5FBFE;
+		margin-right: 2px;
+	}
+	.viewsubtitle-infocontainer-right{
+		float: right;
+		width: 75%;
+	}
+	.viewsubtitle-infocontainer-raterow{
+		margin-top: 4px;
+		padding-left: 2px;
 	}
 </style>
 <DIV class="catglow">
@@ -25,38 +57,42 @@
 
 
 <!-- view subtitle -->
-<div id="viewsubtitle" style="width: 99%;">
-	<table style="width: 100%;">
-		<tr>
-		<td class="tableleft">{releasename}</td>
-		<td class="tableright">{Creleasename}</td>
-		</tr>
-		<tr>
-		<td class="tableleft">{version}</td>
-		<td class="tableright">{Cversion}</td>
-		</tr>
-		<tr>
-		<td class="tableleft">{country}</td>
-		<td class="tableright">{Ccountry}</td>
-		</tr>
-		<tr>
-		<td class="tableleft">{language}</td>
-		<td class="tableright">{Clanguage}</td>
-		</tr>
-		<tr>
-		<td class="tableleft">{fps}</td>
-		<td class="tableright">{Cfps}</td>
-		</tr>
-		<tr>
-		<td class="tableleft">{format}</td>
-		<td class="tableright">{Cformat}</td>
-		</tr>
-		<tr>
-		<td class="tableleft">{cds}</td>
-		<td class="tableright">{Ccds}</td>
-		</tr>
-	</table>
+
+
+<div id='viewsubtitle-infocontainer'>
+	<div class='viewsubtitle-infocontainer-row'>
+		<div class='viewsubtitle-infocontainer-left'>{releasename}</div>
+		<div class='viewsubtitle-infocontainer-right'>{Creleasename}</div>
+	</div>
+	<div class='viewsubtitle-infocontainer-row'>
+		<div class='viewsubtitle-infocontainer-left'>{version}</div>
+		<div class='viewsubtitle-infocontainer-right'>{Cversion}</div>
+	</div>
+	<div class='viewsubtitle-infocontainer-row'>
+		<div class='viewsubtitle-infocontainer-left'>{country}</div>
+		<div class='viewsubtitle-infocontainer-right'>{Ccountry}</div>
+	</div>
+	<div class='viewsubtitle-infocontainer-row'>
+		<div class='viewsubtitle-infocontainer-left'>{language}</div>
+		<div class='viewsubtitle-infocontainer-right'>{Clanguage}</div>
+	</div>
+	<div class='viewsubtitle-infocontainer-row'>
+		<div class='viewsubtitle-infocontainer-left'>{fps}</div>
+		<div class='viewsubtitle-infocontainer-right'>{Cfps}</div>
+	</div>
+	<div class='viewsubtitle-infocontainer-row'>
+		<div class='viewsubtitle-infocontainer-left'>{format}</div>
+		<div class='viewsubtitle-infocontainer-right'>{Cformat}</div>
+	</div>
+	<div class='viewsubtitle-infocontainer-row'>
+		<div class='viewsubtitle-infocontainer-left'>{cds}</div>
+		<div class='viewsubtitle-infocontainer-right'>{Ccds}</div>
+	</div>
 </div>
+	
+	
+	
+	
 <!-- end view subtitle -->	
 
 

@@ -28,12 +28,14 @@
 				array("{Videos}", $GLOBALS['COMMON']->l('widget_QuickAccess_Videos')),
 				array("{FavouriteVideos}", $GLOBALS['COMMON']->l('widget_QuickAccess_FavouriteVideos')),
 				array("{Subtitles}", $GLOBALS['COMMON']->l('widget_QuickAccess_Subtitles')),
+				array("{Check}", $GLOBALS['COMMON']->l('widget_QuickAccess_check')),
 				array("{ManageSubtitles}", $GLOBALS['COMMON']->l('widget_QuickAccess_ManageSubtitles')),
 				array("{TeamSubtitles}", $GLOBALS['COMMON']->l('widget_QuickAccess_TeamSubtitles')),
 				array("{CVideos}", self::GetUserVideos()),
 				array("{CSubtitles}", self::GetUserSubtitles()),
 				array("{CMSubtitles}", self::GetUserSubtitles()),
 				array("{CFavouriteVideos}", self::GetUserFavouriteVideos()),
+				array("{CCheck}", self::GetCheckSubtitles()),
 			);	
 			return $array;
 		}
@@ -70,6 +72,19 @@
 				$res .= "<option value='".$VideoInfo[0]['id']."'>".$VideoInfo[0]['title']."</option>";
 			}
 			return $res;
+		}
+
+		function GetCheckSubtitles(){
+			$args = array(
+				array(":uid", $_SESSION['id'], "str"),
+			);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitlepermissions` WHERE `uid` = :uid and `checklines` = 1 ", $args);
+			$subtitles = "";
+			for ($i=0; $i < count($res) ; $i++) {
+				$SubtitleInfo = $GLOBALS['COMMON']->GetSubtitleInfo($res[$i]['sid']);
+				$subtitles .= "<option value='".$res[$i]['sid']."'>".$SubtitleInfo[0]['release_name']."</option>";
+			}
+			return $subtitles;
 		}
 		
 		

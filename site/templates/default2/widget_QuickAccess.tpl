@@ -49,6 +49,18 @@
 			</form>
 
 
+			{Check}
+			
+			<form method="get" action="index.php">
+			<select  class="QuickAccessSelect" name="sid" onchange="this.form.submit()">
+			<option value="">select subtitle to check</option>
+			{CCheck}
+			</select>
+			<input type="hidden" name="page" value="subtitle" />
+			<input type="hidden" name="sec" value="check" />
+			</form>
+
+
 			{ManageSubtitles}
 			
 			<form method="get" action="index.php">
