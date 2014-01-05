@@ -5,7 +5,8 @@
 		function check_sections(){
 			$array = array(
 				array("subtitle", "ViewSubtitle", $GLOBALS['vars'], TRUE),
-				array("subtitle", "CheckSubtitle", $GLOBALS['vars'], TRUE),
+				array("subtitle", "SubtitleCDS", $GLOBALS['vars'], TRUE),
+				array("subtitle", "CheckSubtitle", $GLOBALS['vars'], self::ViewCheckSubtitle()),
 			);
 			return $array;
 		}
@@ -18,6 +19,10 @@
 				array("check subtitle", ""),
 			);
 		}	
+		
+		function ViewCheckSubtitle(){
+			if($GLOBALS['vars']['sid']!="" and $GLOBALS['vars']['cid']!=""){return TRUE;}else{return FALSE;}
+		}
 			
 	}
 

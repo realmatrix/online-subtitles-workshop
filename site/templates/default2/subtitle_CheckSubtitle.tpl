@@ -20,7 +20,27 @@
 <div id="aboutus" style="width: 99%;">
 
 
-	content here
+			<form method="get" action="index.php">
+			Subtitle Line <select  class="CheckSubtitleSelect" name="lid" onchange="this.form.submit()">
+			<option value="">select line to check</option>
+			{CheckSubtitleLines}
+			</select>
+			<input type="hidden" name="page" value="{page}" />
+			<input type="hidden" name="sec" value="{sec}" />
+			<input type="hidden" name="sid" value="{sid}" />
+			<input type="hidden" name="cid" value="{cid}" />
+			</form>
+			
+original line: {OriginalLine}
+
+			
+			<form method="get" action="index.php">
+			{LineChoices}
+			<input type="hidden" name="page" value="{page}" />
+			<input type="hidden" name="sec" value="{sec}" />
+			<input type="hidden" name="sid" value="{sid}" />
+			<input type="hidden" name="cid" value="{cid}" />
+			</form>
 
 
 </div>
