@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 31, 2013 at 11:56 AM
+-- Generation Time: Jan 05, 2014 at 10:56 AM
 -- Server version: 5.5.29
 -- PHP Version: 5.3.20
 
@@ -393,7 +393,7 @@ CREATE TABLE IF NOT EXISTS `failedlogins` (
 --
 
 INSERT INTO `failedlogins` (`id`, `ip`, `tries`, `time`) VALUES
-(5, '127.0.0.1', 8, 1385005879);
+(5, '127.0.0.1', 9, 1388578116);
 
 -- --------------------------------------------------------
 
@@ -734,7 +734,7 @@ CREATE TABLE IF NOT EXISTS `lang_english` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `key` (`key`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=222 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=224 ;
 
 --
 -- Dumping data for table `lang_english`
@@ -954,7 +954,9 @@ INSERT INTO `lang_english` (`id`, `key`, `text`) VALUES
 (218, 'video_EditVideo_Synopsis', 'Synopsis'),
 (219, 'video_EditVideo_Tags', 'Tags'),
 (220, 'video_EditVideo_Submit', 'Edit'),
-(221, 'video_EditVideo_VideoUrl', 'Video Url');
+(221, 'video_EditVideo_VideoUrl', 'Video Url'),
+(222, 'widget_QuickAccess_check', 'Check Subtitle:'),
+(223, 'subtitle_CheckSubtitle_title', 'Check Subtitle');
 
 -- --------------------------------------------------------
 
@@ -982,14 +984,14 @@ CREATE TABLE IF NOT EXISTS `onlineusers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1378 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1445 ;
 
 --
 -- Dumping data for table `onlineusers`
 --
 
 INSERT INTO `onlineusers` (`id`, `session`, `time`, `username`) VALUES
-(1377, 'qh8ocddud4mhb56t6hjgqdch06', 1388490745, '');
+(1444, '491i0tolovmnoqoco81ooi35c5', 1388918799, '');
 
 -- --------------------------------------------------------
 
@@ -1074,17 +1076,17 @@ CREATE TABLE IF NOT EXISTS `subtitlepermissions` (
   `checklines` int(11) NOT NULL DEFAULT '0',
   `editlines` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=16 ;
 
 --
 -- Dumping data for table `subtitlepermissions`
 --
 
 INSERT INTO `subtitlepermissions` (`id`, `uid`, `sid`, `tid`, `addlines`, `deletelines`, `checklines`, `editlines`) VALUES
-(8, 23, 1, 4, 1, 1, 1, 1),
-(9, 24, 1, 4, 0, 0, 0, 0),
-(10, 18, 1, 4, 0, 0, 0, 0),
-(11, 22, 1, 4, 1, 1, 1, 1);
+(12, 18, 1, 4, 0, 0, 1, 0),
+(13, 22, 1, 4, 1, 1, 1, 1),
+(14, 23, 1, 4, 1, 1, 1, 1),
+(15, 24, 1, 4, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1130,7 +1132,8 @@ CREATE TABLE IF NOT EXISTS `subtitlescontent` (
   `start` varchar(12) CHARACTER SET latin1 NOT NULL,
   `end` varchar(12) CHARACTER SET latin1 NOT NULL,
   `text` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `checked` int(11) NOT NULL DEFAULT '0' COMMENT '0=>not checked  1=>accepteed  2=>refused',
+  `checked` int(11) NOT NULL DEFAULT '0' COMMENT '0=>not checked  1=>checked',
+  `checked_text` text COLLATE utf8_unicode_ci NOT NULL,
   `done` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'mark line as finished',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=21 ;
@@ -1139,27 +1142,27 @@ CREATE TABLE IF NOT EXISTS `subtitlescontent` (
 -- Dumping data for table `subtitlescontent`
 --
 
-INSERT INTO `subtitlescontent` (`id`, `sid`, `uid`, `cid`, `line`, `start`, `end`, `text`, `checked`, `done`) VALUES
-(1, 1, 18, 1, 1, '00:01:27,520', '00:01:28,987', '- Hi.\r\n- Hi.\r\n', 0, 0),
-(2, 1, 18, 1, 2, '00:01:30,123', '00:01:31,156', 'How many?\r\n', 0, 0),
-(3, 1, 18, 1, 3, '00:01:32,125', '00:01:33,525', 'Two.\r\n', 0, 0),
-(4, 1, 18, 1, 4, '00:02:01,954', '00:02:06,792', 'Listen, I wanted to get a safe deposit box.\r\nCan you do that for me?\r\n', 0, 0),
-(5, 1, 18, 1, 5, '00:02:14,567', '00:02:16,868', 'Okay.\r\nYour box will be available\r\n', 0, 0),
-(6, 1, 18, 1, 6, '00:02:16,870', '00:02:18,637', 'any time from\r\nan hour after opening\r\n', 0, 0),
-(7, 1, 18, 1, 7, '00:02:18,639', '00:02:21,173', 'to 30 minutes before close.\r\nThis is your key.\r\n', 0, 0),
-(8, 1, 18, 1, 8, '00:02:21,175', '00:02:22,241', 'Thank you.\r\n', 0, 0),
-(9, 1, 18, 1, 9, '00:02:22,243', '00:02:24,676', 'Oh, um, also, if you open\r\na checking account,\r\n', 0, 0),
-(10, 1, 18, 1, 10, '00:02:24,678', '00:02:27,679', 'we''ll give you 5% off the box\r\nalong with free overdraft protection.\r\n', 0, 0),
-(11, 1, 18, 1, 11, '00:02:27,681', '00:02:29,981', 'Oh, here I was hopin''\r\nfor a free toaster.\r\n', 0, 0),
-(12, 1, 18, 1, 12, '00:02:31,985', '00:02:34,186', 'Why would a bank\r\ngive out free toasters?\r\n', 0, 0),
-(13, 1, 18, 1, 13, '00:02:36,122', '00:02:37,522', 'Hello, Ma.\r\n', 0, 0),
-(14, 1, 18, 1, 14, '00:02:37,524', '00:02:39,491', 'I''m ordering you\r\nthe French toast.\r\n', 0, 0),
-(15, 1, 18, 1, 15, '00:02:39,493', '00:02:42,227', '- No, thank you.\r\n<i>- Our very patient waitress, Maggie,</i>\r\n', 0, 0),
-(16, 1, 18, 1, 16, '00:02:42,229', '00:02:43,695', '<i>well, at least it says</i>\r\n<i>Maggie on her name tag,</i>\r\n', 0, 0),
-(17, 1, 18, 1, 17, '00:02:43,697', '00:02:44,996', '<i>has asked me\r\nto order four times.</i>\r\n', 0, 0),
-(18, 1, 18, 1, 18, '00:02:44,998', '00:02:46,698', 'If I don''t order at this point,\r\nit''s just rude.\r\n', 0, 0),
-(19, 1, 18, 1, 19, '00:02:46,700', '00:02:48,166', '- I can come back.\r\n- No, it''s okay.\r\n', 0, 0),
-(20, 1, 18, 1, 20, '00:02:48,168', '00:02:49,768', 'You know what?\r\nI''m making an executive decision.\r\n', 0, 0);
+INSERT INTO `subtitlescontent` (`id`, `sid`, `uid`, `cid`, `line`, `start`, `end`, `text`, `checked`, `checked_text`, `done`) VALUES
+(1, 1, 18, 1, 1, '00:01:27,520', '00:01:28,987', '- Hi.\r\n- Hi.\r\n', 1, '- Hi.aaaaaaaaaa\n- Hi.', 0),
+(2, 1, 18, 1, 2, '00:01:30,123', '00:01:31,156', 'How many?\r\n', 1, 'How many?', 0),
+(3, 1, 18, 1, 3, '00:01:32,125', '00:01:33,525', 'Two.\r\n', 1, 'Two.', 0),
+(4, 1, 18, 1, 4, '00:02:01,954', '00:02:06,792', 'Listen, I wanted to get a safe deposit box.\r\nCan you do that for me?\r\n', 1, 'Listen, I wanted to get a safe deposit box.\nCan you do that for me?', 0),
+(5, 1, 18, 1, 5, '00:02:14,567', '00:02:16,868', 'Okay.\r\nYour box will be available\r\n', 1, 'Okay.\n Your box will be available', 0),
+(6, 1, 18, 1, 6, '00:02:16,870', '00:02:18,637', 'any time from\r\nan hour after opening\r\n', 1, 'any time from\n an hour after opening', 0),
+(7, 1, 18, 1, 7, '00:02:18,639', '00:02:21,173', 'to 30 minutes before close.\r\nThis is your key.\r\n', 1, 'to 30 minutes before close.\n This is your key.', 0),
+(8, 1, 18, 1, 8, '00:02:21,175', '00:02:22,241', 'Thank you.\r\n', 0, '', 0),
+(9, 1, 18, 1, 9, '00:02:22,243', '00:02:24,676', 'Oh, um, also, if you open\r\na checking account,\r\n', 0, '', 0),
+(10, 1, 18, 1, 10, '00:02:24,678', '00:02:27,679', 'we''ll give you 5% off the box\r\nalong with free overdraft protection.\r\n', 0, '', 0),
+(11, 1, 18, 1, 11, '00:02:27,681', '00:02:29,981', 'Oh, here I was hopin''\r\nfor a free toaster.\r\n', 0, '', 0),
+(12, 1, 18, 1, 12, '00:02:31,985', '00:02:34,186', 'Why would a bank\r\ngive out free toasters?\r\n', 0, '', 0),
+(13, 1, 18, 1, 13, '00:02:36,122', '00:02:37,522', 'Hello, Ma.\r\n', 0, '', 0),
+(14, 1, 18, 1, 14, '00:02:37,524', '00:02:39,491', 'I''m ordering you\r\nthe French toast.\r\n', 0, '', 0),
+(15, 1, 18, 1, 15, '00:02:39,493', '00:02:42,227', '- No, thank you.\r\n<i>- Our very patient waitress, Maggie,</i>\r\n', 0, '', 0),
+(16, 1, 18, 1, 16, '00:02:42,229', '00:02:43,695', '<i>well, at least it says</i>\r\n<i>Maggie on her name tag,</i>\r\n', 0, '', 0),
+(17, 1, 18, 1, 17, '00:02:43,697', '00:02:44,996', '<i>has asked me\r\nto order four times.</i>\r\n', 0, '', 0),
+(18, 1, 18, 1, 18, '00:02:44,998', '00:02:46,698', 'If I don''t order at this point,\r\nit''s just rude.\r\n', 0, '', 0),
+(19, 1, 18, 1, 19, '00:02:46,700', '00:02:48,166', '- I can come back.\r\n- No, it''s okay.\r\n', 0, '', 0),
+(20, 1, 18, 1, 20, '00:02:48,168', '00:02:49,768', 'You know what?\r\nI''m making an executive decision.\r\n', 0, '', 0);
 
 -- --------------------------------------------------------
 
@@ -1180,7 +1183,7 @@ CREATE TABLE IF NOT EXISTS `systemcron` (
 --
 
 INSERT INTO `systemcron` (`id`, `job`, `frequancy`, `last_run`) VALUES
-(1, 'AutoTranslation', 300, 1388490943);
+(1, 'AutoTranslation', 300, 1388919212);
 
 -- --------------------------------------------------------
 
@@ -1203,7 +1206,7 @@ CREATE TABLE IF NOT EXISTS `systemrouter` (
   `sec` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `page` (`page`,`sec`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=36 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=37 ;
 
 --
 -- Dumping data for table `systemrouter`
@@ -1242,7 +1245,8 @@ INSERT INTO `systemrouter` (`id`, `head`, `header`, `left`, `body`, `right`, `fo
 (32, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'info', ''),
 (33, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'user', 'profile'),
 (34, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'user', 'cp'),
-(35, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'video', 'edit');
+(35, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'video', 'edit'),
+(36, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'subtitle', 'check');
 
 -- --------------------------------------------------------
 
@@ -1258,7 +1262,7 @@ CREATE TABLE IF NOT EXISTS `teamchat` (
   `sid` int(11) NOT NULL,
   `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=31 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=39 ;
 
 --
 -- Dumping data for table `teamchat`
@@ -1271,7 +1275,15 @@ INSERT INTO `teamchat` (`id`, `date`, `uid`, `text`, `sid`, `username`) VALUES
 (27, '2013-12-26 04:45:54', 18, 'new test', 1, 'test'),
 (28, '2013-12-27 08:33:23', 18, 'new test message', 1, 'test'),
 (29, '2013-12-27 08:44:08', 18, 'test message', 1, 'test'),
-(30, '2013-12-27 08:48:37', 18, 'this is a new text message to check the text area multi line', 1, 'test');
+(30, '2013-12-27 08:48:37', 18, 'this is a new text message to check the text area multi line', 1, 'test'),
+(31, '2014-01-01 13:54:10', 18, '[b]test bold text[/b]', 1, 'test'),
+(32, '2014-01-01 13:54:29', 18, '[i]test italic text[/i]', 1, 'test'),
+(33, '2014-01-01 13:54:44', 18, '[u]test underline text[/u]', 1, 'test'),
+(34, '2014-01-01 14:06:55', 18, '[b]new bold text test[/b]', 1, 'test'),
+(35, '2014-01-01 14:09:06', 18, '', 1, 'test'),
+(36, '2014-01-01 15:39:37', 18, 'happy image test [s]happy[/s]', 1, 'test'),
+(37, '2014-01-01 16:01:13', 18, '[s]happy[/s]', 1, 'test'),
+(38, '2014-01-01 16:10:23', 18, '[s]wink[/s][s]waii[/s][s]tonge[/s][s]smile[/s][s]evilgrin[/s][s]grin[/s][s]happy[/s][s]surprised[/s]', 1, 'test');
 
 -- --------------------------------------------------------
 
@@ -1380,7 +1392,7 @@ INSERT INTO `transcriptions` (`id`, `sid`, `cid`, `uid`, `lid`, `text`) VALUES
 (3, 52, 10, 18, 8971, 'test'),
 (4, 52, 10, 18, 8972, 'test'),
 (5, 52, 10, 18, 8973, 'test'),
-(6, 1, 1, 18, 1, '- Hi.\n- Hi.'),
+(6, 1, 1, 18, 1, '- Hi.aaaaaaaaaa\n- Hi.'),
 (7, 1, 1, 18, 2, 'How many?'),
 (8, 1, 1, 18, 3, 'Two.'),
 (9, 1, 1, 18, 4, 'Listen, I wanted to get a safe deposit box.\nCan you do that for me?'),
@@ -1460,26 +1472,26 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `BirthYear`, `group`, `key`, `LastLogin`, `KeyTime`) VALUES
-(18, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.test', 2009, 1, 'pp0XKJs56vCo3qsMDDu2jpULuWAog4', 1388486506, 1388461855),
-(19, 'ghfghh', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'dsd@sd.sd', 2006, 3, 'boOeAirENXhMYcJ9zEiufFCcQZJw6y', 0, 1388461856),
-(20, 'wejhg', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'aaa@aaa.aaa', 1919, 3, 'Ktty6z2WJT1akjjntt5jl5agkCNzuw', 0, 1388461856),
-(21, 't567567567', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'tryrt@erttr.rrt', 1917, 3, 'ViWSxkV9s81j2Ozo4VuqiV232eDddM', 0, 1388461856),
-(22, 'test2', '109f4b3c50d7b0df729d299bc6f8e9ef9066971f', 'test2@test2.com', 2010, 3, 'qgqy4aFzl3Cbp5BRbxiDVSUkEP24Cy', 0, 1388461856),
-(23, 'test3', '3ebfa301dc59196f18593c45e519287a23297589', 'test3@test3.com', 2003, 3, 'Gu7BXm8SaF3ZQBRkymc48aFWbHmfyG', 0, 1388461856),
-(24, 'test4', '1ff2b3704aede04eecb51e50ca698efd50a1379b', 'test4@test4.com', 2002, 3, 'BnairuhjanULzApN9Nn8B63iAWFX7s', 0, 1388461856),
-(25, 'test5', '911ddc3b8f9a13b5499b6bc4638a2b4f3f68bf23', 'test5@test5.com', 2001, 3, 'fCUCJYooqs8H26bFrIzJTPvoG1uWVk', 0, 1388461856),
-(26, 'test6', 'a66df261120b6c2311c6ef0b1bab4e583afcbcc0', 'test6@test6.com', 2005, 3, 'vA2ROKjWuDwUrpI7AD2nVc8So27FgL', 0, 1388461856),
-(27, 'test7', 'ea3243132d653b39025a944e70f3ecdf70ee3994', 'test7@test7.com', 2002, 3, 'PMH3YgfqCCAxxnzkSfER3BSb2tJHTM', 0, 1388461856),
-(28, 'test8', 'd03f9d34194393019e6d12d7c942827ebd694443', 'test8@test8.com', 1999, 3, 'd9ZDuSXrZdvon8rfCaYtOcBwLQDFfP', 0, 1388462072),
-(29, 'test9', '53d525836cc96d089a5a4218b464fda532f7debe', 'test9@test9.com', 2001, 3, 'FPxIIOr5P8TIx9ITYtJvJ2CplBiUma', 0, 1388462072),
-(30, 'test10', '168f4029f416ee06565f12e697dfc1534ae69d32', 'test10@test10.com', 2002, 3, 'nD0mX0X4zgM9AZDl9FQgkJJKGuFF6U', 0, 1388462073),
-(31, 'test11', '100c4e57374fc998e57164d4c0453bd3a4876a58', 'test11@test11.com', 2004, 3, 'r66oG1RSDiTCevYK96rcoc2LgMEFrt', 0, 1388462073),
-(32, 'test12', '4ff1a33e188b7b86123d6e3be2722a23514a83b4', 'test12@test12.com', 1999, 3, 'FahaSXFEdKHbz8DEcIxoFg41ChEDxs', 0, 1388462073),
-(33, 'test13', 'd804cd9cc0c42b0652bab002f67858ab803c40c6', 'test13@test13.com', 2005, 3, '2CQ5QweofLmLungciI846jWjdi8JJx', 0, 1388462073),
-(34, 'test14', 'd79336a97da7d284c0fe15497d2fa944d1f2abb1', 'test14@test14.com', 2003, 3, 'ZePerhjyHdwjp9yNcHmPEebvNIMZEb', 0, 1388462073),
-(35, 'test15', '61bb70fa60368f069e62d601c357d203700ab2d2', 'test15@test15.com', 2000, 3, 'wtvuxDrcFQ3cO3SVBSCB4iMgfDV95N', 0, 1388462073),
-(36, 'test16', '1fbefee9cfb86926757519357e077fd6a21aef0f', 'test16@test16.com', 1998, 3, 'u9wSv8yAo99ic8GkIV45jIMGEMIW2F', 0, 1388462073),
-(37, 'test17', '08a25c0f270b29aeba650e6b2d1a9947a778c5da', 'test17@test17.com', 1996, 3, 'BgyzoGfdHUatcTdyMRGkZkXgm028ZN', 0, 1388462073);
+(18, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.test', 2009, 1, '8ZMjBOU1LrGPBhsvczPCc9J1vzDTpt', 1388909450, 1388861633),
+(19, 'ghfghh', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'dsd@sd.sd', 2006, 3, 'WmgHEMSIyROQ37xkifVvI5JBys7XHH', 0, 1388861633),
+(20, 'wejhg', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'aaa@aaa.aaa', 1919, 3, '3XsDKL30FYrTu0PHgL83uyqxVc2YHJ', 0, 1388861633),
+(21, 't567567567', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'tryrt@erttr.rrt', 1917, 3, 'L3Xij8GvHxvnGfHKDorfRPDL27I10X', 0, 1388861633),
+(22, 'test2', '109f4b3c50d7b0df729d299bc6f8e9ef9066971f', 'test2@test2.com', 2010, 3, '1RbPKX8WQAh0xqg5DstLNZ69aFA8eJ', 0, 1388861633),
+(23, 'test3', '3ebfa301dc59196f18593c45e519287a23297589', 'test3@test3.com', 2003, 3, '3HFx9Nubzznxqx91KW8M1e7ZKb6a0N', 0, 1388861633),
+(24, 'test4', '1ff2b3704aede04eecb51e50ca698efd50a1379b', 'test4@test4.com', 2002, 3, 'Finjf2ZwKPDr4iKLyJ3ioy2fzXwegi', 0, 1388861633),
+(25, 'test5', '911ddc3b8f9a13b5499b6bc4638a2b4f3f68bf23', 'test5@test5.com', 2001, 3, 'thlWlEJPmhQkcnAs8Zgdnq8VH3h5OE', 0, 1388861633),
+(26, 'test6', 'a66df261120b6c2311c6ef0b1bab4e583afcbcc0', 'test6@test6.com', 2005, 3, 'lTcB9moHSrnz3hTyRsqEM02d89YvRM', 0, 1388861634),
+(27, 'test7', 'ea3243132d653b39025a944e70f3ecdf70ee3994', 'test7@test7.com', 2002, 3, 'F9ra1kFOhFUWoik6zriINaNhDwUANy', 0, 1388861634),
+(28, 'test8', 'd03f9d34194393019e6d12d7c942827ebd694443', 'test8@test8.com', 1999, 3, 'xdb67Ktn9VZvbH6g6tXXfITjbrWzCY', 0, 1388861673),
+(29, 'test9', '53d525836cc96d089a5a4218b464fda532f7debe', 'test9@test9.com', 2001, 3, 'Sgp8BKm7aJ4mtGtoYsgfuHdKG0gO5O', 0, 1388861673),
+(30, 'test10', '168f4029f416ee06565f12e697dfc1534ae69d32', 'test10@test10.com', 2002, 3, 'zaVw2odp4hfurdF4Lwxm3ceWvZVdPO', 0, 1388861673),
+(31, 'test11', '100c4e57374fc998e57164d4c0453bd3a4876a58', 'test11@test11.com', 2004, 3, 'YiZbfmRvQKRUmNvNZb7h6qDTb836I5', 0, 1388861673),
+(32, 'test12', '4ff1a33e188b7b86123d6e3be2722a23514a83b4', 'test12@test12.com', 1999, 3, 'viW3DlpqFRzXMVhVrNq2Xr3CqGI5mI', 0, 1388861673),
+(33, 'test13', 'd804cd9cc0c42b0652bab002f67858ab803c40c6', 'test13@test13.com', 2005, 3, 'RrOxTMitsFK6n8NkA6urBM7ATwVTQt', 0, 1388861673),
+(34, 'test14', 'd79336a97da7d284c0fe15497d2fa944d1f2abb1', 'test14@test14.com', 2003, 3, 'amxocqNmGmZHOyoA0jpVZjdSpC8kzR', 0, 1388861673),
+(35, 'test15', '61bb70fa60368f069e62d601c357d203700ab2d2', 'test15@test15.com', 2000, 3, 'jR0ikRwCIrGtGR5clXDl3Ge68N3doV', 0, 1388861673),
+(36, 'test16', '1fbefee9cfb86926757519357e077fd6a21aef0f', 'test16@test16.com', 1998, 3, 'ROYqMnEVOYa36HmKuHFnszDuTx3ZPR', 0, 1388861673),
+(37, 'test17', '08a25c0f270b29aeba650e6b2d1a9947a778c5da', 'test17@test17.com', 1996, 3, '37hvL4PO3rl8WDJx6bYUwO2trEYMd5', 0, 1388861674);
 
 -- --------------------------------------------------------
 
@@ -1578,7 +1590,7 @@ CREATE TABLE IF NOT EXISTS `videos` (
 INSERT INTO `videos` (`id`, `uid`, `title`, `other_title`, `type`, `category`, `language`, `country`, `genres`, `release_date`, `casting`, `director`, `length`, `tags`, `synopsis`, `thumbnail`, `image`, `source`, `year`, `url`, `public`, `featured`, `views`) VALUES
 (15, 18, '300: Rise of an Empire', '300: Rise of an Empire', 1, 10, 14, 236, '25', '2013-07-09', 'Lena Headey, Eva Green, Rodrigo Santoro', 'Noam Murro', 90, '300, Rise, Empire', 'The Greek general Themistocles battles an invading army of Persians under the mortal-turned-god, Xerxes.', '15_1813775109260FC1S.jpg', '', 'http://www.youtube.com/watch?v=2zqy21Z29ps', 0, '', 1, 1, 85),
 (16, 18, 'Riddick (2013)', 'Riddick', 1, 10, 14, 236, '1,21,24', '2013-09-06', 'Vin Diesel, Karl Urban, Katee Sackhoff', 'David Twohy', 90, 'Riddick', 'Left for dead on a sun-scorched planet, Riddick finds himself up against an alien race of predators. Activating an emergency beacon alerts two ships: one carrying a new breed of mercenary, the other captained by a man from Riddick''s past.', '16_181379538810wvn1x.jpg', '', 'http://www.youtube.com/watch?v=zH3O-CeZckE', 0, '', 1, 1, 0),
-(17, 18, 'Thor: The Dark World', 'Thor 2013', 1, 10, 14, 236, '1,2,10', '2013-11-08', 'Chris Hemsworth, Natalie Portman, Christopher Eccleston', 'Alan Taylor', 100, 'Thor, 2013, Dark, World', 'Faced with an enemy that even Odin and Asgard cannot withstand, Thor must embark on his most perilous and personal journey yet, one that will reunite him with Jane Foster and force him to sacrifice everything to save us all.', '17_181379539607ivkN3.jpg', '', 'http://www.youtube.com/watch?v=npvJ9FTgZbM', 0, '', 1, 1, 0),
+(17, 18, 'Thor: The Dark World', 'Thor 2013', 1, 10, 14, 236, '1,2,10', '2013-11-08', 'Chris Hemsworth, Natalie Portman, Christopher Eccleston', 'Alan Taylor', 100, 'Thor, 2013, Dark, World', 'Faced with an enemy that even Odin and Asgard cannot withstand, Thor must embark on his most perilous and personal journey yet, one that will reunite him with Jane Foster and force him to sacrifice everything to save us all.', '17_181379539607ivkN3.jpg', '', 'http://www.youtube.com/watch?v=npvJ9FTgZbM', 0, '', 1, 1, 1),
 (18, 18, 'World War Z', 'World War Z 2013', 1, 10, 14, 236, '1,2,14,21,24', '2013-06-21', 'Brad Pitt, Mireille Enos, Daniella Kertesz', 'Marc Forster', 95, 'World, War, 2013', 'United Nations employee Gerry Lane traverses the world in a race against time to stop the Zombie pandemic that is toppling armies and governments, and threatening to destroy humanity itself.', '18_181379540179OpIRB.jpg', '', 'http://www.youtube.com/watch?v=HcwTxRuq-uk', 0, '', 1, 1, 0),
 (19, 18, 'Man of Steel (2013)', 'Man of Steel', 1, 10, 14, 236, '1,2,10,21', '2013-06-14', 'Henry Cavill, Amy Adams, Michael Shannon', 'Zack Snyder', 90, 'Man, Steel, 2013', 'A young itinerant worker is forced to confront his secret extraterrestrial heritage when Earth is invaded by members of his race.', '19_181379540798E44XC.jpg', '', 'http://www.youtube.com/watch?v=T6DJcgm3wNY', 0, '', 1, 1, 0),
 (20, 18, 'R.I.P.D. (2013)', 'R.I.P.D.', 1, 10, 14, 236, '1,5,6,10', '2013-07-19', 'Ryan Reynolds, Jeff Bridges, Mary-Louise Parker', 'Robert Schwentke', 90, 'R.I.P.D., 2013', 'A recently slain cop joins a team of undead police officers working for the Rest in Peace Department and tries to find the man who murdered him.', '20_1813795412300JEoP.jpg', '', 'http://www.youtube.com/watch?v=X07xNrVd7DU', 0, '', 1, 1, 0),
@@ -1586,16 +1598,16 @@ INSERT INTO `videos` (`id`, `uid`, `title`, `other_title`, `type`, `category`, `
 (22, 18, 'Percy Jackson: Sea of Monsters (2013)', 'Percy Jackson', 1, 10, 14, 236, '2,9,10', '2013-08-07', 'Logan Lerman, Alexandra Daddario, Brandon T. Jackson', 'Thor Freudenthal', 90, 'Percy, Jackson, Sea, Monsters, 2013', 'In order to restore their dying safe haven, the son of Poseidon and his friends embark on a quest to the Sea of Monsters to find the mythical Golden Fleece while trying to stop an ancient evil from rising.', '22_1813796135777IswV.jpg', '', 'http://www.youtube.com/watch?v=5KoOtiuSjuI', 0, '', 1, 1, 0),
 (23, 18, 'Elysium (I) (2013)', 'Elysium', 1, 10, 14, 236, '1,8,21,24', '2013-08-09', 'Matt Damon, Jodie Foster, Sharlto Copley', 'Neill Blomkamp', 100, 'Elysium, 2013', 'Set in the year 2154, where the very wealthy live on a man-made space station while the rest of the population resides on a ruined Earth, a man takes on a mission that could bring equality to the polarized worlds.', '23_1813796141370BYmG.jpg', '', 'http://www.youtube.com/watch?v=QILNSgou5BY', 0, '', 1, 1, 0),
 (24, 18, 'Homeland Season 3', 'Homeland', 2, 10, 14, 236, '8,17,24', '2013-10-02', 'Claire Danes, Damian Lewis, Morena Baccarin', '.', 45, 'Homeland, Season 3', 'When Marine Nicolas Brody is hailed as a hero after he returns home from eight years of captivity in Iraq, intelligence officer Carrie Mathison is the only one who suspects that he may have been "turned".', '24_181379614725AJrot.jpg', '', 'http://www.youtube.com/watch?v=iXOUIsu-E0Q', 0, '', 1, 1, 0),
-(25, 18, 'The Hobbit: An Unexpected Journey (2012)', 'The Hobbit', 1, 10, 14, 236, '2,10', '2012-12-14', 'Martin Freeman, Ian McKellen, Richard Armitage', 'Peter Jackson', 120, 'Hobbit, Unexpected, Journey, 2012', 'A younger and more reluctant Hobbit, Bilbo Baggins, sets out on an "unexpected journey" to the Lonely Mountain with a spirited group of Dwarves to reclaim their stolen mountain home from a dragon named Smaug.', '25_181379616244XC1g0.jpg', '', 'http://www.youtube.com/watch?v=fnaojlfdUbs', 0, '', 1, 1, 0),
-(26, 18, 'Monsters University (2013)', 'Monsters University 2', 3, 10, 14, 236, '2,3,5,9,10', '2013-06-21', 'Billy Crystal, John Goodman, Steve Buscemi', 'Dan Scanlon', 90, 'Monsters, University, 2013', 'A look at the relationship between Mike and Sulley during their days at Monsters University -- when they weren''t necessarily the best of friends.', '26_181379616741NtRbG.jpg', '', 'http://www.youtube.com/watch?v=ODePHkWSg-U', 0, '', 1, 1, 1),
-(27, 18, 'Oblivion (I) (2013)', 'Oblivion', 1, 10, 14, 236, '1,2,17,21', '2013-04-19', 'Tom Cruise, Morgan Freeman, Andrea Riseborough', 'Joseph Kosinski', 90, 'Oblivion, 2013', 'A veteran assigned to extract Earth''s remaining resources begins to question what he knows about his mission and himself.', '27_181380022846LbWdk.jpg', '', 'http://www.youtube.com/watch?v=XmIIgE7eSak', 0, '', 1, 1, 11),
-(28, 18, 'Iron Man 3 (2013)', 'Iron Man', 1, 10, 14, 236, '1,2,21', '2013-05-03', 'Robert Downey Jr., Guy Pearce, Gwyneth Paltrow', 'Shane Black', 90, 'Iron Man, 2013', 'When Tony Stark''s world is torn apart by a formidable terrorist called the Mandarin, he starts an odyssey of rebuilding and retribution.', '28_1813800247974xTLD.jpg', '', 'http://www.youtube.com/watch?v=2CzoSeClcw0', 0, '', 1, 1, 0),
-(29, 18, 'Fast & Furious 6 (2013)', 'Fast & Furious 6', 1, 10, 14, 236, '1,6,24', '2013-05-24', 'Vin Diesel, Paul Walker, Dwayne Johnson', 'Justin Lin', 90, 'Fast, Furious, 2013', 'Hobbs has Dom and Brian reassemble their crew in order to take down a mastermind who commands an organization of mercenary drivers across 12 countries. Payment? Full pardons for them all.', '29_181380025557oniLF.jpg', '', 'http://www.youtube.com/watch?v=dKi5XoeTN0k', 0, '', 1, 1, 0),
+(25, 18, 'The Hobbit: An Unexpected Journey (2012)', 'The Hobbit', 1, 10, 14, 236, '2,10', '2012-12-14', 'Martin Freeman, Ian McKellen, Richard Armitage', 'Peter Jackson', 120, 'Hobbit, Unexpected, Journey, 2012', 'A younger and more reluctant Hobbit, Bilbo Baggins, sets out on an "unexpected journey" to the Lonely Mountain with a spirited group of Dwarves to reclaim their stolen mountain home from a dragon named Smaug.', '25_181379616244XC1g0.jpg', '', 'http://www.youtube.com/watch?v=fnaojlfdUbs', 0, '', 1, 1, 1),
+(26, 18, 'Monsters University (2013)', 'Monsters University 2', 3, 10, 14, 236, '2,3,5,9,10', '2013-06-21', 'Billy Crystal, John Goodman, Steve Buscemi', 'Dan Scanlon', 90, 'Monsters, University, 2013', 'A look at the relationship between Mike and Sulley during their days at Monsters University -- when they weren''t necessarily the best of friends.', '26_181379616741NtRbG.jpg', '', 'http://www.youtube.com/watch?v=ODePHkWSg-U', 0, '', 1, 1, 2),
+(27, 18, 'Oblivion (I) (2013)', 'Oblivion', 1, 10, 14, 236, '1,2,17,21', '2013-04-19', 'Tom Cruise, Morgan Freeman, Andrea Riseborough', 'Joseph Kosinski', 90, 'Oblivion, 2013', 'A veteran assigned to extract Earth''s remaining resources begins to question what he knows about his mission and himself.', '27_181380022846LbWdk.jpg', '', 'http://www.youtube.com/watch?v=XmIIgE7eSak', 0, '', 1, 1, 12),
+(28, 18, 'Iron Man 3 (2013)', 'Iron Man', 1, 10, 14, 236, '1,2,21', '2013-05-03', 'Robert Downey Jr., Guy Pearce, Gwyneth Paltrow', 'Shane Black', 90, 'Iron Man, 2013', 'When Tony Stark''s world is torn apart by a formidable terrorist called the Mandarin, he starts an odyssey of rebuilding and retribution.', '28_1813800247974xTLD.jpg', '', 'http://www.youtube.com/watch?v=2CzoSeClcw0', 0, '', 1, 1, 1),
+(29, 18, 'Fast & Furious 6 (2013)', 'Fast & Furious 6', 1, 10, 14, 236, '1,6,24', '2013-05-24', 'Vin Diesel, Paul Walker, Dwayne Johnson', 'Justin Lin', 90, 'Fast, Furious, 2013', 'Hobbs has Dom and Brian reassemble their crew in order to take down a mastermind who commands an organization of mercenary drivers across 12 countries. Payment? Full pardons for them all.', '29_181380025557oniLF.jpg', '', 'http://www.youtube.com/watch?v=dKi5XoeTN0k', 0, '', 1, 1, 4),
 (30, 18, 'Red 2 (2013)', 'Red 2', 1, 10, 14, 236, '1,5,6,24', '2013-07-19', 'Jon Hoeber, Erich Hoeber, 2 more credits', 'Dean Parisot', 90, 'Red, 2013', 'Retired C.I.A. agent Frank Moses reunites his unlikely team of elite operatives for a global quest to track down a missing portable nuclear device.', '30_181380026531aqnhX.jpg', '', 'http://www.youtube.com/watch?v=ZfB8QwYBPxY', 0, '', 1, 1, 0),
 (31, 18, 'Skyfall (2012)', 'Skyfall', 1, 10, 14, 236, '1,2,24', '2011-11-09', 'Neal Purvis, Robert Wade, 2 more credits', 'Sam Mendes', 90, 'Skyfall, 2012', 'Bond''s loyalty to M is tested when her past comes back to haunt her. Whilst MI6 comes under attack, 007 must track down and destroy the threat, no matter how personal the cost.', '31_181380027287OigpU.jpg', '', 'http://www.youtube.com/watch?v=6kw1UVovByw', 0, '', 1, 1, 1),
 (32, 18, 'The Croods (2013)', 'The Croods', 3, 10, 14, 236, '2,3,5,9,10', '2013-03-12', 'Nicolas Cage, Ryan Reynolds, Emma Stone', 'Kirk De Micco, Chris Sanders', 90, 'The Croods, 2013', 'After their cave is destroyed, a caveman family must trek through an unfamiliar fantastical world with the help of an inventive boy.', '32_181380027840Qv80h.jpg', '', 'http://www.youtube.com/watch?v=4fVCKy69zUY', 0, '', 1, 1, 0),
-(33, 22, 'Escape Plan (2013)', 'Escape Plan', 1, 10, 14, 236, '1,17,24', '2013-10-18', 'Sylvester Stallone, Arnold Schwarzenegger, 50 Cent', 'Mikael Håfström', 90, 'Escape, Plan, 2013', 'When a structural-security authority finds himself incarcerated in a prison he designed, he has to put his skills to escape and find out who framed him.', '33_221380058929LcQRw.jpg', '', 'http://www.youtube.com/watch?v=CI4EjV_x_PQ', 0, '', 1, 1, 0),
-(34, 22, 'Total Recall (2012)', 'Total Recall', 1, 10, 14, 236, '1,2,21,24', '2012-08-03', 'Colin Farrell, Bokeem Woodbine, Bryan Cranston', 'Len Wiseman', 90, 'Total, Recall, 2012', 'A factory worker, Douglas Quaid, begins to suspect that he is a spy after visiting Rekall - a company that provides its clients with implanted fake memories of a life they would like to have led - goes wrong and he finds himself on the run.', '34_221380061085gybZK.jpg', '', 'http://www.youtube.com/watch?v=4SerZm7DheA', 0, '', 1, 1, 3),
+(33, 22, 'Escape Plan (2013)', 'Escape Plan', 1, 10, 14, 236, '1,17,24', '2013-10-18', 'Sylvester Stallone, Arnold Schwarzenegger, 50 Cent', 'Mikael Håfström', 90, 'Escape, Plan, 2013', 'When a structural-security authority finds himself incarcerated in a prison he designed, he has to put his skills to escape and find out who framed him.', '33_221380058929LcQRw.jpg', '', 'http://www.youtube.com/watch?v=CI4EjV_x_PQ', 0, '', 1, 1, 1),
+(34, 22, 'Total Recall (2012)', 'Total Recall', 1, 10, 14, 236, '1,2,21,24', '2012-08-03', 'Colin Farrell, Bokeem Woodbine, Bryan Cranston', 'Len Wiseman', 90, 'Total, Recall, 2012', 'A factory worker, Douglas Quaid, begins to suspect that he is a spy after visiting Rekall - a company that provides its clients with implanted fake memories of a life they would like to have led - goes wrong and he finds himself on the run.', '34_221380061085gybZK.jpg', '', 'http://www.youtube.com/watch?v=4SerZm7DheA', 0, '', 1, 1, 36),
 (35, 22, 'Men in Black 3 (2012)', 'Men in Black 3', 1, 10, 14, 236, '1,5,21', '2012-05-25', 'Will Smith, Tommy Lee Jones, Josh Brolin', 'Barry Sonnenfeld', 90, 'Men in Black, 2012', 'Agent J travels in time to M.I.B.''s early days in 1969 to stop an alien from assassinating his friend Agent K and changing history.', '35_221380061647Iqc5u.jpg', '', 'http://www.youtube.com/watch?v=yc4tk27ZzZk', 0, '', 1, 1, 1),
 (36, 22, 'Looper (2012)', 'Looper', 1, 10, 14, 236, '1,6,21,24', '2012-09-28', 'Joseph Gordon-Levitt, Bruce Willis, Emily Blunt', 'Rian Johnson', 90, 'Looper, 2012', 'In 2074, when the mob wants to get rid of someone, the target is sent 30 years into the past, where a hired gun awaits. Someone like Joe, who one day learns the mob wants to ''close the loop'' by transporting back Joe''s future self.', '36_2213800621454nP8S.jpg', '', 'http://www.youtube.com/watch?v=eI3ju17W070', 0, '', 1, 1, 7),
 (37, 22, 'Safe (I) (2012)', 'Safe', 1, 10, 14, 236, '1,6,24', '2012-04-27', 'Jason Statham, Catherine Chan, Chris Sarandon', 'Boaz Yakin', 90, 'Safe, 2012', 'Mei, a young girl whose memory holds a priceless numerical code, finds herself pursued by the Triads, the Russian mob, and corrupt NYC cops. Coming to her aid is an ex-cage fighter whose life was destroyed by the gangsters on Mei''s trail.', '37_221380062467n8ikl.jpg', '', 'http://www.youtube.com/watch?v=i-D26g3CEuc', 0, '', 1, 1, 0),
