@@ -35,6 +35,8 @@
 				  array("{LineChoices}", self::GetLineChoices()),
 				  array("{OriginalLine}", self::GetOriginalLine()),
 				  array("{linenumber}", self::GetLineNumber()),
+				  array("{ShowLine}", self::GetShowLine()),
+				  array("{HideLine}", self::GetHideLine()),
 				 );
 			 
 		return $content;
@@ -102,6 +104,24 @@
 			if($GLOBALS['vars']['lid']!=""){
 				$LineInfo = self::GetLineInfo();
 				return nl2br($LineInfo[0]['line']);
+			}else{
+				return "";
+			}
+		}
+		
+		function GetShowLine(){
+			if($GLOBALS['vars']['lid']!=""){
+				$LineInfo = self::GetLineInfo();
+				return nl2br($LineInfo[0]['start']);
+			}else{
+				return "";
+			}
+		}
+		
+		function GetHideLine(){
+			if($GLOBALS['vars']['lid']!=""){
+				$LineInfo = self::GetLineInfo();
+				return nl2br($LineInfo[0]['end']);
 			}else{
 				return "";
 			}

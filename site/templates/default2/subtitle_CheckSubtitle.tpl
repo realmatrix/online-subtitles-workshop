@@ -38,12 +38,12 @@
 	clear: left;
 }
 .checksubtitle-options{
-	width: 93%;
+	width: 99%;
 	clear: left;
 	border-width: 1px;
 	border-style: solid;
 	border-color: #DFE8EE;
-	padding-left: 40px;
+	padding-left: 2px;
 	padding-right: 2px;
 	padding-top: 2px;
 	margin-bottom: 2px;
@@ -52,9 +52,22 @@
 }
 .checksubtitle-radio-label{
 	float: left;
+	width: 90%;
+	text-align: center;
 }
 .checksubtitle-radio{
-	float:left
+	float:left;
+	margin-left: 2px;
+}
+.checksubtitle-col1, .checksubtitle-col2, .checksubtitle-col3, .checksubtitle-col4{
+	width: 24%;
+}
+.checksubtitle-col1, .checksubtitle-col2, .checksubtitle-col3{
+	margin-right: 2px;
+}
+.checksubtitle-col1, .checksubtitle-col3{
+	font-weight: bold;
+	background-color: #F5FBFE;
 }
 </style>
 <DIV class="catglow">
@@ -96,6 +109,13 @@
 <div class="checksubtitle-row">
 	<div class="checksubtitle-left">line number:</div> 
 	<div class="checksubtitle-right">{linenumber}</div>
+</div>
+
+<div class="checksubtitle-row">
+	<div class="checksubtitle-col1">show:</div> 
+	<div class="checksubtitle-col2">{ShowLine}</div>
+	<div class="checksubtitle-col3">hide:</div> 
+	<div class="checksubtitle-col4">{HideLine}</div>
 </div>
 
 <div class="checksubtitle-row">
