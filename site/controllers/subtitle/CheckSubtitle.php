@@ -34,6 +34,7 @@
 				  array("{lid}", $GLOBALS['vars']['lid']),
 				  array("{LineChoices}", self::GetLineChoices()),
 				  array("{OriginalLine}", self::GetOriginalLine()),
+				  array("{linenumber}", self::GetLineNumber()),
 				 );
 			 
 		return $content;
@@ -70,7 +71,7 @@
 			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `transcriptions` WHERE `sid` = :sid and `cid` = :cid and `lid` = :lid", $args);
 			$choices = "";
 			for ($i=0; $i < count($res); $i++) { 
-				$choices .= "<label><input type='radio' name='tlid' value='".$res[$i]['id']."'>".nl2br($res[$i]['text'])."</label>";
+				$choices .= "<div class='checksubtitle-options'><input type='radio' class='checksubtitle-radio' id='checksubtitle-tl".$res[$i]['id']."' name='tlid' value='".$res[$i]['id']."'><label class='checksubtitle-radio-label' for='checksubtitle-tl".$res[$i]['id']."'>".nl2br($res[$i]['text'])."</label></div>";
 			}
 			return $choices;
 		}
@@ -95,6 +96,15 @@
 				array(":lid", $GLOBALS['vars']['lid'], "str"),
 			);
 			$res = $GLOBALS['COMMON']->db_query("UPDATE `subtitlescontent` SET `checked`=:checked,`checked_text`=:text WHERE `id` = :lid", $args);
+		}
+		
+		function GetLineNumber(){
+			if($GLOBALS['vars']['lid']!=""){
+				$LineInfo = self::GetLineInfo();
+				return nl2br($LineInfo[0]['line']);
+			}else{
+				return "";
+			}
 		}
 	
 			
