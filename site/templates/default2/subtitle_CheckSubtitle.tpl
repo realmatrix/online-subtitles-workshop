@@ -105,8 +105,7 @@
 </div>			
 			<form method="get" action="index.php">
 			{LineChoices}
-			<div style="clear:left;"></div>
-			<input type="submit" value="check" />
+			<div style="clear:left; width:100%; text-align:center;"><input type="submit" value="check" /></div>
 			<input type="hidden" name="page" value="{page}" />
 			<input type="hidden" name="sec" value="{sec}" />
 			<input type="hidden" name="sid" value="{sid}" />
