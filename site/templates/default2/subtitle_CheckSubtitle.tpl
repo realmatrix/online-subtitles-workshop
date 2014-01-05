@@ -38,13 +38,14 @@
 	clear: left;
 }
 .checksubtitle-options{
-	width: 99%;
+	width: 93%;
 	clear: left;
 	border-width: 1px;
 	border-style: solid;
 	border-color: #DFE8EE;
-	padding-left: 2px;
+	padding-left: 40px;
 	padding-right: 2px;
+	padding-top: 2px;
 	margin-bottom: 2px;
 	margin-top: 2px;
 	height: 32px;
@@ -96,15 +97,10 @@
 	<div class="checksubtitle-left">line number:</div> 
 	<div class="checksubtitle-right">{linenumber}</div>
 </div>
-			
-<div class="checksubtitle-row">
-	<div class="checksubtitle-left">original text:</div> 
-	<div class="checksubtitle-right">{OriginalLine}</div>
-</div>
 
 <div class="checksubtitle-row">
 <div class="checksubtitle-singlecell2">
-line translations:
+{OriginalLine}
 </div>
 </div>			
 			<form method="get" action="index.php">
