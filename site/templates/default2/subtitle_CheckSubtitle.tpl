@@ -1,3 +1,8 @@
+<style>
+.subtitleline-checked{
+	background-color: green;
+}
+</style>
 <DIV class="catglow">
 <DIV class="cathead-m">
 <DIV class="cathead-r">
@@ -31,15 +36,20 @@
 			<input type="hidden" name="cid" value="{cid}" />
 			</form>
 			
-original line: {OriginalLine}
+<div>original line:</div> <div>{OriginalLine}</div>
 
 			
 			<form method="get" action="index.php">
 			{LineChoices}
+			
+			<input type="submit" value="check" />
 			<input type="hidden" name="page" value="{page}" />
 			<input type="hidden" name="sec" value="{sec}" />
 			<input type="hidden" name="sid" value="{sid}" />
 			<input type="hidden" name="cid" value="{cid}" />
+			<input type="hidden" name="lid" value="{lid}" />
+			<input type="hidden" name="ssec" value="CheckSubtitle" />
+			<input type="hidden" name="h" value="select" />
 			</form>
 
 

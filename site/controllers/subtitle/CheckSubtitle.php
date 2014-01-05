@@ -8,7 +8,7 @@
 	
 		function CheckSubtitle_hooks(){
 			$array = array(
-				array("test", "test"),
+				array("select", "CheckSelected"),
 			);
 			return $array;
 		}
@@ -31,6 +31,7 @@
 				  array("{sec}", $GLOBALS['vars']['sec']),
 				  array("{sid}", $GLOBALS['vars']['sid']),
 				  array("{cid}", $GLOBALS['vars']['cid']),
+				  array("{lid}", $GLOBALS['vars']['lid']),
 				  array("{LineChoices}", self::GetLineChoices()),
 				  array("{OriginalLine}", self::GetOriginalLine()),
 				 );
@@ -45,8 +46,9 @@
 			);
 			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitlescontent` WHERE `sid` = :sid and `cid` = :cid", $args);
 			$lines = "";
-			for ($i=0; $i < count($res); $i++) { 
-				$lines .= "<option value='".$res[$i]['id']."'>".$res[$i]['line']."</option>";
+			for ($i=0; $i < count($res); $i++) {
+				if($res[$i]['checked']==1){$class = "subtitleline-checked";}else{$class = "subtitleline-notchecked";}
+				$lines .= "<option class='".$class."' value='".$res[$i]['id']."'>".$res[$i]['line']."</option>";
 			}
 			return $lines;
 		}
@@ -68,7 +70,7 @@
 			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `transcriptions` WHERE `sid` = :sid and `cid` = :cid and `lid` = :lid", $args);
 			$choices = "";
 			for ($i=0; $i < count($res); $i++) { 
-				$choices .= "<label><input type='radio' name='tlid' value='".$res[$i]['id']."'>".$res[$i]['text']."</label>";
+				$choices .= "<label><input type='radio' name='tlid' value='".$res[$i]['id']."'>".nl2br($res[$i]['text'])."</label>";
 			}
 			return $choices;
 		}
@@ -76,10 +78,23 @@
 		function GetOriginalLine(){
 			if($GLOBALS['vars']['lid']!=""){
 				$LineInfo = self::GetLineInfo();
-				return $LineInfo[0]['text'];
+				return nl2br($LineInfo[0]['text']);
 			}else{
 				return "";
 			}
+		}
+		
+		function CheckSelected(){
+			$args = array(
+				array(":tlid", $GLOBALS['vars']['tlid'], "str")
+			);
+			$transcription = $GLOBALS['COMMON']->db_query("SELECT * FROM `transcriptions` WHERE `id` = :tlid", $args);
+			$args = array(
+				array(":checked", 1, "str"),
+				array(":text", $transcription[0]['text'], "str"),
+				array(":lid", $GLOBALS['vars']['lid'], "str"),
+			);
+			$res = $GLOBALS['COMMON']->db_query("UPDATE `subtitlescontent` SET `checked`=:checked,`checked_text`=:text WHERE `id` = :lid", $args);
 		}
 	
 			
