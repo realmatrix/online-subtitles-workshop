@@ -5,7 +5,7 @@
 	text-align: center;
 }
 .subtitlelistteams-row{
-	width: 100%;
+	width: 660px;
 	margin-left: 5px;
 	clear: left;
 }
@@ -18,7 +18,7 @@
 	padding-bottom: 2px;
 	padding-left: 1px;
 	padding-right: 1px;
-	width: 11.9%;
+	/*width: 11.9%;*/
 	min-height: 18px;
 	height: auto;
 	text-align: center;
@@ -41,6 +41,33 @@
 	background-image: url(templates/default2/tmp/del.png);
 	width: 16px;
 	height: 16px;
+}
+.subtitlelistteams-index{
+	width: 40px;
+}
+.subtitlelistteams-del{
+	width: 72px;
+}
+.subtitlelistteams-check{
+	width: 60px;
+}
+.subtitlelistteams-edit{
+	width: 60px;
+}
+.subtitlelistteams-timing{
+	width: 60px;
+}
+.subtitlelistteams-delete{
+	width: 60px;
+}
+.subtitlelistteams-add{
+	width: 60px;
+}
+.subtitlelistteams-user{
+	width: 105px;
+}
+.subtitlelistteams-team{
+	width: 105px;
 }
 </style>
 
@@ -70,11 +97,12 @@
 		<div class='subtitlelistteams-index'>#</div>
 		<div class='subtitlelistteams-user'>User</div>
 		<div class='subtitlelistteams-team'>Team</div>
+		<div class='subtitlelistteams-timing'>Timing</div>
 		<div class='subtitlelistteams-edit'>Edit</div>
-		<div class='subtitlelistteams-add'>Add Lines</div>
-		<div class='subtitlelistteams-delete'>DEL Lines</div>
-		<div class='subtitlelistteams-check'>Checker</div>
-		<div class='subtitlelistteams-del'>Del</div>
+		<div class='subtitlelistteams-add'>Add</div>
+		<div class='subtitlelistteams-delete'>Remove</div>
+		<div class='subtitlelistteams-check'>Check</div>
+		<div class='subtitlelistteams-del'>Del User</div>
 	</div>
 
 {SubtitleTeams}
