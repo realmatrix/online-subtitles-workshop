@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 05, 2014 at 10:56 AM
+-- Generation Time: Jan 06, 2014 at 08:15 AM
 -- Server version: 5.5.29
 -- PHP Version: 5.3.20
 
@@ -984,14 +984,14 @@ CREATE TABLE IF NOT EXISTS `onlineusers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1445 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1471 ;
 
 --
 -- Dumping data for table `onlineusers`
 --
 
 INSERT INTO `onlineusers` (`id`, `session`, `time`, `username`) VALUES
-(1444, '491i0tolovmnoqoco81ooi35c5', 1388918799, '');
+(1470, 'p9nf895a93c248jjenph560kp4', 1388996034, '');
 
 -- --------------------------------------------------------
 
@@ -1075,18 +1075,19 @@ CREATE TABLE IF NOT EXISTS `subtitlepermissions` (
   `deletelines` int(11) NOT NULL DEFAULT '0',
   `checklines` int(11) NOT NULL DEFAULT '0',
   `editlines` int(11) NOT NULL DEFAULT '0',
+  `timing` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=20 ;
 
 --
 -- Dumping data for table `subtitlepermissions`
 --
 
-INSERT INTO `subtitlepermissions` (`id`, `uid`, `sid`, `tid`, `addlines`, `deletelines`, `checklines`, `editlines`) VALUES
-(12, 18, 1, 4, 0, 0, 1, 0),
-(13, 22, 1, 4, 1, 1, 1, 1),
-(14, 23, 1, 4, 1, 1, 1, 1),
-(15, 24, 1, 4, 0, 0, 0, 0);
+INSERT INTO `subtitlepermissions` (`id`, `uid`, `sid`, `tid`, `addlines`, `deletelines`, `checklines`, `editlines`, `timing`) VALUES
+(16, 22, 1, 4, 1, 1, 1, 1, 0),
+(17, 23, 1, 4, 1, 1, 1, 1, 0),
+(18, 24, 1, 4, 0, 0, 0, 0, 0),
+(19, 18, 1, 4, 0, 0, 1, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -1150,9 +1151,9 @@ INSERT INTO `subtitlescontent` (`id`, `sid`, `uid`, `cid`, `line`, `start`, `end
 (5, 1, 18, 1, 5, '00:02:14,567', '00:02:16,868', 'Okay.\r\nYour box will be available\r\n', 1, 'Okay.\n Your box will be available', 0),
 (6, 1, 18, 1, 6, '00:02:16,870', '00:02:18,637', 'any time from\r\nan hour after opening\r\n', 1, 'any time from\n an hour after opening', 0),
 (7, 1, 18, 1, 7, '00:02:18,639', '00:02:21,173', 'to 30 minutes before close.\r\nThis is your key.\r\n', 1, 'to 30 minutes before close.\n This is your key.', 0),
-(8, 1, 18, 1, 8, '00:02:21,175', '00:02:22,241', 'Thank you.\r\n', 0, '', 0),
-(9, 1, 18, 1, 9, '00:02:22,243', '00:02:24,676', 'Oh, um, also, if you open\r\na checking account,\r\n', 0, '', 0),
-(10, 1, 18, 1, 10, '00:02:24,678', '00:02:27,679', 'we''ll give you 5% off the box\r\nalong with free overdraft protection.\r\n', 0, '', 0),
+(8, 1, 18, 1, 8, '00:02:21,175', '00:02:22,241', 'Thank you.\r\n', 1, 'Thank you.', 0),
+(9, 1, 18, 1, 9, '00:02:22,243', '00:02:24,676', 'Oh, um, also, if you open\r\na checking account,\r\n', 1, 'Oh, um, also, if you open\n a checking account,', 0),
+(10, 1, 18, 1, 10, '00:02:24,678', '00:02:27,679', 'we''ll give you 5% off the box\r\nalong with free overdraft protection.\r\n', 1, 'we''ll give you 5% off the box\n along with free overdraft protection.', 0),
 (11, 1, 18, 1, 11, '00:02:27,681', '00:02:29,981', 'Oh, here I was hopin''\r\nfor a free toaster.\r\n', 0, '', 0),
 (12, 1, 18, 1, 12, '00:02:31,985', '00:02:34,186', 'Why would a bank\r\ngive out free toasters?\r\n', 0, '', 0),
 (13, 1, 18, 1, 13, '00:02:36,122', '00:02:37,522', 'Hello, Ma.\r\n', 0, '', 0),
@@ -1183,7 +1184,7 @@ CREATE TABLE IF NOT EXISTS `systemcron` (
 --
 
 INSERT INTO `systemcron` (`id`, `job`, `frequancy`, `last_run`) VALUES
-(1, 'AutoTranslation', 300, 1388919212);
+(1, 'AutoTranslation', 300, 1388996035);
 
 -- --------------------------------------------------------
 
@@ -1300,19 +1301,20 @@ CREATE TABLE IF NOT EXISTS `teammembers` (
   `deletelines` int(11) NOT NULL DEFAULT '0',
   `checklines` int(11) NOT NULL DEFAULT '0',
   `editlines` int(11) NOT NULL DEFAULT '0',
+  `timing` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `tid` (`tid`,`uid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `teammembers`
 --
 
-INSERT INTO `teammembers` (`id`, `tid`, `uid`, `state`, `addlines`, `deletelines`, `checklines`, `editlines`) VALUES
-(5, 4, 18, 1, 0, 0, 0, 0),
-(6, 4, 22, 1, 1, 1, 1, 1),
-(7, 4, 23, 1, 1, 1, 1, 1),
-(8, 4, 24, 1, 0, 0, 0, 0);
+INSERT INTO `teammembers` (`id`, `tid`, `uid`, `state`, `addlines`, `deletelines`, `checklines`, `editlines`, `timing`) VALUES
+(6, 4, 22, 1, 1, 1, 1, 1, 0),
+(7, 4, 23, 1, 1, 1, 1, 1, 0),
+(8, 4, 24, 1, 0, 0, 0, 0, 0),
+(11, 4, 18, 1, 0, 0, 1, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -1472,26 +1474,26 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `BirthYear`, `group`, `key`, `LastLogin`, `KeyTime`) VALUES
-(18, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.test', 2009, 1, '8ZMjBOU1LrGPBhsvczPCc9J1vzDTpt', 1388909450, 1388861633),
-(19, 'ghfghh', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'dsd@sd.sd', 2006, 3, 'WmgHEMSIyROQ37xkifVvI5JBys7XHH', 0, 1388861633),
-(20, 'wejhg', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'aaa@aaa.aaa', 1919, 3, '3XsDKL30FYrTu0PHgL83uyqxVc2YHJ', 0, 1388861633),
-(21, 't567567567', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'tryrt@erttr.rrt', 1917, 3, 'L3Xij8GvHxvnGfHKDorfRPDL27I10X', 0, 1388861633),
-(22, 'test2', '109f4b3c50d7b0df729d299bc6f8e9ef9066971f', 'test2@test2.com', 2010, 3, '1RbPKX8WQAh0xqg5DstLNZ69aFA8eJ', 0, 1388861633),
-(23, 'test3', '3ebfa301dc59196f18593c45e519287a23297589', 'test3@test3.com', 2003, 3, '3HFx9Nubzznxqx91KW8M1e7ZKb6a0N', 0, 1388861633),
-(24, 'test4', '1ff2b3704aede04eecb51e50ca698efd50a1379b', 'test4@test4.com', 2002, 3, 'Finjf2ZwKPDr4iKLyJ3ioy2fzXwegi', 0, 1388861633),
-(25, 'test5', '911ddc3b8f9a13b5499b6bc4638a2b4f3f68bf23', 'test5@test5.com', 2001, 3, 'thlWlEJPmhQkcnAs8Zgdnq8VH3h5OE', 0, 1388861633),
-(26, 'test6', 'a66df261120b6c2311c6ef0b1bab4e583afcbcc0', 'test6@test6.com', 2005, 3, 'lTcB9moHSrnz3hTyRsqEM02d89YvRM', 0, 1388861634),
-(27, 'test7', 'ea3243132d653b39025a944e70f3ecdf70ee3994', 'test7@test7.com', 2002, 3, 'F9ra1kFOhFUWoik6zriINaNhDwUANy', 0, 1388861634),
-(28, 'test8', 'd03f9d34194393019e6d12d7c942827ebd694443', 'test8@test8.com', 1999, 3, 'xdb67Ktn9VZvbH6g6tXXfITjbrWzCY', 0, 1388861673),
-(29, 'test9', '53d525836cc96d089a5a4218b464fda532f7debe', 'test9@test9.com', 2001, 3, 'Sgp8BKm7aJ4mtGtoYsgfuHdKG0gO5O', 0, 1388861673),
-(30, 'test10', '168f4029f416ee06565f12e697dfc1534ae69d32', 'test10@test10.com', 2002, 3, 'zaVw2odp4hfurdF4Lwxm3ceWvZVdPO', 0, 1388861673),
-(31, 'test11', '100c4e57374fc998e57164d4c0453bd3a4876a58', 'test11@test11.com', 2004, 3, 'YiZbfmRvQKRUmNvNZb7h6qDTb836I5', 0, 1388861673),
-(32, 'test12', '4ff1a33e188b7b86123d6e3be2722a23514a83b4', 'test12@test12.com', 1999, 3, 'viW3DlpqFRzXMVhVrNq2Xr3CqGI5mI', 0, 1388861673),
-(33, 'test13', 'd804cd9cc0c42b0652bab002f67858ab803c40c6', 'test13@test13.com', 2005, 3, 'RrOxTMitsFK6n8NkA6urBM7ATwVTQt', 0, 1388861673),
-(34, 'test14', 'd79336a97da7d284c0fe15497d2fa944d1f2abb1', 'test14@test14.com', 2003, 3, 'amxocqNmGmZHOyoA0jpVZjdSpC8kzR', 0, 1388861673),
-(35, 'test15', '61bb70fa60368f069e62d601c357d203700ab2d2', 'test15@test15.com', 2000, 3, 'jR0ikRwCIrGtGR5clXDl3Ge68N3doV', 0, 1388861673),
-(36, 'test16', '1fbefee9cfb86926757519357e077fd6a21aef0f', 'test16@test16.com', 1998, 3, 'ROYqMnEVOYa36HmKuHFnszDuTx3ZPR', 0, 1388861673),
-(37, 'test17', '08a25c0f270b29aeba650e6b2d1a9947a778c5da', 'test17@test17.com', 1996, 3, '37hvL4PO3rl8WDJx6bYUwO2trEYMd5', 0, 1388861674);
+(18, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.test', 2009, 1, 'Je94D4jzEOhuowQCjXpmIvSUrr8MQC', 1388950527, 1388950104),
+(19, 'ghfghh', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'dsd@sd.sd', 2006, 3, 'eXIxk9ha9HB9O8vkJOe7xzi4FdOx54', 0, 1388950104),
+(20, 'wejhg', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'aaa@aaa.aaa', 1919, 3, 'i5GOnSl2upCQDaIvZ4mbO3E5ACGYbo', 0, 1388950104),
+(21, 't567567567', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'tryrt@erttr.rrt', 1917, 3, 'VIxmCyEl39rL4U1UE8Bq0o2VheJBXc', 0, 1388950104),
+(22, 'test2', '109f4b3c50d7b0df729d299bc6f8e9ef9066971f', 'test2@test2.com', 2010, 3, 'xIwnJLZNVZIWWQQCqkJoHvZdcj7oS0', 0, 1388950104),
+(23, 'test3', '3ebfa301dc59196f18593c45e519287a23297589', 'test3@test3.com', 2003, 3, 'DAW9HReKfmUdTzFmFZMdw5wn7TGDiS', 0, 1388950104),
+(24, 'test4', '1ff2b3704aede04eecb51e50ca698efd50a1379b', 'test4@test4.com', 2002, 3, '9C2fvj3jqZqbUY6IdvnriMt5vFe1S6', 0, 1388950104),
+(25, 'test5', '911ddc3b8f9a13b5499b6bc4638a2b4f3f68bf23', 'test5@test5.com', 2001, 3, 'e7WegjX6rznVqhVppytv9i8BpVqvhc', 0, 1388950104),
+(26, 'test6', 'a66df261120b6c2311c6ef0b1bab4e583afcbcc0', 'test6@test6.com', 2005, 3, 'lkdewSgFX1WcE2G158HpWHGDsC8A65', 0, 1388950104),
+(27, 'test7', 'ea3243132d653b39025a944e70f3ecdf70ee3994', 'test7@test7.com', 2002, 3, 'wZPD50HhZPyKfsmO2DscpZEVwgRpwY', 0, 1388950104),
+(28, 'test8', 'd03f9d34194393019e6d12d7c942827ebd694443', 'test8@test8.com', 1999, 3, 'eXNSnSPTkJFY4rJjKIWOnEjmifsCEo', 0, 1388950127),
+(29, 'test9', '53d525836cc96d089a5a4218b464fda532f7debe', 'test9@test9.com', 2001, 3, 'p16zjEO4jr05xfOEkr5d4Z3pX0F0xs', 0, 1388950127),
+(30, 'test10', '168f4029f416ee06565f12e697dfc1534ae69d32', 'test10@test10.com', 2002, 3, 'WSre1woiBLlbizazpc20xEoY6sFzty', 0, 1388950127),
+(31, 'test11', '100c4e57374fc998e57164d4c0453bd3a4876a58', 'test11@test11.com', 2004, 3, 'gngJvsv16oFnBR0xFHogtLK2Ue74G2', 0, 1388950127),
+(32, 'test12', '4ff1a33e188b7b86123d6e3be2722a23514a83b4', 'test12@test12.com', 1999, 3, 'J6cj2sf5HiNITGbWVKR3zKQ1IVOyHW', 0, 1388950127),
+(33, 'test13', 'd804cd9cc0c42b0652bab002f67858ab803c40c6', 'test13@test13.com', 2005, 3, 'WRpj5ZNRRdbGiCrsNKnfNcMyTmDjWQ', 0, 1388950127),
+(34, 'test14', 'd79336a97da7d284c0fe15497d2fa944d1f2abb1', 'test14@test14.com', 2003, 3, 'lgoBUV9GFSkCcB9djc67ZCuGh4SGwW', 0, 1388950127),
+(35, 'test15', '61bb70fa60368f069e62d601c357d203700ab2d2', 'test15@test15.com', 2000, 3, 'YfPxdkDGnBAcL2GrhJHm0xbRgg2YlB', 0, 1388950127),
+(36, 'test16', '1fbefee9cfb86926757519357e077fd6a21aef0f', 'test16@test16.com', 1998, 3, 'BT63sdOoI0cV5t19eAJf4DfOTZUAWs', 0, 1388950127),
+(37, 'test17', '08a25c0f270b29aeba650e6b2d1a9947a778c5da', 'test17@test17.com', 1996, 3, 'tijgmKYPCK1CY0Aeyan5dWOiKfAg9A', 0, 1388950127);
 
 -- --------------------------------------------------------
 
@@ -1604,7 +1606,7 @@ INSERT INTO `videos` (`id`, `uid`, `title`, `other_title`, `type`, `category`, `
 (28, 18, 'Iron Man 3 (2013)', 'Iron Man', 1, 10, 14, 236, '1,2,21', '2013-05-03', 'Robert Downey Jr., Guy Pearce, Gwyneth Paltrow', 'Shane Black', 90, 'Iron Man, 2013', 'When Tony Stark''s world is torn apart by a formidable terrorist called the Mandarin, he starts an odyssey of rebuilding and retribution.', '28_1813800247974xTLD.jpg', '', 'http://www.youtube.com/watch?v=2CzoSeClcw0', 0, '', 1, 1, 1),
 (29, 18, 'Fast & Furious 6 (2013)', 'Fast & Furious 6', 1, 10, 14, 236, '1,6,24', '2013-05-24', 'Vin Diesel, Paul Walker, Dwayne Johnson', 'Justin Lin', 90, 'Fast, Furious, 2013', 'Hobbs has Dom and Brian reassemble their crew in order to take down a mastermind who commands an organization of mercenary drivers across 12 countries. Payment? Full pardons for them all.', '29_181380025557oniLF.jpg', '', 'http://www.youtube.com/watch?v=dKi5XoeTN0k', 0, '', 1, 1, 4),
 (30, 18, 'Red 2 (2013)', 'Red 2', 1, 10, 14, 236, '1,5,6,24', '2013-07-19', 'Jon Hoeber, Erich Hoeber, 2 more credits', 'Dean Parisot', 90, 'Red, 2013', 'Retired C.I.A. agent Frank Moses reunites his unlikely team of elite operatives for a global quest to track down a missing portable nuclear device.', '30_181380026531aqnhX.jpg', '', 'http://www.youtube.com/watch?v=ZfB8QwYBPxY', 0, '', 1, 1, 0),
-(31, 18, 'Skyfall (2012)', 'Skyfall', 1, 10, 14, 236, '1,2,24', '2011-11-09', 'Neal Purvis, Robert Wade, 2 more credits', 'Sam Mendes', 90, 'Skyfall, 2012', 'Bond''s loyalty to M is tested when her past comes back to haunt her. Whilst MI6 comes under attack, 007 must track down and destroy the threat, no matter how personal the cost.', '31_181380027287OigpU.jpg', '', 'http://www.youtube.com/watch?v=6kw1UVovByw', 0, '', 1, 1, 1),
+(31, 18, 'Skyfall (2012)', 'Skyfall', 1, 10, 14, 236, '1,2,24', '2011-11-09', 'Neal Purvis, Robert Wade, 2 more credits', 'Sam Mendes', 90, 'Skyfall, 2012', 'Bond''s loyalty to M is tested when her past comes back to haunt her. Whilst MI6 comes under attack, 007 must track down and destroy the threat, no matter how personal the cost.', '31_181380027287OigpU.jpg', '', 'http://www.youtube.com/watch?v=6kw1UVovByw', 0, '', 1, 1, 3),
 (32, 18, 'The Croods (2013)', 'The Croods', 3, 10, 14, 236, '2,3,5,9,10', '2013-03-12', 'Nicolas Cage, Ryan Reynolds, Emma Stone', 'Kirk De Micco, Chris Sanders', 90, 'The Croods, 2013', 'After their cave is destroyed, a caveman family must trek through an unfamiliar fantastical world with the help of an inventive boy.', '32_181380027840Qv80h.jpg', '', 'http://www.youtube.com/watch?v=4fVCKy69zUY', 0, '', 1, 1, 0),
 (33, 22, 'Escape Plan (2013)', 'Escape Plan', 1, 10, 14, 236, '1,17,24', '2013-10-18', 'Sylvester Stallone, Arnold Schwarzenegger, 50 Cent', 'Mikael Håfström', 90, 'Escape, Plan, 2013', 'When a structural-security authority finds himself incarcerated in a prison he designed, he has to put his skills to escape and find out who framed him.', '33_221380058929LcQRw.jpg', '', 'http://www.youtube.com/watch?v=CI4EjV_x_PQ', 0, '', 1, 1, 1),
 (34, 22, 'Total Recall (2012)', 'Total Recall', 1, 10, 14, 236, '1,2,21,24', '2012-08-03', 'Colin Farrell, Bokeem Woodbine, Bryan Cranston', 'Len Wiseman', 90, 'Total, Recall, 2012', 'A factory worker, Douglas Quaid, begins to suspect that he is a spy after visiting Rekall - a company that provides its clients with implanted fake memories of a life they would like to have led - goes wrong and he finds himself on the run.', '34_221380061085gybZK.jpg', '', 'http://www.youtube.com/watch?v=4SerZm7DheA', 0, '', 1, 1, 36),
