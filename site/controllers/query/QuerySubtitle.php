@@ -35,8 +35,6 @@
 		}
 		
 		function UpdateSubtitle(){
-			$permissions = $GLOBALS['COMMON']->GetUserSubtitlePermisions($GLOBALS['vars']['sid']);
-			if($permissions['owner']===TRUE or $permissions['edit']===TRUE){
 				if($GLOBALS['vars']['type']!="start" and $GLOBALS['vars']['type']!="end" and $GLOBALS['vars']['type']!="text"){return FALSE;}
 				if($GLOBALS['vars']['sid']=="" or $GLOBALS['vars']['cid']=="" or $GLOBALS['vars']['lid']==""){return FALSE;}
 				if(!self::GetPermission()){return FALSE;}
@@ -50,57 +48,54 @@
 				$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `transcriptions` WHERE `lid` = :lid AND `uid` = :uid", $args);
 				//if($GLOBALS['vars']['type']=="text"){$GLOBALS['vars']['type'] = "TranscribedText";}
 				self::$query = $res[0][$GLOBALS['vars']['type']];
-			}
 		}
 		
 		function UpdateStart(){
-			$update = TRUE;
-			$timing = self::Timing($GLOBALS['vars']['content']);
-			if($timing['h']=="" or $timing['m']=="" or $timing['s']=="" or $timing['ms']==""){$update = FALSE;}
-			if(strlen($timing['h'])!=2 or strlen($timing['m'])!=2 or strlen($timing['s'])!=2 or strlen($timing['ms'])!=3){$update = FALSE;}
-			if(!is_numeric($timing['h']) or !is_numeric($timing['m']) or !is_numeric($timing['s']) or !is_numeric($timing['ms'])){$update = FALSE;}
-			if($update === FALSE){return FALSE;}
-			$args = array(
-				array(":lid", $GLOBALS['vars']['lid'], "str"),
-				array(":start", $GLOBALS['vars']['content'], "str"),
-			);
-			$res = $GLOBALS['COMMON']->db_query("UPDATE `subtitlescontent` SET `start` = :start WHERE `id` = :lid ;", $args);
+			$permissions = $GLOBALS['COMMON']->GetUserSubtitlePermisions($GLOBALS['vars']['sid']);
+			if($permissions['owner']===TRUE or $permissions['timing']===TRUE){
+				$update = TRUE;
+				$timing = self::Timing($GLOBALS['vars']['content']);
+				if($timing['h']=="" or $timing['m']=="" or $timing['s']=="" or $timing['ms']==""){$update = FALSE;}
+				if(strlen($timing['h'])!=2 or strlen($timing['m'])!=2 or strlen($timing['s'])!=2 or strlen($timing['ms'])!=3){$update = FALSE;}
+				if(!is_numeric($timing['h']) or !is_numeric($timing['m']) or !is_numeric($timing['s']) or !is_numeric($timing['ms'])){$update = FALSE;}
+				if($update === FALSE){return FALSE;}
+				$args = array(
+					array(":lid", $GLOBALS['vars']['lid'], "str"),
+					array(":start", $GLOBALS['vars']['content'], "str"),
+				);
+				$res = $GLOBALS['COMMON']->db_query("UPDATE `subtitlescontent` SET `start` = :start WHERE `id` = :lid ;", $args);
+			}
 		}
 		
 		function UpdateEnd(){
-			$update = TRUE;
-			$timing = self::Timing($GLOBALS['vars']['content']);
-			if($timing['h']=="" or $timing['m']=="" or $timing['s']=="" or $timing['ms']==""){$update = FALSE;}
-			if(strlen($timing['h'])!=2 or strlen($timing['m'])!=2 or strlen($timing['s'])!=2 or strlen($timing['ms'])!=3){$update = FALSE;}
-			if(!is_numeric($timing['h']) or !is_numeric($timing['m']) or !is_numeric($timing['s']) or !is_numeric($timing['ms'])){$update = FALSE;}
-			if($update === FALSE){return FALSE;}
-			$args = array(
-				array(":lid", $GLOBALS['vars']['lid'], "str"),
-				array(":end", $GLOBALS['vars']['content'], "str"),
-			);
-			$res = $GLOBALS['COMMON']->db_query("UPDATE `subtitlescontent` SET `end` = :end WHERE `id` = :lid ;", $args);
+			$permissions = $GLOBALS['COMMON']->GetUserSubtitlePermisions($GLOBALS['vars']['sid']);
+			if($permissions['owner']===TRUE or $permissions['timing']===TRUE){
+				$update = TRUE;
+				$timing = self::Timing($GLOBALS['vars']['content']);
+				if($timing['h']=="" or $timing['m']=="" or $timing['s']=="" or $timing['ms']==""){$update = FALSE;}
+				if(strlen($timing['h'])!=2 or strlen($timing['m'])!=2 or strlen($timing['s'])!=2 or strlen($timing['ms'])!=3){$update = FALSE;}
+				if(!is_numeric($timing['h']) or !is_numeric($timing['m']) or !is_numeric($timing['s']) or !is_numeric($timing['ms'])){$update = FALSE;}
+				if($update === FALSE){return FALSE;}
+				$args = array(
+					array(":lid", $GLOBALS['vars']['lid'], "str"),
+					array(":end", $GLOBALS['vars']['content'], "str"),
+				);
+				$res = $GLOBALS['COMMON']->db_query("UPDATE `subtitlescontent` SET `end` = :end WHERE `id` = :lid ;", $args);
+			}
 		}
 		
 		function UpdateText(){
-			$GLOBALS['vars']['content'] = preg_replace('/^[ \t]*[\r\n]+/m', '', $GLOBALS['vars']['content']);
-			$args = array(
-				array(":sid", $GLOBALS['vars']['sid'], "str"),
-				array(":cid", $GLOBALS['vars']['cid'], "str"),
-				array(":lid", $GLOBALS['vars']['lid'], "str"),
-				array(":uid", $_SESSION['id'], "str"),
-			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `transcriptions` WHERE `sid` = :sid AND `cid` = :cid AND `uid` = :uid AND `lid` = :lid", $args);
-			if(count($res)>0){
-			$args = array(
-				array(":sid", $GLOBALS['vars']['sid'], "str"),
-				array(":cid", $GLOBALS['vars']['cid'], "str"),
-				array(":lid", $GLOBALS['vars']['lid'], "str"),
-				array(":text", $GLOBALS['vars']['content'], "str"),
-				array(":uid", $_SESSION['id'], "str"),
-			);
-			$res = $GLOBALS['COMMON']->db_query("UPDATE `transcriptions` SET `text` = :text WHERE `sid` = :sid AND `cid` = :cid AND `lid` = :lid AND `uid` = :uid", $args);
-			}
-			else {
+			$permissions = $GLOBALS['COMMON']->GetUserSubtitlePermisions($GLOBALS['vars']['sid']);
+			if($permissions['owner']===TRUE or $permissions['edit']===TRUE){
+				$GLOBALS['vars']['content'] = preg_replace('/^[ \t]*[\r\n]+/m', '', $GLOBALS['vars']['content']);
+				$args = array(
+					array(":sid", $GLOBALS['vars']['sid'], "str"),
+					array(":cid", $GLOBALS['vars']['cid'], "str"),
+					array(":lid", $GLOBALS['vars']['lid'], "str"),
+					array(":uid", $_SESSION['id'], "str"),
+				);
+				$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `transcriptions` WHERE `sid` = :sid AND `cid` = :cid AND `uid` = :uid AND `lid` = :lid", $args);
+				if(count($res)>0){
 				$args = array(
 					array(":sid", $GLOBALS['vars']['sid'], "str"),
 					array(":cid", $GLOBALS['vars']['cid'], "str"),
@@ -108,7 +103,18 @@
 					array(":text", $GLOBALS['vars']['content'], "str"),
 					array(":uid", $_SESSION['id'], "str"),
 				);
-				$res = $GLOBALS['COMMON']->db_query("INSERT INTO `transcriptions` (`sid` ,`cid` ,`uid` ,`lid` ,`text`) VALUES (:sid, :cid, :uid, :lid, :text)", $args);
+				$res = $GLOBALS['COMMON']->db_query("UPDATE `transcriptions` SET `text` = :text WHERE `sid` = :sid AND `cid` = :cid AND `lid` = :lid AND `uid` = :uid", $args);
+				}
+				else {
+					$args = array(
+						array(":sid", $GLOBALS['vars']['sid'], "str"),
+						array(":cid", $GLOBALS['vars']['cid'], "str"),
+						array(":lid", $GLOBALS['vars']['lid'], "str"),
+						array(":text", $GLOBALS['vars']['content'], "str"),
+						array(":uid", $_SESSION['id'], "str"),
+					);
+					$res = $GLOBALS['COMMON']->db_query("INSERT INTO `transcriptions` (`sid` ,`cid` ,`uid` ,`lid` ,`text`) VALUES (:sid, :cid, :uid, :lid, :text)", $args);
+				}
 			}
 		}
 		

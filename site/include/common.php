@@ -897,10 +897,12 @@ class Common{
 		$permissions['delete'] = FALSE;
 		$permissions['edit'] = FALSE;
 		$permissions['check'] = FALSE;
+		$permissions['timing'] = FALSE;
 		if($res[0]['addlines']==1){$permissions['add']=TRUE;}
 		if($res[0]['deletelines']==1){$permissions['delete']=TRUE;}
 		if($res[0]['editlines']==1){$permissions['edit']=TRUE;}
 		if($res[0]['checklines']==1){$permissions['check']=TRUE;}
+		if($res[0]['timing']==1){$permissions['timing']=TRUE;}
 		$permissions['owner'] = self::IsSubtitleOwner($sid);
 		return $permissions;
 	}
