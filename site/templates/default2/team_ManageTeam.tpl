@@ -23,6 +23,7 @@
 			<td>user</td>
 			<td>send message</td>
 			<td>state</td>
+			<td>timing</td>
 			<td>add</td>
 			<td>delete</td>
 			<td>edit</td>

@@ -33,6 +33,7 @@
 		<label><input type="checkbox" name="delete" value="yes"> Delete Lines</label>
 		<label><input type="checkbox" name="check" value="yes"> Edit Lines</label>
 		<label><input type="checkbox" name="edit" value="yes"> Check Lines</label>
+		<label><input type="checkbox" name="timing" value="yes"> Timing Lines</label>
 		</div>
 		<input type="submit" style='float:right;' value="{submit}" />
 		<input type="hidden" name="tid" value="{tid}" />

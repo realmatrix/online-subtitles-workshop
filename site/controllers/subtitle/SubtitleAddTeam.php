@@ -61,8 +61,9 @@
 					array(":deletelines", $TeamMembers[$i]['deletelines'], "str"),
 					array(":checklines", $TeamMembers[$i]['checklines'], "str"),
 					array(":editlines", $TeamMembers[$i]['editlines'], "str"),
+					array(":timing", $TeamMembers[$i]['timing'], "str"),
 				);
-				$res = $GLOBALS['COMMON']->db_query("INSERT INTO `subtitlepermissions` (`uid`, `sid`, `tid`, `addlines`, `deletelines`, `checklines`, `editlines`) VALUES (:uid, :sid, :tid, :addlines, :deletelines, :checklines, :editlines);", $args, $ExecState);
+				$res = $GLOBALS['COMMON']->db_query("INSERT INTO `subtitlepermissions` (`uid`, `sid`, `tid`, `addlines`, `deletelines`, `checklines`, `editlines`, `timing`) VALUES (:uid, :sid, :tid, :addlines, :deletelines, :checklines, :editlines, :timing);", $args, $ExecState);
 				if($ExecState===TRUE){$success++;}else{$failed++;}
 			}else{
 				$exist++;

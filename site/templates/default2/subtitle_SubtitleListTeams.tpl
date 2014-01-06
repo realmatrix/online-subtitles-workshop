@@ -27,12 +27,12 @@
 .subtitlelistteams-user{
 	width: auto;
 }
-.subtitle-teams-state-0{
+.subtitle-teams-state-1{
 	background-image: url(templates/default2/tmp/true.png);
 	width: 16px;
 	height: 16px;
 }
-.subtitle-teams-state-1{
+.subtitle-teams-state-0{
 	background-image: url(templates/default2/tmp/false.png);
 	width: 16px;
 	height: 16px;

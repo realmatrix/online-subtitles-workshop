@@ -45,7 +45,7 @@
 				$rows.="<div class='subtitlelistteams-index'>".$index."</div>";
 				$rows.="<div class='subtitlelistteams-user'>".$GLOBALS['COMMON']->GetUserName($res[$i]['uid'])."</div>";
 				$rows.="<div class='subtitlelistteams-team'>".self::GetTeamName($res[$i]['tid'])."</div>";
-				$rows.="<div class='subtitlelistteams-timing'>Timing</div>";
+				$rows.="<div class='subtitlelistteams-timing'><a href='index.php?page=subtitle&sec=manage&sid=".$res[$i]['sid']."&ssec=SubtitleListTeams&h=switch&uid=".$res[$i]['uid']."&t=timing'><img class='subtitle-teams-state-".$res[$i]['timing']."' /></a></div>";
 				$rows.="<div class='subtitlelistteams-edit'><a href='index.php?page=subtitle&sec=manage&sid=".$res[$i]['sid']."&ssec=SubtitleListTeams&h=switch&uid=".$res[$i]['uid']."&t=edit'><img class='subtitle-teams-state-".$res[$i]['editlines']."' /></a></div>";
 				$rows.="<div class='subtitlelistteams-add'><a href='index.php?page=subtitle&sec=manage&sid=".$res[$i]['sid']."&ssec=SubtitleListTeams&h=switch&uid=".$res[$i]['uid']."&t=add'><img class='subtitle-teams-state-".$res[$i]['addlines']."' /></a></div>";
 				$rows.="<div class='subtitlelistteams-delete'><a href='index.php?page=subtitle&sec=manage&sid=".$res[$i]['sid']."&ssec=SubtitleListTeams&h=switch&uid=".$res[$i]['uid']."&t=del'><img class='subtitle-teams-state-".$res[$i]['deletelines']."' /></a></div>";
@@ -69,6 +69,14 @@
 					array(":value", self::SwitchValue($res[0]['editlines'])),
 				);
 				$res = $GLOBALS['COMMON']->db_query("UPDATE `subtitlepermissions` SET `editlines`=:value WHERE `sid` = :sid and `uid` = :uid", $args);
+			}
+			if($GLOBALS['vars']['t']=="timing"){
+				$args = array(
+					array(":sid", $GLOBALS['vars']['sid'], "str"),
+					array(":uid", $GLOBALS['vars']['uid'], "str"),
+					array(":value", self::SwitchValue($res[0]['timing'])),
+				);
+				$res = $GLOBALS['COMMON']->db_query("UPDATE `subtitlepermissions` SET `timing`=:value WHERE `sid` = :sid and `uid` = :uid", $args);
 			}
 			if($GLOBALS['vars']['t']=="add"){
 				$args = array(

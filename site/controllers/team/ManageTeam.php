@@ -42,6 +42,7 @@
 				$res .= "<td>".$GLOBALS['COMMON']->GetUserName($TeamInfo[$i]['uid'])."</td>";
 				$res .= "<td><a href='index.php?page=message&sec=send&uid=".$TeamInfo[$i]['uid']."'>send message</a></td>";
 				$res .= "<td>".$state."</td>";
+				$res .= "<td>".$TeamInfo[$i]['timing']."</td>";
 				$res .= "<td>".$TeamInfo[$i]['addlines']."</td>";
 				$res .= "<td>".$TeamInfo[$i]['deletelines']."</td>";
 				$res .= "<td>".$TeamInfo[$i]['editlines']."</td>";

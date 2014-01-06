@@ -39,6 +39,7 @@
 			if(isset($GLOBALS['vars']['delete']) and $GLOBALS['vars']['delete']=="yes"){$delete="1";}else{$delete="0";}
 			if(isset($GLOBALS['vars']['edit']) and $GLOBALS['vars']['edit']=="yes"){$edit="1";}else{$edit="0";}
 			if(isset($GLOBALS['vars']['check']) and $GLOBALS['vars']['check']=="yes"){$check="1";}else{$check="0";}
+			if(isset($GLOBALS['vars']['timing']) and $GLOBALS['vars']['timing']=="yes"){$timing="1";}else{$timing="0";}
 			if($GLOBALS['vars']['tusername']==""){
 				$GLOBALS[ERROR][]="username is required";
 				return FALSE;
@@ -52,8 +53,9 @@
 				array(":delete", $delete, "str"),
 				array(":edit", $edit, "str"),
 				array(":check", $check, "str"),
+				array(":timing", $timing, "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `teammembers` (`tid`, `uid`, `state`, `addlines`, `deletelines`, `checklines`, `editlines`) VALUES (:tid, :uid, :state, :add, :delete, :check, :edit);", $args);
+			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `teammembers` (`tid`, `uid`, `state`, `addlines`, `deletelines`, `checklines`, `editlines`, `timing`) VALUES (:tid, :uid, :state, :add, :delete, :check, :edit, :timing);", $args);
 		}
 		
 	
