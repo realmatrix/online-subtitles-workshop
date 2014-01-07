@@ -133,6 +133,18 @@ thumbimg.onerror = function () {
 		<div class='viewvideo-infocontainer-left'>{Length}</div>
 		<div class='viewvideo-infocontainer-right'>{VideoLength} Minutes</div>
 	</div>
+	<div class='viewvidieo-infocontainer-row'>
+		<div class='viewvideo-infocontainer-left'>{Category}</div>
+		<div class='viewvideo-infocontainer-right'>{VCategory}</div>
+	</div>
+	<div class='viewvidieo-infocontainer-row'>
+		<div class='viewvideo-infocontainer-left'>{CreatedBy}</div>
+		<div class='viewvideo-infocontainer-right'>{VCreatedBy}</div>
+	</div>
+	<div class='viewvidieo-infocontainer-row'>
+		<div class='viewvideo-infocontainer-left'>{Views}</div>
+		<div class='viewvideo-infocontainer-right'>{VViews}</div>
+	</div>
 	<div class='viewvidieo-infocontainer-raterow'>
 				<div style='float:left;'>
 					<ul class='video-rate'>

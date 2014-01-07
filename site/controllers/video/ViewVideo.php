@@ -46,6 +46,12 @@
 				  array("{thumbnail}", $video[0]['thumbnail']),
 				  array("{rate}", self::GetRate()),
 				  array("{vid}", $GLOBALS['vars']['vid']),
+				  array("{Category}", $GLOBALS['COMMON']->l('video_ViewVideo_category')),
+				  array("{CreatedBy}", $GLOBALS['COMMON']->l('video_ViewVideo_createdby')),
+				  array("{Views}", $GLOBALS['COMMON']->l('video_ViewVideo_views')),
+				  array("{VCategory}", self::GetVideoCategoryById($video[0]['category'])),
+				  array("{VCreatedBy}", $GLOBALS['COMMON']->GetUserName($video[0]['uid'])),
+				  array("{VViews}", $video[0]['views']),
 				 );
 			 
 		return $content;
@@ -124,6 +130,14 @@
 				$res= $GLOBALS['COMMON']->db_query("INSERT INTO `favouritevideos`(`uid`, `vid`) VALUES (:uid,:vid)", $params, $ExecState);
 				if($ExecState===TRUE){$GLOBALS['SUCCESS'][]="video added successfully to favourites.";}else{$GLOBALS['ERROR'][]="Failed to add video to favourites.";}
 			}				
+		}
+		
+		function GetVideoCategoryById($CatID){
+			$args = array(
+				array(":id", $CatID, "str"),
+			);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `videocategory` WHERE `id` = :id", $args);
+			return $res[0]['category'];
 		}
 
 }
