@@ -52,6 +52,7 @@
 				  array("{VCategory}", self::GetVideoCategoryById($video[0]['category'])),
 				  array("{VCreatedBy}", $GLOBALS['COMMON']->GetUserName($video[0]['uid'])),
 				  array("{VViews}", $video[0]['views']),
+				  array("{RateResult}", self::GetVideoRateResult()),
 				 );
 			 
 		return $content;
@@ -138,6 +139,28 @@
 			);
 			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `videocategory` WHERE `id` = :id", $args);
 			return $res[0]['category'];
+		}
+		
+		function GetVideoRateResult(){
+			$args = array(
+				array(":vid", $GLOBALS['vars']['vid'], "str"),
+			);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `videorates` WHERE `vid` = :vid", $args);
+			$TotalRates = 0;
+			for ($i=0; $i < count($res); $i++) { 
+				$TotalRates = $TotalRates + $res[$i]['rate'];
+			}
+			$TotalRates = $TotalRates / count($res);
+			$RateResult = ($TotalRates * 100) / 10;
+			$content = "";
+			for ($i=1; $i <= 10; $i++) {
+				if($i*10 <= $RateResult){
+					$content.= "<img class='viewvideo-rateresult-on'/>";
+				}else{
+					$content.= "<img class='viewvideo-rateresult-off'/>";
+				}
+			}
+			return $content;
 		}
 
 }

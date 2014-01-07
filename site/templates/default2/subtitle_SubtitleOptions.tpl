@@ -58,29 +58,29 @@
 <!-- subtitle options -->
 <div id="subtitleoptions">
 
+<form method='post' action='index.php'>
 <div class="subtitleoptions-row">
 	<div class="subtitleoptions-left">mark as finished:</div> 
-	<div class="subtitleoptions-right">{linenumber}</div>
+	<div class="subtitleoptions-right"><select><option value="1">yes</option><option value="0">no</option></select></div>
 </div>
 <div class="subtitleoptions-row">
 	<div class="subtitleoptions-left">mark as private:</div> 
-	<div class="subtitleoptions-right">{linenumber}</div>
+	<div class="subtitleoptions-right"><select><option value="1">yes</option><option value="0">no</option></select></div>
 </div>
 <div class="subtitleoptions-row">
 	<div class="subtitleoptions-left">Require Check:</div> 
-	<div class="subtitleoptions-right">{linenumber}</div>
+	<div class="subtitleoptions-right"><select><option value="1">yes</option><option value="0">no</option></select></div>
 </div>
 <div class="subtitleoptions-row">
 	<div class="subtitleoptions-left">Allow Join Requests:</div> 
-	<div class="subtitleoptions-right">{linenumber}</div>
+	<div class="subtitleoptions-right"><select><option value="1">yes</option><option value="0">no</option></select></div>
 </div>
 <div class="subtitleoptions-row">
 	<div class="subtitleoptions-left">on complete email:</div> 
 	<div class="subtitleoptions-right"><input type='checkbox' name='emailowner' value='yes'/>owner <input type='checkbox' name='emailteams' value='yes'/>teams</div>
 </div>
-
 	<div class="subtitleoptions-none"><input type='submit' value='update'/></div> 
-
+</form>
 
 
 </div>

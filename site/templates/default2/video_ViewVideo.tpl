@@ -83,6 +83,20 @@ thumbimg.onerror = function () {
 		margin-top: 4px;
 		padding-left: 2px;
 	}
+	.viewvideo-rateresult-row{
+		width: 100%;
+	}
+	.viewvideo-rateresult-on, .viewvideo-rateresult-off{
+		width: 16px;
+		height: 16px;
+	}
+	.viewvideo-rateresult-off{
+		content: url("templates/default2/tmp/images/star_empty2.png");
+	}
+	.viewvideo-rateresult-on{
+		content: url("templates/default2/tmp/images/star_full2.png");
+	}
+	
 </style>
 
 
@@ -100,7 +114,10 @@ thumbimg.onerror = function () {
 <TABLE class="cat" cellSpacing="0" cellPadding="0" width="100%">
   <TBODY>
   <TR>
-  	<td><div class="thumnail-container"><img id='imgvideothumbnail' class='video-thumbnail' src="uploads/thumbnails/video/{thumbnail}" /></div></td>
+  	<td>
+  	<div class="thumnail-container"><img id='imgvideothumbnail' class='video-thumbnail' src="uploads/thumbnails/video/{thumbnail}" /></div>
+  	<div class="viewvideo-rateresult-row">{RateResult}</div>
+  	</td>
     <TD class="forumdetails" style="width: 100%;"><SPAN class="forum-descriptions">
 
 
