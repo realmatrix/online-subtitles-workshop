@@ -143,6 +143,7 @@ var interval = setInterval(GetChat,10000);
 	}
 	#teamchat-toolbar img{
 		float: right;
+		cursor: hand;
 	}
 	.teamchat-smiles{
 		width: 100%;
@@ -151,7 +152,15 @@ var interval = setInterval(GetChat,10000);
 		width: 16px;
 		height: 16px;
 	}
-	#teamchatsmile-smile{background-image: url(templates/default2/tmp/smiles/emoticon_smile.png);}
+	.teamchatsmile-smile{content: url("templates/default2/tmp/smiles/emoticon_smile.png");}
+	.teamchatsmile-happy{content: url("templates/default2/tmp/smiles/emoticon_happy.png");}
+	.teamchatsmile-wink{content: url("templates/default2/tmp/smiles/emoticon_wink.png");}
+	.teamchatsmile-waii{content: url("templates/default2/tmp/smiles/emoticon_waii.png");}
+	.teamchatsmile-tonge{content: url("templates/default2/tmp/smiles/emoticon_tongue.png");}
+	.teamchatsmile-tongue{content: url("templates/default2/tmp/smiles/emoticon_tongue.png");}
+	.teamchatsmile-evilgrin{content: url("templates/default2/tmp/smiles/emoticon_evilgrin.png");}
+	.teamchatsmile-grin{content: url("templates/default2/tmp/smiles/emoticon_grin.png");}
+	.teamchatsmile-surprised{content: url("templates/default2/tmp/smiles/emoticon_surprised.png");}
 </style>
 <DIV class="catglow" style="width:100%;">
 <DIV class="cathead-m">
@@ -181,7 +190,7 @@ var interval = setInterval(GetChat,10000);
 			<img class='teamchatsmile-grin' onclick="addsmile('grin');">
 			<img class='teamchatsmile-happy' onclick="addsmile('happy');">
 			<img class='teamchatsmile-surprised' onclick="addsmile('surprised');">
-			<img class='teamchatsmile-tongue' onclick="addsmile('tonge');">
+			<img class='teamchatsmile-tongue' onclick="addsmile('tongue');">
 			<img class='teamchatsmile-waii' onclick="addsmile('waii');">
 			<img class='teamchatsmile-wink' onclick="addsmile('wink');">
 		</div>
