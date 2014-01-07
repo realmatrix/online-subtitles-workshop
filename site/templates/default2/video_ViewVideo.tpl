@@ -85,6 +85,12 @@ thumbimg.onerror = function () {
 	}
 	.viewvideo-rateresult-row{
 		width: 100%;
+		text-align: center;
+		vertical-align: middle;
+		border-width: 1px;
+		border-style: solid;
+		border-color: #DFE8EE;
+		margin-top: 5px;
 	}
 	.viewvideo-rateresult-on, .viewvideo-rateresult-off{
 		width: 16px;
