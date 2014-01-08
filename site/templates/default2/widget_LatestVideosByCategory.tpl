@@ -5,18 +5,18 @@
     .tab a:hover { text-decoration: none; color: #F88017;}
     .tab.active { height: 36px; background: url("templates/default2/tmp/images/cathead-m.gif") repeat-x left top; /*background: #fff;*/ /*padding-top: 2px;*/ position: relative; top: 1px; border-color: #666;}
     .tab a.active { /*font-weight: bold;*/ color: #F88017;}
-    .tab-container .panel-container { background: #fff; border: solid #666 1px; padding: 5px; -moz-border-radius: 0 4px 4px 4px; -webkit-border-radius: 0 4px 4px 4px; border-color: rgb(215, 229, 242) rgb(215, 229, 242);}
+    .tab-container .panel-container { background: #fff; border: solid #666 1px; padding: 2px; -moz-border-radius: 0 4px 4px 4px; -webkit-border-radius: 0 4px 4px 4px; border-color: rgb(215, 229, 242) rgb(215, 229, 242);}
     .panel-container { margin-bottom: 0px; }
     .tab-containr-wrap{background-color: #EBF4FC; margin-bottom: 10px; padding: 5px; border-width: 1px; border-style: solid; border-color: rgb(215, 229, 242) rgb(215, 229, 242);}
 
 	.widget-latestvideos-all-cell{
-		width: 99.4%;
+		width: 99.6%;
 		border-style: solid;
 		border-width: 1px;
 		border-color: rgb(215, 229, 242) rgb(215, 229, 242);
 		height: 117px;
 		line-height: 30px;
-		margin-left: 2px;
+		/*margin-left: 2px;*/
 		margin-bottom: 2px;
 		text-overflow: ellipsis;
 	}
@@ -25,6 +25,7 @@
 		text-decoration: none;
 		padding-left: 1px;
 		padding-right: 1px;
+		font-weight: bold;
 	}
 	.widget-latestvideos-all-thubmnail{
 		width: 77px;
@@ -40,10 +41,14 @@
 		height: 113px;
 	}
 	.widget-lateestvideos-all-videoinfo{
+		display: block;
 		float: left;
 		border-color: rgb(215, 229, 242) rgb(215, 229, 242);
 		border-width: 1px;
 		border-style: solid;
+		margin: 1px;
+		width: 593px;
+		height: 113px;
 	}
   </style>
 
