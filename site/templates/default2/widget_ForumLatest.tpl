@@ -11,7 +11,7 @@
 
 
 	.latest-threads-cell{
-		width: 49.2%;
+		width: 98%;
 		float:left;
 		border-style: solid;
 		border-width: 1px;
@@ -40,9 +40,9 @@
 
 <div id="tab-container" class='tab-container'>
  <ul class='etabs'>
-   <li class='tab'><a href="#tabs1-html">Latest Topics</a></li>
-   <li class='tab'><a href="#tabs1-js">Latest Posts</a></li>
-   <li class='tab'><a href="#tabs1-css">Top Topics</a></li>
+   <li class='tab'><a href="#tabs1-html">Latest Topics</a></li><!--
+   --><li class='tab'><a href="#tabs1-js">Latest Posts</a></li><!--
+   --><li class='tab'><a href="#tabs1-css">Top Topics</a></li>
  </ul>
  <div class='tab-containr-wrap'>
  <div class='panel-container'>

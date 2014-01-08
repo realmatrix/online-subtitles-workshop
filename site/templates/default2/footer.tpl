@@ -2,6 +2,7 @@
 <div style="clear:both;"></div>
 <!-- end content wrapper -->
 
+{widget_top10}
 
 </DIV>
 <SCRIPT type="text/javascript">

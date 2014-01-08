@@ -52,8 +52,14 @@ to content</A></P><A accessKey="t" id="top" name="top"></A>
   alt="" src="{TemplatePath}/tmp/images/forum_ico.png" 
   width="16" height="16">Forums</A></LI>
   <LI class="divider float-right"></LI></UL></DIV><A name="start_here"></A>
-  
-{widget_FeaturedVideos}
+
+<br />
+
+<div style="float:left; width: 720px;">{widget_FeaturedVideos}</div>
+
+<div style="float: right; width: 300px;">{widget_ForumLatest}</div>
+
+<div style="clear: both;"></div>
 
 <DIV id="page-body">
 <DIV class="contentpadding">

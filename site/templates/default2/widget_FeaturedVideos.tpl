@@ -25,8 +25,8 @@
         position: 'right',
         size: 310
     	},
-		"playlist.position": "right",
-		 "playlist.size": 312, 
+		"playlist.position": "bottom",
+		 "playlist.size": 60, 
 		 height: 400, 
 		 width: '100%',
 	 }); 
