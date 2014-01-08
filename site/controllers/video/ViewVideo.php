@@ -150,8 +150,12 @@
 			for ($i=0; $i < count($res); $i++) { 
 				$TotalRates = $TotalRates + $res[$i]['rate'];
 			}
+			if(count($res)>0){
 			$TotalRates = $TotalRates / count($res);
 			$RateResult = ($TotalRates * 100) / 10;
+			}else{
+				$RateResult = 0;
+			}
 			$content = "";
 			for ($i=1; $i <= 10; $i++) {
 				if($i*10 <= $RateResult){

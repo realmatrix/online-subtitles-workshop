@@ -66,6 +66,7 @@ thumbimg.onerror = function () {
 		line-height: 32px;
 		padding-left: 2px;
 		padding-right: 2px;
+		overflow: hidden;
 	}
 
 	.viewvideo-infocontainer-left{
