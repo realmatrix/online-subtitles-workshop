@@ -41,7 +41,7 @@
 				$content.="<div class='widget-latestvideos-all-cell'>";
 				$content.="<div class='widget-latestvideos-all-thubmnail'><img class='widget-latestvideos-all-thubmnailimg' src='uploads/thumbnails/video/".$res[$i]['thumbnail']."'></div>";
 				$content.="<div class='widget-lateestvideos-all-videoinfo'>";
-				$content.="<a href='index.php?page=video&sec=view&vid=".$res[$i]['id']."'>".$res[$i]['title']."</a>";
+				$content.="<div class='widget-latestvideos-all-title'><a href='index.php?page=video&sec=view&vid=".$res[$i]['id']."'>".$res[$i]['title']."</a></div>";
 				$content.="</div>";
 				$content.="</div>";
 				$content.="</div>";
