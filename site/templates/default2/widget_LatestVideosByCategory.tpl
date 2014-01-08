@@ -53,7 +53,10 @@
 	}
 	.widget-lateestvideos-all-videoinfo div{
 		width: 100%;
-		height: 22px;
+		height: 24px;
+		vertical-align: middle;
+		margin-left: 1px;
+		line-height: 24px;
 	}
 	.widget-latestvideos-all-rateresult-off{
 		content: url("templates/default2/tmp/images/star_empty2.png");
