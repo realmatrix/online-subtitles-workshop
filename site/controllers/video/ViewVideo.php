@@ -53,6 +53,8 @@
 				  array("{VCreatedBy}", $GLOBALS['COMMON']->GetUserName($video[0]['uid'])),
 				  array("{VViews}", $video[0]['views']),
 				  array("{RateResult}", self::GetVideoRateResult()),
+				  array("{SubtitlesCount}", $GLOBALS['COMMON']->l('video_ViewVideo_subtitlescount')),
+				  array("{VSubtitlesCount}", self::GetSubtitlesCount()),
 				 );
 			 
 		return $content;
@@ -166,5 +168,14 @@
 			}
 			return $content;
 		}
+		
+		function GetSubtitlesCount(){
+			$args = array(
+				array(":vid", $GLOBALS['vars']['vid'], "str"),
+			);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitles` WHERE `vid` = :vid", $args);
+			return count($res);
+		}
+		
 
 }

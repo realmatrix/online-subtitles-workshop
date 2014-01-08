@@ -81,8 +81,13 @@ thumbimg.onerror = function () {
 		width: 70%;
 	}
 	.viewvidieo-infocontainer-raterow{
-		margin-top: 4px;
-		padding-left: 2px;
+		/*margin-top: 4px;*/
+		/*padding-left: 2px;*/
+		border-style: none;
+	}
+	.viewvidieo-infocontainer-raterowtd{
+		border-width: 0px;
+		border-style: none;
 	}
 	.viewvideo-rateresult-row{
 		width: 100%;
@@ -162,6 +167,10 @@ thumbimg.onerror = function () {
 		<div class='viewvideo-infocontainer-right'>{VCategory}</div>
 	</div>
 	<div class='viewvidieo-infocontainer-row'>
+		<div class='viewvideo-infocontainer-left'>{SubtitlesCount}</div>
+		<div class='viewvideo-infocontainer-right'>{VSubtitlesCount}</div>
+	</div>
+	<div class='viewvidieo-infocontainer-row'>
 		<div class='viewvideo-infocontainer-left'>{CreatedBy}</div>
 		<div class='viewvideo-infocontainer-right'>{VCreatedBy}</div>
 	</div>
@@ -169,6 +178,14 @@ thumbimg.onerror = function () {
 		<div class='viewvideo-infocontainer-left'>{Views}</div>
 		<div class='viewvideo-infocontainer-right'>{VViews}</div>
 	</div>
+
+</div>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="viewvidieo-infocontainer-raterowtd">
 	<div class='viewvidieo-infocontainer-raterow'>
 				<div style='float:left;'>
 					<ul class='video-rate'>
@@ -190,13 +207,6 @@ thumbimg.onerror = function () {
 				</a>
 				</div>
 	</div>
-</div>
-
-
-
-
-
-
 </td>
 </tr>
 </tbody>
