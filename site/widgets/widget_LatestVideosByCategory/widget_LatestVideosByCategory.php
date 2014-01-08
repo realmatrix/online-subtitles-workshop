@@ -34,7 +34,7 @@
 		}	
 		
 		function GetAll(){
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `videos` order by `id` desc limit 5", array());
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `videos` order by `id` desc limit 10", array());
 			$content = "";
 			for ($i=0; $i < count($res); $i++) { 
 				$content.="<div class='widget-latestvideos-all'>";

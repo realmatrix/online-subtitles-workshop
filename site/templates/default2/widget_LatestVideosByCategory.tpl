@@ -10,15 +10,16 @@
     .tab-containr-wrap{background-color: #EBF4FC; margin-bottom: 10px; padding: 5px; border-width: 1px; border-style: solid; border-color: rgb(215, 229, 242) rgb(215, 229, 242);}
 
 	.widget-latestvideos-all-cell{
-		width: 99.6%;
+		width: 49.5%;
 		border-style: solid;
 		border-width: 1px;
 		border-color: rgb(215, 229, 242) rgb(215, 229, 242);
 		height: 117px;
 		line-height: 30px;
-		/*margin-left: 2px;*/
+		margin-right: 2px;
 		margin-bottom: 2px;
 		text-overflow: ellipsis;
+		float: left;
 	}
 	
 	.widget-latestvideos-all-cell a {
@@ -47,7 +48,7 @@
 		border-width: 1px;
 		border-style: solid;
 		margin: 1px;
-		width: 593px;
+		width: 252px;
 		height: 113px;
 	}
   </style>
