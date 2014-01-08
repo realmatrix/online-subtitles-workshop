@@ -58,7 +58,16 @@
 			$content = "";
 			for ($i=0; $i < count($res); $i++) { 
 				$content.="<div class='widget-latestvideos-movies'>";
-				$content.="<a href='index.php?page=video&sec=view&vid=".$res[$i]['id']."'>".$res[$i]['title']."</a>";
+				$content.="<div class='widget-latestvideos-movies-cell'>";
+				$content.="<div class='widget-latestvideos-movies-thubmnail'><img class='widget-latestvideos-movies-thubmnailimg' src='uploads/thumbnails/video/".$res[$i]['thumbnail']."'></div>";
+				$content.="<div class='widget-lateestvideos-movies-videoinfo'>";
+				$content.="<div class='widget-latestvideos-movies-title'><a href='index.php?page=video&sec=view&vid=".$res[$i]['id']."'>".$res[$i]['title']."</a></div>";
+				$content.="<div clas=='widget-latestvideos-movies-by'>Created BY: ".$GLOBALS['COMMON']->GetUserName($res[$i]['uid'])."</div>";
+				$content.="<div clas=='widget-latestvideos-movies-views'>views: ".$res[$i]['views']."</div>";
+				$content.="<div clas=='widget-latestvideos-movies-subtitles'>subtitles: ".self::GetSubtitlesCount($res[$i]['id'])."</div>";
+				$content.="<div clas=='widget-latestvideos-movies-rating'>".self::GetVideoRateResult($res[$i]['id'])."</div>";
+				$content.="</div>";
+				$content.="</div>";
 				$content.="</div>";
 			}
 			return $content;
@@ -69,7 +78,16 @@
 			$content = "";
 			for ($i=0; $i < count($res); $i++) { 
 				$content.="<div class='widget-latestvideos-tv'>";
-				$content.="<a href='index.php?page=video&sec=view&vid=".$res[$i]['id']."'>".$res[$i]['title']."</a>";
+				$content.="<div class='widget-latestvideos-tv-cell'>";
+				$content.="<div class='widget-latestvideos-tv-thubmnail'><img class='widget-latestvideos-tv-thubmnailimg' src='uploads/thumbnails/video/".$res[$i]['thumbnail']."'></div>";
+				$content.="<div class='widget-lateestvideos-tv-videoinfo'>";
+				$content.="<div class='widget-latestvideos-tv-title'><a href='index.php?page=video&sec=view&vid=".$res[$i]['id']."'>".$res[$i]['title']."</a></div>";
+				$content.="<div clas=='widget-latestvideos-tv-by'>Created BY: ".$GLOBALS['COMMON']->GetUserName($res[$i]['uid'])."</div>";
+				$content.="<div clas=='widget-latestvideos-tv-views'>views: ".$res[$i]['views']."</div>";
+				$content.="<div clas=='widget-latestvideos-tv-subtitles'>subtitles: ".self::GetSubtitlesCount($res[$i]['id'])."</div>";
+				$content.="<div clas=='widget-latestvideos-tv-rating'>".self::GetVideoRateResult($res[$i]['id'])."</div>";
+				$content.="</div>";
+				$content.="</div>";
 				$content.="</div>";
 			}
 			return $content;
@@ -80,7 +98,16 @@
 			$content = "";
 			for ($i=0; $i < count($res); $i++) { 
 				$content.="<div class='widget-latestvideos-trailer'>";
-				$content.="<a href='index.php?page=video&sec=view&vid=".$res[$i]['id']."'>".$res[$i]['title']."</a>";
+				$content.="<div class='widget-latestvideos-trailer-cell'>";
+				$content.="<div class='widget-latestvideos-trailer-thubmnail'><img class='widget-latestvideos-trailer-thubmnailimg' src='uploads/thumbnails/video/".$res[$i]['thumbnail']."'></div>";
+				$content.="<div class='widget-lateestvideos-trailer-videoinfo'>";
+				$content.="<div class='widget-latestvideos-trailer-title'><a href='index.php?page=video&sec=view&vid=".$res[$i]['id']."'>".$res[$i]['title']."</a></div>";
+				$content.="<div clas=='widget-latestvideos-trailer-by'>Created BY: ".$GLOBALS['COMMON']->GetUserName($res[$i]['uid'])."</div>";
+				$content.="<div clas=='widget-latestvideos-trailer-views'>views: ".$res[$i]['views']."</div>";
+				$content.="<div clas=='widget-latestvideos-trailer-subtitles'>subtitles: ".self::GetSubtitlesCount($res[$i]['id'])."</div>";
+				$content.="<div clas=='widget-latestvideos-trailer-rating'>".self::GetVideoRateResult($res[$i]['id'])."</div>";
+				$content.="</div>";
+				$content.="</div>";
 				$content.="</div>";
 			}
 			return $content;
