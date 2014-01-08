@@ -42,6 +42,10 @@
 				$content.="<div class='widget-latestvideos-all-thubmnail'><img class='widget-latestvideos-all-thubmnailimg' src='uploads/thumbnails/video/".$res[$i]['thumbnail']."'></div>";
 				$content.="<div class='widget-lateestvideos-all-videoinfo'>";
 				$content.="<div class='widget-latestvideos-all-title'><a href='index.php?page=video&sec=view&vid=".$res[$i]['id']."'>".$res[$i]['title']."</a></div>";
+				$content.="<div clas=='widget-latestvideos-all-by'>Created BY: ".$GLOBALS['COMMON']->GetUserName($res[$i]['uid'])."</div>";
+				$content.="<div clas=='widget-latestvideos-all-views'>views: ".$res[$i]['views']."</div>";
+				$content.="<div clas=='widget-latestvideos-all-subtitles'>subtitles: ".self::GetSubtitlesCount($res[$i]['id'])."</div>";
+				$content.="<div clas=='widget-latestvideos-all-rating'>".self::GetVideoRateResult($res[$i]['id'])."</div>";
 				$content.="</div>";
 				$content.="</div>";
 				$content.="</div>";
@@ -78,6 +82,40 @@
 				$content.="<div class='widget-latestvideos-trailer'>";
 				$content.="<a href='index.php?page=video&sec=view&vid=".$res[$i]['id']."'>".$res[$i]['title']."</a>";
 				$content.="</div>";
+			}
+			return $content;
+		}
+
+		function GetSubtitlesCount($vid){
+			$args = array(
+				array(":vid", $vid, "str"),
+			);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitles` WHERE `vid` = :vid", $args);
+			return count($res);
+		}
+		
+		function GetVideoRateResult($vid){
+			$args = array(
+				array(":vid", $vid, "str"),
+			);
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `videorates` WHERE `vid` = :vid", $args);
+			$TotalRates = 0;
+			for ($i=0; $i < count($res); $i++) { 
+				$TotalRates = $TotalRates + $res[$i]['rate'];
+			}
+			if(count($res)>0){
+			$TotalRates = $TotalRates / count($res);
+			$RateResult = ($TotalRates * 100) / 10;
+			}else{
+				$RateResult = 0;
+			}
+			$content = "";
+			for ($i=1; $i <= 10; $i++) {
+				if($i*10 <= $RateResult){
+					$content.= "<img class='widget-latestvideos-all-rateresult-on'/>";
+				}else{
+					$content.= "<img class='widget-latestvideos-all-rateresult-off'/>";
+				}
 			}
 			return $content;
 		}

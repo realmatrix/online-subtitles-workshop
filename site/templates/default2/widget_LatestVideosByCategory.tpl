@@ -51,6 +51,16 @@
 		width: 252px;
 		height: 113px;
 	}
+	.widget-lateestvideos-all-videoinfo div{
+		width: 100%;
+		height: 22px;
+	}
+	.widget-latestvideos-all-rateresult-off{
+		content: url("templates/default2/tmp/images/star_empty2.png");
+	}
+	.widget-latestvideos-all-rateresult-on{
+		content: url("templates/default2/tmp/images/star_full2.png");
+	}
   </style>
 
   <script type="text/javascript">
