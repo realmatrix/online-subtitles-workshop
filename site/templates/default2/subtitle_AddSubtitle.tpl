@@ -1,10 +1,47 @@
 <style>
 	#submitnewsubtitle input[type=text], input[type=file]{
-		width: 100%;
+		width: 96%;
 		margin: 5px;
 	}
 	#submitnewsubtitle textarea{
 		width: 100%;
+	}
+	#div-submitnewsubtitle{
+		width: 100%;
+	}
+	.addsubtitle-infocontainer-row{
+		width: 100%;
+		height: 32px;
+		clear: both;
+		display: table;
+		margin-bottom: 2px;
+	}
+	
+	.addsubtitle-infocontainer-row div{
+		border-width: 1px;
+		border-style: solid;
+		border-color: #DFE8EE;
+		height: 32px;
+		vertical-align: middle;
+		display: table-cell;
+		line-height: 32px;
+		padding-left: 2px;
+		padding-right: 2px;
+	}
+
+	.addsubtitle-infocontainer-left{
+		float: left;
+		width: 23%;
+		font-weight: bold;
+		background-color: #F5FBFE;
+		margin-right: 1px;
+	}
+	.addsubtitle-infocontainer-right{
+		float: right;
+		width: 75%;
+	}
+	.addsubtitle-infocontainer-singlerow{
+		text-align: center;
 	}
 </style>
 <div>
@@ -28,75 +65,42 @@
 
 
 <!-- add subtitle form -->
-<div id="div-submitnewsubtitle" style="width: 99%;">
+<div id="div-submitnewsubtitle">
 	
 <form name="submitnewsubtitle" id="submitnewsubtitle" method="post" action="index.php">
-<table style="width: 100%;">
-	<tr>
-		<td style="width: 20%;">{ReleaseName}</td>
-		<td style="width: 80%;"><input type="text" name="ReleaseName" /></td>
-	</tr>
-	<tr>
-		<td>{Version}</td>
-		<td>
-			<input type="text" name="version" />
-		</td>
-	</tr>
-	<tr>
-		<td>{Country}</td>
-		<td>
-			<select name="Country">
-				<option></option>
-				{SubtitleCountry}
-			</select>
-		</td>
-	</tr>
-	<tr>
-		<td>{Language}</td>
-		<td>
-			<select name="Language">
-				<option></option>
-				{SubtitleLanguages}
-			</select>
-		</td>
-	</tr>
-	<tr>
-		<td>{Fps}</td>
-		<td>
-			<select name="fpssec">
-				<option></option>
-				{SubtitleFPSsec}
-			</select>
-			<select name="fpsmilsec">
-				<option></option>
-				{SubtitleFPSmilsec}
-			</select>
-		</td>
-	</tr>
-	<tr>
-		<td>{Format}</td>
-		<td>
-			<select name="format">
-				<option></option>
-				{SubtitleFormats}
-			</select>
-		</td>
-	</tr>
-	<tr>
-		<td>{NoCDs}</td>
-		<td>
-			<select name="cds">
-				<option></option>
-				{SubtitleCDS}
-			</select>
-		</td>
-	</tr>
-	<tr>
-		<td colspan="2" style="text-align: center;">
-			<input type="submit" value="{submit}" />
-		</td>
-	</tr>	
-</table>
+
+	<div class='addsubtitle-infocontainer-row'>
+		<div class='addsubtitle-infocontainer-left'>{ReleaseName}</div>
+		<div class='addsubtitle-infocontainer-right'><input type="text" name="ReleaseName" /></div>
+	</div>
+	<div class='addsubtitle-infocontainer-row'>
+		<div class='addsubtitle-infocontainer-left'>{Version}</div>
+		<div class='addsubtitle-infocontainer-right'><input type="text" name="version" /></div>
+	</div>	
+	<div class='addsubtitle-infocontainer-row'>
+		<div class='addsubtitle-infocontainer-left'>{Country}</div>
+		<div class='addsubtitle-infocontainer-right'><select name="Country"><option></option>{SubtitleCountry}</select></div>
+	</div>
+	<div class='addsubtitle-infocontainer-row'>
+		<div class='addsubtitle-infocontainer-left'>{Language}</div>
+		<div class='addsubtitle-infocontainer-right'><select name="Language"><option></option>{SubtitleLanguages}</select></div>
+	</div>
+	<div class='addsubtitle-infocontainer-row'>
+		<div class='addsubtitle-infocontainer-left'>{Fps}</div>
+		<div class='addsubtitle-infocontainer-right'><select name="fpssec"><option></option>{SubtitleFPSsec}</select><select name="fpsmilsec"><option></option>{SubtitleFPSmilsec}</select></div>
+	</div>
+	<div class='addsubtitle-infocontainer-row'>
+		<div class='addsubtitle-infocontainer-left'>{Format}</div>
+		<div class='addsubtitle-infocontainer-right'><select name="format"><option></option>{SubtitleFormats}</select></div>
+	</div>
+	<div class='addsubtitle-infocontainer-row'>
+		<div class='addsubtitle-infocontainer-left'>{NoCDs}</div>
+		<div class='addsubtitle-infocontainer-right'><select name="cds"><option></option>{SubtitleCDS}</select></div>
+	</div>	
+	<div class='addsubtitle-infocontainer-row'>
+		<div class='addsubtitle-infocontainer-singlerow'><input type="submit" value="{submit}" /></div>
+	</div>	
+
 	<input type="hidden" name="vid" value="{vid}" />
 	<!-- <input type="hidden" name="dataonly" value="yes"/> --> <!-- uncomment if using ajax -->
 	<!-- <input type="hidden" name="getcontroller" value="subtitle"/> --> <!-- uncomment if using ajax -->

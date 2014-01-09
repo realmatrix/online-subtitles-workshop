@@ -27,7 +27,7 @@
 		width: 23%;
 		font-weight: bold;
 		background-color: #F5FBFE;
-		margin-right: 2px;
+		margin-right: 1px;
 	}
 	.viewsubtitle-infocontainer-right{
 		float: right;
