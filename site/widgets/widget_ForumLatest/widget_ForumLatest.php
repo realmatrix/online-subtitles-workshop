@@ -55,7 +55,7 @@
 			for ($i=0; $i < count($res); $i++) { 
 				$content.="<div class='latest-threads'>";
 				$content.="<div class='latest-threads-cell'>";
-				$content.="<a href='index.php?page=forum&sec=threads&fid=".$res[$i]['forum']."&tid=".$res[$i]['tid']."'>".$res[$i]['title']."</a>";
+				$content.="<a href='index.php?page=forum&sec=threads&fid=".$res[$i]['forum']."&tid=".$res[$i]['id']."'>".$res[$i]['title']."</a>";
 				$content.="</div>";
 				$content.="</div>";
 			}
