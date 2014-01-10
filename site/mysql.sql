@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 10, 2014 at 01:13 PM
+-- Generation Time: Jan 10, 2014 at 08:37 PM
 -- Server version: 5.5.29
 -- PHP Version: 5.3.20
 
@@ -111,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `chat` (
   `text` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `chat`
@@ -122,7 +122,8 @@ INSERT INTO `chat` (`id`, `date`, `uid`, `text`, `username`) VALUES
 (8, '2014-01-10 13:07:44', 18, '[b]test bold text[/b]', 'test'),
 (9, '2014-01-10 13:08:04', 18, '[i]test italic text[/i]', 'test'),
 (10, '2014-01-10 13:08:24', 18, '[u]test under line text[/u]', 'test'),
-(11, '2014-01-10 13:08:41', 18, '[s]smile[/s][s]evilgrin[/s][s]grin[/s][s]happy[/s][s]surprised[/s][s]tongue[/s][s]waii[/s][s]wink[/s]', 'test');
+(11, '2014-01-10 13:08:41', 18, '[s]smile[/s][s]evilgrin[/s][s]grin[/s][s]happy[/s][s]surprised[/s][s]tongue[/s][s]waii[/s][s]wink[/s]', 'test'),
+(12, '2014-01-10 13:21:00', 18, 'new test', 'test');
 
 -- --------------------------------------------------------
 
@@ -1015,14 +1016,14 @@ CREATE TABLE IF NOT EXISTS `onlineusers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1546 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1559 ;
 
 --
 -- Dumping data for table `onlineusers`
 --
 
 INSERT INTO `onlineusers` (`id`, `session`, `time`, `username`) VALUES
-(1545, 'ouagdmn37rnhnv6opcfhg59dg3', 1389359300, '');
+(1558, 'rgk68p79lv18u44vgi0jn64oi5', 1389385847, '');
 
 -- --------------------------------------------------------
 
@@ -1215,7 +1216,7 @@ CREATE TABLE IF NOT EXISTS `systemcron` (
 --
 
 INSERT INTO `systemcron` (`id`, `job`, `frequancy`, `last_run`) VALUES
-(1, 'AutoTranslation', 300, 1389359442);
+(1, 'AutoTranslation', 300, 1389385848);
 
 -- --------------------------------------------------------
 
@@ -1238,7 +1239,7 @@ CREATE TABLE IF NOT EXISTS `systemrouter` (
   `sec` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `page` (`page`,`sec`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=37 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=38 ;
 
 --
 -- Dumping data for table `systemrouter`
@@ -1278,7 +1279,8 @@ INSERT INTO `systemrouter` (`id`, `head`, `header`, `left`, `body`, `right`, `fo
 (33, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'user', 'profile'),
 (34, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'user', 'cp'),
 (35, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'video', 'edit'),
-(36, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'subtitle', 'check');
+(36, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'subtitle', 'check'),
+(37, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'message', 'view');
 
 -- --------------------------------------------------------
 
@@ -1294,7 +1296,7 @@ CREATE TABLE IF NOT EXISTS `teamchat` (
   `sid` int(11) NOT NULL,
   `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=40 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=41 ;
 
 --
 -- Dumping data for table `teamchat`
@@ -1316,7 +1318,8 @@ INSERT INTO `teamchat` (`id`, `date`, `uid`, `text`, `sid`, `username`) VALUES
 (36, '2014-01-01 15:39:37', 18, 'happy image test [s]happy[/s]', 1, 'test'),
 (37, '2014-01-01 16:01:13', 18, '[s]happy[/s]', 1, 'test'),
 (38, '2014-01-01 16:10:23', 18, '[s]wink[/s][s]waii[/s][s]tonge[/s][s]smile[/s][s]evilgrin[/s][s]grin[/s][s]happy[/s][s]surprised[/s]', 1, 'test'),
-(39, '2014-01-07 16:02:30', 18, '[s]wink[/s]', 1, 'test');
+(39, '2014-01-07 16:02:30', 18, '[s]wink[/s]', 1, 'test'),
+(40, '2014-01-10 13:21:38', 18, 'new test', 1, 'test');
 
 -- --------------------------------------------------------
 
@@ -1506,7 +1509,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `BirthYear`, `group`, `key`, `LastLogin`, `KeyTime`) VALUES
-(18, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.test', 2009, 1, 'EieUQfVSTwaBL2nqNc2zwOgx47kZJa', 1389356887, 1389352741),
+(18, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.test', 2009, 1, 'EieUQfVSTwaBL2nqNc2zwOgx47kZJa', 1389381929, 1389352741),
 (19, 'ghfghh', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'dsd@sd.sd', 2006, 3, '3S0jYSUru8K0CZpINIuem9qkMhpGdp', 0, 1389352741),
 (20, 'wejhg', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'aaa@aaa.aaa', 1919, 3, 'v0SAWWXbd9EreaTvGPlgyfpzVUxZlD', 0, 1389352741),
 (21, 't567567567', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'tryrt@erttr.rrt', 1917, 3, 'iPU920qX6ssS2XEpueHas6fq2fs1G5', 0, 1389352741),
@@ -1584,7 +1587,7 @@ CREATE TABLE IF NOT EXISTS `videorates` (
 INSERT INTO `videorates` (`id`, `uid`, `vid`, `rate`) VALUES
 (2, 18, 15, 1),
 (3, 18, 16, 7),
-(4, 18, 33, 5);
+(4, 18, 33, 10);
 
 -- --------------------------------------------------------
 
@@ -1642,7 +1645,7 @@ INSERT INTO `videos` (`id`, `uid`, `title`, `other_title`, `type`, `category`, `
 (30, 18, 'Red 2 (2013)', 'Red 2', 1, 10, 14, 236, '1,5,6,24', '2013-07-19', 'Jon Hoeber, Erich Hoeber, 2 more credits', 'Dean Parisot', 90, 'Red, 2013', 'Retired C.I.A. agent Frank Moses reunites his unlikely team of elite operatives for a global quest to track down a missing portable nuclear device.', '30_181380026531aqnhX.jpg', '', 'http://www.youtube.com/watch?v=ZfB8QwYBPxY', 0, '', 1, 1, 0),
 (31, 18, 'Skyfall (2012)', 'Skyfall', 1, 10, 14, 236, '1,2,24', '2011-11-09', 'Neal Purvis, Robert Wade, 2 more credits', 'Sam Mendes', 90, 'Skyfall, 2012', 'Bond''s loyalty to M is tested when her past comes back to haunt her. Whilst MI6 comes under attack, 007 must track down and destroy the threat, no matter how personal the cost.', '31_181380027287OigpU.jpg', '', 'http://www.youtube.com/watch?v=6kw1UVovByw', 0, '', 1, 1, 13),
 (32, 18, 'The Croods (2013)', 'The Croods', 3, 10, 14, 236, '2,3,5,9,10', '2013-03-12', 'Nicolas Cage, Ryan Reynolds, Emma Stone', 'Kirk De Micco, Chris Sanders', 90, 'The Croods, 2013', 'After their cave is destroyed, a caveman family must trek through an unfamiliar fantastical world with the help of an inventive boy.', '32_181380027840Qv80h.jpg', '', 'http://www.youtube.com/watch?v=4fVCKy69zUY', 0, '', 1, 1, 2),
-(33, 22, 'Escape Plan (2013)', 'Escape Plan', 1, 10, 14, 236, '1,17,24', '2013-10-18', 'Sylvester Stallone, Arnold Schwarzenegger, 50 Cent', 'Mikael Håfström', 90, 'Escape, Plan, 2013', 'When a structural-security authority finds himself incarcerated in a prison he designed, he has to put his skills to escape and find out who framed him.', '33_221380058929LcQRw.jpg', '', 'http://www.youtube.com/watch?v=CI4EjV_x_PQ', 0, '', 1, 1, 10),
+(33, 22, 'Escape Plan (2013)', 'Escape Plan', 1, 10, 14, 236, '1,17,24', '2013-10-18', 'Sylvester Stallone, Arnold Schwarzenegger, 50 Cent', 'Mikael Håfström', 90, 'Escape, Plan, 2013', 'When a structural-security authority finds himself incarcerated in a prison he designed, he has to put his skills to escape and find out who framed him.', '33_221380058929LcQRw.jpg', '', 'http://www.youtube.com/watch?v=CI4EjV_x_PQ', 0, '', 1, 1, 15),
 (34, 22, 'Total Recall (2012)', 'Total Recall', 1, 10, 14, 236, '1,2,21,24', '2012-08-03', 'Colin Farrell, Bokeem Woodbine, Bryan Cranston', 'Len Wiseman', 90, 'Total, Recall, 2012', 'A factory worker, Douglas Quaid, begins to suspect that he is a spy after visiting Rekall - a company that provides its clients with implanted fake memories of a life they would like to have led - goes wrong and he finds himself on the run.', '34_221380061085gybZK.jpg', '', 'http://www.youtube.com/watch?v=4SerZm7DheA', 0, '', 1, 1, 37),
 (35, 22, 'Men in Black 3 (2012)', 'Men in Black 3', 1, 10, 14, 236, '1,5,21', '2012-05-25', 'Will Smith, Tommy Lee Jones, Josh Brolin', 'Barry Sonnenfeld', 90, 'Men in Black, 2012', 'Agent J travels in time to M.I.B.''s early days in 1969 to stop an alien from assassinating his friend Agent K and changing history.', '35_221380061647Iqc5u.jpg', '', 'http://www.youtube.com/watch?v=yc4tk27ZzZk', 0, '', 1, 1, 23),
 (36, 22, 'Looper (2012)', 'Looper', 1, 10, 14, 236, '1,6,21,24', '2012-09-28', 'Joseph Gordon-Levitt, Bruce Willis, Emily Blunt', 'Rian Johnson', 90, 'Looper, 2012', 'In 2074, when the mob wants to get rid of someone, the target is sent 30 years into the past, where a hired gun awaits. Someone like Joe, who one day learns the mob wants to ''close the loop'' by transporting back Joe''s future self.', '36_2213800621454nP8S.jpg', '', 'http://www.youtube.com/watch?v=eI3ju17W070', 0, '', 1, 1, 7),
