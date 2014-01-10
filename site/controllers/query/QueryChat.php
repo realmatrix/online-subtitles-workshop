@@ -45,7 +45,7 @@
 				$chat.="<div class='shoutbox-date'>".date("D M j, h:i:sA", strtotime($res[$i]['date']))."</div>";
 				$chat.="</div>";
 			}
-			self::$query = $chat."aaaaaaaaaaaaaaaaaaaaaaaaa";
+			self::$query = $chat;
 		}
 		
 		function SetChat(){
@@ -58,6 +58,18 @@
 			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `chat`(`date`, `uid`, `text`, `username`) VALUES (:date, :uid, :text, :username);", $params, $ExecState);
 			//if($ExecState===TRUE){echo "success";}else{echo "failed";}
 			//echo $res;
+		}
+		
+		function ReplaceTags($text){
+			$text = str_replace("[b]", "<b>", $text);
+			$text = str_replace("[/b]", "</b>", $text);
+			$text = str_replace("[i]", "<i>", $text);
+			$text = str_replace("[/i]", "</i>", $text);
+			$text = str_replace("[u]", "<u>", $text);
+			$text = str_replace("[/u]", "</u>", $text);
+			$text = str_replace("[s]", "<img class='shoutbox-", $text);
+			$text = str_replace("[/s]", "' >", $text);
+			return $text;
 		}
 		
 		

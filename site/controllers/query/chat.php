@@ -4,7 +4,7 @@
 			
 		function chat_sections(){
 			$array = array(
-				array("query", "Querychat", $GLOBALS['vars'], TRUE),
+				array("query", "QueryChat", $GLOBALS['vars'], TRUE),
 			);
 			return $array;
 		}

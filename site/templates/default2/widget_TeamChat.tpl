@@ -83,7 +83,11 @@ var interval = setInterval(GetChat,10000);
 	}
 	
 	function addsmile(smile){
-		document.getElementById("teamchat-textarea").value = document.getElementById("teamchat-textarea").value + "[s]" + smile + "[/s]"
+		document.getElementById("teamchat-textarea").value = document.getElementById("teamchat-textarea").value + "[s]" + smile + "[/s]";
+	}
+	
+	function setfocus(){
+		document.getElementById("shoutbox-textarea").focus();
 	}
 </script>
 <style>
@@ -185,21 +189,21 @@ var interval = setInterval(GetChat,10000);
 	<div id='teamchat-messages'></div>
 	
 		<div id='teamchat-smiles' style="display:none;">
-			<img class='teamchatsmile-smile' onclick="addsmile('smile');">
-			<img class='teamchatsmile-evilgrin' onclick="addsmile('evilgrin');">
-			<img class='teamchatsmile-grin' onclick="addsmile('grin');">
-			<img class='teamchatsmile-happy' onclick="addsmile('happy');">
-			<img class='teamchatsmile-surprised' onclick="addsmile('surprised');">
-			<img class='teamchatsmile-tongue' onclick="addsmile('tongue');">
-			<img class='teamchatsmile-waii' onclick="addsmile('waii');">
-			<img class='teamchatsmile-wink' onclick="addsmile('wink');">
+			<img class='teamchatsmile-smile' onclick="addsmile('smile');" onmouseout="setfocus();">
+			<img class='teamchatsmile-evilgrin' onclick="addsmile('evilgrin');" onmouseout="setfocus();">
+			<img class='teamchatsmile-grin' onclick="addsmile('grin');" onmouseout="setfocus();">
+			<img class='teamchatsmile-happy' onclick="addsmile('happy');" onmouseout="setfocus();">
+			<img class='teamchatsmile-surprised' onclick="addsmile('surprised');" onmouseout="setfocus();">
+			<img class='teamchatsmile-tongue' onclick="addsmile('tongue');" onmouseout="setfocus();">
+			<img class='teamchatsmile-waii' onclick="addsmile('waii');" onmouseout="setfocus();">
+			<img class='teamchatsmile-wink' onclick="addsmile('wink');" onmouseout="setfocus();">
 		</div>
 	
 	<div id='teamchat-toolbar'>
 	<img src='templates/default2/tmp/icons/emoticon_smile.png' id='teamchat-smile-button' onclick="showsmiles();">
-	<img src='templates/default2/tmp/icons/text_underline.png' onclick="addunderline();">
-	<img src='templates/default2/tmp/icons/text_italic.png' onclick="additalic();">
-	<img src='templates/default2/tmp/icons/text_bold.png' onclick="addbold();">
+	<img src='templates/default2/tmp/icons/text_underline.png' onclick="addunderline();" onmouseout="setfocus();">
+	<img src='templates/default2/tmp/icons/text_italic.png' onclick="additalic();" onmouseout="setfocus();">
+	<img src='templates/default2/tmp/icons/text_bold.png' onclick="addbold();" onmouseout="setfocus();">
 	</div>
 	<form>
 		<textarea id='teamchat-textarea' rows="2" onkeydown="if (event.keyCode == 13) { SendMessage(); return false; }"></textarea>
