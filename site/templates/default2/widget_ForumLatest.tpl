@@ -9,8 +9,11 @@
     .panel-container { margin-bottom: 0px; }
     .tab-containr-wrap{background-color: #EBF4FC; margin-bottom: 10px; padding: 5px; border-width: 1px; border-style: solid; border-color: rgb(215, 229, 242) rgb(215, 229, 242);}
 
-
-	.latest-threads-cell{
+	#tabs1-html, #tabs1-js, #tabs1-css{
+		padding-top: 2px;
+		height: 344px;
+	}
+	.latest-threads-cell, .top-threads-cell, .latest-replies-cell{
 		width: 98%;
 		float:left;
 		border-style: solid;
@@ -23,7 +26,7 @@
 		text-overflow: ellipsis;
 	}
 	
-	.latest-threads-cell a {
+	.latest-threads-cell a, .top-threads-cell a, .latest-replies-cell a{
 		text-decoration: none;
 		padding-left: 1px;
 		padding-right: 1px;
@@ -49,14 +52,17 @@
 
 
   <div id="tabs1-html">
-{LatestTopic}
+	{LatestTopic}
+	<div style="clear:left;"></div>
   <div style='clear:left;'></div>
   </div>
   <div id="tabs1-js">
-{LatestPost}
+	{LatestPost}
+	<div style="clear:left;"></div>
   </div>
   <div id="tabs1-css">
-{TopTopics}
+	{TopTopics}
+	<div style="clear:left;"></div>
   </div>
 
 

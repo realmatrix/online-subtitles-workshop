@@ -35,9 +35,13 @@
 		function GetLatestReplies(){
 			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `forumreplies` order by `id` desc limit 10", array());
 			$content = "";
+			$content.="<div class='latest-replies'>";
 			for ($i=0; $i < count($res); $i++) { 
-				$content.="<div class='latest-replies'><a href='index.php?page=forum&sec=threads&fid=".$res[$i]['fid']."&tid=".$res[$i]['tid']."'>".self::GetThreadTitleByID($res[$i]['tid'])."</a></div>";
+				$content.="<div class='latest-replies-cell'>";
+				$content.="<a href='index.php?page=forum&sec=threads&fid=".$res[$i]['fid']."&tid=".$res[$i]['tid']."'>".self::GetThreadTitleByID($res[$i]['tid'])."</a>";
+				$content.="</div>";
 			}
+			$content.="</div>";
 			return $content;
 		}
 		
@@ -64,10 +68,13 @@
 		
 		function GetTopThreads(){
 			$res = $GLOBALS['COMMON']->db_query("SELECT fid, tid, count(*) FROM forumreplies GROUP BY tid ORDER BY count(*) DESC LIMIT 10", array());
-			$content = "";
+			$content.="<div class='top-threads'>";
 			for ($i=0; $i < count($res); $i++) { 
-				$content.="<div class='top-threads'><a href='index.php?page=forum&sec=threads&fid=".$res[$i]['fid']."&tid=".$res[$i]['tid']."'>".self::GetThreadTitleByID($res[$i]['tid'])."</a></div>";
+				$content.="<div class='top-threads-cell'>";
+				$content.="<a href='index.php?page=forum&sec=threads&fid=".$res[$i]['fid']."&tid=".$res[$i]['tid']."'>".self::GetThreadTitleByID($res[$i]['tid'])."</a>";
+				$content.="</div>";
 			}
+			$content.="</div>";
 			return $content;
 		}
 		
