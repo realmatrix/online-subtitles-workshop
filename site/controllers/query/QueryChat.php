@@ -56,6 +56,7 @@
 				array(":date", date('Y-m-d H:i:s'), "str"),
 			);
 			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `chat`(`date`, `uid`, `text`, `username`) VALUES (:date, :uid, :text, :username);", $params, $ExecState);
+			self::DeleteOldLines();
 			//if($ExecState===TRUE){echo "success";}else{echo "failed";}
 			//echo $res;
 		}
@@ -70,6 +71,10 @@
 			$text = str_replace("[s]", "<img class='shoutbox-", $text);
 			$text = str_replace("[/s]", "' >", $text);
 			return $text;
+		}
+		
+		function DeleteOldLines(){
+			$res = $GLOBALS['COMMON']->db_query("DELETE FROM chat ORDER BY id DESC LIMIT 30, 1000", array());
 		}
 		
 		

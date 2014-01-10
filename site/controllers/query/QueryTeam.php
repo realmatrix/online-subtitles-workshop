@@ -71,10 +71,17 @@
 				array(":date", date('Y-m-d H:i:s'), "str"),
 			);
 			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `teamchat`(`date`, `uid`, `text`, `sid`, `username`) VALUES (:date, :uid, :text, :sid, :username);", $params, $ExecState);
+			self::DeleteOldLines();
 			//if($ExecState===TRUE){echo "success";}else{echo "failed";}
 			//echo $res;
 		}
 
+		function DeleteOldLines(){
+			$args = array(
+				array(":sid", $GLOBALS['vars']['sid'], "str"),
+			);
+			$res = $GLOBALS['COMMON']->db_query("DELETE FROM teamchat where sid = :sid ORDER BY id DESC LIMIT 30, 1000", $args);
+		}
 
 	
 			
