@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 08, 2014 at 02:25 PM
+-- Generation Time: Jan 10, 2014 at 01:13 PM
 -- Server version: 5.5.29
 -- PHP Version: 5.3.20
 
@@ -111,14 +111,18 @@ CREATE TABLE IF NOT EXISTS `chat` (
   `text` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `chat`
 --
 
 INSERT INTO `chat` (`id`, `date`, `uid`, `text`, `username`) VALUES
-(1, '2014-01-08 00:00:00', 1, '2', '3');
+(7, '2014-01-10 13:07:28', 18, 'test message', 'test'),
+(8, '2014-01-10 13:07:44', 18, '[b]test bold text[/b]', 'test'),
+(9, '2014-01-10 13:08:04', 18, '[i]test italic text[/i]', 'test'),
+(10, '2014-01-10 13:08:24', 18, '[u]test under line text[/u]', 'test'),
+(11, '2014-01-10 13:08:41', 18, '[s]smile[/s][s]evilgrin[/s][s]grin[/s][s]happy[/s][s]surprised[/s][s]tongue[/s][s]waii[/s][s]wink[/s]', 'test');
 
 -- --------------------------------------------------------
 
@@ -1011,14 +1015,14 @@ CREATE TABLE IF NOT EXISTS `onlineusers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1518 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1546 ;
 
 --
 -- Dumping data for table `onlineusers`
 --
 
 INSERT INTO `onlineusers` (`id`, `session`, `time`, `username`) VALUES
-(1517, 'n189k96im672km8ool7fvl9at5', 1389190896, '');
+(1545, 'ouagdmn37rnhnv6opcfhg59dg3', 1389359300, '');
 
 -- --------------------------------------------------------
 
@@ -1211,7 +1215,7 @@ CREATE TABLE IF NOT EXISTS `systemcron` (
 --
 
 INSERT INTO `systemcron` (`id`, `job`, `frequancy`, `last_run`) VALUES
-(1, 'AutoTranslation', 300, 1389190947);
+(1, 'AutoTranslation', 300, 1389359442);
 
 -- --------------------------------------------------------
 
@@ -1502,26 +1506,26 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `BirthYear`, `group`, `key`, `LastLogin`, `KeyTime`) VALUES
-(18, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.test', 2009, 1, 'e9xByFINnvwZQB13s5UMHI3ojNB8Jd', 1389177472, 1389176859),
-(19, 'ghfghh', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'dsd@sd.sd', 2006, 3, 'y89wQm0CZHVScg54vbGpxZv2PHmmze', 0, 1389176859),
-(20, 'wejhg', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'aaa@aaa.aaa', 1919, 3, 'MIJiis2y9QdMQxHgPFchtFhk7yHJx9', 0, 1389176859),
-(21, 't567567567', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'tryrt@erttr.rrt', 1917, 3, 'BrUJBMdhfxh6d0ctpxaeKEinKS37FZ', 0, 1389176859),
-(22, 'test2', '109f4b3c50d7b0df729d299bc6f8e9ef9066971f', 'test2@test2.com', 2010, 3, 'oP5lIoyW1uFUlnxbnl0unEt0CfONwg', 0, 1389176859),
-(23, 'test3', '3ebfa301dc59196f18593c45e519287a23297589', 'test3@test3.com', 2003, 3, '8XwhYQEAUEnQn8YBXGpkDThB5IpwWT', 0, 1389176859),
-(24, 'test4', '1ff2b3704aede04eecb51e50ca698efd50a1379b', 'test4@test4.com', 2002, 3, '0GRNeFVvy40J18ojbz64cv4inHwZ8a', 0, 1389176859),
-(25, 'test5', '911ddc3b8f9a13b5499b6bc4638a2b4f3f68bf23', 'test5@test5.com', 2001, 3, 'RRlNvnV9kK2Qs4gDMl5BvKouHCHOnl', 0, 1389176859),
-(26, 'test6', 'a66df261120b6c2311c6ef0b1bab4e583afcbcc0', 'test6@test6.com', 2005, 3, 'aJuyW0bcz8752WEkOQn5obQO6Q63tm', 0, 1389176859),
-(27, 'test7', 'ea3243132d653b39025a944e70f3ecdf70ee3994', 'test7@test7.com', 2002, 3, 'YMlCwJZfR2U6mF34mlNs93XBrqHVRK', 0, 1389176859),
-(28, 'test8', 'd03f9d34194393019e6d12d7c942827ebd694443', 'test8@test8.com', 1999, 3, 'Q8Iv4MvVIoxsvhemet12lTXs9SL4OW', 0, 1389176863),
-(29, 'test9', '53d525836cc96d089a5a4218b464fda532f7debe', 'test9@test9.com', 2001, 3, 'bwQytUnS7Z16BBbsNPRWrD0GUt12sZ', 0, 1389176863),
-(30, 'test10', '168f4029f416ee06565f12e697dfc1534ae69d32', 'test10@test10.com', 2002, 3, 'vY7eHQ6HqYmpZ33EeVxI4Yd6GOd1A5', 0, 1389176863),
-(31, 'test11', '100c4e57374fc998e57164d4c0453bd3a4876a58', 'test11@test11.com', 2004, 3, '88iaA2Ymerm5wCUYBFE8kJrlX8VNGu', 0, 1389176863),
-(32, 'test12', '4ff1a33e188b7b86123d6e3be2722a23514a83b4', 'test12@test12.com', 1999, 3, 'qYgOpFGY7BawXuZxMh9ismT0NaC0Hw', 0, 1389176863),
-(33, 'test13', 'd804cd9cc0c42b0652bab002f67858ab803c40c6', 'test13@test13.com', 2005, 3, 'igLamkPWRItXqKib0ypaoS2PjPCQmk', 0, 1389176863),
-(34, 'test14', 'd79336a97da7d284c0fe15497d2fa944d1f2abb1', 'test14@test14.com', 2003, 3, 'qUzpeRElhzNwMA48AWj9ACbxlUTWp2', 0, 1389176863),
-(35, 'test15', '61bb70fa60368f069e62d601c357d203700ab2d2', 'test15@test15.com', 2000, 3, 'Dk86ke0VvTtjE7Pg2PovOp2P6ZLbnu', 0, 1389176863),
-(36, 'test16', '1fbefee9cfb86926757519357e077fd6a21aef0f', 'test16@test16.com', 1998, 3, 'Oq5usSG18gUjIj6b8cg5DqUtFoeEeB', 0, 1389176863),
-(37, 'test17', '08a25c0f270b29aeba650e6b2d1a9947a778c5da', 'test17@test17.com', 1996, 3, 'ou6G1esTlXEmU5SIN0QCYy8rAQlkYv', 0, 1389176863);
+(18, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.test', 2009, 1, 'EieUQfVSTwaBL2nqNc2zwOgx47kZJa', 1389356887, 1389352741),
+(19, 'ghfghh', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'dsd@sd.sd', 2006, 3, '3S0jYSUru8K0CZpINIuem9qkMhpGdp', 0, 1389352741),
+(20, 'wejhg', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'aaa@aaa.aaa', 1919, 3, 'v0SAWWXbd9EreaTvGPlgyfpzVUxZlD', 0, 1389352741),
+(21, 't567567567', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'tryrt@erttr.rrt', 1917, 3, 'iPU920qX6ssS2XEpueHas6fq2fs1G5', 0, 1389352741),
+(22, 'test2', '109f4b3c50d7b0df729d299bc6f8e9ef9066971f', 'test2@test2.com', 2010, 3, 'ypFIlIIN4LqOaV1ovdAR4LUiesisMw', 0, 1389352741),
+(23, 'test3', '3ebfa301dc59196f18593c45e519287a23297589', 'test3@test3.com', 2003, 3, 'sDRghuI2SkRVekq0gglYf85sTrHyIf', 0, 1389352741),
+(24, 'test4', '1ff2b3704aede04eecb51e50ca698efd50a1379b', 'test4@test4.com', 2002, 3, 'FtsJEVrEZ16FuxGXMl0XDmZVGcRy44', 0, 1389352741),
+(25, 'test5', '911ddc3b8f9a13b5499b6bc4638a2b4f3f68bf23', 'test5@test5.com', 2001, 3, 'NG0wInKmNvNfSAaisWV8C1HWdXumn6', 0, 1389352741),
+(26, 'test6', 'a66df261120b6c2311c6ef0b1bab4e583afcbcc0', 'test6@test6.com', 2005, 3, 'iRSgG1pMynS4ypsl8LDnoeFFuRikBd', 0, 1389352741),
+(27, 'test7', 'ea3243132d653b39025a944e70f3ecdf70ee3994', 'test7@test7.com', 2002, 3, 'hzlOeoXGUB0TtomcfFOB5pGrahUXRU', 0, 1389352741),
+(28, 'test8', 'd03f9d34194393019e6d12d7c942827ebd694443', 'test8@test8.com', 1999, 3, 'YG0oXOTD6dHDcwr7us4ajhBXv4lXpB', 0, 1389353309),
+(29, 'test9', '53d525836cc96d089a5a4218b464fda532f7debe', 'test9@test9.com', 2001, 3, 'b16uP2yQrEBJdn3hOrkfKpfmRjYbMt', 0, 1389353309),
+(30, 'test10', '168f4029f416ee06565f12e697dfc1534ae69d32', 'test10@test10.com', 2002, 3, 'S9vJBstYKGRp84GJNPH10GoDGyC4e2', 0, 1389353309),
+(31, 'test11', '100c4e57374fc998e57164d4c0453bd3a4876a58', 'test11@test11.com', 2004, 3, '4ZuTiDwvAqrbKLkvCDJmRSgRV2M5w9', 0, 1389353309),
+(32, 'test12', '4ff1a33e188b7b86123d6e3be2722a23514a83b4', 'test12@test12.com', 1999, 3, 'GyxJZg98NQmkAVboi5WzbAQCCrnk6d', 0, 1389353309),
+(33, 'test13', 'd804cd9cc0c42b0652bab002f67858ab803c40c6', 'test13@test13.com', 2005, 3, '1aDVHo9h4xp8Oum6B1klYJ3RB8ctw0', 0, 1389353309),
+(34, 'test14', 'd79336a97da7d284c0fe15497d2fa944d1f2abb1', 'test14@test14.com', 2003, 3, 'Khq7XCS5VNI1LTwbz5QODViMixxxII', 0, 1389353309),
+(35, 'test15', '61bb70fa60368f069e62d601c357d203700ab2d2', 'test15@test15.com', 2000, 3, 'k5yPOgYq8HVyQqmNYOy1FBnuQcPuEW', 0, 1389353309),
+(36, 'test16', '1fbefee9cfb86926757519357e077fd6a21aef0f', 'test16@test16.com', 1998, 3, 'dWwrFEaQ1gzWn9MKLJikUR0WoUY0mG', 0, 1389353309),
+(37, 'test17', '08a25c0f270b29aeba650e6b2d1a9947a778c5da', 'test17@test17.com', 1996, 3, 'FESP5Z7jGUwRW3YjUS8wBGkNwVOtrm', 0, 1389353309);
 
 -- --------------------------------------------------------
 
@@ -1636,7 +1640,7 @@ INSERT INTO `videos` (`id`, `uid`, `title`, `other_title`, `type`, `category`, `
 (28, 18, 'Iron Man 3 (2013)', 'Iron Man', 1, 10, 14, 236, '1,2,21', '2013-05-03', 'Robert Downey Jr., Guy Pearce, Gwyneth Paltrow', 'Shane Black', 90, 'Iron Man, 2013', 'When Tony Stark''s world is torn apart by a formidable terrorist called the Mandarin, he starts an odyssey of rebuilding and retribution.', '28_1813800247974xTLD.jpg', '', 'http://www.youtube.com/watch?v=2CzoSeClcw0', 0, '', 1, 1, 1),
 (29, 18, 'Fast & Furious 6 (2013)', 'Fast & Furious 6', 1, 10, 14, 236, '1,6,24', '2013-05-24', 'Vin Diesel, Paul Walker, Dwayne Johnson', 'Justin Lin', 90, 'Fast, Furious, 2013', 'Hobbs has Dom and Brian reassemble their crew in order to take down a mastermind who commands an organization of mercenary drivers across 12 countries. Payment? Full pardons for them all.', '29_181380025557oniLF.jpg', '', 'http://www.youtube.com/watch?v=dKi5XoeTN0k', 0, '', 1, 1, 4),
 (30, 18, 'Red 2 (2013)', 'Red 2', 1, 10, 14, 236, '1,5,6,24', '2013-07-19', 'Jon Hoeber, Erich Hoeber, 2 more credits', 'Dean Parisot', 90, 'Red, 2013', 'Retired C.I.A. agent Frank Moses reunites his unlikely team of elite operatives for a global quest to track down a missing portable nuclear device.', '30_181380026531aqnhX.jpg', '', 'http://www.youtube.com/watch?v=ZfB8QwYBPxY', 0, '', 1, 1, 0),
-(31, 18, 'Skyfall (2012)', 'Skyfall', 1, 10, 14, 236, '1,2,24', '2011-11-09', 'Neal Purvis, Robert Wade, 2 more credits', 'Sam Mendes', 90, 'Skyfall, 2012', 'Bond''s loyalty to M is tested when her past comes back to haunt her. Whilst MI6 comes under attack, 007 must track down and destroy the threat, no matter how personal the cost.', '31_181380027287OigpU.jpg', '', 'http://www.youtube.com/watch?v=6kw1UVovByw', 0, '', 1, 1, 5),
+(31, 18, 'Skyfall (2012)', 'Skyfall', 1, 10, 14, 236, '1,2,24', '2011-11-09', 'Neal Purvis, Robert Wade, 2 more credits', 'Sam Mendes', 90, 'Skyfall, 2012', 'Bond''s loyalty to M is tested when her past comes back to haunt her. Whilst MI6 comes under attack, 007 must track down and destroy the threat, no matter how personal the cost.', '31_181380027287OigpU.jpg', '', 'http://www.youtube.com/watch?v=6kw1UVovByw', 0, '', 1, 1, 13),
 (32, 18, 'The Croods (2013)', 'The Croods', 3, 10, 14, 236, '2,3,5,9,10', '2013-03-12', 'Nicolas Cage, Ryan Reynolds, Emma Stone', 'Kirk De Micco, Chris Sanders', 90, 'The Croods, 2013', 'After their cave is destroyed, a caveman family must trek through an unfamiliar fantastical world with the help of an inventive boy.', '32_181380027840Qv80h.jpg', '', 'http://www.youtube.com/watch?v=4fVCKy69zUY', 0, '', 1, 1, 2),
 (33, 22, 'Escape Plan (2013)', 'Escape Plan', 1, 10, 14, 236, '1,17,24', '2013-10-18', 'Sylvester Stallone, Arnold Schwarzenegger, 50 Cent', 'Mikael Håfström', 90, 'Escape, Plan, 2013', 'When a structural-security authority finds himself incarcerated in a prison he designed, he has to put his skills to escape and find out who framed him.', '33_221380058929LcQRw.jpg', '', 'http://www.youtube.com/watch?v=CI4EjV_x_PQ', 0, '', 1, 1, 10),
 (34, 22, 'Total Recall (2012)', 'Total Recall', 1, 10, 14, 236, '1,2,21,24', '2012-08-03', 'Colin Farrell, Bokeem Woodbine, Bryan Cranston', 'Len Wiseman', 90, 'Total, Recall, 2012', 'A factory worker, Douglas Quaid, begins to suspect that he is a spy after visiting Rekall - a company that provides its clients with implanted fake memories of a life they would like to have led - goes wrong and he finds himself on the run.', '34_221380061085gybZK.jpg', '', 'http://www.youtube.com/watch?v=4SerZm7DheA', 0, '', 1, 1, 37),
