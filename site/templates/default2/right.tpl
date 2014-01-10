@@ -26,10 +26,6 @@
 	{widget_Manage}
 <!-- end Manage account-->
 
-<!-- News Letter Widget-->
-	{widget_NewsLetter}
-<!-- end of news letter widget -->
-
 <!-- team chat -->
 	{widget_TeamChat}
 <!-- end team chat widget -->
@@ -38,7 +34,9 @@
 	{widget_shoutbox}
 <!-- end shout box widget -->
 	
-
+<!-- News Letter Widget-->
+	{widget_NewsLetter}
+<!-- end of news letter widget -->
 
 </div>
 <!-- end right column -->	
