@@ -25,6 +25,7 @@
 		}
 				
 		function AddSubtitle_content(){
+			$VideoInfo = $GLOBALS['COMMON']->GetVideoInfo($GLOBALS['vars']['vid']);
 				$content = array
 				  (
 				  array("{vid}", $GLOBALS['vars']['vid']),
@@ -44,6 +45,8 @@
 				  array("{SubtitleFPSmilsec}", self::numbers()),
 				  array("{SubtitleFormats}", self::formats()),
 				  array("{RefreshSubtitles}", self::$RefreshSubtitles),
+				  array("{Video}", $GLOBALS['COMMON']->l('subtitle_AddSubtitle_videotitle')),
+				  array("{VideoTitle}", $VideoInfo[0]['title']),
 				 );
 			 
 		return $content;

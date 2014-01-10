@@ -68,7 +68,10 @@
 <div id="div-submitnewsubtitle">
 	
 <form name="submitnewsubtitle" id="submitnewsubtitle" method="post" action="index.php">
-
+	<div class='addsubtitle-infocontainer-row'>
+		<div class='addsubtitle-infocontainer-left'>{Video}</div>
+		<div class='addsubtitle-infocontainer-right'>{VideoTitle}</div>
+	</div>
 	<div class='addsubtitle-infocontainer-row'>
 		<div class='addsubtitle-infocontainer-left'>{ReleaseName}</div>
 		<div class='addsubtitle-infocontainer-right'><input type="text" name="ReleaseName" /></div>
