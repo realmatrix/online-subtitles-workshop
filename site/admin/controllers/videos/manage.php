@@ -4,8 +4,8 @@
 			
 		function manage_sections(){
 			$array = array(
-				array("users", "ManageUsers", $GLOBALS['vars'], TRUE),
-				array("users", "UsersStatistics", $GLOBALS['vars'], self::ViewStatistics()),
+				array("videos", "ManageVideos", $GLOBALS['vars'], TRUE),
+				array("videos", "VideosStatistics", $GLOBALS['vars'], self::ViewStatistics()),
 			);
 			return $array;
 		}
