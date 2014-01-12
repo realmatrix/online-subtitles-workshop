@@ -915,5 +915,13 @@ class Common{
 		return $res[0]['group'];
 	}
 	
+	function GetUserVideos($uid){
+		$args = array(
+			array(":uid", $uid, "str"),
+		);
+		$res = self::db_query("SELECT * FROM `videos` WHERE `uid` = :uid", $args);
+		return $res;
+	}
+	
 }
 ?>
