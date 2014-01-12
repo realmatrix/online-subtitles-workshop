@@ -18,13 +18,7 @@
 									  <th style="width: %25;">Value</th>                                          
 								  </tr>
 							  </thead>   
-							  <tbody>
-								<tr>
-									<td>Total Videos</td>
-									<td class="center">{TotalVideos}</td>
-									<td class="center">Total Subtitles</td>
-									<td class="center">{TotalSubtitles}</td>                                       
-								</tr>       
+							  <tbody>      
 								<tr>
 									<td>Total Members</td>
 									<td class="center">{TotalMembers}</td>
@@ -42,12 +36,6 @@
 									<td class="center">{OnlineMembers}</td>    
 									<td>Banned Members</td>
 									<td class="center">{BannedMembers}</td>                                   
-								</tr> 
-								<tr>
-									<td class="center">Total Teams</td>
-									<td class="center">{TotalTeams}</td>    
-									<td>Total Messages</td>
-									<td class="center">{TotalMessages}</td>                                   
 								</tr>                        
 							  </tbody>
 						 </table>       
