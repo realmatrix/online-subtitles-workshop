@@ -5,6 +5,7 @@
 		function add_sections(){
 			$array = array(
 				array("users", "ManageUsers", $GLOBALS['vars'], TRUE),
+				array("users", "AddUsersForm", $GLOBALS['vars'], TRUE),
 				array("users", "AddUsers", $GLOBALS['vars'], TRUE),
 			);
 			return $array;
