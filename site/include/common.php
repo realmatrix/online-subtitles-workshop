@@ -907,5 +907,13 @@ class Common{
 		return $permissions;
 	}
 	
+	function GetUserGroupByID($id){
+		$args = array(
+			array(":id", $id, "str"),
+		);
+		$res = self::db_query("SELECT * FROM `groups` WHERE `id` = :id", $args);
+		return $res[0]['group'];
+	}
+	
 }
 ?>

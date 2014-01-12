@@ -42,8 +42,8 @@
 			for ($i=0; $i < count($res); $i++) { 
 								self::$SearchResult .= "<tr>";
 								self::$SearchResult .= "<td>".$res[$i]['username']."</td>";
-								self::$SearchResult .= "<td class='center'>Member</td>";
-								self::$SearchResult .= "<td class='center'>Member</td>";
+								self::$SearchResult .= "<td class='center'>".date("d F Y", strtotime($res[$i]['RegisterationDate']))."</td>";
+								self::$SearchResult .= "<td class='center'>".$GLOBALS['COMMON']->GetUserGroupByID($res[$i]['group'])."</td>";
 								self::$SearchResult .= "<td class='center'>";
 								self::$SearchResult .= "<span class='label label-success'>Active</span>";
 								self::$SearchResult .= "</td>";
