@@ -50,8 +50,8 @@
 									<td class="center">{Ctotalsubtitles}</td>                                       
 								</tr>
 								<tr>
-									<td>Created Groups</td>
-									<td class="center">{Ccreatedgroups}</td>
+									<td>Created Teams</td>
+									<td class="center">{Ccreatedteams}</td>
 									<td class="center">Joined Groups</td>
 									<td class="center">{Cjoinedgroups}</td>                                       
 								</tr>

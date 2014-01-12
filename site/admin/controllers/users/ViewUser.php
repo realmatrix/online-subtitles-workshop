@@ -37,10 +37,10 @@
 			  array("{Cbirthdate}", self::$SearchResult[0]['birthdate']),
 			  array("{Cemailverified}", self::$SearchResult[0]['EmailVerification']),
 			  array("{Ctotalvideos}", count($GLOBALS['COMMON']->GetUserVideos(self::$SearchResult[0]['id']))),
-			  array("{Cfaviuritevideos}", count($GLOBALS['COMMON']->GetUserFavouriteVideos(self::$SearchResult[0]['id']))),
-			  array("{Cusername}", self::$SearchResult[0]['username']),
-			  array("{Cusername}", self::$SearchResult[0]['username']),
-			  array("{Cusername}", self::$SearchResult[0]['username']),
+			  array("{Cfaviuritevideos}", count($GLOBALS['COMMON']->GetUserFavouriteVideosByID(self::$SearchResult[0]['id']))),
+			  array("{Ccreatedteams}", count($GLOBALS['COMMON']->GetUserTeams(self::$SearchResult[0]['id']))),
+			  array("{Cfavouritesubtitles}", count($GLOBALS['COMMON']->GetUserFavouriteSubtitlesByID(self::$SearchResult[0]['id']))),
+			  array("{Ctotalsubtitles}", count($GLOBALS['COMMON']->GetUserSubtitles(self::$SearchResult[0]['id']))),
 			  array("{Cusername}", self::$SearchResult[0]['username']),
 			 );
 		return $content;

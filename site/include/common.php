@@ -878,6 +878,22 @@ class Common{
 		return $res;
 	}
 	
+	function GetUserFavouriteVideosByID($uid){
+		$args = array(
+			array(":uid", $uid, "str"),
+		);
+		$res = self::db_query("SELECT * FROM `favouritevideos` WHERE `uid` = :uid", $args);
+		return $res;
+	}
+	
+	function GetUserFavouriteSubtitlesByID($uid){
+		$args = array(
+			array(":uid", $uid, "str"),
+		);
+		$res = self::db_query("SELECT * FROM `favouritesubtitles` WHERE `uid` = :uid", $args);
+		return $res;
+	}
+	
 	function IsSubtitleOwner($sid){
 		$UID = $_SESSION['id'];
 		$args = array(
