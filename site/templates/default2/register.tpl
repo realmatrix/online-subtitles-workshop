@@ -235,12 +235,14 @@ body{
     
     <div>
     	<label for="login_username">{email}</label> 
-    	<input type="text" name="email" id="login_username" class="field required" title="Please provide your username" />
+    	<input type="text" name="email" id="login_username" class="field required" title="Please provide your email" />
     </div>	
     
     <div>
-    	<label for="login_username">{birthyear}</label> 
-    	<select name="birth" style="width:300px;">{birthselect}</select>
+    	<label for="login_username">{birthdate}</label> 
+    	<select name="year" style="width:94px;" class="field required" title="Please provide your birth year" >{selectbirthyear}</select>
+    	<select name="month" style="width:94px;" class="field required" title="Please provide your birth month" >{selectbirthmonth}</select>
+    	<select name="day" style="width:94px;" class="field required" title="Please provide your birth day" >{selectbirthday}</select>
     </div>	
     			
     <div class="submit">

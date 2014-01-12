@@ -35,8 +35,10 @@
 	  array("{password}",$GLOBALS['COMMON']->l('register_password')),
 	  array("{password2}",$GLOBALS['COMMON']->l('register_password2')),
 	  array("{email}",$GLOBALS['COMMON']->l('register_email')),
-	  array("{birthyear}",$GLOBALS['COMMON']->l('register_birthyear')),
-	  array("{birthselect}",$GLOBALS['COMMON']->GenBirthYears()),
+	  array("{birthdate}",$GLOBALS['COMMON']->l('register_birthdate')),
+	  array("{selectbirthyear}",$GLOBALS['COMMON']->GenBirthYears()),
+	  array("{selectbirthmonth}",$GLOBALS['COMMON']->GenSelectMonths()),
+	  array("{selectbirthday}",$GLOBALS['COMMON']->GenSelectDays()),
 	  array("{submit}",$GLOBALS['COMMON']->l('register_submit')),
 	);
 	

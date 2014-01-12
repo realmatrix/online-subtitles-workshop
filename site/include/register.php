@@ -5,7 +5,6 @@
 		 $Email_Check = strpos($Email,$Email1);
 		 $Password = $_POST['password'];
 		 $Re_Password = $_POST['password2'];
-		 $Birth = $_POST['birth'];
 		
 		 //Check To See If All Information Is Correct
 		
@@ -19,7 +18,7 @@
 		 $GLOBALS['ERROR'][] = $GLOBALS['COMMON']->l('register_NoPassword');
 		 }
 		
-		 if($Birth == "")
+		 if($_POST['year'] == "" or $_POST['month'] == "" or $_POST['day'] == "")
 		 {
 		 $GLOBALS['ERROR'][] = $GLOBALS['COMMON']->l('register_NoBirthYear');
 		 }
@@ -64,10 +63,11 @@
 				array(":username", $Username, "str"),
 				array(":password", $Password, "str"),
 				array(":email", $Email, "str"),
-				array(":birth", $Birth, "str"),
-				array(":group", "3", "str")
+				array(":birth", $year, "str"),
+				array(":group", "3", "str"),
+				array(":birthdate", $year."-".$month."-".$day, "str"),
 			);
-		 	$result = $GLOBALS['COMMON']->db_query("INSERT INTO `users` (`username`, `password`, `email`, `BirthYear`, `group`, `RegisterationDate`) VALUES (:username, :password, :email, :birth, :group, NOW())", $params);
+		 	$result = $GLOBALS['COMMON']->db_query("INSERT INTO `users` (`username`, `password`, `email`, `BirthYear`, `group`, `RegisterationDate`, `birthdate`) VALUES (:username, :password, :email, :birth, :group, NOW(), :birthdate)", $params);
 		 	if($result!="error")
  			{
  			 $GLOBALS['SUCCESS'][] = $GLOBALS['COMMON']->l('register_completed').'<script type="text/javascript">$("#register").empty();setTimeout(function(){ window.location = "index.php"; }, 5000);</script>';

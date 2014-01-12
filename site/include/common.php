@@ -120,6 +120,17 @@ class Common{
 
 
 
+	function GenSelectDays(){
+		$days = self::days();
+		$res = "<option value=''></option>";
+		for ($i=0; $i < count($days); $i++) { 
+			$res .= "<option value='".$days[$i]."'>".$days[$i]."</option>";
+		}
+		return $res;
+	}
+	
+	
+
 	function months(){
 		for ($i=1; $i <= 12; $i++) { 
 			$res[] = $i;
@@ -129,6 +140,17 @@ class Common{
 
 
 
+	function GenSelectMonths(){
+		$months = self::months();
+		$res = "<option value=''></option>";
+		for ($i=0; $i < count($months); $i++) { 
+			$res .= "<option value='".$months[$i]."'>".$months[$i]."</option>";
+		}
+		return $res;
+	}
+	
+	
+	
 	function years(){
 		$CurrentYear = date("Y");
 		for ($i=$CurrentYear+10; $i >= 1800; $i--) { 
