@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 10, 2014 at 08:37 PM
+-- Generation Time: Jan 12, 2014 at 06:15 AM
 -- Server version: 5.5.29
 -- PHP Version: 5.3.20
 
@@ -761,7 +761,7 @@ CREATE TABLE IF NOT EXISTS `lang_english` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `key` (`key`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=229 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=230 ;
 
 --
 -- Dumping data for table `lang_english`
@@ -988,7 +988,8 @@ INSERT INTO `lang_english` (`id`, `key`, `text`) VALUES
 (225, 'video_ViewVideo_createdby', 'Created By:'),
 (226, 'video_ViewVideo_views', 'Views:'),
 (227, 'subtitle_SubtitleOptions_title', 'Subtitle Options'),
-(228, 'video_ViewVideo_subtitlescount', 'Subtitles:');
+(228, 'video_ViewVideo_subtitlescount', 'Subtitles:'),
+(229, 'subtitle_AddSubtitle_videotitle', 'Video Title:');
 
 -- --------------------------------------------------------
 
@@ -1016,14 +1017,14 @@ CREATE TABLE IF NOT EXISTS `onlineusers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1559 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1564 ;
 
 --
 -- Dumping data for table `onlineusers`
 --
 
 INSERT INTO `onlineusers` (`id`, `session`, `time`, `username`) VALUES
-(1558, 'rgk68p79lv18u44vgi0jn64oi5', 1389385847, '');
+(1563, 'e3bnbb30edbgqskvp8dr9gag54', 1389397853, '');
 
 -- --------------------------------------------------------
 
@@ -1216,7 +1217,7 @@ CREATE TABLE IF NOT EXISTS `systemcron` (
 --
 
 INSERT INTO `systemcron` (`id`, `job`, `frequancy`, `last_run`) VALUES
-(1, 'AutoTranslation', 300, 1389385848);
+(1, 'AutoTranslation', 300, 1389397854);
 
 -- --------------------------------------------------------
 
@@ -1500,6 +1501,9 @@ CREATE TABLE IF NOT EXISTS `users` (
   `key` varchar(30) NOT NULL,
   `LastLogin` int(11) NOT NULL,
   `KeyTime` int(11) NOT NULL,
+  `RegisterationDate` datetime NOT NULL DEFAULT '2000-01-01 00:00:00',
+  `state` int(11) NOT NULL DEFAULT '1' COMMENT '1=active, -1=banned, 0=Pending',
+  `EmailVerification` int(11) NOT NULL DEFAULT '0' COMMENT '0=not.verified 1=verified',
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=38 ;
@@ -1508,27 +1512,27 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `email`, `BirthYear`, `group`, `key`, `LastLogin`, `KeyTime`) VALUES
-(18, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.test', 2009, 1, 'EieUQfVSTwaBL2nqNc2zwOgx47kZJa', 1389381929, 1389352741),
-(19, 'ghfghh', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'dsd@sd.sd', 2006, 3, '3S0jYSUru8K0CZpINIuem9qkMhpGdp', 0, 1389352741),
-(20, 'wejhg', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'aaa@aaa.aaa', 1919, 3, 'v0SAWWXbd9EreaTvGPlgyfpzVUxZlD', 0, 1389352741),
-(21, 't567567567', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'tryrt@erttr.rrt', 1917, 3, 'iPU920qX6ssS2XEpueHas6fq2fs1G5', 0, 1389352741),
-(22, 'test2', '109f4b3c50d7b0df729d299bc6f8e9ef9066971f', 'test2@test2.com', 2010, 3, 'ypFIlIIN4LqOaV1ovdAR4LUiesisMw', 0, 1389352741),
-(23, 'test3', '3ebfa301dc59196f18593c45e519287a23297589', 'test3@test3.com', 2003, 3, 'sDRghuI2SkRVekq0gglYf85sTrHyIf', 0, 1389352741),
-(24, 'test4', '1ff2b3704aede04eecb51e50ca698efd50a1379b', 'test4@test4.com', 2002, 3, 'FtsJEVrEZ16FuxGXMl0XDmZVGcRy44', 0, 1389352741),
-(25, 'test5', '911ddc3b8f9a13b5499b6bc4638a2b4f3f68bf23', 'test5@test5.com', 2001, 3, 'NG0wInKmNvNfSAaisWV8C1HWdXumn6', 0, 1389352741),
-(26, 'test6', 'a66df261120b6c2311c6ef0b1bab4e583afcbcc0', 'test6@test6.com', 2005, 3, 'iRSgG1pMynS4ypsl8LDnoeFFuRikBd', 0, 1389352741),
-(27, 'test7', 'ea3243132d653b39025a944e70f3ecdf70ee3994', 'test7@test7.com', 2002, 3, 'hzlOeoXGUB0TtomcfFOB5pGrahUXRU', 0, 1389352741),
-(28, 'test8', 'd03f9d34194393019e6d12d7c942827ebd694443', 'test8@test8.com', 1999, 3, 'YG0oXOTD6dHDcwr7us4ajhBXv4lXpB', 0, 1389353309),
-(29, 'test9', '53d525836cc96d089a5a4218b464fda532f7debe', 'test9@test9.com', 2001, 3, 'b16uP2yQrEBJdn3hOrkfKpfmRjYbMt', 0, 1389353309),
-(30, 'test10', '168f4029f416ee06565f12e697dfc1534ae69d32', 'test10@test10.com', 2002, 3, 'S9vJBstYKGRp84GJNPH10GoDGyC4e2', 0, 1389353309),
-(31, 'test11', '100c4e57374fc998e57164d4c0453bd3a4876a58', 'test11@test11.com', 2004, 3, '4ZuTiDwvAqrbKLkvCDJmRSgRV2M5w9', 0, 1389353309),
-(32, 'test12', '4ff1a33e188b7b86123d6e3be2722a23514a83b4', 'test12@test12.com', 1999, 3, 'GyxJZg98NQmkAVboi5WzbAQCCrnk6d', 0, 1389353309),
-(33, 'test13', 'd804cd9cc0c42b0652bab002f67858ab803c40c6', 'test13@test13.com', 2005, 3, '1aDVHo9h4xp8Oum6B1klYJ3RB8ctw0', 0, 1389353309),
-(34, 'test14', 'd79336a97da7d284c0fe15497d2fa944d1f2abb1', 'test14@test14.com', 2003, 3, 'Khq7XCS5VNI1LTwbz5QODViMixxxII', 0, 1389353309),
-(35, 'test15', '61bb70fa60368f069e62d601c357d203700ab2d2', 'test15@test15.com', 2000, 3, 'k5yPOgYq8HVyQqmNYOy1FBnuQcPuEW', 0, 1389353309),
-(36, 'test16', '1fbefee9cfb86926757519357e077fd6a21aef0f', 'test16@test16.com', 1998, 3, 'dWwrFEaQ1gzWn9MKLJikUR0WoUY0mG', 0, 1389353309),
-(37, 'test17', '08a25c0f270b29aeba650e6b2d1a9947a778c5da', 'test17@test17.com', 1996, 3, 'FESP5Z7jGUwRW3YjUS8wBGkNwVOtrm', 0, 1389353309);
+INSERT INTO `users` (`id`, `username`, `password`, `email`, `BirthYear`, `group`, `key`, `LastLogin`, `KeyTime`, `RegisterationDate`, `state`, `EmailVerification`) VALUES
+(18, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.test', 2009, 1, 'EieUQfVSTwaBL2nqNc2zwOgx47kZJa', 1389393712, 1389352741, '2000-01-01 00:00:00', 1, 0),
+(19, 'ghfghh', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'dsd@sd.sd', 2006, 3, '3S0jYSUru8K0CZpINIuem9qkMhpGdp', 0, 1389352741, '2000-01-01 00:00:00', 1, 0),
+(20, 'wejhg', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'aaa@aaa.aaa', 1919, 3, 'v0SAWWXbd9EreaTvGPlgyfpzVUxZlD', 0, 1389352741, '2000-01-01 00:00:00', 1, 0),
+(21, 't567567567', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'tryrt@erttr.rrt', 1917, 3, 'iPU920qX6ssS2XEpueHas6fq2fs1G5', 0, 1389352741, '2000-01-01 00:00:00', 1, 0),
+(22, 'test2', '109f4b3c50d7b0df729d299bc6f8e9ef9066971f', 'test2@test2.com', 2010, 3, 'ypFIlIIN4LqOaV1ovdAR4LUiesisMw', 0, 1389352741, '2000-01-01 00:00:00', 1, 0),
+(23, 'test3', '3ebfa301dc59196f18593c45e519287a23297589', 'test3@test3.com', 2003, 3, 'sDRghuI2SkRVekq0gglYf85sTrHyIf', 0, 1389352741, '2000-01-01 00:00:00', 1, 0),
+(24, 'test4', '1ff2b3704aede04eecb51e50ca698efd50a1379b', 'test4@test4.com', 2002, 3, 'FtsJEVrEZ16FuxGXMl0XDmZVGcRy44', 0, 1389352741, '2000-01-01 00:00:00', 1, 0),
+(25, 'test5', '911ddc3b8f9a13b5499b6bc4638a2b4f3f68bf23', 'test5@test5.com', 2001, 3, 'NG0wInKmNvNfSAaisWV8C1HWdXumn6', 0, 1389352741, '2000-01-01 00:00:00', 1, 0),
+(26, 'test6', 'a66df261120b6c2311c6ef0b1bab4e583afcbcc0', 'test6@test6.com', 2005, 3, 'iRSgG1pMynS4ypsl8LDnoeFFuRikBd', 0, 1389352741, '2000-01-01 00:00:00', 1, 0),
+(27, 'test7', 'ea3243132d653b39025a944e70f3ecdf70ee3994', 'test7@test7.com', 2002, 3, 'hzlOeoXGUB0TtomcfFOB5pGrahUXRU', 0, 1389352741, '2000-01-01 00:00:00', 1, 0),
+(28, 'test8', 'd03f9d34194393019e6d12d7c942827ebd694443', 'test8@test8.com', 1999, 3, 'YG0oXOTD6dHDcwr7us4ajhBXv4lXpB', 0, 1389353309, '2000-01-01 00:00:00', 1, 0),
+(29, 'test9', '53d525836cc96d089a5a4218b464fda532f7debe', 'test9@test9.com', 2001, 3, 'b16uP2yQrEBJdn3hOrkfKpfmRjYbMt', 0, 1389353309, '2000-01-01 00:00:00', 1, 0),
+(30, 'test10', '168f4029f416ee06565f12e697dfc1534ae69d32', 'test10@test10.com', 2002, 3, 'S9vJBstYKGRp84GJNPH10GoDGyC4e2', 0, 1389353309, '2000-01-01 00:00:00', 1, 0),
+(31, 'test11', '100c4e57374fc998e57164d4c0453bd3a4876a58', 'test11@test11.com', 2004, 3, '4ZuTiDwvAqrbKLkvCDJmRSgRV2M5w9', 0, 1389353309, '2000-01-01 00:00:00', 1, 0),
+(32, 'test12', '4ff1a33e188b7b86123d6e3be2722a23514a83b4', 'test12@test12.com', 1999, 3, 'GyxJZg98NQmkAVboi5WzbAQCCrnk6d', 0, 1389353309, '2000-01-01 00:00:00', 1, 0),
+(33, 'test13', 'd804cd9cc0c42b0652bab002f67858ab803c40c6', 'test13@test13.com', 2005, 3, '1aDVHo9h4xp8Oum6B1klYJ3RB8ctw0', 0, 1389353309, '2000-01-01 00:00:00', 1, 0),
+(34, 'test14', 'd79336a97da7d284c0fe15497d2fa944d1f2abb1', 'test14@test14.com', 2003, 3, 'Khq7XCS5VNI1LTwbz5QODViMixxxII', 0, 1389353309, '2000-01-01 00:00:00', 1, 0),
+(35, 'test15', '61bb70fa60368f069e62d601c357d203700ab2d2', 'test15@test15.com', 2000, 3, 'k5yPOgYq8HVyQqmNYOy1FBnuQcPuEW', 0, 1389353309, '2000-01-01 00:00:00', 1, 0),
+(36, 'test16', '1fbefee9cfb86926757519357e077fd6a21aef0f', 'test16@test16.com', 1998, 3, 'dWwrFEaQ1gzWn9MKLJikUR0WoUY0mG', 0, 1389353309, '2000-01-01 00:00:00', 1, 0),
+(37, 'test17', '08a25c0f270b29aeba650e6b2d1a9947a778c5da', 'test17@test17.com', 1996, 3, 'FESP5Z7jGUwRW3YjUS8wBGkNwVOtrm', 0, 1389353309, '2000-01-01 00:00:00', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -1649,7 +1653,7 @@ INSERT INTO `videos` (`id`, `uid`, `title`, `other_title`, `type`, `category`, `
 (34, 22, 'Total Recall (2012)', 'Total Recall', 1, 10, 14, 236, '1,2,21,24', '2012-08-03', 'Colin Farrell, Bokeem Woodbine, Bryan Cranston', 'Len Wiseman', 90, 'Total, Recall, 2012', 'A factory worker, Douglas Quaid, begins to suspect that he is a spy after visiting Rekall - a company that provides its clients with implanted fake memories of a life they would like to have led - goes wrong and he finds himself on the run.', '34_221380061085gybZK.jpg', '', 'http://www.youtube.com/watch?v=4SerZm7DheA', 0, '', 1, 1, 37),
 (35, 22, 'Men in Black 3 (2012)', 'Men in Black 3', 1, 10, 14, 236, '1,5,21', '2012-05-25', 'Will Smith, Tommy Lee Jones, Josh Brolin', 'Barry Sonnenfeld', 90, 'Men in Black, 2012', 'Agent J travels in time to M.I.B.''s early days in 1969 to stop an alien from assassinating his friend Agent K and changing history.', '35_221380061647Iqc5u.jpg', '', 'http://www.youtube.com/watch?v=yc4tk27ZzZk', 0, '', 1, 1, 23),
 (36, 22, 'Looper (2012)', 'Looper', 1, 10, 14, 236, '1,6,21,24', '2012-09-28', 'Joseph Gordon-Levitt, Bruce Willis, Emily Blunt', 'Rian Johnson', 90, 'Looper, 2012', 'In 2074, when the mob wants to get rid of someone, the target is sent 30 years into the past, where a hired gun awaits. Someone like Joe, who one day learns the mob wants to ''close the loop'' by transporting back Joe''s future self.', '36_2213800621454nP8S.jpg', '', 'http://www.youtube.com/watch?v=eI3ju17W070', 0, '', 1, 1, 7),
-(37, 22, 'Safe (I) (2012)', 'Safe', 1, 10, 14, 236, '1,6,24', '2012-04-27', 'Jason Statham, Catherine Chan, Chris Sarandon', 'Boaz Yakin', 90, 'Safe, 2012', 'Mei, a young girl whose memory holds a priceless numerical code, finds herself pursued by the Triads, the Russian mob, and corrupt NYC cops. Coming to her aid is an ex-cage fighter whose life was destroyed by the gangsters on Mei''s trail.', '37_221380062467n8ikl.jpg', '', 'http://www.youtube.com/watch?v=i-D26g3CEuc', 0, '', 1, 1, 2),
+(37, 22, 'Safe (I) (2012)', 'Safe', 1, 10, 14, 236, '1,6,24', '2012-04-27', 'Jason Statham, Catherine Chan, Chris Sarandon', 'Boaz Yakin', 90, 'Safe, 2012', 'Mei, a young girl whose memory holds a priceless numerical code, finds herself pursued by the Triads, the Russian mob, and corrupt NYC cops. Coming to her aid is an ex-cage fighter whose life was destroyed by the gangsters on Mei''s trail.', '37_221380062467n8ikl.jpg', '', 'http://www.youtube.com/watch?v=i-D26g3CEuc', 0, '', 1, 1, 9),
 (38, 22, 'The Last Stand (2013)', 'The Last Stand', 1, 10, 14, 236, '1,6,24', '2013-01-18', 'Arnold Schwarzenegger, Forest Whitaker, Johnny Knoxville', 'Kim Jee-Woon', 90, 'Last, Stand, 2013', 'The leader of a drug cartel busts out of a courthouse and speeds to the Mexican border, where the only thing in his path is a sheriff and his inexperienced staff.', '38_221380063319Klk0X.jpg', '', 'http://www.youtube.com/watch?v=zxt8kRhLaMs', 0, '', 1, 1, 0);
 
 -- --------------------------------------------------------
