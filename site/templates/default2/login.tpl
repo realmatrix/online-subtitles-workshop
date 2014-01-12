@@ -214,7 +214,7 @@ body{
 
 <form id="login" method="post" action=""> 
 
-    <h1>Log in to your <strong>website.com</strong> account!</h1>
+    <h1>Log in to your <strong>{SiteName}</strong> account!</h1>
     <p class="register">Not a member? <a href="index.php?page=register">Register here!</a></p>
     
     <div>

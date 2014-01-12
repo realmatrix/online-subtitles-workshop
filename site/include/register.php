@@ -63,11 +63,12 @@
 				array(":username", $Username, "str"),
 				array(":password", $Password, "str"),
 				array(":email", $Email, "str"),
-				array(":birth", $year, "str"),
+				array(":birth", $_POST['year'], "str"),
 				array(":group", "3", "str"),
-				array(":birthdate", $year."-".$month."-".$day, "str"),
+				array(":birthdate", $_POST['year']."-".$_POST['month']."-".$_POST['day'], "str"),
+				array(":RegisterationDate", date("Y-m-d H:i:s"), "str"),
 			);
-		 	$result = $GLOBALS['COMMON']->db_query("INSERT INTO `users` (`username`, `password`, `email`, `BirthYear`, `group`, `RegisterationDate`, `birthdate`) VALUES (:username, :password, :email, :birth, :group, NOW(), :birthdate)", $params);
+		 	$result = $GLOBALS['COMMON']->db_query("INSERT INTO `users` (`username`, `password`, `email`, `BirthYear`, `group`, `RegisterationDate`, `birthdate`) VALUES (:username, :password, :email, :birth, :group, :RegisterationDate, :birthdate)", $params);
 		 	if($result!="error")
  			{
  			 $GLOBALS['SUCCESS'][] = $GLOBALS['COMMON']->l('register_completed').'<script type="text/javascript">$("#register").empty();setTimeout(function(){ window.location = "index.php"; }, 5000);</script>';
