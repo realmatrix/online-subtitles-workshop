@@ -8,7 +8,7 @@
 	
 		function FindUsersForm_hooks(){
 			$array = array(
-				array("find", "Search"),
+				array("test", "test"),
 			);
 			return $array;
 		}
@@ -28,6 +28,7 @@
 			  array("{title}", $GLOBALS['COMMON']->l("admin_widgets_FindUsersForm_title")),
 			  array("{page}", $GLOBALS['vars']['page']),
 			  array("{sec}", $GLOBALS['vars']['sec']),
+			  array("{tusername}", $GLOBALS['vars']['username']),
 			 );
 		return $content;
 		}

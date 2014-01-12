@@ -29,14 +29,33 @@
 		}
 
 		
-		
+
+		function CurrentPageUrl() {
+		 $pageURL = 'http';
+		 if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
+		 $pageURL .= "://";
+		 if ($_SERVER["SERVER_PORT"] != "80") {
+		  $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+		 } else {
+		  $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+		 }
+		 return $pageURL;
+		}
+	
+	
+	
 		function LoadSection($controller, $section, $args){
 			$res = "";
 			if(self::checkSectionOptions($controller, $section, $message)){
 			include_once "controllers/".$controller."/".$section.".php";
 			$hooks = call_user_func('C'.$section.'::'.$section.'_hooks');
+			$found = 0;
 				for ($i=0; $i < count($hooks); $i++) {
-					if(self::CheckControllerHook($section, $hooks[$i][0], $args)===TRUE){call_user_func('C'.$section.'::'.$hooks[$i][1], $args);}
+					if(self::CheckControllerHook($section, $hooks[$i][0], $args)===TRUE){call_user_func('C'.$section.'::'.$hooks[$i][1], $args); $found++;}
+				}
+				if($args['ssec']==$section and $found==0){
+					$GLOBALS['ERROR'][] = "function '".$args['h']."' not found in controllers/".$controller."/".$section.".php";
+					$GLOBALS['ERROR'][] = "BUG URL-> <b>".self::CurrentPageUrl()."</b>";
 				}
 			$content = call_user_func('C'.$section.'::'.$section);
 			$options = "";
@@ -45,7 +64,7 @@
 			return $res;
 			}
 			else{
-				echo "<script>alert('".$message."')</script>";
+				//echo "<script>alert('".$message."');</script>";
 			} 
 		}
 		

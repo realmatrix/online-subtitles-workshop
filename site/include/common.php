@@ -247,7 +247,7 @@ class Common{
 				$GLOBALS['ERROR'][] = "BUG URL-> <b>".self::CurrentPageUrl()."</b>";
 			}
 		$content = call_user_func('C'.$section.'::'.$section);
-		$options = 
+		$options = "";
 		$res = self::RenderView($content, $controller, $section);
 		//if(!array_key_exists($controller.'_'.$section.'_title', $GLOBALS['page'])){$GLOBALS['ERROR'][]= "GLOBALS['page']['".$controller.'_'.$section."_title'] not found inside language file.";}
 		return $res;

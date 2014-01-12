@@ -12,61 +12,15 @@
 						<table class="table table-striped table-bordered bootstrap-datatable datatable">
 						  <thead>
 							  <tr>
-								  <th>Widget</th>
-								  <th>By</th>
-								  <th>Version</th>
-								  <th>Date</th>
+								  <th>Username</th>
+								  <th>Date registered</th>
+								  <th>Role</th>
 								  <th>Status</th>
 								  <th>Actions</th>
 							  </tr>
 						  </thead>   
 						  <tbody>
-							<tr>
-								<td>Test Widget 1</td>
-								<td class="center">2012/01/01</td>
-								<td class="center">Member</td>
-								<td class="center">Member</td>
-								<td class="center">
-									<span class="label label-success">Active</span>
-								</td>
-								<td class="center">
-									<a class="btn btn-success" href="#">
-										<i class="icon-zoom-in icon-white"></i>  
-										View                                            
-									</a>
-									<a class="btn btn-info" href="#">
-										<i class="icon-edit icon-white"></i>  
-										Edit                                            
-									</a>
-									<a class="btn btn-danger" href="#">
-										<i class="icon-trash icon-white"></i> 
-										Delete
-									</a>
-								</td>
-							</tr>
-							<tr>
-								<td>Test Widget 2</td>
-								<td class="center">2012/01/01</td>
-								<td class="center">Member</td>
-								<td class="center">Member</td>
-								<td class="center">
-									<span class="label">Inactive</span>
-								</td>
-								<td class="center">
-									<a class="btn btn-success" href="#">
-										<i class="icon-zoom-in icon-white"></i>  
-										View                                            
-									</a>
-									<a class="btn btn-info" href="#">
-										<i class="icon-edit icon-white"></i>  
-										Edit                                            
-									</a>
-									<a class="btn btn-danger" href="#">
-										<i class="icon-trash icon-white"></i> 
-										Delete
-									</a>
-								</td>
-							</tr>
+							{SearchResult}
 						  </tbody>
 					  </table>            
 					</div>
