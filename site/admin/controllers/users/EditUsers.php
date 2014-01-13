@@ -33,6 +33,9 @@
 			  array("{sec}", $GLOBALS['vars']['sec']),
 			  array("{tusername}", $GLOBALS['vars']['username']),
 			  array("{UserGroups}", self::GetUserGroups(self::$SearchResult[0]['group'])),
+			  array("{tpassword}", $GLOBALS['vars']['password']),
+			  array("{tpassword2}", $GLOBALS['vars']['password2']),
+			  array("{temail}", self::$SearchResult[0]['email'])
 			 );
 		return $content;
 		}

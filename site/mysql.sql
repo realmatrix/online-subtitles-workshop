@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 12, 2014 at 11:25 PM
+-- Generation Time: Jan 13, 2014 at 07:09 PM
 -- Server version: 5.5.29
 -- PHP Version: 5.3.20
 
@@ -1031,14 +1031,14 @@ CREATE TABLE IF NOT EXISTS `onlineusers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1575 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1586 ;
 
 --
 -- Dumping data for table `onlineusers`
 --
 
 INSERT INTO `onlineusers` (`id`, `session`, `time`, `username`) VALUES
-(1574, 'rau1n6pjic9ig2hnun8ada9vm4', 1389568582, '');
+(1585, 'rau1n6pjic9ig2hnun8ada9vm4', 1389635582, '');
 
 -- --------------------------------------------------------
 
@@ -1231,7 +1231,7 @@ CREATE TABLE IF NOT EXISTS `systemcron` (
 --
 
 INSERT INTO `systemcron` (`id`, `job`, `frequancy`, `last_run`) VALUES
-(1, 'AutoTranslation', 300, 1389569003);
+(1, 'AutoTranslation', 300, 1389635583);
 
 -- --------------------------------------------------------
 
@@ -1528,7 +1528,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `BirthYear`, `group`, `key`, `LastLogin`, `KeyTime`, `RegisterationDate`, `state`, `EmailVerification`, `birthdate`) VALUES
-(18, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.test', 2009, 1, 'ieHzG48NwlclQN6gbupt8fllEfP5Ds', 1389565118, 1389563035, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(18, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.test', 2009, 1, 'ieHzG48NwlclQN6gbupt8fllEfP5Ds', 1389634493, 1389563035, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
 (19, 'ghfghh', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'dsd@sd.sd', 2006, 3, '2yBT6CFtbIocz0crVklXlNAW7cezaY', 0, 1389563035, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
 (20, 'wejhg', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'aaa@aaa.aaa', 1919, 3, '1JQ003el7PQ615BIHSLYyxSthxSclj', 0, 1389563035, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
 (21, 't567567567', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'tryrt@erttr.rrt', 1917, 3, 'YbOuDwzp5koYiAPCOhtMoi8m8CyPfV', 0, 1389563035, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
@@ -1548,8 +1548,7 @@ INSERT INTO `users` (`id`, `username`, `password`, `email`, `BirthYear`, `group`
 (35, 'test15', '61bb70fa60368f069e62d601c357d203700ab2d2', 'test15@test15.com', 2000, 3, 'DnpdsH2UWjWEsBaHFQsTmBiQWzC1Zr', 0, 1389563052, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
 (36, 'test16', '1fbefee9cfb86926757519357e077fd6a21aef0f', 'test16@test16.com', 1998, 3, 'udGZ9ih0FuIDwvVYbkNbOUiJBxtZng', 0, 1389563052, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
 (37, 'test17', '08a25c0f270b29aeba650e6b2d1a9947a778c5da', 'test17@test17.com', 1996, 3, 'xkVpx3H5mpLdutpOG9DMVQxxvtVtZf', 0, 1389563052, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(38, 'test18', 'cfc996a3aaac95f0fb508f46499dcb72b6d0abee', 'test18@jkhfgkjfg.com', 2001, 3, '0zyGz2fL5U1Kw6a8KGqFbxrlEc9mCd', 0, 1389569033, '2014-01-12 23:23:52', 1, 0, '2001-10-11'),
-(39, 'test19', 'bba019890aec72f6dd6b4e98513055cae61df098', 'jhviuh@okjhfviof.com', 1947, 3, 'jMcv61qB1vc7e9OgwjOKx3afj6YJb9', 0, 1389569089, '2014-01-12 23:24:48', 1, 0, '1947-11-04');
+(38, 'test18', 'cfc996a3aaac95f0fb508f46499dcb72b6d0abee', 'test18@jkhfgkjfg.com', 2001, 3, '0zyGz2fL5U1Kw6a8KGqFbxrlEc9mCd', 0, 1389569033, '2014-01-12 23:23:52', 1, 0, '2001-10-11');
 
 -- --------------------------------------------------------
 
