@@ -201,10 +201,13 @@ body{
 	-webkit-box-shadow:0 0 5px #700;
 	box-shadow:0 0 5px #700;
 	}
-
 	.SystemMessage li{
 		color: white;
 	}
+	.register{
+		color: white;
+	}
+
 /* //  login form */	
 		
 </style>
@@ -213,7 +216,7 @@ body{
 </head>
 <body>
 <div>{SystemError} <!-- required to show error messages --></div>
-
+<div id='formcontainer'>
 <form id="login" method="post" action=""> 
 
     <h1>Log in to your <strong>{SiteName}</strong> account!</h1>
@@ -244,6 +247,7 @@ body{
 <input type="hidden" name="login" value="yes" />
 <input type="hidden" name="page" value="login" />  
 </form>	
+</div>
 {SystemSuccess}	<!-- required to show success messages keep under the registration form -->
 </body>
 </html>

@@ -33,7 +33,7 @@
 		}
 		
 		function GetBreadCrumbs(){
-			if(!isset($GLOBALS['BreadCrumbs'])){
+			if(!isset($GLOBALS['BreadCrumbs']) and $GLOBALS['vars']['page']!="login" and $GLOBALS['vars']['page']!="register"){
 				$GLOBALS['ERROR'][] = "GLOBALS['BreadCrumbs'] not found inside 'set' function.";
 				$GLOBALS['ERROR'][] = "BUG URL-> <b>".$GLOBALS['COMMON']->CurrentPageUrl()."</b>";
 			}

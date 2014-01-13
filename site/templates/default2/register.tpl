@@ -251,7 +251,7 @@ body{
         <button type="submit">{submit}</button>     
     </div>
     
-    <p class="back"><a href="http://cssglobe.com/post/9688/the-anatomy-of-a-perfect-login-page">Go back to home page</a></p>
+    <p class="back"><a href="index.php">Go back to home page</a></p>
 	<input type="hidden" name="register" value="yes" />
 	<input type="hidden" name="page" value="register" />  
 </form>	
