@@ -53,7 +53,7 @@
 								self::$SearchResult .= "<i class='icon-zoom-in icon-white'></i>" ; 
 								self::$SearchResult .= "View ";        
 								self::$SearchResult .= "</a> ";
-								self::$SearchResult .= "<a class='btn btn-info' href='#'>";
+								self::$SearchResult .= "<a class='btn btn-info' href='index.php?page=users&sec=edit&ssec=EditUser&h=edit&username=".$res[$i]['username']."'>";
 								self::$SearchResult .= "<i class='icon-edit icon-white'></i> " ;
 								self::$SearchResult .= "Edit";             
 								self::$SearchResult .= "</a> ";

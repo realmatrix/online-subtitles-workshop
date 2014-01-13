@@ -31,7 +31,12 @@
 					<span class="icon32 icon-blue icon-info"></span>
 					<div>Member Information</div>
 				</a>
-				
+
+				<a data-rel="tooltip" class="well span3 top-block" href="index.php?page=users&sec=edit">
+					<span class="icon32 icon-blue icon-info"></span>
+					<div>Edit Member</div>
+				</a>
+								
 			</div>
 			
 			
