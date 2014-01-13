@@ -56,12 +56,12 @@
 								$widgets.="</td>";
 								$widgets.="<td class='center'>";
 								$widgets.="<a class='btn btn-success' href='#'>";
-								$widgets.="<i class='icon-zoom-in icon-white'></i>";  
-								$widgets.='View';       
+								$widgets.="<i class='icon-check icon-white'></i>";  
+								$widgets.='Enable';       
 								$widgets.="</a> ";
 								$widgets.="<a class='btn btn-info' href='#'>";
-								$widgets.="<i class='icon-edit icon-white'></i>";  
-								$widgets.='Edit';          
+								$widgets.="<i class='icon-remove icon-white'></i>";  
+								$widgets.='Disable';          
 								$widgets.="</a> ";
 								$widgets.="<a class='btn btn-danger' href='#'";
 								$widgets.="<i class='icon-trash icon-white'></i>"; 
