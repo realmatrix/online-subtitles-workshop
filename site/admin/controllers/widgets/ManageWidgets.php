@@ -47,10 +47,10 @@
 			for ($i=0; $i < count($res); $i++) {
 				$WidgetInfo = self::GetWidgetInfo($res[$i]); 
 								$widgets.="<tr>";
-								$widgets.="<td>Test Widget 1</td>";
-								$widgets.="<td class='center'>2012/01/01</td>";
-								$widgets.="<td class='center'>Member</td>";
-								$widgets.="<td class='center'>Member</td>";
+								$widgets.="<td>".$WidgetInfo['name']."</td>";
+								$widgets.="<td class='center'>".$WidgetInfo['by']."</td>";
+								$widgets.="<td class='center'>".$WidgetInfo['version']."</td>";
+								$widgets.="<td class='center'>".$WidgetInfo['date']."</td>";
 								$widgets.="<td class='center'>";
 								$widgets.="<span class='label label-success'>Active</span>";
 								$widgets.="</td>";
@@ -58,11 +58,11 @@
 								$widgets.="<a class='btn btn-success' href='#'>";
 								$widgets.="<i class='icon-zoom-in icon-white'></i>";  
 								$widgets.='View';       
-								$widgets.="</a>";
+								$widgets.="</a> ";
 								$widgets.="<a class='btn btn-info' href='#'>";
 								$widgets.="<i class='icon-edit icon-white'></i>";  
 								$widgets.='Edit';          
-								$widgets.="</a>";
+								$widgets.="</a> ";
 								$widgets.="<a class='btn btn-danger' href='#'";
 								$widgets.="<i class='icon-trash icon-white'></i>"; 
 								$widgets.="Delete";
@@ -76,6 +76,7 @@
 		function GetWidgetInfo($widget){
 			require_once("../widgets/".$widget."/".$widget.".php");
 			$WidgetInfo = call_user_func('W'.$widget.'::'.$widget.'_info');
+			return $WidgetInfo;
 		}
 		
 	

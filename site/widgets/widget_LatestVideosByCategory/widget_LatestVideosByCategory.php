@@ -14,6 +14,7 @@
 			'date' => '2014-14-1',
 			'version' => '1.0',
 			);
+			return $info;
 		}
 		
 		function widget_LatestVideosByCategory_hooks(){
