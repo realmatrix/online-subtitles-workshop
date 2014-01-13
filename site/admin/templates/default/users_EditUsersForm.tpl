@@ -24,8 +24,6 @@
 						  </fieldset>
 						  <input type="hidden" name="page" value="{page}">
 						  <input type="hidden" name="sec" value="{sec}">
-						  <input type="hidden" name="ssec" value="EditUsers">
-						  <input type="hidden" name="h" value="edit">
 						</form>   
 
 					</div>
