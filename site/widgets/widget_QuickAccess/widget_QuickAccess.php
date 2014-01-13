@@ -6,6 +6,16 @@
 			return self::widget_QuickAccess_render();
 		}
 		
+		function widget_QuickAccess_info(){
+			$info = array(
+			'name' => 'Quick Access',
+			'description' => 'widget description',
+			'by' => 'RealMatrix',
+			'date' => '2014-14-1',
+			'version' => '1.0',
+			);
+		}
+		
 		function widget_QuickAccess_hooks(){
 			$array = array(
 				array("test", "test")

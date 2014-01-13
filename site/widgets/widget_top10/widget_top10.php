@@ -6,6 +6,16 @@
 			return self::widget_top10_render();
 		}
 		
+		function widget_top10_info(){
+			$info = array(
+			'name' => 'Top 10',
+			'description' => 'widget description',
+			'by' => 'RealMatrix',
+			'date' => '2014-14-1',
+			'version' => '1.0',
+			);
+		}
+		
 		function widget_top10_hooks(){
 			$array = array(
 				array("test", "test")

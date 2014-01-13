@@ -6,6 +6,16 @@
 			return self::widget_breadcrumbs_render();
 		}
 		
+		function widget_breadcrumbs_info(){
+			$info = array(
+			'name' => 'Bread Crumbs',
+			'description' => 'widget description',
+			'by' => 'RealMatrix',
+			'date' => '2014-14-1',
+			'version' => '1.0',
+			);
+		}
+		
 		function widget_breadcrumbs_hooks(){
 			$array = array(
 				array("test", "test")

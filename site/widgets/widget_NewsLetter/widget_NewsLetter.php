@@ -6,6 +6,16 @@
 			return self::widget_NewsLetter_render();
 		}
 		
+		function widget_NewsLetter_info(){
+			$info = array(
+			'name' => 'News Letter',
+			'description' => 'widget description',
+			'by' => 'RealMatrix',
+			'date' => '2014-14-1',
+			'version' => '1.0',
+			);
+		}
+		
 		function widget_NewsLetter_hooks(){
 			$array = array(
 				array("add", "AddUser")

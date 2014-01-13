@@ -6,6 +6,16 @@
 			return self::widget_Manage_render();
 		}
 		
+		function widget_Manage_info(){
+			$info = array(
+			'name' => 'User Account Manager',
+			'description' => 'widget description',
+			'by' => 'RealMatrix',
+			'date' => '2014-14-1',
+			'version' => '1.0',
+			);
+		}
+		
 		function widget_Manage_hooks(){
 			$array = array(
 				array("test", "test")

@@ -6,6 +6,16 @@
 			return self::widget_shoutbox_render();
 		}
 		
+		function widget_shoutbox_info(){
+			$info = array(
+			'name' => 'ShoutBox',
+			'description' => 'widget description',
+			'by' => 'RealMatrix',
+			'date' => '2014-14-1',
+			'version' => '1.0',
+			);
+		}
+		
 		function widget_shoutbox_hooks(){
 			$array = array(
 				array("test", "test")

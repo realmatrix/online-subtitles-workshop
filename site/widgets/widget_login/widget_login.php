@@ -5,6 +5,16 @@
 			return self::widget_login_render();
 		}
 		
+		function widget_login_info(){
+			$info = array(
+			'name' => 'User Login',
+			'description' => 'widget description',
+			'by' => 'RealMatrix',
+			'date' => '2014-14-1',
+			'version' => '1.0',
+			);
+		}
+		
 		function widget_login_hooks(){
 			$array = array(
 				array("test", "test")

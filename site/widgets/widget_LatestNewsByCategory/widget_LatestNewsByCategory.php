@@ -6,6 +6,16 @@
 			return self::widget_LatestNewsByCategory_render();
 		}
 		
+		function widget_LatestNewsByCategory_info(){
+			$info = array(
+			'name' => 'Latest News',
+			'description' => 'widget description',
+			'by' => 'RealMatrix',
+			'date' => '2014-14-1',
+			'version' => '1.0',
+			);
+		}
+		
 		function widget_LatestNewsByCategory_hooks(){
 			$array = array(
 				array("test", "test")

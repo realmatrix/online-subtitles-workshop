@@ -6,6 +6,16 @@
 			return self::widget_TeamChat_render();
 		}
 		
+		function widget_TeamChat_info(){
+			$info = array(
+			'name' => 'Team Chat',
+			'description' => 'widget description',
+			'by' => 'RealMatrix',
+			'date' => '2014-14-1',
+			'version' => '1.0',
+			);
+		}
+		
 		function widget_TeamChat_hooks(){
 			$array = array(
 				array("test", "test")

@@ -6,6 +6,16 @@
 			return self::widget_UserInfo_render();
 		}
 		
+		function widget_UserInfo_info(){
+			$info = array(
+			'name' => 'User Information',
+			'description' => 'widget description',
+			'by' => 'RealMatrix',
+			'date' => '2014-14-1',
+			'version' => '1.0',
+			);
+		}
+		
 		function widget_UserInfo_hooks(){
 			$array = array(
 				array("test", "test")

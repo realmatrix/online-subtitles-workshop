@@ -6,6 +6,16 @@
 			return self::widget_ForumLatest_render();
 		}
 		
+		function widget_ForumLatest_info(){
+			$info = array(
+			'name' => 'Forum Latest',
+			'description' => 'widget description',
+			'by' => 'RealMatrix',
+			'date' => '2014-14-1',
+			'version' => '1.0',
+			);
+		}
+		
 		function widget_ForumLatest_hooks(){
 			$array = array(
 				array("test", "test")
