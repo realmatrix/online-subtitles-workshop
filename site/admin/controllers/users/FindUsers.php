@@ -37,7 +37,7 @@
 		function Search(){
 			if($GLOBALS['vars']['username']!=""){
 			$args = array(
-				array(":username", $GLOBALS['vars']['username'], "str"),
+				array(":username", "%".$GLOBALS['vars']['username']."%", "str"),
 			);
 			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `users` WHERE `username` LIKE :username", $args);
 			for ($i=0; $i < count($res); $i++) { 
