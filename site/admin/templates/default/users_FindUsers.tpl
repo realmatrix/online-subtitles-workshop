@@ -1,3 +1,14 @@
+<script>
+
+function DeleteUser(username, id){
+	if (confirm('Are you sure you want to delete user '+username+'?')) {
+	    // Save it!
+	    window.location = "index.php?page=users&sec=find&ssec=FindUsers&h=deleteuser&username="+username+"&uid="+id;
+	} else {
+	    // Do nothing!
+	}
+}
+</script>
 			<div class="row-fluid sortable">		
 				<div class="box span12">
 					<div class="box-header well" data-original-title>

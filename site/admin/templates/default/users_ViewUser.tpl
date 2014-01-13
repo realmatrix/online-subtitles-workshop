@@ -52,7 +52,7 @@
 								<tr>
 									<td>Created Teams</td>
 									<td class="center">{Ccreatedteams}</td>
-									<td class="center">Joined Groups</td>
+									<td class="center">Joined Teams</td>
 									<td class="center">{Cjoinedgroups}</td>                                       
 								</tr>
 								<tr>

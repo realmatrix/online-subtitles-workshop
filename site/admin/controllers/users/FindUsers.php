@@ -11,6 +11,7 @@
 		function FindUsers_hooks(){
 			$array = array(
 				array("find", "Search"),
+				array("deleteuser", "DeleteUser"),
 			);
 			return $array;
 		}
@@ -56,7 +57,7 @@
 								self::$SearchResult .= "<i class='icon-edit icon-white'></i> " ;
 								self::$SearchResult .= "Edit";             
 								self::$SearchResult .= "</a> ";
-								self::$SearchResult .= "<a class='btn btn-danger' href='#'>";
+								self::$SearchResult .= "<a class='btn btn-danger' href='#' onclick=\"DeleteUser('".$res[$i]['username']."', '".$res[$i]['id']."')\"> ";
 								self::$SearchResult .= "<i class='icon-trash icon-white'></i>" ;
 								self::$SearchResult .= "Delete";
 								self::$SearchResult .= "</a> ";
@@ -70,6 +71,14 @@
 			if($state==0){return "<span class='label label-warning'>Pending</span>";}
 			if($state==1){return "<span class='label label-success'>Active</span>";}
 			if($state==-1){return "<span class='label label-important'>Banned</span>";}
+		}
+		
+		function DeleteUser(){
+			$args = array(
+				array(":uid", $GLOBALS['vars']['uid'], "str"),
+			);
+			$res = $GLOBALS['COMMON']->db_query("DELETE FROM `users` WHERE `id` = :uid", $args);
+			header( 'Location: index.php?username='.$GLOBALS['vars']['username'].'&page=users&sec=find&ssec=FindUsers&h=find' ) ;
 		}
 					
 			
