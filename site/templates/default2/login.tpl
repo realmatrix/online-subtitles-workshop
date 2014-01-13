@@ -93,7 +93,7 @@ body, table, input, textarea, select, li, button{
 	}	
 body{
 	font-size:12px;
-	background:#c4f0f1;		
+	background:#082B51;		
 	text-align:center;
 	}		
 
@@ -202,7 +202,9 @@ body{
 	box-shadow:0 0 5px #700;
 	}
 
-
+	.SystemMessage li{
+		color: white;
+	}
 /* //  login form */	
 		
 </style>
@@ -238,7 +240,7 @@ body{
         </label>   
     </div>
     
-    <p class="back"><a href="http://cssglobe.com/post/9688/the-anatomy-of-a-perfect-login-page">Go back to home page</a></p>
+    <p class="back"><a href="index.php">Go back to home page</a></p>
 <input type="hidden" name="login" value="yes" />
 <input type="hidden" name="page" value="login" />  
 </form>	
