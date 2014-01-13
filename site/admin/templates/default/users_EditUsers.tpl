@@ -15,7 +15,7 @@
 							<div class="control-group">
 							  <label class="control-label" for="typeahead">Username </label>
 							  <div class="controls">
-								<input class="input-xlarge disabled" id="disabledInput" type="text" placeholder="{tusername}" disabled=""/>
+							  <span class="input-xlarge uneditable-input">{tusername}</span>
 							  </div>
 							 </div>
 
@@ -43,7 +43,7 @@
 							  <div class="control-group">
 								<label class="control-label" for="selectError">User group</label>
 								<div class="controls">
-								  <select name="group" id="selectError" data-rel="chosen">
+								  <select name="group" class="span3" id="selectError" data-rel="chosen">
 										{UserGroups}
 								  </select>
 								</div>
