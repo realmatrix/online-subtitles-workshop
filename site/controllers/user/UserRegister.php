@@ -69,7 +69,7 @@
 		function Register(){
 			self::Validate();
 				 if(count($GLOBALS['ERROR'])<1){
-				 	$Password = sha1($Password);
+				 	$GLOBALS['vars']['password'] = sha1($GLOBALS['vars']['password']);
 					$params = array(
 						array(":username", $GLOBALS['vars']['username'], "str"),
 						array(":password", $GLOBALS['vars']['password'], "str"),

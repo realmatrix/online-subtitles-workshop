@@ -1,7 +1,4 @@
 <?php
-
-	if($GLOBALS['vars']['register']=="yes"){include "include/register.php";}
-	if($GLOBALS['vars']['login']=="yes"){include "include/login.php";}
 		
 	$ControllerPage=$GLOBALS['vars']['page']; 
 	$ControllerSection=$GLOBALS['vars']['sec'];

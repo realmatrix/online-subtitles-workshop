@@ -33,10 +33,12 @@
 						<input type="password" name="password" style="width:100%;"/>
 						<div style="width: 100%; text-align: right;">
 						<input type="submit" value="{LoginSubmit}" class="SubmitButton"/>
-						<a href="?page=register">{LoginOrRegister}</a>
+						<a href="?page=user&sec=register">{LoginOrRegister}</a>
 						</div>
-						<input type="hidden" name="login" value="yes" />
-						<input type="hidden" name="page" value="login" />
+							<input type="hidden" name="page" value="user">
+							<input type="hidden" name="sec" value="login">
+							<input type="hidden" name="ssec" value="UserLogin">
+							<input type="hidden" name="h" value="login">
 						</form>
 						</div>
 </div>		
