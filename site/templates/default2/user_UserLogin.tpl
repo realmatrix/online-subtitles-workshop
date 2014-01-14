@@ -232,7 +232,7 @@ body{
 	<form id="login" method="post" action=""> 
 	
 	    <h1>Log in to your <strong>{SiteName}</strong> account!</h1>
-	    <p class="register">Not a member? <a href="index.php?page=register">Register here!</a></p>
+	    <p class="register">Not a member? <a href="index.php?page=user&sec=register">Register here!</a></p>
 	    
 	    <div>
 	    	<label for="login_username">{LoginUsername}</label> 

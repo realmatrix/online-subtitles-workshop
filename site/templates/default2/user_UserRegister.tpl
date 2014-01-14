@@ -205,6 +205,11 @@ body{
 	.SystemMessage li{
 		color: white;
 	}
+	
+	#register-container-tbl{
+		width: 100%;
+		height: 100%;
+	}
 /* //  login form */	
 		
 </style>
@@ -212,53 +217,67 @@ body{
 
 </head>
 <body>
-{SystemError}	<!-- required to show error messages -->
 
-<div id="register"> <!-- keep the registration form inside div with id="register" -->
+<table id='register-container-tbl'>
+<tr>
+<td style="height:33%; vertical-align:top;">
+	{SystemError}	<!-- required to show error messages -->
+	{SystemSuccess}	<!-- required to show success messages keep under the registration form -->
+</td>
+</tr>
+<tr>
+<td style="height:33%;">
+	<div id="register"> <!-- keep the registration form inside div with id="register" -->
+	<form id="login" method="post" action="index.php"> 
+	
+	    <h1>Account registration! <strong>{SiteName}</strong></h1>
+	    
+	    <div>
+	    	<label for="login_username">{username}</label> 
+	    	<input type="text" name="username" id="login_username" class="field required" title="Please provide your username" />
+	    </div>			
+	
+	    <div>
+	    	<label for="login_password">{password}</label>
+	    	<input type="password" name="password" id="login_password" class="field required" title="Password is required" />
+	    </div>			
+	
+	    <div>
+	    	<label for="login_password">{password2}</label>
+	    	<input type="password" name="password2" id="login_password" class="field required" title="Password is required" />
+	    </div>
+	    
+	    <div>
+	    	<label for="login_username">{email}</label> 
+	    	<input type="text" name="email" id="login_username" class="field required" title="Please provide your email" />
+	    </div>	
+	    
+	    <div>
+	    	<label for="login_username">{birthdate}</label> 
+	    	<select name="year" style="width:91px;" class="field required" title="Please provide your birth year" >{selectbirthyear}</select>
+	    	<select name="month" style="width:91px;" class="field required" title="Please provide your birth month" >{selectbirthmonth}</select>
+	    	<select name="day" style="width:91px;" class="field required" title="Please provide your birth day" >{selectbirthday}</select>
+	    </div>	
+	    			
+	    <div class="submit">
+	        <button type="submit">{submit}</button>     
+	    </div>
+	    
+	    <p class="back"><a href="index.php">Go back to home page</a></p>
+	    <input type="hidden" name="page" value="{page}" />
+	    <input type="hidden" name="sec" value="{sec}" />
+	    <input type="hidden" name="ssec" value="UserRegister" />
+	    <input type="hidden" name="h" value="register" /> 
+	</form>	
+	</div>
+</td>
+</tr>
+<tr>
+<td style="height:33%;">
+</td>
+</tr>
+</table>
 
-<form id="login" method="post" action="index.php"> 
 
-    <h1>Account registration! <strong>{SiteName}</strong></h1>
-    
-    <div>
-    	<label for="login_username">{username}</label> 
-    	<input type="text" name="username" id="login_username" class="field required" title="Please provide your username" />
-    </div>			
-
-    <div>
-    	<label for="login_password">{password}</label>
-    	<input type="password" name="password" id="login_password" class="field required" title="Password is required" />
-    </div>			
-
-    <div>
-    	<label for="login_password">{password2}</label>
-    	<input type="password" name="password2" id="login_password" class="field required" title="Password is required" />
-    </div>
-    
-    <div>
-    	<label for="login_username">{email}</label> 
-    	<input type="text" name="email" id="login_username" class="field required" title="Please provide your email" />
-    </div>	
-    
-    <div>
-    	<label for="login_username">{birthdate}</label> 
-    	<select name="year" style="width:94px;" class="field required" title="Please provide your birth year" >{selectbirthyear}</select>
-    	<select name="month" style="width:94px;" class="field required" title="Please provide your birth month" >{selectbirthmonth}</select>
-    	<select name="day" style="width:94px;" class="field required" title="Please provide your birth day" >{selectbirthday}</select>
-    </div>	
-    			
-    <div class="submit">
-        <button type="submit">{submit}</button>     
-    </div>
-    
-    <p class="back"><a href="index.php">Go back to home page</a></p>
-    <input type="hidden" name="page" value="{page}" />
-    <input type="hidden" name="sec" value="{sec}" />
-    <input type="hidden" name="ssec" value="UserRegister" />
-    <input type="hidden" name="h" value="register" /> 
-</form>	
-
-</div>
-{SystemSuccess}	<!-- required to show success messages keep under the registration form -->
 </body>
 </html>
