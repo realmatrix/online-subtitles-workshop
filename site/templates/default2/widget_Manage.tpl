@@ -32,12 +32,17 @@
 
 
 <div id="widgt-ManageAccount">
+  	<div class='widget-manage-link-container'><a class="quicklinks-link" href="index.php?page=video&sec=add">{AddVideo}</a></div>
+  	<div class='widget-manage-link-container'><a class="quicklinks-link" href="index.php?page=team&sec=add">{AddTeam}</a></div>
+  	<div class='widget-manage-link-container'><a class="quicklinks-link" href="index.php?page=message&sec=list">{PMS}</a></div>
+  	<div class='widget-manage-link-container'><a class="quicklinks-link" href="index.php?page=user&sec=cp&uid={uid}">{UserCp}</a></div>
 	<div class='widget-manage-link-container'><a href="index.php?page=video&sec=list">my videos</a></div>
 	<div class='widget-manage-link-container'><a href="index.php?pag=video&sec=followed">favourite videos</a></div>
 	<div class='widget-manage-link-container'><a href="index.php?pag=subtitle&sec=followed">favourite subtitles</a></div>
 	<div class='widget-manage-link-container'><a href="index.php?page=subtitle&sec=list">my subtitles</a></div>
 	<div class='widget-manage-link-container'><a href="index.php?page=team&sec=list">my teams</a></div>
 	<div class='widget-manage-link-container'><a href="index.php?page=team&sec=joined">joined teams</a></div>
+	<div class='widget-manage-link-container'><a class="quicklinks-link" href="index.php?act=logout">{Logout}</a></div>
 </div>
 
 

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 14, 2014 at 02:47 AM
+-- Generation Time: Jan 14, 2014 at 02:53 AM
 -- Server version: 5.5.29
 -- PHP Version: 5.3.20
 
@@ -36,7 +36,6 @@ INSERT INTO `adminwidgets` (`id`, `name`, `state`) VALUES
 (2, 'widget_login', 1),
 (3, 'widget_UserInfo', 1),
 (4, 'widget_NewsLetter', 1),
-(5, 'widget_QuickLinks', 1),
 (6, 'widget_Manage', 1),
 (7, 'widget_FeaturedVideos', 1),
 (8, 'widget_ThumbnailsGallery', 0),
@@ -1233,7 +1232,7 @@ CREATE TABLE IF NOT EXISTS `systemcron` (
 --
 
 INSERT INTO `systemcron` (`id`, `job`, `frequancy`, `last_run`) VALUES
-(1, 'AutoTranslation', 300, 1389667518);
+(1, 'AutoTranslation', 300, 1389667819);
 
 -- --------------------------------------------------------
 

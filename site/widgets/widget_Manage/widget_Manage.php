@@ -35,7 +35,12 @@
 		
 		function widget_Manage_render(){
 			$array = array(
-				array("{test}", "test"),
+				array("{AddVideo}", $GLOBALS['COMMON']->l('widget_quicklinks_addvideo')),
+				array("{AddTeam}", $GLOBALS['COMMON']->l('widget_quicklinks_addteam')),
+				array("{Logout}", $GLOBALS['COMMON']->l('widget_quicklinks_logout')),
+				array("{PMS}", $GLOBALS['COMMON']->l('widget_quicklinks_pms')),
+				array("{UserCp}", $GLOBALS['COMMON']->l('widget_quicklinks_UserCp')),
+				array("{uid}", $_SESSION['id']),
 			);
 			return $array;
 		}	
