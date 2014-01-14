@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 14, 2014 at 02:53 AM
+-- Generation Time: Jan 14, 2014 at 05:04 PM
 -- Server version: 5.5.29
 -- PHP Version: 5.3.20
 
@@ -798,7 +798,7 @@ INSERT INTO `lang_english` (`id`, `key`, `text`) VALUES
 (18, 'register_completed', 'Registration completed successfully, you will now be redirected to home page in 5 seconds.'),
 (19, 'login_username', 'Username:'),
 (20, 'login_password', 'Password:'),
-(21, 'login_submit', 'login'),
+(21, 'login_submit', 'Log in'),
 (22, 'login_NoUsername', 'Opps! You don''t enter your username!'),
 (23, 'login_NoPassword', 'Opps! You didn''t enter your passwords!'),
 (24, 'login_usernameaz', 'Invalid username only a-z 0-9 allowed.'),
@@ -1032,14 +1032,15 @@ CREATE TABLE IF NOT EXISTS `onlineusers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1605 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1613 ;
 
 --
 -- Dumping data for table `onlineusers`
 --
 
 INSERT INTO `onlineusers` (`id`, `session`, `time`, `username`) VALUES
-(1604, 'rau1n6pjic9ig2hnun8ada9vm4', 1389667556, 'test20');
+(1611, '1pi8kogrflbucun0htgsmb5m50', 1389718444, ''),
+(1612, 'q3509kn4ro10no9nlcamk0ooi4', 1389718825, '');
 
 -- --------------------------------------------------------
 
@@ -1232,7 +1233,7 @@ CREATE TABLE IF NOT EXISTS `systemcron` (
 --
 
 INSERT INTO `systemcron` (`id`, `job`, `frequancy`, `last_run`) VALUES
-(1, 'AutoTranslation', 300, 1389667819);
+(1, 'AutoTranslation', 300, 1389718826);
 
 -- --------------------------------------------------------
 
@@ -1673,7 +1674,7 @@ INSERT INTO `videos` (`id`, `uid`, `title`, `other_title`, `type`, `category`, `
 (34, 22, 'Total Recall (2012)', 'Total Recall', 1, 10, 14, 236, '1,2,21,24', '2012-08-03', 'Colin Farrell, Bokeem Woodbine, Bryan Cranston', 'Len Wiseman', 90, 'Total, Recall, 2012', 'A factory worker, Douglas Quaid, begins to suspect that he is a spy after visiting Rekall - a company that provides its clients with implanted fake memories of a life they would like to have led - goes wrong and he finds himself on the run.', '34_221380061085gybZK.jpg', '', 'http://www.youtube.com/watch?v=4SerZm7DheA', 0, '', 1, 1, 37),
 (35, 22, 'Men in Black 3 (2012)', 'Men in Black 3', 1, 10, 14, 236, '1,5,21', '2012-05-25', 'Will Smith, Tommy Lee Jones, Josh Brolin', 'Barry Sonnenfeld', 90, 'Men in Black, 2012', 'Agent J travels in time to M.I.B.''s early days in 1969 to stop an alien from assassinating his friend Agent K and changing history.', '35_221380061647Iqc5u.jpg', '', 'http://www.youtube.com/watch?v=yc4tk27ZzZk', 0, '', 1, 1, 23),
 (36, 22, 'Looper (2012)', 'Looper', 1, 10, 14, 236, '1,6,21,24', '2012-09-28', 'Joseph Gordon-Levitt, Bruce Willis, Emily Blunt', 'Rian Johnson', 90, 'Looper, 2012', 'In 2074, when the mob wants to get rid of someone, the target is sent 30 years into the past, where a hired gun awaits. Someone like Joe, who one day learns the mob wants to ''close the loop'' by transporting back Joe''s future self.', '36_2213800621454nP8S.jpg', '', 'http://www.youtube.com/watch?v=eI3ju17W070', 0, '', 1, 1, 7),
-(37, 22, 'Safe (I) (2012)', 'Safe', 1, 10, 14, 236, '1,6,24', '2012-04-27', 'Jason Statham, Catherine Chan, Chris Sarandon', 'Boaz Yakin', 90, 'Safe, 2012', 'Mei, a young girl whose memory holds a priceless numerical code, finds herself pursued by the Triads, the Russian mob, and corrupt NYC cops. Coming to her aid is an ex-cage fighter whose life was destroyed by the gangsters on Mei''s trail.', '37_221380062467n8ikl.jpg', '', 'http://www.youtube.com/watch?v=i-D26g3CEuc', 0, '', 1, 1, 9),
+(37, 22, 'Safe (I) (2012)', 'Safe', 1, 10, 14, 236, '1,6,24', '2012-04-27', 'Jason Statham, Catherine Chan, Chris Sarandon', 'Boaz Yakin', 90, 'Safe, 2012', 'Mei, a young girl whose memory holds a priceless numerical code, finds herself pursued by the Triads, the Russian mob, and corrupt NYC cops. Coming to her aid is an ex-cage fighter whose life was destroyed by the gangsters on Mei''s trail.', '37_221380062467n8ikl.jpg', '', 'http://www.youtube.com/watch?v=i-D26g3CEuc', 0, '', 1, 1, 10),
 (38, 22, 'The Last Stand (2013)', 'The Last Stand', 1, 10, 14, 236, '1,6,24', '2013-01-18', 'Arnold Schwarzenegger, Forest Whitaker, Johnny Knoxville', 'Kim Jee-Woon', 90, 'Last, Stand, 2013', 'The leader of a drug cartel busts out of a courthouse and speeds to the Mexican border, where the only thing in his path is a sheriff and his inexperienced staff.', '38_221380063319Klk0X.jpg', '', 'http://www.youtube.com/watch?v=zxt8kRhLaMs', 0, '', 1, 1, 0);
 
 -- --------------------------------------------------------
