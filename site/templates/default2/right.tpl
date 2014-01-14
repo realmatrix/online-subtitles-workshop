@@ -8,23 +8,17 @@
 	{widget_login}
 <!-- end login widget -->
 
-
 <!-- user info widget -->
 	{widget_UserInfo}
 <!-- end user info widget-->
 
-
-<!-- Quick Links widget -->
-	{widget_QuickLinks}
-<!-- end Quick Links widget-->
+<!-- Manage account -->
+	{widget_Manage}
+<!-- end Manage account-->
 
 <!-- Quick Access widget -->
 	{widget_QuickAccess}
 <!-- end Quick Access widget-->
-
-<!-- Manage account -->
-	{widget_Manage}
-<!-- end Manage account-->
 
 <!-- team chat -->
 	{widget_TeamChat}
