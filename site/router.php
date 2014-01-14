@@ -42,6 +42,8 @@
 	if($SystemPage=="home" and $SystemSection==""){$SystemSection="home";}
 	if($GLOBALS['vars']['dataonly']=="yes"){$DataOnly=1;}else{$DataOnly=0;}
 	echo $GLOBALS['COMMON']->SystemRouter($SystemPage, $SystemSection, $DataOnly, $getcontroller, $getsection, $getwidget);	 
+
+	if($GLOBALS['DataOnly']===TRUE){echo $GLOBALS['SystemContent'];}
 	 	
 	switch ($GLOBALS['vars']['page']) {
     case ($GLOBALS['vars']['page']=="home" or $GLOBALS['vars']['page']=="video" or $GLOBALS['vars']['page']=="team" or $GLOBALS['vars']['page']=="subtitle" or $GLOBALS['vars']['page']=="forum" or $GLOBALS['vars']['page']=="message" or $GLOBALS['vars']['page']=="info" or $GLOBALS['vars']['page']=="faq" or $GLOBALS['vars']['page']=="user") and $dataonly!="yes":

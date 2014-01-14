@@ -10,9 +10,10 @@ class Common{
 			$args = array(
 				array(":page", $page, "str"),
 				array(":sec", $sec, "str"),
-				array(":dataonly", $dataonly, "str"),
 			);
-			$res = self::db_query("SELECT * FROM `systemrouter` WHERE `page`=:page and `sec`=:sec and `dataonly`=:dataonly", $args);
+			//array(":dataonly", $dataonly, "str"),
+			//and `dataonly`=:dataonly
+			$res = self::db_query("SELECT * FROM `systemrouter` WHERE `page`=:page and `sec`=:sec", $args);
 			if(count($res)<1){
 				$res = self::db_query("SELECT * FROM `systemrouter` WHERE `page`=:page and `dataonly`=:dataonly", $args);
 				print_r($res);
@@ -48,6 +49,10 @@ class Common{
 			if($res[$i]['body']!=0){$content.=self::render($GLOBALS['TemplateBody'], "body");}
 			if($res[$i]['right']!=0){$content.=self::render($GLOBALS['TemplateRight'], "right");}
 			if($res[$i]['footer']!=0){$content.=self::render($GLOBALS['TemplateFooter'], "footer");}
+			if($res[$i]['dataonly']==1){
+				$GLOBALS['SystemContent']=self::RenderDataOnly($GLOBALS['TemplatesCommon'], $GLOBALS['SystemContent']);
+				$GLOBALS['DataOnly'] = TRUE;
+			}
 		}
 		return $content;
 	}
@@ -70,6 +75,13 @@ class Common{
 		}
 		if($tpl=="footer"){$template = str_replace("{LoadTime}", self::LoadTime(), $template);}
 		return $template;
+	}
+	
+	function RenderDataOnly($array, $content){
+		for ($i = 0; $i <= count($array)-1; $i++) {
+		    $content = str_replace($array[$i][0], $array[$i][1], $content);
+		}
+		return $content;
 	}
 
 

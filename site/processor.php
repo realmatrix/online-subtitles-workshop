@@ -84,8 +84,6 @@
 	  array("{SystemFooter}",$SystemFooter),
 	  array("{SystemError}",$error_messages),
 	  array("{SystemSuccess}",$success_messages),
-	  array("{LoginUsername}",$GLOBALS['COMMON']->l('login_username')),
-	  array("{LoginPassword}",$GLOBALS['COMMON']->l('login_password')),
 	  array("{LoginOrRegister}",$GLOBALS['COMMON']->l('login_orregister')),
 	  array("{LoginSubmit}",$GLOBALS['COMMON']->l('login_submit')),
 	  array("{UserName}",$_SESSION['username']),	  
