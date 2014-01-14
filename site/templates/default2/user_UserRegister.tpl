@@ -252,8 +252,10 @@ body{
     </div>
     
     <p class="back"><a href="index.php">Go back to home page</a></p>
-	<input type="hidden" name="register" value="yes" />
-	<input type="hidden" name="page" value="register" />  
+    <input type="hidden" name="page" value="{page}" />
+    <input type="hidden" name="sec" value="{sec}" />
+    <input type="hidden" name="ssec" value="UserRegister" />
+    <input type="hidden" name="h" value="register" /> 
 </form>	
 
 </div>

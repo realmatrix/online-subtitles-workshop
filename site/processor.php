@@ -29,24 +29,6 @@
 	  array("{test}",$test),
 	);
 	
-	$GLOBALS['TemplateRegister'] = array
-	  (
-	  array("{username}",$GLOBALS['COMMON']->l('register_username')),
-	  array("{password}",$GLOBALS['COMMON']->l('register_password')),
-	  array("{password2}",$GLOBALS['COMMON']->l('register_password2')),
-	  array("{email}",$GLOBALS['COMMON']->l('register_email')),
-	  array("{birthdate}",$GLOBALS['COMMON']->l('register_birthdate')),
-	  array("{selectbirthyear}",$GLOBALS['COMMON']->GenBirthYears()),
-	  array("{selectbirthmonth}",$GLOBALS['COMMON']->GenSelectMonths()),
-	  array("{selectbirthday}",$GLOBALS['COMMON']->GenSelectDays()),
-	  array("{submit}",$GLOBALS['COMMON']->l('register_submit')),
-	);
-	
-	$GLOBALS['TemplateLogin'] = array
-	  (
-	  array("{test}",$test),
-	 );
-	
 	$GLOBALS['TemplateRight'] = array
 	  (
 	  array("{test}",$test),
@@ -108,8 +90,6 @@
 	$GLOBALS['TemplateRight'] = array_merge($GLOBALS['TemplateRight'], $GLOBALS['TemplatesCommon']);
 	$GLOBALS['TemplateBody'] = array_merge($GLOBALS['TemplateBody'], $GLOBALS['TemplatesCommon']);
 	$GLOBALS['TemplateFooter'] = array_merge($GLOBALS['TemplateFooter'], $GLOBALS['TemplatesCommon']);
-	$GLOBALS['TemplateLogin'] = array_merge($GLOBALS['TemplateLogin'], $GLOBALS['TemplatesCommon']);
-	$GLOBALS['TemplateRegister'] = array_merge($GLOBALS['TemplateRegister'], $GLOBALS['TemplatesCommon']);
 	$GLOBALS['Template404'] = array_merge($GLOBALS['Template404'], $GLOBALS['TemplatesCommon']);
 
 
