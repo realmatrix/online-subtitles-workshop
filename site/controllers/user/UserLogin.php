@@ -30,6 +30,7 @@
 				  array("{sec}", $GLOBALS['vars']['sec']),
 				  array("{LoginUsername}",$GLOBALS['COMMON']->l('login_username')),
 				  array("{LoginPassword}",$GLOBALS['COMMON']->l('login_password')),
+				  array("{LoginSubmit}",$GLOBALS['COMMON']->l('login_submit')),
 				 );
 			 
 		return $content;

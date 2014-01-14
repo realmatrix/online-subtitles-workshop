@@ -207,7 +207,10 @@ body{
 	.register{
 		color: white;
 	}
-
+#container-tbl{
+	height: 100%;
+	width: 100%;
+}
 /* //  login form */	
 		
 </style>
@@ -215,41 +218,60 @@ body{
 
 </head>
 <body>
-<div>{SystemError} <!-- required to show error messages --></div>
-<div id='formcontainer'>
-<form id="login" method="post" action=""> 
 
-    <h1>Log in to your <strong>{SiteName}</strong> account!</h1>
-    <p class="register">Not a member? <a href="index.php?page=register">Register here!</a></p>
-    
-    <div>
-    	<label for="login_username">{LoginUsername}</label> 
-    	<input type="text" name="username" id="login_username" class="field required" title="Please provide your username" />
-    </div>			
+<table id='container-tbl'>
+<tr>
+<td style="height:100%; vertical-align:top;">
+	<div>{SystemError} <!-- required to show error messages --></div>
+	{SystemSuccess}	<!-- required to show success messages -->
+</td>
+</tr>
+<tr>
+<td style="height:100%;">
+	<div id='formcontainer'>
+	<form id="login" method="post" action=""> 
+	
+	    <h1>Log in to your <strong>{SiteName}</strong> account!</h1>
+	    <p class="register">Not a member? <a href="index.php?page=register">Register here!</a></p>
+	    
+	    <div>
+	    	<label for="login_username">{LoginUsername}</label> 
+	    	<input type="text" name="username" id="login_username" class="field required" title="Please provide your username" />
+	    </div>			
+	
+	    <div>
+	    	<label for="login_password">{LoginPassword}</label>
+	    	<input type="password" name="password" id="login_password" class="field required" title="Password is required" />
+	    </div>			
+	    
+	    <p class="forgot"><a href="#">Forgot your password?</a></p>
+	    			
+	    <div class="submit">
+	        <button type="submit">{LoginSubmit}</button>   
+	        
+	        <label>
+	        	<input type="checkbox" name="remember" id="login_remember" value="yes" />
+	            Remember my login on this computer
+	        </label>   
+	    </div>
+	    
+	    <p class="back"><a href="index.php">Go back to home page</a></p>
+	    <input type="hidden" name="page" value="{page}" />
+	    <input type="hidden" name="sec" value="{sec}" />
+	    <input type="hidden" name="ssec" value="UserLogin" />
+	    <input type="hidden" name="h" value="login" /> 
+	</form>	
+	</div>
+</td>
+</tr>
+<tr>
+<td style="height:100%;">
+</td>
+</tr>
+</table>
 
-    <div>
-    	<label for="login_password">{LoginPassword}</label>
-    	<input type="password" name="password" id="login_password" class="field required" title="Password is required" />
-    </div>			
-    
-    <p class="forgot"><a href="#">Forgot your password?</a></p>
-    			
-    <div class="submit">
-        <button type="submit">Log in</button>   
-        
-        <label>
-        	<input type="checkbox" name="remember" id="login_remember" value="yes" />
-            Remember my login on this computer
-        </label>   
-    </div>
-    
-    <p class="back"><a href="index.php">Go back to home page</a></p>
-    <input type="hidden" name="page" value="{page}" />
-    <input type="hidden" name="sec" value="{sec}" />
-    <input type="hidden" name="ssec" value="UserLogin" />
-    <input type="hidden" name="h" value="login" /> 
-</form>	
-</div>
-{SystemSuccess}	<!-- required to show success messages keep under the registration form -->
+
+
+
 </body>
 </html>
