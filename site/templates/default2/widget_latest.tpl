@@ -9,6 +9,32 @@
     .panel-container { margin-bottom: 0px; }
     .tab-containr-wrap{background-color: #EBF4FC; margin-bottom: 10px; padding: 5px; border-width: 1px; border-style: solid; border-color: rgb(215, 229, 242) rgb(215, 229, 242);}
 
+.LatestStatrtedSubtitles-container{
+	width: 100%;
+}
+.LatestStatrtedSubtitles-row{
+		width: 49%;
+		border-style: solid;
+		border-width: 1px;
+		border-color: rgb(215, 229, 242) rgb(215, 229, 242);
+		height: 40px;
+		line-height: 20px;
+		margin-right: 2px;
+		margin-bottom: 2px;
+		text-overflow: ellipsis;
+		float: left;
+}
+.LatestStatrtedSubtitles-row-row{
+	width: 100%;
+}
+.LatestStatrtedSubtitles-cell{
+	float: left;
+}
+.LatestStatrtedSubtitles-title:before, .LatestStatrtedSubtitles-version:before, .LatestStatrtedSubtitles-language:before, .LatestStatrtedSubtitles-progress:before, .LatestStatrtedSubtitles-by:before, .LatestStatrtedSubtitles-team:before, .LatestStatrtedSubtitles-join:before{
+	content: url("templates/default2/tmp/sbBullet.bmp");
+	padding-left: 4px;
+	padding-right: 2px;
+}
   </style>
 
 
@@ -21,10 +47,10 @@
 
 <div id="tab-container2" class='tab-container'>
  <ul class='etabs'>
-   <li class='tab'><a href="#tabs1-a">Latest Started Translations</a></li>
-   <li class='tab'><a href="#tabs1-b">Latest Added Subtitles</a></li>
-   <li class='tab'><a href="#tabs1-c">Latest New Versions</a></li>
-   <li class='tab'><a href="#tabs1-d">Finished Translations</a></li>
+   <li class='tab'><a href="#tabs1-a">Latest Started Translations</a></li><!--
+   --><li class='tab'><a href="#tabs1-b">Latest Added Subtitles</a></li><!--
+   --><li class='tab'><a href="#tabs1-c">Latest New Versions</a></li><!--
+   --><li class='tab'><a href="#tabs1-d">Finished Translations</a></li>
  </ul>
  <div class='tab-containr-wrap'>
  <div class='panel-container'>
@@ -32,15 +58,19 @@
 
   <div id="tabs1-a">
 	{StartedTranslations}
+	<div class="clear:left1;"></div>
   </div>
   <div id="tabs1-b">
 	{AddedSubtitles}
+	<div class="clear:left1;"></div>
   </div>
   <div id="tabs1-c">
 	{NewVersions}
+	<div class="clear:left1;"></div>
   </div>
   <div id="tabs1-d">
 	{FinishedTranslations}
+	<div class="clear:left1;"></div>
   </div>
   
 

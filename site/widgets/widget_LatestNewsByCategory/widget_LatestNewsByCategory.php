@@ -40,6 +40,24 @@
 			return $array;
 		}	
 		
+		function GetAllNews(){
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitles` ORDER BY `id` DESC LIMIT 10", array());
+			$content = "div classs='AllNews-container'";
+				for ($i=0; $i < count($res); $i++) { 
+					$content .= "<div class='AllNews-row'>";
+					$content .= "<div class='AllNews-row-left'>";
+					$content .= "<div class='AllNews-row-left-img'>image here</div>";
+					$content .= "</div>";
+					$content .= "<div class='AllNews-row-right'>";
+					$content .= "<div class='AllNews-row-right-cell'>title - version</div>";
+					$content .= "<div class='AllNews-row-right-cell'>translated by - checked by</div>";
+					$content .= "<div class='AllNews-row-right-cell'>views - downloads - comment - rating</div>";
+					$content .= "</div>";
+					$content .= "</div>";
+				}
+			$content .= "</div>";
+		}	
+		
 	}
 
 
