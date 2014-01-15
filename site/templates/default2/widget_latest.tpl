@@ -11,6 +11,7 @@
 
 .LatestStatrtedSubtitles-container{
 	width: 100%;
+	clear: left;
 }
 .LatestStatrtedSubtitles-row{
 		width: 49.5%;
@@ -27,7 +28,6 @@
 .LatestStatrtedSubtitles-row-row{
 	width: 100%;
 	float: left;
-	clear: left;
 	height: 20px;
 }
 .LatestStatrtedSubtitles-cell{
