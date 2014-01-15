@@ -46,7 +46,7 @@
 				for ($i=0; $i < count($res); $i++) {
 				$VideoInfo = $GLOBALS['COMMON']->GetVideoInfo($res[$i]['vid']); 
 				$Language = $GLOBALS['COMMON']->GetLanguageById($res[$i]['language']);
-					$content .= "<div class='LatestStatrtedSubtitles-row'>";
+					$content .= "<div class='LatestStatrtedSubtitles-row'>";					
 					$content .= "<div class='LatestStatrtedSubtitles-row-row'>";
 					$content .= "<div class='LatestStatrtedSubtitles-cell LatestStatrtedSubtitles-title'>".$VideoInfo[0]['title']."</div>";
 					$content .= "<div class='LatestStatrtedSubtitles-cell LatestStatrtedSubtitles-version'>".$res[$i]['version']."</div>";
@@ -75,16 +75,19 @@
 			for ($i=0; $i < count($res); $i++) { 
 				$args2 = array(
 					array(":sid", $sid, "str"),
-					array(":cid", $cid, "str"),
+					array(":cid", $res[$i]['cid'], "str"),
 				);
-			$res2 = $GLOBALS['COMMON']->db_query("SELECT `done` FROM `subtitlescontent` WHERE `sid` = :sid AND `cid` = :cid", $args2);
+			$res2 = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitlescontent` WHERE `sid` = :sid AND `cid` = :cid", $args2);
 			$TotalLines = $TotalLines + count($res2);
 			for ($j=0; $j < count($res2); $j++) { 
-				if($res2[$j]['done']==1){$TotalDone++;}else{$TotalNotDone++;}
+				if($res2[$j]['done']==1){$TotalDone = $TotalDone + 1;}else{$TotalNotDone = $TotalNotDone + 1;}
 			}
 			}
-			echo $TotalLines;
-			$result = (($TotalLines - $TotalNotDone)*100)/$TotalLines;
+			if($TotalLines - $TotalNotDone > 0){
+				$result = (($TotalLines - $TotalNotDone)*100)/$TotalLines;
+			}else{
+				$result = 0;
+			}
 			return $result."%";
 		}	
 

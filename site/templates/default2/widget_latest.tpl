@@ -13,7 +13,7 @@
 	width: 100%;
 }
 .LatestStatrtedSubtitles-row{
-		width: 49%;
+		width: 49.5%;
 		border-style: solid;
 		border-width: 1px;
 		border-color: rgb(215, 229, 242) rgb(215, 229, 242);
@@ -26,15 +26,29 @@
 }
 .LatestStatrtedSubtitles-row-row{
 	width: 100%;
+	float: left;
+	clear: left;
+	height: 20px;
 }
 .LatestStatrtedSubtitles-cell{
 	float: left;
+	text-overflow: ellipsis;
+	height: 20px;
+	display: block;
+	overflow: hidden;
 }
 .LatestStatrtedSubtitles-title:before, .LatestStatrtedSubtitles-version:before, .LatestStatrtedSubtitles-language:before, .LatestStatrtedSubtitles-progress:before, .LatestStatrtedSubtitles-by:before, .LatestStatrtedSubtitles-team:before, .LatestStatrtedSubtitles-join:before{
 	content: url("templates/default2/tmp/sbBullet.bmp");
 	padding-left: 4px;
 	padding-right: 2px;
 }
+.LatestStatrtedSubtitles-title{width: 30%; text-overflow: ellipsis;}
+.LatestStatrtedSubtitles-version{width: 30%; text-overflow: ellipsis;}
+.LatestStatrtedSubtitles-language{width: 25%;}
+.LatestStatrtedSubtitles-progress{width: 15%;}
+.LatestStatrtedSubtitles-by{width: 30%;}
+.LatestStatrtedSubtitles-team{width: 30%;}
+.LatestStatrtedSubtitles-join{width: 25%;}
   </style>
 
 
@@ -58,7 +72,7 @@
 
   <div id="tabs1-a">
 	{StartedTranslations}
-	<div class="clear:left1;"></div>
+	<div class="clear:left;"></div>
   </div>
   <div id="tabs1-b">
 	{AddedSubtitles}
