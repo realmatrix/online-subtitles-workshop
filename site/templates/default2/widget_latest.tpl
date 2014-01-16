@@ -11,6 +11,9 @@
 
 .LatestStatrtedSubtitles-container{
 	width: 100%;
+	border-style: solid;
+	border-width: 1px;
+	border-color: rgb(215, 229, 242) rgb(215, 229, 242);
 	clear: left;
 }
 .LatestStatrtedSubtitles-row{
@@ -52,6 +55,10 @@
 .LatestStatrtedSubtitles-by{width: 33.3%;}
 .LatestStatrtedSubtitles-team{width: 33.3%;}
 .LatestStatrtedSubtitles-join{width: 33.3%;}
+
+#tabs1-a, #tabs1-b, #tabs1-c, #tabs1-d{
+	min-height: 100%;
+}
   </style>
 
 
@@ -75,19 +82,15 @@
 
   <div id="tabs1-a">
 	{StartedTranslations}
-	<div class="clear:left;"></div>
   </div>
   <div id="tabs1-b">
 	{AddedSubtitles}
-	<div class="clear:left1;"></div>
   </div>
   <div id="tabs1-c">
 	{NewVersions}
-	<div class="clear:left1;"></div>
   </div>
   <div id="tabs1-d">
 	{FinishedTranslations}
-	<div class="clear:left1;"></div>
   </div>
   
 

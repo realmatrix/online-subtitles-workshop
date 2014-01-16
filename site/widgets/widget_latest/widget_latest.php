@@ -42,11 +42,12 @@
 		
 		function GetLatestStartedSubtitles(){
 			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitles` ORDER BY `id` DESC LIMIT 10", array());
-			$content = "<div classs='LatestStatrtedSubtitles-container'>";
+			$content = "<div class='LatestStatrtedSubtitles-container'>";
 				for ($i=0; $i < count($res); $i++) {
 				$VideoInfo = $GLOBALS['COMMON']->GetVideoInfo($res[$i]['vid']); 
 				$Language = $GLOBALS['COMMON']->GetLanguageById($res[$i]['language']);
-					$content .= "<div class='LatestStatrtedSubtitles-row'>";					
+					$content .= "<div class='LatestStatrtedSubtitles-row'>";	
+									
 					$content .= "<div class='LatestStatrtedSubtitles-row-row'>";
 					$content .= "<div class='LatestStatrtedSubtitles-cell LatestStatrtedSubtitles-title'>".$VideoInfo[0]['title']."</div>";
 					$content .= "</div>";
@@ -57,12 +58,12 @@
 					$content .= "<div class='LatestStatrtedSubtitles-cell LatestStatrtedSubtitles-progress'>".self::GetProgress($res[$i]['id'])."</div>";
 					$content .= "</div>";
 					
-					
 					$content .= "<div class='LatestStatrtedSubtitles-row-row'>";
 					$content .= "<div class='LatestStatrtedSubtitles-cell LatestStatrtedSubtitles-by'>createdby</div>";
 					$content .= "<div class='LatestStatrtedSubtitles-cell LatestStatrtedSubtitles-team'>teams</div>";
 					$content .= "<div class='LatestStatrtedSubtitles-cell LatestStatrtedSubtitles-join'>join translation</div>";
 					$content .= "</div>";
+					
 					$content .= "</div>";
 				}
 			$content .= "</div>";
