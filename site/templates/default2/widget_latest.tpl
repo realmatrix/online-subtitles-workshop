@@ -18,7 +18,7 @@
 		border-style: solid;
 		border-width: 1px;
 		border-color: rgb(215, 229, 242) rgb(215, 229, 242);
-		height: 40px;
+		height: 60px;
 		line-height: 20px;
 		margin-right: 2px;
 		margin-bottom: 2px;
@@ -36,19 +36,22 @@
 	height: 20px;
 	display: block;
 	overflow: hidden;
+	word-wrap: break-word;
+	word-break: break-all;
+	text-overflow: ellipsis;
 }
 .LatestStatrtedSubtitles-title:before, .LatestStatrtedSubtitles-version:before, .LatestStatrtedSubtitles-language:before, .LatestStatrtedSubtitles-progress:before, .LatestStatrtedSubtitles-by:before, .LatestStatrtedSubtitles-team:before, .LatestStatrtedSubtitles-join:before{
 	content: url("templates/default2/tmp/sbBullet.bmp");
 	padding-left: 4px;
 	padding-right: 2px;
 }
-.LatestStatrtedSubtitles-title{width: 30%; text-overflow: ellipsis;}
-.LatestStatrtedSubtitles-version{width: 30%; text-overflow: ellipsis;}
-.LatestStatrtedSubtitles-language{width: 25%;}
-.LatestStatrtedSubtitles-progress{width: 15%;}
-.LatestStatrtedSubtitles-by{width: 30%;}
-.LatestStatrtedSubtitles-team{width: 30%;}
-.LatestStatrtedSubtitles-join{width: 25%;}
+.LatestStatrtedSubtitles-title{width: 100%; font-weight: bold;}
+.LatestStatrtedSubtitles-version{width: 33.3%; }
+.LatestStatrtedSubtitles-language{width: 33.3%;}
+.LatestStatrtedSubtitles-progress{width: 33.3%;}
+.LatestStatrtedSubtitles-by{width: 33.3%;}
+.LatestStatrtedSubtitles-team{width: 33.3%;}
+.LatestStatrtedSubtitles-join{width: 33.3%;}
   </style>
 
 

@@ -49,10 +49,15 @@
 					$content .= "<div class='LatestStatrtedSubtitles-row'>";					
 					$content .= "<div class='LatestStatrtedSubtitles-row-row'>";
 					$content .= "<div class='LatestStatrtedSubtitles-cell LatestStatrtedSubtitles-title'>".$VideoInfo[0]['title']."</div>";
+					$content .= "</div>";
+					
+					$content .= "<div class='LatestStatrtedSubtitles-row-row'>";
 					$content .= "<div class='LatestStatrtedSubtitles-cell LatestStatrtedSubtitles-version'>".$res[$i]['version']."</div>";
 					$content .= "<div class='LatestStatrtedSubtitles-cell LatestStatrtedSubtitles-language'>".$Language[0]['language']."</div>";
 					$content .= "<div class='LatestStatrtedSubtitles-cell LatestStatrtedSubtitles-progress'>".self::GetProgress($res[$i]['id'])."</div>";
 					$content .= "</div>";
+					
+					
 					$content .= "<div class='LatestStatrtedSubtitles-row-row'>";
 					$content .= "<div class='LatestStatrtedSubtitles-cell LatestStatrtedSubtitles-by'>createdby</div>";
 					$content .= "<div class='LatestStatrtedSubtitles-cell LatestStatrtedSubtitles-team'>teams</div>";
