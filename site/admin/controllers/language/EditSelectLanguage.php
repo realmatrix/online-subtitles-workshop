@@ -27,6 +27,8 @@
 			  (
 			  array("{title}", $GLOBALS['COMMON']->l("admin_EditSelectLanguage_title")),
 			  array("{SelectLangTables}", self::GetLanguageTables()),
+			  array("{page}", $GLOBALS['vars']['page']),
+			  array("{sec}", $GLOBALS['vars']['sec']),
 			 );
 		return $content;
 		}

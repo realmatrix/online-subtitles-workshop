@@ -8,7 +8,7 @@
 	
 		function EditLanguage_hooks(){
 			$array = array(
-				array("test", "test"),
+				array("edit", "Edit"),
 			);
 			return $array;
 		}
@@ -28,6 +28,10 @@
 			  array("{title}", $GLOBALS['COMMON']->l("admin_EditLanguage_title")),
 			 );
 		return $content;
+		}
+		
+		function Edit(){
+			
 		}
 					
 			

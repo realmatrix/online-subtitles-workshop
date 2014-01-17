@@ -1,4 +1,3 @@
-
 			<div class="row-fluid sortable">
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
@@ -33,8 +32,8 @@
 							</fieldset>
 							<input type="hidden" name="page" value="{page}"/>
 							<input type="hidden" name="sec" value="{sec}"/>
-							<input type="hidden" name="ssec" value="{ssec}"/>
-							<input type="hidden" name="h" value="{h}"/>
+							<input type="hidden" name="ssec" value="EditLanguage"/>
+							<input type="hidden" name="h" value="edit"/>
 						  </form>
 					
 					</div>
