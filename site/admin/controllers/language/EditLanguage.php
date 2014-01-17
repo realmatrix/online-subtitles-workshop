@@ -40,10 +40,13 @@
 		function Edit(){
 			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM ".$GLOBALS['vars']['lang'], array());
 			$content = "";
-			for ($i=0; $i < count($res); $i++) { 
+			for ($i=0; $i < count($res); $i++) {
+				//$text = mb_convert_encoding($res[$i]['text'], "UTF-8");
+				$text = htmlspecialchars($res[$i]['text'], ENT_QUOTES); 
+				$text = htmlentities($res[$i]['text']);
 				$content.="<tr>";
 				$content.="<td class='editlanguage-key'>".$res[$i]['key']."</td>";
-				$content.="<td class='editlanguage-text'><input type='text' name='text[".$i."]' value='".$res[$i]['text']."' class='span12 typeahead' id='typeahead' /></td>";                                      
+				$content.="<td class='editlanguage-text'><input type='text' name='text[".$i."]' value='".$text."' class='span12 typeahead' id='typeahead' /></td>";                                      
 				$content.="<input type='hidden' name='key[".$i."]' value='".$res[$i]['key']."'/>";
 				$content.="</tr>"; 
 			}
