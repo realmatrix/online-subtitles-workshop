@@ -17,12 +17,8 @@
 							  <div class="control-group">
 								<label class="control-label" for="selectError">Select Language</label>
 								<div class="controls">
-								  <select id="selectError" name="lid" class="span6" data-rel="chosen" onchange="this.form.submit()">
-									<option>Option 1</option>
-									<option>Option 2</option>
-									<option>Option 3</option>
-									<option>Option 4</option>
-									<option>Option 5</option>
+								  <select id="selectError" name="lang" class="span6" data-rel="chosen" onchange="this.form.submit()">
+										{SelectLangTables}
 								  </select>
 								</div>
 							  </div>
@@ -35,6 +31,10 @@
 -->
 							  
 							</fieldset>
+							<input type="hidden" name="page" value="{page}"/>
+							<input type="hidden" name="sec" value="{sec}"/>
+							<input type="hidden" name="ssec" value="{ssec}"/>
+							<input type="hidden" name="h" value="{h}"/>
 						  </form>
 					
 					</div>
