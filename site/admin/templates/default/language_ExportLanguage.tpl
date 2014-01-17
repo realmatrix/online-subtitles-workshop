@@ -13,21 +13,20 @@
 					<div class="box-content">
 						<form class="form-horizontal">
 							<fieldset>
-							  <div class="control-group">
-								<label class="control-label" for="selectError">Select Language</label>
-								<div class="controls">
-								  <select id="selectError" name="lang" class="span6" data-rel="chosen" onchange="this.form.submit()">
-										{SelectLangTables}
-								  </select>
-								</div>
+							
+							<div class="control-group">
+							  <label class="control-label" for="typeahead">Language </label>
+							  <div class="controls">
+							  <span class="input-xlarge uneditable-input">{LangName}</span>
 							  </div>
+							 </div>
 							  
-<!--
+
 							  <div class="form-actions">
-								<button type="submit" class="btn btn-primary">Save changes</button>
+								<button type="submit" class="btn btn-primary">Download File</button>
 								<button class="btn">Cancel</button>
 							  </div>
--->
+
 							  
 							</fieldset>
 							<input type="hidden" name="page" value="{page}"/>

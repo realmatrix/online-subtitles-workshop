@@ -31,8 +31,8 @@
 							  
 							</fieldset>
 							<input type="hidden" name="page" value="{page}"/>
-							<input type="hidden" name="sec" value="edit"/>
-							<input type="hidden" name="ssec" value="EditLanguage"/>
+							<input type="hidden" name="sec" value="export"/>
+							<input type="hidden" name="ssec" value="ExportLanguage"/>
 							<input type="hidden" name="h" value="edit"/>
 						  </form>
 					
