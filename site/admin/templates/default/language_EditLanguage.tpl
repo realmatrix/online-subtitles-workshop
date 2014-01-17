@@ -1,7 +1,15 @@
+<style>
+.editlanguage-key{
+	width: 20%;
+}
+.editlanguage-text{
+	width: 80%;
+}
+</style>
 			<div class="row-fluid sortable">
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
-						<h2><i class="icon-edit"></i> Select Language</h2>
+						<h2><i class="icon-edit"></i> Edit Language</h2>
 						<div class="box-icon">
 							<a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a>
 							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
@@ -11,7 +19,7 @@
 					
 					
 					<div class="box-content">
-						<form class="form-horizontal">
+						<form class="form-horizontal" method="post" action="index.php">
 							<fieldset>
 
 <!--							
@@ -26,23 +34,6 @@
 -->
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	
 
 
@@ -50,54 +41,15 @@
 						<table class="table table-bordered table-striped table-condensed">
 							  <thead>
 								  <tr>
-									  <th style="width: %25;">Key</th>
-									  <th style="width: %75;">Value</th>                                        
+									  <th class='editlanguage-key'>Key</th>
+									  <th class='editlanguage-text'>Value</th>                                        
 								  </tr>
 							  </thead>   
 							  <tbody>
-								<tr>
-									<td>Total Videos</td>
-									<td class="center">{TotalVideos}</td>                                      
-								</tr>                               
+									{TableContent}                              
 							  </tbody>
 						 </table>       
 					</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -113,8 +65,9 @@
 							</fieldset>
 							<input type="hidden" name="page" value="{page}"/>
 							<input type="hidden" name="sec" value="{sec}"/>
-							<input type="hidden" name="ssec" value="EditSelectLanguage"/>
+							<input type="hidden" name="ssec" value="EditLanguage"/>
 							<input type="hidden" name="h" value="save"/>
+							<input type="hidden" name="lang" value="{lang}">
 						  </form>
 					
 					</div>

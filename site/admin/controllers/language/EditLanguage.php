@@ -1,6 +1,8 @@
 <?php
 
 	class CEditLanguage{
+		
+		public static $SearchResult = "";
 			
 		function EditLanguage(){
 			return self::EditLanguage_content();
@@ -9,6 +11,7 @@
 		function EditLanguage_hooks(){
 			$array = array(
 				array("edit", "Edit"),
+				array("save", "Save"),
 			);
 			return $array;
 		}
@@ -26,17 +29,35 @@
 			$content = array
 			  (
 			  array("{title}", $GLOBALS['COMMON']->l("admin_EditLanguage_title")),
+			  array("{TableContent}", self::$SearchResult),
+			  array("{page}", $GLOBALS['vars']['page']),
+			  array("{sec}", $GLOBALS['vars']['sec']),
+			  array("{lang}", $GLOBALS['vars']['lang']),
 			 );
 		return $content;
 		}
 		
 		function Edit(){
-			
+			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM ".$GLOBALS['vars']['lang'], array());
+			$content = "";
+			for ($i=0; $i < count($res); $i++) { 
+				$content.="<tr>";
+				$content.="<td class='editlanguage-key'>".$res[$i]['key']."</td>";
+				$content.="<td class='editlanguage-text'><input type='text' name='text[".$i."]' value='".$res[$i]['text']."' class='span12 typeahead' id='typeahead' /></td>";                                      
+				$content.="<input type='hidden' name='key[".$i."]' value='".$res[$i]['key']."'/>";
+				$content.="</tr>"; 
+			}
+			self::$SearchResult = $content;
+		}
+		
+		function Save(){
+			print_r($GLOBALS['vars']['key']);
+			self::Edit();
 		}
 					
 			
 	}
 	
-	
+
 	
 ?>
