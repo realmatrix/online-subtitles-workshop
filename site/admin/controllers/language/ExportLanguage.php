@@ -33,6 +33,7 @@
 			  array("{sec}", $GLOBALS['vars']['sec']),
 			  array("{lang}", $GLOBALS['vars']['lang']),
 			  array("{LangName}", $GLOBALS['vars']['lang']),
+			  array("{FileName}", $GLOBALS['vars']['lang'].".csv"),
 			 );
 		return $content;
 		}
@@ -46,6 +47,7 @@
 					}
 					fclose($fp);
 			}
+			 header( 'Location: tmp/'.$GLOBALS['vars']['lang'].'.csv');
 		}
 					
 			
