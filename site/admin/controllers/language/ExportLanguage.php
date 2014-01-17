@@ -10,8 +10,7 @@
 	
 		function ExportLanguage_hooks(){
 			$array = array(
-				array("edit", "Edit"),
-				array("save", "Save"),
+				array("export", "Export"),
 			);
 			return $array;
 		}
@@ -37,25 +36,15 @@
 		return $content;
 		}
 		
-		function Edit(){
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM ".$GLOBALS['vars']['lang'], array());
-			$content = "";
-			for ($i=0; $i < count($res); $i++) {
-				//$text = mb_convert_encoding($res[$i]['text'], "UTF-8");
-				$text = htmlspecialchars($res[$i]['text'], ENT_QUOTES); 
-				$text = htmlentities($res[$i]['text']);
-				$content.="<tr>";
-				$content.="<td class='ExportLanguage-key'>".$res[$i]['key']."</td>";
-				$content.="<td class='ExportLanguage-text'><input type='text' name='text[".$i."]' value='".$text."' class='span12 typeahead' id='typeahead' /></td>";                                      
-				$content.="<input type='hidden' name='key[".$i."]' value='".$res[$i]['key']."'/>";
-				$content.="</tr>"; 
+		function Export(){
+			if($GLOBALS['vars']['lang']!=""){
+				$res = $GLOBALS['COMMON']->db_query("SELECT * FROM ".$GLOBALS['vars']['lang'], array());
+					$fp = fopen('tmp/file.csv', 'w');
+					foreach ($res as $fields) {
+					    fputcsv($fp, $fields);
+					}
+					fclose($fp);
 			}
-			self::$SearchResult = $content;
-		}
-		
-		function Save(){
-			print_r($GLOBALS['vars']['key']);
-			self::Edit();
 		}
 					
 			

@@ -22,6 +22,8 @@
 	
 	$GLOBALS['ACOMMON'] = new Acommon();
 	
+	$GLOBALS['ACOMMON']->CleanTmp();
+	
 	if($GLOBALS['ACOMMON']->CheckAuthority()==""){$GLOBALS['vars']['page']="login"; $GLOBALS['vars']['sec']="login";}
 	
 	include "./processor.php";

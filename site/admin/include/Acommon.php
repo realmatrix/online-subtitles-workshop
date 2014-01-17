@@ -214,7 +214,18 @@
 		}
 		
 		
-
+		function CleanTmp(){
+			  $path = './tmp';
+			  if ($handle = opendir($path)) {
+			    while (false !== ($file = readdir($handle))) {
+			        if ((time()-filectime($path.'/'.$file)) < 86400) {  // 86400 = 60*60*24
+			          if (strripos($file, '.gz') !== false) {
+			            unlink($path.'/'.$file);
+			          }
+			        }
+			    }
+			  }
+		}
 		
 		
 	}
