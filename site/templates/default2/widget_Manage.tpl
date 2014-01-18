@@ -6,7 +6,7 @@
 		background-color: #F5FBFE;
 		width: 99%;
 		margin-bottom: 2px;
-		padding-left: 2px;
+		padding-left: 3px;
 		padding-top: 2px;
 		padding-bottom: 2px;
 		font-weight: bold;

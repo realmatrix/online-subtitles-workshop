@@ -11,10 +11,6 @@
 
 .LatestStatrtedSubtitles-container{
 	width: 100%;
-	border-style: solid;
-	border-width: 1px;
-	border-color: rgb(215, 229, 242) rgb(215, 229, 242);
-	clear: left;
 }
 .LatestStatrtedSubtitles-row{
 		width: 49.5%;
@@ -26,7 +22,7 @@
 		margin-right: 2px;
 		margin-bottom: 2px;
 		text-overflow: ellipsis;
-		float: left;
+		display: inline-block;
 }
 .LatestStatrtedSubtitles-row-row{
 	width: 100%;

@@ -46,7 +46,8 @@
 				for ($i=0; $i < count($res); $i++) {
 				$VideoInfo = $GLOBALS['COMMON']->GetVideoInfo($res[$i]['vid']); 
 				$Language = $GLOBALS['COMMON']->GetLanguageById($res[$i]['language']);
-					$content .= "<div class='LatestStatrtedSubtitles-row'>";	
+				if($i % 2 == 0) {$EvenOdd = "even";}else{$EvenOdd = "odd";}
+					$content .= "<div class='LatestStatrtedSubtitles-row LatestStatrtedSubtitles-row-".$EvenOdd."'>";	
 									
 					$content .= "<div class='LatestStatrtedSubtitles-row-row'>";
 					$content .= "<div class='LatestStatrtedSubtitles-cell LatestStatrtedSubtitles-title'>".$VideoInfo[0]['title']."</div>";
