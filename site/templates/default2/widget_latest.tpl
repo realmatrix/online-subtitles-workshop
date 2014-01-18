@@ -13,17 +13,18 @@
 	width: 100%;
 }
 .LatestStatrtedSubtitles-row{
-		width: 49.5%;
+		width: 49.6%;
 		border-style: solid;
 		border-width: 1px;
 		border-color: rgb(215, 229, 242) rgb(215, 229, 242);
 		height: 60px;
 		line-height: 20px;
-		margin-right: 2px;
 		margin-bottom: 2px;
 		text-overflow: ellipsis;
 		display: inline-block;
 }
+.LatestStatrtedSubtitles-row-even{margin-right: 2px;}
+..LatestStatrtedSubtitles-row-odd{}
 .LatestStatrtedSubtitles-row-row{
 	width: 100%;
 	float: left;
