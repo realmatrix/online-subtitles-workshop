@@ -2,9 +2,9 @@
 	
 	$GLOBALS['SystemPath'] = "../";
 	
-	$GLOBALS['TemplatePath'] = "templates/";
+	$GLOBALS['config']['TemplatesDir'] = "templates/";
 	
-	$GLOBALS['Template'] = "default";
+	$GLOBALS['config']['template'] = "default";
 	
 	$GLOBALS['SiteTitle'] = "Online Subtitles Workshop";
 	

@@ -5,7 +5,7 @@
 
 
 		function LoadTemplate($template){
-			$content = file_get_contents($GLOBALS['TemplatePath'].$GLOBALS['Template']."/".$template);
+			$content = file_get_contents($GLOBALS['config']['TemplatesDir'].$GLOBALS['config']['template']."/".$template);
 			return $content;
 		}	
 			
@@ -128,7 +128,7 @@
 	
 
 		function RenderView($array, $view, $section){
-			$page = file_get_contents($GLOBALS['TemplatePath'].$GLOBALS['Template']."/".$view."_".$section.".tpl");
+			$page = file_get_contents($GLOBALS['config']['TemplatesDir'].$GLOBALS['config']['template']."/".$view."_".$section.".tpl");
 			for ($i = 0; $i <= count($array)-1; $i++) {
 			    $page = str_replace($array[$i][0], $array[$i][1], $page);
 			}
@@ -219,7 +219,7 @@
 			  if ($handle = opendir($path)) {
 			    while (false !== ($file = readdir($handle))) {
 			        if ((time()-filectime($path.'/'.$file)) < 86400) {  // 86400 = 60*60*24
-			          if (strripos($file, '.gz') !== false) {
+			          if (strripos($file, '.gz') !== false or strripos($file, '.csv') !== false) {
 			            unlink($path.'/'.$file);
 			          }
 			        }

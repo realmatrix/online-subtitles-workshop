@@ -13,6 +13,10 @@
 
 	//loading controllers
 	if($ControllerPage!="" and $ControllerSection!="" and $ControllerPage!="login"){$GLOBALS['AdminContent'] = $GLOBALS['ACOMMON']->LoadSections($ControllerPage, $ControllerSection, $GLOBALS['vars']);}
+
+	$error_messages = $GLOBALS['COMMON']->SystemMessage("error",$GLOBALS['ERROR']);
+	
+	$success_messages = $GLOBALS['COMMON']->SystemMessage("success",$GLOBALS['SUCCESS']);
 	
 	$GLOBALS['TemplateHeader'] = array
 	  (
@@ -59,7 +63,7 @@
 
 	$TemplatesCommon = array 
 	(
-	  array("{TemplatePath}", $GLOBALS['TemplatePath'].$GLOBALS['Template']),
+	  array("{TemplatePath}", $GLOBALS['config']['TemplatesDir'].$GLOBALS['config']['template']),
 	  array("{SiteName}", $GLOBALS['SiteTitle']),
 	  array("{SiteDescription}", $GLOBALS['SiteDescription']),
 	  array("{SystemHeader}", $SystemHeader),
