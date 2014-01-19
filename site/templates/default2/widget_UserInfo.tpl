@@ -28,12 +28,12 @@
 	}
 	.widget-userinfo-left{
 		background-color: #F5FBFE;
-		margin-right: 2px;
 		width: 122px;
 		font-weight: bold;
 	}
 	.widget-userinfo-right{
 		width: 115px;
+		margin-left: 2px;
 	}
 </style>
 
