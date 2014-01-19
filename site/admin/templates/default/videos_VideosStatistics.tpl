@@ -1,3 +1,8 @@
+<style>
+	.videostatistics{
+		width: 25%:
+	}
+</style>
 			<div class="row-fluid sortable">	
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
@@ -12,43 +17,19 @@
 						<table class="table table-bordered table-striped table-condensed">
 							  <thead>
 								  <tr>
-									  <th style="width: %25;">Statistic</th>
-									  <th style="width: %25;">Value</th>
-									  <th style="width: %25;">Statistic</th>
-									  <th style="width: %25;">Value</th>                                          
+									  <th class="videostatistics">Statistic</th>
+									  <th class="videostatistics">Value</th>
+									  <th class="videostatistics">Statistic</th>
+									  <th class="videostatistics">Value</th>                                          
 								  </tr>
 							  </thead>   
 							  <tbody>
 								<tr>
-									<td>Total Videos</td>
-									<td class="center">{TotalVideos}</td>
-									<td class="center">Total Subtitles</td>
-									<td class="center">{TotalSubtitles}</td>                                       
-								</tr>       
-								<tr>
-									<td>Total Members</td>
-									<td class="center">{TotalMembers}</td>
-									<td class="center">New Members</td>
-									<td class="center">{NewMembers}</td>                                       
-								</tr>  
-								<tr>
-									<td>Approved Members</td>
-									<td class="center">{ApprovedMembers}</td>
-									<td class="center">Pending Members</td>
-									<td class="center">{PendingMembers}</td>                                       
-								</tr> 
-								<tr>
-									<td class="center">Online Members</td>
-									<td class="center">{OnlineMembers}</td>    
-									<td>Banned Members</td>
-									<td class="center">{BannedMembers}</td>                                   
-								</tr> 
-								<tr>
-									<td class="center">Total Teams</td>
-									<td class="center">{TotalTeams}</td>    
-									<td>Total Messages</td>
-									<td class="center">{TotalMessages}</td>                                   
-								</tr>                        
+									<td class="videostatistics">Total Videos</td>
+									<td class="videostatistics center">{TotalVideos}</td>
+									<td class="videostatistics center">Favourite Videos</td>
+									<td class="videostatistics center">{FavouriteVideos}</td>                                       
+								</tr>                              
 							  </tbody>
 						 </table>       
 					</div>
