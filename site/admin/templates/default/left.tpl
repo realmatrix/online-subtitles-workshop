@@ -17,8 +17,8 @@
 						<li class="nav-header hidden-tablet">System Configuration</li>
 						<li><a class="ajax-link" href="index.php?page=system&sec=settings"><i class="icon-wrench"></i><span class="hidden-tablet"> System settings</span></a></li>
 						<li><a class="ajax-link" href="index.php?page=system&sec=features"><i class="icon-cog"></i><span class="hidden-tablet"> System features</span></a></li>
-						<li><a class="ajax-link" href="index.php?page=widgets&sec=manage"><i class="icon-wrench"></i><span class="hidden-tablet"> Widgets</span></a></li>
-						<li><a class="ajax-link" href="index.php?page=language&sec=manage"><i class="icon-wrench"></i><span class="hidden-tablet"> Languages</span></a></li>
+						<li><a class="ajax-link" href="index.php?page=widgets&sec=manage"><i class="icon-th-list"></i><span class="hidden-tablet"> Widgets</span></a></li>
+						<li><a class="ajax-link" href="index.php?page=language&sec=manage"><i class="icon-flag"></i><span class="hidden-tablet"> Languages</span></a></li>
 						<li><a class="ajax-link" href="index.php?page=pm&sec=manage"><i class="icon-inbox"></i><span class="hidden-tablet"> Private message settings</span></a></li>
 						<li><a class="ajax-link" href="index.php?page=post&sec=settings"><i class="icon-edit"></i><span class="hidden-tablet"> Post settings</span></a></li>
 						<li><a class="ajax-link" href="index.php?page=feed&sec=settings"><i class="icon-globe"></i><span class="hidden-tablet"> Feed settings</span></a></li>
