@@ -78,28 +78,62 @@
         </nav>
       </div>
 <!-- navbar end -->
-    	
-        <div class="container">
+
+<!-- breadcrubms widget start -->
+	{widget_breadcrumbs}
+<!-- breadcrumbs widget end -->
+
+<!-- system messages start-->
+	{SystemError}
+	{SystemSuccess}	
+<!-- system messages end -->    
+
+	
+        <div class="container"><!-- container start -->
 
 
 
             <div class="row">
 
                 <div class="col-md-8">
-                    <p>col1</p>
+                    {widget_FeaturedVideos}
                 </div>
 
                 <div class="col-md-4">
-                    <p>col2</p>
+                    {widget_ForumLatest}
                 </div>
 
             </div>
 
-        </div>
-        
+<!-- top10 widget start -->
+<div class="row">
+{widget_top10}
+</div>
+<!-- top 10 widget end -->
+
+
 <!-- statistics start -->
-<div class="panel panel-primary">...</div>
+<div class="row">
+	<div class="col-md-13">
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Statistics</h3>
+		  </div>
+		  <div class="panel-body">
+In total there are <STRONG>{TotalOnline}</STRONG> users 
+online :: {OnlineRegistered} registered, {OnlineHidden} hidden and {OnlineGuests} guests <BR><BR>Registered 
+users: {TotalRegistered} registered users<BR><BR>
+Total videos <STRONG>{TotalVideos}</STRONG> • Total subtitles 
+<STRONG>{TotalSubtitles}</STRONG> • Total members <STRONG>{TotalUsers}</STRONG> • Our newest member 
+<STRONG><A href="#">{LatestUser}</A></STRONG>
+		  </div>
+		</div>
+	</div>
+</div>
 <!-- statistics end-->
+        </div><!-- container end -->
+        
+
         
 <!-- footer start -->
     <div id="footer">
