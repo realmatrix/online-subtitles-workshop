@@ -15,6 +15,9 @@
 		<LINK rel="stylesheet" type="text/css" href="{TemplatePath}/css/bootstrap-theme.css">
 		<LINK rel="stylesheet" type="text/css" href="{TemplatePath}/css/style.css">
 		
+		<!-- Glyphicons -->
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+		
         <!-- To better visualize the columns -->
         <style>
         .row > div {
@@ -33,19 +36,19 @@
         <nav class="navbar navbar-inverse" role="navigation">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">&nbsp;&nbsp;<b>{SiteName}</b></a></li>
-            <li><a href="index.php">Home</a></li>
+            <li><a href="index.php">&nbsp;&nbsp;<i class="icon-home"></i> Home</a></li>
             <li class="divider-vertical"></li>
-            <li><a href="#">Downloads</a></li>
+            <li><a href="#"><i class="icon-download"></i> Downloads</a></li>
             <li class="divider-vertical"></li>
-            <li><a href="#">Subtitles</a></li>
+            <li><a href="#"><i class="icon-list"></i> Subtitles</a></li>
             <li class="divider-vertical"></li>
-            <li><a href="#">Videos</a></li>
+            <li><a href="#"><i class="icon-film"></i> Videos</a></li>
             <li class="divider-vertical"></li>
-            <li><a href="index.php?page=forum&sec=forums">Forums</a></li> 
+            <li><a href="index.php?page=forum&sec=forums"><i class="icon-th"></i> Forums</a></li> 
             <li class="divider-vertical"></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Search<b class="caret"></b></a>
+                <i class="icon-search"></i> Search<b class="caret"></b></a>
  
               <ul class="dropdown-menu">
                 <li><a href="#"></a></li>
