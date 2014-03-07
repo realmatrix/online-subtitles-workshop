@@ -5,3 +5,15 @@
     border-left: 1px solid #1c2022;
     border-right: 1px solid #3e4a4e;
 }
+
+#footer {
+	background-color: #3e4a4e;
+	padding-top: 5px;
+	padding-bottom: 10px;
+}
+
+#footer .container{
+	color: white;
+}
+
+
