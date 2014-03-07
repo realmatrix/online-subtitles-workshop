@@ -1,5 +1,5 @@
 <?php
-class Common{
+class System{
 	
 	
 	function SystemRouter($page="", $sec="", $dataonly="", $controller="", $GetSection="", $GetWidget=""){
@@ -84,7 +84,10 @@ class Common{
 		return $content;
 	}
 
-
+	
+	function LoadLib($lib){
+		include "libs/".$lib.".php";
+	}
 
 
 	function SystemMessage($type,$message){
@@ -738,7 +741,7 @@ class Common{
 		$args = array(
 			array(":tid", $tid, "str"),
 		);
-		$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `teamsubtitles` WHERE `tid`=:tid", $args);
+		$res = $GLOBALS['system']->db_query("SELECT * FROM `teamsubtitles` WHERE `tid`=:tid", $args);
 		return $res;
 	}
 	
@@ -804,13 +807,13 @@ class Common{
 			array(":sid", $sid, "str"),
 			array("cid", $cid, "str"),
 		);
-		$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitlescontent` WHERE `sid` = :sid and `cid` = :cid ORDER BY start ASC", $args);
+		$res = $GLOBALS['system']->db_query("SELECT * FROM `subtitlescontent` WHERE `sid` = :sid and `cid` = :cid ORDER BY start ASC", $args);
 		for ($i=0; $i < count($res); $i++) { 
 			$args = array(
 				array(":id", $res[$i]['id'], "str"),
 				array(":start", $res[$i]['start'], "str"),
 			);
-			$GLOBALS['COMMON']->db_query("UPDATE `subtitlescontent` SET `start` = :start WHERE `id` = :id ;", $args);
+			$GLOBALS['system']->db_query("UPDATE `subtitlescontent` SET `start` = :start WHERE `id` = :id ;", $args);
 		}
 	}
 	
@@ -837,16 +840,16 @@ class Common{
 		$args = array(
 			array(":ip", $_SERVER['REMOTE_ADDR'], "str"),
 		);
-		$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `failedlogins` WHERE `ip` = :ip", $args);
+		$res = $GLOBALS['system']->db_query("SELECT * FROM `failedlogins` WHERE `ip` = :ip", $args);
 		$args = array(
 			array(":ip", $_SERVER['REMOTE_ADDR'], "str"),
 			array(":time", self::GetMicroTime(), "str"),
 		);
 		if(count($res)>0){
-			$res = $GLOBALS['COMMON']->db_query("UPDATE  `failedlogins` SET  `tries` =  tries+1,`time` =  :time WHERE  `ip` =:ip", $args);
+			$res = $GLOBALS['system']->db_query("UPDATE  `failedlogins` SET  `tries` =  tries+1,`time` =  :time WHERE  `ip` =:ip", $args);
 		}
 		else{
-			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `failedlogins` (`ip` ,`tries` ,`time`)VALUES(:ip, 1, :time)", $args);
+			$res = $GLOBALS['system']->db_query("INSERT INTO `failedlogins` (`ip` ,`tries` ,`time`)VALUES(:ip, 1, :time)", $args);
 		}
 	}
 	
@@ -855,7 +858,7 @@ class Common{
 		$args = array(
 			array(":ip", $_SERVER['REMOTE_ADDR'], "str"),
 		);
-		$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `failedlogins` WHERE `ip` = :ip", $args);
+		$res = $GLOBALS['system']->db_query("SELECT * FROM `failedlogins` WHERE `ip` = :ip", $args);
 		if($res[0]['tries']>5){return TRUE;}else{return FALSE;}
 	}
 	
@@ -866,22 +869,22 @@ class Common{
 		$args = array(
 			array(":time", $time, "str"),
 		);
-		$res = $GLOBALS['COMMON']->db_query("DELETE FROM `failedlogins` WHERE `time` < :time", $args);
+		$res = $GLOBALS['system']->db_query("DELETE FROM `failedlogins` WHERE `time` < :time", $args);
 	}
 	
 	
 	function UpdateUsersKeys(){
 		$args = array(
-			array(":KeyTime", $GLOBALS['COMMON']->GetMicroTime()-86400, "str"),
+			array(":KeyTime", $GLOBALS['system']->GetMicroTime()-86400, "str"),
 		);
-		$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `users` WHERE `KeyTime`< :KeyTime limit 10", $args);
+		$res = $GLOBALS['system']->db_query("SELECT * FROM `users` WHERE `KeyTime`< :KeyTime limit 10", $args);
 		for ($i=0; $i < count($res); $i++) {
 			$args = array(
 				array(":id", $res[$i]['id']),
 				array(":key", self::GenRandomStr(30), "str"),
 				array(":KeyTime", self::GetMicroTime(), "str"),
 			); 
-			$GLOBALS['COMMON']->db_query("UPDATE `users` SET  `key` =  :key, `KeyTime` =  :KeyTime WHERE `id` = :id", $args);
+			$GLOBALS['system']->db_query("UPDATE `users` SET  `key` =  :key, `KeyTime` =  :KeyTime WHERE `id` = :id", $args);
 		}
 	}
 	
@@ -933,7 +936,7 @@ class Common{
 		$args = array(
 			array(":sid", $sid, "str"),
 		);
-		$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitles` WHERE `id` = :sid", $args);
+		$res = $GLOBALS['system']->db_query("SELECT * FROM `subtitles` WHERE `id` = :sid", $args);
 		if($res[0]['uid']===$UID){return TRUE;}else{return FALSE;}
 	}
 	
@@ -942,7 +945,7 @@ class Common{
 			array(":uid", $GLOBALS['vars']['sid'], "str"),
 			array(":sid", $sid, "str"),
 		);
-		$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitlepermissions` WHERE `sid` = :sid and `uid` = :uid", $args);
+		$res = $GLOBALS['system']->db_query("SELECT * FROM `subtitlepermissions` WHERE `sid` = :sid and `uid` = :uid", $args);
 		$permissions['add'] = FALSE;
 		$permissions['delete'] = FALSE;
 		$permissions['edit'] = FALSE;
