@@ -5,25 +5,8 @@
 {widget_top10}
 
 </DIV>
-<SCRIPT type="text/javascript">
-    // <![CDATA[
-                $(".forumlist").collapse({show: function(){
-                        this.animate({
-                            opacity: 'toggle',
-                            height: 'toggle'
-                        }, 300);
-                    },
-                    hide : function() {
-                        this.animate({
-                            opacity: 'toggle',
-                            height: 'toggle'
-                        }, 300);
-                    }
-                });
-    // ]]>
-    </SCRIPT>
-<BR>
-<DIV class="indexlinks"><A href="index.php?page=message&sec=contact">Contact Us</A> | <A href="index.php?page=info&sec=about">About us</A> |     <A href="index.php?page=faq&sec=list">FAQ</A><BR>It is currently {DateTime}</DIV><BR>
+
+
 	
 	
 	

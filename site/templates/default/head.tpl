@@ -57,6 +57,23 @@
               </ul>
             </li>
           </ul>
+          
+          
+          <ul class="nav navbar-nav">
+          	<li class="divider-vertical"></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="icon-star"></i> More<b class="caret"></b></a>
+ 
+              <ul class="dropdown-menu">
+                <li><a href="#"></a></li>
+                <li><a href="index.php?page=message&sec=contact">Contact Us</a></li>
+                <li><a href="index.php?page=info&sec=about">About us</a></li>
+                <li><a href="index.php?page=faq&sec=list">FAQ</a></li>
+              </ul>
+            </li>
+ 		</ul>
+ 
  
         </nav>
       </div>
@@ -79,6 +96,10 @@
             </div>
 
         </div>
+        
+<!-- statistics start -->
+<div class="panel panel-primary">...</div>
+<!-- statistics end-->
         
 <!-- footer start -->
     <div id="footer">
