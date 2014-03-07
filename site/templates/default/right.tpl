@@ -1,8 +1,8 @@
-</div>
-<div id="right-column">
-	
-	<!-- end left column -->
-<!-- start right column -->
+                </div>
+
+                <div class="col-md-4">
+                    <!-- right column -->
+                    <!-- start right column -->
 
 <!-- login widget -->
 	{widget_login}
@@ -32,5 +32,6 @@
 	{widget_NewsLetter}
 <!-- end of news letter widget -->
 
-</div>
-<!-- end right column -->	
+                </div>
+            </div>            
+

@@ -25,24 +25,20 @@
 	}
 </style>
 
-<DIV class="catglow" style="width:100%;">
-<DIV class="cathead-m">
-<DIV class="cathead-r">
-<DIV class="cathead-l">                    
-	Manage Account                
-</DIV>
-</DIV>
-</DIV>
-<DIV class="trigger active">
-</DIV>
-<DIV class="collapsethis">
-
-<TABLE class="cat" cellSpacing="0" cellPadding="0" width="100%">
-  <TBODY>
-  <TR>
-    <TD class="forumdetails"><SPAN class="forum-descriptions">
 
 
+
+
+
+
+
+<div class="row">
+	<div class="col-md-11">
+		<div class="panel panel-primary">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Manage Account</h3>
+		  </div>
+		  <div class="panel-body">
 <div id="widgt-ManageAccount">
 	<div class='widget-manage-caption'>Subtitle</div>
 		<div class='widget-manage-link-container'><a href="index.php?page=subtitle&sec=list">my subtitles</a></div>
@@ -60,13 +56,7 @@
 	  	<div class='widget-manage-link-container'><a class="quicklinks-link" href="index.php?page=user&sec=cp&uid={uid}">{UserCp}</a></div>
 		<div class='widget-manage-link-container'><a class="quicklinks-link" href="index.php?act=logout">{Logout}</a></div>
 </div>
-
-
-</td>
-</tr>
-</tbody>
-</table>
-
-</DIV>
+		  </div>
+		</div>
+	</div>
 </div>
-<br>

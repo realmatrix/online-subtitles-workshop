@@ -167,25 +167,17 @@ var interval = setInterval(GetChat,10000);
 	.shoutbox-grin{content: url("templates/default2/tmp/smiles/emoticon_grin.png");}
 	.shoutbox-surprised{content: url("templates/default2/tmp/smiles/emoticon_surprised.png");}
 </style>
-<DIV class="catglow" style="width:100%;">
-<DIV class="cathead-m">
-<DIV class="cathead-r">
-<DIV class="cathead-l">                    
-	ShoutBox                
-</DIV>
-</DIV>
-</DIV>
-<DIV class="trigger active">
-</DIV>
-<DIV class="collapsethis">
-
-<TABLE class="cat" cellSpacing="0" cellPadding="0" width="100%">
-  <TBODY>
-  <TR>
-    <TD class="forumdetails"><SPAN class="forum-descriptions">
 
 
-	
+
+
+<div class="row">
+	<div class="col-md-11">
+		<div class="panel panel-primary">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">ShoutBox</h3>
+		  </div>
+		  <div class="panel-body">
 <div id="widgt-shoutbox">
 	<div id='shoutbox-messages'></div>
 	
@@ -214,16 +206,11 @@ var interval = setInterval(GetChat,10000);
 		</div>
 	</form>
 </div>
-
-
-</td>
-</tr>
-</tbody>
-</table>
-
-</DIV>
+		  </div>
+		</div>
+	</div>
 </div>
-<br>
+
 
 <script>
 	GetChat();
