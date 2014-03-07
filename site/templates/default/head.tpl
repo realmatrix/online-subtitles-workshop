@@ -33,7 +33,6 @@
         <nav class="navbar navbar-inverse" role="navigation">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">&nbsp;&nbsp;<b>{SiteName}</b></a></li>
-            <li class="divider-vertical"></li>
             <li><a href="index.php">Home</a></li>
             <li class="divider-vertical"></li>
             <li><a href="#">Downloads</a></li>
@@ -43,6 +42,7 @@
             <li><a href="#">Videos</a></li>
             <li class="divider-vertical"></li>
             <li><a href="index.php?page=forum&sec=forums">Forums</a></li> 
+            <li class="divider-vertical"></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 Search<b class="caret"></b></a>

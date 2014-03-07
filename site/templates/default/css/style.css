@@ -1,6 +1,7 @@
 .divider-vertical {
     height: 40px;
     margin: 0 9px;
-    border-left: 1px solid #F2F2F2;
-    border-right: 1px solid #FFF;
+    margin-top: 5px;
+    border-left: 1px solid #1c2022;
+    border-right: 1px solid #3e4a4e;
 }
