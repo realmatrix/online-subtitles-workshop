@@ -1,0 +1,151 @@
+/*
+.SystemTable p {
+	text-align:center;
+	}	
+.SystemTable a:link {
+	color:#d42945;
+	text-decoration:none;
+	border-bottom:1px dotted #ffbac8;
+	}	
+.SystemTable a:visited {
+	color:#d42945;
+	border-bottom:none;
+	text-decoration:none;
+	}		
+.SystemTable a:hover,
+.SystemTable a:focus {
+	color:#f03b58;
+	border-bottom:1px solid #f03b58;
+	text-decoration:none;
+	}
+.SystemTable a,
+.SystemTable a:link,
+.SystemTable a:visited {
+	border:none;
+	}							
+	
+.SystemTable img {
+	border:0;
+	margin-top:.5em;
+	}	
+.SystemTable {
+	width:100%;
+	border-top:1px solid #e5eff8;
+	border-right:1px solid #e5eff8;
+	margin:1em auto;
+		border-collapse:collapse;
+	}
+.SystemTable caption {
+	color: #9ba9b4;
+	font-size:.94em;
+		letter-spacing:.1em;
+		margin:1em 0 0 0;
+		padding:0;
+		caption-side:top;
+		text-align:center;
+	}	
+.SystemTable tr.odd td	{
+	background:#f7fbff
+	}
+.SystemTable tr.odd .column1	{
+	background:#f4f9fe;
+	}	
+.column1	{
+	background:#f9fcfe;
+	}
+.SystemTable td {
+	color:#678197;
+	border-bottom:1px solid #e5eff8;
+	border-left:1px solid #e5eff8;
+	padding:.3em 1em;
+	text-align:center;
+	}				
+.SystemTable th {
+	font-weight:normal;
+	color: #678197;
+	text-align:left;
+	border-bottom: 1px solid #e5eff8;
+	border-left:1px solid #e5eff8;
+	padding:.3em 1em;
+	}							
+.SystemTable thead th {
+	background:#f4f9fe;
+	text-align:center;
+	font:bold 1.2em/2em "Century Gothic","Trebuchet MS",Arial,Helvetica,sans-serif;
+	color:#66a3d3
+	}	
+.SystemTable tfoot th {
+	text-align:center;
+	background:#f4f9fe;
+	}	
+.SystemTable tfoot th strong {
+	font:bold 1.2em "Century Gothic","Trebuchet MS",Arial,Helvetica,sans-serif;
+	margin:.5em .5em .5em 0;
+	color:#66a3d3;
+		}		
+.SystemTable tfoot th em {
+	color:#f03b58;
+	font-weight: bold;
+	font-size: 1.1em;
+	font-style: normal;
+	}
+*/
+
+/*
+div.dataTables_length {
+    float: left;
+    background-color: red;
+}
+ 
+div.dataTables_filter {
+    float: right;
+    background-color: green;
+}
+ 
+div.dataTables_info {
+    float: left;
+    background-color: blue;
+}
+ 
+div.dataTables_paginate {
+    float: right;
+    background-color: yellow;
+}
+ 
+div.dataTables_length,
+div.dataTables_filter,
+div.dataTables_paginate,
+div.dataTables_info {
+    padding: 6px;
+}
+
+table.SystemTable {
+    clear: both;
+}
+*/
+
+/* Self clearing - */
+/*
+div.dataTables_wrapper:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+html[xmlns] .dataTables_wrapper { display: block; }
+* html .dataTables_wrapper { height: 1%; }
+
+table.SystemTable {
+    width: 100%;
+    clear: both;
+}
+ 
+table.SystemTable td,
+table.SystemTable th {
+    padding: 5px;
+    border: 1px solid #fff;
+}
+
+*/

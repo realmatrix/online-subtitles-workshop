@@ -1,0 +1,183 @@
+* {
+	margin: 0px; padding: 0px;
+}
+body {
+	font: 11pt/normal Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); font-size-adjust: none; font-stretch: normal;
+}
+a:link {
+	color: rgb(0, 0, 0); text-decoration: none;
+}
+a:visited {
+	color: rgb(0, 0, 0); text-decoration: none;
+}
+a:active {
+	color: rgb(0, 0, 0); text-decoration: none;
+}
+img {
+	display: none;
+}
+.noprint {
+	display: none;
+}
+#sub-header {
+	display: none;
+}
+#sub-footer {
+	display: none;
+}
+.navbar {
+	display: none;
+}
+.box1 {
+	display: none;
+}
+.divider {
+	display: none;
+}
+.signature {
+	display: none;
+}
+.content img {
+	display: inline;
+}
+#wrap {
+	margin: 0px 2em;
+}
+p {
+	font-size: 85%;
+}
+.copyright {
+	font-size: 75%;
+}
+.page-number {
+	width: auto; text-align: right; font-size: 75%; float: right;
+}
+h1 {
+	color: rgb(0, 0, 0); font-family: "Trebuchet MS",georgia,Verdana,Sans-serif; font-weight: bold; text-decoration: none;
+}
+h2 {
+	color: rgb(0, 0, 0); font-family: "Trebuchet MS",georgia,Verdana,Sans-serif; font-weight: bold; text-decoration: none;
+}
+h3 {
+	color: rgb(0, 0, 0); font-family: "Trebuchet MS",georgia,Verdana,Sans-serif; font-weight: bold; text-decoration: none;
+}
+h1 a {
+	color: rgb(0, 0, 0); font-family: "Trebuchet MS",georgia,Verdana,Sans-serif; font-weight: bold; text-decoration: none;
+}
+h2 a {
+	color: rgb(0, 0, 0); font-family: "Trebuchet MS",georgia,Verdana,Sans-serif; font-weight: bold; text-decoration: none;
+}
+h3 a {
+	color: rgb(0, 0, 0); font-family: "Trebuchet MS",georgia,Verdana,Sans-serif; font-weight: bold; text-decoration: none;
+}
+h1 {
+	font-size: 20pt;
+}
+h2 {
+	font-size: 16pt; margin-top: 1em;
+}
+h3 {
+	font-size: 14pt; margin-top: 1em;
+}
+.content {
+	line-height: 14pt; overflow: hidden; font-family: "Lucida Grande", "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif; font-size: 11pt; margin-bottom: 1em;
+}
+.postbody a:link {
+	margin: -0.1em -0.2em; padding: 0.1em 0.2em; color: rgb(102, 102, 102); font-size: 100%; text-decoration: underline;
+}
+.postbody a:visited {
+	margin: -0.1em -0.2em; padding: 0.1em 0.2em; color: rgb(102, 102, 102); font-size: 100%; text-decoration: underline;
+}
+.postbody a:hover {
+	margin: -0.1em -0.2em; padding: 0.1em 0.2em; color: rgb(102, 102, 102); font-size: 100%; text-decoration: underline;
+}
+.postbody a:active {
+	margin: -0.1em -0.2em; padding: 0.1em 0.2em; color: rgb(102, 102, 102); font-size: 100%; text-decoration: underline;
+}
+html > body .postbody a:link::after {
+	font-size: 90%; text-decoration: none; content: " (" attr(href) ") ";
+}
+html > body .postbody a:visited::after {
+	font-size: 90%; text-decoration: none; content: " (" attr(href) ") ";
+}
+hr {
+	border-width: 0px; height: 1px; background-color: rgb(153, 153, 153);
+}
+.author {
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 75%; margin-bottom: 0.6em;
+}
+.date {
+	text-align: right; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 75%; float: right; position: relative;
+}
+.postbody .author a:link {
+	text-decoration: none; content: "";
+}
+.postbody .author a:visited {
+	text-decoration: none; content: "";
+}
+html > body .postbody .author a:link::after {
+	text-decoration: none; content: "";
+}
+html > body .postbody .author a:visited::after {
+	text-decoration: none; content: "";
+}
+.postquote .quote-by a:link {
+	text-decoration: none; content: "";
+}
+.postquote .quote-by a:visited {
+	text-decoration: none; content: "";
+}
+html > body .postquote .quote-by a:link::after {
+	text-decoration: none; content: "";
+}
+html > body .postquote .quote-by a:visited::after {
+	text-decoration: none; content: "";
+}
+html > body .postbody h1 a:link::after {
+	text-decoration: none; content: "";
+}
+html > body .postbody h2 a:link::after {
+	text-decoration: none; content: "";
+}
+.postprofile {
+	display: none;
+}
+.grip-show {
+	display: none;
+}
+.postquote {
+	margin: 1em 18% 1em 4%; padding: 0.5em; border: 1px solid rgb(153, 153, 153); line-height: 1.5em; font-size: 85%; position: relative;
+}
+blockquote {
+	margin: 1em 18% 1em 4%; padding: 0.5em; border: 1px solid rgb(153, 153, 153); line-height: 1.5em; font-size: 85%; position: relative;
+}
+.postquote img {
+	display: none;
+}
+.postquote span {
+	display: block;
+}
+.postquote span .postquote {
+	font-size: 100%;
+}
+.quote-by {
+	color: black; font-weight: bold; display: block;
+}
+blockquote cite {
+	color: black; font-weight: bold; display: block;
+}
+ol {
+	margin-left: 15pt;
+}
+ul {
+	margin-left: 15pt;
+}
+div.spacer {
+	clear: both;
+}
+.skip_link {
+	display: none;
+}
+dl.codebox dt {
+	display: none;
+}
