@@ -35,7 +35,7 @@
 		
 		function widget_LatestVideosByCategory_render(){
 			$array = array(
-				//array("{AddVideo}", $GLOBALS['COMMON']->l('widget_LatestVideosByCategory_addvideo')),
+				//array("{AddVideo}", $GLOBALS['system']->l('widget_LatestVideosByCategory_addvideo')),
 				array("{AllVideos}", self::GetAll()),
 				array("{Movies}", self::GetMovies()),
 				array("{TvShows}", self::GetTV()),
@@ -45,7 +45,7 @@
 		}	
 		
 		function GetAll(){
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `videos` order by `id` desc limit 10", array());
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `videos` order by `id` desc limit 10", array());
 			$content = "";
 			for ($i=0; $i < count($res); $i++) { 
 				$content.="<div class='widget-latestvideos-all'>";
@@ -53,7 +53,7 @@
 				$content.="<div class='widget-latestvideos-all-thubmnail'><img class='widget-latestvideos-all-thubmnailimg' src='uploads/thumbnails/video/".$res[$i]['thumbnail']."'></div>";
 				$content.="<div class='widget-lateestvideos-all-videoinfo'>";
 				$content.="<div class='widget-latestvideos-all-title'><a href='index.php?page=video&sec=view&vid=".$res[$i]['id']."'>".$res[$i]['title']."</a></div>";
-				$content.="<div clas=='widget-latestvideos-all-by'>Created BY: ".$GLOBALS['COMMON']->GetUserName($res[$i]['uid'])."</div>";
+				$content.="<div clas=='widget-latestvideos-all-by'>Created BY: ".$GLOBALS['system']->GetUserName($res[$i]['uid'])."</div>";
 				$content.="<div clas=='widget-latestvideos-all-views'>views: ".$res[$i]['views']."</div>";
 				$content.="<div clas=='widget-latestvideos-all-subtitles'>subtitles: ".self::GetSubtitlesCount($res[$i]['id'])."</div>";
 				$content.="<div clas=='widget-latestvideos-all-rating'>".self::GetVideoRateResult($res[$i]['id'])."</div>";
@@ -65,7 +65,7 @@
 		}
 		
 		function GetMovies(){
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `videos` where `type` = 1 order by `id` desc limit 10", array());
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `videos` where `type` = 1 order by `id` desc limit 10", array());
 			$content = "";
 			for ($i=0; $i < count($res); $i++) { 
 				$content.="<div class='widget-latestvideos-movies'>";
@@ -73,7 +73,7 @@
 				$content.="<div class='widget-latestvideos-movies-thubmnail'><img class='widget-latestvideos-movies-thubmnailimg' src='uploads/thumbnails/video/".$res[$i]['thumbnail']."'></div>";
 				$content.="<div class='widget-lateestvideos-movies-videoinfo'>";
 				$content.="<div class='widget-latestvideos-movies-title'><a href='index.php?page=video&sec=view&vid=".$res[$i]['id']."'>".$res[$i]['title']."</a></div>";
-				$content.="<div clas=='widget-latestvideos-movies-by'>Created BY: ".$GLOBALS['COMMON']->GetUserName($res[$i]['uid'])."</div>";
+				$content.="<div clas=='widget-latestvideos-movies-by'>Created BY: ".$GLOBALS['system']->GetUserName($res[$i]['uid'])."</div>";
 				$content.="<div clas=='widget-latestvideos-movies-views'>views: ".$res[$i]['views']."</div>";
 				$content.="<div clas=='widget-latestvideos-movies-subtitles'>subtitles: ".self::GetSubtitlesCount($res[$i]['id'])."</div>";
 				$content.="<div clas=='widget-latestvideos-movies-rating'>".self::GetVideoRateResult($res[$i]['id'])."</div>";
@@ -85,7 +85,7 @@
 		}
 		
 		function GetTV(){
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `videos` where `type` = 2 order by `id` desc limit 10", array());
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `videos` where `type` = 2 order by `id` desc limit 10", array());
 			$content = "";
 			for ($i=0; $i < count($res); $i++) { 
 				$content.="<div class='widget-latestvideos-tv'>";
@@ -93,7 +93,7 @@
 				$content.="<div class='widget-latestvideos-tv-thubmnail'><img class='widget-latestvideos-tv-thubmnailimg' src='uploads/thumbnails/video/".$res[$i]['thumbnail']."'></div>";
 				$content.="<div class='widget-lateestvideos-tv-videoinfo'>";
 				$content.="<div class='widget-latestvideos-tv-title'><a href='index.php?page=video&sec=view&vid=".$res[$i]['id']."'>".$res[$i]['title']."</a></div>";
-				$content.="<div clas=='widget-latestvideos-tv-by'>Created BY: ".$GLOBALS['COMMON']->GetUserName($res[$i]['uid'])."</div>";
+				$content.="<div clas=='widget-latestvideos-tv-by'>Created BY: ".$GLOBALS['system']->GetUserName($res[$i]['uid'])."</div>";
 				$content.="<div clas=='widget-latestvideos-tv-views'>views: ".$res[$i]['views']."</div>";
 				$content.="<div clas=='widget-latestvideos-tv-subtitles'>subtitles: ".self::GetSubtitlesCount($res[$i]['id'])."</div>";
 				$content.="<div clas=='widget-latestvideos-tv-rating'>".self::GetVideoRateResult($res[$i]['id'])."</div>";
@@ -105,7 +105,7 @@
 		}
 		
 		function GetTrailers(){
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `videos` where `type` = 4 order by `id` desc limit 10", array());
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `videos` where `type` = 4 order by `id` desc limit 10", array());
 			$content = "";
 			for ($i=0; $i < count($res); $i++) { 
 				$content.="<div class='widget-latestvideos-trailer'>";
@@ -113,7 +113,7 @@
 				$content.="<div class='widget-latestvideos-trailer-thubmnail'><img class='widget-latestvideos-trailer-thubmnailimg' src='uploads/thumbnails/video/".$res[$i]['thumbnail']."'></div>";
 				$content.="<div class='widget-lateestvideos-trailer-videoinfo'>";
 				$content.="<div class='widget-latestvideos-trailer-title'><a href='index.php?page=video&sec=view&vid=".$res[$i]['id']."'>".$res[$i]['title']."</a></div>";
-				$content.="<div clas=='widget-latestvideos-trailer-by'>Created BY: ".$GLOBALS['COMMON']->GetUserName($res[$i]['uid'])."</div>";
+				$content.="<div clas=='widget-latestvideos-trailer-by'>Created BY: ".$GLOBALS['system']->GetUserName($res[$i]['uid'])."</div>";
 				$content.="<div clas=='widget-latestvideos-trailer-views'>views: ".$res[$i]['views']."</div>";
 				$content.="<div clas=='widget-latestvideos-trailer-subtitles'>subtitles: ".self::GetSubtitlesCount($res[$i]['id'])."</div>";
 				$content.="<div clas=='widget-latestvideos-trailer-rating'>".self::GetVideoRateResult($res[$i]['id'])."</div>";
@@ -128,7 +128,7 @@
 			$args = array(
 				array(":vid", $vid, "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitles` WHERE `vid` = :vid", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `subtitles` WHERE `vid` = :vid", $args);
 			return count($res);
 		}
 		
@@ -136,7 +136,7 @@
 			$args = array(
 				array(":vid", $vid, "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `videorates` WHERE `vid` = :vid", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `videorates` WHERE `vid` = :vid", $args);
 			$TotalRates = 0;
 			for ($i=0; $i < count($res); $i++) { 
 				$TotalRates = $TotalRates + $res[$i]['rate'];

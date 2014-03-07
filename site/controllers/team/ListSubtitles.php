@@ -25,7 +25,7 @@
 		function ListSubtitles_content(){
 				$content = array
 				  (
-				  array("{title}", $GLOBALS['COMMON']->l("subtitle_ListSubtitles_title")),
+				  array("{title}", $GLOBALS['system']->l("subtitle_ListSubtitles_title")),
 				 );
 			 
 		return $content;

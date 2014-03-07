@@ -25,18 +25,18 @@
 		function ViewTeams_content(){
 				$content = array
 				  (
-				  	array("{title}", $GLOBALS['COMMON']->l("team_ViewTeams_Title")),
+				  	array("{title}", $GLOBALS['system']->l("team_ViewTeams_Title")),
 				  	array("{TableRows}", self::GetTeams()),
 				 );	 
 		return $content;
 		}
 		
 		function GetTeams(){
-			$teams = $GLOBALS['COMMON']->GetUserTeams($_SESSION['id']);
+			$teams = $GLOBALS['system']->GetUserTeams($_SESSION['id']);
 			$res = "";
 			for ($i=0; $i < count($teams); $i++) {
 				$index = $i+1;
-				$TeamMembers = $GLOBALS['COMMON']->GetTeamMembers($teams[$i]['id']);
+				$TeamMembers = $GLOBALS['system']->GetTeamMembers($teams[$i]['id']);
 				$res .= "<tr class='odd gradeX' >";
 				$res .= "<td>".$index."</td>";
 				$res .= "<td><a href='index.php?page=team&sec=info&tid=".$teams[$i]['id']."'>".$teams[$i]['title']."</a></td>";

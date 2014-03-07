@@ -25,7 +25,7 @@
 		function LineInfo_content(){
 				$content = array
 				  (
-				  array("{title}", $GLOBALS['COMMON']->l("message_LineInfo_title")),
+				  array("{title}", $GLOBALS['system']->l("message_LineInfo_title")),
 				 );
 			 
 		return $content;

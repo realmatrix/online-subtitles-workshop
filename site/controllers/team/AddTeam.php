@@ -25,9 +25,9 @@
 		function AddTeam_content(){
 				$content = array
 				  (
-				  array("{title}", $GLOBALS['COMMON']->l('team_AddTeam_title')),
-				  array("{teamname}", $GLOBALS['COMMON']->l('team_AddTeam_TeamName')),
-				  array("{submit}", $GLOBALS['COMMON']->l('team_AddTeam_submit')),
+				  array("{title}", $GLOBALS['system']->l('team_AddTeam_title')),
+				  array("{teamname}", $GLOBALS['system']->l('team_AddTeam_TeamName')),
+				  array("{submit}", $GLOBALS['system']->l('team_AddTeam_submit')),
 				  array("{page}", $GLOBALS['vars']['page']),
 				  array("{sec}", $GLOBALS['vars']['sec']),
 				 );
@@ -36,7 +36,7 @@
 		
 		function addnewteam(){
 				if($GLOBALS['vars']['teamname']==""){
-					$GLOBALS['ERROR'][]='"'.$GLOBALS['COMMON']->l('team_AddTeam_TeamName').'"'." is required field.";
+					$GLOBALS['ERROR'][]='"'.$GLOBALS['system']->l('team_AddTeam_TeamName').'"'." is required field.";
 					return FALSE;
 				}
 				$args = array(
@@ -44,7 +44,7 @@
 					array(":team", $GLOBALS['vars']['teamname'], "str"),
 					array(":created", date('Y-m-d H:i:s'), "str"),
 				);
-				$res = $GLOBALS['COMMON']->db_query("INSERT INTO `teams` (`owner`, `title`, `created`) VALUES (:uid, :team, :created);", $args);
+				$res = $GLOBALS['system']->db_query("INSERT INTO `teams` (`owner`, `title`, `created`) VALUES (:uid, :team, :created);", $args);
 		}
 		
 	

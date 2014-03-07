@@ -142,25 +142,25 @@
 			$args = array(
 				array(":id", $_SESSION['id'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Users` WHERE `id` = :id", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `Users` WHERE `id` = :id", $args);
 			$gid = $res[0]['group'];
 			$args = array(
 				array(":gid", $gid, "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Groups` WHERE `id` = :gid", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `Groups` WHERE `id` = :gid", $args);
 			if($res[0]['group']=="admin"){return TRUE;}else{return FALSE;}
 		}
 		
 		
 		function CheckLogin(){
-			if(!$GLOBALS['COMMON']->IsLoggedin()){return FALSE;}else{return TRUE;}			
+			if(!$GLOBALS['system']->IsLoggedin()){return FALSE;}else{return TRUE;}			
 		}
 		
 		
 		function login($username){
 			$_SESSION['loggedin'] = "YES"; 
 			$_SESSION['username'] = $username;
-			$userinfo = $GLOBALS['COMMON']::GetUserInfo($username,"");
+			$userinfo = $GLOBALS['system']::GetUserInfo($username,"");
 			$_SESSION['id'] = $userinfo[0]['id'];
 		}
 		
@@ -176,21 +176,21 @@
 		
 		function GetTotalMembers(){
 			$args = array();
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Users`", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `Users`", $args);
 			return count($res);
 		}
 		
 		
 		function GetTotalSubtitles(){
 			$args = array();
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Subtitles`", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `Subtitles`", $args);
 			return count($res);		
 		}
 		
 		
 		function GetTotalVideos(){
 			$args = array();
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Videos`", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `Videos`", $args);
 			return count($res);			
 		}
 		
@@ -199,7 +199,7 @@
 			$args = array(
 				array(":uid", $_SESSION['id'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `PrivateMessages` WHERE `to` = :uid", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `PrivateMessages` WHERE `to` = :uid", $args);
 			return count($res);
 		}
 		
@@ -209,7 +209,7 @@
 				array(":name", $name, "res"),
 				array(":value", $value, "res"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("UPDATE `Settings` SET `value` = :value WHERE `name` = :name;", $args, $state);
+			$res = $GLOBALS['system']->db_query("UPDATE `Settings` SET `value` = :value WHERE `name` = :name;", $args, $state);
 			if($state===TRUE){return TRUE;}else{return FALSE;}
 		}
 		

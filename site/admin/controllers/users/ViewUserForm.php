@@ -25,7 +25,7 @@
 		function ViewUserForm_content(){
 			$content = array
 			  (
-			  array("{title}", $GLOBALS['COMMON']->l("admin_widgets_ViewUserForm_title")),
+			  array("{title}", $GLOBALS['system']->l("admin_widgets_ViewUserForm_title")),
 			  array("{page}", $GLOBALS['vars']['page']),
 			  array("{sec}", $GLOBALS['vars']['sec']),
 			  array("{tusername}", $GLOBALS['vars']['username']),

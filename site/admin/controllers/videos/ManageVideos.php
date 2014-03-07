@@ -25,7 +25,7 @@
 		function ManageVideos_content(){
 			$content = array
 			  (
-			  array("{title}", $GLOBALS['COMMON']->l("admin_widgets_ManageVideos_title")),
+			  array("{title}", $GLOBALS['system']->l("admin_widgets_ManageVideos_title")),
 			 );
 		return $content;
 		}

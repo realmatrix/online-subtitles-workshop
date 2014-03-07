@@ -41,11 +41,11 @@
 		}
 		
 		function GetLatestStartedSubtitles(){
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitles` ORDER BY `id` DESC LIMIT 10", array());
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `subtitles` ORDER BY `id` DESC LIMIT 10", array());
 			$content = "<div class='LatestStatrtedSubtitles-container'>";
 				for ($i=0; $i < count($res); $i++) {
-				$VideoInfo = $GLOBALS['COMMON']->GetVideoInfo($res[$i]['vid']); 
-				$Language = $GLOBALS['COMMON']->GetLanguageById($res[$i]['language']);
+				$VideoInfo = $GLOBALS['system']->GetVideoInfo($res[$i]['vid']); 
+				$Language = $GLOBALS['system']->GetLanguageById($res[$i]['language']);
 				if($i % 2 == 0) {$EvenOdd = "even";}else{$EvenOdd = "odd";}
 					$content .= "<div class='LatestStatrtedSubtitles-row LatestStatrtedSubtitles-row-".$EvenOdd."'>";	
 									
@@ -78,13 +78,13 @@
 			$args = array(
 				array(":sid", $sid, "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitlecds` WHERE `sid` = :sid", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `subtitlecds` WHERE `sid` = :sid", $args);
 			for ($i=0; $i < count($res); $i++) { 
 				$args2 = array(
 					array(":sid", $sid, "str"),
 					array(":cid", $res[$i]['cid'], "str"),
 				);
-			$res2 = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitlescontent` WHERE `sid` = :sid AND `cid` = :cid", $args2);
+			$res2 = $GLOBALS['system']->db_query("SELECT * FROM `subtitlescontent` WHERE `sid` = :sid AND `cid` = :cid", $args2);
 			$TotalLines = $TotalLines + count($res2);
 			for ($j=0; $j < count($res2); $j++) { 
 				if($res2[$j]['done']==1){$TotalDone = $TotalDone + 1;}else{$TotalNotDone = $TotalNotDone + 1;}

@@ -27,7 +27,7 @@
 		function SearchResults_content(){
 				$content = array
 				  (
-				  array("{title}", $GLOBALS['COMMON']->l("search_SearchResults_title")),
+				  array("{title}", $GLOBALS['system']->l("search_SearchResults_title")),
 				  array("{TableRows}", self::$rows),
 				 );
 			 
@@ -38,7 +38,7 @@
 			$args = array(
 				array(":title", "%".$GLOBALS['vars']['VideoTitle']."%", "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `videos` WHERE `title` like :title", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `videos` WHERE `title` like :title", $args);
 			$trows = "";
 			for ($i=0; $i < count($res); $i++) { 
 				$trows .= "<tr>";

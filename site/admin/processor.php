@@ -14,9 +14,9 @@
 	//loading controllers
 	if($ControllerPage!="" and $ControllerSection!="" and $ControllerPage!="login"){$GLOBALS['AdminContent'] = $GLOBALS['ACOMMON']->LoadSections($ControllerPage, $ControllerSection, $GLOBALS['vars']);}
 
-	$error_messages = $GLOBALS['COMMON']->SystemMessage("error",$GLOBALS['ERROR']);
+	$error_messages = $GLOBALS['system']->SystemMessage("error",$GLOBALS['ERROR']);
 	
-	$success_messages = $GLOBALS['COMMON']->SystemMessage("success",$GLOBALS['SUCCESS']);
+	$success_messages = $GLOBALS['system']->SystemMessage("success",$GLOBALS['SUCCESS']);
 	
 	$GLOBALS['TemplateHeader'] = array
 	  (
@@ -70,10 +70,10 @@
 	  array("{SystemFooter}", $SystemFooter),
 	  array("{SystemError}", $error_messages),
 	  array("{SystemSuccess}", $success_messages),
-	  array("{LoginUsername}", $GLOBALS['COMMON']->l('login_username')),
-	  array("{LoginPassword}", $GLOBALS['COMMON']->l('login_password')),
-	  array("{LoginOrRegister}", $GLOBALS['COMMON']->l('login_orregister')),
-	  array("{LoginSubmit}", $GLOBALS['COMMON']->l('login_submit')),
+	  array("{LoginUsername}", $GLOBALS['system']->l('login_username')),
+	  array("{LoginPassword}", $GLOBALS['system']->l('login_password')),
+	  array("{LoginOrRegister}", $GLOBALS['system']->l('login_orregister')),
+	  array("{LoginSubmit}", $GLOBALS['system']->l('login_submit')),
 	  array("{UserName}", $_SESSION['username']),	 
 	  array("{TotalMembers}", $GLOBALS['ACOMMON']->GetTotalMembers()),
 	  array("{TotalSubtitles}", $GLOBALS['ACOMMON']->GetTotalSubtitles()),

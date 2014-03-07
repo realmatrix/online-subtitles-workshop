@@ -35,7 +35,7 @@
 		
 		function widget_top10_render(){
 			$array = array(
-				//array("{AddVideo}", $GLOBALS['COMMON']->l('widget_top10_addvideo')),
+				//array("{AddVideo}", $GLOBALS['system']->l('widget_top10_addvideo')),
 			);
 			return $array;
 		}	

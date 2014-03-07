@@ -35,7 +35,7 @@
 		
 		function widget_ForumLatest_render(){
 			$array = array(
-				//array("{LatestTopicsTitle}", $GLOBALS['COMMON']->l('widget_ForumLatest_LatestTopics')),
+				//array("{LatestTopicsTitle}", $GLOBALS['system']->l('widget_ForumLatest_LatestTopics')),
 				array("{LatestPost}", self::GetLatestReplies()),
 				array("{LatestTopic}", self::GetLatestThreads()),
 				array("{TopTopics}", self::GetTopThreads()),
@@ -44,7 +44,7 @@
 		}
 		
 		function GetLatestReplies(){
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `forumreplies` order by `id` desc limit 10", array());
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `forumreplies` order by `id` desc limit 10", array());
 			$content = "";
 			$content.="<div class='latest-replies'>";
 			for ($i=0; $i < count($res); $i++) { 
@@ -60,12 +60,12 @@
 			$params = array(
 				array(":tid", $tid, "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `forumthreads` WHERE `id` = :tid", $params);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `forumthreads` WHERE `id` = :tid", $params);
 			return $res[0]['title'];
 		}
 		
 		function GetLatestThreads(){
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `forumthreads` order by `id` desc limit 10", array());
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `forumthreads` order by `id` desc limit 10", array());
 			$content = "";
 			for ($i=0; $i < count($res); $i++) { 
 				$content.="<div class='latest-threads'>";
@@ -78,7 +78,7 @@
 		}
 		
 		function GetTopThreads(){
-			$res = $GLOBALS['COMMON']->db_query("SELECT fid, tid, count(*) FROM forumreplies GROUP BY tid ORDER BY count(*) DESC LIMIT 10", array());
+			$res = $GLOBALS['system']->db_query("SELECT fid, tid, count(*) FROM forumreplies GROUP BY tid ORDER BY count(*) DESC LIMIT 10", array());
 			$content.="<div class='top-threads'>";
 			for ($i=0; $i < count($res); $i++) { 
 				$content.="<div class='top-threads-cell'>";

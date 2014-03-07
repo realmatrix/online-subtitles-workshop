@@ -35,13 +35,13 @@
 		
 		function widget_QuickAccess_render(){
 			$array = array(
-				array("{title}", $GLOBALS['COMMON']->l('widget_QuickAccess_title')),
-				array("{Videos}", $GLOBALS['COMMON']->l('widget_QuickAccess_Videos')),
-				array("{FavouriteVideos}", $GLOBALS['COMMON']->l('widget_QuickAccess_FavouriteVideos')),
-				array("{Subtitles}", $GLOBALS['COMMON']->l('widget_QuickAccess_Subtitles')),
-				array("{Check}", $GLOBALS['COMMON']->l('widget_QuickAccess_check')),
-				array("{ManageSubtitles}", $GLOBALS['COMMON']->l('widget_QuickAccess_ManageSubtitles')),
-				array("{TeamSubtitles}", $GLOBALS['COMMON']->l('widget_QuickAccess_TeamSubtitles')),
+				array("{title}", $GLOBALS['system']->l('widget_QuickAccess_title')),
+				array("{Videos}", $GLOBALS['system']->l('widget_QuickAccess_Videos')),
+				array("{FavouriteVideos}", $GLOBALS['system']->l('widget_QuickAccess_FavouriteVideos')),
+				array("{Subtitles}", $GLOBALS['system']->l('widget_QuickAccess_Subtitles')),
+				array("{Check}", $GLOBALS['system']->l('widget_QuickAccess_check')),
+				array("{ManageSubtitles}", $GLOBALS['system']->l('widget_QuickAccess_ManageSubtitles')),
+				array("{TeamSubtitles}", $GLOBALS['system']->l('widget_QuickAccess_TeamSubtitles')),
 				array("{CVideos}", self::GetUserVideos()),
 				array("{CSubtitles}", self::GetUserSubtitles()),
 				array("{CMSubtitles}", self::GetUserSubtitles()),
@@ -55,7 +55,7 @@
 			$args = array(
 				array(":uid", $_SESSION['id'], "str")
 			);
-			$videos = $GLOBALS['COMMON']->db_query("SELECT * FROM videos WHERE uid = :uid", $args);
+			$videos = $GLOBALS['system']->db_query("SELECT * FROM videos WHERE uid = :uid", $args);
 			$res = "";
 			for ($i=0; $i < count($videos) ; $i++) { 
 				$res .= "<option value='".$videos[$i]['id']."'>".$videos[$i]['title']."</option>";
@@ -67,7 +67,7 @@
 			$args = array(
 				array(":uid", $_SESSION['id'], "str")
 			);
-			$subtitles = $GLOBALS['COMMON']->db_query("SELECT * FROM subtitles WHERE uid = :uid", $args);
+			$subtitles = $GLOBALS['system']->db_query("SELECT * FROM subtitles WHERE uid = :uid", $args);
 			$res = "";
 			for ($i=0; $i < count($subtitles); $i++) { 
 				$res .= "<option value='".$subtitles[$i]['id']."'>".$subtitles[$i]['release_name']."</option>";
@@ -76,10 +76,10 @@
 		}
 		
 		function GetUserFavouriteVideos(){
-			$favourites = $GLOBALS['COMMON']->GetUserFavouriteVideos();
+			$favourites = $GLOBALS['system']->GetUserFavouriteVideos();
 			$res = "";
 			for ($i=0; $i < count($favourites) ; $i++) {
-				$VideoInfo = $GLOBALS['COMMON']->GetVideoInfo($favourites[$i]['vid']); 
+				$VideoInfo = $GLOBALS['system']->GetVideoInfo($favourites[$i]['vid']); 
 				$res .= "<option value='".$VideoInfo[0]['id']."'>".$VideoInfo[0]['title']."</option>";
 			}
 			return $res;
@@ -89,10 +89,10 @@
 			$args = array(
 				array(":uid", $_SESSION['id'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitlepermissions` WHERE `uid` = :uid and `checklines` = 1 ", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `subtitlepermissions` WHERE `uid` = :uid and `checklines` = 1 ", $args);
 			$subtitles = "";
 			for ($i=0; $i < count($res) ; $i++) {
-				$SubtitleInfo = $GLOBALS['COMMON']->GetSubtitleInfo($res[$i]['sid']);
+				$SubtitleInfo = $GLOBALS['system']->GetSubtitleInfo($res[$i]['sid']);
 				$subtitles .= "<option value='".$res[$i]['sid']."'>".$SubtitleInfo[0]['release_name']."</option>";
 			}
 			return $subtitles;

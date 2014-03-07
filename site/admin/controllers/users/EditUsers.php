@@ -28,7 +28,7 @@
 			self::$SearchResult = self::GetUserInformation();
 			$content = array
 			  (
-			  array("{title}", $GLOBALS['COMMON']->l("admin_widgets_EditUsers_title")),
+			  array("{title}", $GLOBALS['system']->l("admin_widgets_EditUsers_title")),
 			  array("{page}", $GLOBALS['vars']['page']),
 			  array("{sec}", $GLOBALS['vars']['sec']),
 			  array("{tusername}", $GLOBALS['vars']['username']),
@@ -41,7 +41,7 @@
 		}
 		
 		function GetUserGroups($SelectedID){
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `groups`", array());
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `groups`", array());
 			$options = "<option value=''></option>";
 			for ($i=0; $i < count($res); $i++) {
 				if($SelectedID == $res[$i]['id']){$selected = "selected='selected'";}else{$selected = "";} 
@@ -60,7 +60,7 @@
 			$args = array(
 				array(":username", $GLOBALS['vars']['username'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `users` WHERE `username` = :username", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `users` WHERE `username` = :username", $args);
 			return $res;
 		}
 					

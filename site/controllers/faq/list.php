@@ -29,7 +29,7 @@
 			$args = array(
 				array("qid", $GLOBALS['vars']['qid'], "str")
 			);
-			$question = $GLOBALS['COMMON']->db_query("SELECT * FROM faq where id = :qid", $args);
+			$question = $GLOBALS['system']->db_query("SELECT * FROM faq where id = :qid", $args);
 			return $question[0]['q'];
 		}
 			

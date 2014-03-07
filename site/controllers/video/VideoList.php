@@ -23,10 +23,10 @@
 		}
 				
 		function VideoList_content(){
-			$video = $GLOBALS['COMMON']->GetVideoInfo($GLOBALS['vars']['vid']);
+			$video = $GLOBALS['system']->GetVideoInfo($GLOBALS['vars']['vid']);
 				$content = array
 				  (
-				  array("{title}", $GLOBALS['COMMON']->l("video_VideoList_title")),
+				  array("{title}", $GLOBALS['system']->l("video_VideoList_title")),
 				  array("{TableRows}", self::GetUserVideos()),
 				 );
 			 
@@ -37,7 +37,7 @@
 			$args = array(
 				array(":uid", $_SESSION['id'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `videos` WHERE `uid` = :uid", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `videos` WHERE `uid` = :uid", $args);
 			$rows = "";
 			$counter = 0;
 			for ($i=0; $i < count($res); $i++) {
@@ -57,7 +57,7 @@
 			$params = array(
 				array(":vid", $vid, "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT `id` FROM `subtitles` WHERE `vid` = :vid", $params);
+			$res = $GLOBALS['system']->db_query("SELECT `id` FROM `subtitles` WHERE `vid` = :vid", $params);
 			return count($res);
 		}
 

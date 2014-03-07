@@ -25,7 +25,7 @@
 		function ListCategories_content(){
 				$content = array
 				  (
-				  array("{title}", $GLOBALS['COMMON']->l("forum_ListCategories_title")),
+				  array("{title}", $GLOBALS['system']->l("forum_ListCategories_title")),
 				  array("{TableRows}", self::GetCategories()),
 				 );
 			 
@@ -33,7 +33,7 @@
 		}
 		
 		function GetCategories(){
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `forumcategories`", array());
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `forumcategories`", array());
 			$rows = "";
 			for ($i=0; $i < count($res); $i++) { 
 				$rows .= "<tr>";

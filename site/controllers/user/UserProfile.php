@@ -25,7 +25,7 @@
 		function UserProfile_content(){
 				$content = array
 				  (
-				  array("{title}", $GLOBALS['COMMON']->l('team_UserProfile_title')),
+				  array("{title}", $GLOBALS['system']->l('team_UserProfile_title')),
 				 );
 			 
 		return $content;

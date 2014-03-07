@@ -28,7 +28,7 @@
 		function EditLanguage_content(){
 			$content = array
 			  (
-			  array("{title}", $GLOBALS['COMMON']->l("admin_EditLanguage_title")),
+			  array("{title}", $GLOBALS['system']->l("admin_EditLanguage_title")),
 			  array("{TableContent}", self::$SearchResult),
 			  array("{page}", $GLOBALS['vars']['page']),
 			  array("{sec}", $GLOBALS['vars']['sec']),
@@ -38,7 +38,7 @@
 		}
 		
 		function Edit(){
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM ".$GLOBALS['vars']['lang'], array());
+			$res = $GLOBALS['system']->db_query("SELECT * FROM ".$GLOBALS['vars']['lang'], array());
 			$content = "";
 			for ($i=0; $i < count($res); $i++) {
 				//$text = mb_convert_encoding($res[$i]['text'], "UTF-8");

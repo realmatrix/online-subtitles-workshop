@@ -25,7 +25,7 @@
 		function ListForums_content(){
 				$content = array
 				  (
-				  array("{title}", $GLOBALS['COMMON']->l("forum_ListForums_title")),
+				  array("{title}", $GLOBALS['system']->l("forum_ListForums_title")),
 				  array("{TableRows}", self::GetForums())
 				 );
 			 
@@ -36,7 +36,7 @@
 			$args = array(
 				array(":cat", $GLOBALS['vars']['cat'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `forums` WHERE `category` = :cat", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `forums` WHERE `category` = :cat", $args);
 			$rows = "";
 			for ($i=0; $i < count($res); $i++) { 
 				$rows .= "<tr>";

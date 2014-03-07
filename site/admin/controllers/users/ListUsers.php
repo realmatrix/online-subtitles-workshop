@@ -28,19 +28,19 @@
 			self::Search();
 			$content = array
 			  (
-			  array("{title}", $GLOBALS['COMMON']->l("admin_widgets_ListUsers_title")),
+			  array("{title}", $GLOBALS['system']->l("admin_widgets_ListUsers_title")),
 			  array("{SearchResult}", self::$SearchResult),
 			 );
 		return $content;
 		}
 		
 		function Search(){
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `users`", array());
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `users`", array());
 			for ($i=0; $i < count($res); $i++) { 
 								self::$SearchResult .= "<tr>";
 								self::$SearchResult .= "<td>".$res[$i]['username']."</td>";
 								self::$SearchResult .= "<td class='center'>".date("d F Y", strtotime($res[$i]['RegisterationDate']))."</td>";
-								self::$SearchResult .= "<td class='center'>".$GLOBALS['COMMON']->GetUserGroupByID($res[$i]['group'])."</td>";
+								self::$SearchResult .= "<td class='center'>".$GLOBALS['system']->GetUserGroupByID($res[$i]['group'])."</td>";
 								self::$SearchResult .= "<td class='center'>";
 								self::$SearchResult .= self::UserStatus($res[$i]['state']);
 								self::$SearchResult .= "</td>";

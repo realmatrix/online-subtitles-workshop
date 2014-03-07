@@ -25,7 +25,7 @@
 		function SubtitleOptions_content(){
 				$content = array
 				  (
-				  array("{title}", $GLOBALS['COMMON']->l("subtitle_SubtitleOptions_title")),
+				  array("{title}", $GLOBALS['system']->l("subtitle_SubtitleOptions_title")),
 				 );
 			 
 		return $content;

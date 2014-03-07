@@ -25,9 +25,9 @@
 		function AddMember_content(){
 				$content = array
 				  (
-				  array("{title}", $GLOBALS['COMMON']->l('team_AddMember_title')),
-				  array("{username}", $GLOBALS['COMMON']->l('team_AddMember_username')),
-				  array("{submit}", $GLOBALS['COMMON']->l('team_AddMember_submit')),
+				  array("{title}", $GLOBALS['system']->l('team_AddMember_title')),
+				  array("{username}", $GLOBALS['system']->l('team_AddMember_username')),
+				  array("{submit}", $GLOBALS['system']->l('team_AddMember_submit')),
 				  array("{tid}", $GLOBALS['vars']['tid'])
 				 );
 			 
@@ -44,7 +44,7 @@
 				$GLOBALS[ERROR][]="username is required";
 				return FALSE;
 			}
-			$uid = $GLOBALS['COMMON']->GetUserInfo($GLOBALS['vars']['tusername'], "");
+			$uid = $GLOBALS['system']->GetUserInfo($GLOBALS['vars']['tusername'], "");
 			$args = array(
 				array(":tid", $GLOBALS['vars']['tid'], "str"),
 				array(":uid", $uid[0]['id'], "str"),
@@ -55,7 +55,7 @@
 				array(":check", $check, "str"),
 				array(":timing", $timing, "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `teammembers` (`tid`, `uid`, `state`, `addlines`, `deletelines`, `checklines`, `editlines`, `timing`) VALUES (:tid, :uid, :state, :add, :delete, :check, :edit, :timing);", $args);
+			$res = $GLOBALS['system']->db_query("INSERT INTO `teammembers` (`tid`, `uid`, `state`, `addlines`, `deletelines`, `checklines`, `editlines`, `timing`) VALUES (:tid, :uid, :state, :add, :delete, :check, :edit, :timing);", $args);
 		}
 		
 	

@@ -25,7 +25,7 @@
 		function VideosStatistics_content(){
 			$content = array
 			  (
-			  array("{title}", $GLOBALS['COMMON']->l("admin_widgets_VideosStatistics_title")),
+			  array("{title}", $GLOBALS['system']->l("admin_widgets_VideosStatistics_title")),
 			 );
 		return $content;
 		}

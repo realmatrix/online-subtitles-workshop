@@ -25,7 +25,7 @@
 		function SubtitleAddTeam_content(){
 				$content = array
 				  (
-				  array("{title}", $GLOBALS['COMMON']->l("subtitle_SubtitleAddTeam_title")),
+				  array("{title}", $GLOBALS['system']->l("subtitle_SubtitleAddTeam_title")),
 				  array("{UserTeams}", self::UserTeams()),
 				  array("{sid}", $GLOBALS['vars']['sid']),
 				 );
@@ -34,7 +34,7 @@
 		}
 		
 		function UserTeams(){
-			$teams = $GLOBALS['COMMON']->GetUserTeams($_SESSION['id']);
+			$teams = $GLOBALS['system']->GetUserTeams($_SESSION['id']);
 			$res = "";
 			for ($i=0; $i < count($teams); $i++) { 
 				$res .= "<option value='".$teams[$i]['id']."'>".$teams[$i]['title']."</option>";
@@ -47,7 +47,7 @@
 				$GLOBALS['ERROR'][] = "no team was selected.";
 				return FALSE;
 			}
-			$TeamMembers = $GLOBALS['COMMON']->GetTeamMembers($GLOBALS['vars']['tid']);
+			$TeamMembers = $GLOBALS['system']->GetTeamMembers($GLOBALS['vars']['tid']);
 			$failed = 0;
 			$success = 0;
 			$exist = 0;
@@ -63,7 +63,7 @@
 					array(":editlines", $TeamMembers[$i]['editlines'], "str"),
 					array(":timing", $TeamMembers[$i]['timing'], "str"),
 				);
-				$res = $GLOBALS['COMMON']->db_query("INSERT INTO `subtitlepermissions` (`uid`, `sid`, `tid`, `addlines`, `deletelines`, `checklines`, `editlines`, `timing`) VALUES (:uid, :sid, :tid, :addlines, :deletelines, :checklines, :editlines, :timing);", $args, $ExecState);
+				$res = $GLOBALS['system']->db_query("INSERT INTO `subtitlepermissions` (`uid`, `sid`, `tid`, `addlines`, `deletelines`, `checklines`, `editlines`, `timing`) VALUES (:uid, :sid, :tid, :addlines, :deletelines, :checklines, :editlines, :timing);", $args, $ExecState);
 				if($ExecState===TRUE){$success++;}else{$failed++;}
 			}else{
 				$exist++;
@@ -79,7 +79,7 @@
 				array(":sid", $sid, "str"),
 				array(":uid", $uid, "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitlepermissions` WHERE `sid` = :sid and `uid` = :uid", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `subtitlepermissions` WHERE `sid` = :sid and `uid` = :uid", $args);
 			if(count($res)>0){return TRUE;}else{return FALSE;}
 		}
 	

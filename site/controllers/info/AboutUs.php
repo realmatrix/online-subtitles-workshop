@@ -25,7 +25,7 @@
 		function AboutUs_content(){
 				$content = array
 				  (
-				  array("{title}", $GLOBALS['COMMON']->l("info_AboutUs_title")),
+				  array("{title}", $GLOBALS['system']->l("info_AboutUs_title")),
 				 );
 			 
 		return $content;

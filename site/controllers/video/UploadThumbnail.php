@@ -23,10 +23,10 @@
 		}
 				
 		function UploadThumbnail_content(){
-			$video = $GLOBALS['COMMON']->GetVideoInfo($GLOBALS['vars']['vid']);
+			$video = $GLOBALS['system']->GetVideoInfo($GLOBALS['vars']['vid']);
 				$content = array
 				  (
-				  array("{UploadThumbnail}", $GLOBALS['COMMON']->l('video_UploadThumbnail_UploadThumbnail')),
+				  array("{UploadThumbnail}", $GLOBALS['system']->l('video_UploadThumbnail_UploadThumbnail')),
 				  array("{vid}", $GLOBALS['vars']['vid']),
 				 );
 			 
@@ -47,7 +47,7 @@
 			$temp = explode(".", $_FILES["file"]["name"]);
 			$extension = end($temp);
 
-			$key = $GLOBALS['vars']['vid']."_".$_SESSION['id'].$GLOBALS['COMMON']->GetMicroTime().$GLOBALS['COMMON']->GenRandomStr(5).".".$extension;
+			$key = $GLOBALS['vars']['vid']."_".$_SESSION['id'].$GLOBALS['system']->GetMicroTime().$GLOBALS['system']->GenRandomStr(5).".".$extension;
 			$file = "uploads/thumbnails/video/".$key;
 
 			if(!in_array($extension, $allowedExts)){$GLOBALS['ERROR'][]="invalid file type only ".implode(",", $allowedExts)." is allowed." ; return FALSE;}
@@ -57,7 +57,7 @@
 				array(":id", $GLOBALS['vars']['vid'], "str"),
 				array(":key", $key, "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("UPDATE `videos` SET `thumbnail` = :key WHERE `id` = :id ", $args, $ExecState);
+			$res = $GLOBALS['system']->db_query("UPDATE `videos` SET `thumbnail` = :key WHERE `id` = :id ", $args, $ExecState);
 			if($ExecState===TRUE){$GLOBALS['SUCCESS'][]="thumbnail uploaded successfully.";}else{$GLOBALS['ERROR'][]="uploading thumbnail failed.";}	
 			
 		}

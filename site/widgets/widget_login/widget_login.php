@@ -34,10 +34,10 @@
 		
 		function widget_login_render(){
 			$array = array(
-				array("{LoginUsername}", $GLOBALS['COMMON']->l('login_username')),
-				array("{LoginPassword}", $GLOBALS['COMMON']->l('login_password')),
-				array("{LoginOrRegister}", $GLOBALS['COMMON']->l('login_orregister')),
-				array("{LoginSubmit}", $GLOBALS['COMMON']->l('login_submit')),
+				array("{LoginUsername}", $GLOBALS['system']->l('login_username')),
+				array("{LoginPassword}", $GLOBALS['system']->l('login_password')),
+				array("{LoginOrRegister}", $GLOBALS['system']->l('login_orregister')),
+				array("{LoginSubmit}", $GLOBALS['system']->l('login_submit')),
 			);
 			return $array;			
 		}

@@ -36,7 +36,7 @@
 		}
 		
 		function GetChat(){
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `chat` limit 30", array());
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `chat` limit 30", array());
 			$chat = "";
 			for ($i=0; $i < count($res); $i++) { 
 				$chat.="<div class='shoutbox-line-container'>";
@@ -55,7 +55,7 @@
 				array(":text", $GLOBALS['vars']['text'], "str"),
 				array(":date", date('Y-m-d H:i:s'), "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `chat`(`date`, `uid`, `text`, `username`) VALUES (:date, :uid, :text, :username);", $params, $ExecState);
+			$res = $GLOBALS['system']->db_query("INSERT INTO `chat`(`date`, `uid`, `text`, `username`) VALUES (:date, :uid, :text, :username);", $params, $ExecState);
 			self::DeleteOldLines();
 			//if($ExecState===TRUE){echo "success";}else{echo "failed";}
 			//echo $res;
@@ -74,7 +74,7 @@
 		}
 		
 		function DeleteOldLines(){
-			$res = $GLOBALS['COMMON']->db_query("DELETE FROM chat ORDER BY id DESC LIMIT 30, 1000", array());
+			$res = $GLOBALS['system']->db_query("DELETE FROM chat ORDER BY id DESC LIMIT 30, 1000", array());
 		}
 		
 		

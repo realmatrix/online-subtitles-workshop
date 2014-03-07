@@ -26,7 +26,7 @@
 			$thread = self::GetThread();
 				$content = array
 				  (
-				  array("{title}", $GLOBALS['COMMON']->l("forum_ViewThread_title")),
+				  array("{title}", $GLOBALS['system']->l("forum_ViewThread_title")),
 				  array("{ThreadTitle}", $thread[0]['title']),
 				  array("{ThreadContent}", $thread[0]['content']),
 				  array("{replies}", self::GetReplies()),
@@ -39,7 +39,7 @@
 			$params = array(
 				array(":tid", $GLOBALS['vars']['tid'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `forumthreads` WHERE `id` = :tid", $params);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `forumthreads` WHERE `id` = :tid", $params);
 			return $res;
 		}
 		
@@ -47,7 +47,7 @@
 			$params = array(
 				array(":tid", $GLOBALS['vars']['tid'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `forumreplies` WHERE `tid` = :tid", $params);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `forumreplies` WHERE `tid` = :tid", $params);
 			$content = "";
 			for ($i=0; $i < count($res); $i++) { 
 				$content.="<div class='thread-reply'>";
@@ -60,7 +60,7 @@
 		}
 		
 		function GetUsernameByID($id){
-			$UserInfo = $GLOBALS['COMMON']->GetUserInfo("", $id);
+			$UserInfo = $GLOBALS['system']->GetUserInfo("", $id);
 			return $UserInfo[0]['username'];
 		}
 		

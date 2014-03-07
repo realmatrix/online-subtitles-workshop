@@ -25,7 +25,7 @@
 		function SubtitleDownload_content(){
 				$content = array
 				  (
-				  array("{title}", $GLOBALS['COMMON']->l("subtitle_SubtitleDownload_title")),
+				  array("{title}", $GLOBALS['system']->l("subtitle_SubtitleDownload_title")),
 				 );
 			 
 		return $content;

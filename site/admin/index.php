@@ -12,11 +12,11 @@
 	
 	include $GLOBALS['SystemPath']."include/db.php";
 	
-	include $GLOBALS['SystemPath']."include/common.php";
+	include $GLOBALS['SystemPath']."system/System.php";
 	
-	$GLOBALS['COMMON'] = new Common();
+	$GLOBALS['system'] = new System();
 	
-	$GLOBALS['l']=$GLOBALS['COMMON']->GetLanguage($GLOBALS['config']['lang']);
+	$GLOBALS['l']=$GLOBALS['system']->GetLanguage($GLOBALS['config']['lang']);
 	
 	include "include/Acommon.php";
 	

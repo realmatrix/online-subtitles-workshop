@@ -26,7 +26,7 @@
 			$widgets = self::ListWidgets();
 				$content = array
 				  (
-				  array("{title}", $GLOBALS['COMMON']->l("admin_widgets_ManageWidgets_title")),
+				  array("{title}", $GLOBALS['system']->l("admin_widgets_ManageWidgets_title")),
 				  array("{widgets}", $widgets),
 				 );
 			 

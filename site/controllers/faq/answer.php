@@ -26,7 +26,7 @@
 			$answer = self::FaqAnswer();
 				$content = array
 				  (
-				  array("{title}", $GLOBALS['COMMON']->l("faq_answer_title")),
+				  array("{title}", $GLOBALS['system']->l("faq_answer_title")),
 				  array("{question}", $answer[0]['q']),
 				  array("{answer}", $answer[0]['a']),
 				 );
@@ -38,7 +38,7 @@
 			$args = array(
 				array("qid", $GLOBALS['vars']['qid'], "str")
 			);
-			$answer = $GLOBALS['COMMON']->db_query("SELECT * FROM faq where id = :qid", $args);
+			$answer = $GLOBALS['system']->db_query("SELECT * FROM faq where id = :qid", $args);
 			return $answer;
 		}
 

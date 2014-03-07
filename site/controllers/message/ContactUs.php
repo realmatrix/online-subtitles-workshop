@@ -25,7 +25,7 @@
 		function ContactUs_content(){
 				$content = array
 				  (
-				  array("{title}", $GLOBALS['COMMON']->l("message_ContactUs_title")),
+				  array("{title}", $GLOBALS['system']->l("message_ContactUs_title")),
 				 );
 			 
 		return $content;

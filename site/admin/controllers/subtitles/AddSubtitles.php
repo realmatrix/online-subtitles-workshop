@@ -25,7 +25,7 @@
 		function AddSubtitles_content(){
 			$content = array
 			  (
-			  array("{title}", $GLOBALS['COMMON']->l("admin_widgets_AddSubtitles_title")),
+			  array("{title}", $GLOBALS['system']->l("admin_widgets_AddSubtitles_title")),
 			 );
 		return $content;
 		}

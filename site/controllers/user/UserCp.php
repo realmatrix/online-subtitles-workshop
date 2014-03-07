@@ -25,7 +25,7 @@
 		function UserCp_content(){
 				$content = array
 				  (
-				  array("{title}", $GLOBALS['COMMON']->l('team_UserCp_title')),
+				  array("{title}", $GLOBALS['system']->l('team_UserCp_title')),
 				 );
 			 
 		return $content;

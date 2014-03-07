@@ -35,13 +35,13 @@
 		
 		function widget_LatestNewsByCategory_render(){
 			$array = array(
-				//array("{AddVideo}", $GLOBALS['COMMON']->l('widget_LatestNewsByCategory_addvideo')),
+				//array("{AddVideo}", $GLOBALS['system']->l('widget_LatestNewsByCategory_addvideo')),
 			);
 			return $array;
 		}	
 		
 		function GetAllNews(){
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitles` ORDER BY `id` DESC LIMIT 10", array());
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `subtitles` ORDER BY `id` DESC LIMIT 10", array());
 			$content = "div classs='AllNews-container'";
 				for ($i=0; $i < count($res); $i++) { 
 					$content .= "<div class='AllNews-row'>";

@@ -34,13 +34,13 @@
 		
 		
 		function ClientLogin(){
-			$GLOBALS['COMMON']->UpdateLoginBan();
-			if(!$GLOBALS['COMMON']->CheckLoginBan()){
+			$GLOBALS['system']->UpdateLoginBan();
+			if(!$GLOBALS['system']->CheckLoginBan()){
 			$args = array(
 				array(":username", $GLOBALS['vars']['u'], "str"),
 				array(":password", sha1($GLOBALS['vars']['p']), "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM users WHERE username=:username and password=:password limit 1", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM users WHERE username=:username and password=:password limit 1", $args);
 			if(count($res)>0){
 				$array = array(
 					array("key" => $res[0]['key']),
@@ -48,7 +48,7 @@
 				echo self::xml("1", "", $array);
 			}
 			else{
-				$GLOBALS['COMMON']->FailedLogin();
+				$GLOBALS['system']->FailedLogin();
 				echo self::xml("0","invalid username or password");
 			}
 			}

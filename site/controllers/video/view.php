@@ -9,7 +9,7 @@
 				array("player", "ViewPlayer", $GLOBALS['vars'], self::CheckVideoSource()),
 				array("video", "VideoSynopsis", $GLOBALS['vars'], TRUE),
 				array("subtitle", "VideoSubtitles", $GLOBALS['vars'], TRUE),
-				array("subtitle", "AddSubtitle", $GLOBALS['vars'], $GLOBALS['COMMON']->IsLoggedin()),
+				array("subtitle", "AddSubtitle", $GLOBALS['vars'], $GLOBALS['system']->IsLoggedin()),
 			);
 			return $array;
 		}
@@ -28,7 +28,7 @@
 		}
 		
 		function CheckOwner(){
-			$VideoInfo = $GLOBALS['COMMON']->GetVideoInfo($GLOBALS['vars']['vid']);
+			$VideoInfo = $GLOBALS['system']->GetVideoInfo($GLOBALS['vars']['vid']);
 			$owner = $VideoInfo[0][uid];
 			if($_SESSION['id']==$owner){return TRUE;}else{return FALSE;}
 		}
@@ -37,7 +37,7 @@
 			$args = array(
 				array(":id", $GLOBALS['vars']['vid'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `videos` WHERE `id` = :id", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `videos` WHERE `id` = :id", $args);
 			if($res[0]['source']!=""){return TRUE;}else{return FALSE;}
 		}
 		
@@ -46,7 +46,7 @@
 			$args = array(
 				array(":id", $GLOBALS['vars']['vid'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `videos` WHERE `id` = :id", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `videos` WHERE `id` = :id", $args);
 			if($res[0]['thumbnail']!=""){return TRUE;}else{return FALSE;}
 			}
 		}
@@ -55,7 +55,7 @@
 			$args = array(
 				array("vid", $GLOBALS['vars']['vid'], "str")
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM videos WHERE id = :vid", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM videos WHERE id = :vid", $args);
 			return $res;
 		}	
 			

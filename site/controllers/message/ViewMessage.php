@@ -26,16 +26,16 @@
 			$args = array(
 				array(":mid", $GLOBALS['vars']['mid'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `privatemessages` WHERE `id` = :mid", $args);
-			$SenderInfo = $GLOBALS['COMMON']->GetUserInfo("", $res[0]['from']);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `privatemessages` WHERE `id` = :mid", $args);
+			$SenderInfo = $GLOBALS['system']->GetUserInfo("", $res[0]['from']);
 			$from = $SenderInfo[0]['username'];
 				$content = array
 				  (
-				  array("{title}", $GLOBALS['COMMON']->l("subtitle_ViewMessage_title")),
-				  array("{from}", $GLOBALS['COMMON']->l("subtitle_ViewMessage_from")),
-				  array("{date}", $GLOBALS['COMMON']->l("subtitle_ViewMessage_date")),
-				  array("{subject}", $GLOBALS['COMMON']->l("subtitle_ViewMessage_subject")),
-				  array("{message}", $GLOBALS['COMMON']->l("subtitle_ViewMessage_message")),
+				  array("{title}", $GLOBALS['system']->l("subtitle_ViewMessage_title")),
+				  array("{from}", $GLOBALS['system']->l("subtitle_ViewMessage_from")),
+				  array("{date}", $GLOBALS['system']->l("subtitle_ViewMessage_date")),
+				  array("{subject}", $GLOBALS['system']->l("subtitle_ViewMessage_subject")),
+				  array("{message}", $GLOBALS['system']->l("subtitle_ViewMessage_message")),
 				  array("{mfrom}", $from),
 				  array("{mdate}", $res[0]['date']),
 				  array("{msubject}", $res[0]['subject']),

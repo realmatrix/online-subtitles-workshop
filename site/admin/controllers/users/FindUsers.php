@@ -28,7 +28,7 @@
 		function FindUsers_content(){
 			$content = array
 			  (
-			  array("{title}", $GLOBALS['COMMON']->l("admin_widgets_FindUsers_title")),
+			  array("{title}", $GLOBALS['system']->l("admin_widgets_FindUsers_title")),
 			  array("{SearchResult}", self::$SearchResult),
 			 );
 		return $content;
@@ -39,12 +39,12 @@
 			$args = array(
 				array(":username", "%".$GLOBALS['vars']['username']."%", "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `users` WHERE `username` LIKE :username", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `users` WHERE `username` LIKE :username", $args);
 			for ($i=0; $i < count($res); $i++) { 
 								self::$SearchResult .= "<tr>";
 								self::$SearchResult .= "<td>".$res[$i]['username']."</td>";
 								self::$SearchResult .= "<td class='center'>".date("d F Y", strtotime($res[$i]['RegisterationDate']))."</td>";
-								self::$SearchResult .= "<td class='center'>".$GLOBALS['COMMON']->GetUserGroupByID($res[$i]['group'])."</td>";
+								self::$SearchResult .= "<td class='center'>".$GLOBALS['system']->GetUserGroupByID($res[$i]['group'])."</td>";
 								self::$SearchResult .= "<td class='center'>";
 								self::$SearchResult .= self::UserStatus($res[$i]['state']);
 								self::$SearchResult .= "</td>";
@@ -77,7 +77,7 @@
 			$args = array(
 				array(":uid", $GLOBALS['vars']['uid'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("DELETE FROM `users` WHERE `id` = :uid", $args);
+			$res = $GLOBALS['system']->db_query("DELETE FROM `users` WHERE `id` = :uid", $args);
 			header( 'Location: index.php?username='.$GLOBALS['vars']['username'].'&page=users&sec=find&ssec=FindUsers&h=find' ) ;
 		}
 					

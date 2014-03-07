@@ -27,7 +27,7 @@
 			$VideoInfo = self::GetVideoInfo();
 				$content = array
 				  (
-				  array("{title}", $GLOBALS['COMMON']->l("player_EditorPlayer_title")),
+				  array("{title}", $GLOBALS['system']->l("player_EditorPlayer_title")),
 				  array("{VideoUrl}", $VideoInfo[0]['source']),
 				  array("{VideoImage}", $VideoInfo[0]['thumbnail']),
 				  array("{VideoTitle}", $VideoInfo[0]['title']),
@@ -42,19 +42,19 @@
 		}
 		
 		function GetSubtitleInfo(){
-			$SubtitleInfo = $GLOBALS['COMMON']->GetSubtitleInfo($GLOBALS['vars']['sid']);
+			$SubtitleInfo = $GLOBALS['system']->GetSubtitleInfo($GLOBALS['vars']['sid']);
 			return $SubtitleInfo;;
 		}
 		
 		function GetVideoInfo(){
 			$SubtitleInfo = self::GetSubtitleInfo();
 			$VideoId = $SubtitleInfo[0]['vid'];
-			$VideoInfo = $GLOBALS['COMMON']->GetVideoInfo($VideoId);
+			$VideoInfo = $GLOBALS['system']->GetVideoInfo($VideoId);
 			return $VideoInfo;
 		}
 		
 		function GetSubtitleLanguage($lid){
-			$lang = $GLOBALS['COMMON']->GetLanguageById($lid);
+			$lang = $GLOBALS['system']->GetLanguageById($lid);
 			$language = $lang[0]['language'];
 		}
 		

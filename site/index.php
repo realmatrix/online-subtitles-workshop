@@ -16,16 +16,16 @@
 	
 	if($_GET['template']!=""){$GLOBALS['config']['template'] = $_GET['template'];}
 	
-	include "include/common.php";
+	include "system/System.php";
 	
-	$GLOBALS['COMMON'] = new Common();
+	$GLOBALS['system'] = new System();
 
-	$GLOBALS['config']['widgets'] = $GLOBALS['COMMON']->GetEnabledWidgets();
-
-	include "include/OnlineUsers.php";
+	$GLOBALS['config']['widgets'] = $GLOBALS['system']->GetEnabledWidgets();
+	
+	$GLOBALS['system']->LoadLib("OnlineUsers");
 	
 	if($_GET['act']=='logout'){
-		$GLOBALS['COMMON']->logout();
+		$GLOBALS['system']->logout();
 	}
 	
 	include "onload.php";
@@ -38,7 +38,7 @@
 	
 	include "router.php";
 	
-	if($GLOBALS['COMMON']->GetOption("run_cron_onload")=="1"){$GLOBALS['COMMON']->RunCronFunction('RunAll');}
+	if($GLOBALS['system']->GetOption("run_cron_onload")=="1"){$GLOBALS['system']->RunCronFunction('RunAll');}
 		
 	unset($GLOBALS);
 	

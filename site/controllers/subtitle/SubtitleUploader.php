@@ -25,14 +25,14 @@
 		function SubtitleUploader_content(){
 				$content = array
 				  (
-				  array("{title}", $GLOBALS['COMMON']->l("subtitle_SubtitleUploader_title")),
+				  array("{title}", $GLOBALS['system']->l("subtitle_SubtitleUploader_title")),
 				  array("{sid}", $GLOBALS['vars']['sid']),
-				  array("{cd}", $GLOBALS['COMMON']->l("subtitle_SubtitleUploader_cd")),
-				  array("{cdtitle}", $GLOBALS['COMMON']->l("subtitle_SubtitleUploader_CDTitle")),
-				  array("{subtitletext}", $GLOBALS['COMMON']->l("subtitle_SubtitleUploader_SubtitleText")),
-				  array("{subtitlefile}", $GLOBALS['COMMON']->l("subtitle_SubtitleUploader_SubtitleFile")),
-				  array("{note}", $GLOBALS['COMMON']->l("subtitle_SubtitleUploader_note")),
-				  array("{submit}", $GLOBALS['COMMON']->l("subtitle_SubtitleUploader_submit")),
+				  array("{cd}", $GLOBALS['system']->l("subtitle_SubtitleUploader_cd")),
+				  array("{cdtitle}", $GLOBALS['system']->l("subtitle_SubtitleUploader_CDTitle")),
+				  array("{subtitletext}", $GLOBALS['system']->l("subtitle_SubtitleUploader_SubtitleText")),
+				  array("{subtitlefile}", $GLOBALS['system']->l("subtitle_SubtitleUploader_SubtitleFile")),
+				  array("{note}", $GLOBALS['system']->l("subtitle_SubtitleUploader_note")),
+				  array("{submit}", $GLOBALS['system']->l("subtitle_SubtitleUploader_submit")),
 				  array("{cds}", self::CDList()),
 				 );
 			 
@@ -40,7 +40,7 @@
 		}
 		
 		function CDList(){
-			$subtitleCDS = $GLOBALS['COMMON']->GetSubtitleCDS($GLOBALS['vars']['sid']);
+			$subtitleCDS = $GLOBALS['system']->GetSubtitleCDS($GLOBALS['vars']['sid']);
 			$res = "";
 			for ($i=0; $i < count($subtitleCDS); $i++) {
 				$cd = $i + 1; 
@@ -55,7 +55,7 @@
 			if ($_FILES["file"]["error"] > 0 and $_FILES["file"]["error"] != 4){$GLOBALS['ERROR'][]=$_FILES["file"]["error"]; return FALSE;}
 			if ($_FILES["file"]["error"] == 4 and $GLOBALS['vars']['subtitletext']==""){$GLOBALS['ERROR'][]="enter subtitle content or select file."; return FALSE;}
 			if($GLOBALS['vars']['cd']==""){$GLOBALS['ERROR'][]="select cd."; return FALSE;}
-			$key = $_SESSION['id'].$GLOBALS['COMMON']->GetMicroTime().$GLOBALS['COMMON']->GenRandomStr(5).".tmp";
+			$key = $_SESSION['id'].$GLOBALS['system']->GetMicroTime().$GLOBALS['system']->GenRandomStr(5).".tmp";
 			$file = "tmp/".$key;
 			
 			if($GLOBALS['vars']['subtitletext']==""){
@@ -95,7 +95,7 @@
 					if($i!=count($content)-1){$args[0][] = "(:sid".$i.", :uid".$i.", :cid".$i.", :line".$i.", :start".$i.", :end".$i.", :text".$i."),";}else{$args[0][]="(:sid".$i.", :uid".$i.", :cid".$i.", :line".$i.", :start".$i.", :end".$i.", :text".$i.")";}
 			}
 			//print_r($args);
-			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `subtitlescontent` (`sid`, `uid`, `cid`, `line`, `start`, `end`, `text`) VALUES ", $args, $ExecState, TRUE);
+			$res = $GLOBALS['system']->db_query("INSERT INTO `subtitlescontent` (`sid`, `uid`, `cid`, `line`, `start`, `end`, `text`) VALUES ", $args, $ExecState, TRUE);
 			if($ExecState===TRUE){$GLOBALS['SUCCESS'][]="Subtitle uploaded successfully.";}else{$GLOBALS['ERROR'][]="uploading subtitle failed.";}	
 			
 		}

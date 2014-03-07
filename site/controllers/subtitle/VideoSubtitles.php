@@ -27,7 +27,7 @@
 				  (
 				  array("{vid}", $GLOBALS['vars']['vid']),
 				  array("{TableRows}", self::TableRows()),
-				  array("{VideoSubtitles}", $GLOBALS['COMMON']->l('subtitle_VideoSubtitles_VideosSubtitles')),
+				  array("{VideoSubtitles}", $GLOBALS['system']->l('subtitle_VideoSubtitles_VideosSubtitles')),
 				 );
 			 
 		return $content;
@@ -37,7 +37,7 @@
 			$params=array(
 				array(":vid", $GLOBALS['vars']['vid'], "str"),
 			);
-			$res=$GLOBALS['COMMON']->db_query("select * from subtitles where vid=:vid", $params);
+			$res=$GLOBALS['system']->db_query("select * from subtitles where vid=:vid", $params);
 			return $res;
 		}
 		
@@ -45,7 +45,7 @@
 			$subtitles = self::subtitles();
 			$res = "";
 			for ($i=0; $i < count($subtitles); $i++) {
-			$country=$GLOBALS['COMMON']->GetCountryById($subtitles[$i]['country']); 
+			$country=$GLOBALS['system']->GetCountryById($subtitles[$i]['country']); 
 				$res.="<tr class='odd gradeX'>";
 				$res.="<td><img src='".$GLOBALS['config']['TemplatesDir'].$GLOBALS['config']['template']."/files/country-flags/".$country[0]['iso2'].".png' ></td>";
 				$res.="<td></td>";

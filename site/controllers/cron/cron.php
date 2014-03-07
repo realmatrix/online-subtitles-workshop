@@ -55,13 +55,13 @@
 			$args = array(
 				array(":job", $job, "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `systemcron` WHERE `job` = :job", $args);
-			if($GLOBALS['COMMON']->GetMicroTime() - $res[0]['last_run']>$res[0]['frequancy']){
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `systemcron` WHERE `job` = :job", $args);
+			if($GLOBALS['system']->GetMicroTime() - $res[0]['last_run']>$res[0]['frequancy']){
 				$args = array(
-					array(":time", $GLOBALS['COMMON']->GetMicroTime(), ""),
+					array(":time", $GLOBALS['system']->GetMicroTime(), ""),
 					array(":job", $job, "str"),
 				);
-				$GLOBALS['COMMON']->db_query("UPDATE `systemcron` SET `last_run` = :time WHERE `job` = :job", $args);
+				$GLOBALS['system']->db_query("UPDATE `systemcron` SET `last_run` = :time WHERE `job` = :job", $args);
 				self::$job();
 			}
 		}
@@ -76,12 +76,12 @@
 		}
 		
 		function UpdateUserKeys(){
-			$GLOBALS['COMMON']->UpdateUsersKeys();
+			$GLOBALS['system']->UpdateUsersKeys();
 		}
 		
 		function AutoTranslation(){
 			self::state("running translation...");
-			$lines = $GLOBALS['COMMON']->db_query("SELECT * FROM `translationqueue` order by `id` ASC limit 10", array());
+			$lines = $GLOBALS['system']->db_query("SELECT * FROM `translationqueue` order by `id` ASC limit 10", array());
 				for ($i=0; $i < count($lines); $i++) {
 					$text = urlencode($lines[$i]['text']);
 					$content = file_get_contents("http://glosbe.com/gapi/translate?from=".$lines[$i]['from']."&dest=".$lines[$i]['to']."&format=json&phrase=".$text."&pretty=true");
@@ -94,7 +94,7 @@
 								array(":cid", $lines[$i]['cid'], "str"),
 								array(":text", $translation, "str"),
 							);
-							$res = $GLOBALS['COMMON']->db_query("UPDATE `transcriptions` SET `text` = :text WHERE `lid`=:lid and `sid`=:sid and `cid`=:cid ", $args, $ExecState);
+							$res = $GLOBALS['system']->db_query("UPDATE `transcriptions` SET `text` = :text WHERE `lid`=:lid and `sid`=:sid and `cid`=:cid ", $args, $ExecState);
 							if($ExecState===TRUE){self::state($lines[$i]['lid']." ok");}else{self::state($lines[$i]['lid']." failed");}
 						}else{
 							self::state($lines[$i]['lid']." - null -"." ok");

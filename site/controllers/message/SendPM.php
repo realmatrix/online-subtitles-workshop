@@ -25,11 +25,11 @@
 		function SendPM_content(){
 				$content = array
 				  (
-				  array("{title}", $GLOBALS['COMMON']->l("subtitle_SendPM_title")),
-				  array("{to}", $GLOBALS['COMMON']->l("subtitle_SendPM_to")),
-				  array("{subject}", $GLOBALS['COMMON']->l("subtitle_SendPM_subject")),
-				  array("{message}", $GLOBALS['COMMON']->l("subtitle_SendPM_message")),
-				  array("{submit}", $GLOBALS['COMMON']->l("subtitle_SendPM_submit")),
+				  array("{title}", $GLOBALS['system']->l("subtitle_SendPM_title")),
+				  array("{to}", $GLOBALS['system']->l("subtitle_SendPM_to")),
+				  array("{subject}", $GLOBALS['system']->l("subtitle_SendPM_subject")),
+				  array("{message}", $GLOBALS['system']->l("subtitle_SendPM_message")),
+				  array("{submit}", $GLOBALS['system']->l("subtitle_SendPM_submit")),
 				 );
 			 
 		return $content;
@@ -39,7 +39,7 @@
 			if($GLOBALS['vars']['to']==""){$GLOBALS['ERROR'][]="enter username"; return FALSE;}
 			if($GLOBALS['vars']['subject']==""){$GLOBALS['ERROR'][]="enter subject"; return FALSE;}
 			if($GLOBALS['vars']['message']==""){$GLOBALS['ERROR'][]="enter message"; return FALSE;}
-			$UserInfo = $GLOBALS['COMMON']->GetUserInfo($GLOBALS['vars']['to'], "");
+			$UserInfo = $GLOBALS['system']->GetUserInfo($GLOBALS['vars']['to'], "");
 			$to = $UserInfo[0]['id'];
 			$args = array(
 				array(":from", $_SESSION['id'], "str"),
@@ -48,7 +48,7 @@
 				array(":message", $GLOBALS['vars']['message'], "str"),
 				array(":date", date("Y-m-d H:i:s"), "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `privatemessages` (`from`, `to`, `subject`, `message`, `date`) VALUES (:from, :to, :subject, :message, :date);", $args, $ExecState);
+			$res = $GLOBALS['system']->db_query("INSERT INTO `privatemessages` (`from`, `to`, `subject`, `message`, `date`) VALUES (:from, :to, :subject, :message, :date);", $args, $ExecState);
 			if($ExecState===TRUE){$GLOBALS['SUCCESS'][]="Message sent.";}else{$GLOBALS['ERROR'][]="Message send failed.";}
 		}
 

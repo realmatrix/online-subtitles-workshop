@@ -25,7 +25,7 @@
 		function SubtitlesStatistics_content(){
 			$content = array
 			  (
-			  array("{title}", $GLOBALS['COMMON']->l("admin_widgets_SubtitlesStatistics_title")),
+			  array("{title}", $GLOBALS['system']->l("admin_widgets_SubtitlesStatistics_title")),
 			 );
 		return $content;
 		}

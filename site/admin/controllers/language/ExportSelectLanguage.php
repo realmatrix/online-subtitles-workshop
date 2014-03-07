@@ -25,7 +25,7 @@
 		function ExportSelectLanguage_content(){
 			$content = array
 			  (
-			  array("{title}", $GLOBALS['COMMON']->l("admin_ExportSelectLanguage_title")),
+			  array("{title}", $GLOBALS['system']->l("admin_ExportSelectLanguage_title")),
 			  array("{SelectLangTables}", self::GetLanguageTables()),
 			  array("{page}", $GLOBALS['vars']['page']),
 			  array("{sec}", $GLOBALS['vars']['sec']),
@@ -37,7 +37,7 @@
 			$args = array(
 				array(":TableNames", "lang\_%", "str")
 			);
-			$res = $GLOBALS['COMMON']->db_query("SHOW TABLES LIKE :TableNames", $args);
+			$res = $GLOBALS['system']->db_query("SHOW TABLES LIKE :TableNames", $args);
 			$content = "<option value=''></option>";
 			for ($i=0; $i < count($res); $i++) {
 				$value = array_values($res[$i]); 

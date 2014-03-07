@@ -4,17 +4,17 @@
 	$ControllerSection=$GLOBALS['vars']['sec'];
 
 	//loading controllers
-	if($ControllerPage!="" and $ControllerSection!=""){$GLOBALS['SystemContent'] = $GLOBALS['COMMON']->LoadSections($ControllerPage, $ControllerSection, $GLOBALS['vars']);}
+	if($ControllerPage!="" and $ControllerSection!=""){$GLOBALS['SystemContent'] = $GLOBALS['system']->LoadSections($ControllerPage, $ControllerSection, $GLOBALS['vars']);}
 	
 		
 	//loading widgets
-	$GLOBALS['SystemWidgets'] = $GLOBALS['COMMON']->LoadWidgets();	
+	$GLOBALS['SystemWidgets'] = $GLOBALS['system']->LoadWidgets();	
 		
 	$TemplatePath = $GLOBALS['config']['TemplatesDir'].$GLOBALS['config']['template'];
 	
-	$error_messages = $GLOBALS['COMMON']->SystemMessage("error",$GLOBALS['ERROR']);
+	$error_messages = $GLOBALS['system']->SystemMessage("error",$GLOBALS['ERROR']);
 	
-	$success_messages = $GLOBALS['COMMON']->SystemMessage("success",$GLOBALS['SUCCESS']);
+	$success_messages = $GLOBALS['system']->SystemMessage("success",$GLOBALS['SUCCESS']);
 	
 	$GLOBALS['TemplateHeader'] = array
 	  (
@@ -51,7 +51,7 @@
 	  array("{test}",$test),
 	); 
 	
-	$SystemInfo = $GLOBALS['COMMON']->information();
+	$SystemInfo = $GLOBALS['system']->information();
 //Fri May 31, 2013 1:43 pm	
 	$GLOBALS['TemplatesCommon'] = array 
 	(
@@ -63,7 +63,7 @@
 	  array("{SystemFooter}",$SystemFooter),
 	  array("{SystemError}",$error_messages),
 	  array("{SystemSuccess}",$success_messages),
-	  array("{LoginOrRegister}",$GLOBALS['COMMON']->l('login_orregister')),
+	  array("{LoginOrRegister}",$GLOBALS['system']->l('login_orregister')),
 	  array("{UserName}",$_SESSION['username']),	  
 	  array("{TotalOnline}",$SystemInfo['total']),
 	  array("{OnlineGuests}",$SystemInfo['OnlineGuests']),
@@ -78,7 +78,7 @@
 	);
 
 	$GLOBALS['TemplatesCommon'] = array_merge($GLOBALS['TemplatesCommon'],$GLOBALS['SystemWidgets']);
-	$GLOBALS['TemplatesCommon'] = array_merge($GLOBALS['TemplatesCommon'],$GLOBALS['COMMON']->HideDisabledWidgets());
+	$GLOBALS['TemplatesCommon'] = array_merge($GLOBALS['TemplatesCommon'],$GLOBALS['system']->HideDisabledWidgets());
 	
 	$GLOBALS['TemplateHeader'] = array_merge($GLOBALS['TemplateHeader'], $GLOBALS['TemplatesCommon']);
 	$GLOBALS['TemplateHead'] = array_merge($GLOBALS['TemplateHead'], $GLOBALS['TemplatesCommon']);

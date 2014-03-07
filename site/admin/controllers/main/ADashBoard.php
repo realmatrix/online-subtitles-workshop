@@ -25,7 +25,7 @@
 		function ADashBoard_content(){
 				$content = array
 				  (
-				  array("{title}", $GLOBALS['COMMON']->l("subtitle_ADashBoard_title")),
+				  array("{title}", $GLOBALS['system']->l("ADashBoard_title")),
 				  array("{ApprovedMembers}", self::GetApprovedMembers()),
 				  array("{PendingMembers}", self::GetPendingMembers()),
 				  array("{BannedMembers}", self::GetBannedMembers()),
@@ -41,7 +41,7 @@
 			$args = array(
 				array(":group", "3", "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Users` WHERE `group` = :group", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `Users` WHERE `group` = :group", $args);
 			return count($res);
 		}
 		
@@ -49,7 +49,7 @@
 			$args = array(
 				array(":group", "7", "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Users` WHERE `group` = :group", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `Users` WHERE `group` = :group", $args);
 			return count($res);
 		}
 
@@ -57,25 +57,25 @@
 			$args = array(
 				array(":group", "5", "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Users` WHERE `group` = :group", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `Users` WHERE `group` = :group", $args);
 			return count($res);
 		}
 				
 		function GetOnlineMembers(){
 			$args = array();
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `OnlineUsers`", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `OnlineUsers`", $args);
 			return count($res);
 		}
 
 		function GetTotalTeams(){
 			$args = array();
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Teams`", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `Teams`", $args);
 			return count($res);
 		}
 		
 		function GetTotalSystemMessages(){
 			$args = array();
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `PrivateMessages`", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `PrivateMessages`", $args);
 			return count($res);
 		}		
 			

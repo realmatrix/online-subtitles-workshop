@@ -37,12 +37,12 @@
 		
 		function CheckPermission(){
 			$res = FALSE;
-			if($GLOBALS['COMMON']->IsSubtitleOwner($GLOBALS['vars']['sid'])===TRUE){$res = TRUE;}
+			if($GLOBALS['system']->IsSubtitleOwner($GLOBALS['vars']['sid'])===TRUE){$res = TRUE;}
 			$args = array(
 				array(":sid", $GLOBALS['vars']['sid'], "str"),
 				array(":uid", $_SESSION['id'], "str"),
 			);
-			$permissions = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitlepermissions` WHERE `sid` = :sid and `uid` = :uid", $args);
+			$permissions = $GLOBALS['system']->db_query("SELECT * FROM `subtitlepermissions` WHERE `sid` = :sid and `uid` = :uid", $args);
 			if(count($permissions)>0){$res = TRUE;}
 			if($res === FALSE){$GLOBALS['ERROR'][] = "Don't have permissions to view this page.";}
 			return $res;

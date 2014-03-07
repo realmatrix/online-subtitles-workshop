@@ -25,7 +25,7 @@
 		function CheckSubtitle_content(){
 				$content = array
 				  (
-				  array("{title}", $GLOBALS['COMMON']->l("subtitle_CheckSubtitle_title")),
+				  array("{title}", $GLOBALS['system']->l("subtitle_CheckSubtitle_title")),
 				  array("{CheckSubtitleLines}", self::GetLines()),
 				  array("{page}", $GLOBALS['vars']['page']),
 				  array("{sec}", $GLOBALS['vars']['sec']),
@@ -47,7 +47,7 @@
 				array(":sid", $GLOBALS['vars']['sid']),
 				array(":cid", $GLOBALS['vars']['cid']),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitlescontent` WHERE `sid` = :sid and `cid` = :cid", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `subtitlescontent` WHERE `sid` = :sid and `cid` = :cid", $args);
 			$lines = "";
 			for ($i=0; $i < count($res); $i++) {
 				if($res[$i]['checked']==1){$class = "subtitleline-checked";}else{$class = "subtitleline-notchecked";}
@@ -60,7 +60,7 @@
 			$args = array(
 				array(":lid", $GLOBALS['vars']['lid'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitlescontent` WHERE `id` = :lid", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `subtitlescontent` WHERE `id` = :lid", $args);
 			return $res;
 		}
 		
@@ -70,7 +70,7 @@
 				array(":cid", $GLOBALS['vars']['cid'], "str"),
 				array(":lid", $GLOBALS['vars']['lid'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `transcriptions` WHERE `sid` = :sid and `cid` = :cid and `lid` = :lid", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `transcriptions` WHERE `sid` = :sid and `cid` = :cid and `lid` = :lid", $args);
 			$choices = "";
 			for ($i=0; $i < count($res); $i++) { 
 				$choices .= "<div class='checksubtitle-options'><input type='radio' class='checksubtitle-radio' id='checksubtitle-tl".$res[$i]['id']."' name='tlid' value='".$res[$i]['id']."'><label class='checksubtitle-radio-label' for='checksubtitle-tl".$res[$i]['id']."'>".nl2br($res[$i]['text'])."</label></div>";
@@ -91,13 +91,13 @@
 			$args = array(
 				array(":tlid", $GLOBALS['vars']['tlid'], "str")
 			);
-			$transcription = $GLOBALS['COMMON']->db_query("SELECT * FROM `transcriptions` WHERE `id` = :tlid", $args);
+			$transcription = $GLOBALS['system']->db_query("SELECT * FROM `transcriptions` WHERE `id` = :tlid", $args);
 			$args = array(
 				array(":checked", 1, "str"),
 				array(":text", $transcription[0]['text'], "str"),
 				array(":lid", $GLOBALS['vars']['lid'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("UPDATE `subtitlescontent` SET `checked`=:checked,`checked_text`=:text WHERE `id` = :lid", $args);
+			$res = $GLOBALS['system']->db_query("UPDATE `subtitlescontent` SET `checked`=:checked,`checked_text`=:text WHERE `id` = :lid", $args);
 		}
 		
 		function GetLineNumber(){

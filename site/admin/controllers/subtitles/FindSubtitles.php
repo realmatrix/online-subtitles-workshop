@@ -25,7 +25,7 @@
 		function FindSubtitles_content(){
 			$content = array
 			  (
-			  array("{title}", $GLOBALS['COMMON']->l("admin_widgets_FindSubtitles_title")),
+			  array("{title}", $GLOBALS['system']->l("admin_widgets_FindSubtitles_title")),
 			 );
 		return $content;
 		}

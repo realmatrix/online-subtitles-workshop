@@ -35,9 +35,9 @@
 		
 		function widget_NewsLetter_render(){
 			$array = array(
-				array("{NewsLetterName}", $GLOBALS['COMMON']->l('widget_newsletter_name')),
-				array("{NewsLetterEmail}", $GLOBALS['COMMON']->l('widget_newsletter_email')),
-				array("{NewsLetterSubmit}", $GLOBALS['COMMON']->l('widget_newsletter_submit')),
+				array("{NewsLetterName}", $GLOBALS['system']->l('widget_newsletter_name')),
+				array("{NewsLetterEmail}", $GLOBALS['system']->l('widget_newsletter_email')),
+				array("{NewsLetterSubmit}", $GLOBALS['system']->l('widget_newsletter_submit')),
 				array("{w}", "widget_NewsLetter"),
 			);	
 			return $array;
@@ -52,7 +52,7 @@
 				array(":name", $GLOBALS['vars']['name'], "str"),
 				array(":email", $GLOBALS['vars']['email'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `newsletter` (`name`, `email`) VALUES (:name, :email);", $args, $ExecState);
+			$res = $GLOBALS['system']->db_query("INSERT INTO `newsletter` (`name`, `email`) VALUES (:name, :email);", $args, $ExecState);
 			if($ExecState === TRUE){$GLOBALS['SUCCESS'][]="email added successfully.";}else{$GLOBALS['ERROR'][]=$ExecState;}
 		}
 		

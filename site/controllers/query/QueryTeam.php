@@ -38,7 +38,7 @@
 			$params = array(
 				array("sid", $GLOBALS['vars']['sid']),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `teamchat` WHERE `sid` = :sid", $params);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `teamchat` WHERE `sid` = :sid", $params);
 			$chat = "";
 			for ($i=0; $i < count($res); $i++) { 
 				$chat.="<div class='chat-line-container'>";
@@ -70,7 +70,7 @@
 				array(":sid", $GLOBALS['vars']['sid'], "str"),
 				array(":date", date('Y-m-d H:i:s'), "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `teamchat`(`date`, `uid`, `text`, `sid`, `username`) VALUES (:date, :uid, :text, :sid, :username);", $params, $ExecState);
+			$res = $GLOBALS['system']->db_query("INSERT INTO `teamchat`(`date`, `uid`, `text`, `sid`, `username`) VALUES (:date, :uid, :text, :sid, :username);", $params, $ExecState);
 			self::DeleteOldLines();
 			//if($ExecState===TRUE){echo "success";}else{echo "failed";}
 			//echo $res;
@@ -80,7 +80,7 @@
 			$args = array(
 				array(":sid", $GLOBALS['vars']['sid'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("DELETE FROM teamchat where sid = :sid ORDER BY id DESC LIMIT 30, 1000", $args);
+			$res = $GLOBALS['system']->db_query("DELETE FROM teamchat where sid = :sid ORDER BY id DESC LIMIT 30, 1000", $args);
 		}
 
 	

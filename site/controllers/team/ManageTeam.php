@@ -25,7 +25,7 @@
 		function ManageTeam_content(){
 				$content = array
 				  (
-				  array("{title}", $GLOBALS['COMMON']->l('team_ManageTeam_title')),
+				  array("{title}", $GLOBALS['system']->l('team_ManageTeam_title')),
 				  array("{TableRows}", self::GetTeam()),
 				 );
 			 
@@ -33,13 +33,13 @@
 		}
 		
 		function GetTeam(){
-			$TeamInfo = $GLOBALS['COMMON']->GetTeamMembers($GLOBALS['vars']['tid']);
+			$TeamInfo = $GLOBALS['system']->GetTeamMembers($GLOBALS['vars']['tid']);
 			$res = "";
 			for ($i=0; $i < count($TeamInfo); $i++) {
 				if($TeamInfo[$i]['state']=="1"){$state="active";}
 				if($TeamInfo[$i]['state']=="0"){$state="waiting approval";} 
 				$res .= "<tr>";
-				$res .= "<td>".$GLOBALS['COMMON']->GetUserName($TeamInfo[$i]['uid'])."</td>";
+				$res .= "<td>".$GLOBALS['system']->GetUserName($TeamInfo[$i]['uid'])."</td>";
 				$res .= "<td><a href='index.php?page=message&sec=send&uid=".$TeamInfo[$i]['uid']."'>send message</a></td>";
 				$res .= "<td>".$state."</td>";
 				$res .= "<td>".$TeamInfo[$i]['timing']."</td>";

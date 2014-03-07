@@ -25,7 +25,7 @@
 		function UsersStatistics_content(){
 			$content = array
 			  (
-			  array("{title}", $GLOBALS['COMMON']->l("admin_widgets_UsersStatistics_title")),
+			  array("{title}", $GLOBALS['system']->l("admin_widgets_UsersStatistics_title")),
 			  array("{OnlineMembers}", self::GetOnlineMembers()),
 			  array("{ApprovedMembers}", self::GetApprovedMembers()),
 			  array("{PendingMembers}", self::GetPendingMembers()),
@@ -35,7 +35,7 @@
 		}
 		
 		function GetOnlineMembers(){
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `onlineusers`", array());
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `onlineusers`", array());
 			return count($res);
 		}
 		
@@ -43,7 +43,7 @@
 			$args = array(
 				array(":group", "3", "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Users` WHERE `group` = :group", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `Users` WHERE `group` = :group", $args);
 			return count($res);
 		}
 		
@@ -51,7 +51,7 @@
 			$args = array(
 				array(":group", "7", "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Users` WHERE `group` = :group", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `Users` WHERE `group` = :group", $args);
 			return count($res);
 		}
 
@@ -59,7 +59,7 @@
 			$args = array(
 				array(":group", "5", "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `Users` WHERE `group` = :group", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `Users` WHERE `group` = :group", $args);
 			return count($res);
 		}
 					

@@ -25,7 +25,7 @@
 		function FindVideos_content(){
 			$content = array
 			  (
-			  array("{title}", $GLOBALS['COMMON']->l("admin_widgets_FindVideos_title")),
+			  array("{title}", $GLOBALS['system']->l("admin_widgets_FindVideos_title")),
 			 );
 		return $content;
 		}

@@ -26,7 +26,7 @@
 		function SubtitleListTeams_content(){
 				$content = array
 				  (
-				  array("{title}", $GLOBALS['COMMON']->l("subtitle_SubtitleListTeams_title")),
+				  array("{title}", $GLOBALS['system']->l("subtitle_SubtitleListTeams_title")),
 				  array("{SubtitleTeams}", self::GetSubtitleTeams()),
 				 );
 			 
@@ -37,13 +37,13 @@
 			$args = array(
 				array(":sid", $GLOBALS['vars']['sid'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitlepermissions` WHERE `sid` = :sid", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `subtitlepermissions` WHERE `sid` = :sid", $args);
 			$rows = "";
 			for ($i=0; $i < count($res); $i++) {
 				$index = $i + 1; 
 				$rows.="<div class='subtitlelistteams-row'>";
 				$rows.="<div class='subtitlelistteams-index'>".$index."</div>";
-				$rows.="<div class='subtitlelistteams-user'>".$GLOBALS['COMMON']->GetUserName($res[$i]['uid'])."</div>";
+				$rows.="<div class='subtitlelistteams-user'>".$GLOBALS['system']->GetUserName($res[$i]['uid'])."</div>";
 				$rows.="<div class='subtitlelistteams-team'>".self::GetTeamName($res[$i]['tid'])."</div>";
 				$rows.="<div class='subtitlelistteams-timing'><a href='index.php?page=subtitle&sec=manage&sid=".$res[$i]['sid']."&ssec=SubtitleListTeams&h=switch&uid=".$res[$i]['uid']."&t=timing'><img class='subtitle-teams-state-".$res[$i]['timing']."' /></a></div>";
 				$rows.="<div class='subtitlelistteams-edit'><a href='index.php?page=subtitle&sec=manage&sid=".$res[$i]['sid']."&ssec=SubtitleListTeams&h=switch&uid=".$res[$i]['uid']."&t=edit'><img class='subtitle-teams-state-".$res[$i]['editlines']."' /></a></div>";
@@ -61,14 +61,14 @@
 				array(":sid", $GLOBALS['vars']['sid'], "str"),
 				array(":uid", $GLOBALS['vars']['uid'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitlepermissions` WHERE `sid` = :sid and `uid` = :uid", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `subtitlepermissions` WHERE `sid` = :sid and `uid` = :uid", $args);
 			if($GLOBALS['vars']['t']=="edit"){
 				$args = array(
 					array(":sid", $GLOBALS['vars']['sid'], "str"),
 					array(":uid", $GLOBALS['vars']['uid'], "str"),
 					array(":value", self::SwitchValue($res[0]['editlines'])),
 				);
-				$res = $GLOBALS['COMMON']->db_query("UPDATE `subtitlepermissions` SET `editlines`=:value WHERE `sid` = :sid and `uid` = :uid", $args);
+				$res = $GLOBALS['system']->db_query("UPDATE `subtitlepermissions` SET `editlines`=:value WHERE `sid` = :sid and `uid` = :uid", $args);
 			}
 			if($GLOBALS['vars']['t']=="timing"){
 				$args = array(
@@ -76,7 +76,7 @@
 					array(":uid", $GLOBALS['vars']['uid'], "str"),
 					array(":value", self::SwitchValue($res[0]['timing'])),
 				);
-				$res = $GLOBALS['COMMON']->db_query("UPDATE `subtitlepermissions` SET `timing`=:value WHERE `sid` = :sid and `uid` = :uid", $args);
+				$res = $GLOBALS['system']->db_query("UPDATE `subtitlepermissions` SET `timing`=:value WHERE `sid` = :sid and `uid` = :uid", $args);
 			}
 			if($GLOBALS['vars']['t']=="add"){
 				$args = array(
@@ -84,7 +84,7 @@
 					array(":uid", $GLOBALS['vars']['uid'], "str"),
 					array(":value", self::SwitchValue($res[0]['addlines'])),
 				);
-				$res = $GLOBALS['COMMON']->db_query("UPDATE `subtitlepermissions` SET `addlines`=:value WHERE `sid` = :sid and `uid` = :uid", $args);
+				$res = $GLOBALS['system']->db_query("UPDATE `subtitlepermissions` SET `addlines`=:value WHERE `sid` = :sid and `uid` = :uid", $args);
 			}
 			if($GLOBALS['vars']['t']=="del"){
 				$args = array(
@@ -92,7 +92,7 @@
 					array(":uid", $GLOBALS['vars']['uid'], "str"),
 					array(":value", self::SwitchValue($res[0]['deletelines'])),
 				);
-				$res = $GLOBALS['COMMON']->db_query("UPDATE `subtitlepermissions` SET `deletelines`=:value WHERE `sid` = :sid and `uid` = :uid", $args);
+				$res = $GLOBALS['system']->db_query("UPDATE `subtitlepermissions` SET `deletelines`=:value WHERE `sid` = :sid and `uid` = :uid", $args);
 			}
 			if($GLOBALS['vars']['t']=="chk"){
 				$args = array(
@@ -100,7 +100,7 @@
 					array(":uid", $GLOBALS['vars']['uid'], "str"),
 					array(":value", self::SwitchValue($res[0]['checklines'])),
 				);
-				$res = $GLOBALS['COMMON']->db_query("UPDATE `subtitlepermissions` SET `checklines`=:value WHERE `sid` = :sid and `uid` = :uid", $args);
+				$res = $GLOBALS['system']->db_query("UPDATE `subtitlepermissions` SET `checklines`=:value WHERE `sid` = :sid and `uid` = :uid", $args);
 			}
 			
 		}
@@ -115,11 +115,11 @@
 				array(":sid", $GLOBALS['vars']['sid'], "str"),
 				array(":uid", $GLOBALS['vars']['uid'], "str"),
 			);
-			$res = $GLOBALS['COMMON']->db_query("DELETE FROM `subtitlepermissions` WHERE `sid` = :sid and `uid` = :uid", $args);
+			$res = $GLOBALS['system']->db_query("DELETE FROM `subtitlepermissions` WHERE `sid` = :sid and `uid` = :uid", $args);
 		}
 		
 		function GetTeamName($tid){
-			$TeamInfo = $GLOBALS['COMMON']->GetTeamInfo($tid);
+			$TeamInfo = $GLOBALS['system']->GetTeamInfo($tid);
 			return $TeamInfo[0]['title'];
 		}
 	

@@ -25,7 +25,7 @@
 		function FaqList_content(){
 				$content = array
 				  (
-				  array("{title}", $GLOBALS['COMMON']->l("faq_FaqList_title")),
+				  array("{title}", $GLOBALS['system']->l("faq_FaqList_title")),
 				  array("{questions}", self::ListQuestions()),
 				 );
 			 
@@ -34,7 +34,7 @@
 		
 		function ListQuestions(){
 			$args = array();
-			$questions = $GLOBALS['COMMON']->db_query("SELECT * FROM faq", $args);
+			$questions = $GLOBALS['system']->db_query("SELECT * FROM faq", $args);
 			$res = "<ul>";
 			for ($i=0; $i < count($questions); $i++) { 
 				$res .= "<li><a href='index.php?page=faq&sec=list&qid=".$questions[$i]['id']."'>".$questions[$i]['q']."</a></li>";

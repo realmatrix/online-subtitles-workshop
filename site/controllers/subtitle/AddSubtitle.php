@@ -25,19 +25,19 @@
 		}
 				
 		function AddSubtitle_content(){
-			$VideoInfo = $GLOBALS['COMMON']->GetVideoInfo($GLOBALS['vars']['vid']);
+			$VideoInfo = $GLOBALS['system']->GetVideoInfo($GLOBALS['vars']['vid']);
 				$content = array
 				  (
 				  array("{vid}", $GLOBALS['vars']['vid']),
-				  array("{AddSubtitle}", $GLOBALS['COMMON']->l('subtitle_AddSubtitle_AddSubtitle')),
-				  array("{ReleaseName}", $GLOBALS['COMMON']->l('subtitle_AddSubtitle_ReleaseName')),
-				  array("{Language}", $GLOBALS['COMMON']->l('subtitle_AddSubtitle_Language')),
-				  array("{Country}", $GLOBALS['COMMON']->l('subtitle_AddSubtitle_Country')),
-				  array("{Version}", $GLOBALS['COMMON']->l('subtitle_AddSubtitle_Version')),
-				  array("{Fps}", $GLOBALS['COMMON']->l('subtitle_AddSubtitle_FPS')),
-				  array("{Format}", $GLOBALS['COMMON']->l('subtitle_AddSubtitle_Format')),
-				  array("{NoCDs}", $GLOBALS['COMMON']->l('subtitle_AddSubtitle_CDS')),
-				  array("{submit}", $GLOBALS['COMMON']->l('subtitle_AddSubtitle_Submit')),
+				  array("{AddSubtitle}", $GLOBALS['system']->l('subtitle_AddSubtitle_AddSubtitle')),
+				  array("{ReleaseName}", $GLOBALS['system']->l('subtitle_AddSubtitle_ReleaseName')),
+				  array("{Language}", $GLOBALS['system']->l('subtitle_AddSubtitle_Language')),
+				  array("{Country}", $GLOBALS['system']->l('subtitle_AddSubtitle_Country')),
+				  array("{Version}", $GLOBALS['system']->l('subtitle_AddSubtitle_Version')),
+				  array("{Fps}", $GLOBALS['system']->l('subtitle_AddSubtitle_FPS')),
+				  array("{Format}", $GLOBALS['system']->l('subtitle_AddSubtitle_Format')),
+				  array("{NoCDs}", $GLOBALS['system']->l('subtitle_AddSubtitle_CDS')),
+				  array("{submit}", $GLOBALS['system']->l('subtitle_AddSubtitle_Submit')),
 				  array("{SubtitleLanguages}", self::languages()),
 				  array("{SubtitleCountry}", self::countries()),
 				  array("{SubtitleCDS}", self::cds()),
@@ -45,7 +45,7 @@
 				  array("{SubtitleFPSmilsec}", self::numbers()),
 				  array("{SubtitleFormats}", self::formats()),
 				  array("{RefreshSubtitles}", self::$RefreshSubtitles),
-				  array("{Video}", $GLOBALS['COMMON']->l('subtitle_AddSubtitle_videotitle')),
+				  array("{Video}", $GLOBALS['system']->l('subtitle_AddSubtitle_videotitle')),
 				  array("{VideoTitle}", $VideoInfo[0]['title']),
 				 );
 			 
@@ -53,7 +53,7 @@
 		}
 		
 		function languages(){
-			$languages = $GLOBALS['COMMON']->GetLanguages();
+			$languages = $GLOBALS['system']->GetLanguages();
 			for ($i=0; $i < count($languages); $i++) { 
 				$res .= "<option value='".$languages[$i]['id']."'>".$languages[$i]['language']."</option>";
 			}
@@ -61,7 +61,7 @@
 		}
 
 		function cds(){
-			$cds = $GLOBALS['COMMON']->GetCds();
+			$cds = $GLOBALS['system']->GetCds();
 			for ($i=0; $i < count($cds); $i++) { 
 				$res .= "<option value='".$cds[$i]['id']."'>".$cds[$i]['cd']."</option>";
 			}
@@ -76,7 +76,7 @@
 		}			
 
 		function formats(){
-			$formats = $GLOBALS['COMMON']->GetFormats();
+			$formats = $GLOBALS['system']->GetFormats();
 			for ($i=0; $i < count($formats); $i++) { 
 				$res .= "<option value='".$formats[$i]['id']."'>".$formats[$i]['format']."</option>";
 			}
@@ -84,7 +84,7 @@
 		}
 		
 		function countries(){
-			$countries = $GLOBALS['COMMON']->GetCountries();
+			$countries = $GLOBALS['system']->GetCountries();
 			$res = "";
 			for ($i=0; $i < count($countries); $i++) { 
 				$res.="<option value='".$countries[$i]['id']."'>".$countries[$i]['short_name']."</option>";
@@ -93,13 +93,13 @@
 		}
 		
 		function GetCD($id){
-			$cd = $GLOBALS['COMMON']->GetCDById($id);
+			$cd = $GLOBALS['system']->GetCDById($id);
 			$res = $cd[0]['cd'];
 			return $res;
 		}
 		
 		function CreateSubtitle(){
-			$key = $_SESSION['id'].$GLOBALS['COMMON']->GetMicroTime().$GLOBALS['COMMON']->GenRandomStr(5);
+			$key = $_SESSION['id'].$GLOBALS['system']->GetMicroTime().$GLOBALS['system']->GenRandomStr(5);
 			$params = array(
 				array(":fpssec", $GLOBALS['vars']['fpssec'], "str"),
 				array(":fpsmilsec", $GLOBALS['vars']['fpsmilsec'], "str"),
@@ -114,17 +114,17 @@
 				array(":key", $key, "str"),
 			);
 			//creating subtitle
-			$res=$GLOBALS['COMMON']->db_query("INSERT INTO `subtitles` (`fps_sec`, `fps_mil_sec`, `release_name`, `version`, `language`, `format`, `cds`, `vid`, `country`, `uid`, `key`) VALUES (:fpssec, :fpsmilsec, :releasename, :version, :language, :format, :cds, :vid, :country, :uid, :key);", $params, $ExecState);
+			$res=$GLOBALS['system']->db_query("INSERT INTO `subtitles` (`fps_sec`, `fps_mil_sec`, `release_name`, `version`, `language`, `format`, `cds`, `vid`, `country`, `uid`, `key`) VALUES (:fpssec, :fpsmilsec, :releasename, :version, :language, :format, :cds, :vid, :country, :uid, :key);", $params, $ExecState);
 			if($ExecState === TRUE){$GLOBALS['SUCCESS'][]="Subtitle '".$GLOBALS['vars']['ReleaseName']."' Added Successfully";} else {$GLOBALS['ERROR'][]="Adding Subtitle '".$GLOBALS['vars']['ReleaseName']."' Failed";}
 			//creating cds
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitles` WHERE `key` = :key", array(array(":key", $key, "str")));
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `subtitles` WHERE `key` = :key", array(array(":key", $key, "str")));
 			$values = "";
 			for ($i=0; $i < self::GetCD($res[0]['cds']); $i++) {
 				$counter = $i + 1; 
 				if($i==self::GetCD($res[0]['cds'])-1){$values .= "('".$res[0]['id']."', 'CD ".$counter."')";}else{$values .= "('".$res[0]['id']."', 'CD ".$counter."'),";}
 			}
 			$args = array();
-			$res = $GLOBALS['COMMON']->db_query("INSERT INTO `subtitlecds` (`sid`, `title`) VALUES ".$values.";", $args, $ExecState);
+			$res = $GLOBALS['system']->db_query("INSERT INTO `subtitlecds` (`sid`, `title`) VALUES ".$values.";", $args, $ExecState);
 			if($ExecState === TRUE){} else {$GLOBALS['ERROR'][]="Creating subtitle '".$GLOBALS['vars']['ReleaseName']."' CDS Failed";}
 		}
 	

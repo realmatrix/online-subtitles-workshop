@@ -25,7 +25,7 @@
 		function EditUsersForm_content(){
 			$content = array
 			  (
-			  array("{title}", $GLOBALS['COMMON']->l("admin_widgets_EditUsersForm_title")),
+			  array("{title}", $GLOBALS['system']->l("admin_widgets_EditUsersForm_title")),
 			  array("{page}", $GLOBALS['vars']['page']),
 			  array("{sec}", $GLOBALS['vars']['sec']),
 			  array("{tusername}", $GLOBALS['vars']['username']),

@@ -35,7 +35,7 @@
 		
 		function widget_UserInfo_render(){
 			$array = array(
-				array("{WelcomeBack}", $GLOBALS['COMMON']->l('login_welcomeback')),
+				array("{WelcomeBack}", $GLOBALS['system']->l('login_welcomeback')),
 				array("{UserName}", $_SESSION['username']),
 				array("{CreatedVideos}", self::UserVideos()),
 				array("{CreatedSubtitles}", self::UserSubtitles()),
@@ -53,7 +53,7 @@
 			$args = array(
 				array(":uid", $_SESSION['id'], "str")
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `videos` WHERE `uid` = :uid ", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `videos` WHERE `uid` = :uid ", $args);
 			return count($res);
 		}
 		
@@ -61,7 +61,7 @@
 			$args = array(
 				array(":uid", $_SESSION['id'], "str")
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `subtitles` WHERE `uid` = :uid ", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `subtitles` WHERE `uid` = :uid ", $args);
 			return count($res);
 		}
 
@@ -69,7 +69,7 @@
 			$args = array(
 				array(":uid", $_SESSION['id'], "str")
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `privatemessages` WHERE `to` = :uid ", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `privatemessages` WHERE `to` = :uid ", $args);
 			return count($res);
 		}
 		
@@ -77,7 +77,7 @@
 			$args = array(
 				array(":uid", $_SESSION['id'], "str")
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `teamusers` WHERE `uid` = :uid AND `state` = 0", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `teamusers` WHERE `uid` = :uid AND `state` = 0", $args);
 			return count($res);
 		}
 		
@@ -85,7 +85,7 @@
 			$args = array(
 				array(":uid", $_SESSION['id'], "str")
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `teamusers` WHERE `uid` = :uid AND `state` = 1", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `teamusers` WHERE `uid` = :uid AND `state` = 1", $args);
 			return count($res);
 		}
 
@@ -93,12 +93,12 @@
 			$args = array(
 				array(":uid", $_SESSION['id'], "str")
 			);
-			$res = $GLOBALS['COMMON']->db_query("SELECT * FROM `teams` WHERE `owner` = :uid", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `teams` WHERE `owner` = :uid", $args);
 			return count($res);
 		}
 		
 		function FavouriteVideos(){
-			$favourites = $GLOBALS['COMMON']->GetUserFavouriteVideos();
+			$favourites = $GLOBALS['system']->GetUserFavouriteVideos();
 			return count($favourites);
 		}
 		

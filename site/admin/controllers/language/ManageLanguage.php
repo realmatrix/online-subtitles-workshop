@@ -25,7 +25,7 @@
 		function ManageLanguage_content(){
 			$content = array
 			  (
-			  array("{title}", $GLOBALS['COMMON']->l("admin_ManageLanguage_title")),
+			  array("{title}", $GLOBALS['system']->l("admin_ManageLanguage_title")),
 			 );
 		return $content;
 		}

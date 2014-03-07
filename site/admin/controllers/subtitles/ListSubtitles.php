@@ -25,7 +25,7 @@
 		function ListSubtitles_content(){
 			$content = array
 			  (
-			  array("{title}", $GLOBALS['COMMON']->l("admin_widgets_ListSubtitles_title")),
+			  array("{title}", $GLOBALS['system']->l("admin_widgets_ListSubtitles_title")),
 			 );
 		return $content;
 		}
