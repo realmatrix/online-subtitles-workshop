@@ -1,17 +1,17 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.8.1
+-- version 4.1.7
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 14, 2014 at 05:04 PM
--- Server version: 5.5.29
--- PHP Version: 5.3.20
+-- Generation Time: Mar 08, 2014 at 08:56 PM
+-- Server version: 5.6.16
+-- PHP Version: 5.3.28
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- Database: `new_test`
+-- Database: `new`
 --
 
 -- --------------------------------------------------------
@@ -110,7 +110,7 @@ CREATE TABLE IF NOT EXISTS `chat` (
   `text` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
 
 --
 -- Dumping data for table `chat`
@@ -122,7 +122,8 @@ INSERT INTO `chat` (`id`, `date`, `uid`, `text`, `username`) VALUES
 (9, '2014-01-10 13:08:04', 18, '[i]test italic text[/i]', 'test'),
 (10, '2014-01-10 13:08:24', 18, '[u]test under line text[/u]', 'test'),
 (11, '2014-01-10 13:08:41', 18, '[s]smile[/s][s]evilgrin[/s][s]grin[/s][s]happy[/s][s]surprised[/s][s]tongue[/s][s]waii[/s][s]wink[/s]', 'test'),
-(12, '2014-01-10 13:21:00', 18, 'new test', 'test');
+(12, '2014-01-10 13:21:00', 18, 'new test', 'test'),
+(13, '2014-03-07 21:31:45', 18, 'test', 'test');
 
 -- --------------------------------------------------------
 
@@ -796,22 +797,22 @@ INSERT INTO `lang_english` (`id`, `key`, `text`) VALUES
 (16, 'register_UsernameExist', 'Username already exist.'),
 (17, 'register_EmailExist', 'email already exist.'),
 (18, 'register_completed', 'Registration completed successfully, you will now be redirected to home page in 5 seconds.'),
-(19, 'login_username', 'Username:'),
-(20, 'login_password', 'Password:'),
-(21, 'login_submit', 'Log in'),
+(19, 'login_username', 'Username'),
+(20, 'login_password', 'Password'),
+(21, 'login_submit', 'Login'),
 (22, 'login_NoUsername', 'Opps! You don''t enter your username!'),
 (23, 'login_NoPassword', 'Opps! You didn''t enter your passwords!'),
 (24, 'login_usernameaz', 'Invalid username only a-z 0-9 allowed.'),
 (25, 'login_passwordaz', 'Invalid password only a-z 0-9 allowed.'),
 (26, 'login_failed', 'login failed Password was probably incorrect!.'),
-(27, 'login_orregister', 'or register'),
+(27, 'login_orregister', 'Register'),
 (28, 'login_successfull', 'sucessfull login you will be redirected to home page in 5 seconds.'),
 (29, 'login_welcomeback', 'welcome back '),
 (30, 'logout_logout', 'logout'),
 (31, 'home_test_title', 'test title for controller home section home change from language file'),
-(32, 'widget_newsletter_name', 'Name:'),
-(33, 'widget_newsletter_email', 'Email:'),
-(34, 'widget_newsletter_submit', 'submit'),
+(32, 'widget_newsletter_name', 'Name'),
+(33, 'widget_newsletter_email', 'Email'),
+(34, 'widget_newsletter_submit', 'Subscribe'),
 (35, 'widget_quicklinks_addvideo', 'Add Video'),
 (37, 'widget_quicklinks_logout', 'Logout'),
 (38, 'video_AddVideo_title', 'Add Video'),
@@ -1032,15 +1033,14 @@ CREATE TABLE IF NOT EXISTS `onlineusers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1613 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1678 ;
 
 --
 -- Dumping data for table `onlineusers`
 --
 
 INSERT INTO `onlineusers` (`id`, `session`, `time`, `username`) VALUES
-(1611, '1pi8kogrflbucun0htgsmb5m50', 1389718444, ''),
-(1612, 'q3509kn4ro10no9nlcamk0ooi4', 1389718825, '');
+(1677, 'eu5cl8kmf53erg86kb76ei4v74', 1394312001, '');
 
 -- --------------------------------------------------------
 
@@ -1233,7 +1233,7 @@ CREATE TABLE IF NOT EXISTS `systemcron` (
 --
 
 INSERT INTO `systemcron` (`id`, `job`, `frequancy`, `last_run`) VALUES
-(1, 'AutoTranslation', 300, 1389718826);
+(1, 'AutoTranslation', 300, 1394312063);
 
 -- --------------------------------------------------------
 
@@ -1532,28 +1532,28 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `BirthYear`, `group`, `key`, `LastLogin`, `KeyTime`, `RegisterationDate`, `state`, `EmailVerification`, `birthdate`) VALUES
-(18, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.test', 2009, 1, 'ZqG7vMSV9QpV1y6FOW39PQJGMhjjxR', 1389667538, 1389652005, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(19, 'ghfghh', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'dsd@sd.sd', 2006, 3, 'xMcYCu2frdZfIU9V8em06bhkbOXNbH', 0, 1389652005, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(20, 'wejhg', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'aaa@aaa.aaa', 1919, 3, 'Zl987jon1mTsbk9MMbat5OgxOZ2i8Z', 0, 1389652005, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(21, 't567567567', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'tryrt@erttr.rrt', 1917, 3, 'op9yp1sjqEY6fSkee0jk7DoWswjGBe', 0, 1389652005, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(22, 'test2', '109f4b3c50d7b0df729d299bc6f8e9ef9066971f', 'test2@test2.com', 2010, 3, 'a8raREssBcSPZkplZRKigrmuQryyRi', 0, 1389652006, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(23, 'test3', '3ebfa301dc59196f18593c45e519287a23297589', 'test3@test3.com', 2003, 3, 'K1SDrCvFaU7SnMGH66syHX63Vi9j6T', 0, 1389652006, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(24, 'test4', '1ff2b3704aede04eecb51e50ca698efd50a1379b', 'test4@test4.com', 2002, 3, 'MSgpB6DD34Ouse2TiKSrT6nzzB5lTH', 0, 1389652006, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(25, 'test5', '911ddc3b8f9a13b5499b6bc4638a2b4f3f68bf23', 'test5@test5.com', 2001, 3, 'Z9ABpdShEaeEhZ9je0KLmMSp8oIAXc', 0, 1389652006, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(26, 'test6', 'a66df261120b6c2311c6ef0b1bab4e583afcbcc0', 'test6@test6.com', 2005, 3, 'UmFOhNpvMWDcRKRyWH327VqqH2L5Ww', 0, 1389652006, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(27, 'test7', 'ea3243132d653b39025a944e70f3ecdf70ee3994', 'test7@test7.com', 2002, 3, 'wKFYXy8ZoxO46FJlYfYsXFsZBFKzSn', 0, 1389652006, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(28, 'test8', 'd03f9d34194393019e6d12d7c942827ebd694443', 'test8@test8.com', 1999, 3, 'pFOwTcuUGJj1mO5aAwDdv17OMTrZpO', 0, 1389652024, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(29, 'test9', '53d525836cc96d089a5a4218b464fda532f7debe', 'test9@test9.com', 2001, 3, 'uJirVSzAq9eh8DH060OtBNPcOXgYUn', 0, 1389652024, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(30, 'test10', '168f4029f416ee06565f12e697dfc1534ae69d32', 'test10@test10.com', 2002, 3, 'w51QwpArpnAp2zxL0LUs13OLp4PKdj', 0, 1389652024, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(31, 'test11', '100c4e57374fc998e57164d4c0453bd3a4876a58', 'test11@test11.com', 2004, 3, 'eyBJRwdRpGD80PlA2LgZbMTitoruyU', 0, 1389652024, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(32, 'test12', '4ff1a33e188b7b86123d6e3be2722a23514a83b4', 'test12@test12.com', 1999, 3, 'JWrsgrMc1IPyxgqUg8XvAJIrZrwyMd', 0, 1389652024, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(33, 'test13', 'd804cd9cc0c42b0652bab002f67858ab803c40c6', 'test13@test13.com', 2005, 3, '1Nvg2fpdNVZK6QKxQvNPhBMYHmEjuU', 0, 1389652024, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(34, 'test14', 'd79336a97da7d284c0fe15497d2fa944d1f2abb1', 'test14@test14.com', 2003, 3, 'TloGLeVS4zBWjTDOoX5UAJgQoHYyx6', 0, 1389652025, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(35, 'test15', '61bb70fa60368f069e62d601c357d203700ab2d2', 'test15@test15.com', 2000, 3, 'Fh8LlXUZAb3Vvy28BPFMXmwN5ingPh', 0, 1389652025, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(36, 'test16', '1fbefee9cfb86926757519357e077fd6a21aef0f', 'test16@test16.com', 1998, 3, 'gUL5hZWrLJrvaQxdbZBJRnxiZzVNTi', 0, 1389652025, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(37, 'test17', '08a25c0f270b29aeba650e6b2d1a9947a778c5da', 'test17@test17.com', 1996, 3, '7dQc5huy9BpuTOpxz1NS55hmzAl7b7', 0, 1389652025, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(38, 'test18', 'cfc996a3aaac95f0fb508f46499dcb72b6d0abee', 'test18@jkhfgkjfg.com', 2001, 3, 'kA7TtheLgmd3RcolWRypeWkQqRZh5i', 0, 1389659507, '2014-01-12 23:23:52', 1, 0, '2001-10-11'),
-(41, 'test20', '57e5a4df68387d1d97210cf40c41104ce9256cf6', 'test20@test20.com', 2006, 3, 'wyCCsbIOCtSrn9e7nJcD2GpQmQm9Ci', 1389667556, 1389667518, '2014-01-14 02:45:17', 1, 0, '2006-09-12');
+(18, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.test', 2009, 1, 'EkTvdWUbrAg7y5WThNoCPyATUI0MM7', 1394311399, 1394310497, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(19, 'ghfghh', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'dsd@sd.sd', 2006, 3, 'BU76Rl9wKGCII2IvK0agiEcPmAwxoU', 0, 1394310497, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(20, 'wejhg', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'aaa@aaa.aaa', 1919, 3, 'melcrgIyXtszEd2lJjqtV753rt0E0J', 0, 1394310498, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(21, 't567567567', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'tryrt@erttr.rrt', 1917, 3, 'EoPIXRDNr8EO2Pz5e2EuYkzkKPzux6', 0, 1394310498, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(22, 'test2', '109f4b3c50d7b0df729d299bc6f8e9ef9066971f', 'test2@test2.com', 2010, 3, 'miMgbAsUII26dwutnli5q2pz5ViYzS', 0, 1394310498, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(23, 'test3', '3ebfa301dc59196f18593c45e519287a23297589', 'test3@test3.com', 2003, 3, 'VVBeMvoPPjFZwrEBPu2Yew5XHatUHv', 0, 1394310498, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(24, 'test4', '1ff2b3704aede04eecb51e50ca698efd50a1379b', 'test4@test4.com', 2002, 3, 'rEc8IyF8ur37uER9X32RAY3kBgT9Jf', 0, 1394310498, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(25, 'test5', '911ddc3b8f9a13b5499b6bc4638a2b4f3f68bf23', 'test5@test5.com', 2001, 3, 'ZpcNlHHeq8sqbhcG5f9S7D0lKw1VWv', 0, 1394310498, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(26, 'test6', 'a66df261120b6c2311c6ef0b1bab4e583afcbcc0', 'test6@test6.com', 2005, 3, 'SY9GOjnEyj3uiMaOM6bIc55Lj6k4iZ', 0, 1394310498, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(27, 'test7', 'ea3243132d653b39025a944e70f3ecdf70ee3994', 'test7@test7.com', 2002, 3, 'ReT4ckjdgYhKyf1w2JeSay9FVhteL0', 0, 1394310498, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(28, 'test8', 'd03f9d34194393019e6d12d7c942827ebd694443', 'test8@test8.com', 1999, 3, '3nQltGBvITVCEYppBoa5p8LnrEiuwU', 0, 1394310606, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(29, 'test9', '53d525836cc96d089a5a4218b464fda532f7debe', 'test9@test9.com', 2001, 3, 'n8Zn5yH31s0mg3Jjq5elBKlrmLp3Pm', 0, 1394310606, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(30, 'test10', '168f4029f416ee06565f12e697dfc1534ae69d32', 'test10@test10.com', 2002, 3, 'hbzfjgHEjiOhFIYnbwODeaphDCl1Ll', 0, 1394310606, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(31, 'test11', '100c4e57374fc998e57164d4c0453bd3a4876a58', 'test11@test11.com', 2004, 3, 'J6qk9eZ1HCjpYZHW4y1Bz3BRAGjFHa', 0, 1394310606, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(32, 'test12', '4ff1a33e188b7b86123d6e3be2722a23514a83b4', 'test12@test12.com', 1999, 3, 'tv0JWl654E4sFowz62xCdyIlmq9XmB', 0, 1394310606, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(33, 'test13', 'd804cd9cc0c42b0652bab002f67858ab803c40c6', 'test13@test13.com', 2005, 3, 'qbzxEeQfqPvaObpgq1T1nyNodwuR47', 0, 1394310606, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(34, 'test14', 'd79336a97da7d284c0fe15497d2fa944d1f2abb1', 'test14@test14.com', 2003, 3, 'Nox43sGB617qjxVLw0Jl3RAmL66zZb', 0, 1394310606, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(35, 'test15', '61bb70fa60368f069e62d601c357d203700ab2d2', 'test15@test15.com', 2000, 3, 'n9A40PTf5QKFbUvNqe0CoyAAa35Hmu', 0, 1394310606, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(36, 'test16', '1fbefee9cfb86926757519357e077fd6a21aef0f', 'test16@test16.com', 1998, 3, 'Sn43LDRt7URYMbDh4ViAR7rCuc8CN9', 0, 1394310606, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(37, 'test17', '08a25c0f270b29aeba650e6b2d1a9947a778c5da', 'test17@test17.com', 1996, 3, '0h7s7Pj36ZIr0YaAsv1WxN6tQzMFt3', 0, 1394310606, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(38, 'test18', 'cfc996a3aaac95f0fb508f46499dcb72b6d0abee', 'test18@jkhfgkjfg.com', 2001, 3, 'sDGYHWFRf6gWzdG5EQECW7oopCBLxq', 0, 1394232415, '2014-01-12 23:23:52', 1, 0, '2001-10-11'),
+(41, 'test20', '57e5a4df68387d1d97210cf40c41104ce9256cf6', 'test20@test20.com', 2006, 3, 'wyi9R68SPh3d9pue4lpxgrjeZv9UVU', 1389667556, 1394232415, '2014-01-14 02:45:17', 1, 0, '2006-09-12');
 
 -- --------------------------------------------------------
 
@@ -1656,7 +1656,7 @@ INSERT INTO `videos` (`id`, `uid`, `title`, `other_title`, `type`, `category`, `
 (16, 18, 'Riddick (2013)', 'Riddick', 1, 10, 14, 236, '1,21,24', '2013-09-06', 'Vin Diesel, Karl Urban, Katee Sackhoff', 'David Twohy', 90, 'Riddick', 'Left for dead on a sun-scorched planet, Riddick finds himself up against an alien race of predators. Activating an emergency beacon alerts two ships: one carrying a new breed of mercenary, the other captained by a man from Riddick''s past.', '16_181379538810wvn1x.jpg', '', 'http://www.youtube.com/watch?v=zH3O-CeZckE', 0, '', 1, 1, 48),
 (17, 18, 'Thor: The Dark World', 'Thor 2013', 1, 10, 14, 236, '1,2,10', '2013-11-08', 'Chris Hemsworth, Natalie Portman, Christopher Eccleston', 'Alan Taylor', 100, 'Thor, 2013, Dark, World', 'Faced with an enemy that even Odin and Asgard cannot withstand, Thor must embark on his most perilous and personal journey yet, one that will reunite him with Jane Foster and force him to sacrifice everything to save us all.', '17_181379539607ivkN3.jpg', '', 'http://www.youtube.com/watch?v=npvJ9FTgZbM', 0, '', 1, 1, 1),
 (18, 18, 'World War Z', 'World War Z 2013', 1, 10, 14, 236, '1,2,14,21,24', '2013-06-21', 'Brad Pitt, Mireille Enos, Daniella Kertesz', 'Marc Forster', 95, 'World, War, 2013', 'United Nations employee Gerry Lane traverses the world in a race against time to stop the Zombie pandemic that is toppling armies and governments, and threatening to destroy humanity itself.', '18_181379540179OpIRB.jpg', '', 'http://www.youtube.com/watch?v=HcwTxRuq-uk', 0, '', 1, 1, 0),
-(19, 18, 'Man of Steel (2013)', 'Man of Steel', 1, 10, 14, 236, '1,2,10,21', '2013-06-14', 'Henry Cavill, Amy Adams, Michael Shannon', 'Zack Snyder', 90, 'Man, Steel, 2013', 'A young itinerant worker is forced to confront his secret extraterrestrial heritage when Earth is invaded by members of his race.', '19_181379540798E44XC.jpg', '', 'http://www.youtube.com/watch?v=T6DJcgm3wNY', 0, '', 1, 1, 0),
+(19, 18, 'Man of Steel (2013)', 'Man of Steel', 1, 10, 14, 236, '1,2,10,21', '2013-06-14', 'Henry Cavill, Amy Adams, Michael Shannon', 'Zack Snyder', 90, 'Man, Steel, 2013', 'A young itinerant worker is forced to confront his secret extraterrestrial heritage when Earth is invaded by members of his race.', '19_181379540798E44XC.jpg', '', 'http://www.youtube.com/watch?v=T6DJcgm3wNY', 0, '', 1, 1, 2),
 (20, 18, 'R.I.P.D. (2013)', 'R.I.P.D.', 1, 10, 14, 236, '1,5,6,10', '2013-07-19', 'Ryan Reynolds, Jeff Bridges, Mary-Louise Parker', 'Robert Schwentke', 90, 'R.I.P.D., 2013', 'A recently slain cop joins a team of undead police officers working for the Rest in Peace Department and tries to find the man who murdered him.', '20_1813795412300JEoP.jpg', '', 'http://www.youtube.com/watch?v=X07xNrVd7DU', 0, '', 1, 1, 0),
 (21, 18, '2 Guns (2013)', '2 Guns', 1, 10, 14, 236, '1,5,6,8,24', '2013-08-02', 'Denzel Washington, Mark Wahlberg, Paula Patton', 'Baltasar Kormákur', 90, 'guns', 'A DEA agent and a naval intelligence officer find themselves on the run after a botched attempt to infiltrate a drug cartel. While fleeing, they learn the secret of their shaky alliance: Neither knew that the other was an undercover agent.', '21_181379612635T4A25.jpg', '', 'http://www.youtube.com/watch?v=dVNe3RK2fgI', 0, '', 1, 1, 1),
 (22, 18, 'Percy Jackson: Sea of Monsters (2013)', 'Percy Jackson', 1, 10, 14, 236, '2,9,10', '2013-08-07', 'Logan Lerman, Alexandra Daddario, Brandon T. Jackson', 'Thor Freudenthal', 90, 'Percy, Jackson, Sea, Monsters, 2013', 'In order to restore their dying safe haven, the son of Poseidon and his friends embark on a quest to the Sea of Monsters to find the mythical Golden Fleece while trying to stop an ancient evil from rising.', '22_1813796135777IswV.jpg', '', 'http://www.youtube.com/watch?v=5KoOtiuSjuI', 0, '', 1, 1, 0),
