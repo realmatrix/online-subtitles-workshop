@@ -1,13 +1,4 @@
   <style>
-    .etabs { margin: 0; padding: 0; }
-    .tab {vertical-align: bottom; display:inline-block; zoom:1; *display:inline; background: #eee; border: solid 1px #0A3D72; border-bottom: none; -moz-border-radius: 4px 4px 0 0; -webkit-border-radius: 4px 4px 0 0;}
-    .tab a {height: 36px; background: url("templates/default2/tmp/images/cathead-m.gif") repeat-x left top; /*font-size: 14px;*/ line-height: 3em; display: block; padding: 0 10px; outline: none; color: white;}
-    .tab a:hover { text-decoration: none; color: #F88017;}
-    .tab.active { height: 36px; background: url("templates/default2/tmp/images/cathead-m.gif") repeat-x left top; /*background: #fff;*/ /*padding-top: 2px;*/ position: relative; top: 1px; border-color: #666;}
-    .tab a.active { /*font-weight: bold;*/ color: #F88017;}
-    .tab-container .panel-container { background: #fff; border: solid #666 1px; padding: 10px; -moz-border-radius: 0 4px 4px 4px; -webkit-border-radius: 0 4px 4px 4px; border-color: rgb(215, 229, 242) rgb(215, 229, 242);}
-    .panel-container { margin-bottom: 0px; }
-    .tab-containr-wrap{background-color: #EBF4FC; margin-bottom: 10px; padding: 5px; border-width: 1px; border-style: solid; border-color: rgb(215, 229, 242) rgb(215, 229, 242);}
 
 .LatestStatrtedSubtitles-container{
 	width: 100%;
@@ -24,7 +15,7 @@
 		display: inline-block;
 }
 .LatestStatrtedSubtitles-row-even{margin-right: 2px;}
-..LatestStatrtedSubtitles-row-odd{}
+.LatestStatrtedSubtitles-row-odd{}
 .LatestStatrtedSubtitles-row-row{
 	width: 100%;
 	float: left;
@@ -65,38 +56,36 @@
     });
   </script>  
 
-
-<div id="tab-container2" class='tab-container'>
- <ul class='etabs'>
-   <li class='tab'><a href="#tabs1-a">Latest Started Translations</a></li><!--
-   --><li class='tab'><a href="#tabs1-b">Latest Added Subtitles</a></li><!--
-   --><li class='tab'><a href="#tabs1-c">Latest New Versions</a></li><!--
-   --><li class='tab'><a href="#tabs1-d">Finished Translations</a></li>
- </ul>
- <div class='tab-containr-wrap'>
- <div class='panel-container'>
-
-
-  <div id="tabs1-a">
-	{StartedTranslations}
+<div class="row">
+	<div class="col-md-13">
+		
+<ul id="latest" class="nav nav-tabs">
+  <li class="active"><a href="#latest-tab1" data-toggle="tab">Latest Started Translations</a></li>
+  <li class="panel-primary"><a href="#latest-tab2" data-toggle="tab">Latest Added Subtitles</a></li>
+  <li class=""><a href="#latest-tab3" data-toggle="tab">Latest New Versions</a></li>
+  <li class=""><a href="#latest-tab4" data-toggle="tab">Finished Translations</a></li>
+</ul>
+ 
+<div id="myTabContent" class="tab-content">
+  <div class="tab-pane fade active in" id="latest-tab1">
+    	{StartedTranslations}
+	<div style='clear:left;'></div>
   </div>
-  <div id="tabs1-b">
-	{AddedSubtitles}
+  <div class="tab-pane fade" id="latest-tab2">
+    	{AddedSubtitles}
+	<div style='clear:left;'></div>
   </div>
-  <div id="tabs1-c">
-	{NewVersions}
+  <div class="tab-pane fade" id="latest-tab3">
+    	{NewVersions}
+	<div style='clear:left;'></div>
   </div>
-  <div id="tabs1-d">
-	{FinishedTranslations}
+  <div class="tab-pane fade" id="latest-tab4">
+    	{FinishedTranslations}
+	<div style='clear:left;'></div>
   </div>
-  
-
- </div>
- </div>
 </div>
 
+	</div>
+</div>
 
-  
-
-
-
+<br />
