@@ -1,17 +1,5 @@
   <style>
-    .etabs { margin: 0; padding: 0; }
-    .tab {vertical-align: bottom; display:inline-block; zoom:1; *display:inline; background: #eee; border: solid 1px #0A3D72; border-bottom: none; -moz-border-radius: 4px 4px 0 0; -webkit-border-radius: 4px 4px 0 0;}
-    .tab a {height: 36px; background: url("templates/default2/tmp/images/cathead-m.gif") repeat-x left top; /*font-size: 14px;*/ line-height: 3em; display: block; padding: 0 10px; outline: none; color: white;}
-    .tab a:hover { text-decoration: none; color: #F88017;}
-    .tab.active { height: 36px; background: url("templates/default2/tmp/images/cathead-m.gif") repeat-x left top; /*background: #fff;*/ /*padding-top: 2px;*/ position: relative; top: 1px; border-color: #666;}
-    .tab a.active { /*font-weight: bold;*/ color: #F88017;}
-    .tab-container .panel-container { background: #fff; border: solid #666 1px; padding: 2px; -moz-border-radius: 0 4px 4px 4px; -webkit-border-radius: 0 4px 4px 4px; border-color: rgb(215, 229, 242) rgb(215, 229, 242);}
-    .panel-container { margin-bottom: 0px; }
-    .tab-containr-wrap{background-color: #EBF4FC; margin-bottom: 10px; padding: 5px; border-width: 1px; border-style: solid; border-color: rgb(215, 229, 242) rgb(215, 229, 242);}
 
-	#tabs4-a, #tabs4-b, #tabs4-c, #tabs4-d{
-		/*clear: left;*/
-	}
 	.widget-latestvideos-all, .widget-latestvideos-movies, .widget-latestvideos-tv, .widget-latestvideos-trailer{
 		/*clear: left;*/
 	}
@@ -79,42 +67,36 @@
   </script>  
 
 
-<div id="tab-container4" class='tab-container'>
-
- <ul class='etabs'>
-   <li class='tab'><a href="#tabs4-a">All Videos</a></li><!--
-   --><li class='tab'><a href="#tabs4-b">Movies</a></li><!--
-   --><li class='tab'><a href="#tabs4-c">TV Shows</a></li><!--
-   --><li class='tab'><a href="#tabs4-d">Trailers</a></li>
- </ul>
- <div class='tab-containr-wrap'>
- <div class='panel-container'>
-
-
-  <div id="tabs4-a">
-	{AllVideos}
+<div class="row">
+	<div class="col-md-12">
+		
+<ul id="lvbc" class="nav nav-tabs">
+  <li class="active"><a href="#lvbc-all" data-toggle="tab">All Videos</a></li>
+  <li class=""><a href="#lvbc-movies" data-toggle="tab">Movies</a></li>
+  <li class=""><a href="#lvbc-tv" data-toggle="tab">TV Shows</a></li>
+  <li class=""><a href="#lvbc-trailer" data-toggle="tab">Trailers</a></li>
+</ul>
+ 
+<div id="myTabContent" class="tab-content">
+  <div class="tab-pane fade active in" id="lvbc-all">
+    	{AllVideos}
 	<div style='clear:left;'></div>
   </div>
-  <div id="tabs4-b">
-	{Movies}
+  <div class="tab-pane fade" id="lvbc-movies">
+    	{Movies}
 	<div style='clear:left;'></div>
   </div>
-  <div id="tabs4-c">
-	{TvShows}
+  <div class="tab-pane fade" id="lvbc-tv">
+    	{TvShows}
 	<div style='clear:left;'></div>
   </div>
-  <div id="tabs4-d">
-	{Trailers}
+  <div class="tab-pane fade" id="lvbc-trailer">
+    	{Trailers}
 	<div style='clear:left;'></div>
   </div>
-
-
- </div>
-</div>
 </div>
 
+	</div>
+</div>
 
-  
-
-
-
+<br />
