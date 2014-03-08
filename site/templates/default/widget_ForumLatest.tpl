@@ -17,7 +17,7 @@
 		padding-right: 1px;
 	}
 	.accordion-list-container{
-		height: 270px;
+		height: 240px;
 		overflow-y: scroll;
 		overflow-x: none;
 	}
@@ -26,50 +26,70 @@
 
 <div class="row">
 	<div class="col-md-11">
-<div class="accordion" id="accordion2">
-  <div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-        Latest Topics
-      </a>
+		
+<div class="bs-example">
+    <div class="panel-group" id="accordion">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Latest Topics</a>
+      </h4>
     </div>
-    <div id="collapseOne" class="accordion-body collapse in">
-      <div class="accordion-inner">
-        <div class="accordion-list-container">
+    <div id="collapseOne" class="panel-collapse collapse in">
+      <div class="panel-body">
+                <div class="accordion-list-container">
         	{LatestTopic}
         </div>
       </div>
     </div>
   </div>
-  <div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-        Latest Posts
-      </a>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Latest Posts</a>
+      </h4>
     </div>
-    <div id="collapseTwo" class="accordion-body collapse">
-      <div class="accordion-inner">
-      	<div class="accordion-list-container">
+    <div id="collapseTwo" class="panel-collapse collapse">
+      <div class="panel-body">
         {LatestPost}
-        </div>
       </div>
     </div>
   </div>
-  <div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
-        Top Topics
-      </a>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Top Topics</a>
+      </h4>
     </div>
-    <div id="collapseThree" class="accordion-body collapse">
-      <div class="accordion-inner">
-      	<div class="accordion-list-container">
+    <div id="collapseThree" class="panel-collapse collapse">
+      <div class="panel-body">
         {TopTopics}
-        </div>
       </div>
     </div>
   </div>
+</div>
 </div>		
+
 	</div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
