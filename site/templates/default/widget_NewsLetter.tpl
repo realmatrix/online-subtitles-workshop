@@ -21,18 +21,29 @@
 		    <h3 class="panel-title">News Letter</h3>
 		  </div>
 		  <div class="panel-body">
+		  	
 <div id="NewsLetter" style="width: 99%;">
 <form method="get" action="index.php">			
-		<label for="name" class="nw-label">{NewsLetterName}</label>
-		<input type="text" name="name" class="nw-text" />
-		<label for="email" class="nw-label">{NewsLetterEmail}</label>
-		<input type="text" name="email" class="nw-text" />
-		<div style="width: 100%; text-align: right; padding-top: 2px;"><input type="submit" value="{NewsLetterSubmit}" /></div>
+
+<div class="form-group">
+<div class="col-lg-13">
+<input type="text" class="form-control" id="newsletter-name" name="name" placeholder="{NewsLetterName}" />
+</div>
+</div>
+
+<div class="form-group">
+<div class="col-lg-13">
+<input type="text" class="form-control" id="newsletter-email" name="email" placeholder="{NewsLetterEmail}" />
+</div>
+</div>
+
+<button type="submit" class="btn btn-primary pull-right">{NewsLetterSubmit}</button>		
 
 	<input type="hidden" name="h" value="add"/>
 	<input type="hidden" name="w" value="{w}"/>
 </form>
 </div>	
+
 		  </div>
 		</div>
 	</div>
