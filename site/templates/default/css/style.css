@@ -1,25 +1,25 @@
-/*.accordion{margin-bottom:20px;}*/
-/*.accordion-group{margin-bottom:2px;border:1px solid #428bca;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;}*/
-/*.accordion-heading{border-bottom:0; color: #fff; background-color: #428bca; border-color: #428bca; border-top-color: #428bca; color: white;}*/
-/*.accordion-heading a{color: white;}*/
-/*.accordion-heading a:hover{text-decoration: none;}*/
-/*.accordion-heading .accordion-toggle{display:block;padding:8px 15px;}*/
-/*.accordion-toggle{cursor:pointer;}*/
-/*.accordion-inner{padding:9px 15px;border-top:1px solid #e5e5e5;}*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.tab-content {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-color: #428BCA;
+    padding: 10px;
+}
+.nav-tabs{
+	border-color: #428BCA;
+}
+.nav-tabs > li > a, .nav-tabs > li > a:hover{
+	border-color: #428BCA;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus{
+	border-color: #428BCA;
+	background-color: #428BCA;
+	color: #ffffff;
+}
+.nav-tabs > li.active > a:hover{
+	border-color: #428BCA;
+	background-color: #428BCA;
+}
 .divider-vertical {
     height: 40px;
     margin: 0 9px;
@@ -27,17 +27,14 @@
     border-left: 1px solid #1c2022;
     border-right: 1px solid #3e4a4e;
 }
-
 #footer {
 	background-color: #3e4a4e;
 	padding-top: 5px;
 	padding-bottom: 10px;
 }
-
 #footer .container{
 	color: white;
 }
-
 .panel-title > a:hover{
 	text-decoration: none;
 }

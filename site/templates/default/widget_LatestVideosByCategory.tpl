@@ -68,11 +68,11 @@
 
 
 <div class="row">
-	<div class="col-md-12">
+	<div class="col-md-13">
 		
 <ul id="lvbc" class="nav nav-tabs">
   <li class="active"><a href="#lvbc-all" data-toggle="tab">All Videos</a></li>
-  <li class=""><a href="#lvbc-movies" data-toggle="tab">Movies</a></li>
+  <li class="panel-primary"><a href="#lvbc-movies" data-toggle="tab">Movies</a></li>
   <li class=""><a href="#lvbc-tv" data-toggle="tab">TV Shows</a></li>
   <li class=""><a href="#lvbc-trailer" data-toggle="tab">Trailers</a></li>
 </ul>
