@@ -1,6 +1,6 @@
 <style>
 	#UserInfo{
-		width: 99%;
+		width: 100%;
 	}
 	.widget-userinfo-row{
 		width: 100%;
@@ -28,11 +28,11 @@
 	}
 	.widget-userinfo-left{
 		background-color: #F5FBFE;
-		width: 122px;
+		width: 146px;
 		font-weight: bold;
 	}
 	.widget-userinfo-right{
-		width: 115px;
+		width: 146px;
 		margin-left: 2px;
 	}
 </style>

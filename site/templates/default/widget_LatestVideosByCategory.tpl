@@ -53,10 +53,10 @@
 		line-height: 15px;
 	}
 	.widget-latestvideos-all-rateresult-off, .widget-latestvideos-movies-rateresult-off, .widget-latestvideos-tv-rateresult-off, .widget-latestvideos-trailer-rateresult-off{
-		content: url("templates/default2/tmp/images/star_empty2.png");
+		content: url("{TemplatePath}/tmp/images/star_empty2.png");
 	}
 	.widget-latestvideos-all-rateresult-on, .widget-latestvideos-movies-rateresult-on, .widget-latestvideos-tv-rateresult-on, .widget-latestvideos-trailer-rateresult-on{
-		content: url("templates/default2/tmp/images/star_full2.png");
+		content: url("{TemplatePath}/tmp/images/star_full2.png");
 	}
   </style>
 
@@ -76,7 +76,7 @@
   <li class=""><a href="#lvbc-tv" data-toggle="tab">TV Shows</a></li>
   <li class=""><a href="#lvbc-trailer" data-toggle="tab">Trailers</a></li>
 </ul>
- 
+
 <div id="myTabContent" class="tab-content">
   <div class="tab-pane fade active in" id="lvbc-all">
     	{AllVideos}

@@ -32,7 +32,7 @@
 	text-overflow: ellipsis;
 }
 .LatestStatrtedSubtitles-title:before, .LatestStatrtedSubtitles-version:before, .LatestStatrtedSubtitles-language:before, .LatestStatrtedSubtitles-progress:before, .LatestStatrtedSubtitles-by:before, .LatestStatrtedSubtitles-team:before, .LatestStatrtedSubtitles-join:before{
-	content: url("templates/default2/tmp/sbBullet.bmp");
+	content: url("{TemplatePath}/tmp/sbBullet.bmp");
 	padding-left: 4px;
 	padding-right: 2px;
 }

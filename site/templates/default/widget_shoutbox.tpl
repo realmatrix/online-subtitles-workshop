@@ -140,11 +140,16 @@ var interval = setInterval(GetChat,10000);
 	.shoutbox-line-container{
 		width: 98%;
 		border-width:1px;
-		border-color: rgb(215, 229, 242) rgb(215, 229, 242);
+		/*border-color: rgb(215, 229, 242) rgb(215, 229, 242);*/
+		border-color: white;
 		border-style: solid;
 		margin: 0 auto;
 		margin-top: 2px;
 		margin-bottom: 2px; 
+	}
+	#shoutbox-toolbar{
+		display: inline-block;
+		width: 100%;
 	}
 	#shoutbox-toolbar img{
 		float: right;
@@ -158,15 +163,15 @@ var interval = setInterval(GetChat,10000);
 		height: 16px;
 		cursor: pointer;
 	}
-	.shoutbox-smile{content: url("templates/default2/tmp/smiles/emoticon_smile.png");}
-	.shoutbox-happy{content: url("templates/default2/tmp/smiles/emoticon_happy.png");}
-	.shoutbox-wink{content: url("templates/default2/tmp/smiles/emoticon_wink.png");}
-	.shoutbox-waii{content: url("templates/default2/tmp/smiles/emoticon_waii.png");}
-	.shoutbox-tonge{content: url("templates/default2/tmp/smiles/emoticon_tongue.png");}
-	.shoutbox-tongue{content: url("templates/default2/tmp/smiles/emoticon_tongue.png");}
-	.shoutbox-evilgrin{content: url("templates/default2/tmp/smiles/emoticon_evilgrin.png");}
-	.shoutbox-grin{content: url("templates/default2/tmp/smiles/emoticon_grin.png");}
-	.shoutbox-surprised{content: url("templates/default2/tmp/smiles/emoticon_surprised.png");}
+	.shoutbox-smile{content: url("{TemplatePath}/tmp/smiles/emoticon_smile.png");}
+	.shoutbox-happy{content: url("{TemplatePath}/tmp/smiles/emoticon_happy.png");}
+	.shoutbox-wink{content: url("{TemplatePath}/tmp/smiles/emoticon_wink.png");}
+	.shoutbox-waii{content: url("{TemplatePath}/tmp/smiles/emoticon_waii.png");}
+	.shoutbox-tonge{content: url("{TemplatePath}/tmp/smiles/emoticon_tongue.png");}
+	.shoutbox-tongue{content: url("{TemplatePath}/tmp/smiles/emoticon_tongue.png");}
+	.shoutbox-evilgrin{content: url("{TemplatePath}/tmp/smiles/emoticon_evilgrin.png");}
+	.shoutbox-grin{content: url("{TemplatePath}/tmp/smiles/emoticon_grin.png");}
+	.shoutbox-surprised{content: url("{TemplatePath}/tmp/smiles/emoticon_surprised.png");}
 </style>
 
 
@@ -194,10 +199,10 @@ var interval = setInterval(GetChat,10000);
 		</div>
 	
 	<div id='shoutbox-toolbar'>
-	<img src='templates/default2/tmp/icons/emoticon_smile.png' id='shoutbox-smile-button' onclick="showsmiles();">
-	<img src='templates/default2/tmp/icons/text_underline.png' onclick="addunderline();" onmouseout="setfocus();">
-	<img src='templates/default2/tmp/icons/text_italic.png' onclick="additalic();" onmouseout="setfocus();">
-	<img src='templates/default2/tmp/icons/text_bold.png' onclick="addbold();" onmouseout="setfocus();">
+	<img src='{TemplatePath}/tmp/icons/emoticon_smile.png' id='shoutbox-smile-button' onclick="showsmiles();">
+	<img src='{TemplatePath}/tmp/icons/text_underline.png' onclick="addunderline();" onmouseout="setfocus();">
+	<img src='{TemplatePath}/tmp/icons/text_italic.png' onclick="additalic();" onmouseout="setfocus();">
+	<img src='{TemplatePath}/tmp/icons/text_bold.png' onclick="addbold();" onmouseout="setfocus();">
 	</div>
 	<form>
 		<textarea id='shoutbox-textarea' rows="2" onkeydown="if (event.keyCode == 13) { SendMessage(); return false; }"></textarea>

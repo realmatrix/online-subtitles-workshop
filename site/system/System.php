@@ -214,7 +214,11 @@ class System{
 					$GLOBALS['ERROR'][] = "function not found.";
 					$GLOBALS['ERROR'][] = "BUG URL-> <b>".self::CurrentPageUrl()."</b>";
 				}
+			$TemplateCommon = array(
+			array("{TemplatePath}", "templates/".$GLOBALS['config']['template']),
+			);
 			$render = call_user_func("W".$cwidget."::".$cwidget);
+			$render = array_merge($render, $TemplateCommon);
 			$content = self::render($render, $cwidget);
 			}		
 		return $content;
@@ -283,7 +287,11 @@ class System{
 				$GLOBALS['ERROR'][] = "function '".$args['h']."' not found in controllers/".$controller."/".$section.".php";
 				$GLOBALS['ERROR'][] = "BUG URL-> <b>".self::CurrentPageUrl()."</b>";
 			}
+		$TemplateCommon = array(
+			array("{TemplatePath}", "templates/".$GLOBALS['config']['template']),
+		);
 		$content = call_user_func('C'.$section.'::'.$section);
+		$content = array_merge($content, $TemplateCommon);
 		$options = "";
 		$res = self::RenderView($content, $controller, $section);
 		//if(!array_key_exists($controller.'_'.$section.'_title', $GLOBALS['page'])){$GLOBALS['ERROR'][]= "GLOBALS['page']['".$controller.'_'.$section."_title'] not found inside language file.";}
