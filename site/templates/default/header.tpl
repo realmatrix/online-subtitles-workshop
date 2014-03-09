@@ -22,6 +22,7 @@
               <ul class="dropdown-menu">
                 <li><a href="#"></a></li>
                 <li><a href="index.php?page=search&sec=advanced">Search Subtitles</a></li>
+                <li role="presentation" class="divider"></li>
                 <li><a href="index.php?page=search&sec=advanced">Search Videos</a></li>
               </ul>
             </li>
@@ -37,7 +38,9 @@
               <ul class="dropdown-menu">
                 <li><a href="#"></a></li>
                 <li><a href="index.php?page=message&sec=contact">Contact Us</a></li>
+                <li role="presentation" class="divider"></li>
                 <li><a href="index.php?page=info&sec=about">About us</a></li>
+                <li role="presentation" class="divider"></li>
                 <li><a href="index.php?page=faq&sec=list">FAQ</a></li>
               </ul>
             </li>

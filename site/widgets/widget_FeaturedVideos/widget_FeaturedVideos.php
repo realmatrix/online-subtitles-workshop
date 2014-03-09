@@ -47,11 +47,14 @@
 			$res = $GLOBALS['system']->db_query("SELECT * FROM `videos` WHERE `public` = 1 and `thumbnail` !='' and `featured` = 1 ORDER BY RAND() limit 10", $args);
 			$array = array();
 			for ($i=0; $i < count($res); $i++) {
+				$title = str_replace('"', "", $res[$i]['title']);
+				$title = htmlspecialchars(json_encode($title));
+				$desc = htmlspecialchars(json_encode($res[$i]['synopsis']));
 				$array[] = array('{id'.$i.'}', $res[$i]['id']); 
-				$array[] = array('{title'.$i.'}', str_replace('"', "'", $res[$i]['title']));
+				$array[] = array('{title'.$i.'}', str_replace('"', "'", $title));
 				$array[] = array('{source'.$i.'}', $res[$i]['source']);
 				$array[] = array('{thumbnail'.$i.'}', $res[$i]['thumbnail']);
-				$array[] = array('{description'.$i.'}', str_replace('"', "'", $res[$i]['synopsis']));
+				$array[] = array('{description'.$i.'}', str_replace('"', "'", $desc));
 			}
 			return $array;
 		}

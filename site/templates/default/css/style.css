@@ -38,4 +38,17 @@
 .panel-title > a:hover{
 	text-decoration: none;
 }
-
+.carousel-inner{
+	height: 400px;
+	max-height: 400px;
+	max-width: 100%;
+	background-color: #000000;
+}
+.carousel-inner > .item > img{
+	max-height: 100%;
+	width: auto;
+}
+.carousel-inner a{
+	color: #ffffff;
+	text-decoration: none;
+}
