@@ -103,7 +103,7 @@ var interval = setInterval(GetChat,10000);
 		border-color: rgb(215, 229, 242) rgb(215, 229, 242);
 	}
 	#shoutbox-textarea{
-		width: 95%;
+		width: 100%;
 		vertical-align: top;
 		border-width: 1px;
 		border-style: dashed; 
@@ -148,14 +148,15 @@ var interval = setInterval(GetChat,10000);
 	}
 	#shoutbox-toolbar img{
 		float: right;
-		cursor: hand;
+		cursor: pointer;
 	}
 	.shoutbox-smiles{
 		width: 100%;
 	}
-	.shoutbox-smiles img{
+	#shoutbox-smiles img{
 		width: 16px;
 		height: 16px;
+		cursor: pointer;
 	}
 	.shoutbox-smile{content: url("templates/default2/tmp/smiles/emoticon_smile.png");}
 	.shoutbox-happy{content: url("templates/default2/tmp/smiles/emoticon_happy.png");}
