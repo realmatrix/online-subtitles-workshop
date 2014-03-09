@@ -4,11 +4,11 @@
 		/*clear: left;*/
 	}
 	.widget-latestvideos-all-cell, .widget-latestvideos-movies-cell, .widget-latestvideos-tv-cell, .widget-latestvideos-trailer-cell{
-		width: 49.5%;
+		width: 49.8%;
 		border-style: solid;
 		border-width: 1px;
 		border-color: rgb(215, 229, 242) rgb(215, 229, 242);
-		height: 117px;
+		height: 120px;
 		line-height: 30px;
 		margin-right: 2px;
 		margin-bottom: 2px;
@@ -24,7 +24,7 @@
 	}
 	.widget-latestvideos-all-thubmnail, .widget-latestvideos-movies-thubmnail, .widget-latestvideos-tv-thubmnail, .widget-latestvideos-trailer-thubmnail{
 		width: 77px;
-		height: 113px;
+		height: 115px;
 		float: left;
 		margin: 1px 1px 1px 1px;
 		border-color: rgb(215, 229, 242) rgb(215, 229, 242);
@@ -33,7 +33,7 @@
 	}
 	.widget-latestvideos-all-thubmnailimg, .widget-latestvideos-movies-thubmnailimg, .widget-latestvideos-tv-thubmnailimg, .widget-latestvideos-trailer-thubmnailimg{
 		width: 77px;
-		height: 113px;
+		height: 115px;
 	}
 	.widget-lateestvideos-all-videoinfo{
 		display: block;
@@ -42,15 +42,15 @@
 		border-width: 1px;
 		border-style: solid;
 		margin: 1px;
-		width: 252px;
-		height: 113px;
+		width: 294px;
+		height: 116px;
 	}
 	.widget-lateestvideos-all-videoinfo div, .widget-lateestvideos-movies-videoinfo div, .widget-lateestvideos-tv-videoinfo div, .widget-lateestvideos-trailer-videoinfo div{
 		width: 100%;
 		height: 24px;
 		vertical-align: middle;
 		margin-left: 1px;
-		line-height: 24px;
+		line-height: 15px;
 	}
 	.widget-latestvideos-all-rateresult-off, .widget-latestvideos-movies-rateresult-off, .widget-latestvideos-tv-rateresult-off, .widget-latestvideos-trailer-rateresult-off{
 		content: url("templates/default2/tmp/images/star_empty2.png");
