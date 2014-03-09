@@ -1,23 +1,15 @@
 <style>
-	#breadcrumbs{
-		width: 100%;
-		height: 30px;
-	}
-	.BreadCrumbs:before{
-		content: ' > ';
-	}
-	.BreadCrumbs:hover{
-		text-decoration:none;
-	}
-	.BreadCrumbs{
-		text-transform:capitalize;
-	}
-	.BcHome:hover{
-		text-decoration:none;
+	.breadcrumb1 > li > a{
+		text-transform: uppercase;
 	}
 </style>
 
-<div id="breadcrumbs">
-	<a class="BcHome" href="index.php">Home</a>
-	{BreadCrumbs}
-</div>
+<div class="container">  
+	<div class="row">  
+		<div class="span6">  
+			<ol class="breadcrumb">
+				{BreadCrumbs}      
+			</ol>  
+		</div>  
+	</div>  
+</div>   

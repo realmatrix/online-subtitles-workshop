@@ -18,28 +18,18 @@
 		text-align: center;
 	}
 </style>
-<DIV class="catglow">
-<DIV class="cathead-m">
-<DIV class="cathead-r">
-<DIV class="cathead-l">                    
-	{title}                
-</DIV>
-</DIV>
-</DIV>
-<DIV class="trigger active">
-</DIV>
-<DIV class="collapsethis">
-<TABLE class="cat" cellSpacing="0" cellPadding="0" width="100%">
-  <TBODY>
-  <TR>
-    <TD class="forumdetails"><SPAN class="forum-descriptions">
 
+<div class="row">
+	<div class="col-lg-13">
 
+<div class="panel panel-default panel-primary">
+  <!-- Default panel contents -->
+  <div class="panel-heading">{title}</div>
 
+  <!-- Table -->
 <!-- user subtitles -->
-<div id="usersubtitles" style="width: 99%;">
 <form method="post" action="index.php">
-	<table class="table-usersubtitles" style="width: 100%;">
+	<table class="table table-usersubtitles table-striped table-hover">
 
 		<thead>
 			<th style="text-align: center;">{del}</th>
@@ -51,8 +41,9 @@
 		</thead>
 		{tablerows}
 	</table>
-<br />
-	<input type="submit" value="{delete}"/>
+	</div>
+
+	<button class="btn btn-primary">{delete}</button>
 	<!-- <input type="hidden" name="dataonly" value="yes"/> --> <!-- uncomment if using ajax -->
 	<!-- <input type="hidden" name="getcontroller" value="subtitle"/> --> <!-- uncomment if using ajax -->
 	<!-- <input type="hidden" name="getsection" value="UserSubtitles"/> --> <!-- uncomment if using ajax -->
@@ -61,15 +52,8 @@
 	<input type="hidden" name="ssec" value="UserSubtitles"/>
 	<input type="hidden" name="h" value="DeleteSubtitles"/>
 </form>
-</div>
 <!-- end user subtitles -->	
+		
+	</div>
+</div>
 
-
-
-	</SPAN></TD>
-	</TR>
-	</TBODY>
-	</TABLE>
-</DIV></div>
-
-<br>

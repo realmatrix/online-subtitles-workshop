@@ -49,8 +49,13 @@
 				$GLOBALS['ERROR'][] = "BUG URL-> <b>".$GLOBALS['system']->CurrentPageUrl()."</b>";
 			}
 			$res = "";
-			for ($i=0; $i < count($GLOBALS['BreadCrumbs']); $i++) { 
-				$res.="<a class='BreadCrumbs' href='index.php?".$GLOBALS['BreadCrumbs'][$i][1]."'>".$GLOBALS['BreadCrumbs'][$i][0]."</a>";
+			for ($i=0; $i < count($GLOBALS['BreadCrumbs']); $i++) {
+					$res.="<li><a href='index.php'>Home </a></li>";
+				if(count($GLOBALS['BreadCrumbs'])<$i){
+					$res.="<li><a href='index.php?".$GLOBALS['BreadCrumbs'][$i][1]."'>".$GLOBALS['BreadCrumbs'][$i][0]."</a></li>";
+				}else{
+					$res.="<li class='active'>".$GLOBALS['BreadCrumbs'][$i][0]."</li>";
+				}
 			}
 			return $res;
 		}

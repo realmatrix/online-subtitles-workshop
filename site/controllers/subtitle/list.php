@@ -13,7 +13,7 @@
 			$GLOBALS['vars']['PageTitle'] = "My Subtitles";
 			$GLOBALS['vars']['PageDesc'] = $GLOBALS['config']['site_description'];
 			$GLOBALS['BreadCrumbs'] = array(
-				array("my subtitles", "page=subtitle&sec=list"),
+				array("My Subtitles", "page=subtitle&sec=list"),
 			);
 		}	
 			
