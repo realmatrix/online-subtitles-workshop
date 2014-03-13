@@ -34,31 +34,31 @@
 
 
 <div class="st-controler">
-<input type="image" class="st-imgcontroler" src="templates/default2/tmp/Left-right.png" title="Increase Replay Time" onclick="ShowElement('irt');"/>
+<input type="image" class="st-imgcontroler" src="{TemplatePath}/tmp/Left-right.png" title="Increase Replay Time" onclick="ShowElement('irt');"/>
 </div>
 
 <div class="st-controler">
-<input type="image" class="st-imgcontroler" src="templates/default2/tmp/Increase_time.png" title="Increase Time Shift" onclick="ShowElement('its');"/>
+<input type="image" class="st-imgcontroler" src="{TemplatePath}/tmp/Increase_time.png" title="Increase Time Shift" onclick="ShowElement('its');"/>
 </div>
 
 <div class="st-controler">
-<input type="image" class="st-imgcontroler" src="templates/default2/tmp/Decrease_time.png" title="Decrease Time Shift" onclick="ShowElement('dts');"/>
+<input type="image" class="st-imgcontroler" src="{TemplatePath}/tmp/Decrease_time.png" title="Decrease Time Shift" onclick="ShowElement('dts');"/>
 </div>
 
 <div class="at-controler">
-<input type="image" class="st-imgcontroler" src="templates/default2/tmp/images/translate-ico.png" title="Auto Translate" onclick="ShowElement('at');"/>
+<input type="image" class="st-imgcontroler" src="{TemplatePath}/tmp/images/translate-ico.png" title="Auto Translate" onclick="ShowElement('at');"/>
 </div>
 
 <div class="st-controler">
-<input type="image" class="st-imgcontroler" src="templates/default2/tmp/add.png" title="Add New Line" onclick="ShowElement('al');"/>
+<input type="image" class="st-imgcontroler" src="{TemplatePath}/tmp/add.png" title="Add New Line" onclick="ShowElement('al');"/>
 </div>
 
 <div class="st-controler">
-<input type="image" class="st-imgcontroler" src="templates/default2/tmp/delete.png" title="Delete Line" onclick="ShowElement('dl');"/>
+<input type="image" class="st-imgcontroler" src="{TemplatePath}/tmp/delete.png" title="Delete Line" onclick="ShowElement('dl');"/>
 </div>
 
 <div class="st-controler">
-<input type="image" class="st-imgcontroler" src="templates/default2/tmp/done.png" title="Done" onclick="ShowElement('done');"/>
+<input type="image" class="st-imgcontroler" src="{TemplatePath}/tmp/done.png" title="Done" onclick="ShowElement('done');"/>
 </div>
 
 <div style="clear: left;"></div>

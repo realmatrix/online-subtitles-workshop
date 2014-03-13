@@ -25,7 +25,7 @@
 /* max-width:100%; max-height:100%; */
 	.pan_wrap
 	{
-		background: url('templates/default2/files/thumbnails-gallery/pan_checks.gif') repeat;
+		background: url('{TemplatePath}/files/thumbnails-gallery/pan_checks.gif') repeat;
 		margin: 0 auto 15px;
 		position: relative;
 		width: 150px;
@@ -34,7 +34,7 @@
 	
 	.pan_frame
 	{
-		background: url('templates/default2/files/thumbnails-gallery/pan_frame.png') no-repeat;
+		background: url('{TemplatePath}/files/thumbnails-gallery/pan_frame.png') no-repeat;
 		background-size: 100% 100%;
 		overflow: hidden;
 		position: absolute;

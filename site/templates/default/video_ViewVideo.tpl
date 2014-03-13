@@ -6,21 +6,21 @@ thumbimg.onerror = function () {
     function StarHover(id, total){
     	for (var i=1;i<=total;i++)
 		{ 
-		document.getElementById("vr-star"+i).src = "templates/default2/tmp/images/star_empty.png";
+		document.getElementById("vr-star"+i).src = "{TemplatePath}/tmp/images/star_empty.png";
 		}
     	for (var i=1;i<=id;i++)
 		{ 
-		document.getElementById("vr-star"+i).src = "templates/default2/tmp/images/star_full.png";
+		document.getElementById("vr-star"+i).src = "{TemplatePath}/tmp/images/star_full.png";
 		}
     }
     function StarDefault(value, total){
     	for (var i=1;i<=total;i++)
 		{ 
-		document.getElementById("vr-star"+i).src = "templates/default2/tmp/images/star_empty.png";
+		document.getElementById("vr-star"+i).src = "{TemplatePath}/tmp/images/star_empty.png";
 		}
     	for (var i=1;i<=value;i++)
 		{ 
-		document.getElementById("vr-star"+i).src = "templates/default2/tmp/images/star_full.png";
+		document.getElementById("vr-star"+i).src = "{TemplatePath}/tmp/images/star_full.png";
 		}
     }
 </script>
@@ -103,10 +103,10 @@ thumbimg.onerror = function () {
 		height: 16px;
 	}
 	.viewvideo-rateresult-off{
-		content: url("templates/default2/tmp/images/star_empty2.png");
+		content: url("{TemplatePath}/tmp/images/star_empty2.png");
 	}
 	.viewvideo-rateresult-on{
-		content: url("templates/default2/tmp/images/star_full2.png");
+		content: url("{TemplatePath}/tmp/images/star_full2.png");
 	}
 	
 </style>
@@ -189,21 +189,21 @@ thumbimg.onerror = function () {
 	<div class='viewvidieo-infocontainer-raterow'>
 				<div style='float:left;'>
 					<ul class='video-rate'>
-						   <li class='video-rate-li'><a href="index.php?page=video&sec=view&vid={vid}&ssec=ViewVideo&h=rate&val=1"><img src='templates/default2/tmp/images/star_empty.png' id='vr-star1' onmouseover="StarHover(1, 10);" onmouseout="StarDefault({rate}, 10);" /></a></li><!--
-						--><li class='video-rate-li'><a href="index.php?page=video&sec=view&vid={vid}&ssec=ViewVideo&h=rate&val=2"><img src='templates/default2/tmp/images/star_empty.png' id='vr-star2' onmouseover="StarHover(2, 10);" onmouseout="StarDefault({rate}, 10);" /></a></li><!--
-						--><li class='video-rate-li'><a href="index.php?page=video&sec=view&vid={vid}&ssec=ViewVideo&h=rate&val=3"><img src='templates/default2/tmp/images/star_empty.png' id='vr-star3' onmouseover="StarHover(3, 10);" onmouseout="StarDefault({rate}, 10);" /></a></li><!--
-						--><li class='video-rate-li'><a href="index.php?page=video&sec=view&vid={vid}&ssec=ViewVideo&h=rate&val=4"><img src='templates/default2/tmp/images/star_empty.png' id='vr-star4' onmouseover="StarHover(4, 10);" onmouseout="StarDefault({rate}, 10);" /></a></li><!--
-						--><li class='video-rate-li'><a href="index.php?page=video&sec=view&vid={vid}&ssec=ViewVideo&h=rate&val=5"><img src='templates/default2/tmp/images/star_empty.png' id='vr-star5' onmouseover="StarHover(5, 10);" onmouseout="StarDefault({rate}, 10);" /></a></li><!--
-						--><li class='video-rate-li'><a href="index.php?page=video&sec=view&vid={vid}&ssec=ViewVideo&h=rate&val=6"><img src='templates/default2/tmp/images/star_empty.png' id='vr-star6' onmouseover="StarHover(6, 10);" onmouseout="StarDefault({rate}, 10);" /></a></li><!--
-						--><li class='video-rate-li'><a href="index.php?page=video&sec=view&vid={vid}&ssec=ViewVideo&h=rate&val=7"><img src='templates/default2/tmp/images/star_empty.png' id='vr-star7' onmouseover="StarHover(7, 10);" onmouseout="StarDefault({rate}, 10);" /></a></li><!--
-						--><li class='video-rate-li'><a href="index.php?page=video&sec=view&vid={vid}&ssec=ViewVideo&h=rate&val=8"><img src='templates/default2/tmp/images/star_empty.png' id='vr-star8' onmouseover="StarHover(8, 10);" onmouseout="StarDefault({rate}, 10);" /></a></li><!--
-						--><li class='video-rate-li'><a href="index.php?page=video&sec=view&vid={vid}&ssec=ViewVideo&h=rate&val=9"><img src='templates/default2/tmp/images/star_empty.png' id='vr-star9' onmouseover="StarHover(9, 10);" onmouseout="StarDefault({rate}, 10);" /></a></li><!--
-						--><li class='video-rate-li'><a href="index.php?page=video&sec=view&vid={vid}&ssec=ViewVideo&h=rate&val=10"><img src='templates/default2/tmp/images/star_empty.png' id='vr-star10' onmouseover="StarHover(10, 10);" onmouseout="StarDefault({rate}, 10);" /></a></li>
+						   <li class='video-rate-li'><a href="index.php?page=video&sec=view&vid={vid}&ssec=ViewVideo&h=rate&val=1"><img src='{TemplatePath}/tmp/images/star_empty.png' id='vr-star1' onmouseover="StarHover(1, 10);" onmouseout="StarDefault({rate}, 10);" /></a></li><!--
+						--><li class='video-rate-li'><a href="index.php?page=video&sec=view&vid={vid}&ssec=ViewVideo&h=rate&val=2"><img src='{TemplatePath}/tmp/images/star_empty.png' id='vr-star2' onmouseover="StarHover(2, 10);" onmouseout="StarDefault({rate}, 10);" /></a></li><!--
+						--><li class='video-rate-li'><a href="index.php?page=video&sec=view&vid={vid}&ssec=ViewVideo&h=rate&val=3"><img src='{TemplatePath}/tmp/images/star_empty.png' id='vr-star3' onmouseover="StarHover(3, 10);" onmouseout="StarDefault({rate}, 10);" /></a></li><!--
+						--><li class='video-rate-li'><a href="index.php?page=video&sec=view&vid={vid}&ssec=ViewVideo&h=rate&val=4"><img src='{TemplatePath}/tmp/images/star_empty.png' id='vr-star4' onmouseover="StarHover(4, 10);" onmouseout="StarDefault({rate}, 10);" /></a></li><!--
+						--><li class='video-rate-li'><a href="index.php?page=video&sec=view&vid={vid}&ssec=ViewVideo&h=rate&val=5"><img src='{TemplatePath}/tmp/images/star_empty.png' id='vr-star5' onmouseover="StarHover(5, 10);" onmouseout="StarDefault({rate}, 10);" /></a></li><!--
+						--><li class='video-rate-li'><a href="index.php?page=video&sec=view&vid={vid}&ssec=ViewVideo&h=rate&val=6"><img src='{TemplatePath}/tmp/images/star_empty.png' id='vr-star6' onmouseover="StarHover(6, 10);" onmouseout="StarDefault({rate}, 10);" /></a></li><!--
+						--><li class='video-rate-li'><a href="index.php?page=video&sec=view&vid={vid}&ssec=ViewVideo&h=rate&val=7"><img src='{TemplatePath}/tmp/images/star_empty.png' id='vr-star7' onmouseover="StarHover(7, 10);" onmouseout="StarDefault({rate}, 10);" /></a></li><!--
+						--><li class='video-rate-li'><a href="index.php?page=video&sec=view&vid={vid}&ssec=ViewVideo&h=rate&val=8"><img src='{TemplatePath}/tmp/images/star_empty.png' id='vr-star8' onmouseover="StarHover(8, 10);" onmouseout="StarDefault({rate}, 10);" /></a></li><!--
+						--><li class='video-rate-li'><a href="index.php?page=video&sec=view&vid={vid}&ssec=ViewVideo&h=rate&val=9"><img src='{TemplatePath}/tmp/images/star_empty.png' id='vr-star9' onmouseover="StarHover(9, 10);" onmouseout="StarDefault({rate}, 10);" /></a></li><!--
+						--><li class='video-rate-li'><a href="index.php?page=video&sec=view&vid={vid}&ssec=ViewVideo&h=rate&val=10"><img src='{TemplatePath}/tmp/images/star_empty.png' id='vr-star10' onmouseover="StarHover(10, 10);" onmouseout="StarDefault({rate}, 10);" /></a></li>
 					</ul>
 				</div>
 				<div style='float:right'>
 				<a href='index.php?page=video&sec=view&vid={vid}&ssec=ViewVideo&h=fav'>
-				<img src='templates/default2/tmp/images/favorites-add.png' alt='add to favourites'/>
+				<img src='{TemplatePath}/tmp/images/favorites-add.png' alt='add to favourites'/>
 				</a>
 				</div>
 	</div>

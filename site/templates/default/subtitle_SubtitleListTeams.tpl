@@ -28,17 +28,17 @@
 	width: auto;
 }
 .subtitle-teams-state-1{
-	background-image: url(templates/default2/tmp/true.png);
+	background-image: url({TemplatePath}/tmp/true.png);
 	width: 16px;
 	height: 16px;
 }
 .subtitle-teams-state-0{
-	background-image: url(templates/default2/tmp/false.png);
+	background-image: url({TemplatePath}/tmp/false.png);
 	width: 16px;
 	height: 16px;
 }
 .subtitle-teams-del{
-	background-image: url(templates/default2/tmp/del.png);
+	background-image: url({TemplatePath}/tmp/del.png);
 	width: 16px;
 	height: 16px;
 }

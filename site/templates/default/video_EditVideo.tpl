@@ -26,7 +26,7 @@
   <TR>
     <TD class="forumdetails">
     	
-<div id='SubmittingForm' style='width:100%;text-align: center; display: none;'><img src="templates/default2/tmp/ajax-loader.gif"/></div>    	
+<div id='SubmittingForm' style='width:100%;text-align: center; display: none;'><img src="{TemplatePath}/tmp/ajax-loader.gif"/></div>    	
 
 <!-- add video form -->
 <div id="div-submitnewvideo">

@@ -156,15 +156,15 @@ var interval = setInterval(GetChat,10000);
 		width: 16px;
 		height: 16px;
 	}
-	.teamchatsmile-smile{content: url("templates/default2/tmp/smiles/emoticon_smile.png");}
-	.teamchatsmile-happy{content: url("templates/default2/tmp/smiles/emoticon_happy.png");}
-	.teamchatsmile-wink{content: url("templates/default2/tmp/smiles/emoticon_wink.png");}
-	.teamchatsmile-waii{content: url("templates/default2/tmp/smiles/emoticon_waii.png");}
-	.teamchatsmile-tonge{content: url("templates/default2/tmp/smiles/emoticon_tongue.png");}
-	.teamchatsmile-tongue{content: url("templates/default2/tmp/smiles/emoticon_tongue.png");}
-	.teamchatsmile-evilgrin{content: url("templates/default2/tmp/smiles/emoticon_evilgrin.png");}
-	.teamchatsmile-grin{content: url("templates/default2/tmp/smiles/emoticon_grin.png");}
-	.teamchatsmile-surprised{content: url("templates/default2/tmp/smiles/emoticon_surprised.png");}
+	.teamchatsmile-smile{content: url("{TemplatePath}/tmp/smiles/emoticon_smile.png");}
+	.teamchatsmile-happy{content: url("{TemplatePath}/tmp/smiles/emoticon_happy.png");}
+	.teamchatsmile-wink{content: url("{TemplatePath}/tmp/smiles/emoticon_wink.png");}
+	.teamchatsmile-waii{content: url("{TemplatePath}/tmp/smiles/emoticon_waii.png");}
+	.teamchatsmile-tonge{content: url("{TemplatePath}/tmp/smiles/emoticon_tongue.png");}
+	.teamchatsmile-tongue{content: url("{TemplatePath}/tmp/smiles/emoticon_tongue.png");}
+	.teamchatsmile-evilgrin{content: url("{TemplatePath}/tmp/smiles/emoticon_evilgrin.png");}
+	.teamchatsmile-grin{content: url("{TemplatePath}/tmp/smiles/emoticon_grin.png");}
+	.teamchatsmile-surprised{content: url("{TemplatePath}/tmp/smiles/emoticon_surprised.png");}
 </style>
 <DIV class="catglow" style="width:100%;">
 <DIV class="cathead-m">
@@ -200,10 +200,10 @@ var interval = setInterval(GetChat,10000);
 		</div>
 	
 	<div id='teamchat-toolbar'>
-	<img src='templates/default2/tmp/icons/emoticon_smile.png' id='teamchat-smile-button' onclick="showsmiles();">
-	<img src='templates/default2/tmp/icons/text_underline.png' onclick="addunderline();" onmouseout="setfocus();">
-	<img src='templates/default2/tmp/icons/text_italic.png' onclick="additalic();" onmouseout="setfocus();">
-	<img src='templates/default2/tmp/icons/text_bold.png' onclick="addbold();" onmouseout="setfocus();">
+	<img src='{TemplatePath}/tmp/icons/emoticon_smile.png' id='teamchat-smile-button' onclick="showsmiles();">
+	<img src='{TemplatePath}/tmp/icons/text_underline.png' onclick="addunderline();" onmouseout="setfocus();">
+	<img src='{TemplatePath}/tmp/icons/text_italic.png' onclick="additalic();" onmouseout="setfocus();">
+	<img src='{TemplatePath}/tmp/icons/text_bold.png' onclick="addbold();" onmouseout="setfocus();">
 	</div>
 	<form>
 		<textarea id='teamchat-textarea' rows="2" onkeydown="if (event.keyCode == 13) { SendMessage(); return false; }"></textarea>
