@@ -142,12 +142,12 @@
 			$args = array(
 				array(":id", $_SESSION['id'], "str"),
 			);
-			$res = $GLOBALS['system']->db_query("SELECT * FROM `Users` WHERE `id` = :id", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `users` WHERE `id` = :id", $args);
 			$gid = $res[0]['group'];
 			$args = array(
 				array(":gid", $gid, "str"),
 			);
-			$res = $GLOBALS['system']->db_query("SELECT * FROM `Groups` WHERE `id` = :gid", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `groups` WHERE `id` = :gid", $args);
 			if($res[0]['group']=="admin"){return TRUE;}else{return FALSE;}
 		}
 		
@@ -176,21 +176,21 @@
 		
 		function GetTotalMembers(){
 			$args = array();
-			$res = $GLOBALS['system']->db_query("SELECT * FROM `Users`", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `users`", $args);
 			return count($res);
 		}
 		
 		
 		function GetTotalSubtitles(){
 			$args = array();
-			$res = $GLOBALS['system']->db_query("SELECT * FROM `Subtitles`", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `subtitles`", $args);
 			return count($res);		
 		}
 		
 		
 		function GetTotalVideos(){
 			$args = array();
-			$res = $GLOBALS['system']->db_query("SELECT * FROM `Videos`", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `videos`", $args);
 			return count($res);			
 		}
 		
@@ -199,7 +199,7 @@
 			$args = array(
 				array(":uid", $_SESSION['id'], "str"),
 			);
-			$res = $GLOBALS['system']->db_query("SELECT * FROM `PrivateMessages` WHERE `to` = :uid", $args);
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `privatemessages` WHERE `to` = :uid", $args);
 			return count($res);
 		}
 		
@@ -209,7 +209,7 @@
 				array(":name", $name, "res"),
 				array(":value", $value, "res"),
 			);
-			$res = $GLOBALS['system']->db_query("UPDATE `Settings` SET `value` = :value WHERE `name` = :name;", $args, $state);
+			$res = $GLOBALS['system']->db_query("UPDATE `settings` SET `value` = :value WHERE `name` = :name;", $args, $state);
 			if($state===TRUE){return TRUE;}else{return FALSE;}
 		}
 		
