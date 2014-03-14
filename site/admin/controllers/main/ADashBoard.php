@@ -25,7 +25,7 @@
 		function ADashBoard_content(){
 				$content = array
 				  (
-				  array("{title}", $GLOBALS['system']->l("ADashBoard_title")),
+				  //array("{title}", $GLOBALS['system']->l("ADashBoard_title")),
 				  array("{ApprovedMembers}", self::GetApprovedMembers()),
 				  array("{PendingMembers}", self::GetPendingMembers()),
 				  array("{BannedMembers}", self::GetBannedMembers()),

@@ -6,20 +6,20 @@
 		
 		 if($Username == "")
 		 {
-		 $GLOBALS['ERROR'][] = $GLOBALS['system']->l('login_NoUsername');
+		 	$GLOBALS['ERROR'][] = "username is missing.";
 		 }
 		
 		 if($Password == "")
 		 {
-		 $GLOBALS['ERROR'][] = $GLOBALS['system']->l('login_NoPassword');
+		 	$GLOBALS['ERROR'][] = "password is missing.";
 		 }
 		 
 		 if(preg_match("/^[a-zA-Z0-9]+$/", $Username) != 1) {
-		 $GLOBALS['ERROR'][] = $GLOBALS['system']->l('login_usernameaz');
+		 	$GLOBALS['ERROR'][] = "invalid username only a-z 0-9 allowed.";
 		 }
 
 		 if(preg_match("/^[a-zA-Z0-9]+$/", $Password) != 1) {
-		 $GLOBALS['ERROR'][] = $GLOBALS['system']->l('login_passwordaz');
+		 	$GLOBALS['ERROR'][] = "invalid password only a-z 0-9 allowed.";
 		 }
 		 
 
@@ -36,12 +36,12 @@
    			 $GLOBALS['ACOMMON']->login($Username);
 			 //echo "ID->".$_SESSION['id'];
 			 header( 'Location: index.php' ) ;
- 			 $GLOBALS['SUCCESS'][] = $GLOBALS['system']->l('login_successfull').'<script type="text/javascript">$("#login").empty();setTimeout(function(){ window.location = "index.php"; }, 5000);</script>';
+ 			 $GLOBALS['SUCCESS'][] = "redirecting to control panel...".'<script type="text/javascript">$("#login").empty();setTimeout(function(){ window.location = "index.php"; }, 5000);</script>';
 			}
 			else 
 			{
 			$GLOBALS['system']->FailedLogin();
-			$GLOBALS['ERROR'][] = $GLOBALS['system']->l('login_failed');
+			$GLOBALS['ERROR'][] = "login falied.";
 			}
 			
 		 }
