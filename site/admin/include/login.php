@@ -30,7 +30,7 @@
 				array(":username", $Username, "str"),
 				array(":password", $Password, "str")
 			);
-		 	$result = $GLOBALS['system']->db_query("SELECT * FROM Users WHERE username=:username and password=:password", $params);
+		 	$result = $GLOBALS['system']->db_query("SELECT * FROM users WHERE username=:username and password=:password", $params);
 		 	if(count($result)>0)
  			{ 			 
    			 $GLOBALS['ACOMMON']->login($Username);
