@@ -1,3 +1,6 @@
+a, a:active, a:focus {
+outline: none;
+}
 .tab-content {
     border-left: 1px solid #ddd;
     border-right: 1px solid #ddd;
