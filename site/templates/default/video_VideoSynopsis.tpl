@@ -1,19 +1,10 @@
-<DIV class="catglow" style="width:100%;">
-<DIV class="cathead-m">
-<DIV class="cathead-r">
-<DIV class="cathead-l">                    
-	{Synopsis}                
-</DIV>
-</DIV>
-</DIV>
-<DIV class="trigger active">
-</DIV>
-<DIV class="collapsethis">
-
-<TABLE class="cat" cellSpacing="0" cellPadding="0" width="100%">
-  <TBODY>
-  <TR>
-    <TD class="forumdetails"><SPAN class="forum-descriptions">
+<div class="row">
+	<div class="col-md-13">
+		<div class="panel panel-primary">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">{Synopsis}</h3>
+		  </div>
+		  <div class="panel-body">
 
 
 <div id="div-synopsis">
@@ -21,13 +12,7 @@
 </div>
 
 
-</td>
-</tr>
-</tbody>
-</table>
-
-</DIV>
+		  </div>
+		</div>
+	</div>
 </div>
-<br>
-
-
