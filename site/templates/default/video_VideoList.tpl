@@ -1,44 +1,52 @@
-<DIV class="catglow">
-<DIV class="cathead-m">
-<DIV class="cathead-r">
-<DIV class="cathead-l">                    
-	{title}                
-</DIV>
-</DIV>
-</DIV>
-<DIV class="trigger active">
-</DIV>
-<DIV class="collapsethis">
-<TABLE class="cat" cellSpacing="0" cellPadding="0" width="100%">
-  <TBODY>
-  <TR>
-    <TD class="forumdetails"><SPAN class="forum-descriptions">
+<style type="text/css">
+	.table-usersubtitles td:nth-child(1){
+		text-align: center;
+	}
+	.table-usersubtitles td:nth-child(2){
+		text-align: left;
+	}
+	.table-usersubtitles td:nth-child(3){
+		text-align: center;
+	}
+	.table-usersubtitles td:nth-child(4){
+		text-align: center;
+	}
+	.table-usersubtitles td:nth-child(5){
+		text-align: center;
+	}
+	.table-usersubtitles td:nth-child(6){
+		text-align: center;
+	}
+</style>
 
+<div class="row">
+	<div class="col-lg-13">
 
+<div class="panel panel-default panel-primary">
+  <!-- Default panel contents -->
+  <div class="panel-heading">{title}</div>
 
+  <!-- Table -->
 <!-- video list -->
-<div style="width: 99%;">
-	<table style="width: 100%;">
+
+	<table class="table table-usersubtitles table-striped table-hover">
+
 		<thead>
-			<th>#</th>
-			<th>Title</th>
-			<th>Views</th>
-			<th>Subtitles</th>
-			<th>Edit</th>
+			<th class="text-center">#</th>
+			<th class="text-left">Title</th>
+			<th class="text-center">Views</th>
+			<th class="text-center">Subtitle</th>
+			<th class="text-center">Edit</th>
 		</thead>
-		<tbody>
 		{TableRows}
-		</tbody>
 	</table>
 </div>
+
+<button type="submit" class="btn btn-primary pull-left" onclick="window.location = 'index.php?page=video&sec=add';">Add Video</button> 
+
 <!-- end video list -->	
+	</div>
+</div>
 
 
 
-	</SPAN></TD>
-	</TR>
-	</TBODY>
-	</TABLE>
-</DIV></div>
-
-<br>

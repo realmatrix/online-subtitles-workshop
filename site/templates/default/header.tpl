@@ -4,7 +4,7 @@
       <div class="row">
         <nav class="navbar navbar-inverse" role="navigation">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">&nbsp;&nbsp;<b>{SiteName}</b></a></li>
+            <li class="active"><a href="index.php">&nbsp;&nbsp;<b>{SiteName}</b></a></li>
             <li><a href="index.php">&nbsp;&nbsp;<i class="icon-home"></i> Home</a></li>
             <li class="divider-vertical"></li>
             <li><a href="#"><i class="icon-download"></i> Downloads</a></li>
