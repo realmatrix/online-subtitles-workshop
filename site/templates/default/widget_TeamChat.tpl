@@ -102,12 +102,13 @@ var interval = setInterval(GetChat,10000);
 		border-color: rgb(215, 229, 242) rgb(215, 229, 242);
 	}
 	#teamchat-textarea{
-		width: 95%;
+		width: 100%;
 		vertical-align: top;
 		border-width: 1px;
 		border-style: dashed; 
 		border-color: rgb(215, 229, 242) rgb(215, 229, 242);
 		resize: none;
+		margin-top: 5px;
 	}
 	.chat-username{
 		text-decoration:none;
@@ -147,14 +148,17 @@ var interval = setInterval(GetChat,10000);
 	}
 	#teamchat-toolbar img{
 		float: right;
+		cursor: pointer;
 		cursor: hand;
 	}
 	.teamchat-smiles{
 		width: 100%;
 	}
-	.teamchat-smiles img{
+	#teamchat-smiles img{
 		width: 16px;
 		height: 16px;
+		cursor: pointer;
+		cursor: hand;
 	}
 	.teamchatsmile-smile{content: url("{TemplatePath}/tmp/smiles/emoticon_smile.png");}
 	.teamchatsmile-happy{content: url("{TemplatePath}/tmp/smiles/emoticon_happy.png");}
@@ -166,22 +170,20 @@ var interval = setInterval(GetChat,10000);
 	.teamchatsmile-grin{content: url("{TemplatePath}/tmp/smiles/emoticon_grin.png");}
 	.teamchatsmile-surprised{content: url("{TemplatePath}/tmp/smiles/emoticon_surprised.png");}
 </style>
-<DIV class="catglow" style="width:100%;">
-<DIV class="cathead-m">
-<DIV class="cathead-r">
-<DIV class="cathead-l">                    
-	Team Chat                
-</DIV>
-</DIV>
-</DIV>
-<DIV class="trigger active">
-</DIV>
-<DIV class="collapsethis">
 
-<TABLE class="cat" cellSpacing="0" cellPadding="0" width="100%">
-  <TBODY>
-  <TR>
-    <TD class="forumdetails"><SPAN class="forum-descriptions">
+<div class="row">
+	<div class="col-md-11">
+		<div class="panel panel-primary">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Team Chat</h3>
+		  </div>
+		  <div class="panel-body">
+
+
+
+
+
+
 
 
 	
@@ -215,14 +217,22 @@ var interval = setInterval(GetChat,10000);
 </div>
 
 
-</td>
-</tr>
-</tbody>
-</table>
 
-</DIV>
+
+
+		  </div>
+		</div>
+	</div>
 </div>
-<br>
+
+
+
+
+
+
+
+
+
 
 <script>
 	GetChat();

@@ -184,6 +184,9 @@ var interval = setInterval(GetChat,10000);
 		    <h3 class="panel-title">ShoutBox</h3>
 		  </div>
 		  <div class="panel-body">
+		  	
+		  	
+		  	
 <div id="widgt-shoutbox">
 	<div id='shoutbox-messages'></div>
 	
@@ -212,6 +215,9 @@ var interval = setInterval(GetChat,10000);
 		</div>
 	</form>
 </div>
+
+
+
 		  </div>
 		</div>
 	</div>

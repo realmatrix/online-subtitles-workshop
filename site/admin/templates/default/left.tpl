@@ -29,6 +29,9 @@
 						<li class="nav-header hidden-tablet">System Communications</li>
 						<li><a class="ajax-link" href="index.php?page=email&sec=settings"><i class="icon-envelope"></i><span class="hidden-tablet"> E-mail settings</span></a></li>
 						<li><a class="ajax-link" href="index.php?page=jabber&sec=settings"><i class="icon-repeat"></i><span class="hidden-tablet"> Jabber settings</span></a></li>
+						
+						<li class="nav-header hidden-tablet">System Operations</li>
+						<li><a class="ajax-link" href="index.php?page=email&sec=settings"><i class="icon-hdd"></i><span class="hidden-tablet"> Backup / Rstore</span></a></li>
 					</ul>
 					<!--<label id="for-is-ajax" class="hidden-tablet" for="is-ajax"><input id="is-ajax" type="checkbox"> Ajax on menu</label>-->
 				</div><!--/.well -->
