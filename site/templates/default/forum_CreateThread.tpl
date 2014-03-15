@@ -1,53 +1,44 @@
-<DIV class="catglow">
-<DIV class="cathead-m">
-<DIV class="cathead-r">
-<DIV class="cathead-l">                    
-	{title}                
-</DIV>
-</DIV>
-</DIV>
-<DIV class="trigger active">
-</DIV>
-<DIV class="collapsethis">
-<TABLE class="cat" cellSpacing="0" cellPadding="0" width="100%">
-  <TBODY>
-  <TR>
-    <TD class="forumdetails"><SPAN class="forum-descriptions">
-
+<div class="row">
+	<div class="col-md-13">
+		<div class="panel panel-primary">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">{title}</h3>
+		  </div>
+		  <div class="panel-body">
 
 
 <!-- create thread -->
-<div id="editorcontrols" style="width: 99%;">
+<div id="editorcontrols">
 
+	<form class="well-sm" method='post' action='index.php'>
+		<label for="title">Title:</label>
+		<input class="form-control" type='text' name='title' />
+		
+		<label for="content">Content:</label>
+		<textarea rows="10" class="form-control" name='content'></textarea>
+		
+		<br />
+		
+		<button type="submit" class="btn btn-primary pull-right">submit</button>
 
-	<table style="width: 100%;">
-		<tr>
-			<form method='post' action='index.php'>
-			Title:<br />
-				<input style='width:100%;' type='text' name='title' />
-			Content:<br />
-				<textarea style='width:99%; height:100px;' name='content'></textarea>
-				<input style='float:right;' type='submit' name='submit' />
-				<input type='hidden' name='page' value='forum' />
-				<input type='hidden' name='sec' value='threads' />
-				<input type='hidden' name='ssec' value='CreateThread' />
-				<input type='hidden' name='h' value='add' />
-				<input type='hidden' name='cat' value='{cat}' />
-				<input type='hidden' name='fid' value='{fid}' />
-			</form>
-		</tr>
-	</table>
+		<input type='hidden' name='page' value='forum' />
+		<input type='hidden' name='sec' value='threads' />
+		<input type='hidden' name='ssec' value='CreateThread' />
+		<input type='hidden' name='h' value='add' />
+		<input type='hidden' name='cat' value='{cat}' />
+		<input type='hidden' name='fid' value='{fid}' />
+	</form>
 
 
 </div>
 <!-- end create thread -->	
 
 
+		  </div>
+		</div>
+	</div>
+</div>
 
-	</SPAN></TD>
-	</TR>
-	</TBODY>
-	</TABLE>
-</DIV></div>
 
-<br>
+
+
