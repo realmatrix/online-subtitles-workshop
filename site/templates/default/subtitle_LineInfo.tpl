@@ -73,43 +73,31 @@ function rectime(sec) {
 		text-align: right;
 	}
 </style>
-<DIV class="catglow">
-<DIV class="cathead-m">
-<DIV class="cathead-r">
-<DIV class="cathead-l">                    
-	{title}                
-</DIV>
-</DIV>
-</DIV>
-<DIV class="trigger active">
-</DIV>
-<DIV class="collapsethis">
-<TABLE class="cat" cellSpacing="0" cellPadding="0" width="100%">
-  <TBODY>
-  <TR>
-    <TD class="forumdetails"><SPAN class="forum-descriptions">
 
 
 
-<!-- line info -->
-<div id="lineinfo" style="width: 100%;">
-
-
-	<div id='lineinfo-subtitle'>...</div>
-	<div id='lineinfo-start'>00:00:00.000</div>
-	<div id='lineinfo-current'>00:00:00.000</div>
-	<div id='lineinfo-stop'>00:00:00.000</div>
-	
-
+<div class="row">
+	<div class="col-md-13">
+		<div class="panel panel-primary">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">{title}</h3>
+		  </div>
+		  <div class="panel-body">
+		  	
+		  	
+				<!-- line info -->
+				<div id="lineinfo" style="width: 100%;">
+					<div id='lineinfo-subtitle'>...</div>
+					<div id='lineinfo-start'>00:00:00.000</div>
+					<div id='lineinfo-current'>00:00:00.000</div>
+					<div id='lineinfo-stop'>00:00:00.000</div>
+				</div>
+				<!-- end line info -->			  	
+		  	
+		  	
+		  </div>
+		</div>
+	</div>
 </div>
-<!-- end line info -->	
 
 
-
-	</SPAN></TD>
-	</TR>
-	</TBODY>
-	</TABLE>
-</DIV></div>
-
-<br>

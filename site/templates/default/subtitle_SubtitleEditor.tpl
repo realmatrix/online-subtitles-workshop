@@ -109,22 +109,19 @@
 		color: #082C52;
 	}
 </style>
-<DIV class="catglow">
-<DIV class="cathead-m">
-<DIV class="cathead-r">
-<DIV class="cathead-l">                    
-	{title} - {CDTitle}                
-</DIV>
-</DIV>
-</DIV>
-<DIV class="trigger active">
-</DIV>
-<DIV class="collapsethis">
-<TABLE class="cat" cellSpacing="0" cellPadding="0" width="100%">
-  <TBODY>
-  <TR>
-    <TD class="forumdetails"><SPAN class="forum-descriptions">
 
+
+
+
+<div class="row">
+	<div class="col-md-13">
+		<div class="panel panel-primary">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">{title} - {CDTitle}</h3>
+		  </div>
+		  <div class="panel-body">
+		  	
+		  	
 
 
 <!-- subtitle editor -->
@@ -135,10 +132,7 @@
 
 
 
-	</SPAN></TD>
-	</TR>
-	</TBODY>
-	</TABLE>
-</DIV></div>
-
-<br>
+		  </div>
+		</div>
+	</div>
+</div>
