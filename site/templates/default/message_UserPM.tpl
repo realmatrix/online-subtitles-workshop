@@ -1,57 +1,36 @@
-<DIV class="catglow">
-<DIV class="cathead-m">
-<DIV class="cathead-r">
-<DIV class="cathead-l">                    
-	{title}                
-</DIV>
-</DIV>
-</DIV>
-<DIV class="trigger active">
-</DIV>
-<DIV class="collapsethis">
-<TABLE class="cat" cellSpacing="0" cellPadding="0" width="100%">
-  <TBODY>
-  <TR>
-    <TD class="forumdetails"><SPAN class="forum-descriptions">
+<div class="row">
+	<div class="col-lg-13">
 
+<form method="post" action="index.php">	
+		<div class="panel panel-default panel-primary">
+		  <!-- Default panel contents -->
+		  <div class="panel-heading">{title}</div>
+		
+			<table class="table table-usersubtitles table-striped table-hover">
+		
+				<thead>
+					<th>#</th>
+					<th>{subject}</th>
+					<th>{from}</th>
+					<th>{date}</th>
+					<th>{del}</th>
+				</thead>
+					{TableRows}
+			</table>
 
+		</div>
 
-<!-- User PM -->
-<div id="editorcontrols" style="width: 99%;">
+<button type="submit" class="btn btn-primary pull-left">{submit}</button>
 
-<form method="post" action="index.php">
-	<table style="width: 100%;">
-		<thead>
-			<th>#</th>
-			<th>{subject}</th>
-			<th>{from}</th>
-			<th>{date}</th>
-			<th>{del}</th>
-		</thead>
-		<tbody>
-			{TableRows}
-		</tbody>
-	</table>
-<br />
-<input type="submit"  value="{submit}"/>
-	<!-- <input type="hidden" name="dataonly" value="yes" /> --> <!-- uncomment if using ajax -->
-	<!-- <input type="hidden" name="getcontroller" value="message" /> --> <!-- uncomment if using ajax -->
-	<!-- <input type="hidden" name="getsection" value="UserPM" /> --> <!-- uncomment if using ajax -->
-	<input type="hidden" name="page" value="message" /> <!-- comment if using ajax -->
-	<input type="hidden" name="sec" value="list" /> <!-- comment if using ajax -->
+	<input type="hidden" name="page" value="message" />
+	<input type="hidden" name="sec" value="list" />
 	<input type="hidden" name="ssec" value="UserPM" />
 	<input type="hidden" name="h" value="DelMsg" />
+	
 </form>
 
+	</div>
 </div>
-<!-- end User PM -->	
 
 
 
-	</SPAN></TD>
-	</TR>
-	</TBODY>
-	</TABLE>
-</DIV></div>
-
-<br>
