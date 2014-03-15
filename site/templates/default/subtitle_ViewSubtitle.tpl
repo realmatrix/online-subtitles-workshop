@@ -40,60 +40,42 @@
 </style>
 
 <div class="row">
-	<div class="col-md-13">
-		<div class="panel panel-primary">
-		  <div class="panel-heading">
-		    <h3 class="panel-title">{title}</h3>
-		  </div>
-		  <div class="panel-body">
-		  	
-		  	
-		  	
-
-
-
-<!-- view subtitle -->
-
-
-<div id='viewsubtitle-infocontainer'>
-	<div class='viewsubtitle-infocontainer-row'>
-		<div class='viewsubtitle-infocontainer-left'>{releasename}</div>
-		<div class='viewsubtitle-infocontainer-right'>{Creleasename}</div>
-	</div>
-	<div class='viewsubtitle-infocontainer-row'>
-		<div class='viewsubtitle-infocontainer-left'>{version}</div>
-		<div class='viewsubtitle-infocontainer-right'>{Cversion}</div>
-	</div>
-	<div class='viewsubtitle-infocontainer-row'>
-		<div class='viewsubtitle-infocontainer-left'>{country}</div>
-		<div class='viewsubtitle-infocontainer-right'>{Ccountry}</div>
-	</div>
-	<div class='viewsubtitle-infocontainer-row'>
-		<div class='viewsubtitle-infocontainer-left'>{language}</div>
-		<div class='viewsubtitle-infocontainer-right'>{Clanguage}</div>
-	</div>
-	<div class='viewsubtitle-infocontainer-row'>
-		<div class='viewsubtitle-infocontainer-left'>{fps}</div>
-		<div class='viewsubtitle-infocontainer-right'>{Cfps}</div>
-	</div>
-	<div class='viewsubtitle-infocontainer-row'>
-		<div class='viewsubtitle-infocontainer-left'>{format}</div>
-		<div class='viewsubtitle-infocontainer-right'>{Cformat}</div>
-	</div>
-	<div class='viewsubtitle-infocontainer-row'>
-		<div class='viewsubtitle-infocontainer-left'>{cds}</div>
-		<div class='viewsubtitle-infocontainer-right'>{Ccds}</div>
+	<div class="panel panel-primary col-md-13">
+	  <!-- Default panel contents -->
+	  <div class="panel-heading">{title}</div>
+	  <!-- Table -->
+	  <table class="table table-striped">
+	  	<tbody>
+	  		<tr>
+	  			<td class="col-md-3"><label>{releasename}</label></td>
+	  			<td>{Creleasename}</td>
+	  		</tr>
+	  		<tr>
+	  			<td class="col-md-3"><label>{version}</label></td>
+	  			<td>{Cversion}</td>
+	  		</tr>
+	  		<tr>
+	  			<td class="col-md-3"><label>{country}</label></td>
+	  			<td>{Ccountry}</td>
+	  		</tr>
+	  		<tr>
+	  			<td class="col-md-3"><label>{language}</label></td>
+	  			<td>{Clanguage}</td>
+	  		</tr>
+	  		<tr>
+	  			<td class="col-md-3"><label>{fps}</label></td>
+	  			<td>{Cfps}</td>
+	  		</tr>
+	  		<tr>
+	  			<td class="col-md-3"><label>{format}</label></td>
+	  			<td>{Cformat}</td>
+	  		</tr>
+	  		<tr>
+	  			<td class="col-md-3"><label>{cds}</label></td>
+	  			<td>{Ccds}</td>
+	  		</tr>
+	  	</tbody>
+	  </table>
 	</div>
 </div>
-	
-	
-	
-	
-<!-- end view subtitle -->	
 
-
-
-		  </div>
-		</div>
-	</div>
-</div>
