@@ -38,12 +38,13 @@
 			if(!isset($GLOBALS['vars']['i'])){$GLOBALS['vars']['i'] = 0;}
 			$from = $GLOBALS['vars']['i'];
 			$to = $GLOBALS['vars']['i'] + $limit;
-			$res = $GLOBALS['system']->db_query("SELECT * FROM `videos` limit $from , $to", array());
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `videos` limit ".$from.", ".$to, array());
 			$TableRows = "";
-			for ($i=0; $i < count($res); $i++) { 
+			for ($i=0; $i < count($res); $i++) {
+				$counter = $i + 1; 
 				$TableRows .= "<tr>";
-				$TableRows .= "<td></td>";
-				$TableRows .= "<td></td>";
+				$TableRows .= "<td>".$counter."</td>";
+				$TableRows .= "<td>".$res[$i]['title']."</td>";
 				$TableRows .= "<td></td>";
 				$TableRows .= "<td></td>";
 				$TableRows .= "</tr>";
