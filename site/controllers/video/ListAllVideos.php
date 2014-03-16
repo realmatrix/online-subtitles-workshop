@@ -2,6 +2,8 @@
 
 	class CListAllVideos{
 		
+		public static $limit = 30;
+		
 		function ListAllVideos(){
 			return self::ListAllVideos_content();
 		}
@@ -26,18 +28,17 @@
 				$content = array
 				  (
 				  array("{TableRows}", self::GetVideos()),
+				  array("{pagination}", self::GetPagination()),
 				 );			 
 		return $content;
 		}
 		
 		function GetVideos(){
-			$limit = 30;
+			$limit = self::$limit;
 			if(!isset($GLOBALS['vars']['i'])){$GLOBALS['vars']['i'] = 0;}
-			$args = array(
-				array(":from", $GLOBALS['vars']['i'], "str"),
-				array(":to", $GLOBALS['vars']['i'] + $limit, "str"),
-			);
-			$res = $GLOBALS['system']->db_query("SELECT * FROM `videos` limit :from, :to", $args);
+			$from = $GLOBALS['vars']['i'];
+			$to = $GLOBALS['vars']['i'] + $limit;
+			$res = $GLOBALS['system']->db_query("SELECT * FROM `videos` limit $from , $to", array());
 			$TableRows = "";
 			for ($i=0; $i < count($res); $i++) { 
 				$TableRows .= "<tr>";
@@ -50,6 +51,16 @@
 			return $TableRows;
 		}
 
+		function GetPagination(){
+			$TotalVideos = count($GLOBALS['system']->db_query("SELECT * FROM `videos` ", array()));
+			$res = "";
+			if(floor($TotalVideos/self::$limit)>1){$res .="<li class='prev disabled'><a href='#'>&laquo;</a></li>";}
+			else{$res .="<li class='prev disabled'><a href='#'>&laquo;</a></li>";}
+			if(floor($TotalVideos/self::$limit)>1){$res .="<li class='prev disabled'><a href='#'>&lsaquo;</a></li>";}
+			else{$res .="<li class='prev disabled'><a href='#'>&lsaquo;</a></li>";}
+			
+			return $res;
+		}
 
 
 		

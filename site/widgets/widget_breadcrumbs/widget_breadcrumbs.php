@@ -49,9 +49,9 @@
 				$GLOBALS['ERROR'][] = "BUG URL-> <b>".$GLOBALS['system']->CurrentPageUrl()."</b>";
 			}
 			$res = "";
+			$res.="<li><a href='index.php'>Home </a></li>";
 			for ($i=0; $i < count($GLOBALS['BreadCrumbs']); $i++) {
-					$res.="<li><a href='index.php'>Home </a></li>";
-				if(count($GLOBALS['BreadCrumbs'])<$i){
+				if(count($GLOBALS['BreadCrumbs'])!=$i+1){
 					$res.="<li><a href='index.php?".$GLOBALS['BreadCrumbs'][$i][1]."'>".$GLOBALS['BreadCrumbs'][$i][0]."</a></li>";
 				}else{
 					$res.="<li class='active'>".$GLOBALS['BreadCrumbs'][$i][0]."</li>";

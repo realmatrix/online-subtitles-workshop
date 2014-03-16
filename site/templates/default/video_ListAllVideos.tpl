@@ -23,8 +23,9 @@
 
 <div class="col-lg-13 text-center">
     <ul class="pagination">
-        <li class="prev disabled"><a href="#">&laquo;</a></li>
-        <li class="prev disabled"><a href="#">&lsaquo;</a></li>
+    	{pagination}
+        
+        
         <li class="active"><a href="index.php?page=video&sec=archive">1</a></li>
         <li><a href="#">2</a></li>
         <li><a href="#">3</a></li>
