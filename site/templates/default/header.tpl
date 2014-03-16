@@ -9,9 +9,9 @@
             <li class="divider-vertical"></li>
             <li><a href="#"><i class="icon-download"></i> Downloads</a></li>
             <li class="divider-vertical"></li>
-            <li><a href="#"><i class="icon-list"></i> Subtitles</a></li>
+            <li><a href="index.php?page=subtitle&sec=archive"><i class="icon-list"></i> Subtitles</a></li>
             <li class="divider-vertical"></li>
-            <li><a href="#"><i class="icon-film"></i> Videos</a></li>
+            <li><a href="index.php?page=video&sec=archive"><i class="icon-film"></i> Videos</a></li>
             <li class="divider-vertical"></li>
             <li><a href="index.php?page=forum&sec=forums"><i class="icon-th"></i> Forums</a></li> 
             <li class="divider-vertical"></li>

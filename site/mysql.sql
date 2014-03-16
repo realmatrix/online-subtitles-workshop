@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 08, 2014 at 08:56 PM
+-- Generation Time: Mar 16, 2014 at 02:22 AM
 -- Server version: 5.6.16
 -- PHP Version: 5.3.28
 
@@ -110,7 +110,7 @@ CREATE TABLE IF NOT EXISTS `chat` (
   `text` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
 
 --
 -- Dumping data for table `chat`
@@ -123,7 +123,8 @@ INSERT INTO `chat` (`id`, `date`, `uid`, `text`, `username`) VALUES
 (10, '2014-01-10 13:08:24', 18, '[u]test under line text[/u]', 'test'),
 (11, '2014-01-10 13:08:41', 18, '[s]smile[/s][s]evilgrin[/s][s]grin[/s][s]happy[/s][s]surprised[/s][s]tongue[/s][s]waii[/s][s]wink[/s]', 'test'),
 (12, '2014-01-10 13:21:00', 18, 'new test', 'test'),
-(13, '2014-03-07 21:31:45', 18, 'test', 'test');
+(13, '2014-03-07 21:31:45', 18, 'test', 'test'),
+(14, '2014-03-09 16:14:36', 18, 'test', 'test');
 
 -- --------------------------------------------------------
 
@@ -420,7 +421,7 @@ CREATE TABLE IF NOT EXISTS `failedlogins` (
 --
 
 INSERT INTO `failedlogins` (`id`, `ip`, `tries`, `time`) VALUES
-(5, '127.0.0.1', 9, 1388578116);
+(5, '127.0.0.1', 10, 1394836506);
 
 -- --------------------------------------------------------
 
@@ -602,7 +603,7 @@ CREATE TABLE IF NOT EXISTS `forumthreads` (
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `cat` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `forumthreads`
@@ -618,7 +619,8 @@ INSERT INTO `forumthreads` (`id`, `forum`, `title`, `content`, `uid`, `time`, `c
 (7, 1, 'dgik f;lgdflgjkdfgjk', 'dsfhsdlkfhdslkfjh sdlkfh sdlkjfh sdlkfh iouertueriwt skjfh lksdfhouiwertyth rt \r\nfdsg fdsgh fklghdfiougyhe rkthrkl hdflkgh iouertgkl erjtger\r\ngertg lkfgdfoigy eiorhgerlkg kljhviuohiopertger\r\nter toijboipgbjl;kj;lekrjerlkjt\r\nertgopegjkopijrtg', 18, '2013-12-17 17:07:37', 0),
 (8, 1, 'new thread', 'test content', 18, '2013-12-26 03:56:43', 1),
 (9, 2, 'dkjhdfklghj', 'df dfgklh dfglkdfjhg iuoerthskljdfhdl kjfhdjksfh', 18, '2013-12-26 03:58:07', 1),
-(10, 2, 'dflisdfiopjsdflkjds', 'sdhdlskjfh slkdfjhsdf', 18, '2013-12-26 03:58:21', 1);
+(10, 2, 'dflisdfiopjsdflkjds', 'sdhdlskjfh slkdfjhsdf', 18, '2013-12-26 03:58:21', 1),
+(11, 1, 'new test thread', 'osdihf sldkjfh sdkjlfh iueowrhklsdjhdskljfh weuirhkljsdfhldksjh', 18, '2014-03-15 20:03:38', 1);
 
 -- --------------------------------------------------------
 
@@ -1033,14 +1035,14 @@ CREATE TABLE IF NOT EXISTS `onlineusers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1678 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1763 ;
 
 --
 -- Dumping data for table `onlineusers`
 --
 
 INSERT INTO `onlineusers` (`id`, `session`, `time`, `username`) VALUES
-(1677, 'eu5cl8kmf53erg86kb76ei4v74', 1394312001, '');
+(1762, '2ol3v47btl5mbr53fc0gos5ua0', 1394936319, '');
 
 -- --------------------------------------------------------
 
@@ -1233,7 +1235,7 @@ CREATE TABLE IF NOT EXISTS `systemcron` (
 --
 
 INSERT INTO `systemcron` (`id`, `job`, `frequancy`, `last_run`) VALUES
-(1, 'AutoTranslation', 300, 1394312063);
+(1, 'AutoTranslation', 300, 1394936414);
 
 -- --------------------------------------------------------
 
@@ -1256,7 +1258,7 @@ CREATE TABLE IF NOT EXISTS `systemrouter` (
   `sec` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `page` (`page`,`sec`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=40 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=42 ;
 
 --
 -- Dumping data for table `systemrouter`
@@ -1299,7 +1301,9 @@ INSERT INTO `systemrouter` (`id`, `head`, `header`, `left`, `body`, `right`, `fo
 (36, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'subtitle', 'check'),
 (37, 1, 1, 1, 1, 1, 1, 0, 0, 0, 'message', 'view'),
 (38, 0, 0, 0, 0, 0, 0, 1, 0, 0, 'user', 'login'),
-(39, 0, 0, 0, 0, 0, 0, 1, 0, 0, 'user', 'register');
+(39, 0, 0, 0, 0, 0, 0, 1, 0, 0, 'user', 'register'),
+(40, 1, 1, 0, 1, 0, 1, 0, 0, 0, 'video', 'archive'),
+(41, 1, 1, 0, 1, 0, 1, 0, 0, 0, 'subtitle', 'archive');
 
 -- --------------------------------------------------------
 
@@ -1448,7 +1452,7 @@ INSERT INTO `transcriptions` (`id`, `sid`, `cid`, `uid`, `lid`, `text`) VALUES
 (3, 52, 10, 18, 8971, 'test'),
 (4, 52, 10, 18, 8972, 'test'),
 (5, 52, 10, 18, 8973, 'test'),
-(6, 1, 1, 18, 1, '- Hi.aaaaaaaaaa\n- Hi.'),
+(6, 1, 1, 18, 1, '- Hi.\n- Hi.'),
 (7, 1, 1, 18, 2, 'How many?'),
 (8, 1, 1, 18, 3, 'Two.'),
 (9, 1, 1, 18, 4, 'Listen, I wanted to get a safe deposit box.\nCan you do that for me?'),
@@ -1532,28 +1536,28 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `BirthYear`, `group`, `key`, `LastLogin`, `KeyTime`, `RegisterationDate`, `state`, `EmailVerification`, `birthdate`) VALUES
-(18, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.test', 2009, 1, 'EkTvdWUbrAg7y5WThNoCPyATUI0MM7', 1394311399, 1394310497, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(19, 'ghfghh', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'dsd@sd.sd', 2006, 3, 'BU76Rl9wKGCII2IvK0agiEcPmAwxoU', 0, 1394310497, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(20, 'wejhg', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'aaa@aaa.aaa', 1919, 3, 'melcrgIyXtszEd2lJjqtV753rt0E0J', 0, 1394310498, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(21, 't567567567', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'tryrt@erttr.rrt', 1917, 3, 'EoPIXRDNr8EO2Pz5e2EuYkzkKPzux6', 0, 1394310498, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(22, 'test2', '109f4b3c50d7b0df729d299bc6f8e9ef9066971f', 'test2@test2.com', 2010, 3, 'miMgbAsUII26dwutnli5q2pz5ViYzS', 0, 1394310498, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(23, 'test3', '3ebfa301dc59196f18593c45e519287a23297589', 'test3@test3.com', 2003, 3, 'VVBeMvoPPjFZwrEBPu2Yew5XHatUHv', 0, 1394310498, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(24, 'test4', '1ff2b3704aede04eecb51e50ca698efd50a1379b', 'test4@test4.com', 2002, 3, 'rEc8IyF8ur37uER9X32RAY3kBgT9Jf', 0, 1394310498, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(25, 'test5', '911ddc3b8f9a13b5499b6bc4638a2b4f3f68bf23', 'test5@test5.com', 2001, 3, 'ZpcNlHHeq8sqbhcG5f9S7D0lKw1VWv', 0, 1394310498, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(26, 'test6', 'a66df261120b6c2311c6ef0b1bab4e583afcbcc0', 'test6@test6.com', 2005, 3, 'SY9GOjnEyj3uiMaOM6bIc55Lj6k4iZ', 0, 1394310498, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(27, 'test7', 'ea3243132d653b39025a944e70f3ecdf70ee3994', 'test7@test7.com', 2002, 3, 'ReT4ckjdgYhKyf1w2JeSay9FVhteL0', 0, 1394310498, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(28, 'test8', 'd03f9d34194393019e6d12d7c942827ebd694443', 'test8@test8.com', 1999, 3, '3nQltGBvITVCEYppBoa5p8LnrEiuwU', 0, 1394310606, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(29, 'test9', '53d525836cc96d089a5a4218b464fda532f7debe', 'test9@test9.com', 2001, 3, 'n8Zn5yH31s0mg3Jjq5elBKlrmLp3Pm', 0, 1394310606, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(30, 'test10', '168f4029f416ee06565f12e697dfc1534ae69d32', 'test10@test10.com', 2002, 3, 'hbzfjgHEjiOhFIYnbwODeaphDCl1Ll', 0, 1394310606, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(31, 'test11', '100c4e57374fc998e57164d4c0453bd3a4876a58', 'test11@test11.com', 2004, 3, 'J6qk9eZ1HCjpYZHW4y1Bz3BRAGjFHa', 0, 1394310606, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(32, 'test12', '4ff1a33e188b7b86123d6e3be2722a23514a83b4', 'test12@test12.com', 1999, 3, 'tv0JWl654E4sFowz62xCdyIlmq9XmB', 0, 1394310606, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(33, 'test13', 'd804cd9cc0c42b0652bab002f67858ab803c40c6', 'test13@test13.com', 2005, 3, 'qbzxEeQfqPvaObpgq1T1nyNodwuR47', 0, 1394310606, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(34, 'test14', 'd79336a97da7d284c0fe15497d2fa944d1f2abb1', 'test14@test14.com', 2003, 3, 'Nox43sGB617qjxVLw0Jl3RAmL66zZb', 0, 1394310606, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(35, 'test15', '61bb70fa60368f069e62d601c357d203700ab2d2', 'test15@test15.com', 2000, 3, 'n9A40PTf5QKFbUvNqe0CoyAAa35Hmu', 0, 1394310606, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(36, 'test16', '1fbefee9cfb86926757519357e077fd6a21aef0f', 'test16@test16.com', 1998, 3, 'Sn43LDRt7URYMbDh4ViAR7rCuc8CN9', 0, 1394310606, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(37, 'test17', '08a25c0f270b29aeba650e6b2d1a9947a778c5da', 'test17@test17.com', 1996, 3, '0h7s7Pj36ZIr0YaAsv1WxN6tQzMFt3', 0, 1394310606, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
-(38, 'test18', 'cfc996a3aaac95f0fb508f46499dcb72b6d0abee', 'test18@jkhfgkjfg.com', 2001, 3, 'sDGYHWFRf6gWzdG5EQECW7oopCBLxq', 0, 1394232415, '2014-01-12 23:23:52', 1, 0, '2001-10-11'),
-(41, 'test20', '57e5a4df68387d1d97210cf40c41104ce9256cf6', 'test20@test20.com', 2006, 3, 'wyi9R68SPh3d9pue4lpxgrjeZv9UVU', 1389667556, 1394232415, '2014-01-14 02:45:17', 1, 0, '2006-09-12');
+(18, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.test', 2009, 1, 'kzJ3Tiik2YxtlkOXUyWLjphkF5FEyi', 1394935621, 1394935590, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(19, 'ghfghh', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'dsd@sd.sd', 2006, 3, 'rc4htVOK5jSU7jRuWpPImzpiKfGsVq', 0, 1394935591, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(20, 'wejhg', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'aaa@aaa.aaa', 1919, 3, 'fUgAbSAF64f95I51JxrJ8KafT4A25H', 0, 1394935591, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(21, 't567567567', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'tryrt@erttr.rrt', 1917, 3, 'z5kosQGl4hMhMSGppB0sjVPEkNKHOH', 0, 1394935591, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(22, 'test2', '109f4b3c50d7b0df729d299bc6f8e9ef9066971f', 'test2@test2.com', 2010, 3, 'RPABLK1YyGWMOlGuEY74DgzZSqSeYd', 0, 1394935591, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(23, 'test3', '3ebfa301dc59196f18593c45e519287a23297589', 'test3@test3.com', 2003, 3, 'pe1PZ0AZXYNUa8eiYXZpcoEVcWj5Ow', 0, 1394935591, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(24, 'test4', '1ff2b3704aede04eecb51e50ca698efd50a1379b', 'test4@test4.com', 2002, 3, 'ABnExHKgN5hRqZMn18DjHIEB2tcK7C', 0, 1394935591, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(25, 'test5', '911ddc3b8f9a13b5499b6bc4638a2b4f3f68bf23', 'test5@test5.com', 2001, 3, '6HySJWrsTqm4YCpXMvcPFxMUuHNTzr', 0, 1394935591, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(26, 'test6', 'a66df261120b6c2311c6ef0b1bab4e583afcbcc0', 'test6@test6.com', 2005, 3, 'j1MLU0r6I4prjV2fMO8uJp4DfXHEVb', 0, 1394935591, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(27, 'test7', 'ea3243132d653b39025a944e70f3ecdf70ee3994', 'test7@test7.com', 2002, 3, 'k1RiPGE1x8nzjlDFtKxwSmERRC5Thu', 0, 1394935592, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(28, 'test8', 'd03f9d34194393019e6d12d7c942827ebd694443', 'test8@test8.com', 1999, 3, 'ErEvtFGge18WgX5Kps8q0ZnbUwpJsv', 0, 1394935623, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(29, 'test9', '53d525836cc96d089a5a4218b464fda532f7debe', 'test9@test9.com', 2001, 3, 'jhvWHznhEOWtLJv18xXTmWBwwbjUeX', 0, 1394935623, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(30, 'test10', '168f4029f416ee06565f12e697dfc1534ae69d32', 'test10@test10.com', 2002, 3, 'pwyvKj7wFKZg1OMp8YzbScXkzW334b', 0, 1394935623, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(31, 'test11', '100c4e57374fc998e57164d4c0453bd3a4876a58', 'test11@test11.com', 2004, 3, 'q4IobBmyUmk6Hzt1aX9NnIbnWBVeXN', 0, 1394935623, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(32, 'test12', '4ff1a33e188b7b86123d6e3be2722a23514a83b4', 'test12@test12.com', 1999, 3, 'dk03p9azlF43mkNKj6Vnwuy7RqiJEo', 0, 1394935623, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(33, 'test13', 'd804cd9cc0c42b0652bab002f67858ab803c40c6', 'test13@test13.com', 2005, 3, 'eqJmWUtMxpHECDLqgOv43Fh37pUl1K', 0, 1394935623, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(34, 'test14', 'd79336a97da7d284c0fe15497d2fa944d1f2abb1', 'test14@test14.com', 2003, 3, 'KqSVDfgDVii7rwx5yo6K5UzQpv3yk9', 0, 1394935623, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(35, 'test15', '61bb70fa60368f069e62d601c357d203700ab2d2', 'test15@test15.com', 2000, 3, '8DdlUiT1YfJGpIygPpIfjz3CsSUOmA', 0, 1394935623, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(36, 'test16', '1fbefee9cfb86926757519357e077fd6a21aef0f', 'test16@test16.com', 1998, 3, '8PCp38jyxF2JVVUb2SuCfYTfncINM0', 0, 1394935623, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(37, 'test17', '08a25c0f270b29aeba650e6b2d1a9947a778c5da', 'test17@test17.com', 1996, 3, '2uiot2hN5Fycu5u4MwUmxH9zRO5FmB', 0, 1394935623, '2000-01-01 00:00:00', 1, 0, '2000-12-30'),
+(38, 'test18', 'cfc996a3aaac95f0fb508f46499dcb72b6d0abee', 'test18@jkhfgkjfg.com', 2001, 3, 'QyFqPocHBby26wtLQt8IKEhgj98fvz', 0, 1394935625, '2014-01-12 23:23:52', 1, 0, '2001-10-11'),
+(41, 'test20', '57e5a4df68387d1d97210cf40c41104ce9256cf6', 'test20@test20.com', 2006, 3, 'pZNZkm80AG0IrNnIz4I5ekZr7VFSsH', 1389667556, 1394935625, '2014-01-14 02:45:17', 1, 0, '2006-09-12');
 
 -- --------------------------------------------------------
 
@@ -1652,16 +1656,16 @@ CREATE TABLE IF NOT EXISTS `videos` (
 --
 
 INSERT INTO `videos` (`id`, `uid`, `title`, `other_title`, `type`, `category`, `language`, `country`, `genres`, `release_date`, `casting`, `director`, `length`, `tags`, `synopsis`, `thumbnail`, `image`, `source`, `year`, `url`, `public`, `featured`, `views`) VALUES
-(15, 18, '300: Rise of an Empire', '300: Rise of an Empire', 1, 10, 14, 236, '25', '2013-07-09', 'Lena Headey, Eva Green, Rodrigo Santoro', 'Noam Murro', 90, '300, Rise, Empire', 'The Greek general Themistocles battles an invading army of Persians under the mortal-turned-god, Xerxes.', '15_1813775109260FC1S.jpg', '', 'http://www.youtube.com/watch?v=2zqy21Z29ps', 0, '', 1, 1, 85),
+(15, 18, '300: Rise of an Empire', '300: Rise of an Empire', 1, 10, 14, 236, '25', '2013-07-09', 'Lena Headey, Eva Green, Rodrigo Santoro', 'Noam Murro', 90, '300, Rise, Empire', 'The Greek general Themistocles battles an invading army of Persians under the mortal-turned-god, Xerxes.', '15_1813775109260FC1S.jpg', '', 'http://www.youtube.com/watch?v=2zqy21Z29ps', 0, '', 1, 1, 114),
 (16, 18, 'Riddick (2013)', 'Riddick', 1, 10, 14, 236, '1,21,24', '2013-09-06', 'Vin Diesel, Karl Urban, Katee Sackhoff', 'David Twohy', 90, 'Riddick', 'Left for dead on a sun-scorched planet, Riddick finds himself up against an alien race of predators. Activating an emergency beacon alerts two ships: one carrying a new breed of mercenary, the other captained by a man from Riddick''s past.', '16_181379538810wvn1x.jpg', '', 'http://www.youtube.com/watch?v=zH3O-CeZckE', 0, '', 1, 1, 48),
-(17, 18, 'Thor: The Dark World', 'Thor 2013', 1, 10, 14, 236, '1,2,10', '2013-11-08', 'Chris Hemsworth, Natalie Portman, Christopher Eccleston', 'Alan Taylor', 100, 'Thor, 2013, Dark, World', 'Faced with an enemy that even Odin and Asgard cannot withstand, Thor must embark on his most perilous and personal journey yet, one that will reunite him with Jane Foster and force him to sacrifice everything to save us all.', '17_181379539607ivkN3.jpg', '', 'http://www.youtube.com/watch?v=npvJ9FTgZbM', 0, '', 1, 1, 1),
+(17, 18, 'Thor: The Dark World', 'Thor 2013', 1, 10, 14, 236, '1,2,10', '2013-11-08', 'Chris Hemsworth, Natalie Portman, Christopher Eccleston', 'Alan Taylor', 100, 'Thor, 2013, Dark, World', 'Faced with an enemy that even Odin and Asgard cannot withstand, Thor must embark on his most perilous and personal journey yet, one that will reunite him with Jane Foster and force him to sacrifice everything to save us all.', '17_181379539607ivkN3.jpg', '', 'http://www.youtube.com/watch?v=npvJ9FTgZbM', 0, '', 1, 1, 5),
 (18, 18, 'World War Z', 'World War Z 2013', 1, 10, 14, 236, '1,2,14,21,24', '2013-06-21', 'Brad Pitt, Mireille Enos, Daniella Kertesz', 'Marc Forster', 95, 'World, War, 2013', 'United Nations employee Gerry Lane traverses the world in a race against time to stop the Zombie pandemic that is toppling armies and governments, and threatening to destroy humanity itself.', '18_181379540179OpIRB.jpg', '', 'http://www.youtube.com/watch?v=HcwTxRuq-uk', 0, '', 1, 1, 0),
-(19, 18, 'Man of Steel (2013)', 'Man of Steel', 1, 10, 14, 236, '1,2,10,21', '2013-06-14', 'Henry Cavill, Amy Adams, Michael Shannon', 'Zack Snyder', 90, 'Man, Steel, 2013', 'A young itinerant worker is forced to confront his secret extraterrestrial heritage when Earth is invaded by members of his race.', '19_181379540798E44XC.jpg', '', 'http://www.youtube.com/watch?v=T6DJcgm3wNY', 0, '', 1, 1, 2),
+(19, 18, 'Man of Steel (2013)', 'Man of Steel', 1, 10, 14, 236, '1,2,10,21', '2013-06-14', 'Henry Cavill, Amy Adams, Michael Shannon', 'Zack Snyder', 90, 'Man, Steel, 2013', 'A young itinerant worker is forced to confront his secret extraterrestrial heritage when Earth is invaded by members of his race.', '19_181379540798E44XC.jpg', '', 'http://www.youtube.com/watch?v=T6DJcgm3wNY', 0, '', 1, 1, 3),
 (20, 18, 'R.I.P.D. (2013)', 'R.I.P.D.', 1, 10, 14, 236, '1,5,6,10', '2013-07-19', 'Ryan Reynolds, Jeff Bridges, Mary-Louise Parker', 'Robert Schwentke', 90, 'R.I.P.D., 2013', 'A recently slain cop joins a team of undead police officers working for the Rest in Peace Department and tries to find the man who murdered him.', '20_1813795412300JEoP.jpg', '', 'http://www.youtube.com/watch?v=X07xNrVd7DU', 0, '', 1, 1, 0),
-(21, 18, '2 Guns (2013)', '2 Guns', 1, 10, 14, 236, '1,5,6,8,24', '2013-08-02', 'Denzel Washington, Mark Wahlberg, Paula Patton', 'Baltasar Kormákur', 90, 'guns', 'A DEA agent and a naval intelligence officer find themselves on the run after a botched attempt to infiltrate a drug cartel. While fleeing, they learn the secret of their shaky alliance: Neither knew that the other was an undercover agent.', '21_181379612635T4A25.jpg', '', 'http://www.youtube.com/watch?v=dVNe3RK2fgI', 0, '', 1, 1, 1),
+(21, 18, '2 Guns (2013)', '2 Guns', 1, 10, 14, 236, '1,5,6,8,24', '2013-08-02', 'Denzel Washington, Mark Wahlberg, Paula Patton', 'Baltasar Kormákur', 90, 'guns', 'A DEA agent and a naval intelligence officer find themselves on the run after a botched attempt to infiltrate a drug cartel. While fleeing, they learn the secret of their shaky alliance: Neither knew that the other was an undercover agent.', '21_181379612635T4A25.jpg', '', 'http://www.youtube.com/watch?v=dVNe3RK2fgI', 0, '', 1, 1, 5),
 (22, 18, 'Percy Jackson: Sea of Monsters (2013)', 'Percy Jackson', 1, 10, 14, 236, '2,9,10', '2013-08-07', 'Logan Lerman, Alexandra Daddario, Brandon T. Jackson', 'Thor Freudenthal', 90, 'Percy, Jackson, Sea, Monsters, 2013', 'In order to restore their dying safe haven, the son of Poseidon and his friends embark on a quest to the Sea of Monsters to find the mythical Golden Fleece while trying to stop an ancient evil from rising.', '22_1813796135777IswV.jpg', '', 'http://www.youtube.com/watch?v=5KoOtiuSjuI', 0, '', 1, 1, 0),
-(23, 18, 'Elysium (I) (2013)', 'Elysium', 1, 10, 14, 236, '1,8,21,24', '2013-08-09', 'Matt Damon, Jodie Foster, Sharlto Copley', 'Neill Blomkamp', 100, 'Elysium, 2013', 'Set in the year 2154, where the very wealthy live on a man-made space station while the rest of the population resides on a ruined Earth, a man takes on a mission that could bring equality to the polarized worlds.', '23_1813796141370BYmG.jpg', '', 'http://www.youtube.com/watch?v=QILNSgou5BY', 0, '', 1, 1, 0),
-(24, 18, 'Homeland Season 3', 'Homeland', 2, 10, 14, 236, '8,17,24', '2013-10-02', 'Claire Danes, Damian Lewis, Morena Baccarin', '.', 45, 'Homeland, Season 3', 'When Marine Nicolas Brody is hailed as a hero after he returns home from eight years of captivity in Iraq, intelligence officer Carrie Mathison is the only one who suspects that he may have been "turned".', '24_181379614725AJrot.jpg', '', 'http://www.youtube.com/watch?v=iXOUIsu-E0Q', 0, '', 1, 1, 0),
+(23, 18, 'Elysium (I) (2013)', 'Elysium', 1, 10, 14, 236, '1,8,21,24', '2013-08-09', 'Matt Damon, Jodie Foster, Sharlto Copley', 'Neill Blomkamp', 100, 'Elysium, 2013', 'Set in the year 2154, where the very wealthy live on a man-made space station while the rest of the population resides on a ruined Earth, a man takes on a mission that could bring equality to the polarized worlds.', '23_1813796141370BYmG.jpg', '', 'http://www.youtube.com/watch?v=QILNSgou5BY', 0, '', 1, 1, 2),
+(24, 18, 'Homeland Season 3', 'Homeland', 2, 10, 14, 236, '8,17,24', '2013-10-02', 'Claire Danes, Damian Lewis, Morena Baccarin', '.', 45, 'Homeland, Season 3', 'When Marine Nicolas Brody is hailed as a hero after he returns home from eight years of captivity in Iraq, intelligence officer Carrie Mathison is the only one who suspects that he may have been "turned".', '24_181379614725AJrot.jpg', '', 'http://www.youtube.com/watch?v=iXOUIsu-E0Q', 0, '', 1, 1, 1),
 (25, 18, 'The Hobbit: An Unexpected Journey (2012)', 'The Hobbit', 1, 10, 14, 236, '2,10', '2012-12-14', 'Martin Freeman, Ian McKellen, Richard Armitage', 'Peter Jackson', 120, 'Hobbit, Unexpected, Journey, 2012', 'A younger and more reluctant Hobbit, Bilbo Baggins, sets out on an "unexpected journey" to the Lonely Mountain with a spirited group of Dwarves to reclaim their stolen mountain home from a dragon named Smaug.', '25_181379616244XC1g0.jpg', '', 'http://www.youtube.com/watch?v=fnaojlfdUbs', 0, '', 1, 1, 1),
 (26, 18, 'Monsters University (2013)', 'Monsters University 2', 3, 10, 14, 236, '2,3,5,9,10', '2013-06-21', 'Billy Crystal, John Goodman, Steve Buscemi', 'Dan Scanlon', 90, 'Monsters, University, 2013', 'A look at the relationship between Mike and Sulley during their days at Monsters University -- when they weren''t necessarily the best of friends.', '26_181379616741NtRbG.jpg', '', 'http://www.youtube.com/watch?v=ODePHkWSg-U', 0, '', 1, 1, 2),
 (27, 18, 'Oblivion (I) (2013)', 'Oblivion', 1, 10, 14, 236, '1,2,17,21', '2013-04-19', 'Tom Cruise, Morgan Freeman, Andrea Riseborough', 'Joseph Kosinski', 90, 'Oblivion, 2013', 'A veteran assigned to extract Earth''s remaining resources begins to question what he knows about his mission and himself.', '27_181380022846LbWdk.jpg', '', 'http://www.youtube.com/watch?v=XmIIgE7eSak', 0, '', 1, 1, 12),
