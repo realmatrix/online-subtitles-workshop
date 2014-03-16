@@ -44,8 +44,8 @@
 				$counter = $i + 1; 
 				$TableRows .= "<tr>";
 				$TableRows .= "<td>".$counter."</td>";
-				$TableRows .= "<td>".$res[$i]['title']."</td>";
-				$TableRows .= "<td></td>";
+				$TableRows .= "<td><a href='index.php?page=video&sec=view&vid=".$res[$i]['id']."'>".$res[$i]['title']."</a></td>";
+				$TableRows .= "<td>".$res[$i]['views']."</td>";
 				$TableRows .= "<td></td>";
 				$TableRows .= "</tr>";
 			}
