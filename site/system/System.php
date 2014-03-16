@@ -444,6 +444,29 @@ class System{
 
 
 
+		function GenratePagination($TotalRows, $rowsPerPages, $CurrentPage){
+			$PagesCount = ceil($TotalRows/$rowsPerPages);		
+			$res = "";
+			if(floor($TotalRows/$rowsPerPages)>1){$res .="<li class='prev'><a href='index.php?page=video&sec=archive&i=1'>&laquo;</a></li>";}
+			else{$res .="<li class='prev disabled'><a href='#'>&laquo;</a></li>";}			
+			if(floor($TotalRows/$rowsPerPages)>1){$res .="<li class='prev'><a href='index.php?page=video&sec=archive&i=".$CurrentPage - 1 ."'>&lsaquo;</a></li>";}
+			else{$res .="<li class='prev disabled'><a href='#'>&lsaquo;</a></li>";}
+
+			for ($i=$CurrentPage; $i < $CurrentPage+6; $i++) { 
+				if($PagesCount>=$i and $CurrentPage==$i){$res .= "<li class='active'><a href='#'>".$i."</a></li>";}
+				if($PagesCount>=$i and $CurrentPage!=$i){$res .= "<li><a href='index.php?page=video&sec=archive&i=".$i."'>".$i."</a></li>";}			
+			}			
+
+			if($PagesCount>$CurrentPage+1){$res .="<li class='next'><a href='index.php?page=video&sec=archive&i=". $CurrentPage + 1 ."'>&rsaquo;</a></li>";}
+			else{$res .="<li class='next disabled'><a href='#'>&rsaquo;</a></li>";}			
+			if($PagesCount!=$CurrentPage){$res .="<li class='next'><a href='index.php?page=video&sec=archive&i=".$PagesCount ."'>&raquo;</a></li>";}
+			else{$res .="<li class='next disabled'><a href='#'>&raquo;</a></li>";}					
+					
+			return $res;
+		}
+
+
+
 	function GetVideoTypes(){
 		$params = array();
 	 	$result = self::db_query("SELECT * FROM videotype", $params);
