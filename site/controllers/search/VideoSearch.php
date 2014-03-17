@@ -1,20 +1,20 @@
 <?php
 //to get all alphabets in the subtitles table
 //SELECT DISTINCT LEFT(title, 1) as letter FROM subtitles ORDER BY letter
-	class CAdvancedSearch{
+	class CVideoSearch{
 			
-		function AdvancedSearch(){
-			return self::AdvancedSearch_content();
+		function VideoSearch(){
+			return self::VideoSearch_content();
 		}
 	
-		function AdvancedSearch_hooks(){
+		function VideoSearch_hooks(){
 			$array = array(
 				array("search", "search")
 			);
 			return $array;
 		}
 			
-		function AdvancedSearch_options(){
+		function VideoSearch_options(){
 			$options = array(
 			"show"=>array(),
 			"hide"=>array(),
@@ -23,19 +23,19 @@
 			return $options;
 		}
 				
-		function AdvancedSearch_content(){
+		function VideoSearch_content(){
 				$content = array
 				  (
-				  array("{title}", $GLOBALS['system']->l("search_AdvancedSearch_title")),
-				  array("{VideoTitle}", $GLOBALS['system']->l("search_AdvancedSearch_VideoTitle")),
-				  array("{submit}", $GLOBALS['system']->l("search_AdvancedSearch_submit")),
-				  array("{reset}", $GLOBALS['system']->l("search_AdvancedSearch_reset")),
-				  array("{Language}", $GLOBALS['system']->l("search_AdvancedSearch_language")),
-				  array("{Category}",$GLOBALS['system']->l("search_AdvancedSearch_category")),
-				  array("{Genre}", $GLOBALS['system']->l("search_AdvancedSearch_genre")),
-				  array("{Country}", $GLOBALS['system']->l("search_AdvancedSearch_country")),
-				  array("{Year}", $GLOBALS['system']->l("search_AdvancedSearch_year")),
-				  array("{Status}", $GLOBALS['system']->l("search_AdvancedSearch_status")),
+				  array("{title}", $GLOBALS['system']->l("search_VideoSearch_title")),
+				  array("{VideoTitle}", $GLOBALS['system']->l("search_VideoSearch_VideoTitle")),
+				  array("{submit}", $GLOBALS['system']->l("search_VideoSearch_submit")),
+				  array("{reset}", $GLOBALS['system']->l("search_VideoSearch_reset")),
+				  array("{Language}", $GLOBALS['system']->l("search_VideoSearch_language")),
+				  array("{Category}",$GLOBALS['system']->l("search_VideoSearch_category")),
+				  array("{Genre}", $GLOBALS['system']->l("search_VideoSearch_genre")),
+				  array("{Country}", $GLOBALS['system']->l("search_VideoSearch_country")),
+				  array("{Year}", $GLOBALS['system']->l("search_VideoSearch_year")),
+				  array("{Status}", $GLOBALS['system']->l("search_VideoSearch_status")),
 				  array("{vthistory}", $GLOBALS['vars']['VideoTitle']),
 				  array("{SearchLanguage}", self::languages()),
 				  array("{SearchCategory}", self::categories()),
