@@ -1,21 +1,21 @@
 <?php
 
-	class CSearchResults{
+	class CVideoSearchResults{
 
 	public static $rows = "";	
 		
-		function SearchResults(){
-			return self::SearchResults_content();
+		function VideoSearchResults(){
+			return self::VideoSearchResults_content();
 		}
 	
-		function SearchResults_hooks(){
+		function VideoSearchResults_hooks(){
 			$array = array(
 				array("search", "search")
 			);
 			return $array;
 		}
 			
-		function SearchResults_options(){
+		function VideoSearchResults_options(){
 			$options = array(
 			"show"=>array(),
 			"hide"=>array(),
@@ -24,10 +24,10 @@
 			return $options;
 		}
 				
-		function SearchResults_content(){
+		function VideoSearchResults_content(){
 				$content = array
 				  (
-				  array("{title}", $GLOBALS['system']->l("search_SearchResults_title")),
+				  array("{title}", $GLOBALS['system']->l("search_VideoSearchResults_title")),
 				  array("{TableRows}", self::$rows),
 				 );
 			 
