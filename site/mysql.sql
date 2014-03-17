@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 17, 2014 at 04:19 AM
+-- Generation Time: Mar 17, 2014 at 07:48 AM
 -- Server version: 5.6.16
 -- PHP Version: 5.3.28
 
@@ -1038,14 +1038,14 @@ CREATE TABLE IF NOT EXISTS `onlineusers` (
   `time` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1784 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1788 ;
 
 --
 -- Dumping data for table `onlineusers`
 --
 
 INSERT INTO `onlineusers` (`id`, `session`, `time`, `username`) VALUES
-(1783, '9s55np64i7188a01bae5ugt2b1', 1395029682, '');
+(1787, '9s55np64i7188a01bae5ugt2b1', 1395042130, '');
 
 -- --------------------------------------------------------
 
@@ -1105,7 +1105,7 @@ CREATE TABLE IF NOT EXISTS `subtitlecds` (
   `sid` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `subtitlecds`
@@ -1163,7 +1163,7 @@ CREATE TABLE IF NOT EXISTS `subtitles` (
   `uid` int(11) NOT NULL,
   `key` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `subtitles`
@@ -1238,7 +1238,7 @@ CREATE TABLE IF NOT EXISTS `systemcron` (
 --
 
 INSERT INTO `systemcron` (`id`, `job`, `frequancy`, `last_run`) VALUES
-(1, 'AutoTranslation', 300, 1395029741);
+(1, 'AutoTranslation', 300, 1395042435);
 
 -- --------------------------------------------------------
 
