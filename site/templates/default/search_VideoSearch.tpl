@@ -3,6 +3,28 @@
 	.field {text-align: center;}
 </style>
 
+<div class="container">
+<div class="row">
+	<div class="col-md-13">
+		<div class="panel panel-primary">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">{title}</h3>
+		  </div>
+		  <div class="panel-body">
+		  	
+<!-- video search --->
+
+<!-- video search end -->		  
+	
+		  </div>
+		</div>
+	</div>
+</div>
+</div>
+
+
+
+
 <DIV class="catglow">
 <DIV class="cathead-m">
 <DIV class="cathead-r">
