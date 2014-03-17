@@ -25,7 +25,11 @@
 		}
 				
 		function ListAllVideos_content(){
-			$TotalVideos = count($GLOBALS['system']->db_query("SELECT * FROM `videos` ", array()));
+			if(!isset($GLOBALS['vars']['a']) or $GLOBALS['vars']['a']==""){
+				$TotalVideos = count($GLOBALS['system']->db_query("SELECT * FROM `videos` ", array()));
+			}else{
+				$TotalVideos = count($GLOBALS['system']->db_query("SELECT * FROM `videos` where `title` LIKE '".$GLOBALS['vars']['a']."%'", array()));
+			}
 			if(!isset($GLOBALS['vars']['i'])){$GLOBALS['vars']['i']=1;}
 			$pagination = $GLOBALS['system']->GenratePagination($TotalVideos, self::$limit, $GLOBALS['vars']['i']);
 				$content = array
@@ -42,7 +46,12 @@
 			if(!isset($GLOBALS['vars']['i'])){$GLOBALS['vars']['i'] = 1;}
 			$from = ($GLOBALS['vars']['i']-1) * $limit;
 			$to = ($GLOBALS['vars']['i']-1) * $limit + $limit;
-			$res = $GLOBALS['system']->db_query("SELECT * FROM `videos` limit ".$from.", ".$to, array());
+			if(!isset($GLOBALS['vars']['a']) or $GLOBALS['vars']['a']==""){
+				$res = $GLOBALS['system']->db_query("SELECT * FROM `videos` limit ".$from.", ".$to, array());
+			}else{
+				$res = $GLOBALS['system']->db_query("SELECT * FROM `videos` where `title` LIKE '".$GLOBALS['vars']['a']."%' limit ".$from.", ".$to, array());
+			}
+			//$res = $GLOBALS['system']->db_query("SELECT * FROM `videos` limit ".$from.", ".$to, array());
 			$TableRows = "";
 			for ($i=0; $i < count($res); $i++) {
 				$counter = $i + 1; 
