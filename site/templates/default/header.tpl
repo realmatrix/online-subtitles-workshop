@@ -21,9 +21,9 @@
  
               <ul class="dropdown-menu">
                 <li><a href="#"></a></li>
-                <li><a href="index.php?page=search&sec=advanced">Search Subtitles</a></li>
+                <li><a href="index.php?page=search&sec=subtitles">Search Subtitles</a></li>
                 <li role="presentation" class="divider"></li>
-                <li><a href="index.php?page=search&sec=advanced">Search Videos</a></li>
+                <li><a href="index.php?page=search&sec=videos">Search Videos</a></li>
               </ul>
             </li>
           </ul>
