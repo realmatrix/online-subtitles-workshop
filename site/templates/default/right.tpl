@@ -55,7 +55,7 @@ online :: {OnlineRegistered} registered, {OnlineHidden} hidden and {OnlineGuests
 users: {TotalRegistered} registered users<BR><BR>
 Total videos <STRONG>{TotalVideos}</STRONG> • Total subtitles 
 <STRONG>{TotalSubtitles}</STRONG> • Total members <STRONG>{TotalUsers}</STRONG> • Our newest member 
-<STRONG><A href="#">{LatestUser}</A></STRONG>
+<STRONG><A href="index.php?page=user&sec=profile&u=">{LatestUser}</A></STRONG>
 		  </div>
 		</div>
 	</div>
