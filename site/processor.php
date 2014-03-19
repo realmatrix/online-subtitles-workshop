@@ -72,6 +72,7 @@
 	  array("{TotalRegistered}",$SystemInfo['TotalRegistered']),
 	  array("{TotalUsers}",$SystemInfo['TotalRegistered']),
 	  array("{LatestUser}",$SystemInfo['LatestUser']),
+	  array("{LatestUserID}",$SystemInfo['LatestUserID']),
 	  array("{TotalVideos}",$SystemInfo['TotalVideos']), 
 	  array("{TotalSubtitles}",$SystemInfo['TotalSubtitles']),
 	  array("{DateTime}",date("D M d, Y h:i a")),

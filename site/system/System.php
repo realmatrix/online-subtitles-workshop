@@ -641,6 +641,7 @@ class System{
 			$params = array();
 			$LatestUser=self::db_query("SELECT * FROM users ORDER BY id DESC LIMIT 1", $params);
 		$info['LatestUser']=$LatestUser[0]['username'];
+		$info['LatestUserID']=$LatestUser[0]['id'];
 			$params = array();
 			$TotalVideos=self::db_query("SELECT id FROM videos", $params);
 		$info['TotalVideos']=count($TotalVideos);
