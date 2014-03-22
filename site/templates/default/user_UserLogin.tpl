@@ -260,6 +260,8 @@ body{
 	    <input type="hidden" name="sec" value="{sec}" />
 	    <input type="hidden" name="ssec" value="UserLogin" />
 	    <input type="hidden" name="h" value="login" /> 
+	    <input type="hidden" name="rpage" value="{rpage}" />
+	    <input type="hidden" name="rsec" value="{rsec}" />
 	</form>	
 	</div>
 </td>

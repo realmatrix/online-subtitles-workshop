@@ -326,6 +326,7 @@ class System{
 		if($options['loggedin']=="yes" and !self::IsLoggedin()){
 			$LoadSEction = FALSE;
 			$message = "require user to be loggedin.";
+			echo "<script type='text/javascript'>window.location = 'index.php?page=user&sec=login&rpage=".$GLOBALS['vars']['page']."&rsec=".$GLOBALS['vars']['sec']."';</script>";
 		}
 		if($options['loggedin']=="no" and self::IsLoggedin()){
 			$LoadSEction = FALSE;

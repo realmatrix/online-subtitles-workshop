@@ -17,7 +17,7 @@
 			$options = array(
 			"show"=>array(),
 			"hide"=>array(),
-			"loggedin"=>"",
+			"loggedin"=>"yes",
 			);
 			return $options;
 		}
