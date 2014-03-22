@@ -6,6 +6,14 @@
 			return self::widget_ForumLatest_render();
 		}
 		
+		function widget_ForumLatest_install(){
+			
+		}
+		
+		function widget_ForumLatest_schema(){
+
+		}
+		
 		function widget_ForumLatest_info(){
 			$info = array(
 			'name' => 'Forum Latest',

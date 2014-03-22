@@ -6,6 +6,14 @@
 			return self::widget_QuickAccess_render();
 		}
 		
+		function widget_QuickAccess_install(){
+			
+		}
+		
+		function widget_QuickAccess_schema(){
+
+		}
+		
 		function widget_QuickAccess_info(){
 			$info = array(
 			'name' => 'Quick Access',

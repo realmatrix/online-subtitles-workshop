@@ -6,6 +6,14 @@
 			return self::widget_TeamChat_render();
 		}
 		
+		function widget_TeamChat_install(){
+			
+		}
+		
+		function widget_TeamChat_schema(){
+
+		}
+		
 		function widget_TeamChat_info(){
 			$info = array(
 			'name' => 'Team Chat',

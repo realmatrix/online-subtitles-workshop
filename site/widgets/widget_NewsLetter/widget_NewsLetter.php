@@ -6,6 +6,14 @@
 			return self::widget_NewsLetter_render();
 		}
 		
+		function widget_NewsLetter_install(){
+			
+		}
+		
+		function widget_NewsLetter_schema(){
+
+		}
+		
 		function widget_NewsLetter_info(){
 			$info = array(
 			'name' => 'News Letter',

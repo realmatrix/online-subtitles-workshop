@@ -6,6 +6,14 @@
 			return self::widget_LatestNewsByCategory_render();
 		}
 		
+		function widget_LatestNewsByCategory_install(){
+			
+		}
+		
+		function widget_LatestNewsByCategory_schema(){
+
+		}
+		
 		function widget_LatestNewsByCategory_info(){
 			$info = array(
 			'name' => 'Latest News',

@@ -6,6 +6,14 @@
 			return self::widget_Manage_render();
 		}
 		
+		function widget_Manage_install(){
+			
+		}
+		
+		function widget_Manage_schema(){
+
+		}
+		
 		function widget_Manage_info(){
 			$info = array(
 			'name' => 'User Account Manager',

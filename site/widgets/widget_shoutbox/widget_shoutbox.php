@@ -6,6 +6,14 @@
 			return self::widget_shoutbox_render();
 		}
 		
+		function widget_shoutbox_install(){
+			
+		}
+		
+		function widget_shoutbox_schema(){
+
+		}
+		
 		function widget_shoutbox_info(){
 			$info = array(
 			'name' => 'ShoutBox',

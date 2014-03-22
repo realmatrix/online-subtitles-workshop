@@ -5,6 +5,14 @@
 			return self::widget_login_render();
 		}
 		
+		function widget_login_install(){
+			
+		}
+		
+		function widget_login_schema(){
+
+		}
+		
 		function widget_login_info(){
 			$info = array(
 			'name' => 'User Login',

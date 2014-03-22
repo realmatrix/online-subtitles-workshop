@@ -6,6 +6,14 @@
 			return self::widget_latest_render();
 		}
 		
+		function widget_latest_install(){
+			
+		}
+		
+		function widget_latest_schema(){
+
+		}
+		
 		function widget_latest_info(){
 			$info = array(
 			'name' => 'Latest',

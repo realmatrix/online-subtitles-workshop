@@ -6,6 +6,14 @@
 			return self::widget_UserInfo_render();
 		}
 		
+		function widget_UserInfo_install(){
+			
+		}
+		
+		function widget_UserInfo_schema(){
+
+		}
+		
 		function widget_UserInfo_info(){
 			$info = array(
 			'name' => 'User Information',

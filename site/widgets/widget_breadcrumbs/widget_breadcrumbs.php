@@ -6,6 +6,14 @@
 			return self::widget_breadcrumbs_render();
 		}
 		
+		function widget_breadcrumbs_install(){
+			
+		}
+		
+		function widget_breadcrumbs_schema(){
+
+		}
+		
 		function widget_breadcrumbs_info(){
 			$info = array(
 			'name' => 'Bread Crumbs',

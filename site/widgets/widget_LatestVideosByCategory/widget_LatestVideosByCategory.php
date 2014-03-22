@@ -6,6 +6,14 @@
 			return self::widget_LatestVideosByCategory_render();
 		}
 		
+		function widget_LatestVideosByCategory_install(){
+			
+		}
+		
+		function widget_LatestVideosByCategory_schema(){
+
+		}
+		
 		function widget_LatestVideosByCategory_info(){
 			$info = array(
 			'name' => 'Latest Videos',

@@ -6,6 +6,14 @@
 			return self::widget_FeaturedVideos_render();
 		}
 		
+		function widget_FeaturedVideos_install(){
+			
+		}
+		
+		function widget_FeaturedVideos_schema(){
+
+		}
+		
 		function widget_FeaturedVideos_info(){
 			$info = array(
 			'name' => 'Featured Videos',

@@ -6,6 +6,14 @@
 			return self::widget_top10_render();
 		}
 		
+		function widget_top10_install(){
+			
+		}
+		
+		function widget_top10_schema(){
+
+		}
+		
 		function widget_top10_info(){
 			$info = array(
 			'name' => 'Top 10',
