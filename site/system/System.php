@@ -207,6 +207,14 @@ class System{
 			if($cwidget!=""){include_once "widgets/".$cwidget."/".$cwidget.".php";
 				$hooks = call_user_func('W'.$cwidget.'::'.$cwidget.'_hooks');
 				$found = 0;
+				if (!method_exists('W'.$cwidget, $cwidget.'_install')){
+					$GLOBALS['ERROR'][] = "function ".$cwidget."_install not found.";
+					$GLOBALS['ERROR'][] = "MODULE -> <b>".$cwidget."</b>";
+				}
+				if (!method_exists('W'.$cwidget, $cwidget.'_schema')){
+					$GLOBALS['ERROR'][] = "function ".$cwidget."_schema not found.";
+					$GLOBALS['ERROR'][] = "MODULE -> <b>".$cwidget."</b>";
+				}				
 				for ($j=0; $j < count($hooks); $j++) {
 					if($GLOBALS['vars']['w']==$cwidget and $GLOBALS['vars']['h']==$hooks[$j][0]){call_user_func('W'.$cwidget.'::'.$hooks[$j][1], $args); $found++;}
 				}
