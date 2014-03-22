@@ -7,7 +7,7 @@
 		width: 49.8%;
 		border-style: solid;
 		border-width: 1px;
-		border-color: rgb(215, 229, 242) rgb(215, 229, 242);
+		border-color: #428bca;
 		height: 120px;
 		line-height: 30px;
 		margin-right: 2px;
@@ -39,7 +39,7 @@
 		display: block;
 		float: left;
 		border-color: rgb(215, 229, 242) rgb(215, 229, 242);
-		border-width: 1px;
+		border-width: 0px;
 		border-style: solid;
 		margin: 1px;
 		width: 294px;
